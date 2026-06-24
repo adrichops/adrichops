@@ -1,0 +1,7 @@
+.git
+.git/**
+.private
+.private/**
+.wrangler
+.wrangler/**
+.DS_Store
