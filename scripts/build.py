@@ -143,6 +143,17 @@ def write(path, content):
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(content, encoding='utf-8')
 
+def remove_public_path(path):
+    path = ROOT / path.lstrip('/')
+    if path.suffix == '':
+        path = path / 'index.html'
+    if path.exists():
+        path.unlink()
+    try:
+        path.parent.rmdir()
+    except OSError:
+        pass
+
 def article_summary_list(posts, n=None):
     rows = []
     for p in (posts[:n] if n else posts):
@@ -217,7 +228,7 @@ def roll_page(products, posts):
         ('04','Edge-friendly board','Hasegawa, Asahi or hinoki depending on care tolerance. The board can save more edge life than another steel debate.', '/guides/hasegawa-asahi-hinoki-cutting-board-guide/'),
         ('05','Blade guard / roll','A sharp knife rolling loose in a drawer is slapstick until it is not.', '/guides/boards-storage-and-edge-life/')]
     items = ''.join(f'<a class="roll-item" href="{href}"><div class="number">{num}</div><div><h3>{esc(title)}</h3><p>{esc(text)}</p></div></a>' for num,title,text,href in roll_items)
-    return head("What’s in my roll — Adrichops", 'The personal Adrichops knife roll: Tojiro DP reference, stones, strop, boards and storage notes.', '/whats-in-my-roll/', '/assets/img/knife-roll.svg') + header("What’s in my roll") + f'''<main class="page"><section class="collection-hero"><span class="kicker">Personal kit</span><h1>What’s in my roll.</h1><p>This page should stay personal. It starts with the Tojiro DP that carried the line-cook years and adds the boring maintenance gear that keeps sharp knives happy.</p></section><section class="roll-grid"><div class="roll-list">{items}</div><aside class="hero-note"><strong>Edit this page as the kit becomes real.</strong><p>When you add new owned knives, boards, stones or travel gear, update this page first. It is more trustworthy than a generic “best knives” list.</p><p><a class="button" href="/editing-guide/">Editing guide</a> <a class="button primary" href="/kit-builder/">Build your kit</a></p></aside></section></main>''' + footer()
+    return head("What’s in my roll — Adrichops", 'The personal Adrichops knife roll: Tojiro DP reference, stones, strop, boards and storage notes.', '/whats-in-my-roll/', '/assets/img/knife-roll.svg') + header("What’s in my roll") + f'''<main class="page"><section class="collection-hero"><span class="kicker">Personal kit</span><h1>What’s in my roll.</h1><p>This page should stay personal. It starts with the Tojiro DP that carried the line-cook years and adds the boring maintenance gear that keeps sharp knives happy.</p></section><section class="roll-grid"><div class="roll-list">{items}</div><aside class="hero-note"><strong>Edit this page as the kit becomes real.</strong><p>When you add new owned knives, boards, stones or travel gear, update this page first. It is more trustworthy than a generic “best knives” list.</p><p><a class="button primary" href="/kit-builder/">Build your kit</a></p></aside></section></main>''' + footer()
 
 def kit_builder_page():
     return head('Kit Builder — Adrichops', 'Create a custom ten-slot knife kit deck with drag-and-drop cards for knives, stones, strops, boards, storage and utensils.', '/kit-builder/', '/assets/img/knife-roll.svg') + header('Kit Builder') + """<main class="page"><section class="collection-hero"><span class="kicker">Interactive kit builder</span><h1>Build your kit.</h1><p>Drag cards from the database into the ten-slot deck, then drag slotted cards around to rearrange the order. Cards carry practical attributes like edge length, steel or material, handle type and knife profile. The kit saves locally in your browser.</p></section><section class="kit-builder" data-kit-builder><aside class="kit-summary-panel"><div class="section-head"><div><span class="kicker">Your kit</span><h2>10-slot deck.</h2></div><p>Start with fewer knives than the internet wants, then add the support gear that keeps them sharp: stone, strop, board and storage. Drag cards directly between the database and the slots.</p></div><div class="kit-summary" data-kit-summary></div><div class="kit-status" data-kit-status></div><div class="kit-control-row"><button class="button primary" type="button" data-kit-starter>Load starter kit</button><button class="button" type="button" data-kit-clear>Clear kit</button><button class="button" type="button" data-kit-copy>Copy summary</button><button class="button" type="button" data-kit-export>Export JSON</button></div></aside><div class="kit-builder-board"><section class="kit-library-panel"><div class="section-head"><div><span class="kicker">Available cards</span><h2>Knife and kit database.</h2></div><p>Drag a card into any open slot, or click Add to use the active slot.</p></div><div class="kit-control-row"><input class="search-input" type="search" placeholder="Search gyuto, VG10, Shapton, strop…" data-kit-search><select data-kit-category aria-label="Filter by category"></select><select data-kit-profile aria-label="Filter by profile"></select><select data-kit-steel aria-label="Filter by steel"></select></div><div class="kit-library-grid" data-kit-library></div></section><section class="kit-slots-panel"><div class="section-head"><div><span class="kicker">Available slots</span><h2>Your deck.</h2></div><p>Drop cards into slots. Drag filled slots onto another slot to reorder the kit.</p></div><p class="kit-drop-note">Desktop: drag and drop. Mobile fallback: select a slot, then tap Add on a card.</p><div class="kit-slots" data-kit-slots></div></section></div></section></main><script src="/assets/js/kit-builder.js" defer></script>""" + footer()
@@ -300,9 +311,6 @@ def article_html(post, all_posts):
 def redirect_page(target, title='Redirecting'):
     return f'<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta http-equiv="refresh" content="0;url={target}"><title>{esc(title)}</title><link rel="canonical" href="{target}"></head><body><p><a href="{target}">Continue to {esc(target)}</a></p></body></html>'
 
-def editing_guide_page():
-    return head('Live editing guide — Adrichops', 'How to edit Adrichops content after deployment: Markdown posts, source trails, referral links, products and Knife Finder data.', '/editing-guide/') + header('') + '''<main class="page"><section class="collection-hero"><span class="kicker">Owner guide</span><h1>Editing the live site.</h1><p>The redesigned site uses Markdown content, generated static pages and small JSON data files. This keeps it free-hosting friendly while making edits safer than one giant posts file.</p></section><article class="article-body"><h2>Create a new review</h2><p>Copy an existing file from <code>content/reviews/</code>, rename it with a clean slug, update the YAML frontmatter, then write the article below the frontmatter using Markdown headings. Mark the status honestly: Owned, Handled, Research brief or Wishlist.</p><h2>Add referral links</h2><p>Add product links inside the article frontmatter under <code>products</code>, or add reusable items to <code>data/products.json</code>. Use full affiliate links only after joining the programme. Keep <code>rel="sponsored nofollow noopener"</code> on product links.</p><h2>Edit the Kit Builder database</h2><p>Update <code>data/kit-items.json</code> to add knives, stones, strops, boards, storage or utensils. Keep attributes consistent: category, profile, edgeLengthMm, steelType, handleType, bestFor, maintenance, tags and learnUrl.</p><h2>Edit the Knife Finder</h2><p>Update <code>data/finder.json</code>. Each rule has a match, recommendation, caveat, maintenance kit and article IDs. This is where paths like low-fuss vegetable prep point to a VG10 stainless-clad nakiri and the right board/stone/strop setup.</p><h2>Publish with Netlify</h2><p>Push changes to GitHub. Netlify runs <code>python3 scripts/build.py</code>, regenerates static pages, and publishes the folder. Decap CMS in <code>/admin/</code> can edit Markdown once Git Gateway is configured.</p><h2>Before publishing</h2><p>Run <code>python3 scripts/build.py</code>, then <code>python3 -m http.server 8080</code>. Check the homepage, article page, recommendations page and disclosure page before deploying.</p></article></main>''' + footer()
-
 def main():
     posts = load_posts()
     # Save regenerated manifest
@@ -310,6 +318,8 @@ def main():
         p['route'] = p.get('route') or route_for(p)
     (ROOT / 'data' / 'posts.json').write_text(json.dumps({'posts': posts}, ensure_ascii=False, indent=2), encoding='utf-8')
     products = json.loads((ROOT / 'data/products.json').read_text(encoding='utf-8')).get('products', [])
+    remove_public_path('/editing-guide/')
+    remove_public_path('/editing-guide.html')
     # Core pages
     write('/index.html', home(posts))
     write('/about/', about_page())
@@ -324,7 +334,6 @@ def main():
     write('/reviews/', collection_page('Reviews', 'Knife, board and stone review briefs with clear owned or researched status labels.', 'Reviews', reviews, '/reviews/', 'Review pages separate personal experience from researched buying notes. Affiliate links are disclosed and caveats stay visible.'))
     write('/maker-spotlight/', collection_page('Maker spotlight', 'Maker and workshop profiles for Takada no Hamono, Ashi, Konosuke, Myojin, Yoshikane, Toyama, Wakui and more.', 'Maker spotlight', makers, '/maker-spotlight/', 'Maker spotlights are context pieces: source-led, practical and not written as hype trophies.'))
     write('/guides/', guide_index(posts))
-    write('/editing-guide/', editing_guide_page())
     # Articles + old /posts redirects
     for p in posts:
         write(p['route'], article_html(p, posts))
@@ -342,13 +351,12 @@ def main():
     write('/build-roll/', redirect_page('/kit-builder/', 'Kit Builder'))
     write('/build-roll.html', redirect_page('/kit-builder/', 'Kit Builder'))
     write('/explore.html', redirect_page('/explore/', 'Explore deck'))
-    write('/editing-guide.html', redirect_page('/editing-guide/', 'Editing guide'))
     post_redirect = '''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Redirecting — Adrichops</title></head><body><p>Redirecting…</p><script>fetch('/data/posts.json').then(r=>r.json()).then(d=>{const id=new URLSearchParams(location.search).get('id')||location.hash.slice(1);const p=(d.posts||[]).find(x=>x.id===id||x.slug===id);location.replace(p?p.route:'/');}).catch(()=>location.replace('/'));</script></body></html>'''
     write('/post.html', post_redirect)
     # 404
     write('/404.html', head('Page not found — Adrichops', 'The requested Adrichops page could not be found.', '/404.html') + header('') + '<main class="page"><section class="collection-hero"><span class="kicker">404</span><h1>Lost edge.</h1><p>This page is not in the kit. Try the notebook, recommendations or search.</p><p><a class="button primary" href="/">Back home</a></p></section></main>' + footer())
     # sitemap
-    urls = ['/', '/about/', '/reviews/', '/maker-spotlight/', '/whats-in-my-roll/', '/kit-builder/', '/recommendations/', '/disclosure/', '/privacy/', '/guides/', '/explore/', '/editing-guide/'] + [p['route'] for p in posts]
+    urls = ['/', '/about/', '/reviews/', '/maker-spotlight/', '/whats-in-my-roll/', '/kit-builder/', '/recommendations/', '/disclosure/', '/privacy/', '/guides/', '/explore/'] + [p['route'] for p in posts]
     sitemap = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + ''.join(f'  <url><loc>{BASE_URL.rstrip()}{u}</loc></url>\n' for u in urls) + '</urlset>\n'
     (ROOT / 'sitemap.xml').write_text(sitemap, encoding='utf-8')
     (ROOT / 'robots.txt').write_text(f'User-agent: *\nAllow: /\nSitemap: {BASE_URL}/sitemap.xml\n', encoding='utf-8')
