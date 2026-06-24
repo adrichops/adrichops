@@ -34,25 +34,25 @@ products:
   merchant: Amazon UK
   category: Sharpening
   note: Classic medium-grit learner stone. Good feedback, sensible price, real sharpening ability.
-  url: https://www.amazon.co.uk/s?k=King+Deluxe+1000+whetstone&tag=YOURTAG-21
+  url: https://www.amazon.co.uk/s?k=King+Deluxe+1000+whetstone&tag=adrichops-21
   cta: Check current price
 - name: King 1000/6000 combination whetstone
   merchant: Amazon UK
   category: Sharpening
   note: Popular combo direction for beginners who want sharpening and refinement in one block.
-  url: https://www.amazon.co.uk/s?k=King+1000+6000+combination+whetstone&tag=YOURTAG-21
+  url: https://www.amazon.co.uk/s?k=King+1000+6000+combination+whetstone&tag=adrichops-21
   cta: Check current price
 - name: Whetstone flattening plate
   merchant: Amazon UK
   category: Sharpening
   note: Important with softer stones. Flat stone, cleaner bevels, fewer mysteries.
-  url: https://www.amazon.co.uk/s?k=whetstone+flattening+plate&tag=YOURTAG-21
+  url: https://www.amazon.co.uk/s?k=whetstone+flattening+plate&tag=adrichops-21
   cta: Check current price
 - name: Stone holder or non-slip base
   merchant: Amazon UK
   category: Sharpening
   note: Stability is not optional. A moving stone teaches panic, not sharpening.
-  url: https://www.amazon.co.uk/s?k=whetstone+holder+non+slip+base&tag=YOURTAG-21
+  url: https://www.amazon.co.uk/s?k=whetstone+holder+non+slip+base&tag=adrichops-21
   cta: Check current price
 gallery:
 - src: assets/img/king-stones.svg

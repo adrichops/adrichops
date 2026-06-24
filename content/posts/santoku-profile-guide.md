@@ -34,21 +34,21 @@ products:
   category: Knife
   note: Use this as a placeholder for a santoku you have handled or a manufacturer-backed
     listing you are confident in.
-  url: https://www.amazon.co.uk/s?k=santoku+knife+Mercer+Victorinox+Zwilling&tag=YOURTAG-21
+  url: https://www.amazon.co.uk/s?k=santoku+knife+Mercer+Victorinox+Zwilling&tag=adrichops-21
   cta: Check current price
 - name: Victorinox Fibrox Pro 8 inch chef knife
   merchant: Amazon UK
   category: Knife
   note: Plain, grippy, Swiss-made chef knife often used as the baseline value pick.
     Replace this search link with the exact ASIN you want to promote.
-  url: https://www.amazon.co.uk/s?k=Victorinox+Fibrox+Pro+8+inch+chef+knife&tag=YOURTAG-21
+  url: https://www.amazon.co.uk/s?k=Victorinox+Fibrox+Pro+8+inch+chef+knife&tag=adrichops-21
   cta: Check current price
 - name: Mercer Culinary Genesis 8 inch chef knife
   merchant: Amazon UK
   category: Knife
   note: Forged German-steel style workhorse with a Santoprene handle. Check the exact
     handle and bolster version before linking.
-  url: https://www.amazon.co.uk/s?k=Mercer+Culinary+Genesis+8+inch+chef+knife&tag=YOURTAG-21
+  url: https://www.amazon.co.uk/s?k=Mercer+Culinary+Genesis+8+inch+chef+knife&tag=adrichops-21
   cta: Check current price
 gallery:
 - src: assets/img/chef-vs-gyuto.svg

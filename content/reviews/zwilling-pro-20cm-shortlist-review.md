@@ -33,31 +33,31 @@ products:
   merchant: Amazon UK
   category: Knife
   note: German forged chef knife positioned as an all-purpose Pro-series option. Check current availability and exact series.
-  url: https://www.amazon.co.uk/s?k=ZWILLING+Pro+20cm+chef+knife&tag=YOURTAG-21
+  url: https://www.amazon.co.uk/s?k=ZWILLING+Pro+20cm+chef+knife&tag=adrichops-21
   cta: Check current price
 - name: Fine ceramic honing rod
   merchant: Amazon UK
   category: Sharpening
   note: Useful for German stainless workhorses and softer edges. Use light pressure; this is not a tiny sword fight.
-  url: https://www.amazon.co.uk/s?k=ceramic+honing+rod+kitchen+knife+fine&tag=YOURTAG-21
+  url: https://www.amazon.co.uk/s?k=ceramic+honing+rod+kitchen+knife+fine&tag=adrichops-21
   cta: Check current price
 - name: 1000 grit splash-and-go whetstone
   merchant: Amazon UK
   category: Sharpening
   note: The sensible first stone. Use it to raise and refine a working edge before you start buying exotic rectangles.
-  url: https://www.amazon.co.uk/s?k=1000+grit+whetstone+Shapton+King+Naniwa&tag=YOURTAG-21
+  url: https://www.amazon.co.uk/s?k=1000+grit+whetstone+Shapton+King+Naniwa&tag=adrichops-21
   cta: Check current price
 - name: Large soft cutting board
   merchant: Amazon UK
   category: Board
   note: A gentle board protects thin edges better than glass, stone, bamboo punishment slabs or chaos.
-  url: https://www.amazon.co.uk/s?k=large+soft+cutting+board+rubber+wood+kitchen+knife&tag=YOURTAG-21
+  url: https://www.amazon.co.uk/s?k=large+soft+cutting+board+rubber+wood+kitchen+knife&tag=adrichops-21
   cta: Check current price
 - name: Universal blade guards
   merchant: Amazon UK
   category: Storage
   note: Simple protection for drawers, travel rolls and rental-kitchen horror cupboards.
-  url: https://www.amazon.co.uk/s?k=knife+blade+guards+kitchen+knives&tag=YOURTAG-21
+  url: https://www.amazon.co.uk/s?k=knife+blade+guards+kitchen+knives&tag=adrichops-21
   cta: Check current price
 gallery:
 - src: assets/img/amazon-shortlist.svg

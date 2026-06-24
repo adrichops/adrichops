@@ -34,31 +34,31 @@ products:
   merchant: Amazon UK
   category: Sharpening
   note: The usual low-fuss first Shapton direction for kitchen knives. Check seller and exact grit before linking.
-  url: https://www.amazon.co.uk/s?k=Shapton+Kuromaku+1000+whetstone&tag=YOURTAG-21
+  url: https://www.amazon.co.uk/s?k=Shapton+Kuromaku+1000+whetstone&tag=adrichops-21
   cta: Check current price
 - name: Shapton Kuromaku 2000 whetstone
   merchant: Amazon UK
   category: Sharpening
   note: Useful refinement option after you already make a good 1000 grit edge.
-  url: https://www.amazon.co.uk/s?k=Shapton+Kuromaku+2000+whetstone&tag=YOURTAG-21
+  url: https://www.amazon.co.uk/s?k=Shapton+Kuromaku+2000+whetstone&tag=adrichops-21
   cta: Check current price
 - name: Shapton Kuromaku 5000 whetstone
   merchant: Amazon UK
   category: Sharpening
   note: Fine finishing option for users who already control burrs and pressure.
-  url: https://www.amazon.co.uk/s?k=Shapton+Kuromaku+5000+whetstone&tag=YOURTAG-21
+  url: https://www.amazon.co.uk/s?k=Shapton+Kuromaku+5000+whetstone&tag=adrichops-21
   cta: Check current price
 - name: Shapton Glass 500 or 1000 stone
   merchant: Amazon UK
   category: Sharpening
   note: Hard, fast enthusiast lane. Better after you know why you want it.
-  url: https://www.amazon.co.uk/s?k=Shapton+Glass+500+1000+whetstone&tag=YOURTAG-21
+  url: https://www.amazon.co.uk/s?k=Shapton+Glass+500+1000+whetstone&tag=adrichops-21
   cta: Check current price
 - name: Plain leather strop
   merchant: Amazon UK
   category: Sharpening
   note: Finishes the job by helping remove the last burr. Light pressure only.
-  url: https://www.amazon.co.uk/s?k=plain+leather+strop+kitchen+knife&tag=YOURTAG-21
+  url: https://www.amazon.co.uk/s?k=plain+leather+strop+kitchen+knife&tag=adrichops-21
   cta: Check current price
 gallery:
 - src: assets/img/shapton-stones.svg

@@ -31,55 +31,55 @@ products:
   merchant: Amazon UK
   category: Knife
   note: Plain, grippy, Swiss-made chef knife often used as the baseline value pick. Replace this search link with the exact ASIN you want to promote.
-  url: https://www.amazon.co.uk/s?k=Victorinox+Fibrox+Pro+8+inch+chef+knife&tag=YOURTAG-21
+  url: https://www.amazon.co.uk/s?k=Victorinox+Fibrox+Pro+8+inch+chef+knife&tag=adrichops-21
   cta: Check current price
 - name: Mercer Culinary Genesis 8 inch chef knife
   merchant: Amazon UK
   category: Knife
   note: Forged German-steel style workhorse with a Santoprene handle. Check the exact handle and bolster version before linking.
-  url: https://www.amazon.co.uk/s?k=Mercer+Culinary+Genesis+8+inch+chef+knife&tag=YOURTAG-21
+  url: https://www.amazon.co.uk/s?k=Mercer+Culinary+Genesis+8+inch+chef+knife&tag=adrichops-21
   cta: Check current price
 - name: Mercer Culinary Renaissance 8 inch chef knife
   merchant: Amazon UK
   category: Knife
   note: A more classic forged Mercer with a shortened bolster and triple-rivet handle. Verify the listing photos before publishing.
-  url: https://www.amazon.co.uk/s?k=Mercer+Culinary+Renaissance+8+inch+chef+knife&tag=YOURTAG-21
+  url: https://www.amazon.co.uk/s?k=Mercer+Culinary+Renaissance+8+inch+chef+knife&tag=adrichops-21
   cta: Check current price
 - name: Tojiro DP 210mm gyuto F-808
   merchant: Amazon UK
   category: Knife
   note: Common first Japanese gyuto candidate. Confirm seller, model number and import details before using a direct affiliate link.
-  url: https://www.amazon.co.uk/s?k=Tojiro+DP+210mm+gyuto+F-808&tag=YOURTAG-21
+  url: https://www.amazon.co.uk/s?k=Tojiro+DP+210mm+gyuto+F-808&tag=adrichops-21
   cta: Check current price
 - name: Global G-2 20cm cooks knife
   merchant: Amazon UK
   category: Knife
   note: One-piece Japanese stainless design with a very distinctive handle. Best linked with a seller you trust.
-  url: https://www.amazon.co.uk/s?k=Global+G-2+cooks+knife+20cm&tag=YOURTAG-21
+  url: https://www.amazon.co.uk/s?k=Global+G-2+cooks+knife+20cm&tag=adrichops-21
   cta: Check current price
 - name: MAC MTH-80 Professional 8 inch chef knife
   merchant: Amazon UK
   category: Knife
   note: Thin Western-handled Japanese-style chef knife. Verify seller identity because popular knives attract confusing listings.
-  url: https://www.amazon.co.uk/s?k=MAC+MTH-80+Professional+8+inch+chef+knife&tag=YOURTAG-21
+  url: https://www.amazon.co.uk/s?k=MAC+MTH-80+Professional+8+inch+chef+knife&tag=adrichops-21
   cta: Check current price
 - name: Wusthof Classic 8 inch chef knife
   merchant: Amazon UK
   category: Knife
   note: Heavy German reference knife with a traditional forged build. Check whether the listing is Classic, Classic Ikon or Gourmet.
-  url: https://www.amazon.co.uk/s?k=Wusthof+Classic+8+inch+chef+knife&tag=YOURTAG-21
+  url: https://www.amazon.co.uk/s?k=Wusthof+Classic+8+inch+chef+knife&tag=adrichops-21
   cta: Check current price
 - name: Henckels Classic 8 inch chef knife
   merchant: Amazon UK
   category: Knife
   note: Straightforward forged German-style daily chef knife. Confirm model name because Henckels ranges overlap on Amazon.
-  url: https://www.amazon.co.uk/s?k=Henckels+Classic+8+inch+chef+knife&tag=YOURTAG-21
+  url: https://www.amazon.co.uk/s?k=Henckels+Classic+8+inch+chef+knife&tag=adrichops-21
   cta: Check current price
 - name: ZWILLING Pro 20cm chef knife
   merchant: Amazon UK
   category: Knife
   note: German forged chef knife positioned as an all-purpose Pro-series option. Check current availability and exact series.
-  url: https://www.amazon.co.uk/s?k=ZWILLING+Pro+20cm+chef+knife&tag=YOURTAG-21
+  url: https://www.amazon.co.uk/s?k=ZWILLING+Pro+20cm+chef+knife&tag=adrichops-21
   cta: Check current price
 gallery:
 - src: assets/img/victorinox-fibrox.svg

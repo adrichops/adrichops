@@ -31,25 +31,25 @@ products:
   merchant: Amazon UK
   category: Sharpening
   note: Useful for German stainless workhorses and softer edges. Use light pressure; this is not a tiny sword fight.
-  url: https://www.amazon.co.uk/s?k=ceramic+honing+rod+kitchen+knife+fine&tag=YOURTAG-21
+  url: https://www.amazon.co.uk/s?k=ceramic+honing+rod+kitchen+knife+fine&tag=adrichops-21
   cta: Check current price
 - name: 1000 grit splash-and-go whetstone
   merchant: Amazon UK
   category: Sharpening
   note: The sensible first stone. Use it to raise and refine a working edge before you start buying exotic rectangles.
-  url: https://www.amazon.co.uk/s?k=1000+grit+whetstone+Shapton+King+Naniwa&tag=YOURTAG-21
+  url: https://www.amazon.co.uk/s?k=1000+grit+whetstone+Shapton+King+Naniwa&tag=adrichops-21
   cta: Check current price
 - name: Plain leather strop or deburring block
   merchant: Amazon UK
   category: Sharpening
   note: For removing the last clingy burr. Helpful, cheap, and less dramatic than buying another knife at midnight.
-  url: https://www.amazon.co.uk/s?k=leather+strop+kitchen+knife+deburring&tag=YOURTAG-21
+  url: https://www.amazon.co.uk/s?k=leather+strop+kitchen+knife+deburring&tag=adrichops-21
   cta: Check current price
 - name: Universal blade guards
   merchant: Amazon UK
   category: Storage
   note: Simple protection for drawers, travel rolls and rental-kitchen horror cupboards.
-  url: https://www.amazon.co.uk/s?k=knife+blade+guards+kitchen+knives&tag=YOURTAG-21
+  url: https://www.amazon.co.uk/s?k=knife+blade+guards+kitchen+knives&tag=adrichops-21
   cta: Check current price
 gallery:
 - src: assets/img/sharpening-basics-new.svg

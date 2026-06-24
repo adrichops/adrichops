@@ -34,25 +34,25 @@ products:
   merchant: Amazon UK
   category: Board
   note: Synthetic rubber board direction for sharp kitchen knives. Confirm dimensions and seller before direct linking.
-  url: https://www.amazon.co.uk/s?k=Asahi+Cookin+Cut+rubber+cutting+board&tag=YOURTAG-21
+  url: https://www.amazon.co.uk/s?k=Asahi+Cookin+Cut+rubber+cutting+board&tag=adrichops-21
   cta: Check current price
 - name: Asahi black rubber cutting board
   merchant: Amazon UK
   category: Board
   note: Darker Asahi-style option if available. Useful for people who dislike visible staining on pale boards.
-  url: https://www.amazon.co.uk/s?k=Asahi+black+rubber+cutting+board&tag=YOURTAG-21
+  url: https://www.amazon.co.uk/s?k=Asahi+black+rubber+cutting+board&tag=adrichops-21
   cta: Check current price
 - name: Neutral dish detergent
   merchant: Amazon UK
   category: Care
   note: Care item for rubber and synthetic boards. Avoid scented chaos if you prep fish or fruit on the same surface.
-  url: https://www.amazon.co.uk/s?k=neutral+dish+detergent+kitchen+cutting+board&tag=YOURTAG-21
+  url: https://www.amazon.co.uk/s?k=neutral+dish+detergent+kitchen+cutting+board&tag=adrichops-21
   cta: Check current price
 - name: Board drying rack
   merchant: Amazon UK
   category: Care
   note: Keeps air around both faces after washing. Boring, cheap, useful.
-  url: https://www.amazon.co.uk/s?k=cutting+board+drying+rack&tag=YOURTAG-21
+  url: https://www.amazon.co.uk/s?k=cutting+board+drying+rack&tag=adrichops-21
   cta: Check current price
 gallery:
 - src: assets/img/asahi-board.svg

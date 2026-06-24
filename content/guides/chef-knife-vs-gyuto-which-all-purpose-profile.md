@@ -31,25 +31,25 @@ products:
   merchant: Amazon UK
   category: Knife
   note: Plain, grippy, Swiss-made chef knife often used as the baseline value pick. Replace this search link with the exact ASIN you want to promote.
-  url: https://www.amazon.co.uk/s?k=Victorinox+Fibrox+Pro+8+inch+chef+knife&tag=YOURTAG-21
+  url: https://www.amazon.co.uk/s?k=Victorinox+Fibrox+Pro+8+inch+chef+knife&tag=adrichops-21
   cta: Check current price
 - name: Tojiro DP 210mm gyuto F-808
   merchant: Amazon UK
   category: Knife
   note: Common first Japanese gyuto candidate. Confirm seller, model number and import details before using a direct affiliate link.
-  url: https://www.amazon.co.uk/s?k=Tojiro+DP+210mm+gyuto+F-808&tag=YOURTAG-21
+  url: https://www.amazon.co.uk/s?k=Tojiro+DP+210mm+gyuto+F-808&tag=adrichops-21
   cta: Check current price
 - name: Wusthof Classic 8 inch chef knife
   merchant: Amazon UK
   category: Knife
   note: Heavy German reference knife with a traditional forged build. Check whether the listing is Classic, Classic Ikon or Gourmet.
-  url: https://www.amazon.co.uk/s?k=Wusthof+Classic+8+inch+chef+knife&tag=YOURTAG-21
+  url: https://www.amazon.co.uk/s?k=Wusthof+Classic+8+inch+chef+knife&tag=adrichops-21
   cta: Check current price
 - name: MAC MTH-80 Professional 8 inch chef knife
   merchant: Amazon UK
   category: Knife
   note: Thin Western-handled Japanese-style chef knife. Verify seller identity because popular knives attract confusing listings.
-  url: https://www.amazon.co.uk/s?k=MAC+MTH-80+Professional+8+inch+chef+knife&tag=YOURTAG-21
+  url: https://www.amazon.co.uk/s?k=MAC+MTH-80+Professional+8+inch+chef+knife&tag=adrichops-21
   cta: Check current price
 gallery:
 - src: assets/img/profiles-map.svg

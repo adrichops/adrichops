@@ -34,31 +34,31 @@ products:
   merchant: Amazon UK
   category: Sharpening
   note: 'Budget-friendly starter direction: 1000 for sharpening, 6000 for refinement after the edge is already sharp.'
-  url: https://www.amazon.co.uk/s?k=King+1000+6000+combination+whetstone&tag=YOURTAG-21
+  url: https://www.amazon.co.uk/s?k=King+1000+6000+combination+whetstone&tag=adrichops-21
   cta: Check current price
 - name: King Deluxe 1000 whetstone
   merchant: Amazon UK
   category: Sharpening
   note: Classic medium-grit waterstone direction with clear feedback. Add a flattening plan.
-  url: https://www.amazon.co.uk/s?k=King+Deluxe+1000+whetstone&tag=YOURTAG-21
+  url: https://www.amazon.co.uk/s?k=King+Deluxe+1000+whetstone&tag=adrichops-21
   cta: Check current price
 - name: Shapton Kuromaku 1000 whetstone
   merchant: Amazon UK
   category: Sharpening
   note: Splash-and-go ceramic stone direction for low-fuss home sharpening.
-  url: https://www.amazon.co.uk/s?k=Shapton+Kuromaku+1000+whetstone&tag=YOURTAG-21
+  url: https://www.amazon.co.uk/s?k=Shapton+Kuromaku+1000+whetstone&tag=adrichops-21
   cta: Check current price
 - name: Flattening plate for whetstones
   merchant: Amazon UK
   category: Sharpening
   note: Keeps the stone flat so the bevel does not become a rounded mystery.
-  url: https://www.amazon.co.uk/s?k=whetstone+flattening+plate+lapping+diamond&tag=YOURTAG-21
+  url: https://www.amazon.co.uk/s?k=whetstone+flattening+plate+lapping+diamond&tag=adrichops-21
   cta: Check current price
 - name: Plain leather strop
   merchant: Amazon UK
   category: Sharpening
   note: Helpful for burr cleanup after stone work. Use very light pressure.
-  url: https://www.amazon.co.uk/s?k=plain+leather+strop+kitchen+knife&tag=YOURTAG-21
+  url: https://www.amazon.co.uk/s?k=plain+leather+strop+kitchen+knife&tag=adrichops-21
   cta: Check current price
 gallery:
 - src: assets/img/king-shapton-stones.svg

@@ -31,13 +31,13 @@ products:
   merchant: Amazon UK
   category: Sharpening
   note: A practical medium stone for most stainless and carbon kitchen knives. Splash, sharpen, dry, move on with your life.
-  url: https://www.amazon.co.uk/s?k=Shapton+Kuromaku+1000+knife+stone&tag=YOURTAG-21
+  url: https://www.amazon.co.uk/s?k=Shapton+Kuromaku+1000+knife+stone&tag=adrichops-21
   cta: Check current price
 - name: Large soft cutting board
   merchant: Amazon UK
   category: Board
   note: Better edge life starts with not cutting on glass, stone, bamboo punishment blocks or vibes.
-  url: https://www.amazon.co.uk/s?k=large+soft+cutting+board+kitchen+knife&tag=YOURTAG-21
+  url: https://www.amazon.co.uk/s?k=large+soft+cutting+board+kitchen+knife&tag=adrichops-21
   cta: Check current price
 gallery:
 - src: assets/img/steel-matrix.svg

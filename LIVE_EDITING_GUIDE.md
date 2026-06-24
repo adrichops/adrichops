@@ -13,7 +13,7 @@
 
 Use article-level `products` in the Markdown frontmatter for links specific to that article. Use `data/products.json` for reusable product records used by the Knife Finder and What's in My Roll.
 
-Never hard-code copied Amazon star ratings, prices or review counts. Replace `YOURTAG-21` with your real Amazon Associates tag only after joining the programme.
+Never hard-code copied Amazon star ratings, prices or review counts. Use `adrichops-21` as the Amazon Associates tracking tag.
 
 
 ## Edit the Kit Builder

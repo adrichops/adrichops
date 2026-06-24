@@ -31,13 +31,13 @@ products:
   merchant: Amazon UK
   category: Knife
   note: A sensible way into modern Japanese stainless knife steel. Not mystical. Very useful. That is the point.
-  url: https://www.amazon.co.uk/s?k=Tojiro+DP+VG10+gyuto&tag=YOURTAG-21
+  url: https://www.amazon.co.uk/s?k=Tojiro+DP+VG10+gyuto&tag=adrichops-21
   cta: Check current price
 - name: Camellia oil for carbon knives
   merchant: Amazon UK
   category: Maintenance
   note: For reactive carbon steels when storage or humidity asks for a little extra help.
-  url: https://www.amazon.co.uk/s?k=camellia+oil+knife+care&tag=YOURTAG-21
+  url: https://www.amazon.co.uk/s?k=camellia+oil+knife+care&tag=adrichops-21
   cta: Check current price
 gallery:
 - src: assets/img/steel-types.svg

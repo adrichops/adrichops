@@ -34,27 +34,27 @@ products:
   category: Board
   note: A gentle board protects thin edges better than glass, stone, bamboo punishment
     slabs or chaos.
-  url: https://www.amazon.co.uk/s?k=large+soft+cutting+board+rubber+wood+kitchen+knife&tag=YOURTAG-21
+  url: https://www.amazon.co.uk/s?k=large+soft+cutting+board+rubber+wood+kitchen+knife&tag=adrichops-21
   cta: Check current price
 - name: Universal blade guards
   merchant: Amazon UK
   category: Storage
   note: Simple protection for drawers, travel rolls and rental-kitchen horror cupboards.
-  url: https://www.amazon.co.uk/s?k=knife+blade+guards+kitchen+knives&tag=YOURTAG-21
+  url: https://www.amazon.co.uk/s?k=knife+blade+guards+kitchen+knives&tag=adrichops-21
   cta: Check current price
 - name: Knife roll for transport
   merchant: Amazon UK
   category: Storage
   note: For safe transport and shared-kitchen control. Also stops knives from becoming
     drawer wildlife.
-  url: https://www.amazon.co.uk/s?k=knife+roll+chef+knives&tag=YOURTAG-21
+  url: https://www.amazon.co.uk/s?k=knife+roll+chef+knives&tag=adrichops-21
   cta: Check current price
 - name: Food-grade mineral oil
   merchant: Amazon UK
   category: Maintenance
   note: For wooden handles, carbon storage routines and boards. A tiny amount does
     the job.
-  url: https://www.amazon.co.uk/s?k=food+grade+mineral+oil+knife+handle+cutting+board&tag=YOURTAG-21
+  url: https://www.amazon.co.uk/s?k=food+grade+mineral+oil+knife+handle+cutting+board&tag=adrichops-21
   cta: Check current price
 gallery:
 - src: assets/img/maintenance-routine.svg

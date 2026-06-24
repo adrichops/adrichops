@@ -35,28 +35,28 @@ products:
   category: Sharpening
   note: 'A compact setup for stainless gyuto, nakiri and Western chef knives: 1000
     for the edge, 3000 for tidy refinement.'
-  url: https://www.amazon.co.uk/s?k=1000+3000+combination+whetstone+kitchen+knife&tag=YOURTAG-21
+  url: https://www.amazon.co.uk/s?k=1000+3000+combination+whetstone+kitchen+knife&tag=adrichops-21
   cta: Check current price
 - name: Plain leather strop or deburring block
   merchant: Amazon UK
   category: Sharpening
   note: For removing the last clingy burr. Helpful, cheap, and less dramatic than
     buying another knife at midnight.
-  url: https://www.amazon.co.uk/s?k=leather+strop+kitchen+knife+deburring&tag=YOURTAG-21
+  url: https://www.amazon.co.uk/s?k=leather+strop+kitchen+knife+deburring&tag=adrichops-21
   cta: Check current price
 - name: Stone flattening plate
   merchant: Amazon UK
   category: Sharpening
   note: Keeps your stone flat enough to make a flat-ish bevel. Dished stones teach
     bad habits.
-  url: https://www.amazon.co.uk/s?k=whetstone+flattening+plate+diamond&tag=YOURTAG-21
+  url: https://www.amazon.co.uk/s?k=whetstone+flattening+plate+diamond&tag=adrichops-21
   cta: Check current price
 - name: Large soft cutting board
   merchant: Amazon UK
   category: Board
   note: A gentle board protects thin edges better than glass, stone, bamboo punishment
     slabs or chaos.
-  url: https://www.amazon.co.uk/s?k=large+soft+cutting+board+rubber+wood+kitchen+knife&tag=YOURTAG-21
+  url: https://www.amazon.co.uk/s?k=large+soft+cutting+board+rubber+wood+kitchen+knife&tag=adrichops-21
   cta: Check current price
 gallery:
 - src: assets/img/honing-sharpening.svg

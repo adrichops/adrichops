@@ -31,25 +31,25 @@ products:
   merchant: Amazon UK
   category: Storage
   note: Simple protection for drawers, travel rolls and rental-kitchen horror cupboards.
-  url: https://www.amazon.co.uk/s?k=knife+blade+guards+kitchen+knives&tag=YOURTAG-21
+  url: https://www.amazon.co.uk/s?k=knife+blade+guards+kitchen+knives&tag=adrichops-21
   cta: Check current price
 - name: Large soft cutting board
   merchant: Amazon UK
   category: Board
   note: A gentle board protects thin edges better than glass, stone, bamboo punishment slabs or chaos.
-  url: https://www.amazon.co.uk/s?k=large+soft+cutting+board+rubber+wood+kitchen+knife&tag=YOURTAG-21
+  url: https://www.amazon.co.uk/s?k=large+soft+cutting+board+rubber+wood+kitchen+knife&tag=adrichops-21
   cta: Check current price
 - name: Food-grade mineral oil
   merchant: Amazon UK
   category: Maintenance
   note: For wooden handles, carbon storage routines and boards. A tiny amount does the job.
-  url: https://www.amazon.co.uk/s?k=food+grade+mineral+oil+knife+handle+cutting+board&tag=YOURTAG-21
+  url: https://www.amazon.co.uk/s?k=food+grade+mineral+oil+knife+handle+cutting+board&tag=adrichops-21
   cta: Check current price
 - name: Camellia oil for carbon steel
   merchant: Amazon UK
   category: Maintenance
   note: Optional storage oil for reactive carbon blades. Wash and dry first; oil is not a permission slip for damp drawers.
-  url: https://www.amazon.co.uk/s?k=camellia+oil+knife+care+carbon+steel&tag=YOURTAG-21
+  url: https://www.amazon.co.uk/s?k=camellia+oil+knife+care+carbon+steel&tag=adrichops-21
   cta: Check current price
 gallery:
 - src: assets/img/boards-storage.svg

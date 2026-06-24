@@ -40,28 +40,28 @@ products:
   category: Board
   note: Edge-friendly synthetic board with wood-core construction. Replace the search
     URL with a specific FSR, FRK or PE listing you trust.
-  url: https://www.amazon.co.uk/s?k=Hasegawa+soft+cutting+board+kitchen+knife&tag=YOURTAG-21
+  url: https://www.amazon.co.uk/s?k=Hasegawa+soft+cutting+board+kitchen+knife&tag=adrichops-21
   cta: Check current price
 - name: Asahi Cookin Cut rubber cutting board
   merchant: Amazon UK
   category: Board
   note: Synthetic rubber board direction for a low-fuss, knife-friendly prep surface.
     Check size and seller before linking directly.
-  url: https://www.amazon.co.uk/s?k=Asahi+Cookin+Cut+rubber+cutting+board&tag=YOURTAG-21
+  url: https://www.amazon.co.uk/s?k=Asahi+Cookin+Cut+rubber+cutting+board&tag=adrichops-21
   cta: Check current price
 - name: Hinoki cutting board
   merchant: Amazon UK
   category: Board
   note: Traditional Japanese cypress option. Best for people who will wet before use
     and dry properly after washing.
-  url: https://www.amazon.co.uk/s?k=hinoki+cutting+board+Shun+Kai+Japanese&tag=YOURTAG-21
+  url: https://www.amazon.co.uk/s?k=hinoki+cutting+board+Shun+Kai+Japanese&tag=adrichops-21
   cta: Check current price
 - name: Cutting board stand or rack
   merchant: Amazon UK
   category: Care
   note: Simple airflow solves a lot of board problems. Damp boards stored flat are
     how sadness grows legs.
-  url: https://www.amazon.co.uk/s?k=cutting+board+drying+rack+stand&tag=YOURTAG-21
+  url: https://www.amazon.co.uk/s?k=cutting+board+drying+rack+stand&tag=adrichops-21
   cta: Check current price
 gallery:
 - src: assets/img/boards-hasegawa-asahi-hinoki.svg

@@ -38,28 +38,28 @@ products:
   category: Board
   note: Common Amazon-searchable hinoki option. Confirm whether the listing is genuine
     and what size you are buying.
-  url: https://www.amazon.co.uk/s?k=Shun+Kai+hinoki+cutting+board&tag=YOURTAG-21
+  url: https://www.amazon.co.uk/s?k=Shun+Kai+hinoki+cutting+board&tag=adrichops-21
   cta: Check current price
 - name: Hitohira hinoki cutting board
   merchant: Amazon UK
   category: Board
   note: Specialist-retailer direction for serious hinoki boards. Use this search link
     as a placeholder only.
-  url: https://www.amazon.co.uk/s?k=Hitohira+hinoki+cutting+board&tag=YOURTAG-21
+  url: https://www.amazon.co.uk/s?k=Hitohira+hinoki+cutting+board&tag=adrichops-21
   cta: Check current price
 - name: Kamenoko tawashi scrub brush
   merchant: Amazon UK
   category: Care
   note: Traditional-style brush direction for gentle board cleaning. Avoid steel wool
     and harsh abrasives.
-  url: https://www.amazon.co.uk/s?k=Kamenoko+tawashi+scrub+brush&tag=YOURTAG-21
+  url: https://www.amazon.co.uk/s?k=Kamenoko+tawashi+scrub+brush&tag=adrichops-21
   cta: Check current price
 - name: Food-grade mineral oil
   merchant: Amazon UK
   category: Care
   note: Optional wood-care item depending on board guidance. Do not oil blindly if
     the maker says leave it untreated.
-  url: https://www.amazon.co.uk/s?k=food+grade+mineral+oil+cutting+board&tag=YOURTAG-21
+  url: https://www.amazon.co.uk/s?k=food+grade+mineral+oil+cutting+board&tag=adrichops-21
   cta: Check current price
 gallery:
 - src: assets/img/hinoki-board.svg

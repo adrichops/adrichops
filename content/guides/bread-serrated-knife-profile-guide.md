@@ -31,13 +31,13 @@ products:
   merchant: Amazon UK
   category: Knife
   note: Serrated knives vary by tooth pattern and length. Replace with a model you have used on crusty bread and tomatoes.
-  url: https://www.amazon.co.uk/s?k=bread+knife+Mercer+Victorinox+Tojiro+10+inch&tag=YOURTAG-21
+  url: https://www.amazon.co.uk/s?k=bread+knife+Mercer+Victorinox+Tojiro+10+inch&tag=adrichops-21
   cta: Check current price
 - name: Universal blade guards
   merchant: Amazon UK
   category: Storage
   note: Cheap edge insurance for drawers, rolls and travel. Measure blade height before buying.
-  url: https://www.amazon.co.uk/s?k=knife+blade+guards+kitchen+knives&tag=YOURTAG-21
+  url: https://www.amazon.co.uk/s?k=knife+blade+guards+kitchen+knives&tag=adrichops-21
   cta: Check current price
 gallery:
 - src: assets/img/small-knives.svg

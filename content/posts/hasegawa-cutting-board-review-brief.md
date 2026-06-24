@@ -38,27 +38,27 @@ products:
   category: Board
   note: Soft Hasegawa lane for thin Japanese knives. Confirm model code, size and
     seller before publishing a direct ASIN.
-  url: https://www.amazon.co.uk/s?k=Hasegawa+Pro+Soft+cutting+board+FSR&tag=YOURTAG-21
+  url: https://www.amazon.co.uk/s?k=Hasegawa+Pro+Soft+cutting+board+FSR&tag=adrichops-21
   cta: Check current price
 - name: Hasegawa PE cutting board
   merchant: Amazon UK
   category: Board
   note: Harder Hasegawa direction for people who want less grab and more general-use
     durability.
-  url: https://www.amazon.co.uk/s?k=Hasegawa+PE+cutting+board+kitchen&tag=YOURTAG-21
+  url: https://www.amazon.co.uk/s?k=Hasegawa+PE+cutting+board+kitchen&tag=adrichops-21
   cta: Check current price
 - name: Hasegawa board scraper
   merchant: Amazon UK
   category: Care
   note: Useful if you choose a board that benefits from maker-specific cleaning accessories.
     Check compatibility first.
-  url: https://www.amazon.co.uk/s?k=Hasegawa+cutting+board+scraper&tag=YOURTAG-21
+  url: https://www.amazon.co.uk/s?k=Hasegawa+cutting+board+scraper&tag=adrichops-21
   cta: Check current price
 - name: Cutting board lifters or feet
   merchant: Amazon UK
   category: Care
   note: Airflow and stability help large boards dry and stay planted during prep.
-  url: https://www.amazon.co.uk/s?k=Hasegawa+cutting+board+lifter+feet&tag=YOURTAG-21
+  url: https://www.amazon.co.uk/s?k=Hasegawa+cutting+board+lifter+feet&tag=adrichops-21
   cta: Check current price
 gallery:
 - src: assets/img/hasegawa-board.svg

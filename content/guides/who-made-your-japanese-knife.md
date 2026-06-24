@@ -31,25 +31,25 @@ products:
   merchant: Amazon UK
   category: Sharpening
   note: 'A compact setup for stainless gyuto, nakiri and Western chef knives: 1000 for the edge, 3000 for tidy refinement.'
-  url: https://www.amazon.co.uk/s?k=1000+3000+combination+whetstone+kitchen+knife&tag=YOURTAG-21
+  url: https://www.amazon.co.uk/s?k=1000+3000+combination+whetstone+kitchen+knife&tag=adrichops-21
   cta: Check current price
 - name: Plain leather strop or deburring block
   merchant: Amazon UK
   category: Sharpening
   note: For removing the last clingy burr. Helpful, cheap, and less dramatic than buying another knife at midnight.
-  url: https://www.amazon.co.uk/s?k=leather+strop+kitchen+knife+deburring&tag=YOURTAG-21
+  url: https://www.amazon.co.uk/s?k=leather+strop+kitchen+knife+deburring&tag=adrichops-21
   cta: Check current price
 - name: Camellia oil for carbon steel
   merchant: Amazon UK
   category: Maintenance
   note: Optional storage oil for reactive carbon blades. Wash and dry first; oil is not a permission slip for damp drawers.
-  url: https://www.amazon.co.uk/s?k=camellia+oil+knife+care+carbon+steel&tag=YOURTAG-21
+  url: https://www.amazon.co.uk/s?k=camellia+oil+knife+care+carbon+steel&tag=adrichops-21
   cta: Check current price
 - name: Universal blade guards
   merchant: Amazon UK
   category: Storage
   note: Simple protection for drawers, travel rolls and rental-kitchen horror cupboards.
-  url: https://www.amazon.co.uk/s?k=knife+blade+guards+kitchen+knives&tag=YOURTAG-21
+  url: https://www.amazon.co.uk/s?k=knife+blade+guards+kitchen+knives&tag=adrichops-21
   cta: Check current price
 gallery:
 - src: assets/img/craft-map.svg

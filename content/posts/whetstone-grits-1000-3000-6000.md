@@ -35,27 +35,27 @@ products:
   category: Sharpening
   note: 'A compact setup for stainless gyuto, nakiri and Western chef knives: 1000
     for the edge, 3000 for tidy refinement.'
-  url: https://www.amazon.co.uk/s?k=1000+3000+combination+whetstone+kitchen+knife&tag=YOURTAG-21
+  url: https://www.amazon.co.uk/s?k=1000+3000+combination+whetstone+kitchen+knife&tag=adrichops-21
   cta: Check current price
 - name: 6000 grit finishing stone
   merchant: Amazon UK
   category: Sharpening
   note: Optional for refined edges and specific knives. Learn 1000/3000 first; then
     get fancy responsibly.
-  url: https://www.amazon.co.uk/s?k=6000+grit+whetstone+kitchen+knife&tag=YOURTAG-21
+  url: https://www.amazon.co.uk/s?k=6000+grit+whetstone+kitchen+knife&tag=adrichops-21
   cta: Check current price
 - name: Diamond flattening plate
   merchant: Amazon UK
   category: Sharpening
   note: Keeps stones flat. Boring purchase, excellent long-term decision.
-  url: https://www.amazon.co.uk/s?k=diamond+flattening+plate+whetstone&tag=YOURTAG-21
+  url: https://www.amazon.co.uk/s?k=diamond+flattening+plate+whetstone&tag=adrichops-21
   cta: Check current price
 - name: Plain leather strop or deburring block
   merchant: Amazon UK
   category: Sharpening
   note: For removing the last clingy burr. Helpful, cheap, and less dramatic than
     buying another knife at midnight.
-  url: https://www.amazon.co.uk/s?k=leather+strop+kitchen+knife+deburring&tag=YOURTAG-21
+  url: https://www.amazon.co.uk/s?k=leather+strop+kitchen+knife+deburring&tag=adrichops-21
   cta: Check current price
 gallery:
 - src: assets/img/sharpening-basics-new.svg

@@ -34,21 +34,21 @@ products:
   category: Knife
   note: Placeholder search link for vegetable knives. Replace with a specific model
     after you photograph and use it.
-  url: https://www.amazon.co.uk/s?k=nakiri+knife+165mm+stainless&tag=YOURTAG-21
+  url: https://www.amazon.co.uk/s?k=nakiri+knife+165mm+stainless&tag=adrichops-21
   cta: Check current price
 - name: Large soft cutting board
   merchant: Amazon UK
   category: Maintenance
   note: A bigger, kinder board protects edges better than a small glass or marble
     surface.
-  url: https://www.amazon.co.uk/s?k=large+cutting+board+rubber+wood+kitchen+knife&tag=YOURTAG-21
+  url: https://www.amazon.co.uk/s?k=large+cutting+board+rubber+wood+kitchen+knife&tag=adrichops-21
   cta: Check current price
 - name: Universal blade guards
   merchant: Amazon UK
   category: Storage
   note: Cheap edge insurance for drawers, rolls and travel. Measure blade height before
     buying.
-  url: https://www.amazon.co.uk/s?k=knife+blade+guards+kitchen+knives&tag=YOURTAG-21
+  url: https://www.amazon.co.uk/s?k=knife+blade+guards+kitchen+knives&tag=adrichops-21
   cta: Check current price
 gallery:
 - src: assets/img/profiles-map.svg

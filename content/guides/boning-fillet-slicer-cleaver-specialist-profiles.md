@@ -30,19 +30,19 @@ products:
   merchant: Amazon UK
   category: Knife
   note: Specialist blade placeholder for trimming meat and fish. Keep it separate from chef knife recommendations.
-  url: https://www.amazon.co.uk/s?k=boning+knife+fillet+knife+Victorinox+Mercer&tag=YOURTAG-21
+  url: https://www.amazon.co.uk/s?k=boning+knife+fillet+knife+Victorinox+Mercer&tag=adrichops-21
   cta: Check current price
 - name: Chinese cleaver and slicer shortlist
   merchant: Amazon UK
   category: Knife
   note: Use only for vegetable slicers and Chinese chef knives unless the listing is clearly a heavy meat cleaver.
-  url: https://www.amazon.co.uk/s?k=Chinese+chef+knife+cai+dao+CCK+Mercer&tag=YOURTAG-21
+  url: https://www.amazon.co.uk/s?k=Chinese+chef+knife+cai+dao+CCK+Mercer&tag=adrichops-21
   cta: Check current price
 - name: Universal blade guards
   merchant: Amazon UK
   category: Storage
   note: Cheap edge insurance for drawers, rolls and travel. Measure blade height before buying.
-  url: https://www.amazon.co.uk/s?k=knife+blade+guards+kitchen+knives&tag=YOURTAG-21
+  url: https://www.amazon.co.uk/s?k=knife+blade+guards+kitchen+knives&tag=adrichops-21
   cta: Check current price
 gallery:
 - src: assets/img/profiles-map.svg

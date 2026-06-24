@@ -37,28 +37,28 @@ products:
   category: Knife
   note: Plain, grippy, Swiss-made chef knife often used as the baseline value pick.
     Replace this search link with the exact ASIN you want to promote.
-  url: https://www.amazon.co.uk/s?k=Victorinox+Fibrox+Pro+8+inch+chef+knife&tag=YOURTAG-21
+  url: https://www.amazon.co.uk/s?k=Victorinox+Fibrox+Pro+8+inch+chef+knife&tag=adrichops-21
   cta: Check current price
 - name: Tojiro DP 210mm gyuto F-808
   merchant: Amazon UK
   category: Knife
   note: Common first Japanese gyuto candidate. Confirm seller, model number and import
     details before using a direct affiliate link.
-  url: https://www.amazon.co.uk/s?k=Tojiro+DP+210mm+gyuto+F-808&tag=YOURTAG-21
+  url: https://www.amazon.co.uk/s?k=Tojiro+DP+210mm+gyuto+F-808&tag=adrichops-21
   cta: Check current price
 - name: Victorinox Swiss Classic paring knife
   merchant: Amazon UK
   category: Knife
   note: Small inexpensive knife category where sharpness, handle comfort and easy
     replacement matter more than collector appeal.
-  url: https://www.amazon.co.uk/s?k=Victorinox+Swiss+Classic+paring+knife&tag=YOURTAG-21
+  url: https://www.amazon.co.uk/s?k=Victorinox+Swiss+Classic+paring+knife&tag=adrichops-21
   cta: Check current price
 - name: Bread knife shortlist
   merchant: Amazon UK
   category: Knife
   note: Serrated knives vary by tooth pattern and length. Replace with a model you
     have used on crusty bread and tomatoes.
-  url: https://www.amazon.co.uk/s?k=bread+knife+Mercer+Victorinox+Tojiro+10+inch&tag=YOURTAG-21
+  url: https://www.amazon.co.uk/s?k=bread+knife+Mercer+Victorinox+Tojiro+10+inch&tag=adrichops-21
   cta: Check current price
 gallery:
 - src: assets/img/chef-vs-gyuto.svg

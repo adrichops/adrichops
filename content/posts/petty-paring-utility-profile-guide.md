@@ -34,13 +34,13 @@ products:
   category: Knife
   note: Small inexpensive knife category where sharpness, handle comfort and easy
     replacement matter more than collector appeal.
-  url: https://www.amazon.co.uk/s?k=Victorinox+Swiss+Classic+paring+knife&tag=YOURTAG-21
+  url: https://www.amazon.co.uk/s?k=Victorinox+Swiss+Classic+paring+knife&tag=adrichops-21
   cta: Check current price
 - name: 120-150mm petty knife shortlist
   merchant: Amazon UK
   category: Knife
   note: Use for a compact board knife recommendation once you add hands-on notes.
-  url: https://www.amazon.co.uk/s?k=petty+knife+150mm+Japanese+stainless&tag=YOURTAG-21
+  url: https://www.amazon.co.uk/s?k=petty+knife+150mm+Japanese+stainless&tag=adrichops-21
   cta: Check current price
 gallery:
 - src: assets/img/profiles-map.svg
