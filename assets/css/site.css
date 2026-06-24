@@ -65,10 +65,8 @@ button, input, select { font: inherit; color: inherit; }
   gap: 18px;
   align-items: center;
 }
-.brand { display: inline-flex; align-items: center; gap: 12px; font-weight: 900; letter-spacing: -.06em; font-size: 1.12rem; }
-.brand-mark { width: 34px; height: 34px; border-radius: 12px; background: var(--ink); color: var(--bg); display: grid; place-items: center; position: relative; overflow: hidden; flex: 0 0 auto; }
-.brand-mark:before { content: ""; width: 22px; height: 3px; border-radius: 99px; background: currentColor; transform: rotate(-24deg); box-shadow: 7px 3px 0 color-mix(in srgb, currentColor 68%, transparent); }
-.brand-word { line-height: 1; }
+.brand { display: inline-flex; align-items: center; min-width: 0; }
+.brand-logo { display: block; width: clamp(176px, 18vw, 246px); height: auto; max-height: 40px; object-fit: contain; object-position: left center; }
 .nav-tabs { display: flex; justify-content: center; gap: 4px; flex-wrap: wrap; min-width: 0; }
 .nav-tabs a { min-height: 40px; display: inline-flex; align-items: center; padding: 8px 11px; border-radius: 999px; font-size: .76rem; font-weight: 800; color: var(--muted); white-space: nowrap; }
 .nav-tabs a[aria-current="page"], .nav-tabs a:hover { background: var(--paper-2); color: var(--ink); }
@@ -265,8 +263,7 @@ p { margin: 0; }
 
 @media (max-width: 1060px) {
   .header-inner { grid-template-columns: auto minmax(0,1fr) auto; gap: 12px; }
-  .brand { min-width: 0; }
-  .brand-word { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .brand-logo { width: clamp(156px, 34vw, 216px); max-height: 36px; }
   .header-actions { grid-column: 3; }
   .menu-button { display: grid; }
   .nav-tabs {
@@ -328,7 +325,7 @@ p { margin: 0; }
 @media (max-width: 720px) {
   body { font-size: 15px; }
   .header-inner { padding: 12px 14px; gap: 10px; }
-  .brand-word { font-size: 1rem; }
+  .brand-logo { width: clamp(138px, 42vw, 188px); max-height: 32px; }
   .hero { padding-top: 28px; }
   h1 { font-size: clamp(2.6rem, 16vw, 4.6rem); }
   .entry-grid, .article-card-grid, .maintenance-kit, .decision-box, .product-grid, .deck-nav { grid-template-columns: 1fr; }

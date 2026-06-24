@@ -1,17 +1,24 @@
 (function () {
   const root = document.documentElement;
-  const storedTheme = localStorage.getItem('adrichops-theme');
-  if (storedTheme) root.setAttribute('data-theme', storedTheme);
+  const storedTheme = localStorage.getItem('adrichops-theme') || 'dark';
+  root.setAttribute('data-theme', storedTheme);
   const themeButton = document.querySelector('[data-theme-toggle]');
+  const brandLogo = document.querySelector('[data-brand-logo]');
+  const themeFavicon = document.querySelector('[data-theme-favicon]');
   const moon = '<svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 15.8A8.5 8.5 0 0 1 8.2 4 7 7 0 1 0 20 15.8Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
   const sun = '<svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2"/><path d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32 1.41 1.41M2 12h2m16 0h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>';
-  function syncThemeIcon(){ if(themeButton) themeButton.innerHTML = root.getAttribute('data-theme') === 'dark' ? sun : moon; }
-  syncThemeIcon();
+  function syncThemeAssets(){
+    const isDark = root.getAttribute('data-theme') === 'dark';
+    if(themeButton) themeButton.innerHTML = isDark ? sun : moon;
+    if(brandLogo) brandLogo.src = isDark ? brandLogo.dataset.logoDark : brandLogo.dataset.logoLight;
+    if(themeFavicon) themeFavicon.href = isDark ? '/assets/brand/favicon-dark.png' : '/assets/brand/favicon-light.png';
+  }
+  syncThemeAssets();
   if (themeButton) themeButton.addEventListener('click', () => {
     const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
     root.setAttribute('data-theme', next);
     localStorage.setItem('adrichops-theme', next);
-    syncThemeIcon();
+    syncThemeAssets();
   });
 
   const navToggle = document.querySelector('[data-nav-toggle]');

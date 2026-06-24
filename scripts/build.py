@@ -93,7 +93,7 @@ def head(title, desc, route='/', image='/assets/img/hero-gyuto.svg', schema=None
     canonical = BASE_URL.rstrip('/') + route
     schema_tag = f'<script type="application/ld+json">{json.dumps(schema, ensure_ascii=False)}</script>' if schema else ''
     return f'''<!doctype html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -109,7 +109,8 @@ def head(title, desc, route='/', image='/assets/img/hero-gyuto.svg', schema=None
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800;900&display=swap" rel="stylesheet">
-<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/brand/favicon-dark.png" type="image/png" data-theme-favicon>
+<link rel="apple-touch-icon" href="/assets/brand/favicon-dark.png">
 <link rel="stylesheet" href="/assets/css/site.css">
 {schema_tag}
 </head>
@@ -119,7 +120,7 @@ def header(current=''):
     nav = ''.join(f'<a href="{href}" {"aria-current=\"page\"" if current==label else ""}>{esc(label)}</a>' for href,label in NAV)
     return f'''<header class="site-header">
   <div class="header-inner">
-    <a class="brand" href="/"><span class="brand-mark" aria-hidden="true"></span><span class="brand-word">adrichops</span></a>
+    <a class="brand" href="/" aria-label="Adrichops home"><img class="brand-logo" src="/assets/brand/logo-dark.png" alt="Adrichops" width="960" height="97" data-brand-logo data-logo-dark="/assets/brand/logo-dark.png" data-logo-light="/assets/brand/logo-light.png"></a>
     <nav class="nav-tabs" id="primary-navigation" data-nav-menu aria-label="Primary navigation">{nav}</nav>
     <div class="header-actions">
       <button class="icon-button menu-button" type="button" data-nav-toggle aria-label="Open navigation menu" aria-expanded="false" aria-controls="primary-navigation"><span aria-hidden="true"></span></button>
