@@ -14,6 +14,42 @@
     syncThemeIcon();
   });
 
+  const navToggle = document.querySelector('[data-nav-toggle]');
+  const navMenu = document.querySelector('[data-nav-menu]');
+  const navLinks = navMenu ? [...navMenu.querySelectorAll('a')] : [];
+  const navScrim = document.createElement('button');
+  navScrim.type = 'button';
+  navScrim.className = 'nav-scrim';
+  navScrim.setAttribute('aria-label', 'Close navigation menu');
+  document.body.appendChild(navScrim);
+
+  function openNav(){
+    if (!navToggle || !navMenu) return;
+    navMenu.classList.add('is-open');
+    document.body.classList.add('nav-open');
+    navToggle.setAttribute('aria-expanded', 'true');
+    navToggle.setAttribute('aria-label', 'Close navigation menu');
+    setTimeout(() => navLinks[0] && navLinks[0].focus(), 0);
+  }
+  function closeNav(restoreFocus){
+    if (!navToggle || !navMenu) return;
+    navMenu.classList.remove('is-open');
+    document.body.classList.remove('nav-open');
+    navToggle.setAttribute('aria-expanded', 'false');
+    navToggle.setAttribute('aria-label', 'Open navigation menu');
+    if (restoreFocus) navToggle.focus();
+  }
+  function toggleNav(){
+    const isOpen = navToggle && navToggle.getAttribute('aria-expanded') === 'true';
+    isOpen ? closeNav(false) : openNav();
+  }
+  if (navToggle) navToggle.addEventListener('click', toggleNav);
+  navScrim.addEventListener('click', () => closeNav(true));
+  navLinks.forEach(link => link.addEventListener('click', () => closeNav(false)));
+  window.matchMedia('(min-width: 1061px)').addEventListener('change', e => {
+    if (e.matches) closeNav(false);
+  });
+
   const searchButton = document.querySelector('[data-search-open]');
   const dialog = document.querySelector('[data-search-dialog]');
   const closeButton = document.querySelector('[data-search-close]');
@@ -27,6 +63,7 @@
   }
   function openSearch(){
     if (!dialog) return;
+    closeNav(false);
     dialog.classList.add('is-open');
     dialog.setAttribute('aria-hidden', 'false');
     loadPosts().then(() => { renderSearch(''); setTimeout(() => input && input.focus(), 0); });
@@ -52,7 +89,7 @@
   if (input) input.addEventListener('input', e => renderSearch(e.target.value));
   window.addEventListener('keydown', e => {
     if (e.key === '/' && !/input|textarea|select/i.test(document.activeElement.tagName)) { e.preventDefault(); openSearch(); }
-    if (e.key === 'Escape') closeSearch();
+    if (e.key === 'Escape') { closeSearch(); closeNav(true); }
   });
 
   document.querySelectorAll('[data-save-post]').forEach(btn => {

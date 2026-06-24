@@ -120,8 +120,9 @@ def header(current=''):
     return f'''<header class="site-header">
   <div class="header-inner">
     <a class="brand" href="/"><span class="brand-mark" aria-hidden="true"></span><span class="brand-word">adrichops</span></a>
-    <nav class="nav-tabs" aria-label="Primary navigation">{nav}</nav>
+    <nav class="nav-tabs" id="primary-navigation" data-nav-menu aria-label="Primary navigation">{nav}</nav>
     <div class="header-actions">
+      <button class="icon-button menu-button" type="button" data-nav-toggle aria-label="Open navigation menu" aria-expanded="false" aria-controls="primary-navigation"><span aria-hidden="true"></span></button>
       <button class="icon-button" type="button" data-search-open aria-label="Search"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2"/><path d="m20 20-3.5-3.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
       <button class="icon-button" type="button" data-theme-toggle aria-label="Toggle light or dark theme"></button>
     </div>
