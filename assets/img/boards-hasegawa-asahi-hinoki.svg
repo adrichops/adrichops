@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 820" role="img" aria-labelledby="title desc">
+  <title>Hasegawa Asahi hinoki board guide</title>
+  <desc>Minimal editorial knife and kitchen gear illustration for Adrichops.</desc>
+  <rect width="1200" height="820" rx="64" fill="#0f1110"/>
+  <path d="M96 660H1104M96 178H1104M210 92V728M990 92V728" stroke="#1d221f" stroke-width="2"/>
+  <circle cx="1040" cy="150" r="9" fill="#d73b2f"/>
+  
+  <rect x="180" y="280" width="230" height="270" rx="28" fill="none" stroke="#e8e0d2" stroke-width="8"/>
+  <rect x="485" y="260" width="230" height="310" rx="28" fill="none" stroke="#8c928b" stroke-width="8"/>
+  <rect x="790" y="285" width="230" height="260" rx="26" fill="none" stroke="#e8e0d2" stroke-width="8"/>
+  <path d="M222 340H368M222 398H368M222 456H368" stroke="#2b302c" stroke-width="4"/>
+  <path d="M527 340H673M527 405H673M527 470H673" stroke="#2b302c" stroke-width="4"/>
+  <path d="M830 352C880 332 930 332 980 352M830 420C884 396 930 396 980 420M830 488C884 462 930 462 980 488" fill="none" stroke="#2b302c" stroke-width="4"/>
+  <path d="M230 618H970" stroke="#d73b2f" stroke-width="10" stroke-linecap="round"/>
+  <path d="M228 618L790 574L970 618" fill="none" stroke="#e8e0d2" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="198" y="234" fill="#e8e0d2" font-family="Arial, sans-serif" font-size="30" font-weight="800">HASEGAWA</text>
+  <text x="538" y="222" fill="#e8e0d2" font-family="Arial, sans-serif" font-size="30" font-weight="800">ASAHI</text>
+  <text x="846" y="239" fill="#e8e0d2" font-family="Arial, sans-serif" font-size="30" font-weight="800">HINOKI</text>
+</svg>
+

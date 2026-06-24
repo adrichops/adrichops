@@ -1,0 +1,377 @@
+{
+  "version": "1.0",
+  "questions": [
+    {
+      "id": "task",
+      "label": "What are you mostly doing?",
+      "options": [
+        {
+          "value": "all-purpose",
+          "label": "All-purpose cooking"
+        },
+        {
+          "value": "vegetable",
+          "label": "Vegetable prep"
+        },
+        {
+          "value": "small-prep",
+          "label": "Small prep and fruit"
+        },
+        {
+          "value": "protein",
+          "label": "Protein trimming and slicing"
+        },
+        {
+          "value": "sharpening",
+          "label": "Building a sharpening setup"
+        }
+      ]
+    },
+    {
+      "id": "care",
+      "label": "How much maintenance do you want?",
+      "options": [
+        {
+          "value": "low",
+          "label": "Low fuss"
+        },
+        {
+          "value": "balanced",
+          "label": "Balanced"
+        },
+        {
+          "value": "curious",
+          "label": "I am curious about carbon steel"
+        }
+      ]
+    },
+    {
+      "id": "budget",
+      "label": "Budget posture",
+      "options": [
+        {
+          "value": "value",
+          "label": "Value"
+        },
+        {
+          "value": "mid",
+          "label": "Mid-range"
+        },
+        {
+          "value": "premium",
+          "label": "Premium"
+        }
+      ]
+    }
+  ],
+  "rules": [
+    {
+      "id": "low-fuss-vegetable-nakiri",
+      "match": {
+        "task": "vegetable",
+        "care": "low"
+      },
+      "title": "VG10 stainless-clad nakiri, 165mm",
+      "profile": "Nakiri",
+      "steel": "VG10 stainless-clad or simple stainless",
+      "length": "165mm",
+      "maintenanceLevel": "Low",
+      "why": "A nakiri gives you a flat, confident vegetable profile. VG10 stainless-clad or simple stainless keeps rust anxiety low while still taking a crisp edge.",
+      "avoid": "Do not use it for bones, twisting through squash, frozen food or pretending it is a cleaver. Rectangle does not mean crowbar.",
+      "maintenanceKit": [
+        {
+          "label": "Stone",
+          "text": "Shapton Kuromaku/Pro 1000 for fast splash-and-go sharpening, or King 1000/6000 if budget and feedback matter more than speed.",
+          "productIds": [
+            "shapton-kuromaku-1000",
+            "king-combo-stone"
+          ]
+        },
+        {
+          "label": "Strop / deburring",
+          "text": "Leather strop or deburring block after stone work. Use it to clean the apex, not to avoid making one.",
+          "productIds": [
+            "leather-strop"
+          ]
+        },
+        {
+          "label": "Board",
+          "text": "Hasegawa or Asahi if you want a synthetic edge-friendly board; hinoki if you accept more care.",
+          "productIds": [
+            "hasegawa-soft-board",
+            "asahi-rubber-board",
+            "hinoki-board"
+          ]
+        },
+        {
+          "label": "Storage",
+          "text": "Blade guard or saya. Nakiri edges are thin and drawer chaos is undefeated.",
+          "productIds": [
+            "blade-guard"
+          ]
+        }
+      ],
+      "articleIds": [
+        "nakiri-profile-guide",
+        "vg10-ginsan-aogami-shirogami-guide",
+        "hasegawa-asahi-hinoki-cutting-board-guide",
+        "king-vs-shapton-starter-stones-guide"
+      ]
+    },
+    {
+      "id": "low-fuss-all-purpose-gyuto",
+      "match": {
+        "task": "all-purpose",
+        "care": "low"
+      },
+      "title": "Stainless gyuto or western chef knife, 180-210mm",
+      "profile": "Gyuto / chef knife",
+      "steel": "VG10, AUS-8, X50CrMoV15 or other stainless",
+      "length": "180-210mm",
+      "maintenanceLevel": "Low",
+      "why": "This is the practical lane: enough length for onions, protein and herbs, without carbon-steel homework. Tojiro DP, MAC, Global, Victorinox and German classics all live somewhere here.",
+      "avoid": "Skip very thick bolsters if you want easier sharpening, and skip very thin lasers if your board technique is still enthusiastic.",
+      "maintenanceKit": [
+        {
+          "label": "Stone",
+          "text": "Shapton 1000 for a fast one-stone routine; King if you want lower cost and more soaking-stone feel.",
+          "productIds": [
+            "shapton-kuromaku-1000",
+            "king-combo-stone"
+          ]
+        },
+        {
+          "label": "Board",
+          "text": "A large soft board matters more than another handle material debate.",
+          "productIds": [
+            "hasegawa-soft-board",
+            "asahi-rubber-board"
+          ]
+        },
+        {
+          "label": "Storage",
+          "text": "Use a guard, strip or roll. Edges and roommates both behave better with boundaries.",
+          "productIds": [
+            "blade-guard"
+          ]
+        }
+      ],
+      "articleIds": [
+        "chef-knife-vs-gyuto-which-all-purpose-profile",
+        "amazon-chef-knife-shortlist-what-to-buy-first",
+        "tojiro-dp-210mm-gyuto-shortlist-review",
+        "mac-mth80-shortlist-review"
+      ]
+    },
+    {
+      "id": "balanced-vegetable-santoku-nakiri",
+      "match": {
+        "task": "vegetable",
+        "care": "balanced"
+      },
+      "title": "Stainless santoku or nakiri, 165-180mm",
+      "profile": "Santoku / nakiri",
+      "steel": "Ginsan, VG10 or Swedish stainless",
+      "length": "165-180mm",
+      "maintenanceLevel": "Moderate-low",
+      "why": "For mixed home cooking, a santoku gives more tip versatility while a nakiri makes vegetable prep cleaner and more fun.",
+      "avoid": "Avoid buying purely by Damascus pattern. The board, grind and heat treatment will matter after the Instagram moment expires.",
+      "maintenanceKit": [
+        {
+          "label": "Stone",
+          "text": "A clean 1000 grit edge is enough for most vegetables; add 3000 only when you can deburr reliably.",
+          "productIds": [
+            "shapton-kuromaku-1000"
+          ]
+        },
+        {
+          "label": "Strop",
+          "text": "Strop lightly. Heavy stropping rounds edges and creates confidence without cutting performance.",
+          "productIds": [
+            "leather-strop"
+          ]
+        },
+        {
+          "label": "Board",
+          "text": "Hasegawa, Asahi or hinoki depending on care tolerance.",
+          "productIds": [
+            "hasegawa-soft-board",
+            "asahi-rubber-board",
+            "hinoki-board"
+          ]
+        }
+      ],
+      "articleIds": [
+        "santoku-profile-guide",
+        "nakiri-profile-guide",
+        "vg10-ginsan-aogami-shirogami-guide"
+      ]
+    },
+    {
+      "id": "carbon-curious-all-purpose-sanjo",
+      "match": {
+        "task": "all-purpose",
+        "care": "curious"
+      },
+      "title": "Carbon or semi-stainless Sanjo gyuto, 210mm",
+      "profile": "Gyuto",
+      "steel": "White #2, Blue #2, SKD or similar",
+      "length": "210mm",
+      "maintenanceLevel": "Medium-high",
+      "why": "A Yoshikane, Wakui or Toyama-style lane gives you food release, grind character and the joy of wiping your knife like a responsible adult.",
+      "avoid": "Skip this if you will leave lemon juice on the edge or store it wet. Carbon steel is not haunted; it is just reactive.",
+      "maintenanceKit": [
+        {
+          "label": "Stone",
+          "text": "1000 grit for edge reset, 3000-6000 only after you control pressure and deburring.",
+          "productIds": [
+            "shapton-kuromaku-1000",
+            "king-combo-stone"
+          ]
+        },
+        {
+          "label": "Board",
+          "text": "Use an edge-friendly board. Hard glass, bamboo and marble are knife sadness with a countertop.",
+          "productIds": [
+            "hasegawa-soft-board",
+            "hinoki-board"
+          ]
+        },
+        {
+          "label": "Storage",
+          "text": "Dry fully before the guard. Carbon plus damp saya equals orange regret.",
+          "productIds": [
+            "blade-guard"
+          ]
+        }
+      ],
+      "articleIds": [
+        "maker-spotlight-yoshikane-hamono",
+        "maker-spotlight-wakui",
+        "maker-spotlight-toyama-noborikoi",
+        "stainless-carbon-steel-care-patina-rust"
+      ]
+    },
+    {
+      "id": "small-prep-petty",
+      "match": {
+        "task": "small-prep"
+      },
+      "title": "Stainless petty, 120-150mm",
+      "profile": "Petty",
+      "steel": "Stainless or stainless-clad",
+      "length": "120-150mm",
+      "maintenanceLevel": "Low to medium",
+      "why": "A petty is the quiet knife that does citrus, herbs, garlic, trimming and board-adjacent work without making you unsheathe a 240mm personality test.",
+      "avoid": "Do not use it as a paring knife in the air unless the handle and control feel right.",
+      "maintenanceKit": [
+        {
+          "label": "Stone",
+          "text": "Same 1000 stone as your main knife. Do not buy a tiny stone for a tiny knife.",
+          "productIds": [
+            "shapton-kuromaku-1000",
+            "king-combo-stone"
+          ]
+        },
+        {
+          "label": "Board",
+          "text": "Small knives still deserve a sane board.",
+          "productIds": [
+            "hasegawa-soft-board",
+            "asahi-rubber-board"
+          ]
+        }
+      ],
+      "articleIds": [
+        "petty-paring-utility-profile-guide",
+        "boards-storage-and-edge-life"
+      ]
+    },
+    {
+      "id": "protein-slicer-specialist",
+      "match": {
+        "task": "protein"
+      },
+      "title": "Sujihiki or western slicer, length only if your board allows it",
+      "profile": "Slicer / sujihiki",
+      "steel": "Stainless or stainless-clad for low fuss",
+      "length": "240-270mm if space allows",
+      "maintenanceLevel": "Low to medium",
+      "why": "Long, clean pulls beat sawing. Buy the length your board and kitchen can actually support.",
+      "avoid": "Skip if you mainly dice onions. A slicer is not a personality replacement for an all-purpose knife.",
+      "maintenanceKit": [
+        {
+          "label": "Stone",
+          "text": "A clean 1000 edge matters; polishing higher is optional and food-dependent.",
+          "productIds": [
+            "shapton-kuromaku-1000"
+          ]
+        },
+        {
+          "label": "Board",
+          "text": "Use a board long enough for full strokes.",
+          "productIds": [
+            "hasegawa-soft-board",
+            "asahi-rubber-board"
+          ]
+        },
+        {
+          "label": "Storage",
+          "text": "Long blades need sleeves or a proper roll.",
+          "productIds": [
+            "blade-guard"
+          ]
+        }
+      ],
+      "articleIds": [
+        "boning-fillet-slicer-cleaver-specialist-profiles",
+        "boards-storage-and-edge-life"
+      ]
+    },
+    {
+      "id": "sharpening-starter-setup",
+      "match": {
+        "task": "sharpening"
+      },
+      "title": "One real stone, one strop, one boring routine",
+      "profile": "Sharpening setup",
+      "steel": "Works for most kitchen steels",
+      "length": "N/A",
+      "maintenanceLevel": "Practice-based",
+      "why": "Start with a 1000 grit stone, learn burr formation and removal, then add refinement. Buying six stones before you can deburr is how drawers become geology museums.",
+      "avoid": "Avoid mystery angle gadgets if they stop you learning pressure, contact and burr behavior.",
+      "maintenanceKit": [
+        {
+          "label": "Stone",
+          "text": "Shapton 1000 for splash-and-go speed; King 1000/6000 for budget and feedback.",
+          "productIds": [
+            "shapton-kuromaku-1000",
+            "king-combo-stone"
+          ]
+        },
+        {
+          "label": "Strop",
+          "text": "Use lightly after burr removal. Strop as punctuation, not as the sentence.",
+          "productIds": [
+            "leather-strop"
+          ]
+        },
+        {
+          "label": "Board",
+          "text": "A good board extends the time between sharpening sessions.",
+          "productIds": [
+            "hasegawa-soft-board",
+            "asahi-rubber-board"
+          ]
+        }
+      ],
+      "articleIds": [
+        "sharpening-basics-burr-angle-pressure",
+        "king-vs-shapton-starter-stones-guide",
+        "stropping-and-deburring-clean-apex",
+        "boards-storage-and-edge-life"
+      ]
+    }
+  ],
+  "fallback": "low-fuss-all-purpose-gyuto"
+}

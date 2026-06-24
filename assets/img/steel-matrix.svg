@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 820" role="img" aria-labelledby="title desc">
+  <title>Knife steel trade off matrix</title>
+  <desc>Minimal editorial knife illustration for Adrichops.</desc>
+  <rect width="1200" height="820" rx="64" fill="#0f1110"/>
+  <path d="M92 650H1108" stroke="#2b302c" stroke-width="2"/>
+  <path d="M92 170H1108" stroke="#1f2421" stroke-width="2"/>
+  <path d="M170 90V730M1030 90V730" stroke="#171b18" stroke-width="2"/>
+  <circle cx="1040" cy="150" r="9" fill="#d73b2f"/>
+  <path d="M220 610V210H980" stroke="#e8e0d2" stroke-width="6" stroke-linecap="round"/><path d="M270 560C440 470 520 370 600 430C690 498 785 285 920 260" fill="none" stroke="#d73b2f" stroke-width="8"/><circle cx="600" cy="430" r="18" fill="#e8e0d2"/><circle cx="920" cy="260" r="18" fill="#e8e0d2"/><text x="220" y="680" fill="#8c928b" font-family="Arial, sans-serif" font-size="24">TOUGHNESS</text><text x="770" y="190" fill="#8c928b" font-family="Arial, sans-serif" font-size="24">EDGE RETENTION</text><text x="300" y="285" fill="#e8e0d2" font-family="Arial, sans-serif" font-size="34" font-weight="800">TRADE-OFFS</text>
+</svg>

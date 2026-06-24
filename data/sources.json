@@ -1,0 +1,1014 @@
+{
+  "sources": [
+    {
+      "id": "takada-no-hamono-profile",
+      "name": "TAKADA no HAMONO profile",
+      "type": "Manufacturer",
+      "url": "https://www.takadanohamono.com/profile.html",
+      "note": "Official profile of Mitsuaki Takada, his Sakai workshop and Ashi Hamono background.",
+      "usedIn": [
+        "maker-spotlight-takada-no-hamono"
+      ]
+    },
+    {
+      "id": "mtc-kitchen-takada-no-hamono",
+      "name": "MTC Kitchen Takada no Hamono",
+      "type": "Retailer",
+      "url": "https://mtckitchen.com/collections/takada-no-hamono",
+      "note": "Retailer notes on Takada’s hamaguri convex edge and 2018 workshop founding.",
+      "usedIn": [
+        "maker-spotlight-takada-no-hamono"
+      ]
+    },
+    {
+      "id": "bernal-cutlery-takada-collection",
+      "name": "Bernal Cutlery Takada collection",
+      "type": "Retailer",
+      "url": "https://bernalcutlery.com/collections/takada-no-hamano",
+      "note": "Retailer context on Takada’s double-bevel convex grinding and cutting feel.",
+      "usedIn": [
+        "maker-spotlight-takada-no-hamono"
+      ]
+    },
+    {
+      "id": "kitchen-knife-forums-takada-tag",
+      "name": "Kitchen Knife Forums Takada tag",
+      "type": "Forum",
+      "url": "https://www.kitchenknifeforums.com/tags/takada/",
+      "note": "Forum context on ownership impressions, availability and line comparisons.",
+      "usedIn": [
+        "maker-spotlight-takada-no-hamono"
+      ]
+    },
+    {
+      "id": "carbon-knife-co-ashi-hamono",
+      "name": "Carbon Knife Co. Ashi Hamono",
+      "type": "Retailer",
+      "url": "https://carbonknifeco.com/collections/ashi-hamono-knives",
+      "note": "Ashi founding, Ginga line and laser-style geometry summary.",
+      "usedIn": [
+        "maker-spotlight-ashi-hamono"
+      ]
+    },
+    {
+      "id": "knivescombined-ginga-collection",
+      "name": "KnivesCombined Ginga collection",
+      "type": "Retailer",
+      "url": "https://knivescombined.com/collections/ginga",
+      "note": "Ginga profile, AEB-L construction and laser convex grind notes.",
+      "usedIn": [
+        "maker-spotlight-ashi-hamono"
+      ]
+    },
+    {
+      "id": "carbon-knife-co-ashi-ginga-white-2",
+      "name": "Carbon Knife Co. Ashi Ginga White #2",
+      "type": "Retailer",
+      "url": "https://carbonknifeco.com/products/ashi-ginga-white-2-gyuto-270mm",
+      "note": "Listing-level discussion of thinness, slight convexity and quality control.",
+      "usedIn": [
+        "maker-spotlight-ashi-hamono"
+      ]
+    },
+    {
+      "id": "kkf-ashi-ginga-discussion",
+      "name": "KKF Ashi Ginga discussion",
+      "type": "Forum",
+      "url": "https://www.kitchenknifeforums.com/threads/thoughts-on-ashi-ginga-monosteel-shirogami.51460/",
+      "note": "Forum context for White #2 Ginga variants and owner impressions.",
+      "usedIn": [
+        "maker-spotlight-ashi-hamono"
+      ]
+    },
+    {
+      "id": "konosuke-about-us",
+      "name": "Konosuke About Us",
+      "type": "Manufacturer",
+      "url": "https://konosuke-sakai.com/index.php/about-us/",
+      "note": "Konosuke’s own brand history and Sakai craft positioning.",
+      "usedIn": [
+        "maker-spotlight-konosuke"
+      ]
+    },
+    {
+      "id": "konosuke-fujiyama",
+      "name": "Konosuke Fujiyama",
+      "type": "Manufacturer",
+      "url": "https://konosuke-sakai.com/index.php/fujiyama-2/",
+      "note": "Konosuke notes on Morihiro and the original Fujiyama sharpening identity.",
+      "usedIn": [
+        "maker-spotlight-konosuke"
+      ]
+    },
+    {
+      "id": "konosuke-fm-fujiyama",
+      "name": "Konosuke FM Fujiyama",
+      "type": "Manufacturer",
+      "url": "https://konosuke-sakai.com/index.php/fm-fujiyama-2/",
+      "note": "Konosuke explanation of FM distinguishing the sharpener responsible for the blade.",
+      "usedIn": [
+        "maker-spotlight-konosuke"
+      ]
+    },
+    {
+      "id": "kkf-konosuke-fujiyama-history",
+      "name": "KKF Konosuke Fujiyama history",
+      "type": "Forum",
+      "url": "https://www.kitchenknifeforums.com/threads/konosuke-fujiyama-a-history.40726/",
+      "note": "Forum history of Fujiyama line development, measurements and scarcity context.",
+      "usedIn": [
+        "maker-spotlight-konosuke"
+      ]
+    },
+    {
+      "id": "burrfection-myojin-tetsujin-collection",
+      "name": "Burrfection Myojin / Tetsujin collection",
+      "type": "Retailer",
+      "url": "https://burrfectionstore.com/collections/myojin-myojinriki-tetsujin-knife",
+      "note": "Background on Tateo and Naohito Myojin and Tetsujin Knife Labo.",
+      "usedIn": [
+        "maker-spotlight-myojin-riki-seisakusho"
+      ]
+    },
+    {
+      "id": "cutlery-and-more-myojin-collection",
+      "name": "Cutlery and More Myojin collection",
+      "type": "Retailer",
+      "url": "https://cutleryandmore.com/collections/myojin",
+      "note": "Retailer profile of Naohito Myojin’s sharpening background and finish quality.",
+      "usedIn": [
+        "maker-spotlight-myojin-riki-seisakusho"
+      ]
+    },
+    {
+      "id": "seisuke-naohito-myojin-collection",
+      "name": "Seisuke Naohito Myojin collection",
+      "type": "Retailer",
+      "url": "https://seisukeknife.pro/collections/naohito-myojin",
+      "note": "Profile placing Naohito Myojin in Kochi and noting sharpening experience.",
+      "usedIn": [
+        "maker-spotlight-myojin-riki-seisakusho"
+      ]
+    },
+    {
+      "id": "yoshikane-hamono-official-site",
+      "name": "Yoshikane Hamono official site",
+      "type": "Manufacturer",
+      "url": "https://yoshikanehamonoknives.com/",
+      "note": "Yoshikane history, Sanjo location and 1919 founding context.",
+      "usedIn": [
+        "maker-spotlight-yoshikane-hamono"
+      ]
+    },
+    {
+      "id": "knives-and-stones-yoshikane-maker-page",
+      "name": "Knives and Stones Yoshikane maker page",
+      "type": "Retailer",
+      "url": "https://www.knivesandstones.com.au/pages/maker/yoshikane-hamono",
+      "note": "Retailer notes on Sanjo grinds, White #2 and SKD.",
+      "usedIn": [
+        "maker-spotlight-yoshikane-hamono"
+      ]
+    },
+    {
+      "id": "cutting-edge-knives-yoshikane",
+      "name": "Cutting Edge Knives Yoshikane",
+      "type": "Retailer",
+      "url": "https://cuttingedgeknives.co.uk/collections/yoshikane-hamono",
+      "note": "Retailer context on Shirogami, SKD and nashiji lines.",
+      "usedIn": [
+        "maker-spotlight-yoshikane-hamono"
+      ]
+    },
+    {
+      "id": "japanese-natural-stones-wakui-specials",
+      "name": "Japanese Natural Stones Wakui Specials",
+      "type": "Retailer",
+      "url": "https://www.japanesenaturalstones.com/wakui-specials/",
+      "note": "Context for Yoshikane’s influence through Wakui’s apprenticeship.",
+      "usedIn": [
+        "maker-spotlight-yoshikane-hamono"
+      ]
+    },
+    {
+      "id": "japanese-natural-stones-toyama-noborikoi",
+      "name": "Japanese Natural Stones Toyama Noborikoi",
+      "type": "Retailer",
+      "url": "https://www.japanesenaturalstones.com/toyama-noborikoi/",
+      "note": "Primary retailer context for Toyama, Noborikoi, steels, Sanjo and carbon care.",
+      "usedIn": [
+        "maker-spotlight-toyama-noborikoi"
+      ]
+    },
+    {
+      "id": "jns-toyama-page",
+      "name": "JNS Toyama page",
+      "type": "Retailer",
+      "url": "https://www.japanesenaturalstones.com/toyama/",
+      "note": "Additional JNS context on Toyama, heat treatment and exclusive Noborikoi kanji.",
+      "usedIn": [
+        "maker-spotlight-toyama-noborikoi"
+      ]
+    },
+    {
+      "id": "kkf-toyama-noborikoi-210mm-review",
+      "name": "KKF Toyama Noborikoi 210mm review",
+      "type": "Forum",
+      "url": "https://www.kitchenknifeforums.com/threads/review-toyama-noborikoi-210mm.51581/",
+      "note": "Forum review context for owner impressions and naming discussion.",
+      "usedIn": [
+        "maker-spotlight-toyama-noborikoi"
+      ]
+    },
+    {
+      "id": "meesterslijpers-toyama-listing",
+      "name": "Meesterslijpers Toyama listing",
+      "type": "Retailer",
+      "url": "https://www.meesterslijpers.nl/en/toyama-noborikoi-damast-yanagiba-30-cm",
+      "note": "Retailer context for Toyama availability and positioning.",
+      "usedIn": [
+        "maker-spotlight-toyama-noborikoi"
+      ]
+    },
+    {
+      "id": "knivesworld-wakui-article",
+      "name": "Knivesworld Wakui article",
+      "type": "Retailer",
+      "url": "https://www.meesterslijpers.nl/en/toshihiro-wakui-blacksmith",
+      "note": "Retailer profile of Wakui’s Sanjo workshop and traditional smithing context.",
+      "usedIn": [
+        "maker-spotlight-wakui"
+      ]
+    },
+    {
+      "id": "knivesworld-wakui-collection",
+      "name": "Knivesworld Wakui collection",
+      "type": "Retailer",
+      "url": "https://www.meesterslijpers.nl/en/toshihiro-wakui",
+      "note": "Retailer description of Wakui working from a small forge and controlling production steps.",
+      "usedIn": [
+        "maker-spotlight-wakui"
+      ]
+    },
+    {
+      "id": "knifeleader-wakui-profile",
+      "name": "Knifeleader Wakui profile",
+      "type": "Retailer",
+      "url": "https://knifeleader.eu/en/content/336-toshihiro-wakui",
+      "note": "Additional retailer profile on Wakui and Sanjo’s tool-making region.",
+      "usedIn": [
+        "maker-spotlight-wakui"
+      ]
+    },
+    {
+      "id": "baba-hamono-official-site",
+      "name": "Baba Hamono official site",
+      "type": "Manufacturer",
+      "url": "https://www.baba-hamono.com/en/",
+      "note": "Official Baba philosophy, Sakai tradition and monozukuri framing.",
+      "usedIn": [
+        "maker-spotlight-baba-hamono-kagekiyo"
+      ]
+    },
+    {
+      "id": "baba-hamono-kagekiyo",
+      "name": "Baba Hamono Kagekiyo",
+      "type": "Manufacturer",
+      "url": "https://www.baba-hamono.com/en/kagekiyo/",
+      "note": "Official Kagekiyo page including honyaki and craftsmanship notes.",
+      "usedIn": [
+        "maker-spotlight-baba-hamono-kagekiyo"
+      ]
+    },
+    {
+      "id": "hamono-nl-baba-hamono",
+      "name": "Hamono.nl Baba Hamono",
+      "type": "Retailer",
+      "url": "https://www.hamono.nl/en/knives/baba-hamono/",
+      "note": "Retailer context on the Baba family, workshop renovation and Kagekiyo.",
+      "usedIn": [
+        "maker-spotlight-baba-hamono-kagekiyo"
+      ]
+    },
+    {
+      "id": "cutting-edge-knives-baba-hamono",
+      "name": "Cutting Edge Knives Baba Hamono",
+      "type": "Retailer",
+      "url": "https://cuttingedgeknives.co.uk/collections/baba-hamono",
+      "note": "Retailer context on Baba Hamono’s Sakai craftsmen network.",
+      "usedIn": [
+        "maker-spotlight-baba-hamono-kagekiyo"
+      ]
+    },
+    {
+      "id": "burrfection-nakagawa-collection",
+      "name": "Burrfection Nakagawa collection",
+      "type": "Retailer",
+      "url": "https://burrfectionstore.com/collections/nakagawa",
+      "note": "Retailer profile on Nakagawa’s Shiraki apprenticeship and Sakai work.",
+      "usedIn": [
+        "maker-spotlight-nakagawa-hamono"
+      ]
+    },
+    {
+      "id": "knifewear-satoshi-nakagawa-profile",
+      "name": "Knifewear Satoshi Nakagawa profile",
+      "type": "Retailer",
+      "url": "https://knifewear.com/blogs/articles/blacksmith-profile-satoshi-nakagawa",
+      "note": "Narrative profile on Nakagawa’s apprenticeship and 2021 workshop founding.",
+      "usedIn": [
+        "maker-spotlight-nakagawa-hamono"
+      ]
+    },
+    {
+      "id": "japan-knife-makers-database-nakagawa",
+      "name": "Japan Knife Makers Database Nakagawa",
+      "type": "Other",
+      "url": "https://japan-knife-makers.com/items/satoshi-nakagawa.html",
+      "note": "Concise profile on Sakai work, Shiraki training and traditional single bevels.",
+      "usedIn": [
+        "maker-spotlight-nakagawa-hamono"
+      ]
+    },
+    {
+      "id": "musashi-nakagawa-craftsman-page",
+      "name": "Musashi Nakagawa craftsman page",
+      "type": "Retailer",
+      "url": "https://www.musashihamono.com/pages/craftsman/nakagawa",
+      "note": "Additional profile of Nakagawa’s Sakai blacksmithing and honyaki capability.",
+      "usedIn": [
+        "maker-spotlight-nakagawa-hamono"
+      ]
+    },
+    {
+      "id": "nigara-official-site",
+      "name": "Nigara official site",
+      "type": "Manufacturer",
+      "url": "https://nigaraknives.com/",
+      "note": "Official material on current makers, Tsugaru craft and Damascus creation.",
+      "usedIn": [
+        "maker-spotlight-nigara-hamono"
+      ]
+    },
+    {
+      "id": "sharpedge-nigara-maker-profile",
+      "name": "SharpEdge Nigara maker profile",
+      "type": "Retailer",
+      "url": "https://sharpedgeshop.com/blogs/blacksmiths-japan/meet-the-maker-nigara-hamono",
+      "note": "Retailer profile on Nigara’s 350-year tradition and Hirosaki roots.",
+      "usedIn": [
+        "maker-spotlight-nigara-hamono"
+      ]
+    },
+    {
+      "id": "nihonmono-nigara-article",
+      "name": "Nihonmono Nigara article",
+      "type": "Culture",
+      "url": "https://nihonmono.jp/en/article/54570/",
+      "note": "Cultural article on Nigara’s 350-year Hirosaki lineage and philosophy.",
+      "usedIn": [
+        "maker-spotlight-nigara-hamono"
+      ]
+    },
+    {
+      "id": "knifewear-nigara-collection",
+      "name": "Knifewear Nigara collection",
+      "type": "Retailer",
+      "url": "https://knifewear.com/collections/nigara-hamono",
+      "note": "Retailer context on Nigara’s Aomori background and product range.",
+      "usedIn": [
+        "maker-spotlight-nigara-hamono"
+      ]
+    },
+    {
+      "id": "hado-official-site",
+      "name": "HADO official site",
+      "type": "Manufacturer",
+      "url": "https://hado-knife.jp/en",
+      "note": "Official HADO concept, Sakai craft and handcraft positioning.",
+      "usedIn": [
+        "maker-spotlight-hado"
+      ]
+    },
+    {
+      "id": "sakai-kitchen-fukui-hado-story",
+      "name": "Sakai Kitchen Fukui / HADO story",
+      "type": "Culture",
+      "url": "https://sakai-kitchen.jp/en/story/fukui-2024-en/",
+      "note": "Story on Fukui Co. and the team behind HADO.",
+      "usedIn": [
+        "maker-spotlight-hado"
+      ]
+    },
+    {
+      "id": "stay-sharp-hado-ginsan-article",
+      "name": "Stay Sharp HADO Ginsan article",
+      "type": "Retailer",
+      "url": "https://staysharpmtl.com/en/blogs/staysharp/les-couteaux-ginsan-de-la-serie-hado-lequilibre-parfait-entre-tradition-et-innovation",
+      "note": "Retailer article on the HADO Ginsan series, Yamatsuka and Maruyama.",
+      "usedIn": [
+        "maker-spotlight-hado"
+      ]
+    },
+    {
+      "id": "knives-of-japan-hado-collection",
+      "name": "Knives of Japan HADO collection",
+      "type": "Retailer",
+      "url": "https://knivesofjapan.com/collections/hado",
+      "note": "Retailer explanation of the HADO name and brand development.",
+      "usedIn": [
+        "maker-spotlight-hado"
+      ]
+    },
+    {
+      "id": "moritaka-hamono-official-site",
+      "name": "Moritaka Hamono official site",
+      "type": "Manufacturer",
+      "url": "https://moritakahamonoen.ocnk.net/",
+      "note": "Official Moritaka lineage, Aogami Super and construction notes.",
+      "usedIn": [
+        "maker-spotlight-moritaka-hamono"
+      ]
+    },
+    {
+      "id": "moritaka-aogami-super-series",
+      "name": "Moritaka Aogami Super series",
+      "type": "Manufacturer",
+      "url": "https://moritakahamonoen.ocnk.net/product-list/4",
+      "note": "Official Aogami Super kitchen knife series and profile examples.",
+      "usedIn": [
+        "maker-spotlight-moritaka-hamono"
+      ]
+    },
+    {
+      "id": "burrfection-moritaka-santoku-listing",
+      "name": "Burrfection Moritaka Santoku listing",
+      "type": "Retailer",
+      "url": "https://burrfectionstore.com/products/moritaka-hamono-aogami-super-santoku",
+      "note": "Retailer listing with lineage and spec details.",
+      "usedIn": [
+        "maker-spotlight-moritaka-hamono"
+      ]
+    },
+    {
+      "id": "tokushu-moritaka-collection",
+      "name": "Tokushu Moritaka collection",
+      "type": "Retailer",
+      "url": "https://tokushuknife.com/collections/moritaka-knives",
+      "note": "Retailer summary of Moritaka, Aogami Super and modern product context.",
+      "usedIn": [
+        "maker-spotlight-moritaka-hamono"
+      ]
+    },
+    {
+      "id": "hasegawa-kitchen-wares-cutting-boards",
+      "name": "Hasegawa Kitchen Wares cutting boards",
+      "type": "Maker",
+      "url": "https://hasegawakagaku.com/products_category/cutting-boards/",
+      "note": "Official line overview: wood-core boards, soft surfaces for delicate Japanese knives, harder surfaces for general use.",
+      "usedIn": [
+        "hasegawa-asahi-hinoki-cutting-board-guide"
+      ]
+    },
+    {
+      "id": "hasegawa-pro-soft",
+      "name": "Hasegawa Pro-Soft",
+      "type": "Maker",
+      "url": "https://hasegawakagaku.com/products/pro-soft/",
+      "note": "Official description of the soft wood-core board as blade friendly and suitable for sushi and sashimi cutting.",
+      "usedIn": [
+        "hasegawa-asahi-hinoki-cutting-board-guide"
+      ]
+    },
+    {
+      "id": "parker-asahi-cookin-cut-rubber-board-pdf",
+      "name": "Parker Asahi Cookin Cut rubber board PDF",
+      "type": "Maker",
+      "url": "https://www.parker-asahi.co.jp/pdf/Elastic_Rubber_Chop_Board_en.pdf",
+      "note": "Official material notes on synthetic rubber texture, low water absorption, quick drying and sanitation claims.",
+      "usedIn": [
+        "hasegawa-asahi-hinoki-cutting-board-guide"
+      ]
+    },
+    {
+      "id": "asahi-vs-hasegawa-boards-kitchen-knife-forums",
+      "name": "Asahi vs Hasegawa boards - Kitchen Knife Forums",
+      "type": "Forum",
+      "url": "https://www.kitchenknifeforums.com/threads/asahi-vs-hasegawa-boards.45898/",
+      "note": "Forum comparison notes on grip, edge friendliness, push cutting and protein prep feel.",
+      "usedIn": [
+        "hasegawa-asahi-hinoki-cutting-board-guide"
+      ]
+    },
+    {
+      "id": "kai-shun-large-hinoki-cutting-board",
+      "name": "Kai Shun Large Hinoki Cutting Board",
+      "type": "Maker",
+      "url": "https://shun.kaiusa.com/large-hinoki-cutting-board.html",
+      "note": "Retailer/manufacturer note describing hinoki as medium-soft wood that gives under the knife.",
+      "usedIn": [
+        "hasegawa-asahi-hinoki-cutting-board-guide"
+      ]
+    },
+    {
+      "id": "hinoki-cutting-board-use-guide",
+      "name": "Hinoki cutting board use guide",
+      "type": "Care reference",
+      "url": "https://hinoki-manaita.com/en/use.html",
+      "note": "Use guidance on wetting the board lightly before cutting, using both sides and washing during raw food prep.",
+      "usedIn": [
+        "hasegawa-asahi-hinoki-cutting-board-guide"
+      ]
+    },
+    {
+      "id": "soft-cutting-board-hasegawa-boards",
+      "name": "Soft Cutting Board - Hasegawa Boards",
+      "type": "Maker",
+      "url": "https://hasegawaboards.com/softcuttingboard.html",
+      "note": "Additional Hasegawa detail on the sterilized wood core fully covered by plastic layers.",
+      "usedIn": [
+        "hasegawa-cutting-board-review-brief"
+      ]
+    },
+    {
+      "id": "hasegawa-boards-explainer-knifewear",
+      "name": "Hasegawa boards explainer - Knifewear",
+      "type": "Retailer explainer",
+      "url": "https://knifewear.com/blogs/articles/hasegawa-the-best-cutting-boards-for-your-knives",
+      "note": "Retailer breakdown of Hasegawa lines, wood core and edge-friendly surface feel.",
+      "usedIn": [
+        "hasegawa-cutting-board-review-brief"
+      ]
+    },
+    {
+      "id": "parker-asahi-boards-at-cutlery-and-more",
+      "name": "Parker Asahi boards at Cutlery and More",
+      "type": "Retailer",
+      "url": "https://cutleryandmore.com/collections/asahi",
+      "note": "Retailer description of Japanese-made rubber boards with a cushioned feel for fine edges.",
+      "usedIn": [
+        "asahi-rubber-cutting-board-review-brief"
+      ]
+    },
+    {
+      "id": "parker-asahi-consumer-board-care-burrfection-store",
+      "name": "Parker Asahi consumer board care - Burrfection Store",
+      "type": "Retailer",
+      "url": "https://burrfectionstore.com/en-gb/collections/cutting-boards/products/parker-asahi-synthetic-rubber-cutting-board-for-consumer-use",
+      "note": "Care note: wash with neutral detergent and dry fully after use.",
+      "usedIn": [
+        "asahi-rubber-cutting-board-review-brief"
+      ]
+    },
+    {
+      "id": "kai-shun-small-hinoki-cutting-board",
+      "name": "Kai Shun Small Hinoki Cutting Board",
+      "type": "Maker",
+      "url": "https://shun.kaiusa.com/small-hinoki-cutting-board.html",
+      "note": "Use and care summary: wet before each use, wash with mild detergent, towel dry and air dry out of sunlight.",
+      "usedIn": [
+        "hinoki-cutting-board-review-brief"
+      ]
+    },
+    {
+      "id": "hinoki-board-care-bernal-cutlery",
+      "name": "Hinoki board care - Bernal Cutlery",
+      "type": "Retailer care guide",
+      "url": "https://bernalcutlery.com/pages/hinoki-cutting-board-care",
+      "note": "Care and technique notes: wet before use, avoid hacking, avoid aggressive serrations and twisting.",
+      "usedIn": [
+        "hinoki-cutting-board-review-brief"
+      ]
+    },
+    {
+      "id": "hitohira-hinoki-endgrain-cutting-board-karasu",
+      "name": "Hitohira Hinoki Endgrain Cutting Board - Karasu",
+      "type": "Retailer",
+      "url": "https://karasu-knives.com/products/aafea-106",
+      "note": "Specialist retailer listing for a Hitohira hinoki end-grain board, useful for sizing and context.",
+      "usedIn": [
+        "hinoki-cutting-board-review-brief"
+      ]
+    },
+    {
+      "id": "king-deluxe-matsunaga-stone",
+      "name": "King Deluxe - Matsunaga Stone",
+      "type": "Maker",
+      "url": "https://matsunaga-corp.co.jp/en/products-cat/king/",
+      "note": "Official King Deluxe product category showing common grits such as 800, 1000, 1200, 2000, 4000, 6000 and 8000.",
+      "usedIn": [
+        "king-vs-shapton-starter-stones-guide"
+      ]
+    },
+    {
+      "id": "shapton-official-site",
+      "name": "Shapton official site",
+      "type": "Maker",
+      "url": "https://shapton.co.jp/en/",
+      "note": "Official Kuromaku overview: color-coded stones and a storage case that can be used as a sharpening base.",
+      "usedIn": [
+        "king-vs-shapton-starter-stones-guide"
+      ]
+    },
+    {
+      "id": "shapton-stones-classic-hand-tools",
+      "name": "Shapton stones - Classic Hand Tools",
+      "type": "Retailer",
+      "url": "https://www.classichandtools.com/shop-by-brand/shapton/c814",
+      "note": "Retailer description of Shapton ceramic stones as slow-wearing, fast-cutting and splash-and-go.",
+      "usedIn": [
+        "king-vs-shapton-starter-stones-guide"
+      ]
+    },
+    {
+      "id": "beginner-stone-king-or-shapton-pro-kitchen-knife-forums",
+      "name": "Beginner stone - King or Shapton Pro - Kitchen Knife Forums",
+      "type": "Forum",
+      "url": "https://www.kitchenknifeforums.com/threads/beginner-stone-king-1000-delux-or-sharpron-pro.52596/",
+      "note": "Discussion on King 1000/1200 versus Shapton Pro 1000 as single-stone beginner choices.",
+      "usedIn": [
+        "king-vs-shapton-starter-stones-guide"
+      ]
+    },
+    {
+      "id": "starting-stones-shapton-kitchen-knife-forums",
+      "name": "Starting stones - Shapton - Kitchen Knife Forums",
+      "type": "Forum",
+      "url": "https://www.kitchenknifeforums.com/threads/starting-stones-shapton.64004/",
+      "note": "Forum thread showing common beginner confusion around Shapton Pro, Glass, King 1000 and coarse stones.",
+      "usedIn": [
+        "king-vs-shapton-starter-stones-guide"
+      ]
+    },
+    {
+      "id": "king-deluxe-1000-japanese-taste",
+      "name": "King Deluxe 1000 - Japanese Taste",
+      "type": "Retailer",
+      "url": "https://japanesetaste.co.uk/products/king-deluxe-sharpening-stone-medium-grit-1000",
+      "note": "Retailer description of King Deluxe 1000 as a popular medium-grit stone for everyday sharpening.",
+      "usedIn": [
+        "king-whetstones-review-brief"
+      ]
+    },
+    {
+      "id": "japanese-whetstones-japanese-taste",
+      "name": "Japanese whetstones - Japanese Taste",
+      "type": "Retailer",
+      "url": "https://japanesetaste.com/collections/sharpening-stones-whetstones",
+      "note": "Retailer page listing Matsunaga King stones alongside Shapton and other Japanese sharpening brands.",
+      "usedIn": [
+        "king-whetstones-review-brief"
+      ]
+    },
+    {
+      "id": "shapton-kuromaku-1000-cutlery-and-more",
+      "name": "Shapton Kuromaku 1000 - Cutlery and More",
+      "type": "Retailer",
+      "url": "https://cutleryandmore.com/products/shapton-kuromaku-stone-40434",
+      "note": "Retailer description of the Kuromaku Professional water stones as color-coded and splash-and-go.",
+      "usedIn": [
+        "shapton-stones-review-brief"
+      ]
+    },
+    {
+      "id": "scsuede-on-reddit",
+      "name": "SCSuede on Reddit",
+      "type": "Reddit",
+      "url": "https://www.reddit.com/user/SCSuede/",
+      "note": "Used for the community habit of asking for shape, size and steel before recommending anything.",
+      "usedIn": [
+        "start-here-main-kitchen-knife-profiles"
+      ]
+    },
+    {
+      "id": "ok-distribution-9591-on-reddit",
+      "name": "Ok-Distribution-9591 on Reddit",
+      "type": "Reddit",
+      "url": "https://www.reddit.com/user/Ok-Distribution-9591/",
+      "note": "Steel and engineering focused community voice; used as a prompt to keep claims precise.",
+      "usedIn": [
+        "start-here-main-kitchen-knife-profiles"
+      ]
+    },
+    {
+      "id": "sicashi-on-reddit",
+      "name": "Sicashi on Reddit",
+      "type": "Reddit",
+      "url": "https://www.reddit.com/user/sicashi/",
+      "note": "Used as a reminder that knives are tools first: use the blades, then talk about them.",
+      "usedIn": [
+        "start-here-main-kitchen-knife-profiles"
+      ]
+    },
+    {
+      "id": "karasu-japanese-knives",
+      "name": "Karasu Japanese Knives",
+      "type": "Retailer",
+      "url": "https://karasu-knives.com/",
+      "note": "Retailer context for small-batch Japanese knives, stones, accessories, sharpening and maintenance services.",
+      "usedIn": [
+        "start-here-main-kitchen-knife-profiles"
+      ]
+    },
+    {
+      "id": "hitohira",
+      "name": "Hitohira",
+      "type": "Retailer",
+      "url": "https://hitohira-japan.com/pages/about-us",
+      "note": "Retailer and wholesaler context for Japanese knives, sharpening tools and education.",
+      "usedIn": [
+        "start-here-main-kitchen-knife-profiles"
+      ]
+    },
+    {
+      "id": "wusthof-knife-cleaning-guide",
+      "name": "Wusthof knife cleaning guide",
+      "type": "Care guide",
+      "url": "https://wusthof.com/blogs/the-chefs-table/how-to-clean-your-wusthof-knives",
+      "note": "Used for hand-wash, dry immediately and safe storage guidance.",
+      "usedIn": [
+        "start-here-main-kitchen-knife-profiles"
+      ]
+    },
+    {
+      "id": "victorinox-fibrox-chef-knife-official-page",
+      "name": "Victorinox Fibrox Chef Knife official page",
+      "type": "Manufacturer",
+      "url": "https://www.victorinox.com/en-US/Products/Cutlery/Chef%27s-Knives/Fibrox%C2%AE-Chef%E2%80%99s-Knife-Extra-Wide/p/5.2063.20",
+      "note": "Official details used for blade purpose, Swiss-made status and handle description.",
+      "usedIn": [
+        "amazon-chef-knife-shortlist-what-to-buy-first"
+      ]
+    },
+    {
+      "id": "mercer-genesis-8-inch-chef-knife-official-page",
+      "name": "Mercer Genesis 8 inch chef knife official page",
+      "type": "Manufacturer",
+      "url": "https://www.mercerculinary.com/product/genesis-chefs-knife-8-20-3-cm/",
+      "note": "Official details used for forged construction, Santoprene handle and German steel claims.",
+      "usedIn": [
+        "amazon-chef-knife-shortlist-what-to-buy-first"
+      ]
+    },
+    {
+      "id": "mercer-renaissance-8-inch-chef-knife-official-page",
+      "name": "Mercer Renaissance 8 inch chef knife official page",
+      "type": "Manufacturer",
+      "url": "https://www.mercerculinary.com/product/renaissance-chefs-knife-8-20-3-cm/",
+      "note": "Official details used for forged construction, Delrin handle, full tang and shortened bolster.",
+      "usedIn": [
+        "amazon-chef-knife-shortlist-what-to-buy-first"
+      ]
+    },
+    {
+      "id": "tojiro-dp-210mm-gyuto-retailer-detail",
+      "name": "Tojiro DP 210mm gyuto retailer detail",
+      "type": "Retailer",
+      "url": "https://cuttingedgeknives.co.uk/products/tojiro-dp-gyuto-210mm",
+      "note": "Retailer detail used for VG10 core and stainless cladding description.",
+      "usedIn": [
+        "amazon-chef-knife-shortlist-what-to-buy-first"
+      ]
+    },
+    {
+      "id": "global-g-2-official-uk-page",
+      "name": "Global G-2 official UK page",
+      "type": "Manufacturer",
+      "url": "https://www.globalknives.co.uk/products/global-g-2-cooks-knife-20cm-blade",
+      "note": "Official details used for 20cm format, thin blade, stainless construction and 15 degree edge.",
+      "usedIn": [
+        "amazon-chef-knife-shortlist-what-to-buy-first"
+      ]
+    },
+    {
+      "id": "mac-mth-80-official-page",
+      "name": "MAC MTH-80 official page",
+      "type": "Manufacturer",
+      "url": "https://www.macknife.com/products/professional-series-8-chefs-knife-with-dimples-mth-80",
+      "note": "Official details used for 8 inch length, thin 2.5mm blade and dimples.",
+      "usedIn": [
+        "amazon-chef-knife-shortlist-what-to-buy-first"
+      ]
+    },
+    {
+      "id": "wusthof-classic-series-official-page",
+      "name": "Wusthof Classic series official page",
+      "type": "Manufacturer",
+      "url": "https://wusthof.co.uk/pages/classic",
+      "note": "Official details used for forged construction, 58 Rockwell and full bolster.",
+      "usedIn": [
+        "amazon-chef-knife-shortlist-what-to-buy-first"
+      ]
+    },
+    {
+      "id": "henckels-classic-8-inch-chef-knife-official-page",
+      "name": "Henckels Classic 8 inch chef knife official page",
+      "type": "Manufacturer",
+      "url": "https://www.henckels.com/us/product/classic-8.00-inch-chef-knife-31161-201/31161-201-0.html",
+      "note": "Official details used for German stainless steel, forged construction and daily-use positioning.",
+      "usedIn": [
+        "amazon-chef-knife-shortlist-what-to-buy-first"
+      ]
+    },
+    {
+      "id": "zwilling-pro-20cm-chef-knife-official-page",
+      "name": "ZWILLING Pro 20cm chef knife official page",
+      "type": "Manufacturer",
+      "url": "https://www.zwilling.com/uk/zwilling-pro-20-cm-chefs-knife-38401-201-0/38401-201-0.html",
+      "note": "Official details used for all-purpose role and full blade-length cutting claim.",
+      "usedIn": [
+        "amazon-chef-knife-shortlist-what-to-buy-first"
+      ]
+    },
+    {
+      "id": "imfrenchsowhatever-on-reddit",
+      "name": "ImFrenchSoWhatever on Reddit",
+      "type": "Reddit",
+      "url": "https://www.reddit.com/user/ImFrenchSoWhatever/",
+      "note": "Reference point for direct, useful, slightly playful knife-chat tone.",
+      "usedIn": [
+        "amazon-chef-knife-shortlist-what-to-buy-first"
+      ]
+    },
+    {
+      "id": "mercer-use-and-care-guide",
+      "name": "Mercer use and care guide",
+      "type": "Care guide",
+      "url": "https://www.mercerculinary.com/use-and-care/",
+      "note": "Used for hand-washing, drying and dishwasher avoidance guidance.",
+      "usedIn": [
+        "victorinox-fibrox-pro-8-inch-shortlist-review"
+      ]
+    },
+    {
+      "id": "wusthof-sharpening-guide",
+      "name": "Wusthof sharpening guide",
+      "type": "Care guide",
+      "url": "https://wusthof.co.uk/pages/how-to-sharpen-your-wusthof-knives",
+      "note": "Used for whetstone process, slurry and drying-after-sharpening care notes.",
+      "usedIn": [
+        "mercer-renaissance-8-inch-shortlist-review"
+      ]
+    },
+    {
+      "id": "knife-steel-nerds-vg10-and-sg2",
+      "name": "Knife Steel Nerds: VG10 and SG2",
+      "type": "Metallurgy",
+      "url": "https://knifesteelnerds.com/2019/12/16/vg10-and-super-gold-2-takefu-stainless-steel-properties-and-history/",
+      "note": "Used for VG10 and SG2 history, alloy context and practical caveats.",
+      "usedIn": [
+        "tojiro-dp-210mm-gyuto-shortlist-review"
+      ]
+    },
+    {
+      "id": "teeeeeeeeeeej23-on-reddit",
+      "name": "TEEEEEEEEEEEJ23 on Reddit",
+      "type": "Reddit",
+      "url": "https://www.reddit.com/user/TEEEEEEEEEEEJ23/",
+      "note": "Stone and polishing posts used to keep sharpening copy practical and non-mystical.",
+      "usedIn": [
+        "sharpening-basics-burr-angle-pressure"
+      ]
+    },
+    {
+      "id": "kitchen-knife-forums",
+      "name": "Kitchen Knife Forums",
+      "type": "Forum",
+      "url": "https://www.kitchenknifeforums.com/",
+      "note": "Forum context for sharpening, maintenance, makers, retailers and long-running enthusiast discussion.",
+      "usedIn": [
+        "sharpening-basics-burr-angle-pressure"
+      ]
+    },
+    {
+      "id": "knife-steel-nerds-steels-rated-by-a-metallurgist",
+      "name": "Knife Steel Nerds: steels rated by a metallurgist",
+      "type": "Metallurgy",
+      "url": "https://knifesteelnerds.com/2021/10/19/knife-steels-rated-by-a-metallurgist-toughness-edge-retention-and-corrosion-resistance/",
+      "note": "Used for trade-offs between toughness, edge retention, corrosion resistance and edge geometry.",
+      "usedIn": [
+        "sharpening-basics-burr-angle-pressure"
+      ]
+    },
+    {
+      "id": "sakai-ichimonji-how-japanese-knives-are-made",
+      "name": "Sakai Ichimonji: How Japanese knives are made",
+      "type": "Culture",
+      "url": "https://global.ichimonji.co.jp/blogs/a-craftsmans-eyes-view/how-japanese-knives-are-made",
+      "note": "Used for broad process context: shapes, steels, styles and forging techniques.",
+      "usedIn": [
+        "japanese-knife-culture-practical-guide"
+      ]
+    },
+    {
+      "id": "japan-house-london-sakai-forged-knives",
+      "name": "Japan House London: Sakai forged knives",
+      "type": "Culture",
+      "url": "https://www.japanhouselondon.uk/whats-on/sakai-forged-knives-workshop-visit-conversation/",
+      "note": "Used for Sakai blacksmith and sharpener role context.",
+      "usedIn": [
+        "who-made-your-japanese-knife"
+      ]
+    },
+    {
+      "id": "sakai-ichimonji-knife-making-regions-of-japan",
+      "name": "Sakai Ichimonji: Knife making regions of Japan",
+      "type": "Culture",
+      "url": "https://global.ichimonji.co.jp/pages/knifemakingregions",
+      "note": "Used for regional framing and the caveat that region labels need specific maker context.",
+      "usedIn": [
+        "japanese-knife-regions-sakai-seki-sanjo"
+      ]
+    },
+    {
+      "id": "sakai-traditional-crafts-museum",
+      "name": "Sakai Traditional Crafts Museum",
+      "type": "Culture",
+      "url": "https://www.sakaidensan.jp/en/crafts/knife",
+      "note": "Used for Sakai blade history and traditional-craft context.",
+      "usedIn": [
+        "japanese-knife-regions-sakai-seki-sanjo"
+      ]
+    },
+    {
+      "id": "world-steel-association-raw-materials",
+      "name": "World Steel Association: raw materials",
+      "type": "Steelmaking",
+      "url": "https://worldsteel.org/about-steel/raw-materials/",
+      "note": "Used for the two main steelmaking routes and raw material inputs.",
+      "usedIn": [
+        "how-steel-is-made-ore-scrap-fire-chemistry"
+      ]
+    },
+    {
+      "id": "world-steel-association-overview-of-the-steelmaking-process",
+      "name": "World Steel Association: overview of the steelmaking process",
+      "type": "Steelmaking",
+      "url": "https://worldsteel.org/media/publications/overview-of-the-steelmaking-process/",
+      "note": "Used for process flow from raw materials through furnace routes, casting and applications.",
+      "usedIn": [
+        "how-steel-is-made-ore-scrap-fire-chemistry"
+      ]
+    },
+    {
+      "id": "eurofer-what-is-steel-and-how-is-steel-made",
+      "name": "Eurofer: what is steel and how is steel made?",
+      "type": "Steelmaking",
+      "url": "https://www.eurofer.eu/about-steel/learn-about-steel/what-is-steel-and-how-is-steel-made",
+      "note": "Used as a plain-language check on BF-BOF and EAF explanations.",
+      "usedIn": [
+        "how-steel-is-made-ore-scrap-fire-chemistry"
+      ]
+    },
+    {
+      "id": "japan-travel-shimanes-ancient-tatara-ironworks",
+      "name": "Japan Travel: Shimane's ancient Tatara ironworks",
+      "type": "Craft history",
+      "url": "https://www.japan.travel/en/japans-local-treasures/shimanes-ancient-tatara-ironworks/",
+      "note": "Used for the connection between iron sand, charcoal, tatara and tamahagane.",
+      "usedIn": [
+        "history-of-japanese-steel-manufacturing-tatara-yasugi-vg10"
+      ]
+    },
+    {
+      "id": "wako-museum-tatara-ironmaking-and-tamahagane",
+      "name": "Wako Museum: Tatara ironmaking and tamahagane",
+      "type": "Museum",
+      "url": "https://wako-museum.jp/entop/",
+      "note": "Used for regional ironworking context around clay tatara furnaces and high-grade tamahagane.",
+      "usedIn": [
+        "history-of-japanese-steel-manufacturing-tatara-yasugi-vg10"
+      ]
+    },
+    {
+      "id": "sites-of-japans-meiji-industrial-revolution-imperial-steel-works-yawata",
+      "name": "Sites of Japan's Meiji Industrial Revolution: Imperial Steel Works, Yawata",
+      "type": "Industrial history",
+      "url": "https://www.japansmeijiindustrialrevolution.com/en/site/yawata/component01.html",
+      "note": "Used for the 1901 Yawata milestone and Japan's transition into integrated iron and steel production.",
+      "usedIn": [
+        "history-of-japanese-steel-manufacturing-tatara-yasugi-vg10"
+      ]
+    },
+    {
+      "id": "proterial-yasugi-specialty-steel",
+      "name": "Proterial: Yasugi Specialty Steel",
+      "type": "Steelmaker",
+      "url": "https://www.proterial.com/e/yss/ourbrand.html",
+      "note": "Used for Yasugi Works, San'in iron-sand heritage and modern specialty-steel context.",
+      "usedIn": [
+        "history-of-japanese-steel-manufacturing-tatara-yasugi-vg10"
+      ]
+    },
+    {
+      "id": "takefu-special-steel-vg10",
+      "name": "Takefu Special Steel: VG10",
+      "type": "Steelmaker",
+      "url": "https://e-tokko.com/v_gold_10.php?lang=en",
+      "note": "Used for modern Japanese knife-steel context around VG10 and original laminated cutlery steels.",
+      "usedIn": [
+        "history-of-japanese-steel-manufacturing-tatara-yasugi-vg10"
+      ]
+    }
+  ]
+}

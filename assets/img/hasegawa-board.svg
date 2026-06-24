@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 820" role="img" aria-labelledby="title desc">
+  <title>Hasegawa cutting board</title>
+  <desc>Minimal editorial knife and kitchen gear illustration for Adrichops.</desc>
+  <rect width="1200" height="820" rx="64" fill="#0f1110"/>
+  <path d="M96 660H1104M96 178H1104M210 92V728M990 92V728" stroke="#1d221f" stroke-width="2"/>
+  <circle cx="1040" cy="150" r="9" fill="#d73b2f"/>
+  
+  <rect x="260" y="245" width="680" height="360" rx="42" fill="none" stroke="#e8e0d2" stroke-width="9"/>
+  <rect x="300" y="285" width="600" height="280" rx="30" fill="none" stroke="#2b302c" stroke-width="5"/>
+  <path d="M360 360H840M360 430H840M360 500H840" stroke="#1f2421" stroke-width="4"/>
+  <path d="M310 625H890" stroke="#d73b2f" stroke-width="9" stroke-linecap="round"/>
+  <path d="M338 625L742 582L890 625" fill="none" stroke="#e8e0d2" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="600" cy="425" r="56" fill="none" stroke="#8c928b" stroke-width="4"/>
+  <text x="370" y="205" fill="#e8e0d2" font-family="Arial, sans-serif" font-size="34" font-weight="800">SOFT CORE BOARD</text>
+</svg>
+

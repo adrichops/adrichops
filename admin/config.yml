@@ -1,0 +1,114 @@
+backend:
+  name: git-gateway
+  branch: main
+media_folder: "assets/uploads"
+public_folder: "/assets/uploads"
+publish_mode: editorial_workflow
+collections:
+  - name: "reviews"
+    label: "Reviews"
+    folder: "content/reviews"
+    create: true
+    slug: "{{slug}}"
+    fields: &post_fields
+      - {label: "ID", name: "id", widget: "string"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Type", name: "type", widget: "select", options: ["Review brief", "Guide", "Sharpening", "Maintenance", "Maker spotlight", "Steel guide", "Steel history"]}
+      - {label: "Category", name: "category", widget: "select", options: ["review", "guide", "sharpening", "maintenance", "culture"]}
+      - {label: "Date", name: "date", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false}
+      - {label: "Read time", name: "readTime", widget: "string", default: "7 min read"}
+      - {label: "Status", name: "status", widget: "select", options: ["Owned / long-term reference", "Owned", "Handled", "Research brief", "Maker profile", "Practical guide", "Research guide", "Wishlist"]}
+      - {label: "Source mode", name: "sourceMode", widget: "text", required: false}
+      - {label: "Summary", name: "summary", widget: "text"}
+      - {label: "Deck", name: "deck", widget: "text", required: false}
+      - {label: "Verdict", name: "verdict", widget: "string", required: false}
+      - {label: "Maker", name: "maker", widget: "string", required: false}
+      - {label: "Steel", name: "steel", widget: "string", required: false}
+      - {label: "Length", name: "length", widget: "string", required: false}
+      - {label: "Best for", name: "bestFor", widget: "string", required: false}
+      - {label: "Hero image", name: "heroImage", widget: "image", required: false}
+      - {label: "Hero alt", name: "heroAlt", widget: "string", required: false}
+      - {label: "Pull quote", name: "pullQuote", widget: "text", required: false}
+      - label: "Specs"
+        name: "specs"
+        widget: "object"
+        required: false
+        fields:
+          - {label: "Type", name: "Type", widget: "string", required: false}
+          - {label: "Steel", name: "Steel", widget: "string", required: false}
+          - {label: "Care level", name: "Care level", widget: "string", required: false}
+          - {label: "Best first question", name: "Best first question", widget: "string", required: false}
+      - label: "Products / affiliate links"
+        name: "products"
+        widget: "list"
+        required: false
+        fields:
+          - {label: "Name", name: "name", widget: "string"}
+          - {label: "Merchant", name: "merchant", widget: "string", required: false}
+          - {label: "Category", name: "category", widget: "string", required: false}
+          - {label: "Note", name: "note", widget: "text", required: false}
+          - {label: "URL", name: "url", widget: "string"}
+          - {label: "CTA", name: "cta", widget: "string", default: "Check availability"}
+      - label: "Source trail"
+        name: "sourceTrail"
+        widget: "list"
+        required: false
+        fields:
+          - {label: "Name", name: "name", widget: "string"}
+          - {label: "Type", name: "type", widget: "string"}
+          - {label: "URL", name: "url", widget: "string"}
+          - {label: "Note", name: "note", widget: "text", required: false}
+      - {label: "Body", name: "body", widget: "markdown"}
+  - name: "makers"
+    label: "Maker Spotlights"
+    folder: "content/makers"
+    create: true
+    slug: "{{slug}}"
+    fields: *post_fields
+  - name: "guides"
+    label: "Guides"
+    folder: "content/guides"
+    create: true
+    slug: "{{slug}}"
+    fields: *post_fields
+  - name: "recommendations"
+    label: "Recommendation Notes"
+    folder: "content/recommendations"
+    create: true
+    slug: "{{slug}}"
+    fields: *post_fields
+  - name: "data"
+    label: "Data"
+    files:
+      - label: "Knife Finder"
+        name: "finder"
+        file: "data/finder.json"
+        fields:
+          - {label: "Version", name: "version", widget: "string"}
+          - {label: "Questions", name: "questions", widget: "list"}
+          - {label: "Rules", name: "rules", widget: "list"}
+          - {label: "Fallback", name: "fallback", widget: "string"}
+      - label: "Kit Builder Items"
+        name: "kit_items"
+        file: "data/kit-items.json"
+        fields:
+          - label: "Items"
+            name: "items"
+            widget: "list"
+            fields:
+              - {label: "ID", name: "id", widget: "string"}
+              - {label: "Name", name: "name", widget: "string"}
+              - {label: "Category", name: "category", widget: "select", options: ["knife", "stone", "strop", "board", "storage", "utensil"]}
+              - {label: "Profile", name: "profile", widget: "string", required: false}
+              - {label: "Edge length mm", name: "edgeLengthMm", widget: "number", required: false, value_type: "int"}
+              - {label: "Steel or material", name: "steelType", widget: "string", required: false}
+              - {label: "Handle type", name: "handleType", widget: "string", required: false}
+              - {label: "Best for", name: "bestFor", widget: "text", required: false}
+              - {label: "Maintenance", name: "maintenance", widget: "text", required: false}
+              - {label: "Tags", name: "tags", widget: "list", required: false}
+              - {label: "Learn URL", name: "learnUrl", widget: "string", required: false}
+      - label: "Products"
+        name: "products"
+        file: "data/products.json"
+        fields:
+          - {label: "Products", name: "products", widget: "list"}

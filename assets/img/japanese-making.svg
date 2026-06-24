@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 820" role="img" aria-labelledby="title desc">
+  <title>Knife making stages</title>
+  <desc>Minimal editorial knife illustration for Adrichops.</desc>
+  <rect width="1200" height="820" rx="64" fill="#0f1110"/>
+  <path d="M92 650H1108" stroke="#2b302c" stroke-width="2"/>
+  <path d="M92 170H1108" stroke="#1f2421" stroke-width="2"/>
+  <path d="M170 90V730M1030 90V730" stroke="#171b18" stroke-width="2"/>
+  <circle cx="1040" cy="150" r="9" fill="#d73b2f"/>
+  <rect x="150" y="260" width="190" height="190" rx="28" fill="#181b18" stroke="#e8e0d2" stroke-width="4"/><rect x="390" y="260" width="190" height="190" rx="28" fill="#181b18" stroke="#e8e0d2" stroke-width="4"/><rect x="630" y="260" width="190" height="190" rx="28" fill="#181b18" stroke="#e8e0d2" stroke-width="4"/><rect x="870" y="260" width="190" height="190" rx="28" fill="#181b18" stroke="#e8e0d2" stroke-width="4"/><path d="M205 360C250 310 290 310 315 360" fill="none" stroke="#d73b2f" stroke-width="8"/><path d="M435 380H535" stroke="#d73b2f" stroke-width="10"/><path d="M685 380L770 330" stroke="#d73b2f" stroke-width="10"/><path d="M925 350H1010" stroke="#d73b2f" stroke-width="10"/><text x="162" y="525" fill="#e8e0d2" font-family="Arial, sans-serif" font-size="28" font-weight="800">FORGE</text><text x="405" y="525" fill="#e8e0d2" font-family="Arial, sans-serif" font-size="28" font-weight="800">HEAT</text><text x="645" y="525" fill="#e8e0d2" font-family="Arial, sans-serif" font-size="28" font-weight="800">GRIND</text><text x="885" y="525" fill="#e8e0d2" font-family="Arial, sans-serif" font-size="28" font-weight="800">FINISH</text>
+</svg>

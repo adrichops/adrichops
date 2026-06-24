@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 820" role="img" aria-labelledby="title desc">
+  <title>Knife maker chain</title>
+  <desc>Minimal editorial knife illustration for Adrichops.</desc>
+  <rect width="1200" height="820" rx="64" fill="#0f1110"/>
+  <path d="M92 650H1108" stroke="#2b302c" stroke-width="2"/>
+  <path d="M92 170H1108" stroke="#1f2421" stroke-width="2"/>
+  <path d="M170 90V730M1030 90V730" stroke="#171b18" stroke-width="2"/>
+  <circle cx="1040" cy="150" r="9" fill="#d73b2f"/>
+  <path d="M160 410H1040" stroke="#e8e0d2" stroke-width="8" stroke-linecap="round"/><circle cx="250" cy="410" r="56" fill="#181b18" stroke="#e8e0d2" stroke-width="4"/><circle cx="460" cy="410" r="56" fill="#181b18" stroke="#e8e0d2" stroke-width="4"/><circle cx="670" cy="410" r="56" fill="#181b18" stroke="#e8e0d2" stroke-width="4"/><circle cx="880" cy="410" r="56" fill="#181b18" stroke="#e8e0d2" stroke-width="4"/><text x="214" y="418" fill="#d73b2f" font-family="Arial, sans-serif" font-size="24" font-weight="800">SMITH</text><text x="414" y="418" fill="#d73b2f" font-family="Arial, sans-serif" font-size="24" font-weight="800">GRIND</text><text x="630" y="418" fill="#d73b2f" font-family="Arial, sans-serif" font-size="24" font-weight="800">HANDLE</text><text x="840" y="418" fill="#d73b2f" font-family="Arial, sans-serif" font-size="24" font-weight="800">SHOP</text>
+</svg>

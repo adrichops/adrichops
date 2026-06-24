@@ -1,0 +1,77 @@
+{
+  "id": "new-knife-article-slug",
+  "title": "New knife article title",
+  "type": "Guide",
+  "category": "guide",
+  "date": "2026-06-23",
+  "readTime": "6 min read",
+  "featured": false,
+  "maker": "Adrichops",
+  "steel": "Topic or steel",
+  "length": "Length or format",
+  "bestFor": "Use case",
+  "rating": "N/A",
+  "verdict": "Draft",
+  "summary": "One-sentence summary for cards.",
+  "deck": "Longer intro shown at the top of the article.",
+  "heroImage": "assets/img/profiles-map.svg",
+  "heroAlt": "Knife article placeholder image",
+  "pullQuote": "Optional short pull quote.",
+  "specs": {
+    "Format": "Guide or review brief",
+    "Focus": "Use case",
+    "Status": "Editorial draft",
+    "Affiliate note": "Replace placeholder links before publishing"
+  },
+  "body": [
+    {
+      "heading": "First section",
+      "paragraphs": [
+        "First paragraph.",
+        "Second paragraph."
+      ]
+    },
+    {
+      "heading": "Second section",
+      "paragraphs": [
+        "Another paragraph."
+      ]
+    }
+  ],
+  "takeaways": [
+    "Key point one.",
+    "Key point two.",
+    "Key point three."
+  ],
+  "products": [
+    {
+      "name": "Product name",
+      "merchant": "Amazon UK",
+      "category": "Knife",
+      "note": "Why it is mentioned.",
+      "url": "https://www.amazon.co.uk/s?k=REPLACE+QUERY&tag=YOURTAG-21",
+      "cta": "Check current price"
+    }
+  ],
+  "gallery": [
+    {
+      "src": "assets/img/edge-close.svg",
+      "alt": "Knife detail",
+      "caption": "Replace with your own photo."
+    }
+  ],
+  "sourceTrail": [
+    {
+      "name": "Manufacturer or retailer page",
+      "type": "Manufacturer",
+      "url": "https://example.com/source-page",
+      "note": "Use this to verify steel, length, construction, care guidance or maker information."
+    },
+    {
+      "name": "Forum or Reddit discussion",
+      "type": "Forum",
+      "url": "https://example.com/forum-thread",
+      "note": "Use this for community context, not copied wording."
+    }
+  ]
+}

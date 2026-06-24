@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 820" role="img" aria-labelledby="title desc">
+  <title>Hinoki cutting board</title>
+  <desc>Minimal editorial knife and kitchen gear illustration for Adrichops.</desc>
+  <rect width="1200" height="820" rx="64" fill="#0f1110"/>
+  <path d="M96 660H1104M96 178H1104M210 92V728M990 92V728" stroke="#1d221f" stroke-width="2"/>
+  <circle cx="1040" cy="150" r="9" fill="#d73b2f"/>
+  
+  <rect x="262" y="224" width="676" height="402" rx="30" fill="none" stroke="#e8e0d2" stroke-width="8"/>
+  <path d="M325 310C430 255 520 350 620 300C730 245 800 318 875 288" fill="none" stroke="#2b302c" stroke-width="6"/>
+  <path d="M325 410C450 350 540 455 660 390C735 350 800 392 875 362" fill="none" stroke="#2b302c" stroke-width="6"/>
+  <path d="M325 515C435 455 540 552 650 500C725 464 812 502 875 475" fill="none" stroke="#2b302c" stroke-width="6"/>
+  <path d="M310 650H890" stroke="#d73b2f" stroke-width="10" stroke-linecap="round"/>
+  <path d="M312 650L740 598L890 650" fill="none" stroke="#e8e0d2" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M905 240C930 264 932 296 905 320" fill="none" stroke="#d73b2f" stroke-width="5" stroke-linecap="round"/>
+  <text x="410" y="188" fill="#e8e0d2" font-family="Arial, sans-serif" font-size="34" font-weight="800">HINOKI GRAIN</text>
+</svg>
+

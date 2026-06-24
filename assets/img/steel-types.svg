@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 820" role="img" aria-labelledby="title desc">
+  <title>Common Japanese steel types</title>
+  <desc>Minimal editorial knife illustration for Adrichops.</desc>
+  <rect width="1200" height="820" rx="64" fill="#0f1110"/>
+  <path d="M92 650H1108" stroke="#2b302c" stroke-width="2"/>
+  <path d="M92 170H1108" stroke="#1f2421" stroke-width="2"/>
+  <path d="M170 90V730M1030 90V730" stroke="#171b18" stroke-width="2"/>
+  <circle cx="1040" cy="150" r="9" fill="#d73b2f"/>
+  <rect x="170" y="230" width="860" height="90" rx="24" fill="#181b18" stroke="#e8e0d2" stroke-width="4"/><rect x="170" y="350" width="860" height="90" rx="24" fill="#181b18" stroke="#e8e0d2" stroke-width="4"/><rect x="170" y="470" width="860" height="90" rx="24" fill="#181b18" stroke="#e8e0d2" stroke-width="4"/><text x="220" y="288" fill="#d73b2f" font-family="Arial, sans-serif" font-size="34" font-weight="800">VG10 / GINSAN</text><text x="220" y="408" fill="#d73b2f" font-family="Arial, sans-serif" font-size="34" font-weight="800">AOGAMI</text><text x="220" y="528" fill="#d73b2f" font-family="Arial, sans-serif" font-size="34" font-weight="800">SHIROGAMI</text><text x="650" y="288" fill="#8c928b" font-family="Arial, sans-serif" font-size="24">LOWER FUSS</text><text x="650" y="408" fill="#8c928b" font-family="Arial, sans-serif" font-size="24">CARBON BITE</text><text x="650" y="528" fill="#8c928b" font-family="Arial, sans-serif" font-size="24">SIMPLE CARBON</text>
+</svg>

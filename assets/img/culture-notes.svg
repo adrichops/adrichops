@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 820" role="img" aria-labelledby="title desc">
+  <title>Japanese knife culture notes</title>
+  <desc>Minimal editorial knife illustration for Adrichops.</desc>
+  <rect width="1200" height="820" rx="64" fill="#0f1110"/>
+  <path d="M92 650H1108" stroke="#2b302c" stroke-width="2"/>
+  <path d="M92 170H1108" stroke="#1f2421" stroke-width="2"/>
+  <path d="M170 90V730M1030 90V730" stroke="#171b18" stroke-width="2"/>
+  <circle cx="1040" cy="150" r="9" fill="#d73b2f"/>
+  <path d="M190 430C330 392 500 347 708 273C757 255 786 252 806 263C789 292 756 315 702 338C540 406 371 456 210 494C190 499 176 486 190 430Z" fill="#e8e0d2"/><path d="M748 286L999 382C1032 395 1048 413 1046 434C1005 447 961 443 914 422L696 331Z" fill="#181b18" stroke="#e8e0d2" stroke-width="4"/><circle cx="961" cy="402" r="10" fill="#d73b2f"/><text x="170" y="610" fill="#e8e0d2" font-family="Arial, sans-serif" font-size="48" font-weight="800">USE / CARE / REPEAT</text><text x="170" y="665" fill="#8c928b" font-family="Arial, sans-serif" font-size="22" letter-spacing="4">NO MYSTIC FOG REQUIRED</text>
+</svg>

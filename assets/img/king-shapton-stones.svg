@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 820" role="img" aria-labelledby="title desc">
+  <title>King versus Shapton stones</title>
+  <desc>Minimal editorial knife and kitchen gear illustration for Adrichops.</desc>
+  <rect width="1200" height="820" rx="64" fill="#0f1110"/>
+  <path d="M96 660H1104M96 178H1104M210 92V728M990 92V728" stroke="#1d221f" stroke-width="2"/>
+  <circle cx="1040" cy="150" r="9" fill="#d73b2f"/>
+  
+  <rect x="230" y="270" width="300" height="210" rx="30" fill="none" stroke="#e8e0d2" stroke-width="9"/>
+  <rect x="670" y="270" width="300" height="210" rx="30" fill="none" stroke="#8c928b" stroke-width="9"/>
+  <path d="M250 512H950" stroke="#d73b2f" stroke-width="10" stroke-linecap="round"/>
+  <path d="M274 512L720 468L950 512" fill="none" stroke="#e8e0d2" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M285 345H475M285 405H475M725 345H915M725 405H915" stroke="#2b302c" stroke-width="5"/>
+  <text x="315" y="238" fill="#e8e0d2" font-family="Arial, sans-serif" font-size="34" font-weight="800">KING</text>
+  <text x="725" y="238" fill="#e8e0d2" font-family="Arial, sans-serif" font-size="34" font-weight="800">SHAPTON</text>
+  <text x="310" y="610" fill="#8c928b" font-family="Arial, sans-serif" font-size="28">SOAK + FEEDBACK</text>
+  <text x="672" y="610" fill="#8c928b" font-family="Arial, sans-serif" font-size="28">SPLASH + SPEED</text>
+</svg>
+

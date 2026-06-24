@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 820" role="img" aria-labelledby="title desc">
+  <title>Craft workflow map</title>
+  <desc>Minimal editorial knife illustration for Adrichops.</desc>
+  <rect width="1200" height="820" rx="64" fill="#0f1110"/>
+  <path d="M92 650H1108" stroke="#2b302c" stroke-width="2"/>
+  <path d="M92 170H1108" stroke="#1f2421" stroke-width="2"/>
+  <path d="M170 90V730M1030 90V730" stroke="#171b18" stroke-width="2"/>
+  <circle cx="1040" cy="150" r="9" fill="#d73b2f"/>
+  <path d="M160 500C300 430 430 390 600 390C770 390 900 430 1040 500" fill="none" stroke="#e8e0d2" stroke-width="6"/><path d="M210 560H990" stroke="#2b302c" stroke-width="3"/><path d="M250 365L335 300L420 365" fill="none" stroke="#d73b2f" stroke-width="8" stroke-linecap="round"/><path d="M555 310H645L600 405Z" fill="none" stroke="#d73b2f" stroke-width="8"/><path d="M790 350H960" stroke="#d73b2f" stroke-width="8"/><path d="M900 305V395" stroke="#d73b2f" stroke-width="8"/>
+</svg>

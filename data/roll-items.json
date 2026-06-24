@@ -1,0 +1,531 @@
+{
+  "items": [
+    {
+      "id": "tojiro-dp-210-gyuto",
+      "name": "Tojiro DP 210mm Gyuto",
+      "category": "knife",
+      "profile": "gyuto",
+      "edgeLengthMm": 210,
+      "steelType": "VG10 stainless clad",
+      "handleType": "Western pakkawood",
+      "bestFor": "First Japanese all-purpose knife; line-cook realism.",
+      "maintenance": "Low-fuss stainless: 1000 grit stone, soft board, dry storage.",
+      "tags": [
+        "starter",
+        "owned reference",
+        "all-purpose"
+      ],
+      "learnUrl": "/reviews/tojiro-dp-210mm-gyuto-shortlist-review/"
+    },
+    {
+      "id": "victorinox-fibrox-chef",
+      "name": "Victorinox Fibrox Pro 8 inch Chef",
+      "category": "knife",
+      "profile": "chef knife",
+      "edgeLengthMm": 203,
+      "steelType": "X50CrMoV15-style stainless",
+      "handleType": "Textured Fibrox",
+      "bestFor": "Beat-up prep, shared kitchens, no-drama work.",
+      "maintenance": "Hones easily; sharpen before the edge turns butter-knife sad.",
+      "tags": [
+        "budget",
+        "low fuss",
+        "western"
+      ],
+      "learnUrl": "/reviews/victorinox-fibrox-pro-8-inch-shortlist-review/"
+    },
+    {
+      "id": "mac-mth80",
+      "name": "MAC MTH-80 8 inch Chef",
+      "category": "knife",
+      "profile": "chef/gyuto hybrid",
+      "edgeLengthMm": 203,
+      "steelType": "Molybdenum stainless",
+      "handleType": "Western pakkawood",
+      "bestFor": "Thin, lively all-purpose prep without carbon care.",
+      "maintenance": "Use a soft board and a clean 1000-3000 grit progression.",
+      "tags": [
+        "thin",
+        "stainless",
+        "all-purpose"
+      ],
+      "learnUrl": "/reviews/mac-mth80-shortlist-review/"
+    },
+    {
+      "id": "global-g2",
+      "name": "Global G-2 20cm Cook's Knife",
+      "category": "knife",
+      "profile": "chef knife",
+      "edgeLengthMm": 200,
+      "steelType": "CROMOVA 18 stainless",
+      "handleType": "Stainless steel integral",
+      "bestFor": "Cooks who like light knives and metal handles.",
+      "maintenance": "Keep the handle dry; sharpen on a medium stone, not a pull-through.",
+      "tags": [
+        "light",
+        "stainless",
+        "metal handle"
+      ],
+      "learnUrl": "/reviews/global-g2-cooks-knife-shortlist-review/"
+    },
+    {
+      "id": "takada-gyuto-210",
+      "name": "Takada no Hamono 210mm Gyuto",
+      "category": "knife",
+      "profile": "gyuto",
+      "edgeLengthMm": 210,
+      "steelType": "Ginsan / Blue / White depending line",
+      "handleType": "Wa octagonal",
+      "bestFor": "Refined cutting, thin convex geometry, functional-art energy.",
+      "maintenance": "Soft board, light pressure, careful drying if carbon, no drawer chaos.",
+      "tags": [
+        "maker spotlight",
+        "sakai",
+        "refined"
+      ],
+      "learnUrl": "/maker-spotlight/maker-spotlight-takada-no-hamono/"
+    },
+    {
+      "id": "ashi-ginga-210",
+      "name": "Ashi Ginga 210mm Gyuto",
+      "category": "knife",
+      "profile": "gyuto",
+      "edgeLengthMm": 210,
+      "steelType": "AEB-L stainless or White #2 carbon",
+      "handleType": "Wa or Western depending line",
+      "bestFor": "Laser-like prep with clean geometry and low wedging.",
+      "maintenance": "Thin edge: use a soft board and avoid bones, squash stems and hero behaviour.",
+      "tags": [
+        "laser",
+        "sakai",
+        "thin"
+      ],
+      "learnUrl": "/maker-spotlight/maker-spotlight-ashi-hamono/"
+    },
+    {
+      "id": "yoshikane-240-gyuto",
+      "name": "Yoshikane 240mm Gyuto",
+      "category": "knife",
+      "profile": "gyuto",
+      "edgeLengthMm": 240,
+      "steelType": "SKD semi-stainless or White #2",
+      "handleType": "Wa octagonal",
+      "bestFor": "Sanjo workhorse cutting with clean shoulders.",
+      "maintenance": "Dry after prep; semi-stainless still deserves adult supervision.",
+      "tags": [
+        "sanjo",
+        "workhorse",
+        "240mm"
+      ],
+      "learnUrl": "/maker-spotlight/maker-spotlight-yoshikane-hamono/"
+    },
+    {
+      "id": "wakui-240-gyuto",
+      "name": "Wakui 240mm Gyuto",
+      "category": "knife",
+      "profile": "gyuto",
+      "edgeLengthMm": 240,
+      "steelType": "White #2 carbon",
+      "handleType": "Wa octagonal",
+      "bestFor": "Value-focused Sanjo performance and carbon curiosity.",
+      "maintenance": "Wipe during prep, dry immediately, patina is not a medical emergency.",
+      "tags": [
+        "carbon",
+        "sanjo",
+        "value"
+      ],
+      "learnUrl": "/maker-spotlight/maker-spotlight-wakui/"
+    },
+    {
+      "id": "vg10-nakiri-165",
+      "name": "VG10 Stainless-Clad Nakiri 165mm",
+      "category": "knife",
+      "profile": "nakiri",
+      "edgeLengthMm": 165,
+      "steelType": "VG10 stainless clad",
+      "handleType": "Wa or Western",
+      "bestFor": "Low-fuss vegetable prep and clean board contact.",
+      "maintenance": "Pair with Hasegawa/Asahi/hinoki and a Shapton or King 1000.",
+      "tags": [
+        "vegetables",
+        "low fuss",
+        "flat profile"
+      ],
+      "learnUrl": "/guides/nakiri-profile-guide/"
+    },
+    {
+      "id": "santoku-180",
+      "name": "Santoku 180mm",
+      "category": "knife",
+      "profile": "santoku",
+      "edgeLengthMm": 180,
+      "steelType": "VG10 / Ginsan / stainless",
+      "handleType": "Wa or Western",
+      "bestFor": "Small boards, home prep, push cuts and shorter all-purpose work.",
+      "maintenance": "Short blade, same rules: soft board, dry storage, sensible sharpening.",
+      "tags": [
+        "home prep",
+        "compact",
+        "all-purpose"
+      ],
+      "learnUrl": "/guides/santoku-profile-guide/"
+    },
+    {
+      "id": "petty-150",
+      "name": "Petty 150mm",
+      "category": "knife",
+      "profile": "petty",
+      "edgeLengthMm": 150,
+      "steelType": "VG10 / Ginsan / AEB-L",
+      "handleType": "Wa or Western",
+      "bestFor": "Fruit, herbs, small protein trimming and board-adjacent work.",
+      "maintenance": "Do not torque it through joints; keep the edge light and clean.",
+      "tags": [
+        "small prep",
+        "utility",
+        "support knife"
+      ],
+      "learnUrl": "/guides/petty-paring-utility-profile-guide/"
+    },
+    {
+      "id": "paring-90",
+      "name": "Paring Knife 90mm",
+      "category": "knife",
+      "profile": "paring",
+      "edgeLengthMm": 90,
+      "steelType": "Stainless",
+      "handleType": "Western",
+      "bestFor": "Hand work, citrus, strawberries and tiny annoying jobs.",
+      "maintenance": "Cheap stainless is fine here. Sharpen lightly and replace when it becomes tragic.",
+      "tags": [
+        "hand work",
+        "small prep",
+        "low fuss"
+      ],
+      "learnUrl": "/guides/petty-paring-utility-profile-guide/"
+    },
+    {
+      "id": "sujihiki-270",
+      "name": "Sujihiki 270mm",
+      "category": "knife",
+      "profile": "sujihiki",
+      "edgeLengthMm": 270,
+      "steelType": "Ginsan / VG10 / carbon",
+      "handleType": "Wa octagonal",
+      "bestFor": "Long clean slices of cooked protein and fish portions.",
+      "maintenance": "Long edge means long stone strokes; store in a saya or guard.",
+      "tags": [
+        "slicer",
+        "protein",
+        "long blade"
+      ],
+      "learnUrl": "/guides/boning-fillet-slicer-cleaver-specialist-profiles/"
+    },
+    {
+      "id": "bread-240",
+      "name": "Bread Knife 240mm",
+      "category": "knife",
+      "profile": "bread / serrated",
+      "edgeLengthMm": 240,
+      "steelType": "Serrated stainless",
+      "handleType": "Western",
+      "bestFor": "Bread, tomatoes, cakes and crusty things that laugh at gyutos.",
+      "maintenance": "Do not take it to a flat stone casually; replace or professionally sharpen.",
+      "tags": [
+        "serrated",
+        "bread",
+        "utility"
+      ],
+      "learnUrl": "/guides/bread-serrated-knife-profile-guide/"
+    },
+    {
+      "id": "boning-150",
+      "name": "Boning Knife 150mm",
+      "category": "knife",
+      "profile": "boning",
+      "edgeLengthMm": 150,
+      "steelType": "Tough stainless",
+      "handleType": "Western grippy",
+      "bestFor": "Poultry, trimming and tasks where flexibility/toughness matter.",
+      "maintenance": "This is not the place for brittle laser geometry.",
+      "tags": [
+        "protein",
+        "butchery",
+        "tough"
+      ],
+      "learnUrl": "/guides/boning-fillet-slicer-cleaver-specialist-profiles/"
+    },
+    {
+      "id": "chinese-cleaver-210",
+      "name": "Chinese Cleaver / Cai Dao 210mm",
+      "category": "knife",
+      "profile": "cleaver",
+      "edgeLengthMm": 210,
+      "steelType": "Stainless or carbon",
+      "handleType": "Barrel / wa-style",
+      "bestFor": "Vegetable volume, scoop-and-transfer prep, big-board cooking.",
+      "maintenance": "Know whether it is a slicer or bone cleaver before doing bone-cleaver things.",
+      "tags": [
+        "vegetables",
+        "high volume",
+        "scoop"
+      ],
+      "learnUrl": "/guides/boning-fillet-slicer-cleaver-specialist-profiles/"
+    },
+    {
+      "id": "shapton-kuromaku-1000",
+      "name": "Shapton Kuromaku 1000",
+      "category": "stone",
+      "profile": "whetstone",
+      "edgeLengthMm": null,
+      "steelType": "Ceramic abrasive",
+      "handleType": "Storage case/base",
+      "bestFor": "Splash-and-go starter sharpening for stainless and carbon kitchen knives.",
+      "maintenance": "Flatten periodically; dry before storing.",
+      "tags": [
+        "1000 grit",
+        "splash and go",
+        "starter"
+      ],
+      "learnUrl": "/reviews/shapton-stones-review-brief/"
+    },
+    {
+      "id": "shapton-kuromaku-2000",
+      "name": "Shapton Kuromaku 2000",
+      "category": "stone",
+      "profile": "whetstone",
+      "edgeLengthMm": null,
+      "steelType": "Ceramic abrasive",
+      "handleType": "Storage case/base",
+      "bestFor": "Slight refinement after a 1000 grit edge without polishing into nonsense.",
+      "maintenance": "Use after apex is set; it is not a repair stone.",
+      "tags": [
+        "2000 grit",
+        "refinement",
+        "splash and go"
+      ],
+      "learnUrl": "/reviews/shapton-stones-review-brief/"
+    },
+    {
+      "id": "king-deluxe-1000",
+      "name": "King Deluxe 1000",
+      "category": "stone",
+      "profile": "whetstone",
+      "edgeLengthMm": null,
+      "steelType": "Aluminium oxide soaking stone",
+      "handleType": "Stone only",
+      "bestFor": "Budget sharpening with forgiving feedback.",
+      "maintenance": "Soak before use, flatten more often than Shapton.",
+      "tags": [
+        "1000 grit",
+        "budget",
+        "soaker"
+      ],
+      "learnUrl": "/reviews/king-whetstones-review-brief/"
+    },
+    {
+      "id": "king-combo-1000-6000",
+      "name": "King 1000/6000 Combination Stone",
+      "category": "stone",
+      "profile": "whetstone",
+      "edgeLengthMm": null,
+      "steelType": "Aluminium oxide soaking stone",
+      "handleType": "Combination stone",
+      "bestFor": "Budget starter kit when one brick must do two jobs.",
+      "maintenance": "The 1000 side matters more; flatten and let it dry slowly.",
+      "tags": [
+        "combo",
+        "budget",
+        "soaker"
+      ],
+      "learnUrl": "/guides/king-vs-shapton-starter-stones-guide/"
+    },
+    {
+      "id": "leather-strop",
+      "name": "Leather Strop",
+      "category": "strop",
+      "profile": "strop",
+      "edgeLengthMm": null,
+      "steelType": "Leather / optional compound",
+      "handleType": "Paddle or bench strop",
+      "bestFor": "Final burr cleanup and very light edge refreshes.",
+      "maintenance": "Use light pressure. If you round the edge, the strop did not betray you; pressure did.",
+      "tags": [
+        "deburring",
+        "finishing",
+        "maintenance"
+      ],
+      "learnUrl": "/guides/stropping-and-deburring-clean-apex/"
+    },
+    {
+      "id": "cork-deburring-block",
+      "name": "Cork or Deburring Block",
+      "category": "strop",
+      "profile": "deburring block",
+      "edgeLengthMm": null,
+      "steelType": "Cork / felt / soft block",
+      "handleType": "Block",
+      "bestFor": "Cheap, effective burr reduction after stone work.",
+      "maintenance": "Cut lightly into the material; do not saw like panic carpentry.",
+      "tags": [
+        "deburring",
+        "cheap",
+        "starter"
+      ],
+      "learnUrl": "/guides/stropping-and-deburring-clean-apex/"
+    },
+    {
+      "id": "ceramic-honing-rod",
+      "name": "Fine Ceramic Honing Rod",
+      "category": "utensil",
+      "profile": "honing rod",
+      "edgeLengthMm": null,
+      "steelType": "Fine ceramic",
+      "handleType": "Rod handle",
+      "bestFor": "Careful touch-ups on tougher stainless edges.",
+      "maintenance": "Avoid heavy pressure on thin Japanese knives; clean grey swarf marks.",
+      "tags": [
+        "touch-up",
+        "honing",
+        "careful"
+      ],
+      "learnUrl": "/guides/honing-vs-sharpening-when-to-use-steel/"
+    },
+    {
+      "id": "hasegawa-board",
+      "name": "Hasegawa Cutting Board",
+      "category": "board",
+      "profile": "synthetic board",
+      "edgeLengthMm": null,
+      "steelType": "Soft synthetic surface / wood core",
+      "handleType": "Board",
+      "bestFor": "Edge-friendly prep with light weight and pro-kitchen logic.",
+      "maintenance": "Clean properly; do not treat it like disposable plastic.",
+      "tags": [
+        "board",
+        "edge friendly",
+        "synthetic"
+      ],
+      "learnUrl": "/reviews/hasegawa-cutting-board-review-brief/"
+    },
+    {
+      "id": "asahi-board",
+      "name": "Asahi Rubber Cutting Board",
+      "category": "board",
+      "profile": "rubber board",
+      "edgeLengthMm": null,
+      "steelType": "Synthetic rubber",
+      "handleType": "Board",
+      "bestFor": "Low-fuss sharp-knife board with good edge kindness.",
+      "maintenance": "Dry upright; keep it away from heat warping opportunities.",
+      "tags": [
+        "board",
+        "rubber",
+        "low fuss"
+      ],
+      "learnUrl": "/reviews/asahi-rubber-cutting-board-review-brief/"
+    },
+    {
+      "id": "hinoki-board",
+      "name": "Hinoki Cutting Board",
+      "category": "board",
+      "profile": "wood board",
+      "edgeLengthMm": null,
+      "steelType": "Japanese cypress",
+      "handleType": "Board",
+      "bestFor": "Soft, beautiful board feel for careful home use.",
+      "maintenance": "Wet before use, dry upright, accept that beauty has chores.",
+      "tags": [
+        "board",
+        "wood",
+        "hinoki"
+      ],
+      "learnUrl": "/reviews/hinoki-cutting-board-review-brief/"
+    },
+    {
+      "id": "blade-guard-240",
+      "name": "Blade Guard 210-240mm",
+      "category": "storage",
+      "profile": "blade guard",
+      "edgeLengthMm": null,
+      "steelType": "Plastic / felt-lined guard",
+      "handleType": "Sleeve",
+      "bestFor": "Keeping sharp knives safe in drawers, bags and rolls.",
+      "maintenance": "Dry the knife before sliding it into anything closed.",
+      "tags": [
+        "storage",
+        "safety",
+        "roll"
+      ],
+      "learnUrl": "/guides/boards-storage-and-edge-life/"
+    },
+    {
+      "id": "knife-roll",
+      "name": "Knife Roll / Saya Storage",
+      "category": "storage",
+      "profile": "knife roll",
+      "edgeLengthMm": null,
+      "steelType": "Canvas / leather / wood saya",
+      "handleType": "Roll or saya",
+      "bestFor": "Transporting a small kit without turning it into a cutlery avalanche.",
+      "maintenance": "Dry knives first; rolls are not humidity-powered patina machines.",
+      "tags": [
+        "storage",
+        "travel",
+        "safety"
+      ],
+      "learnUrl": "/whats-in-my-roll/"
+    },
+    {
+      "id": "bench-scraper",
+      "name": "Bench Scraper",
+      "category": "utensil",
+      "profile": "scraper",
+      "edgeLengthMm": null,
+      "steelType": "Stainless",
+      "handleType": "Flat grip",
+      "bestFor": "Moving chopped food instead of scraping with a knife edge.",
+      "maintenance": "Use this so your gyuto does not become a shovel with trauma.",
+      "tags": [
+        "prep",
+        "edge saver",
+        "utensil"
+      ],
+      "learnUrl": "/guides/boards-storage-and-edge-life/"
+    },
+    {
+      "id": "kitchen-tweezers",
+      "name": "Kitchen Tweezers",
+      "category": "utensil",
+      "profile": "tweezers",
+      "edgeLengthMm": null,
+      "steelType": "Stainless",
+      "handleType": "Spring grip",
+      "bestFor": "Plating, turning small items, fish bones and line-cook finesse.",
+      "maintenance": "Dishwasher usually fine; keep tips aligned.",
+      "tags": [
+        "utensil",
+        "plating",
+        "line cook"
+      ],
+      "learnUrl": "/whats-in-my-roll/"
+    },
+    {
+      "id": "fish-spatula",
+      "name": "Fish Spatula",
+      "category": "utensil",
+      "profile": "spatula",
+      "edgeLengthMm": null,
+      "steelType": "Flexible stainless",
+      "handleType": "Wood / composite handle",
+      "bestFor": "Fish, eggs, delicate proteins and not abusing your knife as a spatula.",
+      "maintenance": "Clean under the slots; avoid melting handles.",
+      "tags": [
+        "utensil",
+        "protein",
+        "delicate"
+      ],
+      "learnUrl": "/whats-in-my-roll/"
+    }
+  ]
+}

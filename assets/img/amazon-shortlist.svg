@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1100" role="img">
+  <rect width="1600" height="1100" fill="#090908"/>
+  <path d="M0 220H1600M0 440H1600M0 660H1600M0 880H1600M320 0V1100M640 0V1100M960 0V1100M1280 0V1100" stroke="#2a2924" stroke-width="1" opacity=".28"/>
+  <rect x="86" y="82" width="1428" height="936" rx="74" fill="none" stroke="#2a2924" stroke-width="2" opacity=".85"/>
+  <circle cx="1420" cy="170" r="18" fill="#ff4d35"/>
+  <g>
+    <g transform="translate(0,-160)"><g transform="rotate(-8 800 520) scale(0.58) translate(336.00000000000006 231.00000000000003)">
+    <path d="M230 612 L1038 376 C1128 350 1218 386 1278 472 C1146 594 948 679 700 704 L230 688 Z" fill="#e4e7e5"/>
+    <path d="M330 626 L1020 440" stroke="#ffffff" stroke-width="4" opacity=".38"/>
+    <path d="M260 675 C520 680 835 640 1088 520" fill="none" stroke="#aab2ae" stroke-width="10" opacity=".8"/>
+    <path d="M1152 444 L1402 395 C1452 386 1496 418 1504 466 C1512 516 1477 560 1426 566 L1142 548 Z" fill="#1e1d19" stroke="#f7efe4" stroke-width="3"/>
+    <circle cx="1250" cy="500" r="15" fill="#ff4d35"/>
+  </g></g>
+    <g transform="translate(0,60)"><g transform="rotate(-6 800 560)">
+    <path d="M230 470 H1030 C1086 470 1134 502 1152 550 L1118 690 H230 Z" fill="#e4e7e5"/>
+    <path d="M230 690 H1118" stroke="#aab2ae" stroke-width="10"/>
+    <path d="M1048 512 L1375 472 C1422 467 1462 500 1468 546 C1474 593 1440 632 1392 634 L1042 628 Z" fill="#1e1d19" stroke="#f7efe4" stroke-width="3"/>
+    <circle cx="1265" cy="552" r="14" fill="#ff4d35"/>
+  </g></g>
+    <g transform="translate(0,260)"><g transform="rotate(-10 800 520) scale(0.46) translate(432.0 297.0)">
+    <path d="M260 585 L1045 392 C1100 383 1160 414 1194 472 C1138 570 1012 655 805 686 L260 666 Z" fill="#e4e7e5"/>
+    <path d="M330 626 L1020 440" stroke="#ffffff" stroke-width="4" opacity=".38"/>
+    <path d="M260 675 C520 680 835 640 1088 520" fill="none" stroke="#aab2ae" stroke-width="10" opacity=".8"/>
+    <path d="M1086 459 L1340 430 C1390 424 1430 456 1436 504 C1442 552 1406 591 1358 593 L1078 565 Z" fill="#1e1d19" stroke="#f7efe4" stroke-width="3"/>
+    <circle cx="1250" cy="500" r="15" fill="#ff4d35"/>
+  </g></g>
+  </g>
+</svg>

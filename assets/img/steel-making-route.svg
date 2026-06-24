@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">Steelmaking route</title><desc id="desc">Minimal diagram of ore, scrap, furnace, bar and knife.</desc>
+  <rect width="1200" height="760" rx="48" fill="#10100d"/>
+  <path d="M0 560 C240 480 400 650 660 560 C880 486 980 520 1200 446 L1200 760 L0 760 Z" fill="#181713"/>
+  <g stroke="#2e2d27" stroke-width="2" opacity=".72">
+    <path d="M120 90V680M300 90V680M480 90V680M660 90V680M840 90V680M1020 90V680"/>
+    <path d="M70 180H1130M70 320H1130M70 460H1130M70 600H1130"/>
+  </g>
+  <g font-family="Montserrat,Arial,sans-serif" font-weight="900" fill="#f7f1e7">
+    <text x="90" y="108" font-size="28" letter-spacing="5">STEEL ROUTE</text>
+    <text x="82" y="684" font-size="18" letter-spacing="4" fill="#a9a196">ORE / SCRAP</text>
+    <text x="390" y="684" font-size="18" letter-spacing="4" fill="#a9a196">FURNACE</text>
+    <text x="700" y="684" font-size="18" letter-spacing="4" fill="#a9a196">BAR STOCK</text>
+    <text x="980" y="684" font-size="18" letter-spacing="4" fill="#a9a196">EDGE</text>
+  </g>
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M124 502 L224 372 L316 502 Z" stroke="#f7f1e7" stroke-width="12"/>
+    <path d="M158 502 L224 416 L282 502" stroke="#ff4b35" stroke-width="7"/>
+    <path d="M414 516 L455 238 L596 238 L636 516 Z" stroke="#f7f1e7" stroke-width="12"/>
+    <path d="M492 514 C472 462 494 426 520 392 C548 430 571 462 548 514" stroke="#ff4b35" stroke-width="10"/>
+    <path d="M720 432 H916" stroke="#f7f1e7" stroke-width="24"/>
+    <path d="M742 490 H882" stroke="#d5d0c7" stroke-width="14"/>
+    <path d="M946 448 C1018 424 1076 390 1122 332 C1065 454 1012 526 916 556 L742 558" stroke="#f7f1e7" stroke-width="13"/>
+    <path d="M914 556 L762 558" stroke="#ff4b35" stroke-width="8"/>
+  </g>
+  <g stroke="#ff4b35" stroke-width="8" fill="none" stroke-linecap="round">
+    <path d="M334 438 C370 424 388 418 420 414"/>
+    <path d="M648 416 C680 414 700 416 728 428"/>
+    <path d="M922 456 C942 456 958 456 976 454"/>
+  </g>
+</svg>

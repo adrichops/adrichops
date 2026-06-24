@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">Japanese steel history</title><desc id="desc">Minimal timeline from tatara to modern knife steel.</desc>
+  <rect width="1200" height="760" rx="48" fill="#10100d"/>
+  <g stroke="#2e2d27" stroke-width="2" opacity=".72">
+    <path d="M80 200H1120M80 380H1120M80 560H1120"/>
+    <path d="M220 100V660M460 100V660M700 100V660M940 100V660"/>
+  </g>
+  <g font-family="Montserrat,Arial,sans-serif" font-weight="900" fill="#f7f1e7">
+    <text x="86" y="108" font-size="28" letter-spacing="5">JAPANESE STEEL</text>
+    <text x="86" y="640" font-size="18" letter-spacing="4" fill="#a9a196">TATARA</text>
+    <text x="330" y="640" font-size="18" letter-spacing="4" fill="#a9a196">YAWATA</text>
+    <text x="590" y="640" font-size="18" letter-spacing="4" fill="#a9a196">YASUGI</text>
+    <text x="845" y="640" font-size="18" letter-spacing="4" fill="#a9a196">VG10</text>
+  </g>
+  <path d="M120 520 C260 472 390 532 520 492 C690 440 836 452 1080 356" fill="none" stroke="#ff4b35" stroke-width="10" stroke-linecap="round"/>
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M146 492 L206 318 L276 492 Z" stroke="#f7f1e7" stroke-width="12"/>
+    <path d="M184 492 C174 452 190 424 210 396 C234 430 250 458 232 492" stroke="#ff4b35" stroke-width="8"/>
+    <path d="M398 500 L398 260 L474 260 L474 500" stroke="#f7f1e7" stroke-width="12"/>
+    <path d="M374 500 H504" stroke="#f7f1e7" stroke-width="12"/>
+    <path d="M620 492 H744" stroke="#f7f1e7" stroke-width="20"/>
+    <path d="M632 440 H732" stroke="#d5d0c7" stroke-width="12"/>
+    <path d="M850 492 C940 458 1005 410 1058 332 C1014 452 956 532 840 558 L690 560" stroke="#f7f1e7" stroke-width="13"/>
+    <path d="M838 558 L696 560" stroke="#ff4b35" stroke-width="8"/>
+  </g>
+  <g fill="#f7f1e7" opacity=".92">
+    <circle cx="206" cy="318" r="9"/><circle cx="436" cy="260" r="9"/><circle cx="684" cy="492" r="9"/><circle cx="940" cy="458" r="9"/>
+  </g>
+</svg>
