@@ -417,10 +417,7 @@ p { margin: 0; }
   stroke-linecap: round;
   opacity: .84;
 }
-.graph-lines line {
-  stroke: var(--graph-edge-contrast);
-  stroke-width: 2.4;
-}
+.graph-lines line { stroke: var(--edge-color, var(--graph-edge-contrast)); stroke-width: 2.4; }
 .graph-edge-hit {
   stroke: transparent;
   stroke-width: 26;
@@ -432,7 +429,7 @@ p { margin: 0; }
   stroke-width: 34;
 }
 .graph-lines line.graph-edge {
-  stroke: var(--graph-edge-contrast);
+  stroke: var(--edge-color, var(--graph-edge-contrast));
   stroke-width: 2.25;
   stroke-linecap: round;
   opacity: .82;
@@ -444,7 +441,7 @@ p { margin: 0; }
 }
 .graph-lines .edge-region-member,
 .graph-lines .edge-regional-hub {
-  stroke: color-mix(in srgb, var(--region-color, var(--graph-edge-contrast)) 72%, var(--graph-edge-contrast));
+  stroke: color-mix(in srgb, var(--region-color, var(--edge-color, var(--graph-edge-contrast))) 72%, var(--edge-color, var(--graph-edge-contrast)));
   stroke-width: 2.6;
   opacity: .92;
 }
@@ -452,19 +449,19 @@ p { margin: 0; }
 .graph-lines .edge-student,
 .graph-lines .edge-family,
 .graph-lines .edge-worked-under {
-  stroke: #2fbf71;
+  stroke: var(--edge-color, #2fbf71);
   stroke-width: 3.1;
   opacity: .92;
 }
 .graph-lines .edge-works-at,
 .graph-lines .edge-workshop-background {
-  stroke: #36a3ff;
+  stroke: var(--edge-color, #36a3ff);
   stroke-width: 3.1;
   opacity: .94;
 }
 .graph-lines .edge-smith-to-sharpener,
 .graph-lines .edge-brand-to-sharpener {
-  stroke: #d99100;
+  stroke: var(--edge-color, #d99100);
   stroke-width: 3.05;
   opacity: .93;
 }
@@ -472,17 +469,17 @@ p { margin: 0; }
 .graph-lines .edge-brand-to-line,
 .graph-lines .edge-collaboration,
 .graph-lines .edge-alias {
-  stroke: color-mix(in srgb, var(--accent) 82%, var(--graph-edge-contrast));
+  stroke: var(--edge-color, color-mix(in srgb, var(--accent) 82%, var(--graph-edge-contrast)));
   stroke-width: 2.95;
   opacity: .92;
 }
 .graph-lines .edge-line-collaboration,
 .graph-lines .edge-brand-to-line,
 .graph-lines .edge-collaboration {
-  stroke: #ff6f61;
+  stroke: var(--edge-color, #ff6f61);
 }
 .graph-lines .edge-alias {
-  stroke: color-mix(in srgb, #18b7a2 88%, var(--graph-edge-contrast));
+  stroke: var(--edge-color, color-mix(in srgb, #18b7a2 88%, var(--graph-edge-contrast)));
 }
 .graph-lines .source-community,
 .graph-lines .source-forum,
@@ -528,7 +525,7 @@ p { margin: 0; }
 }
 .edge-label-wrap rect {
   fill: color-mix(in srgb, var(--paper) 96%, transparent);
-  stroke: color-mix(in srgb, var(--line-strong) 74%, transparent);
+  stroke: var(--edge-color, color-mix(in srgb, var(--line-strong) 74%, transparent));
   stroke-width: 1.25;
 }
 .edge-label-wrap text {
@@ -595,7 +592,13 @@ p { margin: 0; }
   stroke: var(--paper);
   stroke-width: 2.5px;
 }
-.graph-node .node-name {
+.graph-node .node-label {
+  display: block;
+  fill: var(--ink);
+  opacity: 1;
+  visibility: visible;
+}
+.graph-node .primary-label {
   font-size: 14px;
   line-height: 1;
   font-weight: 950;
@@ -604,7 +607,7 @@ p { margin: 0; }
   fill: var(--bg);
 }
 .graph-center .small,
-.graph-node .small {
+.graph-node .secondary-label {
   font-size: 11px;
   letter-spacing: .08em;
   text-transform: uppercase;
@@ -668,10 +671,10 @@ p { margin: 0; }
   stroke-width: 3px;
   letter-spacing: .08em;
 }
-.region-node .node-name {
+.region-node .primary-label {
   font-size: 14px;
 }
-.region-node .small {
+.region-node .secondary-label {
   font-size: 10px;
 }
 .role-blacksmith {

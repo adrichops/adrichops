@@ -67,6 +67,23 @@
     'tosa-kochi': [39, 81],
     kumamoto: [26, 89]
   };
+  const edgeColors = {
+    apprenticeship: '#2fbf71',
+    student: '#2fbf71',
+    family: '#2fbf71',
+    'worked-under': '#2fbf71',
+    'works-at': '#36a3ff',
+    'workshop-background': '#36a3ff',
+    'smith-to-sharpener': '#d99100',
+    'brand-to-sharpener': '#d99100',
+    'line-collaboration': '#ff6f61',
+    'brand-to-line': '#ff6f61',
+    collaboration: '#ff6f61',
+    alias: '#18b7a2',
+    'regional-peer': '#d7d1c5',
+    'region-member': '#d7d1c5',
+    'regional-hub': '#d7d1c5'
+  };
 
   function roleTokens(role) {
     return String(role || 'node')
@@ -379,16 +396,19 @@
     const width = Math.max(72, Math.min(220, text.length * 8.4 + 28));
     return `
       <g class="edge-label-wrap ${esc(edgeMetaClass(edge))}" data-edge-label="${esc(edgeKey(edge))}">
+        <g style="${esc(edgeStyle(edge))}">
         <rect x="${-width / 2}" y="-15" width="${width}" height="30" rx="15"></rect>
         <text y="1">${esc(text)}</text>
+        </g>
       </g>
     `;
   }
 
   function edgeStyle(edge) {
-    if (edge.kind !== 'regional-hub') return '';
+    const edgeColor = edgeColors[edge.kind] || '#d7d1c5';
     const regionId = edge.to.replace(/^region:/, '');
-    return `--region-color: ${regionColor(regionId)}`;
+    const regionStyle = edge.kind === 'regional-hub' ? `--region-color: ${regionColor(regionId)}; ` : '';
+    return `${regionStyle}--edge-color: ${edgeColor}`;
   }
 
   function edgeShouldLabel(edge) {
@@ -429,9 +449,9 @@
     const hasSmall = !node.isRegion || String(node.location || '').toLowerCase() !== String(node.name || '').toLowerCase();
     const firstY = lines.length === 1 ? -7 : -15;
     const text = lines.map((line, index) => (
-      `<text class="node-name" y="${firstY + index * 15}">${esc(line)}</text>`
+      `<text class="node-label primary-label" y="${firstY + index * 15}">${esc(line)}</text>`
     )).join('');
-    const small = hasSmall ? `<text class="small" y="${lines.length === 1 ? 19 : 24}">${esc(node.isRegion ? compactLabel(node.location, 13) : compactLabel(node.role, 13))}</text>` : '';
+    const small = hasSmall ? `<text class="node-label secondary-label" y="${lines.length === 1 ? 19 : 24}">${esc(node.isRegion ? compactLabel(node.location, 13) : compactLabel(node.role, 13))}</text>` : '';
     return text + small;
   }
 
