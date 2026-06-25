@@ -350,7 +350,7 @@ p { margin: 0; }
   border-radius: var(--radius);
   box-shadow: var(--shadow);
   overflow: hidden;
-  min-height: clamp(620px, 72vh, 860px);
+  min-height: clamp(760px, 78vh, 980px);
 }
 .graph-stage-head {
   position: absolute;
@@ -399,7 +399,7 @@ p { margin: 0; }
 }
 .maker-graph-svg {
   width: 100%;
-  min-height: clamp(620px, 72vh, 860px);
+  min-height: clamp(760px, 78vh, 980px);
   display: block;
   cursor: grab;
   touch-action: none;
@@ -585,8 +585,8 @@ p { margin: 0; }
   overflow: visible;
 }
 .node-html-label {
-  width: 108px;
-  height: 62px;
+  width: 136px;
+  height: 84px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -605,19 +605,19 @@ p { margin: 0; }
 .node-primary,
 .node-secondary {
   display: -webkit-box;
-  max-width: 96px;
+  max-width: 122px;
   overflow: hidden;
   overflow-wrap: anywhere;
   -webkit-box-orient: vertical;
 }
 .node-primary {
   -webkit-line-clamp: 2;
-  font-size: 12px;
+  font-size: 14px;
 }
 .node-secondary {
   -webkit-line-clamp: 1;
   color: var(--muted);
-  font-size: 9px;
+  font-size: 10.5px;
   letter-spacing: .06em;
   text-transform: uppercase;
 }
@@ -678,10 +678,10 @@ p { margin: 0; }
   stroke: var(--region-color, var(--accent));
 }
 .region-node .node-primary {
-  font-size: 12.5px;
+  font-size: 15px;
 }
 .region-node .node-secondary {
-  font-size: 9px;
+  font-size: 10.5px;
 }
 .role-blacksmith {
   --role-color: #ff5a4f;
@@ -790,7 +790,7 @@ p { margin: 0; }
 }
 .regional-map-svg {
   width: 100%;
-  min-height: clamp(360px, 46vw, 560px);
+  min-height: clamp(520px, 56vw, 760px);
   display: block;
   border: 1px solid var(--line);
   border-radius: var(--radius-sm);
@@ -816,8 +816,8 @@ p { margin: 0; }
 .regional-map-node circle {
   fill: color-mix(in srgb, var(--region-color) 19%, var(--paper));
   stroke: var(--region-color);
-  stroke-width: 3.2;
-  filter: drop-shadow(0 8px 13px color-mix(in srgb, var(--region-color) 16%, transparent));
+  stroke-width: 3.6;
+  filter: drop-shadow(0 10px 16px color-mix(in srgb, var(--region-color) 18%, transparent));
 }
 .regional-map-node:hover circle,
 .regional-map-node:focus-visible circle,
@@ -837,11 +837,11 @@ p { margin: 0; }
 }
 .regional-map-node .region-flag {
   fill: var(--region-color);
-  font-size: 12px;
+  font-size: 14px;
   letter-spacing: .08em;
 }
 .regional-map-node .small {
-  font-size: 9px;
+  font-size: 10.5px;
   text-transform: uppercase;
 }
 .maker-card {

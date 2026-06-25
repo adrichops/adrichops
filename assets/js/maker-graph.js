@@ -54,18 +54,18 @@
     tokyo: '#f5eee3'
   };
   const regionMapPositions = {
-    aomori: [63, 23],
-    'tsubame-niigata': [54, 40],
-    sanjo: [55, 42],
-    tokyo: [61, 53],
-    echizen: [49, 54],
-    'seki-gifu': [53, 61],
-    kyoto: [45, 65],
-    miki: [42, 69],
-    sakai: [45, 71],
-    okayama: [36, 70],
-    'tosa-kochi': [39, 81],
-    kumamoto: [26, 89]
+    aomori: [68, 19],
+    'tsubame-niigata': [59, 39],
+    sanjo: [61, 41],
+    tokyo: [68, 53],
+    echizen: [50, 54],
+    'seki-gifu': [56, 60],
+    kyoto: [46, 65],
+    miki: [40, 69],
+    sakai: [48, 72],
+    okayama: [33, 71],
+    'tosa-kochi': [39, 83],
+    kumamoto: [23, 88]
   };
   const edgeColors = {
     apprenticeship: '#2fbf71',
@@ -222,12 +222,12 @@
     const saved = state.positions.get(node.id);
     if (saved) return { ...node, x: saved.x, y: saved.y, vx: saved.vx || 0, vy: saved.vy || 0 };
 
-    const width = state.activeRegion ? 1400 : 1180;
-    const height = state.activeRegion ? 920 : 760;
+    const width = state.activeRegion ? 1480 : 1180;
+    const height = state.activeRegion ? 980 : 760;
     if (node.id === 'japan' || node.isRegion && state.activeRegion && node.regionId === state.activeRegion.id) {
       return { ...node, x: width / 2, y: height / 2, vx: 0, vy: 0 };
     }
-    const radius = state.activeRegion ? 360 : 260;
+    const radius = state.activeRegion ? 430 : 280;
     const angle = -Math.PI / 2 + (Math.PI * 2 * index) / Math.max(total, 1);
     return {
       ...node,
@@ -267,7 +267,7 @@
   function renderGeographyMap() {
     if (!geoSvg) return;
     const width = 1180;
-    const height = 620;
+    const height = 700;
     geoSvg.setAttribute('viewBox', `0 0 ${width} ${height}`);
     const points = state.graph.regions.map((region) => {
       const [xPct, yPct] = regionMapPositions[region.id] || [50, 50];
@@ -281,21 +281,22 @@
         </linearGradient>
       </defs>
       <g class="japan-map-shape" aria-hidden="true">
-        <path class="hokkaido" d="M725 42 C776 35 836 63 860 111 C884 159 854 206 795 215 C746 222 696 205 681 163 C664 116 681 56 725 42 Z"></path>
-        <path class="honshu" d="M718 207 C761 232 804 272 800 318 C796 365 742 378 699 397 C641 423 611 476 553 488 C493 501 451 464 410 439 C363 411 304 415 274 378 C248 346 267 304 310 287 C359 268 413 289 462 270 C516 250 548 195 602 187 C642 181 681 186 718 207 Z"></path>
-        <path class="shikoku" d="M411 467 C452 449 509 452 533 478 C554 501 524 526 475 530 C426 533 381 516 379 491 C378 481 389 473 411 467 Z"></path>
-        <path class="kyushu" d="M276 438 C323 452 348 493 334 539 C319 590 263 607 219 577 C177 548 169 498 203 463 C221 445 247 431 276 438 Z"></path>
-        <path class="okinawa" d="M128 570 C143 561 164 564 174 576 C158 589 139 589 128 570 Z"></path>
-        <circle cx="181" cy="541" r="8"></circle>
-        <circle cx="156" cy="522" r="6"></circle>
+        <path class="hokkaido" d="M746 40 C797 31 858 55 889 99 C921 145 900 194 843 216 C797 234 730 219 702 182 C674 146 682 80 717 55 C725 49 735 43 746 40 Z"></path>
+        <path class="honshu" d="M712 205 C681 205 650 224 626 252 C596 287 574 323 530 337 C491 350 456 331 418 343 C376 356 354 391 313 399 C276 406 236 390 214 416 C193 441 208 474 247 486 C291 500 335 472 382 477 C433 483 469 516 523 506 C572 498 600 463 635 438 C673 411 734 401 766 360 C801 315 780 232 735 211 C728 208 721 206 712 205 Z"></path>
+        <path class="shikoku" d="M390 513 C428 494 493 498 525 522 C552 542 529 570 479 578 C425 586 373 566 362 540 C358 530 369 521 390 513 Z"></path>
+        <path class="kyushu" d="M234 481 C285 493 323 536 316 588 C309 642 252 665 205 636 C160 608 150 549 184 507 C199 489 213 480 234 481 Z"></path>
+        <path class="okinawa" d="M109 636 C128 625 153 628 166 643 C148 659 122 657 109 636 Z"></path>
+        <circle cx="164" cy="603" r="8"></circle>
+        <circle cx="137" cy="582" r="6"></circle>
+        <circle cx="196" cy="562" r="5"></circle>
       </g>
       <g class="regional-map-nodes">
         ${points.map((point) => {
           const active = state.activeRegion && state.activeRegion.id === point.region.id;
           return `<g class="regional-map-node${active ? ' is-active' : ''}" data-map-region="${esc(point.region.id)}" tabindex="0" role="button" aria-label="Open ${esc(point.region.name)}" transform="translate(${point.x} ${point.y})" style="--region-color: ${esc(regionColor(point.region.id))}">
-            <circle r="36"></circle>
-            <text class="region-flag" y="-7">${esc(regionInitials(point.region))}</text>
-            <text class="small" y="13">${esc(point.region.location)}</text>
+            <circle r="46"></circle>
+            <text class="region-flag" y="-9">${esc(regionInitials(point.region))}</text>
+            <text class="small" y="15">${esc(point.region.location)}</text>
           </g>`;
         }).join('')}
       </g>
@@ -328,8 +329,8 @@
     cancelAnimationFrame(state.raf);
 
     const selection = graphSelection();
-    const width = state.activeRegion ? 1400 : 1180;
-    const height = state.activeRegion ? 920 : 760;
+    const width = state.activeRegion ? 1480 : 1180;
+    const height = state.activeRegion ? 980 : 760;
     const nodes = selection.nodes.map((node, index) => seedPosition(node, index, selection.nodes.length));
     const nodeById = new Map(nodes.map((node) => [node.id, node]));
     const edges = selection.edges
@@ -432,7 +433,7 @@
       ...roleTokens(node.role).map((role) => `role-${role}`),
       active ? 'is-active' : ''
     ].filter(Boolean).join(' ');
-    const radius = node.isHub ? 70 : node.isRegion ? 68 : 58;
+    const radius = node.isHub ? 86 : node.isRegion ? 92 : 76;
     const label = node.isHub ? 'Open regional map' : node.isRegion ? `Open ${node.name}` : `Open ${node.name}`;
     const regionId = regionIdForNode(node);
     const style = regionId ? ` style="--region-color: ${esc(regionColor(regionId))}"` : '';
@@ -448,7 +449,7 @@
     const primary = node.isHub ? 'Japan' : node.isRegion ? node.name : node.name;
     const secondary = node.isHub ? 'Hub' : node.isRegion ? node.location : node.role;
     return `
-      <foreignObject class="node-label-box" x="-54" y="-31" width="108" height="62">
+      <foreignObject class="node-label-box" x="-68" y="-42" width="136" height="84">
         <div xmlns="http://www.w3.org/1999/xhtml" class="node-html-label">
           <span class="node-primary">${esc(primary)}</span>
           <span class="node-secondary">${esc(secondary)}</span>
@@ -601,7 +602,7 @@
         const dx = target.x - source.x || 0.01;
         const dy = target.y - source.y || 0.01;
         const distance = Math.sqrt(dx * dx + dy * dy);
-        const desired = edge.kind === 'region-member' || edge.kind === 'regional-hub' ? (state.activeRegion ? 360 : 260) : 330;
+        const desired = edge.kind === 'region-member' || edge.kind === 'regional-hub' ? (state.activeRegion ? 430 : 285) : 390;
         const force = ((distance - desired) / distance) * (state.activeRegion ? 0.011 : 0.013) * alpha;
         const fx = dx * force;
         const fy = dy * force;
@@ -622,7 +623,7 @@
           const dx = b.x - a.x || 0.01;
           const dy = b.y - a.y || 0.01;
           const distanceSq = Math.max(dx * dx + dy * dy, 900);
-          const force = (a.isHub || b.isHub ? 7400 : state.activeRegion ? 24500 : 12800) / distanceSq * alpha;
+          const force = (a.isHub || b.isHub ? 9400 : state.activeRegion ? 36500 : 16800) / distanceSq * alpha;
           const distance = Math.sqrt(distanceSq);
           const fx = (dx / distance) * force;
           const fy = (dy / distance) * force;
