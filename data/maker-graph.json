@@ -1,0 +1,414 @@
+{
+  "regions": [
+    {
+      "id": "sakai",
+      "name": "Sakai",
+      "location": "Osaka",
+      "summary": "Specialized production chains: smiths, sharpeners, brands and retailers often all matter.",
+      "notes": [
+        "Use Sakai as a chain-reading region: who forged it, who sharpened it, which line, which retailer context.",
+        "The blacksmith and sharpener relationship is often the point, not a footnote."
+      ],
+      "sourceIds": ["sakai-ichimonji-making", "japan-house-sakai", "sakai-traditional-crafts"],
+      "nodes": [
+        {
+          "id": "ikeda",
+          "name": "Ikeda",
+          "role": "Blacksmith",
+          "specialty": "Sakai carbon forging, traditional single-bevel work and honyaki-adjacent buying context.",
+          "famousLines": ["Ikeda-forged Sakai blades", "Honyaki and carbon steel listings"],
+          "caveat": "Exact first name and line attribution should be checked listing by listing."
+        },
+        {
+          "id": "nomura",
+          "name": "Nomura",
+          "role": "Sharpener",
+          "specialty": "Sakai sharpening, bevel geometry and final cutting feel.",
+          "famousLines": ["Nomura-sharpened Sakai blades"],
+          "caveat": "Added as the Ikeda/Nomura relationship example requested by Adrian; keep exact product claims conservative."
+        },
+        {
+          "id": "kenichi-shiraki",
+          "name": "Kenichi Shiraki",
+          "role": "Blacksmith",
+          "specialty": "Sakai carbon forging lineage, honyaki capability and apprenticeship influence.",
+          "famousLines": ["Shiraki-forged Sakai blades"],
+          "sourceIds": ["knifewear-nakagawa", "burrfection-nakagawa"]
+        },
+        {
+          "id": "satoshi-nakagawa",
+          "name": "Satoshi Nakagawa",
+          "role": "Blacksmith",
+          "specialty": "Ginsan, Aogami, Shirogami and honyaki-capable Sakai forging.",
+          "famousLines": ["Nakagawa Ginsan", "Nakagawa Aogami", "Nakagawa Shirogami"],
+          "sourceIds": ["knifewear-nakagawa", "burrfection-nakagawa"]
+        },
+        {
+          "id": "ashi-hamono",
+          "name": "Ashi Hamono",
+          "role": "Workshop",
+          "specialty": "Thin Sakai laser geometry and clean monosteel performance.",
+          "famousLines": ["Ashi Ginga", "AEB-L Ginga", "White #2 Ginga"],
+          "sourceIds": ["carbon-ashi"]
+        },
+        {
+          "id": "mitsuaki-takada",
+          "name": "Mitsuaki Takada",
+          "role": "Sharpener",
+          "specialty": "Thin convex hamaguri-style grinding, Suiboku finish and modern Sakai polish.",
+          "famousLines": ["Takada Suiboku", "Takada Reika", "Takada Ginsan"],
+          "sourceIds": ["takada-official", "mtc-takada"]
+        },
+        {
+          "id": "konosuke",
+          "name": "Konosuke",
+          "role": "Brand",
+          "specialty": "Sakai curation where smith, sharpener and exact line define the knife.",
+          "famousLines": ["Fujiyama", "FM Fujiyama", "HD2"],
+          "sourceIds": ["konosuke-about", "konosuke-fm"]
+        },
+        {
+          "id": "morihiro",
+          "name": "Morihiro",
+          "role": "Sharpener",
+          "specialty": "Reference-point Sakai sharpening identity behind original Fujiyama context.",
+          "famousLines": ["Konosuke Fujiyama context"],
+          "sourceIds": ["konosuke-fujiyama"]
+        },
+        {
+          "id": "hado",
+          "name": "HADO / Fukui",
+          "role": "Brand",
+          "specialty": "Modern Sakai presentation with named craft, Ginsan lines and clean finishing.",
+          "famousLines": ["HADO Sumi", "HADO Junpaku", "HADO Ginsan"],
+          "sourceIds": ["hado-official", "sakai-kitchen-hado"]
+        },
+        {
+          "id": "baba-hamono",
+          "name": "Baba Hamono",
+          "role": "Brand",
+          "specialty": "Sakai maker network and Kagekiyo house identity.",
+          "famousLines": ["Kagekiyo"],
+          "sourceIds": ["baba-official"]
+        }
+      ],
+      "edges": [
+        {
+          "from": "ikeda",
+          "to": "nomura",
+          "kind": "smith-to-sharpener",
+          "label": "forging to sharpening",
+          "detail": "Ikeda is treated as the blacksmith node and Nomura as the sharpener node in the Sakai chain example."
+        },
+        {
+          "from": "kenichi-shiraki",
+          "to": "satoshi-nakagawa",
+          "kind": "apprenticeship",
+          "label": "apprenticeship lineage",
+          "detail": "Nakagawa is commonly described as training under Shiraki before founding his own Sakai workshop."
+        },
+        {
+          "from": "ashi-hamono",
+          "to": "mitsuaki-takada",
+          "kind": "workshop-background",
+          "label": "Ashi background",
+          "detail": "Takada's profile is tied to years at Ashi Hamono before founding Takada no Hamono."
+        },
+        {
+          "from": "konosuke",
+          "to": "morihiro",
+          "kind": "brand-to-sharpener",
+          "label": "Fujiyama sharpening identity",
+          "detail": "Konosuke's Fujiyama/FM story makes sharpener attribution part of the buyer conversation."
+        },
+        {
+          "from": "hado",
+          "to": "baba-hamono",
+          "kind": "regional-peer",
+          "label": "modern Sakai brand context",
+          "detail": "Both show how modern Sakai brands make specialist craft legible to buyers."
+        }
+      ]
+    },
+    {
+      "id": "sanjo",
+      "name": "Sanjo",
+      "location": "Niigata",
+      "summary": "Blacksmith-forward shops, robust convexity and workhorse identities.",
+      "notes": [
+        "Sanjo is useful for understanding taller, more powerful double-bevel knives.",
+        "Relationships here often look like workshop training or regional influence rather than a Sakai-style smith/sharpener split."
+      ],
+      "sourceIds": ["yoshikane-official", "jns-wakui", "jns-toyama"],
+      "nodes": [
+        {
+          "id": "yoshikane",
+          "name": "Yoshikane Hamono",
+          "role": "Workshop",
+          "specialty": "Sanjo convex grinds, SKD, White #2 and controlled workhorse geometry.",
+          "famousLines": ["Yoshikane SKD", "Yoshikane White #2", "Nashiji gyuto"],
+          "sourceIds": ["yoshikane-official"]
+        },
+        {
+          "id": "toshihiro-wakui",
+          "name": "Toshihiro Wakui",
+          "role": "Blacksmith",
+          "specialty": "Small-shop Sanjo carbon knives with Yoshikane influence.",
+          "famousLines": ["Wakui White #2", "Wakui nashiji", "Wakui kasumi"],
+          "sourceIds": ["jns-wakui", "knivesworld-wakui"]
+        },
+        {
+          "id": "syuuji-toyama",
+          "name": "Syuuji Toyama",
+          "role": "Blacksmith",
+          "specialty": "Handmade Sanjo carbon knives, strong food-moving geometry and JNS Noborikoi context.",
+          "famousLines": ["Noborikoi", "Toyama Blue steel", "Toyama White steel"],
+          "sourceIds": ["jns-toyama"]
+        },
+        {
+          "id": "masashi-yamamoto",
+          "name": "Masashi Yamamoto",
+          "role": "Blacksmith",
+          "specialty": "Sanjo profile language, distinctive grinds and visually expressive lines.",
+          "famousLines": ["Kokuen", "SLD", "VS1"]
+        }
+      ],
+      "edges": [
+        {
+          "from": "yoshikane",
+          "to": "toshihiro-wakui",
+          "kind": "apprenticeship",
+          "label": "Yoshikane influence",
+          "detail": "Wakui profiles are commonly framed through time at Yoshikane and Sanjo tool-making context."
+        },
+        {
+          "from": "yoshikane",
+          "to": "syuuji-toyama",
+          "kind": "regional-peer",
+          "label": "Sanjo workhorse comparison",
+          "detail": "Yoshikane and Toyama are useful comparison points for Sanjo power, convexity and carbon care."
+        },
+        {
+          "from": "syuuji-toyama",
+          "to": "masashi-yamamoto",
+          "kind": "regional-peer",
+          "label": "Sanjo maker context",
+          "detail": "Both help show that Sanjo is not one grind; it is a region with different shop identities."
+        }
+      ]
+    },
+    {
+      "id": "echizen",
+      "name": "Echizen",
+      "location": "Fukui / Takefu",
+      "summary": "Takefu-style maker networks, laminated steels and visually distinct modern lines.",
+      "notes": [
+        "Echizen/Takefu is useful as a cooperative-region map: several recognizable makers share regional infrastructure and training context.",
+        "Use exact maker and line before assuming a single Echizen cutting feel."
+      ],
+      "sourceIds": ["takefu-knife-village"],
+      "nodes": [
+        {
+          "id": "takefu-knife-village",
+          "name": "Takefu Knife Village",
+          "role": "Cooperative",
+          "specialty": "Regional maker hub for Echizen forged knives and shared craft visibility.",
+          "famousLines": ["Takefu maker network"],
+          "sourceIds": ["takefu-knife-village"]
+        },
+        {
+          "id": "yu-kurosaki",
+          "name": "Yu Kurosaki",
+          "role": "Blacksmith",
+          "specialty": "Highly recognizable hammered and patterned finishes with modern export visibility.",
+          "famousLines": ["Senko", "Fujin", "Shizuku", "Raijin"]
+        },
+        {
+          "id": "takeshi-saji",
+          "name": "Takeshi Saji",
+          "role": "Blacksmith",
+          "specialty": "Expressive Damascus, western handles, R2/SG2 and outdoor-leaning visual language.",
+          "famousLines": ["Saji Rainbow Damascus", "Saji R2", "Saji VG10 Damascus"]
+        },
+        {
+          "id": "shiro-kamo",
+          "name": "Shiro Kamo",
+          "role": "Blacksmith",
+          "specialty": "Accessible handmade carbon and stainless-clad Echizen knives.",
+          "famousLines": ["Shiro Kamo Aogami Super", "Black Dragon", "Akuma"]
+        },
+        {
+          "id": "yoshimi-kato",
+          "name": "Yoshimi Kato",
+          "role": "Blacksmith",
+          "specialty": "Damascus, SG2/R2 and clean modern Echizen lines.",
+          "famousLines": ["Kato SG2", "Kato Damascus", "Kato Nashiji"]
+        }
+      ],
+      "edges": [
+        {
+          "from": "takefu-knife-village",
+          "to": "yu-kurosaki",
+          "kind": "regional-hub",
+          "label": "Takefu network",
+          "detail": "Kurosaki is best read inside the broader Takefu/Echizen maker network."
+        },
+        {
+          "from": "takefu-knife-village",
+          "to": "takeshi-saji",
+          "kind": "regional-hub",
+          "label": "Takefu network",
+          "detail": "Saji is a senior Echizen reference point for expressive Damascus and modern lines."
+        },
+        {
+          "from": "takefu-knife-village",
+          "to": "shiro-kamo",
+          "kind": "regional-hub",
+          "label": "Takefu network",
+          "detail": "Shiro Kamo helps show the accessible handmade carbon side of the region."
+        },
+        {
+          "from": "takefu-knife-village",
+          "to": "yoshimi-kato",
+          "kind": "regional-hub",
+          "label": "Takefu network",
+          "detail": "Kato belongs in the same regional network but should still be read by exact line and steel."
+        }
+      ]
+    },
+    {
+      "id": "miki",
+      "name": "Miki / Hyogo",
+      "location": "Hyogo",
+      "summary": "A non-Sakai example slot for Tanaka Uchihamono and the Kawakita relationship request.",
+      "notes": [
+        "This region is included because Adrian specifically asked for the Tanaka Uchihamono and Kawakita relationship.",
+        "The graph marks the relationship without overstating exact line names until a stronger source is added."
+      ],
+      "nodes": [
+        {
+          "id": "tanaka-uchihamono",
+          "name": "Tanaka Uchihamono",
+          "role": "Workshop",
+          "specialty": "Forged kitchen knives; read by exact smith, line, grind and retailer details.",
+          "famousLines": ["Tanaka Uchihamono listings", "Tanaka forged knives"],
+          "caveat": "Relationship included from Adrian's requested example; add exact retailer/source link when available."
+        },
+        {
+          "id": "kawakita",
+          "name": "Kawakita",
+          "role": "Collaborator",
+          "specialty": "Listed as the relationship counterpart for Tanaka Uchihamono in this map.",
+          "famousLines": ["Kawakita-associated Tanaka work"],
+          "caveat": "Keep this node conservative until a source trail is attached."
+        }
+      ],
+      "edges": [
+        {
+          "from": "tanaka-uchihamono",
+          "to": "kawakita",
+          "kind": "collaboration",
+          "label": "working relationship",
+          "detail": "Added to make the Tanaka Uchihamono / Kawakita relationship visible as requested."
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "sakai-ichimonji-making",
+      "label": "Sakai Ichimonji: How Japanese knives are made",
+      "url": "https://global.ichimonji.co.jp/blogs/a-craftsmans-eyes-view/how-japanese-knives-are-made"
+    },
+    {
+      "id": "japan-house-sakai",
+      "label": "Japan House London: Sakai forged knives",
+      "url": "https://www.japanhouselondon.uk/whats-on/sakai-forged-knives-workshop-visit-conversation/"
+    },
+    {
+      "id": "sakai-traditional-crafts",
+      "label": "Sakai Traditional Crafts Museum",
+      "url": "https://www.sakaidensan.jp/en/crafts/knife"
+    },
+    {
+      "id": "takada-official",
+      "label": "Takada no Hamono official profile",
+      "url": "https://www.takadanohamono.com/"
+    },
+    {
+      "id": "mtc-takada",
+      "label": "MTC Kitchen Takada no Hamono",
+      "url": "https://mtckitchen.com/collections/takada-no-hamono"
+    },
+    {
+      "id": "carbon-ashi",
+      "label": "Carbon Knife Co. Ashi Hamono",
+      "url": "https://carbonknifeco.com/collections/ashi-hamono"
+    },
+    {
+      "id": "konosuke-about",
+      "label": "Konosuke About Us",
+      "url": "https://konosuke-sakai.com/index.php/about-us/"
+    },
+    {
+      "id": "konosuke-fujiyama",
+      "label": "Konosuke Fujiyama",
+      "url": "https://konosuke-sakai.com/index.php/2020/04/23/fujiyama/"
+    },
+    {
+      "id": "konosuke-fm",
+      "label": "Konosuke FM Fujiyama",
+      "url": "https://konosuke-sakai.com/index.php/2020/04/23/fm/"
+    },
+    {
+      "id": "burrfection-nakagawa",
+      "label": "Burrfection Nakagawa collection",
+      "url": "https://burrfectionstore.com/collections/nakagawa"
+    },
+    {
+      "id": "knifewear-nakagawa",
+      "label": "Knifewear Satoshi Nakagawa profile",
+      "url": "https://knifewear.com/blogs/articles/blacksmith-profile-satoshi-nakagawa"
+    },
+    {
+      "id": "yoshikane-official",
+      "label": "Yoshikane Hamono official site",
+      "url": "https://yoshikanehamonoknives.com/"
+    },
+    {
+      "id": "jns-wakui",
+      "label": "Japanese Natural Stones Wakui Specials",
+      "url": "https://www.japanesenaturalstones.com/wakui-specials/"
+    },
+    {
+      "id": "knivesworld-wakui",
+      "label": "Knivesworld Wakui article",
+      "url": "https://knivesworld.com/"
+    },
+    {
+      "id": "jns-toyama",
+      "label": "Japanese Natural Stones Toyama Noborikoi",
+      "url": "https://www.japanesenaturalstones.com/toyama-noborikoi/"
+    },
+    {
+      "id": "hado-official",
+      "label": "HADO official site",
+      "url": "https://hado-knife.jp/en"
+    },
+    {
+      "id": "sakai-kitchen-hado",
+      "label": "Sakai Kitchen Fukui / HADO story",
+      "url": "https://www.sakaikitchen.jp/"
+    },
+    {
+      "id": "baba-official",
+      "label": "Baba Hamono",
+      "url": "https://www.baba-hamono.com/en/"
+    },
+    {
+      "id": "takefu-knife-village",
+      "label": "Takefu Knife Village",
+      "url": "https://www.takefu-knifevillage.jp/"
+    }
+  ]
+}

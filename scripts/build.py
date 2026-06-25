@@ -10,7 +10,7 @@ NAV = [
     ('/about/', 'About'),
     ('/reviews/', 'Reviews'),
     ('/maker-spotlight/', 'Maker spotlight'),
-    ('/knife-photos/', 'Knife photos'),
+    ('/maker-map/', 'Maker map'),
     ('/whats-in-my-roll/', "What’s in my roll"),
     ('/kit-builder/', 'Kit Builder'),
     ('/recommendations/', 'Recommendations'),
@@ -94,11 +94,11 @@ def load_posts():
     posts.sort(key=lambda p: (p.get('date',''), p.get('title','')), reverse=True)
     return posts
 
-def load_photo_gallery():
-    path = ROOT / 'data' / 'photo-gallery.json'
+def load_maker_graph():
+    path = ROOT / 'data' / 'maker-graph.json'
     if not path.exists():
-        return []
-    return (json.loads(path.read_text(encoding='utf-8')).get('photos') or [])
+        return {'regions': [], 'sources': []}
+    return json.loads(path.read_text(encoding='utf-8'))
 
 def esc(s):
     return html.escape(str(s or ''), quote=True)
@@ -238,7 +238,7 @@ def finder_markup():
 def home(posts):
     start_posts = [p for p in posts if p['id'] in ['start-here-main-kitchen-knife-profiles','chef-knife-vs-gyuto-which-all-purpose-profile','sharpening-basics-burr-angle-pressure','king-vs-shapton-starter-stones-guide','hasegawa-asahi-hinoki-cutting-board-guide','japanese-knife-culture-practical-guide']]
     latest = posts[:10]
-    entry = [('/about/','About','Line cook, chipped Shun, Tojiro DP, Japan, then Adrichops.'),('/reviews/','Reviews','Knives, stones and boards with owned/researched labels.'),('/maker-spotlight/','Maker spotlight','Workshops, sharpeners and brands worth understanding.'),('/knife-photos/','Knife photos','High-resolution knife photos with visible attribution and source backlinks.'),('/whats-in-my-roll/',"What’s in my roll",'The personal kit, the sensible kit, and what to edit over time.'),('/kit-builder/','Kit Builder','Drag up to 10 knives, stones, strops, boards, storage and utensils into a saved kit.'),('/recommendations/','Recommendations','Knife Finder, starter paths and maintenance pairings.'),('/explore/','Explore deck','A tactile card browser for the notebook.')]
+    entry = [('/about/','About','Line cook, chipped Shun, Tojiro DP, Japan, then Adrichops.'),('/reviews/','Reviews','Knives, stones and boards with owned/researched labels.'),('/maker-spotlight/','Maker spotlight','Workshops, sharpeners and brands worth understanding.'),('/maker-map/','Maker map','Interactive regional graph of smiths, sharpeners, workshops, brands and line relationships.'),('/whats-in-my-roll/',"What’s in my roll",'The personal kit, the sensible kit, and what to edit over time.'),('/kit-builder/','Kit Builder','Drag up to 10 knives, stones, strops, boards, storage and utensils into a saved kit.'),('/recommendations/','Recommendations','Knife Finder, starter paths and maintenance pairings.'),('/explore/','Explore deck','A tactile card browser for the notebook.')]
     entry_html = ''.join(f'<a class="entry-card" href="{href}"><span class="eyebrow">Start</span><strong>{esc(label)}</strong><p>{esc(text)}</p></a>' for href,label,text in entry)
     return head('Adrichops — Japanese knives, sharpening and practical buying notes', 'My personal knife notebook: reviews, maker spotlights, sharpening, boards, stones and recommendations.', '/') + header('') + f'''<main class="page">
   <section class="hero">
@@ -286,20 +286,17 @@ def recommendations_page(posts):
 def explore_page():
     return head('Explore deck — Adrichops', 'A tactile flickable card-navigation view for Adrichops articles, maker spotlights, reviews and recommendations.', '/explore/') + header('') + '''<main class="page"><section class="collection-hero"><span class="kicker">Card navigation</span><h1>Explore the deck.</h1><p>Browse Adrichops like a stack of knife cards. Choose a section, then flick the active card left or right to move through reviews, maker spotlights and recommendations.</p></section><section class="explore-layout" data-explore-deck><nav class="deck-nav" data-deck-nav aria-label="Deck sections"></nav><div class="card-stage"><div class="card-stage-head"><div><span class="kicker">Active stack</span><h2 data-stage-title>Reviews</h2><p data-stage-dek>Choose a section to load the stack.</p></div><div class="deck-controls" aria-label="Card controls"><button class="deck-control-button" type="button" data-deck-prev aria-label="Previous card">‹</button><span class="deck-counter" data-deck-counter>1 / 1</span><button class="deck-control-button" type="button" data-deck-next aria-label="Next card">›</button></div></div><p class="deck-hint">Flick the top card left or right. Arrow keys and the buttons work too.</p><div class="card-stack" data-card-stack tabindex="0" aria-live="polite"></div></div><aside class="deck-preview" data-deck-preview></aside></section></main><script src="/assets/js/explore-deck.js" defer></script>''' + footer()
 
-def knife_photos_page(photos):
-    first_image = photos[0]['localImage'] if photos else '/assets/img/hero-gyuto.svg'
-    figures = []
-    for photo in photos:
-        source = photo.get('sourceUrl') or photo.get('originalUrl') or '#'
-        original = photo.get('originalUrl') or source
-        dimensions = f'{photo.get("originalWidth")} × {photo.get("originalHeight")}' if photo.get('originalWidth') and photo.get('originalHeight') else 'High-resolution source'
-        caption = photo.get('caption') or photo.get('displayTitle') or photo.get('title')
-        credit = f'{photo.get("author", "Wikimedia Commons contributor")} · {photo.get("license", "Wikimedia Commons")}'
-        figures.append(f'''<figure class="photo-card">
-  <a class="photo-link" href="{esc(source)}" target="_blank" rel="noopener" aria-label="Open source page for {esc(photo.get('displayTitle'))}"><img src="{esc(site_path(photo.get('localImage')))}" alt="{esc(photo.get('displayTitle') or caption)}" loading="lazy"></a>
-  <figcaption><strong>{esc(photo.get('displayTitle') or photo.get('title'))}</strong><span>{esc(caption)}</span><span>{esc(dimensions)}</span><a href="{esc(source)}" target="_blank" rel="noopener">Image: {esc(credit)}</a><a href="{esc(original)}" target="_blank" rel="noopener">Open original file</a></figcaption>
-</figure>''')
-    return head('High-resolution knife photos — Adrichops', 'A sourced gallery of high-resolution knife photos with author attribution, license notes and backlinks for every image.', '/knife-photos/', site_path(first_image)) + header('Knife photos') + f'''<main class="page photo-page"><section class="collection-hero"><span class="kicker">Knife photos</span><h1>High-resolution knife photos.</h1><p>A visual reference shelf for profiles, finishes and sharpening scenes. Every image on this page includes visible attribution and a backlink to the source page.</p></section><section class="photo-grid" aria-label="High-resolution knife photo gallery">{''.join(figures)}</section></main>''' + footer()
+def maker_map_page(graph):
+    region_count = len(graph.get('regions') or [])
+    source_count = len(graph.get('sources') or [])
+    schema = {
+        '@context': 'https://schema.org',
+        '@type': 'Dataset',
+        'name': 'Adrichops Japanese knife maker relationship map',
+        'description': 'Interactive graph of Japanese knife regions, makers, smiths, sharpeners, brands and notable lines.',
+        'creator': {'@type': 'Person', 'name': 'Adrian'}
+    }
+    return head('Maker map — Adrichops', 'Interactive graph of Japanese knife regions, makers, smiths, sharpeners, brands, collaborations and famous lines.', '/maker-map/', '/assets/img/maker-chain.svg', schema) + header('Maker map') + f'''<main class="page maker-map-page"><section class="collection-hero"><span class="kicker">Maker graph</span><h1>Knife maker relationships.</h1><p>Start with a region node: Sakai, Sanjo, Echizen, then drill into the people and workshops inside it. The map separates blacksmiths, sharpeners, workshops, brands and collaborators so a listing becomes easier to read.</p></section><section class="maker-graph-shell" data-maker-graph><aside class="graph-sidebar"><div class="graph-panel"><span class="kicker">Regions</span><div class="region-list" data-region-list></div><button class="button" type="button" data-graph-reset>Back to regional map</button></div><div class="graph-panel"><span class="kicker">Filter</span><input class="search-input" type="search" placeholder="Search maker, line, role…" data-graph-search><select data-role-filter aria-label="Filter graph by role" hidden><option value="all">All roles</option><option value="blacksmith">Blacksmiths</option><option value="sharpener">Sharpeners</option><option value="workshop">Workshops</option><option value="brand">Brands</option><option value="cooperative">Cooperatives</option><option value="collaborator">Collaborators</option></select></div><div class="graph-panel graph-stats"><strong>{region_count}</strong><span>regions</span><strong>{source_count}</strong><span>source links</span></div></aside><div class="graph-stage"><div class="graph-stage-head"><div><span class="kicker" data-graph-title>Regional map</span><h2 data-graph-dek>Click a region to expand relationships.</h2></div></div><svg class="maker-graph-svg" data-graph-svg role="img" aria-label="Interactive Japanese knife maker relationship graph"></svg><div class="graph-card-grid" data-graph-cards></div></div><aside class="graph-detail-panel"><div class="graph-panel graph-detail" data-graph-detail><strong>Loading maker map.</strong><span>The graph data is loading from the local site database.</span></div><div class="graph-panel"><span class="kicker">Source trail</span><div class="graph-source-list" data-graph-sources></div></div><div class="graph-panel"><span class="kicker">Map rule</span><p>Relationship edges are practical buying clues, not proof that every listing under a name has the same smith, sharpener, steel or grind.</p></div></aside></section></main><script src="/assets/js/maker-graph.js" defer></script>''' + footer()
 
 def guide_index(posts):
     guides = [p for p in posts if p.get('type') != 'Review brief' and p.get('type') != 'Maker spotlight']
@@ -389,7 +386,7 @@ def redirect_page(target, title='Redirecting'):
 
 def main():
     posts = load_posts()
-    photos = load_photo_gallery()
+    maker_graph = load_maker_graph()
     # Save regenerated manifest
     for p in posts:
         p['route'] = p.get('route') or route_for(p)
@@ -397,6 +394,7 @@ def main():
     products = json.loads((ROOT / 'data/products.json').read_text(encoding='utf-8')).get('products', [])
     remove_public_path('/editing-guide/')
     remove_public_path('/editing-guide.html')
+    remove_public_path('/knife-photos/')
     # Core pages
     write('/index.html', home(posts))
     write('/about/', about_page())
@@ -406,7 +404,7 @@ def main():
     write('/kit-builder/', kit_builder_page())
     write('/recommendations/', recommendations_page(posts))
     write('/explore/', explore_page())
-    write('/knife-photos/', knife_photos_page(photos))
+    write('/maker-map/', maker_map_page(maker_graph))
     reviews = [p for p in posts if p.get('type') == 'Review brief']
     makers = [p for p in posts if p.get('type') == 'Maker spotlight']
     write('/reviews/', collection_page('Reviews', 'Knife, board and stone review briefs with clear owned or researched status labels.', 'Reviews', reviews, '/reviews/', 'Review pages separate personal experience from researched buying notes. Affiliate links are disclosed and caveats stay visible.'))
@@ -421,7 +419,8 @@ def main():
     write('/reviews.html', redirect_page('/reviews/', 'Reviews'))
     write('/makers.html', redirect_page('/maker-spotlight/', 'Maker spotlight'))
     write('/recommendations.html', redirect_page('/recommendations/', 'Recommendations'))
-    write('/knife-photos.html', redirect_page('/knife-photos/', 'Knife photos'))
+    write('/knife-photos/', redirect_page('/maker-map/', 'Maker map'))
+    write('/knife-photos.html', redirect_page('/maker-map/', 'Maker map'))
     write('/roll.html', redirect_page('/whats-in-my-roll/', "What’s in my roll"))
     write('/disclosure.html', redirect_page('/disclosure/', 'Disclosure'))
     write('/privacy.html', redirect_page('/privacy/', 'Privacy'))
@@ -435,7 +434,7 @@ def main():
     # 404
     write('/404.html', head('Page not found — Adrichops', 'The requested Adrichops page could not be found.', '/404.html') + header('') + '<main class="page"><section class="collection-hero"><span class="kicker">404</span><h1>Lost edge.</h1><p>This page is not in the kit. Try the notebook, recommendations or search.</p><p><a class="button primary" href="/">Back home</a></p></section></main>' + footer())
     # sitemap
-    urls = ['/', '/about/', '/reviews/', '/maker-spotlight/', '/knife-photos/', '/whats-in-my-roll/', '/kit-builder/', '/recommendations/', '/disclosure/', '/privacy/', '/guides/', '/explore/'] + [p['route'] for p in posts]
+    urls = ['/', '/about/', '/reviews/', '/maker-spotlight/', '/maker-map/', '/whats-in-my-roll/', '/kit-builder/', '/recommendations/', '/disclosure/', '/privacy/', '/guides/', '/explore/'] + [p['route'] for p in posts]
     sitemap = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + ''.join(f'  <url><loc>{BASE_URL.rstrip()}{u}</loc></url>\n' for u in urls) + '</urlset>\n'
     (ROOT / 'sitemap.xml').write_text(sitemap, encoding='utf-8')
     (ROOT / 'robots.txt').write_text(f'User-agent: *\nAllow: /\nSitemap: {BASE_URL}/sitemap.xml\n', encoding='utf-8')
