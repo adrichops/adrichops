@@ -439,7 +439,8 @@ p { margin: 0; }
   transition: opacity .18s ease, stroke-width .18s ease, stroke .18s ease;
 }
 .maker-graph-svg marker path {
-  fill: var(--graph-edge-contrast);
+  fill: context-stroke;
+  stroke: context-stroke;
 }
 .graph-lines .edge-region-member,
 .graph-lines .edge-regional-hub {
@@ -462,7 +463,11 @@ p { margin: 0; }
   opacity: .94;
 }
 .graph-lines .edge-smith-to-sharpener,
-.graph-lines .edge-brand-to-sharpener,
+.graph-lines .edge-brand-to-sharpener {
+  stroke: #d99100;
+  stroke-width: 3.05;
+  opacity: .93;
+}
 .graph-lines .edge-line-collaboration,
 .graph-lines .edge-brand-to-line,
 .graph-lines .edge-collaboration,
@@ -470,6 +475,11 @@ p { margin: 0; }
   stroke: color-mix(in srgb, var(--accent) 82%, var(--graph-edge-contrast));
   stroke-width: 2.95;
   opacity: .92;
+}
+.graph-lines .edge-line-collaboration,
+.graph-lines .edge-brand-to-line,
+.graph-lines .edge-collaboration {
+  stroke: #ff6f61;
 }
 .graph-lines .edge-alias {
   stroke: color-mix(in srgb, #18b7a2 88%, var(--graph-edge-contrast));
@@ -485,9 +495,9 @@ p { margin: 0; }
   opacity: .72;
 }
 .graph-lines .graph-edge.is-focused {
-  stroke: var(--ink);
   stroke-width: 5.2;
   opacity: 1;
+  filter: drop-shadow(0 0 8px color-mix(in srgb, currentColor 28%, transparent));
 }
 .maker-graph-svg.has-focused-item .graph-lines .graph-edge.is-focused {
   opacity: 1 !important;
@@ -535,6 +545,25 @@ p { margin: 0; }
 .edge-label-wrap.source-reddit rect {
   stroke-dasharray: 4 3;
 }
+.edge-label-wrap.edge-apprenticeship rect,
+.edge-label-wrap.edge-student rect,
+.edge-label-wrap.edge-family rect,
+.edge-label-wrap.edge-worked-under rect {
+  stroke: #2fbf71;
+}
+.edge-label-wrap.edge-works-at rect,
+.edge-label-wrap.edge-workshop-background rect {
+  stroke: #36a3ff;
+}
+.edge-label-wrap.edge-smith-to-sharpener rect,
+.edge-label-wrap.edge-brand-to-sharpener rect {
+  stroke: #d99100;
+}
+.edge-label-wrap.edge-line-collaboration rect,
+.edge-label-wrap.edge-brand-to-line rect,
+.edge-label-wrap.edge-collaboration rect {
+  stroke: #ff6f61;
+}
 .edge-label-wrap.confidence-low {
   opacity: .76;
 }
@@ -567,7 +596,7 @@ p { margin: 0; }
   stroke-width: 3px;
 }
 .graph-node .node-name {
-  font-size: 13px;
+  font-size: 15px;
   line-height: 1;
 }
 .graph-center text {
@@ -639,10 +668,10 @@ p { margin: 0; }
   letter-spacing: .08em;
 }
 .region-node .node-name {
-  font-size: 12.5px;
+  font-size: 15px;
 }
 .region-node .small {
-  font-size: 9.5px;
+  font-size: 10px;
 }
 .role-blacksmith {
   --role-color: #ff5a4f;
@@ -730,8 +759,11 @@ p { margin: 0; }
 .relationship-legend .edge-works-at {
   --edge-color: #36a3ff;
 }
+.relationship-legend .edge-smith-sharpener {
+  --edge-color: #d99100;
+}
 .relationship-legend .edge-collaboration {
-  --edge-color: var(--accent);
+  --edge-color: #ff6f61;
 }
 .relationship-legend .edge-community {
   --edge-color: var(--muted);
@@ -761,15 +793,11 @@ p { margin: 0; }
 .japan-map-shape {
   color: var(--ink);
 }
-.japan-map-shape path {
+.japan-map-shape path,
+.japan-map-shape circle {
   fill: url(#japan-map-fill);
   stroke: color-mix(in srgb, var(--line-strong) 80%, transparent);
   stroke-width: 2;
-}
-.regional-map-lines line {
-  stroke: color-mix(in srgb, var(--region-color) 52%, var(--line-strong));
-  stroke-width: 1.5;
-  opacity: .45;
 }
 .regional-map-node {
   cursor: pointer;

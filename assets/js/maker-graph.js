@@ -47,25 +47,25 @@
     miki: '#46a5ff',
     'seki-gifu': '#9b8cff',
     'tsubame-niigata': '#d879ff',
-    international: '#f25f9c',
+    kyoto: '#f25f9c',
     aomori: '#6fd3ff',
     okayama: '#d4b75f',
     kumamoto: '#ff8a48',
     tokyo: '#f5eee3'
   };
   const regionMapPositions = {
-    aomori: [62, 18],
-    tokyo: [68, 48],
-    'tsubame-niigata': [57, 38],
-    sanjo: [59, 40],
-    'seki-gifu': [49, 56],
-    echizen: [45, 50],
-    miki: [38, 61],
-    sakai: [42, 64],
-    okayama: [31, 63],
-    'tosa-kochi': [35, 75],
-    kumamoto: [20, 78],
-    international: [15, 26]
+    aomori: [63, 23],
+    'tsubame-niigata': [54, 40],
+    sanjo: [55, 42],
+    tokyo: [61, 53],
+    echizen: [49, 54],
+    'seki-gifu': [53, 61],
+    kyoto: [45, 65],
+    miki: [42, 69],
+    sakai: [45, 71],
+    okayama: [36, 70],
+    'tosa-kochi': [39, 81],
+    kumamoto: [26, 89]
   };
 
   function roleTokens(role) {
@@ -250,7 +250,7 @@
   function renderGeographyMap() {
     if (!geoSvg) return;
     const width = 1180;
-    const height = 540;
+    const height = 620;
     geoSvg.setAttribute('viewBox', `0 0 ${width} ${height}`);
     const points = state.graph.regions.map((region) => {
       const [xPct, yPct] = regionMapPositions[region.id] || [50, 50];
@@ -264,12 +264,13 @@
         </linearGradient>
       </defs>
       <g class="japan-map-shape" aria-hidden="true">
-        <path d="M690 72 C755 94 814 134 842 189 C872 249 840 302 783 324 C728 346 675 341 624 373 C566 410 520 472 439 467 C372 463 326 417 329 358 C333 296 390 270 447 254 C520 235 562 200 596 145 C620 108 650 74 690 72 Z"></path>
-        <path d="M338 329 C295 346 245 375 222 418 C202 456 229 485 272 473 C316 461 348 423 368 382 C382 353 369 320 338 329 Z"></path>
-        <path d="M536 97 C556 79 588 63 611 73 C628 81 626 103 601 117 C571 133 531 129 521 114 C517 108 524 101 536 97 Z"></path>
-      </g>
-      <g class="regional-map-lines">
-        ${points.map((point) => `<line x1="${width / 2}" y1="${height / 2}" x2="${point.x}" y2="${point.y}" style="--region-color: ${esc(regionColor(point.region.id))}"></line>`).join('')}
+        <path class="hokkaido" d="M725 42 C776 35 836 63 860 111 C884 159 854 206 795 215 C746 222 696 205 681 163 C664 116 681 56 725 42 Z"></path>
+        <path class="honshu" d="M718 207 C761 232 804 272 800 318 C796 365 742 378 699 397 C641 423 611 476 553 488 C493 501 451 464 410 439 C363 411 304 415 274 378 C248 346 267 304 310 287 C359 268 413 289 462 270 C516 250 548 195 602 187 C642 181 681 186 718 207 Z"></path>
+        <path class="shikoku" d="M411 467 C452 449 509 452 533 478 C554 501 524 526 475 530 C426 533 381 516 379 491 C378 481 389 473 411 467 Z"></path>
+        <path class="kyushu" d="M276 438 C323 452 348 493 334 539 C319 590 263 607 219 577 C177 548 169 498 203 463 C221 445 247 431 276 438 Z"></path>
+        <path class="okinawa" d="M128 570 C143 561 164 564 174 576 C158 589 139 589 128 570 Z"></path>
+        <circle cx="181" cy="541" r="8"></circle>
+        <circle cx="156" cy="522" r="6"></circle>
       </g>
       <g class="regional-map-nodes">
         ${points.map((point) => {
@@ -418,7 +419,6 @@
     return `
       <g class="${esc(className)}" tabindex="0" role="button" aria-label="${esc(label)}" data-node="${esc(node.id)}"${style}>
         <circle r="${radius}"></circle>
-        ${node.isRegion ? `<text class="region-flag" y="-32">${esc(regionInitials(node))}</text>` : ''}
         ${nodeTextMarkup(node)}
       </g>
     `;
@@ -427,11 +427,11 @@
   function nodeTextMarkup(node) {
     const lines = node.isRegion ? regionNameLines(node.name) : makerNameLines(node.name);
     const hasSmall = !node.isRegion || String(node.location || '').toLowerCase() !== String(node.name || '').toLowerCase();
-    const firstY = lines.length === 1 ? -3 : -11;
+    const firstY = lines.length === 1 ? -4 : -14;
     const text = `<text class="node-name" y="${firstY}">${lines.map((line, index) => (
       `<tspan x="0" dy="${index === 0 ? 0 : 15}">${esc(line)}</tspan>`
     )).join('')}</text>`;
-    const small = hasSmall ? `<text class="small" y="${lines.length === 1 ? 19 : 25}">${esc(node.isRegion ? compactLabel(node.location, 13) : compactLabel(node.role, 13))}</text>` : '';
+    const small = hasSmall ? `<text class="small" y="${lines.length === 1 ? 19 : 24}">${esc(node.isRegion ? compactLabel(node.location, 13) : compactLabel(node.role, 13))}</text>` : '';
     return text + small;
   }
 

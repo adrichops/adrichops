@@ -1761,12 +1761,12 @@
       ]
     },
     {
-      "id": "international",
-      "name": "International",
-      "location": "Global",
-      "summary": "Source-pending maker nodes that matter to the buying conversation but should not be forced into a Japanese regional lineage.",
+      "id": "kyoto",
+      "name": "Kyoto",
+      "location": "Kyoto",
+      "summary": "Kyoto-based contemporary maker context for individual craftspeople outside the large Sakai, Sanjo, Echizen and Seki clusters.",
       "notes": [
-        "Use this branch for non-Japanese or source-pending makers until stronger region and relationship sources are attached.",
+        "Use this branch for Kyoto-based makers and sharpeners whose relationships still need stronger public source trails.",
         "Relationships here should stay conservative and visibly caveated."
       ],
       "sourceIds": [
@@ -1778,7 +1778,7 @@
           "id": "ivan-fonseca",
           "name": "Ivan Fonseca",
           "role": "Maker / Sharpener",
-          "specialty": "Contemporary maker/sharpener node added to the map for follow-up sourcing and relationship mapping.",
+          "specialty": "Kyoto-based contemporary maker/sharpener node added to the map for follow-up sourcing and relationship mapping.",
           "famousLines": [
             "Ivan Fonseca knives"
           ],
@@ -1786,7 +1786,7 @@
             "kkf-community",
             "reddit-truechefknives"
           ],
-          "caveat": "Added from Adrian's correction; public source trail and relationship edges still need stronger verification."
+          "caveat": "Kyoto location added from Adrian's correction; public source trail and relationship edges still need stronger verification."
         }
       ],
       "edges": []
