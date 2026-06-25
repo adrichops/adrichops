@@ -85,6 +85,65 @@
           "caveat": "Added from Adrian's requested graph note; attach a public source trail before making stronger product claims."
         },
         {
+          "id": "yoshikazu-tanaka",
+          "name": "Yoshikazu Tanaka",
+          "role": "Blacksmith",
+          "specialty": "Sakai forging reference for carbon, Blue #1, White steels, Damascus and honyaki-adjacent buyer discussions.",
+          "famousLines": ["Tanaka Blue #1", "Tanaka White #1", "Tanaka x Kyuzo", "Tanaka x Tadokoro"],
+          "sourceIds": ["knifewear-yoshikazu-tanaka", "kkf-community"]
+        },
+        {
+          "id": "kenji-togashi",
+          "name": "Kenji Togashi",
+          "role": "Blacksmith",
+          "specialty": "Sakai blacksmith frequently discussed around honyaki, carbon forging and high-end retailer lines.",
+          "famousLines": ["Togashi honyaki", "Togashi White #1", "Togashi Blue #1"],
+          "sourceIds": ["kkf-community", "reddit-truechefknives"],
+          "caveat": "Community-heavy node: check exact retailer and line attribution before treating this as a buying claim."
+        },
+        {
+          "id": "tadokoro-hamono",
+          "name": "Tadokoro Hamono",
+          "role": "Sharpener",
+          "specialty": "Sakai sharpening and finishing house often read through collaborations with named smiths.",
+          "famousLines": ["Tanaka x Tadokoro", "Tadokoro Ginsan", "Tadokoro Blue #1"],
+          "sourceIds": ["kkf-community", "reddit-truechefknives"],
+          "caveat": "Relationship edges are community/retailer leads until exact product pages are attached."
+        },
+        {
+          "id": "kyuzo",
+          "name": "Kyuzo",
+          "role": "Sharpener",
+          "specialty": "Hitohira-associated sharpening identity used by buyers to compare Tanaka, Nakagawa and Togashi collaborations.",
+          "famousLines": ["Tanaka x Kyuzo", "Nakagawa x Kyuzo", "Togashi x Kyuzo"],
+          "sourceIds": ["hitohira-official", "kkf-community"],
+          "caveat": "Kyuzo is treated as a buyer-facing sharpening identity; verify the exact artisan disclosure per listing."
+        },
+        {
+          "id": "hitohira",
+          "name": "Hitohira",
+          "role": "Brand",
+          "specialty": "Curated Japanese knife brand where hidden and named smith/sharpener pairings matter.",
+          "famousLines": ["Tanaka x Kyuzo", "Togashi x Kyuzo", "Nakagawa x Morihiro"],
+          "sourceIds": ["hitohira-official", "kkf-community"]
+        },
+        {
+          "id": "sakai-kikumori",
+          "name": "Sakai Kikumori",
+          "role": "Brand",
+          "specialty": "Established Sakai brand and house line context for named smith/sharpener discussion.",
+          "famousLines": ["Kikuzuki", "Nihonko", "Sakai Kikumori house lines"],
+          "sourceIds": ["sakai-kikumori-official"]
+        },
+        {
+          "id": "sakai-takayuki",
+          "name": "Sakai Takayuki",
+          "role": "Brand",
+          "specialty": "Large Sakai brand context for commercial lines, traditional profiles and export-visible knives.",
+          "famousLines": ["Grand Chef", "Ginsan", "33-layer Damascus"],
+          "sourceIds": ["sakai-takayuki-official"]
+        },
+        {
           "id": "hado",
           "name": "HADO / Fukui",
           "role": "Brand",
@@ -135,7 +194,100 @@
           "to": "morihiro",
           "kind": "student",
           "label": "student",
-          "detail": "Morihiro is represented as a student of Kazumi Kawakita in this map."
+          "detail": "Morihiro is represented as a student of Kazumi Kawakita in this map.",
+          "sourceType": "community",
+          "confidence": "medium",
+          "sourceIds": ["kkf-community"]
+        },
+        {
+          "from": "yoshikazu-tanaka",
+          "to": "tadokoro-hamono",
+          "kind": "smith-to-sharpener",
+          "label": "Tanaka / Tadokoro pairing",
+          "detail": "Community and retailer discussion often treats Tanaka-forged, Tadokoro-finished knives as a distinct buying path.",
+          "sourceType": "community",
+          "confidence": "medium",
+          "sourceIds": ["kkf-community", "reddit-truechefknives"]
+        },
+        {
+          "from": "yoshikazu-tanaka",
+          "to": "kyuzo",
+          "kind": "smith-to-sharpener",
+          "label": "Tanaka / Kyuzo pairing",
+          "detail": "Tanaka x Kyuzo is included as a named buyer-facing collaboration trail, not as a claim that every Tanaka listing uses Kyuzo.",
+          "sourceType": "community",
+          "confidence": "medium",
+          "sourceIds": ["hitohira-official", "kkf-community"]
+        },
+        {
+          "from": "satoshi-nakagawa",
+          "to": "kyuzo",
+          "kind": "smith-to-sharpener",
+          "label": "Nakagawa / Kyuzo pairing",
+          "detail": "Nakagawa x Kyuzo is useful in the map because buyers compare it against Nakagawa x Morihiro and other Sakai finishes.",
+          "sourceType": "community",
+          "confidence": "medium",
+          "sourceIds": ["hitohira-official", "kkf-community"]
+        },
+        {
+          "from": "kenji-togashi",
+          "to": "kyuzo",
+          "kind": "smith-to-sharpener",
+          "label": "Togashi / Kyuzo pairing",
+          "detail": "Togashi x Kyuzo is included as a community-visible pairing trail requiring exact listing verification.",
+          "sourceType": "community",
+          "confidence": "low",
+          "sourceIds": ["kkf-community"]
+        },
+        {
+          "from": "hitohira",
+          "to": "kyuzo",
+          "kind": "brand-to-sharpener",
+          "label": "Hitohira sharpening identity",
+          "detail": "Hitohira is represented as the buyer-facing brand context where Kyuzo pairings are often encountered.",
+          "sourceType": "community",
+          "confidence": "medium",
+          "sourceIds": ["hitohira-official", "kkf-community"]
+        },
+        {
+          "from": "hitohira",
+          "to": "yoshikazu-tanaka",
+          "kind": "line-collaboration",
+          "label": "Hitohira / Tanaka lines",
+          "detail": "Hitohira-Tanaka lines are included as a map trail for named smith and sharpener pairings.",
+          "sourceType": "community",
+          "confidence": "medium",
+          "sourceIds": ["hitohira-official", "kkf-community"]
+        },
+        {
+          "from": "hitohira",
+          "to": "kenji-togashi",
+          "kind": "line-collaboration",
+          "label": "Hitohira / Togashi lines",
+          "detail": "Hitohira-Togashi lines are shown as a buyer-facing collaboration path requiring exact listing checks.",
+          "sourceType": "community",
+          "confidence": "low",
+          "sourceIds": ["hitohira-official", "kkf-community"]
+        },
+        {
+          "from": "sakai-kikumori",
+          "to": "yoshikazu-tanaka",
+          "kind": "line-collaboration",
+          "label": "Kikumori / Tanaka context",
+          "detail": "Sakai Kikumori appears in buyer discussions around Tanaka-forged house and named lines; verify by exact product.",
+          "sourceType": "community",
+          "confidence": "low",
+          "sourceIds": ["sakai-kikumori-official", "kkf-community"]
+        },
+        {
+          "from": "sakai-takayuki",
+          "to": "kenji-togashi",
+          "kind": "line-collaboration",
+          "label": "Takayuki / Togashi context",
+          "detail": "Sakai Takayuki provides a broad commercial Sakai context; named Togashi connections should be checked listing by listing.",
+          "sourceType": "community",
+          "confidence": "low",
+          "sourceIds": ["sakai-takayuki-official", "kkf-community"]
         },
         {
           "from": "hado",
@@ -203,6 +355,47 @@
           "specialty": "Sanjo blacksmith making hand-forged custom kitchen knives and professional blades.",
           "famousLines": ["Watanabe Pro", "Watanabe custom kitchen knives"],
           "sourceIds": ["watanabe-official"]
+        },
+        {
+          "id": "naoki-mazaki",
+          "name": "Naoki Mazaki",
+          "role": "Blacksmith",
+          "specialty": "Sanjo blacksmith known for evolving grinds, tall profiles and White #2 workhorse discussions.",
+          "famousLines": ["Mazaki White #2", "Mazaki nashiji", "Mazaki kurouchi"],
+          "sourceIds": ["knifewear-naoki-mazaki", "kkf-community"]
+        },
+        {
+          "id": "hinoura-hamono",
+          "name": "Hinoura Hamono",
+          "role": "Workshop",
+          "specialty": "Sanjo family workshop lineage around Mutsumi and Tsukasa Hinoura.",
+          "famousLines": ["Hinoura Ajikataya", "Hinoura River Jump", "Hinoura White #2"],
+          "sourceIds": ["hinoura-official", "kkf-community"]
+        },
+        {
+          "id": "mutsumi-hinoura",
+          "name": "Mutsumi Hinoura",
+          "role": "Blacksmith",
+          "specialty": "Senior Sanjo smith and father-lineage node for Tsukasa Hinoura.",
+          "famousLines": ["Mutsumi Hinoura Ajikataya", "Mutsumi Hinoura White #2"],
+          "sourceIds": ["hinoura-official", "kkf-community"]
+        },
+        {
+          "id": "tsukasa-hinoura",
+          "name": "Tsukasa Hinoura",
+          "role": "Blacksmith",
+          "specialty": "Sanjo blacksmith known for high-finish carbon work, River Jump and family-workshop lineage.",
+          "famousLines": ["Tsukasa Hinoura River Jump", "Tsukasa Hinoura White #2", "Kurikoma"],
+          "sourceIds": ["hinoura-official", "kkf-community"]
+        },
+        {
+          "id": "isamitsu-hamono",
+          "name": "Isamitsu Hamono",
+          "role": "Workshop",
+          "specialty": "Small Sanjo workshop node often discussed alongside modern handmade carbon lines.",
+          "famousLines": ["Isamitsu White #2", "Isamitsu kasumi"],
+          "sourceIds": ["kkf-community", "reddit-truechefknives"],
+          "caveat": "Community-heavy node pending a stronger public workshop/source link."
         }
       ],
       "edges": [
@@ -240,6 +433,56 @@
           "kind": "regional-peer",
           "label": "Sanjo hand-forged context",
           "detail": "Toyama and Watanabe help frame the hand-forged Sanjo side of the map."
+        },
+        {
+          "from": "yoshikane",
+          "to": "masashi-yamamoto",
+          "kind": "worked-under",
+          "label": "Yoshikane background",
+          "detail": "Masashi is placed under Yoshikane as a community/retailer-trail relationship; verify exact biography wording per source.",
+          "sourceType": "community",
+          "confidence": "medium",
+          "sourceIds": ["kkf-community", "reddit-truechefknives"]
+        },
+        {
+          "from": "yoshikane",
+          "to": "naoki-mazaki",
+          "kind": "worked-under",
+          "label": "Yoshikane background",
+          "detail": "Mazaki is commonly discussed through a Yoshikane/Sanjo training background, but the exact phrasing should remain conservative.",
+          "sourceType": "community",
+          "confidence": "medium",
+          "sourceIds": ["knifewear-naoki-mazaki", "kkf-community"]
+        },
+        {
+          "from": "hinoura-hamono",
+          "to": "mutsumi-hinoura",
+          "kind": "regional-hub",
+          "label": "Hinoura workshop",
+          "detail": "Mutsumi Hinoura is represented inside the Hinoura Hamono family workshop context.",
+          "sourceType": "retailer",
+          "confidence": "medium",
+          "sourceIds": ["hinoura-official"]
+        },
+        {
+          "from": "mutsumi-hinoura",
+          "to": "tsukasa-hinoura",
+          "kind": "family",
+          "label": "father to son lineage",
+          "detail": "The Hinoura family line is represented as a direct genealogy relationship in the Sanjo chart.",
+          "sourceType": "retailer",
+          "confidence": "medium",
+          "sourceIds": ["hinoura-official", "kkf-community"]
+        },
+        {
+          "from": "naoki-mazaki",
+          "to": "isamitsu-hamono",
+          "kind": "regional-peer",
+          "label": "modern Sanjo small-shop context",
+          "detail": "Mazaki and Isamitsu are paired as modern Sanjo small-shop context, not as a claimed teacher/student relationship.",
+          "sourceType": "community",
+          "confidence": "low",
+          "sourceIds": ["kkf-community", "reddit-truechefknives"]
         }
       ]
     },
@@ -477,6 +720,112 @@
       ]
     },
     {
+      "id": "tosa-kochi",
+      "name": "Tosa / Kochi",
+      "location": "Kochi",
+      "summary": "Small-shop forging and polishing context around Myojin, Tamura and Tetsujin-style collaborations.",
+      "notes": [
+        "Use this branch for smith/polisher pairings rather than treating every Tosa knife as the same rustic category.",
+        "The Myojin/Tamura/Tetsujin trail is especially useful because polishing identity is part of the buying decision."
+      ],
+      "sourceIds": ["myojin-official", "kkf-community", "reddit-truechefknives"],
+      "nodes": [
+        {
+          "id": "myojin-riki-seisakusho",
+          "name": "Myojin Riki Seisakusho",
+          "role": "Workshop",
+          "specialty": "Kochi workshop context for Myojin family polishing and finishing.",
+          "famousLines": ["Myojin Riki Seisakusho", "Myojin SG2", "Myojin Cobalt Special"],
+          "sourceIds": ["myojin-official"]
+        },
+        {
+          "id": "naohito-myojin",
+          "name": "Naohito Myojin",
+          "role": "Polisher",
+          "specialty": "High-end convex polishing, clean wide bevels and modern performance finishing.",
+          "famousLines": ["Myojin Riki", "Tetsujin", "Myojin Cobalt Special"],
+          "sourceIds": ["myojin-official", "kkf-community"]
+        },
+        {
+          "id": "toru-tamura",
+          "name": "Toru Tamura",
+          "role": "Blacksmith",
+          "specialty": "Blacksmith side of Tetsujin buyer discussions, commonly paired with Myojin polishing.",
+          "famousLines": ["Tetsujin kasumi", "Tetsujin metal flow", "Tamura forged lines"],
+          "sourceIds": ["kkf-community", "reddit-truechefknives"],
+          "caveat": "Community-heavy node: keep exact product attribution tied to retailer listings."
+        },
+        {
+          "id": "tetsujin",
+          "name": "Tetsujin",
+          "role": "Brand",
+          "specialty": "Buyer-facing line identity where smith and polisher attribution matter.",
+          "famousLines": ["Tetsujin Metal Flow", "Tetsujin kasumi", "Tetsujin blue steel"],
+          "sourceIds": ["kkf-community", "reddit-truechefknives"]
+        },
+        {
+          "id": "tosa-kajiya",
+          "name": "Tosa blacksmith context",
+          "role": "Workshop",
+          "specialty": "Regional context for Kochi/Tosa forged kitchen and utility knives.",
+          "famousLines": ["Tosa forged knives", "Kochi handmade knives"],
+          "sourceIds": ["kkf-community"]
+        }
+      ],
+      "edges": [
+        {
+          "from": "myojin-riki-seisakusho",
+          "to": "naohito-myojin",
+          "kind": "regional-hub",
+          "label": "Myojin workshop",
+          "detail": "Naohito Myojin is represented inside the Myojin Riki Seisakusho workshop branch.",
+          "sourceType": "retailer",
+          "confidence": "medium",
+          "sourceIds": ["myojin-official"]
+        },
+        {
+          "from": "toru-tamura",
+          "to": "naohito-myojin",
+          "kind": "smith-to-sharpener",
+          "label": "Tamura / Myojin pairing",
+          "detail": "Tetsujin-style buying discussions commonly separate Tamura forging from Myojin polishing/finishing.",
+          "sourceType": "community",
+          "confidence": "medium",
+          "sourceIds": ["kkf-community", "reddit-truechefknives"]
+        },
+        {
+          "from": "tetsujin",
+          "to": "toru-tamura",
+          "kind": "line-collaboration",
+          "label": "Tetsujin smith trail",
+          "detail": "Tetsujin is linked to Tamura as the blacksmith side of the line trail.",
+          "sourceType": "community",
+          "confidence": "medium",
+          "sourceIds": ["kkf-community", "reddit-truechefknives"]
+        },
+        {
+          "from": "tetsujin",
+          "to": "naohito-myojin",
+          "kind": "brand-to-sharpener",
+          "label": "Tetsujin polish trail",
+          "detail": "Tetsujin is linked to Myojin because polishing identity is central to how buyers discuss the line.",
+          "sourceType": "community",
+          "confidence": "medium",
+          "sourceIds": ["kkf-community", "reddit-truechefknives"]
+        },
+        {
+          "from": "tosa-kajiya",
+          "to": "toru-tamura",
+          "kind": "regional-peer",
+          "label": "Tosa context",
+          "detail": "Tamura is placed in Kochi/Tosa context without implying a specific apprenticeship trail.",
+          "sourceType": "community",
+          "confidence": "low",
+          "sourceIds": ["kkf-community"]
+        }
+      ]
+    },
+    {
       "id": "miki",
       "name": "Miki / Hyogo",
       "location": "Hyogo",
@@ -493,15 +842,55 @@
           "specialty": "Forged kitchen knives; read by exact smith, line, grind and retailer details.",
           "famousLines": ["Tanaka Uchihamono listings", "Tanaka forged knives"],
           "caveat": "Relationship included from Adrian's requested example; add exact retailer/source link when available."
+        },
+        {
+          "id": "shigeki-tanaka",
+          "name": "Shigeki Tanaka",
+          "role": "Blacksmith",
+          "specialty": "Miki blacksmith associated with Tanaka Uchihamono and export-visible carbon/stainless lines.",
+          "famousLines": ["Tanaka Blue #2", "Tanaka R2", "Tanaka VG10 Damascus"],
+          "sourceIds": ["kkf-community", "reddit-truechefknives"]
+        },
+        {
+          "id": "katsuto-tanaka",
+          "name": "Katsuto Tanaka",
+          "role": "Blacksmith",
+          "specialty": "Tanaka family/workshop context for Miki forged knives.",
+          "famousLines": ["Tanaka family workshop", "Miki forged knives"],
+          "sourceIds": ["kkf-community"],
+          "caveat": "Family/workshop node added for genealogy context; attach stronger public source before product claims."
         }
       ],
       "edges": [
         {
           "from": "tanaka-uchihamono",
+          "to": "shigeki-tanaka",
+          "kind": "regional-hub",
+          "label": "Tanaka workshop",
+          "detail": "Shigeki Tanaka is represented inside the Tanaka Uchihamono workshop branch.",
+          "sourceType": "community",
+          "confidence": "medium",
+          "sourceIds": ["kkf-community", "reddit-truechefknives"]
+        },
+        {
+          "from": "katsuto-tanaka",
+          "to": "shigeki-tanaka",
+          "kind": "family",
+          "label": "family lineage",
+          "detail": "The Tanaka family/workshop relationship is shown as genealogy context, not as a claim about every export line.",
+          "sourceType": "community",
+          "confidence": "low",
+          "sourceIds": ["kkf-community"]
+        },
+        {
+          "from": "tanaka-uchihamono",
           "to": "kazumi-kawakita",
           "kind": "collaboration",
           "label": "working relationship",
-          "detail": "Added to make the Tanaka Uchihamono / Kazumi Kawakita relationship visible as requested."
+          "detail": "Added to make the Tanaka Uchihamono / Kazumi Kawakita relationship visible as requested.",
+          "sourceType": "community",
+          "confidence": "medium",
+          "sourceIds": ["kkf-community"]
         }
       ]
     }
@@ -681,6 +1070,51 @@
       "id": "watanabe-official",
       "label": "Watanabe Blade official site",
       "url": "https://www.watanabeblade.com/english/"
+    },
+    {
+      "id": "knifewear-yoshikazu-tanaka",
+      "label": "Knifewear Yoshikazu Tanaka collection",
+      "url": "https://knifewear.com/collections/yoshikazu-tanaka"
+    },
+    {
+      "id": "knifewear-naoki-mazaki",
+      "label": "Knifewear Naoki Mazaki collection",
+      "url": "https://knifewear.com/collections/naoki-mazaki"
+    },
+    {
+      "id": "hitohira-official",
+      "label": "Hitohira official site",
+      "url": "https://hitohira-japan.com/"
+    },
+    {
+      "id": "sakai-kikumori-official",
+      "label": "Sakai Kikumori official site",
+      "url": "https://sakai-kikumori.co.jp/"
+    },
+    {
+      "id": "sakai-takayuki-official",
+      "label": "Sakai Takayuki official site",
+      "url": "https://sakai-takayuki.com/"
+    },
+    {
+      "id": "hinoura-official",
+      "label": "Hinoura Hamono official site",
+      "url": "https://www.hinoura.com/"
+    },
+    {
+      "id": "myojin-official",
+      "label": "Myojin Riki Seisakusho official site",
+      "url": "https://myojinknife.com/"
+    },
+    {
+      "id": "kkf-community",
+      "label": "Kitchen Knife Forums community trail",
+      "url": "https://www.kitchenknifeforums.com/"
+    },
+    {
+      "id": "reddit-truechefknives",
+      "label": "r/TrueChefKnives community trail",
+      "url": "https://www.reddit.com/r/TrueChefKnives/"
     }
   ]
 }

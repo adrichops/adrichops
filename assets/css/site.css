@@ -359,19 +359,40 @@ p { margin: 0; }
   stroke-linecap: round;
   opacity: .82;
 }
+.maker-graph-svg marker path {
+  fill: color-mix(in srgb, var(--line-strong) 82%, transparent);
+}
 .graph-lines .edge-region-member,
 .graph-lines .edge-regional-hub {
   stroke: color-mix(in srgb, var(--line-strong) 45%, transparent);
   stroke-width: 1;
   opacity: .42;
 }
-.graph-lines .edge-apprenticeship {
+.graph-lines .edge-apprenticeship,
+.graph-lines .edge-student,
+.graph-lines .edge-family,
+.graph-lines .edge-worked-under,
+.graph-lines .edge-workshop-background {
   stroke: var(--accent);
+  stroke-width: 3.2;
+  opacity: .94;
 }
 .graph-lines .edge-smith-to-sharpener,
-.graph-lines .edge-brand-to-sharpener {
+.graph-lines .edge-brand-to-sharpener,
+.graph-lines .edge-line-collaboration,
+.graph-lines .edge-collaboration {
   stroke: color-mix(in srgb, var(--accent) 72%, var(--line-strong));
-  stroke-width: 3;
+  stroke-width: 2.7;
+}
+.graph-lines .source-community,
+.graph-lines .source-forum,
+.graph-lines .source-reddit {
+  stroke-dasharray: 8 7;
+  opacity: .7;
+}
+.graph-lines .confidence-low {
+  stroke-width: 1.8;
+  opacity: .58;
 }
 .edge-label {
   fill: var(--muted);
@@ -462,6 +483,14 @@ p { margin: 0; }
 }
 .role-collaborator {
   --role-color: #d7d1c5;
+}
+.edge-source-note {
+  display: inline-block;
+  color: var(--accent);
+  font-size: .7rem;
+  font-weight: 900;
+  letter-spacing: .04em;
+  text-transform: uppercase;
 }
 .maker-node circle {
   stroke: var(--role-color, var(--line-strong));

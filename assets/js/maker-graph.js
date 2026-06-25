@@ -144,8 +144,8 @@
     const saved = state.positions.get(node.id);
     if (saved) return { ...node, x: saved.x, y: saved.y, vx: saved.vx || 0, vy: saved.vy || 0 };
 
-    const width = state.activeRegion ? 1440 : 1180;
-    const height = state.activeRegion ? 900 : 760;
+    const width = state.activeRegion ? 1700 : 1180;
+    const height = state.activeRegion ? 1100 : 760;
     if (node.id === 'japan' || node.isRegion && state.activeRegion && node.regionId === state.activeRegion.id) {
       return { ...node, x: width / 2, y: height / 2, vx: 0, vy: 0 };
     }
@@ -158,6 +158,99 @@
       vx: 0,
       vy: 0
     };
+  }
+
+  const lineageKinds = new Set(['apprenticeship', 'student', 'family', 'worked-under', 'workshop-background', 'regional-hub']);
+
+  function layoutSelection(nodes, edges, width, height) {
+    if (!state.activeRegion) {
+      return nodes.map((node, index) => seedPosition(node, index, nodes.length));
+    }
+
+    const regionId = `region:${state.activeRegion.id}`;
+    const nodeById = new Map(nodes.map((node) => [node.id, { ...node, vx: 0, vy: 0 }]));
+    const regionNode = nodeById.get(regionId);
+    if (regionNode) {
+      regionNode.x = width / 2;
+      regionNode.y = 92;
+    }
+
+    const makerNodes = nodes.filter((node) => node.id !== regionId && !node.isHub);
+    const outgoing = new Map();
+    const incoming = new Map();
+    edges.forEach((edge) => {
+      if (!lineageKinds.has(edge.kind) || edge.kind === 'region-member') return;
+      if (!nodeById.has(edge.from) || !nodeById.has(edge.to)) return;
+      if (!outgoing.has(edge.from)) outgoing.set(edge.from, []);
+      if (!incoming.has(edge.to)) incoming.set(edge.to, []);
+      outgoing.get(edge.from).push(edge.to);
+      incoming.get(edge.to).push(edge.from);
+    });
+
+    const rootIds = makerNodes
+      .filter((node) => !incoming.has(node.id))
+      .sort((a, b) => roleWeight(a) - roleWeight(b) || a.name.localeCompare(b.name))
+      .map((node) => node.id);
+    if (!rootIds.length) makerNodes.forEach((node) => rootIds.push(node.id));
+
+    const depth = new Map(rootIds.map((id) => [id, 1]));
+    const queue = [...rootIds];
+    while (queue.length) {
+      const id = queue.shift();
+      const nextDepth = (depth.get(id) || 1) + 1;
+      (outgoing.get(id) || []).forEach((childId) => {
+        if (!depth.has(childId) || nextDepth < depth.get(childId)) {
+          depth.set(childId, nextDepth);
+          queue.push(childId);
+        }
+      });
+    }
+    makerNodes.forEach((node) => {
+      if (!depth.has(node.id)) depth.set(node.id, 1);
+      if (node.regionId && node.regionId !== state.activeRegion.id) {
+        depth.set(node.id, Math.max(depth.get(node.id), 4));
+      }
+    });
+
+    const columns = new Map();
+    makerNodes.forEach((node) => {
+      const key = depth.get(node.id);
+      if (!columns.has(key)) columns.set(key, []);
+      columns.get(key).push(node);
+    });
+
+    const sortedDepths = [...columns.keys()].sort((a, b) => a - b);
+    const top = 230;
+    const maxPerRow = 8;
+    let yCursor = top;
+    sortedDepths.forEach((key) => {
+      const row = columns.get(key).sort((a, b) => roleWeight(a) - roleWeight(b) || a.name.localeCompare(b.name));
+      const chunkCount = Math.ceil(row.length / maxPerRow);
+      for (let chunkIndex = 0; chunkIndex < chunkCount; chunkIndex += 1) {
+        const chunk = row.slice(chunkIndex * maxPerRow, (chunkIndex + 1) * maxPerRow);
+        const y = yCursor + chunkIndex * 132;
+        chunk.forEach((node, index) => {
+          const span = width - 260;
+          const x = 130 + span * ((index + 1) / (chunk.length + 1));
+          const target = nodeById.get(node.id);
+          target.x = x;
+          target.y = y;
+        });
+      }
+      yCursor += chunkCount * 132 + 82;
+    });
+
+    return [...nodeById.values()];
+  }
+
+  function roleWeight(node) {
+    const role = roleClass(node.role);
+    if (role === 'cooperative' || role === 'workshop') return 1;
+    if (role === 'blacksmith') return 2;
+    if (role === 'sharpener' || role === 'polisher') return 3;
+    if (role === 'handle-maker') return 4;
+    if (role === 'brand') return 5;
+    return 6;
   }
 
   function applyView() {
@@ -191,7 +284,7 @@
   }
 
   function edgeClass(edge) {
-    return `graph-edge edge-${roleClass(edge.kind)}`;
+    return `graph-edge edge-${roleClass(edge.kind)} source-${roleClass(edge.sourceType || 'direct')} confidence-${roleClass(edge.confidence || 'standard')}`;
   }
 
   function renderGraph() {
@@ -199,9 +292,9 @@
     cancelAnimationFrame(state.raf);
 
     const selection = graphSelection();
-    const width = state.activeRegion ? 1440 : 1180;
-    const height = state.activeRegion ? 900 : 760;
-    const nodes = selection.nodes.map((node, index) => seedPosition(node, index, selection.nodes.length));
+    const width = state.activeRegion ? 1700 : 1180;
+    const height = state.activeRegion ? 1100 : 760;
+    const nodes = layoutSelection(selection.nodes, selection.edges, width, height);
     const nodeById = new Map(nodes.map((node) => [node.id, node]));
     const edges = selection.edges
       .map((edge) => ({ ...edge, source: nodeById.get(edge.from), target: nodeById.get(edge.to) }))
@@ -209,9 +302,14 @@
 
     svg.setAttribute('viewBox', `0 0 ${width} ${height}`);
     svg.innerHTML = `
+      <defs>
+        <marker id="graph-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+          <path d="M 0 0 L 10 5 L 0 10 z"></path>
+        </marker>
+      </defs>
       <g class="graph-viewport">
         <g class="graph-lines">
-          ${edges.map((edge) => `<line class="${esc(edgeClass(edge))}" data-edge="${esc(edge.from)}:${esc(edge.to)}"></line>`).join('')}
+          ${edges.map((edge) => `<line class="${esc(edgeClass(edge))}" data-edge="${esc(edge.from)}:${esc(edge.to)}"${edge.kind !== 'region-member' && edge.kind !== 'regional-hub' ? ' marker-end="url(#graph-arrow)"' : ''}></line>`).join('')}
         </g>
         <g class="graph-nodes">
           ${nodes.map((node) => nodeMarkup(node)).join('')}
@@ -233,8 +331,13 @@
       enableDrag(group, node, nodes, edges);
     });
 
-    state.simulation = createSimulation(nodes, edges, width, height);
-    state.simulation.start();
+    if (state.activeRegion) {
+      tick(nodes, edges);
+      state.simulation = createStaticSimulation(nodes, edges);
+    } else {
+      state.simulation = createSimulation(nodes, edges, width, height);
+      state.simulation.start();
+    }
   }
 
   function nodeMarkup(node) {
@@ -374,6 +477,18 @@
       heat(value) {
         alpha = Math.max(alpha, value);
         if (!state.raf) state.raf = requestAnimationFrame(step);
+      }
+    };
+  }
+
+  function createStaticSimulation(nodes, edges) {
+    return {
+      start() {
+        tick(nodes, edges);
+      },
+      stop() {},
+      heat() {
+        tick(nodes, edges);
       }
     };
   }
@@ -545,13 +660,14 @@
     const studentIds = new Set(node.students || []);
     const teacherIds = new Set();
     edges.forEach((edge) => {
-      if (edge.kind === 'student' || edge.kind === 'apprenticeship') {
+      if (edge.kind === 'student' || edge.kind === 'apprenticeship' || edge.kind === 'family' || edge.kind === 'worked-under') {
         if (edge.from === node.id) studentIds.add(edge.to);
         if (edge.to === node.id) teacherIds.add(edge.from);
       }
     });
     const regionNode = state.nodeById.get(`region:${node.regionId}`);
-    const sources = [...new Set([...(state.regionById.get(node.regionId).sourceIds || []), ...(node.sourceIds || [])])];
+    const edgeSources = edges.flatMap((edge) => edge.sourceIds || []);
+    const sources = [...new Set([...(state.regionById.get(node.regionId).sourceIds || []), ...(node.sourceIds || []), ...edgeSources])];
 
     detail.innerHTML = `
       <article class="graph-note">
@@ -573,7 +689,8 @@
         ${(node.famousLines || []).length ? `<section><h3>Known lines</h3><div class="line-list">${node.famousLines.map((line) => `<span>${esc(line)}</span>`).join('')}</div></section>` : ''}
         ${edges.length ? `<section><h3>Edges</h3><ul>${edges.map((edge) => {
           const other = state.nodeById.get(edge.from === node.id ? edge.to : edge.from);
-          return `<li><b>${esc(edge.label)}</b>${other ? ` with ${wikiButton(other)}` : ''}: ${esc(edge.detail)}</li>`;
+          const sourceNote = edge.sourceType ? ` <span class="edge-source-note">${esc(edge.sourceType)}${edge.confidence ? ` / ${esc(edge.confidence)}` : ''}</span>` : '';
+          return `<li><b>${esc(edge.label)}</b>${other ? ` with ${wikiButton(other)}` : ''}${sourceNote}: ${esc(edge.detail)}</li>`;
         }).join('')}</ul></section>` : ''}
         ${node.caveat ? `<p class="graph-caveat">${esc(node.caveat)}</p>` : ''}
       </article>
