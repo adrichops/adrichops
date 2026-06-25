@@ -1,0 +1,421 @@
+{
+  "posts": {
+    "asahi-rubber-cutting-board-review-brief": {
+      "heroImage": "assets/uploads/post-images/asahi-rubber-cutting-board-review-brief.jpg",
+      "heroAlt": "Parker Asahi synthetic rubber cutting board product image.",
+      "imageCaption": "Parker Asahi synthetic rubber cutting board product image.",
+      "imageCredit": "Burrfection Store / Parker Asahi",
+      "imageCreditUrl": "https://burrfectionstore.com/en-gb/collections/cutting-boards/products/parker-asahi-synthetic-rubber-cutting-board-for-consumer-use",
+      "imageFit": "contain"
+    },
+    "global-g2-cooks-knife-shortlist-review": {
+      "heroImage": "assets/uploads/post-images/global-g2-cooks-knife-shortlist-review.jpg",
+      "heroAlt": "Global G-2 cooks knife product image.",
+      "imageCaption": "Global G-2 cooks knife product image.",
+      "imageCredit": "Global Knives UK",
+      "imageCreditUrl": "https://www.globalknives.co.uk/products/global-g-2-cooks-knife-20cm-blade",
+      "imageFit": "contain"
+    },
+    "hasegawa-cutting-board-review-brief": {
+      "heroImage": "assets/uploads/post-images/hasegawa-cutting-board-review-brief.jpg",
+      "heroAlt": "Hasegawa Pro-Soft cutting board product image.",
+      "imageCaption": "Hasegawa Pro-Soft cutting board product image.",
+      "imageCredit": "Hasegawa Corporation",
+      "imageCreditUrl": "https://hasegawakagaku.com/products/pro-soft/",
+      "imageFit": "contain"
+    },
+    "henckels-classic-8-inch-shortlist-review": {
+      "heroImage": "assets/uploads/post-images/henckels-classic-8-inch-shortlist-review.jpg",
+      "heroAlt": "Henckels Classic",
+      "imageCaption": "A 6-inch hand-forged chef knife made by Steelport Knife Co. in Portland, Oregon. The blade is crafted from American 52100 high-carbon steel, heat-treated for edge retention and sha",
+      "imageCredit": "Frank Schulenburg, CC BY-SA 4.0",
+      "imageCreditUrl": "https://commons.wikimedia.org/wiki/File:Steelport_6-Inch_Chef_Knife_(2026)-104A7331.jpg",
+      "imageFit": "cover"
+    },
+    "hinoki-cutting-board-review-brief": {
+      "heroImage": "assets/uploads/post-images/hinoki-cutting-board-review-brief.png",
+      "heroAlt": "Shun large hinoki cutting board product image.",
+      "imageCaption": "Shun large hinoki cutting board product image.",
+      "imageCredit": "Kai USA / Shun",
+      "imageCreditUrl": "https://shun.kaiusa.com/large-hinoki-cutting-board.html",
+      "imageFit": "contain"
+    },
+    "king-whetstones-review-brief": {
+      "heroImage": "assets/uploads/post-images/king-whetstones-review-brief.png",
+      "heroAlt": "King whetstone product image from Matsunaga Stone’s official King lineup.",
+      "imageCaption": "King whetstone product image from Matsunaga Stone’s official King lineup.",
+      "imageCredit": "Matsunaga Stone Co., Ltd.",
+      "imageCreditUrl": "https://matsunaga-corp.co.jp/en/products-cat/king/",
+      "imageFit": "contain"
+    },
+    "mac-mth80-shortlist-review": {
+      "heroImage": "assets/uploads/post-images/mac-mth80-shortlist-review.jpg",
+      "heroAlt": "MAC MTH-80 chef knife product image.",
+      "imageCaption": "MAC MTH-80 chef knife product image.",
+      "imageCredit": "MAC Knife",
+      "imageCreditUrl": "https://www.macknife.com/products/professional-series-8-chefs-knife-with-dimples-mth-80",
+      "imageFit": "contain"
+    },
+    "mercer-genesis-8-inch-shortlist-review": {
+      "heroImage": "assets/uploads/post-images/mercer-genesis-8-inch-shortlist-review.jpg",
+      "heroAlt": "Mercer Genesis 8 inch chef knife product image.",
+      "imageCaption": "Mercer Genesis 8 inch chef knife product image.",
+      "imageCredit": "Mercer Culinary",
+      "imageCreditUrl": "https://www.mercerculinary.com/product/genesis-chefs-knife-8-20-3-cm/",
+      "imageFit": "contain"
+    },
+    "mercer-renaissance-8-inch-shortlist-review": {
+      "heroImage": "assets/uploads/post-images/mercer-renaissance-8-inch-shortlist-review.jpg",
+      "heroAlt": "Mercer Renaissance 8 inch chef knife product image.",
+      "imageCaption": "Mercer Renaissance 8 inch chef knife product image.",
+      "imageCredit": "Mercer Culinary",
+      "imageCreditUrl": "https://www.mercerculinary.com/product/renaissance-chefs-knife-8-20-3-cm/",
+      "imageFit": "contain"
+    },
+    "shapton-stones-review-brief": {
+      "heroImage": "assets/uploads/post-images/shapton-stones-review-brief.png",
+      "heroAlt": "Shapton RockStar 1000 product image from Shapton’s official product lineup.",
+      "imageCaption": "Shapton RockStar 1000 product image from Shapton’s official product lineup.",
+      "imageCredit": "SHAPTON Co., Ltd.",
+      "imageCreditUrl": "https://shapton.co.jp/en/",
+      "imageFit": "contain"
+    },
+    "tojiro-dp-210mm-gyuto-shortlist-review": {
+      "heroImage": "assets/uploads/post-images/tojiro-dp-210mm-gyuto-shortlist-review.jpg",
+      "heroAlt": "Tojiro DP gyuto product image from Tojiro’s official product listing.",
+      "imageCaption": "Tojiro DP gyuto product image from Tojiro’s official product listing.",
+      "imageCredit": "TOJIRO Co., Ltd.",
+      "imageCreditUrl": "https://www.tojiro-japan.com/products/",
+      "imageFit": "contain"
+    },
+    "victorinox-fibrox-pro-8-inch-shortlist-review": {
+      "heroImage": "assets/uploads/post-images/victorinox-fibrox-pro-8-inch-shortlist-review.png",
+      "heroAlt": "Victorinox Fibrox chef knife product image.",
+      "imageCaption": "Victorinox Fibrox chef knife product image.",
+      "imageCredit": "Victorinox",
+      "imageCreditUrl": "https://www.victorinox.com/en-US/Products/Cutlery/Chef%27s-Knives/Fibrox%C2%AE-Chef%E2%80%99s-Knife-Extra-Wide/p/5.2063.20",
+      "imageFit": "contain"
+    },
+    "wusthof-classic-8-inch-shortlist-review": {
+      "heroImage": "assets/uploads/post-images/wusthof-classic-8-inch-shortlist-review.jpg",
+      "heroAlt": "Wusthof Classic series product image.",
+      "imageCaption": "Wusthof Classic series product image.",
+      "imageCredit": "Wusthof UK",
+      "imageCreditUrl": "https://wusthof.co.uk/pages/classic",
+      "imageFit": "contain"
+    },
+    "zwilling-pro-20cm-shortlist-review": {
+      "heroImage": "assets/uploads/post-images/zwilling-pro-20cm-shortlist-review.jpg",
+      "heroAlt": "ZWILLING Pro chef knife product image.",
+      "imageCaption": "ZWILLING Pro chef knife product image.",
+      "imageCredit": "ZWILLING",
+      "imageCreditUrl": "https://www.zwilling.com/uk/zwilling-pro-20-cm-chefs-knife-38401-201-0/38401-201-0.html",
+      "imageFit": "contain"
+    },
+    "maker-spotlight-ashi-hamono": {
+      "heroImage": "assets/uploads/post-images/japanese-knife-culture-practical-guide.jpg",
+      "heroAlt": "maker spotlight ashi hamono",
+      "imageCaption": "Japanese kitchen knife reference image used where a usable official maker image was not available.",
+      "imageCredit": "Jacek Halicki, CC BY-SA 4.0",
+      "imageCreditUrl": "https://commons.wikimedia.org/wiki/File:2020_Noże_kuchenne_Gerlach.jpg",
+      "imageFit": "cover"
+    },
+    "maker-spotlight-baba-hamono-kagekiyo": {
+      "heroImage": "assets/uploads/post-images/maker-spotlight-baba-hamono-kagekiyo.jpg",
+      "heroAlt": "Kagekiyo image from Baba Hamono’s official site.",
+      "imageCaption": "Kagekiyo image from Baba Hamono’s official site.",
+      "imageCredit": "Baba Hamono",
+      "imageCreditUrl": "https://www.baba-hamono.com/en/kagekiyo/",
+      "imageFit": "contain"
+    },
+    "maker-spotlight-hado": {
+      "heroImage": "assets/uploads/post-images/maker-spotlight-hado.png",
+      "heroAlt": "HADO brand image from the official HADO site.",
+      "imageCaption": "HADO brand image from the official HADO site.",
+      "imageCredit": "HADO / Fukui Co., Ltd.",
+      "imageCreditUrl": "https://hado-knife.jp/en",
+      "imageFit": "contain"
+    },
+    "maker-spotlight-konosuke": {
+      "heroImage": "assets/uploads/post-images/maker-spotlight-konosuke.jpg",
+      "heroAlt": "Konosuke workshop image from the official Konosuke site.",
+      "imageCaption": "Konosuke workshop image from the official Konosuke site.",
+      "imageCredit": "Konosuke Sakai",
+      "imageCreditUrl": "https://konosuke-sakai.com/index.php/about-us/",
+      "imageFit": "contain"
+    },
+    "maker-spotlight-moritaka-hamono": {
+      "heroImage": "assets/uploads/post-images/maker-spotlight-moritaka-hamono.jpg",
+      "heroAlt": "Moritaka Hamono image from the official Moritaka site.",
+      "imageCaption": "Moritaka Hamono image from the official Moritaka site.",
+      "imageCredit": "Moritaka Hamono",
+      "imageCreditUrl": "https://moritakahamonoen.ocnk.net/",
+      "imageFit": "contain"
+    },
+    "maker-spotlight-myojin-riki-seisakusho": {
+      "heroImage": "assets/uploads/post-images/japanese-knife-culture-practical-guide.jpg",
+      "heroAlt": "maker spotlight myojin riki seisakusho",
+      "imageCaption": "Japanese kitchen knife reference image used where a usable official maker image was not available.",
+      "imageCredit": "Jacek Halicki, CC BY-SA 4.0",
+      "imageCreditUrl": "https://commons.wikimedia.org/wiki/File:2020_Noże_kuchenne_Gerlach.jpg",
+      "imageFit": "cover"
+    },
+    "maker-spotlight-nakagawa-hamono": {
+      "heroImage": "assets/uploads/post-images/maker-spotlight-nakagawa-hamono.jpg",
+      "heroAlt": "Nakagawa page image from Musashi’s craftsman profile.",
+      "imageCaption": "Nakagawa page image from Musashi’s craftsman profile.",
+      "imageCredit": "MUSASHI",
+      "imageCreditUrl": "https://www.musashihamono.com/pages/craftsman/nakagawa",
+      "imageFit": "contain"
+    },
+    "maker-spotlight-nigara-hamono": {
+      "heroImage": "assets/uploads/post-images/maker-spotlight-nigara-hamono.jpg",
+      "heroAlt": "Nigara workshop and knife image from Nigara’s official site.",
+      "imageCaption": "Nigara workshop and knife image from Nigara’s official site.",
+      "imageCredit": "Nigara Hamono",
+      "imageCreditUrl": "https://nigaraknives.com/",
+      "imageFit": "contain"
+    },
+    "maker-spotlight-takada-no-hamono": {
+      "heroImage": "assets/uploads/takada-making.jpg",
+      "heroAlt": "Mitsuaki Takada working at Takada no Hamono",
+      "imageCaption": "Mitsuaki Takada in the workshop.",
+      "imageCredit": "© TAKADA no HAMONO",
+      "imageCreditUrl": "http://www.takadanohamono.com/profile.html",
+      "imageFit": "contain",
+      "gallery": [
+        {
+          "src": "assets/uploads/takada-mitsuaki-t-logo.gif",
+          "alt": "Mitsuaki-T brand mark",
+          "caption": "Mitsuaki-T brand mark from Takada no Hamono.",
+          "credit": "© TAKADA no HAMONO",
+          "creditUrl": "http://www.takadanohamono.com/mitsuaki-t.html"
+        }
+      ]
+    },
+    "maker-spotlight-toyama-noborikoi": {
+      "heroImage": "assets/uploads/post-images/japanese-knife-culture-practical-guide.jpg",
+      "heroAlt": "maker spotlight toyama noborikoi",
+      "imageCaption": "Japanese kitchen knife reference image used where a usable official maker image was not available.",
+      "imageCredit": "Jacek Halicki, CC BY-SA 4.0",
+      "imageCreditUrl": "https://commons.wikimedia.org/wiki/File:2020_Noże_kuchenne_Gerlach.jpg",
+      "imageFit": "cover"
+    },
+    "maker-spotlight-wakui": {
+      "heroImage": "assets/uploads/post-images/japanese-knife-culture-practical-guide.jpg",
+      "heroAlt": "maker spotlight wakui",
+      "imageCaption": "Japanese kitchen knife reference image used where a usable official maker image was not available.",
+      "imageCredit": "Jacek Halicki, CC BY-SA 4.0",
+      "imageCreditUrl": "https://commons.wikimedia.org/wiki/File:2020_Noże_kuchenne_Gerlach.jpg",
+      "imageFit": "cover"
+    },
+    "maker-spotlight-yoshikane-hamono": {
+      "heroImage": "assets/uploads/post-images/maker-spotlight-yoshikane-hamono.jpg",
+      "heroAlt": "Yoshikane product image from the official Yoshikane site.",
+      "imageCaption": "Yoshikane product image from the official Yoshikane site.",
+      "imageCredit": "Yoshikane Hamono",
+      "imageCreditUrl": "https://yoshikanehamonoknives.com/",
+      "imageFit": "contain"
+    },
+    "amazon-chef-knife-shortlist-what-to-buy-first": {
+      "heroImage": "assets/uploads/post-images/amazon-chef-knife-shortlist-what-to-buy-first.jpg",
+      "heroAlt": "Amazon shortlist",
+      "imageCaption": "Gerlach kitchen knives",
+      "imageCredit": "Jacek Halicki, CC BY-SA 4.0",
+      "imageCreditUrl": "https://commons.wikimedia.org/wiki/File:2020_Noże_kuchenne_Gerlach.jpg",
+      "imageFit": "cover"
+    },
+    "boning-fillet-slicer-cleaver-specialist-profiles": {
+      "heroImage": "assets/uploads/post-images/boning-fillet-slicer-cleaver-specialist-profiles.jpg",
+      "heroAlt": "Specialists",
+      "imageCaption": "Gerlach kitchen knives",
+      "imageCredit": "Jacek Halicki, CC BY-SA 4.0",
+      "imageCreditUrl": "https://commons.wikimedia.org/wiki/File:2020_Noże_kuchenne_Gerlach.jpg",
+      "imageFit": "cover"
+    },
+    "bread-serrated-knife-profile-guide": {
+      "heroImage": "assets/uploads/post-images/bread-serrated-knife-profile-guide.jpg",
+      "heroAlt": "Serrated profile",
+      "imageCaption": "Gerlach kitchen knives",
+      "imageCredit": "Jacek Halicki, CC BY-SA 4.0",
+      "imageCreditUrl": "https://commons.wikimedia.org/wiki/File:2020_Noże_kuchenne_Gerlach.jpg",
+      "imageFit": "cover"
+    },
+    "chef-knife-vs-gyuto-which-all-purpose-profile": {
+      "heroImage": "assets/uploads/post-images/chef-knife-vs-gyuto-which-all-purpose-profile.jpg",
+      "heroAlt": "Chef vs gyuto",
+      "imageCaption": "Gerlach kitchen knives",
+      "imageCredit": "Jacek Halicki, CC BY-SA 4.0",
+      "imageCreditUrl": "https://commons.wikimedia.org/wiki/File:2020_Noże_kuchenne_Gerlach.jpg",
+      "imageFit": "cover"
+    },
+    "history-of-japanese-steel-manufacturing-tatara-yasugi-vg10": {
+      "heroImage": "assets/uploads/post-images/history-of-japanese-steel-manufacturing-tatara-yasugi-vg10.jpg",
+      "heroAlt": "Minimal timeline from tatara furnace to modern Japanese knife steel",
+      "imageCaption": "Rossiter Worthington Raymond (1840-1918) Identifier : ironsteelmagazin10sauv ( find matches ) Title : The Iron and steel magazine Year : 1898 ( 1890s ) Authors : Sauveur, Albert, 1",
+      "imageCredit": "Internet Archive Book Images, No restrictions",
+      "imageCreditUrl": "https://commons.wikimedia.org/wiki/File:The_Iron_and_steel_magazine_(1898)_(14764215081).jpg",
+      "imageFit": "cover"
+    },
+    "honing-vs-sharpening-when-to-use-steel": {
+      "heroImage": "assets/uploads/post-images/honing-vs-sharpening-when-to-use-steel.jpg",
+      "heroAlt": "Honing vs sharpening",
+      "imageCaption": "Iron knife and sharpening stone. Dyakovo culture. 8-7 century B.C. - 7-8 century A.D. Museum of Archaeology of Moscow.",
+      "imageCredit": "Лапоть, CC0",
+      "imageCreditUrl": "https://commons.wikimedia.org/wiki/File:Knife,_sharpening_stone_-_Dyakovo_culture_-_Museum_of_Archeology_of_Moscow.jpg",
+      "imageFit": "cover"
+    },
+    "how-japanese-kitchen-knives-are-made": {
+      "heroImage": "assets/uploads/post-images/how-japanese-kitchen-knives-are-made.jpg",
+      "heroAlt": "Japanese knife making stages",
+      "imageCaption": "Rossiter Worthington Raymond (1840-1918) Identifier : ironsteelmagazin10sauv ( find matches ) Title : The Iron and steel magazine Year : 1898 ( 1890s ) Authors : Sauveur, Albert, 1",
+      "imageCredit": "Internet Archive Book Images, No restrictions",
+      "imageCreditUrl": "https://commons.wikimedia.org/wiki/File:The_Iron_and_steel_magazine_(1898)_(14764215081).jpg",
+      "imageFit": "cover"
+    },
+    "how-steel-is-made-ore-scrap-fire-chemistry": {
+      "heroImage": "assets/uploads/post-images/how-steel-is-made-ore-scrap-fire-chemistry.jpg",
+      "heroAlt": "Minimal diagram of ore, furnace, steel bar and kitchen knife",
+      "imageCaption": "Electric arc furnace in Varna Bulgaria",
+      "imageCredit": "Powerfox, CC BY-SA 4.0",
+      "imageCreditUrl": "https://commons.wikimedia.org/wiki/File:Electric_arc_furnace.jpg",
+      "imageFit": "cover"
+    },
+    "japanese-knife-culture-practical-guide": {
+      "heroImage": "assets/uploads/post-images/japanese-knife-culture-practical-guide.jpg",
+      "heroAlt": "Minimal Japanese knife culture notes",
+      "imageCaption": "Gerlach kitchen knives",
+      "imageCredit": "Jacek Halicki, CC BY-SA 4.0",
+      "imageCreditUrl": "https://commons.wikimedia.org/wiki/File:2020_Noże_kuchenne_Gerlach.jpg",
+      "imageFit": "cover"
+    },
+    "japanese-knife-regions-sakai-seki-sanjo": {
+      "heroImage": "assets/uploads/post-images/japanese-knife-regions-sakai-seki-sanjo.png",
+      "heroAlt": "Minimal Japan knife regions map",
+      "imageCaption": "Location map of Japan",
+      "imageCredit": "Maximilian Dörrbecker ( Chumwa ), CC BY-SA 3.0",
+      "imageCreditUrl": "https://commons.wikimedia.org/wiki/File:Japan_location_map.svg",
+      "imageFit": "cover"
+    },
+    "king-vs-shapton-starter-stones-guide": {
+      "heroImage": "assets/uploads/post-images/king-vs-shapton-starter-stones-guide.png",
+      "heroAlt": "Shapton 1000 stone product image used as the splash-and-go reference point.",
+      "imageCaption": "Shapton 1000 stone product image used as the splash-and-go reference point.",
+      "imageCredit": "SHAPTON Co., Ltd.",
+      "imageCreditUrl": "https://shapton.co.jp/en/",
+      "imageFit": "contain"
+    },
+    "knife-maintenance-daily-routine": {
+      "heroImage": "assets/uploads/post-images/knife-maintenance-daily-routine.jpg",
+      "heroAlt": "Maintenance routine",
+      "imageCaption": "Gerlach kitchen knives",
+      "imageCredit": "Jacek Halicki, CC BY-SA 4.0",
+      "imageCreditUrl": "https://commons.wikimedia.org/wiki/File:2020_Noże_kuchenne_Gerlach.jpg",
+      "imageFit": "cover"
+    },
+    "knife-steel-metallurgy-basics-for-cooks": {
+      "heroImage": "assets/uploads/post-images/knife-steel-metallurgy-basics-for-cooks.jpg",
+      "heroAlt": "Knife steel trade-off matrix",
+      "imageCaption": "Rossiter Worthington Raymond (1840-1918) Identifier : ironsteelmagazin10sauv ( find matches ) Title : The Iron and steel magazine Year : 1898 ( 1890s ) Authors : Sauveur, Albert, 1",
+      "imageCredit": "Internet Archive Book Images, No restrictions",
+      "imageCreditUrl": "https://commons.wikimedia.org/wiki/File:The_Iron_and_steel_magazine_(1898)_(14764215081).jpg",
+      "imageFit": "cover"
+    },
+    "nakiri-profile-guide": {
+      "heroImage": "assets/uploads/post-images/nakiri-profile-guide.jpg",
+      "heroAlt": "Nakiri profile",
+      "imageCaption": "Gerlach kitchen knives",
+      "imageCredit": "Jacek Halicki, CC BY-SA 4.0",
+      "imageCreditUrl": "https://commons.wikimedia.org/wiki/File:2020_Noże_kuchenne_Gerlach.jpg",
+      "imageFit": "cover"
+    },
+    "petty-paring-utility-profile-guide": {
+      "heroImage": "assets/uploads/post-images/petty-paring-utility-profile-guide.jpg",
+      "heroAlt": "Small knives",
+      "imageCaption": "Gerlach kitchen knives",
+      "imageCredit": "Jacek Halicki, CC BY-SA 4.0",
+      "imageCreditUrl": "https://commons.wikimedia.org/wiki/File:2020_Noże_kuchenne_Gerlach.jpg",
+      "imageFit": "cover"
+    },
+    "santoku-profile-guide": {
+      "heroImage": "assets/uploads/post-images/santoku-profile-guide.jpg",
+      "heroAlt": "Santoku profile",
+      "imageCaption": "Santoku Knife (photo Bryan Nikaido)",
+      "imageCredit": "The original uploader was Plonk420 at English Wikipedia ., CC BY-SA 2.5",
+      "imageCreditUrl": "https://commons.wikimedia.org/wiki/File:Santoku_knife.jpg",
+      "imageFit": "cover"
+    },
+    "sharpening-basics-burr-angle-pressure": {
+      "heroImage": "assets/uploads/post-images/sharpening-basics-burr-angle-pressure.jpg",
+      "heroAlt": "Sharpening basics",
+      "imageCaption": "Iron knife and sharpening stone. Dyakovo culture. 8-7 century B.C. - 7-8 century A.D. Museum of Archaeology of Moscow.",
+      "imageCredit": "Лапоть, CC0",
+      "imageCreditUrl": "https://commons.wikimedia.org/wiki/File:Knife,_sharpening_stone_-_Dyakovo_culture_-_Museum_of_Archeology_of_Moscow.jpg",
+      "imageFit": "cover"
+    },
+    "stainless-carbon-steel-care-patina-rust": {
+      "heroImage": "assets/uploads/post-images/stainless-carbon-steel-care-patina-rust.jpg",
+      "heroAlt": "Steel care",
+      "imageCaption": "Gerlach kitchen knives",
+      "imageCredit": "Jacek Halicki, CC BY-SA 4.0",
+      "imageCreditUrl": "https://commons.wikimedia.org/wiki/File:2020_Noże_kuchenne_Gerlach.jpg",
+      "imageFit": "cover"
+    },
+    "start-here-main-kitchen-knife-profiles": {
+      "heroImage": "assets/uploads/post-images/start-here-main-kitchen-knife-profiles.jpg",
+      "heroAlt": "Knife profiles",
+      "imageCaption": "Gerlach kitchen knives",
+      "imageCredit": "Jacek Halicki, CC BY-SA 4.0",
+      "imageCreditUrl": "https://commons.wikimedia.org/wiki/File:2020_Noże_kuchenne_Gerlach.jpg",
+      "imageFit": "cover"
+    },
+    "stropping-and-deburring-clean-apex": {
+      "heroImage": "assets/uploads/post-images/stropping-and-deburring-clean-apex.jpg",
+      "heroAlt": "Deburring",
+      "imageCaption": "Iron knife and sharpening stone. Dyakovo culture. 8-7 century B.C. - 7-8 century A.D. Museum of Archaeology of Moscow.",
+      "imageCredit": "Лапоть, CC0",
+      "imageCreditUrl": "https://commons.wikimedia.org/wiki/File:Knife,_sharpening_stone_-_Dyakovo_culture_-_Museum_of_Archeology_of_Moscow.jpg",
+      "imageFit": "cover"
+    },
+    "vg10-ginsan-aogami-shirogami-guide": {
+      "heroImage": "assets/uploads/post-images/vg10-ginsan-aogami-shirogami-guide.jpg",
+      "heroAlt": "Common Japanese steel types",
+      "imageCaption": "Rossiter Worthington Raymond (1840-1918) Identifier : ironsteelmagazin10sauv ( find matches ) Title : The Iron and steel magazine Year : 1898 ( 1890s ) Authors : Sauveur, Albert, 1",
+      "imageCredit": "Internet Archive Book Images, No restrictions",
+      "imageCreditUrl": "https://commons.wikimedia.org/wiki/File:The_Iron_and_steel_magazine_(1898)_(14764215081).jpg",
+      "imageFit": "cover"
+    },
+    "whetstone-grits-1000-3000-6000": {
+      "heroImage": "assets/uploads/post-images/whetstone-grits-1000-3000-6000.png",
+      "heroAlt": "A 1000 grit Shapton stone as the baseline sharpening reference.",
+      "imageCaption": "A 1000 grit Shapton stone as the baseline sharpening reference.",
+      "imageCredit": "SHAPTON Co., Ltd.",
+      "imageCreditUrl": "https://shapton.co.jp/en/",
+      "imageFit": "contain"
+    },
+    "who-made-your-japanese-knife": {
+      "heroImage": "assets/uploads/post-images/who-made-your-japanese-knife.jpg",
+      "heroAlt": "Japanese knife maker chain diagram",
+      "imageCaption": "Iron knife and sharpening stone. Dyakovo culture. 8-7 century B.C. - 7-8 century A.D. Museum of Archaeology of Moscow.",
+      "imageCredit": "Лапоть, CC0",
+      "imageCreditUrl": "https://commons.wikimedia.org/wiki/File:Knife,_sharpening_stone_-_Dyakovo_culture_-_Museum_of_Archeology_of_Moscow.jpg",
+      "imageFit": "cover"
+    },
+    "boards-storage-and-edge-life": {
+      "heroImage": "assets/uploads/post-images/boards-storage-and-edge-life.jpg",
+      "heroAlt": "Boards and storage",
+      "imageCaption": "Chopped nuts and herbs rest on a wooden cutting board in a kitchen. A knife is nearby. The scene shows a clean and organized kitchen space with various items.",
+      "imageCredit": "Shixart1985, CC BY 2.0",
+      "imageCreditUrl": "https://commons.wikimedia.org/wiki/File:Chopped_nuts_and_herbs_on_a_wooden_cutting_board_in_a_kitchen_setting.jpg",
+      "imageFit": "cover"
+    },
+    "hasegawa-asahi-hinoki-cutting-board-guide": {
+      "heroImage": "assets/uploads/post-images/hasegawa-asahi-hinoki-cutting-board-guide.jpg",
+      "heroAlt": "Hasegawa cutting board lineup image.",
+      "imageCaption": "Hasegawa cutting board lineup image.",
+      "imageCredit": "Hasegawa Corporation",
+      "imageCreditUrl": "https://hasegawakagaku.com/products_category/cutting-boards/",
+      "imageFit": "contain"
+    }
+  }
+}

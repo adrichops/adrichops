@@ -16,8 +16,8 @@
       "verdict": "A benchmark Sanjo cutter",
       "summary": "Yoshikane is a practical reference point for Sanjo grinds: more structure than a laser, cleaner cutting than a thick Western chef knife.",
       "deck": "Yoshikane explains why Sanjo has its own fanbase: spine, taper, convexity, food release and enough confidence to cut more than parsley for the camera.",
-      "heroImage": "assets/img/maker-yoshikane.svg",
-      "heroAlt": "Minimal maker spotlight illustration for Yoshikane Hamono",
+      "heroImage": "assets/uploads/post-images/maker-spotlight-yoshikane-hamono.jpg",
+      "heroAlt": "Yoshikane product image from the official Yoshikane site.",
       "pullQuote": "Yoshikane feels like a grown-up workhorse that still knows how to dress for dinner.",
       "specs": {
         "Region": "Sanjo, Niigata",
@@ -140,7 +140,11 @@
             "- Do not buy Yoshikane Hamono by name alone; match the exact knife to food, board and care habits. - Use source trails, retailer measurements and forum owner notes to understand the line before buying. - Treat maker appreciation as a reason to use and maintain the knife, not to make it untouchable."
           ]
         }
-      ]
+      ],
+      "imageCaption": "Yoshikane product image from the official Yoshikane site.",
+      "imageCredit": "Yoshikane Hamono",
+      "imageCreditUrl": "https://yoshikanehamonoknives.com/",
+      "imageFit": "contain"
     },
     {
       "id": "maker-spotlight-toyama-noborikoi",
@@ -158,8 +162,8 @@
       "verdict": "Cult Sanjo carbon, not beginner stainless",
       "summary": "Toyama Noborikoi is handmade Sanjo carbon with a strong forum footprint, serious cutting reputation and zero interest in being low-maintenance.",
       "deck": "Toyama is not an Amazon-cart casual purchase. It is a Sanjo carbon rabbit hole with a rising carp, handmade variation and a very specific ownership brief.",
-      "heroImage": "assets/img/maker-toyama.svg",
-      "heroAlt": "Minimal maker spotlight illustration for Syuuji Toyama / Toyama Noborikoi",
+      "heroImage": "assets/uploads/post-images/japanese-knife-culture-practical-guide.jpg",
+      "heroAlt": "maker spotlight toyama noborikoi",
       "pullQuote": "Toyama is for people who want handmade performance and are not shocked when handmade means variation.",
       "specs": {
         "Region": "Sanjo, Niigata",
@@ -282,7 +286,11 @@
             "- Do not buy Syuuji Toyama / Toyama Noborikoi by name alone; match the exact knife to food, board and care habits. - Use source trails, retailer measurements and forum owner notes to understand the line before buying. - Treat maker appreciation as a reason to use and maintain the knife, not to make it untouchable."
           ]
         }
-      ]
+      ],
+      "imageCaption": "Japanese kitchen knife reference image used where a usable official maker image was not available.",
+      "imageCredit": "Jacek Halicki, CC BY-SA 4.0",
+      "imageCreditUrl": "https://commons.wikimedia.org/wiki/File:2020_Noże_kuchenne_Gerlach.jpg",
+      "imageFit": "cover"
     },
     {
       "id": "maker-spotlight-wakui",
@@ -300,8 +308,8 @@
       "verdict": "A serious cutter with workshop grit",
       "summary": "Wakui connects family tool-making, Yoshikane training and handmade Sanjo knives that feel built for real food rather than display lighting.",
       "deck": "Wakui is a reminder that “good value” in Japanese knives does not have to mean basic. Sometimes it means the hype cycle arrived late.",
-      "heroImage": "assets/img/maker-wakui.svg",
-      "heroAlt": "Minimal maker spotlight illustration for Toshihiro Wakui",
+      "heroImage": "assets/uploads/post-images/japanese-knife-culture-practical-guide.jpg",
+      "heroAlt": "maker spotlight wakui",
       "pullQuote": "Wakui cuts like someone spent time at a real forge instead of a branding meeting.",
       "specs": {
         "Region": "Sanjo, Niigata",
@@ -424,7 +432,11 @@
             "- Do not buy Toshihiro Wakui by name alone; match the exact knife to food, board and care habits. - Use source trails, retailer measurements and forum owner notes to understand the line before buying. - Treat maker appreciation as a reason to use and maintain the knife, not to make it untouchable."
           ]
         }
-      ]
+      ],
+      "imageCaption": "Japanese kitchen knife reference image used where a usable official maker image was not available.",
+      "imageCredit": "Jacek Halicki, CC BY-SA 4.0",
+      "imageCreditUrl": "https://commons.wikimedia.org/wiki/File:2020_Noże_kuchenne_Gerlach.jpg",
+      "imageFit": "cover"
     },
     {
       "id": "maker-spotlight-takada-no-hamono",
@@ -465,7 +477,7 @@
       "gallery": [
         {
           "src": "assets/uploads/takada-mitsuaki-t-logo.gif",
-          "alt": "Mitsuaki-T logo from Takada no Hamono",
+          "alt": "Mitsuaki-T brand mark",
           "caption": "Mitsuaki-T brand mark from Takada no Hamono.",
           "credit": "© TAKADA no HAMONO",
           "creditUrl": "http://www.takadanohamono.com/mitsuaki-t.html"
@@ -596,8 +608,8 @@
       "verdict": "A modern Sakai heavy-hitter",
       "summary": "Nakagawa connects Shiraki lineage, Sakai forging and the modern buyer’s obsession with who actually made the blade.",
       "deck": "Satoshi Nakagawa is one of the names that makes people stop scrolling because the work sits at the intersection of training, heat treatment and modern demand.",
-      "heroImage": "assets/img/maker-nakagawa.svg",
-      "heroAlt": "Minimal maker spotlight illustration for Satoshi Nakagawa / Nakagawa Hamono",
+      "heroImage": "assets/uploads/post-images/maker-spotlight-nakagawa-hamono.jpg",
+      "heroAlt": "Nakagawa page image from Musashi’s craftsman profile.",
       "pullQuote": "Nakagawa is a reminder that heat treatment is invisible until it is not.",
       "specs": {
         "Region": "Sakai, Osaka",
@@ -720,7 +732,11 @@
             "- Do not buy Satoshi Nakagawa / Nakagawa Hamono by name alone; match the exact knife to food, board and care habits. - Use source trails, retailer measurements and forum owner notes to understand the line before buying. - Treat maker appreciation as a reason to use and maintain the knife, not to make it untouchable."
           ]
         }
-      ]
+      ],
+      "imageCaption": "Nakagawa page image from Musashi’s craftsman profile.",
+      "imageCredit": "MUSASHI",
+      "imageCreditUrl": "https://www.musashihamono.com/pages/craftsman/nakagawa",
+      "imageFit": "contain"
     },
     {
       "id": "maker-spotlight-nigara-hamono",
@@ -738,8 +754,8 @@
       "verdict": "Patterned blades that still need to cut",
       "summary": "Nigara is where Tsugaru lineage, modern Damascus work and a very obvious design personality meet the cutting board.",
       "deck": "Nigara can be visually loud and still be serious. The pattern is allowed; the onion still gets final approval.",
-      "heroImage": "assets/img/maker-nigara.svg",
-      "heroAlt": "Minimal maker spotlight illustration for Nigara Hamono",
+      "heroImage": "assets/uploads/post-images/maker-spotlight-nigara-hamono.jpg",
+      "heroAlt": "Nigara workshop and knife image from Nigara’s official site.",
       "pullQuote": "Pattern is allowed. The food still gets final approval.",
       "specs": {
         "Region": "Hirosaki, Aomori / Tsugaru tradition",
@@ -862,7 +878,11 @@
             "- Do not buy Nigara Hamono by name alone; match the exact knife to food, board and care habits. - Use source trails, retailer measurements and forum owner notes to understand the line before buying. - Treat maker appreciation as a reason to use and maintain the knife, not to make it untouchable."
           ]
         }
-      ]
+      ],
+      "imageCaption": "Nigara workshop and knife image from Nigara’s official site.",
+      "imageCredit": "Nigara Hamono",
+      "imageCreditUrl": "https://nigaraknives.com/",
+      "imageFit": "contain"
     },
     {
       "id": "maker-spotlight-myojin-riki-seisakusho",
@@ -880,8 +900,8 @@
       "verdict": "Refined finish with functional purpose",
       "summary": "Myojin puts the sharpener and finisher in the foreground: high polish, precise geometry and collaborations that serious buyers track carefully.",
       "deck": "Myojin is what happens when beautiful finishing still has to answer the onion. The polish is not make-up; on the good examples, it is geometry.",
-      "heroImage": "assets/img/maker-myojin.svg",
-      "heroAlt": "Minimal maker spotlight illustration for Myojin Riki Seisakusho / Naohito Myojin",
+      "heroImage": "assets/uploads/post-images/japanese-knife-culture-practical-guide.jpg",
+      "heroAlt": "maker spotlight myojin riki seisakusho",
       "pullQuote": "Good finish is not make-up. On a Myojin, it is part of the cutting geometry.",
       "specs": {
         "Region": "Kochi / Tosa with wider Sakai and collaboration links",
@@ -1004,7 +1024,11 @@
             "- Do not buy Myojin Riki Seisakusho / Naohito Myojin by name alone; match the exact knife to food, board and care habits. - Use source trails, retailer measurements and forum owner notes to understand the line before buying. - Treat maker appreciation as a reason to use and maintain the knife, not to make it untouchable."
           ]
         }
-      ]
+      ],
+      "imageCaption": "Japanese kitchen knife reference image used where a usable official maker image was not available.",
+      "imageCredit": "Jacek Halicki, CC BY-SA 4.0",
+      "imageCreditUrl": "https://commons.wikimedia.org/wiki/File:2020_Noże_kuchenne_Gerlach.jpg",
+      "imageFit": "cover"
     },
     {
       "id": "maker-spotlight-moritaka-hamono",
@@ -1022,8 +1046,8 @@
       "verdict": "Historic, carbon, not maintenance-free",
       "summary": "Moritaka brings a very long blade-making lineage, Aogami Super focus and a rustic ownership brief that rewards users who actually dry their knives.",
       "deck": "Moritaka’s story is long, but the ownership brief is short: carbon steel, rustic charm, sharpen it, dry it, use it.",
-      "heroImage": "assets/img/maker-moritaka.svg",
-      "heroAlt": "Minimal maker spotlight illustration for Moritaka Hamono",
+      "heroImage": "assets/uploads/post-images/maker-spotlight-moritaka-hamono.jpg",
+      "heroAlt": "Moritaka Hamono image from the official Moritaka site.",
       "pullQuote": "Seven hundred years of history still cannot save a wet carbon edge in a drawer.",
       "specs": {
         "Region": "Yatsushiro, Kumamoto",
@@ -1146,7 +1170,11 @@
             "- Do not buy Moritaka Hamono by name alone; match the exact knife to food, board and care habits. - Use source trails, retailer measurements and forum owner notes to understand the line before buying. - Treat maker appreciation as a reason to use and maintain the knife, not to make it untouchable."
           ]
         }
-      ]
+      ],
+      "imageCaption": "Moritaka Hamono image from the official Moritaka site.",
+      "imageCredit": "Moritaka Hamono",
+      "imageCreditUrl": "https://moritakahamonoen.ocnk.net/",
+      "imageFit": "contain"
     },
     {
       "id": "maker-spotlight-konosuke",
@@ -1164,8 +1192,8 @@
       "verdict": "A brand that teaches better questions",
       "summary": "Konosuke is less one maker and more a Sakai matchmaking system: brand, smith, sharpener and line all matter.",
       "deck": "Konosuke is a good cure for lazy knife shopping. It forces the question: which line, which sharpener, which steel, and what geometry are we actually talking about?",
-      "heroImage": "assets/img/maker-konosuke.svg",
-      "heroAlt": "Minimal maker spotlight illustration for Konosuke",
+      "heroImage": "assets/uploads/post-images/maker-spotlight-konosuke.jpg",
+      "heroAlt": "Konosuke workshop image from the official Konosuke site.",
       "pullQuote": "Konosuke turns the invisible parts of Sakai production into part of the conversation.",
       "specs": {
         "Region": "Sakai, Osaka",
@@ -1288,7 +1316,11 @@
             "- Do not buy Konosuke by name alone; match the exact knife to food, board and care habits. - Use source trails, retailer measurements and forum owner notes to understand the line before buying. - Treat maker appreciation as a reason to use and maintain the knife, not to make it untouchable."
           ]
         }
-      ]
+      ],
+      "imageCaption": "Konosuke workshop image from the official Konosuke site.",
+      "imageCredit": "Konosuke Sakai",
+      "imageCreditUrl": "https://konosuke-sakai.com/index.php/about-us/",
+      "imageFit": "contain"
     },
     {
       "id": "maker-spotlight-hado",
@@ -1306,8 +1338,8 @@
       "verdict": "A young brand with serious finishing intent",
       "summary": "HADO is a modern Sakai brand built around handcraft, named makers and clean line design rather than fake age.",
       "deck": "HADO does not need to pretend to be ancient. It needs good knives, clear craft and a reason to exist on the board.",
-      "heroImage": "assets/img/maker-hado.svg",
-      "heroAlt": "Minimal maker spotlight illustration for HADO",
+      "heroImage": "assets/uploads/post-images/maker-spotlight-hado.png",
+      "heroAlt": "HADO brand image from the official HADO site.",
       "pullQuote": "A new brand does not need fake age. It needs good knives.",
       "specs": {
         "Region": "Sakai, Osaka",
@@ -1430,7 +1462,11 @@
             "- Do not buy HADO by name alone; match the exact knife to food, board and care habits. - Use source trails, retailer measurements and forum owner notes to understand the line before buying. - Treat maker appreciation as a reason to use and maintain the knife, not to make it untouchable."
           ]
         }
-      ]
+      ],
+      "imageCaption": "HADO brand image from the official HADO site.",
+      "imageCredit": "HADO / Fukui Co., Ltd.",
+      "imageCreditUrl": "https://hado-knife.jp/en",
+      "imageFit": "contain"
     },
     {
       "id": "maker-spotlight-baba-hamono-kagekiyo",
@@ -1448,8 +1484,8 @@
       "verdict": "A Sakai bridge between craft and buyers",
       "summary": "Baba Hamono and Kagekiyo show Sakai craft as a system: blacksmiths, sharpeners, repair, maintenance and a clear respect for food.",
       "deck": "Baba Hamono matters because it turns “functional art” into something practical: a knife you use, maintain, repair and understand through Sakai’s craft chain.",
-      "heroImage": "assets/img/maker-baba.svg",
-      "heroAlt": "Minimal maker spotlight illustration for Baba Hamono / Kagekiyo",
+      "heroImage": "assets/uploads/post-images/maker-spotlight-baba-hamono-kagekiyo.jpg",
+      "heroAlt": "Kagekiyo image from Baba Hamono’s official site.",
       "pullQuote": "The good version of tradition is not dusty. It cuts cleanly, gets maintained, and goes back to work.",
       "specs": {
         "Region": "Sakai, Osaka",
@@ -1572,7 +1608,11 @@
             "- Do not buy Baba Hamono / Kagekiyo by name alone; match the exact knife to food, board and care habits. - Use source trails, retailer measurements and forum owner notes to understand the line before buying. - Treat maker appreciation as a reason to use and maintain the knife, not to make it untouchable."
           ]
         }
-      ]
+      ],
+      "imageCaption": "Kagekiyo image from Baba Hamono’s official site.",
+      "imageCredit": "Baba Hamono",
+      "imageCreditUrl": "https://www.baba-hamono.com/en/kagekiyo/",
+      "imageFit": "contain"
     },
     {
       "id": "maker-spotlight-ashi-hamono",
@@ -1590,8 +1630,8 @@
       "verdict": "The anti-drama laser",
       "summary": "Ashi Hamono is the quiet Sakai reference point for laser geometry: not loud, not decorative, just extremely clear about cutting.",
       "deck": "Ashi Ginga is the knife people recommend when they want to explain thin geometry without making the buyer sign up for a museum membership.",
-      "heroImage": "assets/img/maker-ashi.svg",
-      "heroAlt": "Minimal maker spotlight illustration for Ashi Hamono",
+      "heroImage": "assets/uploads/post-images/japanese-knife-culture-practical-guide.jpg",
+      "heroAlt": "maker spotlight ashi hamono",
       "pullQuote": "Ashi is not loud. That is part of the threat.",
       "specs": {
         "Region": "Sakai, Osaka",
@@ -1714,7 +1754,11 @@
             "- Do not buy Ashi Hamono by name alone; match the exact knife to food, board and care habits. - Use source trails, retailer measurements and forum owner notes to understand the line before buying. - Treat maker appreciation as a reason to use and maintain the knife, not to make it untouchable."
           ]
         }
-      ]
+      ],
+      "imageCaption": "Japanese kitchen knife reference image used where a usable official maker image was not available.",
+      "imageCredit": "Jacek Halicki, CC BY-SA 4.0",
+      "imageCreditUrl": "https://commons.wikimedia.org/wiki/File:2020_Noże_kuchenne_Gerlach.jpg",
+      "imageFit": "cover"
     },
     {
       "id": "how-steel-is-made-ore-scrap-fire-chemistry",
@@ -1732,7 +1776,7 @@
       "verdict": "Steel starts industrial; performance ends personal.",
       "summary": "A friendly map of how steel moves from ore or scrap into controlled blade material, and why heat treatment and grind still matter more than mythology.",
       "deck": "Steel is not fairy dust. It is iron, carbon, alloying, heat, cleanliness, and a lot of boring control. The boring part is why the knife works.",
-      "heroImage": "assets/img/steel-making-route.svg",
+      "heroImage": "assets/uploads/post-images/how-steel-is-made-ore-scrap-fire-chemistry.jpg",
       "heroAlt": "Minimal diagram of ore, furnace, steel bar and kitchen knife",
       "pullQuote": "A steel name tells you the recipe. It does not tell you whether the cook followed it.",
       "specs": {
@@ -1764,13 +1808,7 @@
           "cta": "Check current price"
         }
       ],
-      "gallery": [
-        {
-          "src": "assets/img/steel-matrix.svg",
-          "alt": "Steel trade-off matrix",
-          "caption": "The recipe matters. The heat treatment and geometry decide how that recipe lands on the board."
-        }
-      ],
+      "gallery": [],
       "sourceTrail": [
         {
           "name": "World Steel Association: raw materials",
@@ -1858,7 +1896,11 @@
             "- Steel is iron plus controlled carbon, alloying, cleanliness and heat treatment. - Modern steel mainly comes through blast furnace/basic oxygen or electric arc furnace routes. - For knives, heat treatment and grind can matter as much as the steel name."
           ]
         }
-      ]
+      ],
+      "imageCaption": "Electric arc furnace in Varna Bulgaria",
+      "imageCredit": "Powerfox, CC BY-SA 4.0",
+      "imageCreditUrl": "https://commons.wikimedia.org/wiki/File:Electric_arc_furnace.jpg",
+      "imageFit": "cover"
     },
     {
       "id": "history-of-japanese-steel-manufacturing-tatara-yasugi-vg10",
@@ -1876,7 +1918,7 @@
       "verdict": "Respect the lineage; do not buy the fog machine.",
       "summary": "A practical timeline from iron-sand tatara steel through Meiji industrialisation to modern Yasugi and Takefu knife steels.",
       "deck": "Japanese steel history is not one clean samurai-to-gyuto montage. It is iron sand, furnaces, state industry, specialty steel, regional craft and a lot of polishing dust.",
-      "heroImage": "assets/img/japanese-steel-history.svg",
+      "heroImage": "assets/uploads/post-images/history-of-japanese-steel-manufacturing-tatara-yasugi-vg10.jpg",
       "heroAlt": "Minimal timeline from tatara furnace to modern Japanese knife steel",
       "pullQuote": "The useful version of history respects the craft without pretending every gyuto is a katana that learned to dice onions.",
       "specs": {
@@ -1908,13 +1950,7 @@
           "cta": "Check current price"
         }
       ],
-      "gallery": [
-        {
-          "src": "assets/img/steel-types.svg",
-          "alt": "Japanese steel types",
-          "caption": "Steel history gets more useful when it becomes behaviour: stainless, carbon, clad, reactive, forgiving, spicy."
-        }
-      ],
+      "gallery": [],
       "sourceTrail": [
         {
           "name": "Japan Travel: Shimane's ancient Tatara ironworks",
@@ -2008,7 +2044,11 @@
             "- Tatara and tamahagane are central to Japanese blade culture, but most kitchen knives use modern industrial steels. - Meiji industrialisation and Yawata Steel Works pushed Japan into modern integrated steelmaking. - Yasugi and Takefu show how regional steel knowledge became modern knife materials such as Shirogami, Aogami, Ginsan and VG10."
           ]
         }
-      ]
+      ],
+      "imageCaption": "Rossiter Worthington Raymond (1840-1918) Identifier : ironsteelmagazin10sauv ( find matches ) Title : The Iron and steel magazine Year : 1898 ( 1890s ) Authors : Sauveur, Albert, 1",
+      "imageCredit": "Internet Archive Book Images, No restrictions",
+      "imageCreditUrl": "https://commons.wikimedia.org/wiki/File:The_Iron_and_steel_magazine_(1898)_(14764215081).jpg",
+      "imageFit": "cover"
     },
     {
       "id": "who-made-your-japanese-knife",
@@ -2026,7 +2066,7 @@
       "verdict": "Names need context",
       "summary": "A clear guide to the people and businesses behind a Japanese knife: blacksmiths, grinders, sharpeners, handle makers, brands and retailers.",
       "deck": "The name on the blade is often not the whole story. This guide explains the chain without turning it into homework soup.",
-      "heroImage": "assets/img/maker-chain.svg",
+      "heroImage": "assets/uploads/post-images/who-made-your-japanese-knife.jpg",
       "heroAlt": "Japanese knife maker chain diagram",
       "pullQuote": "The most honest answer to who made this knife is often: several skilled people, plus a brand that organized the chaos.",
       "specs": {
@@ -2074,13 +2114,7 @@
           "cta": "Check current price"
         }
       ],
-      "gallery": [
-        {
-          "src": "assets/img/craft-map.svg",
-          "alt": "Craft map",
-          "caption": "Smith, sharpener, handle maker, brand and retailer all influence the final knife."
-        }
-      ],
+      "gallery": [],
       "sourceTrail": [
         {
           "name": "Kitchen Knife Forums",
@@ -2153,7 +2187,11 @@
             "- Japanese knives often involve multiple specialists. - Grind and sharpening can matter as much as the smith name. - Good retailer information is part of the value."
           ]
         }
-      ]
+      ],
+      "imageCaption": "Iron knife and sharpening stone. Dyakovo culture. 8-7 century B.C. - 7-8 century A.D. Museum of Archaeology of Moscow.",
+      "imageCredit": "Лапоть, CC0",
+      "imageCreditUrl": "https://commons.wikimedia.org/wiki/File:Knife,_sharpening_stone_-_Dyakovo_culture_-_Museum_of_Archeology_of_Moscow.jpg",
+      "imageFit": "cover"
     },
     {
       "id": "vg10-ginsan-aogami-shirogami-guide",
@@ -2171,7 +2209,7 @@
       "verdict": "Know the maintenance tax",
       "summary": "A practical guide to common Japanese knife steels and what they mean for maintenance, sharpening and everyday prep.",
       "deck": "The steel names are not spells. They are maintenance and performance clues. Useful clues, but still clues.",
-      "heroImage": "assets/img/steel-types.svg",
+      "heroImage": "assets/uploads/post-images/vg10-ginsan-aogami-shirogami-guide.jpg",
       "heroAlt": "Common Japanese steel types",
       "pullQuote": "If the steel name does not change how you use or maintain the knife, it is just decoration.",
       "specs": {
@@ -2219,13 +2257,7 @@
           "cta": "Check current price"
         }
       ],
-      "gallery": [
-        {
-          "src": "assets/img/steel-matrix.svg",
-          "alt": "Steel matrix",
-          "caption": "Steel choice is a triangle of edge, toughness and maintenance."
-        }
-      ],
+      "gallery": [],
       "sourceTrail": [
         {
           "name": "Knife Steel Nerds: VG10 and SG2",
@@ -2311,7 +2343,11 @@
             "- VG10 is a common stainless gateway. - Ginsan is a refined low-fuss option when well made. - Aogami and Shirogami reward care and sharpening interest."
           ]
         }
-      ]
+      ],
+      "imageCaption": "Rossiter Worthington Raymond (1840-1918) Identifier : ironsteelmagazin10sauv ( find matches ) Title : The Iron and steel magazine Year : 1898 ( 1890s ) Authors : Sauveur, Albert, 1",
+      "imageCredit": "Internet Archive Book Images, No restrictions",
+      "imageCreditUrl": "https://commons.wikimedia.org/wiki/File:The_Iron_and_steel_magazine_(1898)_(14764215081).jpg",
+      "imageFit": "cover"
     },
     {
       "id": "start-here-main-kitchen-knife-profiles",
@@ -2329,7 +2365,7 @@
       "verdict": "Start here",
       "summary": "A practical map of the knife profiles that actually earn drawer space: chef knife, gyuto, santoku, nakiri, petty, paring, bread knife and the specialists.",
       "deck": "Start with jobs, not brand names. Shape, size, steel and maintenance tolerance matter more than the romance printed on the box.",
-      "heroImage": "assets/img/profiles-map.svg",
+      "heroImage": "assets/uploads/post-images/start-here-main-kitchen-knife-profiles.jpg",
       "heroAlt": "Knife profiles",
       "pullQuote": "A knife profile is a job description. If the job is vague, the purchase usually is too.",
       "specs": {
@@ -2378,23 +2414,7 @@
           "cta": "Check current price"
         }
       ],
-      "gallery": [
-        {
-          "src": "assets/img/chef-vs-gyuto.svg",
-          "alt": "Chef vs gyuto",
-          "caption": "Two all-purpose profiles compared by belly, tip, height and board feel."
-        },
-        {
-          "src": "assets/img/small-knives.svg",
-          "alt": "Small knives",
-          "caption": "Paring, petty and utility blades for tight prep and hand work."
-        },
-        {
-          "src": "assets/img/serrated-profile.svg",
-          "alt": "Serrated profile",
-          "caption": "Bread knife teeth and long slicing arc for crust and tomato skin."
-        }
-      ],
+      "gallery": [],
       "sourceTrail": [
         {
           "name": "SCSuede on Reddit",
@@ -2473,7 +2493,11 @@
             "- Buy the shape for the work you actually do. - For low-fuss vegetables, a stainless santoku or nakiri is often more useful than a prestige chef knife. - Pair every knife recommendation with a board, stone and storage answer."
           ]
         }
-      ]
+      ],
+      "imageCaption": "Gerlach kitchen knives",
+      "imageCredit": "Jacek Halicki, CC BY-SA 4.0",
+      "imageCreditUrl": "https://commons.wikimedia.org/wiki/File:2020_Noże_kuchenne_Gerlach.jpg",
+      "imageFit": "cover"
     },
     {
       "id": "shapton-stones-review-brief",
@@ -2491,8 +2515,8 @@
       "verdict": "Best convenience upgrade",
       "summary": "A focused brief on Shapton stones for kitchen knives: why the 1000 is so often recommended, how Glass and Kuromaku fit, and what to add next.",
       "deck": "Shapton is the stone brand for the home cook who wants less soaking, less mud and fewer excuses between dull knife and sharp knife.",
-      "heroImage": "assets/img/shapton-stones.svg",
-      "heroAlt": "Minimal Shapton stone illustration",
+      "heroImage": "assets/uploads/post-images/shapton-stones-review-brief.png",
+      "heroAlt": "Shapton RockStar 1000 product image from Shapton’s official product lineup.",
       "pullQuote": "Shapton removes one beginner problem: waiting for the stone. Sadly, it does not remove the burr for you.",
       "specs": {
         "Core pick": "Shapton Kuromaku / Pro 1000",
@@ -2550,13 +2574,7 @@
           "cta": "Check current price"
         }
       ],
-      "gallery": [
-        {
-          "src": "assets/img/shapton-stones.svg",
-          "alt": "Shapton stone illustration",
-          "caption": "Splash-and-go convenience, fast cutting, hard feel."
-        }
-      ],
+      "gallery": [],
       "sourceTrail": [
         {
           "name": "Shapton official site",
@@ -2636,7 +2654,11 @@
             "- Shapton 1000 is the clean low-fuss first-stone direction. - Harder feel means fast cutting and slower dishing, but less muddy feedback. - Kuromaku/Pro is the simple first buy; Glass is the harder enthusiast lane. - Add strop and flattening method before buying a full progression. - Technique still matters. Fast stones make fast mistakes too."
           ]
         }
-      ]
+      ],
+      "imageCaption": "Shapton RockStar 1000 product image from Shapton’s official product lineup.",
+      "imageCredit": "SHAPTON Co., Ltd.",
+      "imageCreditUrl": "https://shapton.co.jp/en/",
+      "imageFit": "contain"
     },
     {
       "id": "japanese-knife-regions-sakai-seki-sanjo",
@@ -2654,7 +2676,7 @@
       "verdict": "Useful, not absolute",
       "summary": "A beginner-friendly guide to three major Japanese knife regions and why region labels help but never tell the full story.",
       "deck": "Sakai, Seki and Sanjo are useful map pins. They are not magic passwords. Here is how to read them without getting weird.",
-      "heroImage": "assets/img/regions-map.svg",
+      "heroImage": "assets/uploads/post-images/japanese-knife-regions-sakai-seki-sanjo.png",
       "heroAlt": "Minimal Japan knife regions map",
       "pullQuote": "A region label is a clue, not a full review.",
       "specs": {
@@ -2702,13 +2724,7 @@
           "cta": "Check current price"
         }
       ],
-      "gallery": [
-        {
-          "src": "assets/img/maker-chain.svg",
-          "alt": "Maker chain",
-          "caption": "Region, maker and retailer information should be read together."
-        }
-      ],
+      "gallery": [],
       "sourceTrail": [
         {
           "name": "Sakai Ichimonji: Knife making regions of Japan",
@@ -2781,7 +2797,11 @@
             "- Regions are useful context, not complete proof. - Sakai often highlights specialist craft roles. - Specific maker, steel and grind details still matter most."
           ]
         }
-      ]
+      ],
+      "imageCaption": "Location map of Japan",
+      "imageCredit": "Maximilian Dörrbecker ( Chumwa ), CC BY-SA 3.0",
+      "imageCreditUrl": "https://commons.wikimedia.org/wiki/File:Japan_location_map.svg",
+      "imageFit": "cover"
     },
     {
       "id": "knife-steel-metallurgy-basics-for-cooks",
@@ -2799,7 +2819,7 @@
       "verdict": "Trade-offs, always",
       "summary": "A friendly primer on hardness, toughness, edge retention, corrosion resistance, carbides and why no knife steel wins everything.",
       "deck": "Steel names are fun. Steel trade-offs are more useful. Here is the cook-friendly version without spreadsheet fever.",
-      "heroImage": "assets/img/steel-matrix.svg",
+      "heroImage": "assets/uploads/post-images/knife-steel-metallurgy-basics-for-cooks.jpg",
       "heroAlt": "Knife steel trade-off matrix",
       "pullQuote": "There is no best steel. There is a best compromise for a person, task and edge geometry.",
       "specs": {
@@ -2847,13 +2867,7 @@
           "cta": "Check current price"
         }
       ],
-      "gallery": [
-        {
-          "src": "assets/img/steel-care.svg",
-          "alt": "Steel care",
-          "caption": "Stainless buys convenience; carbon buys feedback and care rituals."
-        }
-      ],
+      "gallery": [],
       "sourceTrail": [
         {
           "name": "Knife Steel Nerds: steels rated by a metallurgist",
@@ -2927,7 +2941,11 @@
             "- Hardness, toughness and corrosion resistance trade off. - Geometry and sharpening can matter as much as steel name. - Choose steel based on behaviour, not fantasy self-care."
           ]
         }
-      ]
+      ],
+      "imageCaption": "Rossiter Worthington Raymond (1840-1918) Identifier : ironsteelmagazin10sauv ( find matches ) Title : The Iron and steel magazine Year : 1898 ( 1890s ) Authors : Sauveur, Albert, 1",
+      "imageCredit": "Internet Archive Book Images, No restrictions",
+      "imageCreditUrl": "https://commons.wikimedia.org/wiki/File:The_Iron_and_steel_magazine_(1898)_(14764215081).jpg",
+      "imageFit": "cover"
     },
     {
       "id": "king-whetstones-review-brief",
@@ -2945,8 +2963,8 @@
       "verdict": "Best value teacher",
       "summary": "A focused brief on King stones for kitchen knives: why the 1000 and combo stones are beginner classics, and where they demand maintenance.",
       "deck": "King stones are not glamorous. They are affordable, readable and willing to show you what your hands are doing wrong.",
-      "heroImage": "assets/img/king-stones.svg",
-      "heroAlt": "Minimal King stone illustration",
+      "heroImage": "assets/uploads/post-images/king-whetstones-review-brief.png",
+      "heroAlt": "King whetstone product image from Matsunaga Stone’s official King lineup.",
       "pullQuote": "A King stone will not flatter you. That is part of its charm.",
       "specs": {
         "Core pick": "King Deluxe 1000 or King 1000/6000 combo",
@@ -2996,13 +3014,7 @@
           "cta": "Check current price"
         }
       ],
-      "gallery": [
-        {
-          "src": "assets/img/king-stones.svg",
-          "alt": "King stone illustration",
-          "caption": "Soft feedback, budget entry, flattening required."
-        }
-      ],
+      "gallery": [],
       "sourceTrail": [
         {
           "name": "King Deluxe - Matsunaga Stone",
@@ -3076,7 +3088,11 @@
             "- King 1000 and 1000/6000 are good budget starter directions. - The medium grit makes the edge; the fine grit only refines it. - Softer feedback helps learning but requires flattening discipline. - Dry properly before storage. - Great for practice knives and normal kitchen edges."
           ]
         }
-      ]
+      ],
+      "imageCaption": "King whetstone product image from Matsunaga Stone’s official King lineup.",
+      "imageCredit": "Matsunaga Stone Co., Ltd.",
+      "imageCreditUrl": "https://matsunaga-corp.co.jp/en/products-cat/king/",
+      "imageFit": "contain"
     },
     {
       "id": "king-vs-shapton-starter-stones-guide",
@@ -3094,8 +3110,8 @@
       "verdict": "King teaches; Shapton gets on with it",
       "summary": "A practical comparison of King and Shapton starter stones for kitchen knives: soaking, feedback, speed, dishing and what to buy first.",
       "deck": "The first stone question is not mystical. It is about patience, feedback, splash-and-go convenience and whether you will flatten the rectangle you just bought.",
-      "heroImage": "assets/img/king-shapton-stones.svg",
-      "heroAlt": "Minimal King and Shapton stones illustration",
+      "heroImage": "assets/uploads/post-images/king-vs-shapton-starter-stones-guide.png",
+      "heroAlt": "Shapton 1000 stone product image used as the splash-and-go reference point.",
       "pullQuote": "The best first stone is the one you will actually use before the knife becomes a butter spreader with ambition.",
       "specs": {
         "Beginner baseline": "One medium stone around 1000 grit",
@@ -3153,13 +3169,7 @@
           "cta": "Check current price"
         }
       ],
-      "gallery": [
-        {
-          "src": "assets/img/king-shapton-stones.svg",
-          "alt": "King and Shapton stones illustration",
-          "caption": "King teaches feedback; Shapton reduces setup friction."
-        }
-      ],
+      "gallery": [],
       "sourceTrail": [
         {
           "name": "King Deluxe - Matsunaga Stone",
@@ -3246,7 +3256,11 @@
             "- Start with one medium stone around 1000 grit. - King is softer, feedback-rich and budget-friendly, but needs soaking and flattening discipline. - Shapton is harder, faster and splash-and-go, with less muddy feedback. - Add a strop and flattening method before buying lots of high-grit stones. - A polished dull edge is still dull. The 1000 grit edge must work first."
           ]
         }
-      ]
+      ],
+      "imageCaption": "Shapton 1000 stone product image used as the splash-and-go reference point.",
+      "imageCredit": "SHAPTON Co., Ltd.",
+      "imageCreditUrl": "https://shapton.co.jp/en/",
+      "imageFit": "contain"
     },
     {
       "id": "japanese-knife-culture-practical-guide",
@@ -3264,7 +3278,7 @@
       "verdict": "Respect the tool",
       "summary": "A practical introduction to Japanese knife culture: respect, specialization, maintenance and why the romance should never outrun the cooking.",
       "deck": "Japanese knives are beautiful, but the culture is not just mystique. It is tool specialization, maintenance, craft networks and using the blade properly.",
-      "heroImage": "assets/img/culture-notes.svg",
+      "heroImage": "assets/uploads/post-images/japanese-knife-culture-practical-guide.jpg",
       "heroAlt": "Minimal Japanese knife culture notes",
       "pullQuote": "Respecting a knife means using it well, not whispering at it from a velvet pillow.",
       "specs": {
@@ -3312,13 +3326,7 @@
           "cta": "Check current price"
         }
       ],
-      "gallery": [
-        {
-          "src": "assets/img/profiles-map.svg",
-          "alt": "Knife profiles",
-          "caption": "Start with profile and task before getting lost in maker names."
-        }
-      ],
+      "gallery": [],
       "sourceTrail": [
         {
           "name": "Karasu Japanese Knives",
@@ -3391,7 +3399,11 @@
             "- Japanese knife culture is tool-specific, not mystical. - Respect means maintenance and correct use. - Specialist retailers are useful for context, not just shopping."
           ]
         }
-      ]
+      ],
+      "imageCaption": "Gerlach kitchen knives",
+      "imageCredit": "Jacek Halicki, CC BY-SA 4.0",
+      "imageCreditUrl": "https://commons.wikimedia.org/wiki/File:2020_Noże_kuchenne_Gerlach.jpg",
+      "imageFit": "cover"
     },
     {
       "id": "how-japanese-kitchen-knives-are-made",
@@ -3409,7 +3421,7 @@
       "verdict": "Process shapes performance",
       "summary": "A clear tour through the making process: steel choice, forging, heat treatment, grinding, sharpening, finishing and handle fitting.",
       "deck": "The knife is not just steel. It is steel plus heat treatment plus geometry plus finish plus the hands that corrected the mistakes.",
-      "heroImage": "assets/img/japanese-making.svg",
+      "heroImage": "assets/uploads/post-images/how-japanese-kitchen-knives-are-made.jpg",
       "heroAlt": "Japanese knife making stages",
       "pullQuote": "Steel gets the marketing. Geometry does the cooking.",
       "specs": {
@@ -3457,13 +3469,7 @@
           "cta": "Check current price"
         }
       ],
-      "gallery": [
-        {
-          "src": "assets/img/craft-map.svg",
-          "alt": "Craft map",
-          "caption": "Multiple stages and specialists can shape one finished blade."
-        }
-      ],
+      "gallery": [],
       "sourceTrail": [
         {
           "name": "Sakai Ichimonji: How Japanese knives are made",
@@ -3549,7 +3555,11 @@
             "- Heat treatment turns steel into performance. - Grind controls cutting feel. - Finish and handle matter, but not more than geometry."
           ]
         }
-      ]
+      ],
+      "imageCaption": "Rossiter Worthington Raymond (1840-1918) Identifier : ironsteelmagazin10sauv ( find matches ) Title : The Iron and steel magazine Year : 1898 ( 1890s ) Authors : Sauveur, Albert, 1",
+      "imageCredit": "Internet Archive Book Images, No restrictions",
+      "imageCreditUrl": "https://commons.wikimedia.org/wiki/File:The_Iron_and_steel_magazine_(1898)_(14764215081).jpg",
+      "imageFit": "cover"
     },
     {
       "id": "hinoki-cutting-board-review-brief",
@@ -3567,8 +3577,8 @@
       "verdict": "Great if you accept wood care",
       "summary": "A friendly but honest brief on hinoki cutting boards: why they feel so good under Japanese knives and why they need real drying discipline.",
       "deck": "Hinoki is the board for people who want cutting feel, smell and ritual. It is also the board for people who own a towel and know where sunlight comes from.",
-      "heroImage": "assets/img/hinoki-board.svg",
-      "heroAlt": "Minimal hinoki board illustration",
+      "heroImage": "assets/uploads/post-images/hinoki-cutting-board-review-brief.png",
+      "heroAlt": "Shun large hinoki cutting board product image.",
       "pullQuote": "Hinoki is charming because it is wood, and annoying for exactly the same reason.",
       "specs": {
         "Material": "Japanese cypress / hinoki",
@@ -3618,13 +3628,7 @@
           "cta": "Check current price"
         }
       ],
-      "gallery": [
-        {
-          "src": "assets/img/hinoki-board.svg",
-          "alt": "Hinoki board illustration",
-          "caption": "Soft wood feel, light ritual, careful drying."
-        }
-      ],
+      "gallery": [],
       "sourceTrail": [
         {
           "name": "Kai Shun Large Hinoki Cutting Board",
@@ -3704,7 +3708,11 @@
             "- Hinoki is excellent for traditional cutting feel and thin Japanese knives. - Wet lightly before use to reduce staining and odour absorption. - Dry upright with airflow and away from direct sunlight. - Avoid dishwashers, soaking, hacking and aggressive serrated knives. - Choose rubber or Hasegawa if you want less maintenance."
           ]
         }
-      ]
+      ],
+      "imageCaption": "Shun large hinoki cutting board product image.",
+      "imageCredit": "Kai USA / Shun",
+      "imageCreditUrl": "https://shun.kaiusa.com/large-hinoki-cutting-board.html",
+      "imageFit": "contain"
     },
     {
       "id": "hasegawa-asahi-hinoki-cutting-board-guide",
@@ -3722,8 +3730,8 @@
       "verdict": "Buy the board for your cutting style",
       "summary": "A practical guide to Hasegawa, Asahi and hinoki boards for Japanese knives, Amazon hunting and everyday maintenance.",
       "deck": "The board is not background furniture. It is the thing your edge hits hundreds of times per meal, so choose one that suits your knife and your habits.",
-      "heroImage": "assets/img/boards-hasegawa-asahi-hinoki.svg",
-      "heroAlt": "Minimal cutting board material guide illustration",
+      "heroImage": "assets/uploads/post-images/hasegawa-asahi-hinoki-cutting-board-guide.jpg",
+      "heroAlt": "Hasegawa cutting board lineup image.",
       "pullQuote": "A good board does not make a bad edge good, but a bad board can make a good edge miserable very quickly.",
       "specs": {
         "Boards covered": "Hasegawa, Asahi rubber, hinoki cypress",
@@ -3773,13 +3781,7 @@
           "cta": "Check current price"
         }
       ],
-      "gallery": [
-        {
-          "src": "assets/img/boards-hasegawa-asahi-hinoki.svg",
-          "alt": "Board material overview",
-          "caption": "Three board lanes: synthetic soft, rubber, and hinoki."
-        }
-      ],
+      "gallery": [],
       "sourceTrail": [
         {
           "name": "Hasegawa Kitchen Wares cutting boards",
@@ -3872,7 +3874,11 @@
             "- Low-fuss Japanese-knife board: Asahi rubber or Hasegawa synthetic. - Traditional feel: hinoki, but only if you will wet, wash and dry it properly. - Hasegawa suits push cutting and slicing; very soft boards can feel grippy under heavy rocking. - Avoid glass, stone, marble and hard bamboo boards with thin Japanese edges. - Buy enough board size for your main knife, not the smallest premium rectangle you can afford."
           ]
         }
-      ]
+      ],
+      "imageCaption": "Hasegawa cutting board lineup image.",
+      "imageCredit": "Hasegawa Corporation",
+      "imageCreditUrl": "https://hasegawakagaku.com/products_category/cutting-boards/",
+      "imageFit": "contain"
     },
     {
       "id": "hasegawa-cutting-board-review-brief",
@@ -3890,8 +3896,8 @@
       "verdict": "Excellent if your technique is clean",
       "summary": "A focused brief on Hasegawa soft cutting boards: why knife people like them, where they feel odd, and how to avoid buying the wrong one.",
       "deck": "Hasegawa is the board recommendation that sounds expensive until you remember what a chipped Japanese edge costs in time, money and vocabulary.",
-      "heroImage": "assets/img/hasegawa-board.svg",
-      "heroAlt": "Minimal Hasegawa board illustration",
+      "heroImage": "assets/uploads/post-images/hasegawa-cutting-board-review-brief.jpg",
+      "heroAlt": "Hasegawa Pro-Soft cutting board product image.",
       "pullQuote": "Hasegawa is not magic. It is a soft landing zone for a good edge and a lie detector for rough technique.",
       "specs": {
         "Material idea": "Wood core with covered synthetic cutting surface",
@@ -3941,13 +3947,7 @@
           "cta": "Check current price"
         }
       ],
-      "gallery": [
-        {
-          "src": "assets/img/hasegawa-board.svg",
-          "alt": "Hasegawa board illustration",
-          "caption": "Wood-core idea, soft cutting surface, clean edge contact."
-        }
-      ],
+      "gallery": [],
       "sourceTrail": [
         {
           "name": "Hasegawa Kitchen Wares cutting boards",
@@ -4027,7 +4027,11 @@
             "- Best for thin Japanese knives and straight cutting motions. - The soft surface is edge-friendly but can feel grabby with heavy rocking. - Choose size and hardness carefully; the model matters more than the brand name alone. - Still needs basic cleaning and drying discipline. - A good companion for VG10 nakiri, gyuto, santoku and slicers."
           ]
         }
-      ]
+      ],
+      "imageCaption": "Hasegawa Pro-Soft cutting board product image.",
+      "imageCredit": "Hasegawa Corporation",
+      "imageCreditUrl": "https://hasegawakagaku.com/products/pro-soft/",
+      "imageFit": "contain"
     },
     {
       "id": "asahi-rubber-cutting-board-review-brief",
@@ -4045,8 +4049,8 @@
       "verdict": "The practical rubber pick",
       "summary": "A practical review brief on Asahi Cookin Cut rubber boards for Japanese knives, protein prep, vegetables and home-kitchen cleanup.",
       "deck": "Asahi is not a romantic board. It is a competent board. Competent is underrated, especially when the sink is full and the knife is thin.",
-      "heroImage": "assets/img/asahi-board.svg",
-      "heroAlt": "Minimal Asahi rubber board illustration",
+      "heroImage": "assets/uploads/post-images/asahi-rubber-cutting-board-review-brief.jpg",
+      "heroAlt": "Parker Asahi synthetic rubber cutting board product image.",
       "pullQuote": "Asahi is what happens when the board stops trying to be furniture and starts acting like a tool.",
       "specs": {
         "Material": "Synthetic rubber",
@@ -4096,13 +4100,7 @@
           "cta": "Check current price"
         }
       ],
-      "gallery": [
-        {
-          "src": "assets/img/asahi-board.svg",
-          "alt": "Asahi board illustration",
-          "caption": "Firm rubber feel, easy-clean direction, sharp-knife friendly."
-        }
-      ],
+      "gallery": [],
       "sourceTrail": [
         {
           "name": "Parker Asahi Cookin Cut rubber board PDF",
@@ -4176,7 +4174,11 @@
             "- Best low-fuss board direction for many stainless Japanese knife setups. - Firmer and more pro-tool feeling than hinoki; often less grabby than very soft boards. - Good for vegetables and protein prep if cleaned promptly. - Wash with neutral detergent and dry fully. - Measure your sink before buying a large board."
           ]
         }
-      ]
+      ],
+      "imageCaption": "Parker Asahi synthetic rubber cutting board product image.",
+      "imageCredit": "Burrfection Store / Parker Asahi",
+      "imageCreditUrl": "https://burrfectionstore.com/en-gb/collections/cutting-boards/products/parker-asahi-synthetic-rubber-cutting-board-for-consumer-use",
+      "imageFit": "contain"
     },
     {
       "id": "chef-knife-vs-gyuto-which-all-purpose-profile",
@@ -4194,7 +4196,7 @@
       "verdict": "Decision guide",
       "summary": "The chef knife and gyuto solve the same problem with different geometry, weight and cutting rhythm.",
       "deck": "A practical comparison for deciding whether your first serious knife should be German-style, French-style or Japanese-style.",
-      "heroImage": "assets/img/chef-vs-gyuto.svg",
+      "heroImage": "assets/uploads/post-images/chef-knife-vs-gyuto-which-all-purpose-profile.jpg",
       "heroAlt": "Chef vs gyuto",
       "pullQuote": "One is not more serious than the other. They just reward different hands.",
       "specs": {
@@ -4242,23 +4244,7 @@
           "cta": "Check current price"
         }
       ],
-      "gallery": [
-        {
-          "src": "assets/img/profiles-map.svg",
-          "alt": "Knife profiles",
-          "caption": "Chef, gyuto, santoku, nakiri, petty, bread and specialist blades in one editorial map."
-        },
-        {
-          "src": "assets/img/tojiro-dp.svg",
-          "alt": "Tojiro DP gyuto",
-          "caption": "Thin Japanese gyuto line with stainless clad geometry."
-        },
-        {
-          "src": "assets/img/wusthof-classic.svg",
-          "alt": "Wusthof Classic",
-          "caption": "Traditional German chef knife silhouette with full bolster."
-        }
-      ],
+      "gallery": [],
       "sourceTrail": [
         {
           "name": "SCSuede on Reddit",
@@ -4312,7 +4298,11 @@
             "- Chef knives favour familiarity and mixed technique. - Gyutos favour low resistance and precision. - The best first length is usually 8 inches or 210mm."
           ]
         }
-      ]
+      ],
+      "imageCaption": "Gerlach kitchen knives",
+      "imageCredit": "Jacek Halicki, CC BY-SA 4.0",
+      "imageCreditUrl": "https://commons.wikimedia.org/wiki/File:2020_Noże_kuchenne_Gerlach.jpg",
+      "imageFit": "cover"
     },
     {
       "id": "santoku-profile-guide",
@@ -4330,7 +4320,7 @@
       "verdict": "Compact all-rounder",
       "summary": "The santoku is short, controlled and efficient when a full chef knife feels oversized.",
       "deck": "A guide to when a santoku makes sense, how it differs from a gyuto, and what to check before buying one online.",
-      "heroImage": "assets/img/santoku-profile.svg",
+      "heroImage": "assets/uploads/post-images/santoku-profile-guide.jpg",
       "heroAlt": "Santoku profile",
       "pullQuote": "A santoku is not a smaller chef knife. It is a different rhythm.",
       "specs": {
@@ -4370,18 +4360,7 @@
           "cta": "Check current price"
         }
       ],
-      "gallery": [
-        {
-          "src": "assets/img/chef-vs-gyuto.svg",
-          "alt": "Chef vs gyuto",
-          "caption": "Two all-purpose profiles compared by belly, tip, height and board feel."
-        },
-        {
-          "src": "assets/img/nakiri-profile.svg",
-          "alt": "Nakiri profile",
-          "caption": "Flat vegetable blade with tall board-friendly geometry."
-        }
-      ],
+      "gallery": [],
       "sourceTrail": [
         {
           "name": "SCSuede on Reddit",
@@ -4434,7 +4413,11 @@
             "- Good for small boards and controlled push cuts. - Not ideal for heavy rocking or precise tip trimming. - A thin grind matters more than decorative dimples."
           ]
         }
-      ]
+      ],
+      "imageCaption": "Santoku Knife (photo Bryan Nikaido)",
+      "imageCredit": "The original uploader was Plonk420 at English Wikipedia ., CC BY-SA 2.5",
+      "imageCreditUrl": "https://commons.wikimedia.org/wiki/File:Santoku_knife.jpg",
+      "imageFit": "cover"
     },
     {
       "id": "nakiri-profile-guide",
@@ -4452,7 +4435,7 @@
       "verdict": "Prep specialist",
       "summary": "A nakiri is a flat-edged vegetable knife, not a cleaver and not a chef knife replacement.",
       "deck": "The rectangular blade looks severe, but the job is calm: clean board contact, repeated cuts and easy vegetable transfer.",
-      "heroImage": "assets/img/nakiri-profile.svg",
+      "heroImage": "assets/uploads/post-images/nakiri-profile-guide.jpg",
       "heroAlt": "Nakiri profile",
       "pullQuote": "The nakiri makes vegetables feel orderly.",
       "specs": {
@@ -4492,18 +4475,7 @@
           "cta": "Check current price"
         }
       ],
-      "gallery": [
-        {
-          "src": "assets/img/profiles-map.svg",
-          "alt": "Knife profiles",
-          "caption": "Chef, gyuto, santoku, nakiri, petty, bread and specialist blades in one editorial map."
-        },
-        {
-          "src": "assets/img/boards-storage.svg",
-          "alt": "Boards and storage",
-          "caption": "Cutting board, blade guard and magnetic storage shapes."
-        }
-      ],
+      "gallery": [],
       "sourceTrail": [
         {
           "name": "SCSuede on Reddit",
@@ -4556,7 +4528,11 @@
             "- Best for repeated vegetable prep. - Do not use it as a cleaver. - Thin geometry beats decorative hammered finishes."
           ]
         }
-      ]
+      ],
+      "imageCaption": "Gerlach kitchen knives",
+      "imageCredit": "Jacek Halicki, CC BY-SA 4.0",
+      "imageCreditUrl": "https://commons.wikimedia.org/wiki/File:2020_Noże_kuchenne_Gerlach.jpg",
+      "imageFit": "cover"
     },
     {
       "id": "petty-paring-utility-profile-guide",
@@ -4574,7 +4550,7 @@
       "verdict": "Small kit logic",
       "summary": "Small knives are not interchangeable: paring, petty and utility blades each solve a different kind of awkward prep.",
       "deck": "A compact guide to the knives that handle citrus, garlic, trimming, lunch prep and all the small jobs your main knife makes clumsy.",
-      "heroImage": "assets/img/small-knives.svg",
+      "heroImage": "assets/uploads/post-images/petty-paring-utility-profile-guide.jpg",
       "heroAlt": "Small knives",
       "pullQuote": "The small knife earns trust by being available, sharp and unprecious.",
       "specs": {
@@ -4606,18 +4582,7 @@
           "cta": "Check current price"
         }
       ],
-      "gallery": [
-        {
-          "src": "assets/img/profiles-map.svg",
-          "alt": "Knife profiles",
-          "caption": "Chef, gyuto, santoku, nakiri, petty, bread and specialist blades in one editorial map."
-        },
-        {
-          "src": "assets/img/maintenance-routine.svg",
-          "alt": "Maintenance routine",
-          "caption": "Wash, dry, store and sharpen rhythm for everyday knives."
-        }
-      ],
+      "gallery": [],
       "sourceTrail": [
         {
           "name": "SCSuede on Reddit",
@@ -4670,7 +4635,11 @@
             "- Paring is for hand work; petty is for board work. - Do not overspend on a paring knife. - A 135mm petty pairs well with a 210mm gyuto."
           ]
         }
-      ]
+      ],
+      "imageCaption": "Gerlach kitchen knives",
+      "imageCredit": "Jacek Halicki, CC BY-SA 4.0",
+      "imageCreditUrl": "https://commons.wikimedia.org/wiki/File:2020_Noże_kuchenne_Gerlach.jpg",
+      "imageFit": "cover"
     },
     {
       "id": "bread-serrated-knife-profile-guide",
@@ -4688,7 +4657,7 @@
       "verdict": "Serrated logic",
       "summary": "Serrated knives are not just for bread. They are the right answer for crust, tomato skin, citrus and delicate cake.",
       "deck": "A practical guide to serration length, tooth pattern, sharpening limits and why a cheap bread knife can still be worth owning.",
-      "heroImage": "assets/img/serrated-profile.svg",
+      "heroImage": "assets/uploads/post-images/bread-serrated-knife-profile-guide.jpg",
       "heroAlt": "Serrated profile",
       "pullQuote": "A serrated knife is not a fallback. It is the correct tool for certain textures.",
       "specs": {
@@ -4720,18 +4689,7 @@
           "cta": "Check current price"
         }
       ],
-      "gallery": [
-        {
-          "src": "assets/img/small-knives.svg",
-          "alt": "Small knives",
-          "caption": "Paring, petty and utility blades for tight prep and hand work."
-        },
-        {
-          "src": "assets/img/boards-storage.svg",
-          "alt": "Boards and storage",
-          "caption": "Cutting board, blade guard and magnetic storage shapes."
-        }
-      ],
+      "gallery": [],
       "sourceTrail": [
         {
           "name": "SCSuede on Reddit",
@@ -4784,7 +4742,11 @@
             "- Use teeth for crust, tomato skin and delicate interiors. - Long bread knives need fewer sawing strokes. - Serrated sharpening is possible but less beginner-friendly."
           ]
         }
-      ]
+      ],
+      "imageCaption": "Gerlach kitchen knives",
+      "imageCredit": "Jacek Halicki, CC BY-SA 4.0",
+      "imageCreditUrl": "https://commons.wikimedia.org/wiki/File:2020_Noże_kuchenne_Gerlach.jpg",
+      "imageFit": "cover"
     },
     {
       "id": "boning-fillet-slicer-cleaver-specialist-profiles",
@@ -4802,7 +4764,7 @@
       "verdict": "Specialist map",
       "summary": "Specialist knives make sense only when the job is repeated enough to justify the shape.",
       "deck": "A concise map of the specialist profiles that appear after the core kit: boning knives, fillet knives, slicers, carving knives and cleavers.",
-      "heroImage": "assets/img/specialists-profile.svg",
+      "heroImage": "assets/uploads/post-images/boning-fillet-slicer-cleaver-specialist-profiles.jpg",
       "heroAlt": "Specialists",
       "pullQuote": "Specialist blades should answer a repeated problem, not a shopping mood.",
       "specs": {
@@ -4841,18 +4803,7 @@
           "cta": "Check current price"
         }
       ],
-      "gallery": [
-        {
-          "src": "assets/img/profiles-map.svg",
-          "alt": "Knife profiles",
-          "caption": "Chef, gyuto, santoku, nakiri, petty, bread and specialist blades in one editorial map."
-        },
-        {
-          "src": "assets/img/serrated-profile.svg",
-          "alt": "Serrated profile",
-          "caption": "Bread knife teeth and long slicing arc for crust and tomato skin."
-        }
-      ],
+      "gallery": [],
       "sourceTrail": [
         {
           "name": "SCSuede on Reddit",
@@ -4905,7 +4856,11 @@
             "- Buy specialists after the core kit is settled. - Match flex to the meat or fish task. - Do not confuse a vegetable cleaver with a bone cleaver."
           ]
         }
-      ]
+      ],
+      "imageCaption": "Gerlach kitchen knives",
+      "imageCredit": "Jacek Halicki, CC BY-SA 4.0",
+      "imageCreditUrl": "https://commons.wikimedia.org/wiki/File:2020_Noże_kuchenne_Gerlach.jpg",
+      "imageFit": "cover"
     },
     {
       "id": "amazon-chef-knife-shortlist-what-to-buy-first",
@@ -4923,7 +4878,7 @@
       "verdict": "Shortlist",
       "summary": "A source-led shortlist of common Amazon-accessible chef knives, with clear use cases and the maintenance gear each one should be paired with.",
       "deck": "This is the anti-hype map: value workhorses, Japanese-leaning cutters, forged German classics and the bits you need to keep them alive.",
-      "heroImage": "assets/img/amazon-shortlist.svg",
+      "heroImage": "assets/uploads/post-images/amazon-chef-knife-shortlist-what-to-buy-first.jpg",
       "heroAlt": "Amazon shortlist",
       "pullQuote": "A knife without a maintenance plan is just a sharp subscription to future annoyance.",
       "specs": {
@@ -5011,23 +4966,7 @@
           "cta": "Check current price"
         }
       ],
-      "gallery": [
-        {
-          "src": "assets/img/victorinox-fibrox.svg",
-          "alt": "Victorinox Fibrox",
-          "caption": "Minimal value workhorse silhouette with a high-contrast handle."
-        },
-        {
-          "src": "assets/img/tojiro-dp.svg",
-          "alt": "Tojiro DP gyuto",
-          "caption": "Thin Japanese gyuto line with stainless clad geometry."
-        },
-        {
-          "src": "assets/img/global-g2.svg",
-          "alt": "Global G-2",
-          "caption": "One-piece stainless knife shape with dotted grip reference."
-        }
-      ],
+      "gallery": [],
       "sourceTrail": [
         {
           "name": "Victorinox Fibrox Chef Knife official page",
@@ -5136,7 +5075,11 @@
             "- Victorinox and Mercer are value workhorses, not status objects. - Tojiro, Global and MAC are better for careful users who want lighter cutting feel. - Wusthof, Henckels and ZWILLING make the most sense for cooks who like German weight and rocking profiles."
           ]
         }
-      ]
+      ],
+      "imageCaption": "Gerlach kitchen knives",
+      "imageCredit": "Jacek Halicki, CC BY-SA 4.0",
+      "imageCreditUrl": "https://commons.wikimedia.org/wiki/File:2020_Noże_kuchenne_Gerlach.jpg",
+      "imageFit": "cover"
     },
     {
       "id": "victorinox-fibrox-pro-8-inch-shortlist-review",
@@ -5154,8 +5097,8 @@
       "verdict": "Best plain baseline",
       "summary": "The Fibrox is the knife I would use to reset expectations: grippy, practical, affordable and allergic to romance.",
       "deck": "A direct review brief for the common value pick. It is not glamorous. That is part of the point.",
-      "heroImage": "assets/img/victorinox-fibrox.svg",
-      "heroAlt": "Victorinox Fibrox",
+      "heroImage": "assets/uploads/post-images/victorinox-fibrox-pro-8-inch-shortlist-review.png",
+      "heroAlt": "Victorinox Fibrox chef knife product image.",
       "pullQuote": "No hammered finish, no dragon engraving, no nonsense. Just a knife that wants to prep dinner.",
       "specs": {
         "Maker": "Victorinox",
@@ -5212,13 +5155,7 @@
           "cta": "Check current price"
         }
       ],
-      "gallery": [
-        {
-          "src": "assets/img/amazon-shortlist.svg",
-          "alt": "Amazon shortlist",
-          "caption": "A clean buying grid for common chef knives available through major retailers."
-        }
-      ],
+      "gallery": [],
       "sourceTrail": [
         {
           "name": "Victorinox Fibrox Chef Knife official page",
@@ -5291,7 +5228,11 @@
             "- Best for honest low-fuss value. - Excellent first sharpening practice knife. - Upgrade only when you know what geometry you want next."
           ]
         }
-      ]
+      ],
+      "imageCaption": "Victorinox Fibrox chef knife product image.",
+      "imageCredit": "Victorinox",
+      "imageCreditUrl": "https://www.victorinox.com/en-US/Products/Cutlery/Chef%27s-Knives/Fibrox%C2%AE-Chef%E2%80%99s-Knife-Extra-Wide/p/5.2063.20",
+      "imageFit": "contain"
     },
     {
       "id": "mercer-genesis-8-inch-shortlist-review",
@@ -5309,8 +5250,8 @@
       "verdict": "Safe value forged pick",
       "summary": "A forged German-stainless chef knife with a grippy Santoprene handle and very little patience for knife snobbery.",
       "deck": "The Genesis is the sensible friend who brings a towel, checks the route and still gets dinner done.",
-      "heroImage": "assets/img/mercer-genesis.svg",
-      "heroAlt": "Mercer Genesis",
+      "heroImage": "assets/uploads/post-images/mercer-genesis-8-inch-shortlist-review.jpg",
+      "heroAlt": "Mercer Genesis 8 inch chef knife product image.",
       "pullQuote": "Not sexy. Useful. That is allowed.",
       "specs": {
         "Maker": "Mercer Culinary",
@@ -5367,13 +5308,7 @@
           "cta": "Check current price"
         }
       ],
-      "gallery": [
-        {
-          "src": "assets/img/amazon-shortlist.svg",
-          "alt": "Amazon shortlist",
-          "caption": "A clean buying grid for common chef knives available through major retailers."
-        }
-      ],
+      "gallery": [],
       "sourceTrail": [
         {
           "name": "Mercer Genesis 8 inch chef knife official page",
@@ -5440,7 +5375,11 @@
             "- Great if handle security matters. - More forged workhorse than fine slicer. - Maintenance is simple: rod lightly, stone when needed, dry always."
           ]
         }
-      ]
+      ],
+      "imageCaption": "Mercer Genesis 8 inch chef knife product image.",
+      "imageCredit": "Mercer Culinary",
+      "imageCreditUrl": "https://www.mercerculinary.com/product/genesis-chefs-knife-8-20-3-cm/",
+      "imageFit": "contain"
     },
     {
       "id": "mercer-renaissance-8-inch-shortlist-review",
@@ -5458,8 +5397,8 @@
       "verdict": "Best classic Mercer",
       "summary": "A more traditional forged Mercer with a Delrin handle, full tang and shortened bolster that makes sharpening less annoying.",
       "deck": "The Renaissance is the Genesis in a cleaner shirt: still practical, just a little more classic at the table.",
-      "heroImage": "assets/img/mercer-renaissance.svg",
-      "heroAlt": "Mercer Renaissance",
+      "heroImage": "assets/uploads/post-images/mercer-renaissance-8-inch-shortlist-review.jpg",
+      "heroAlt": "Mercer Renaissance 8 inch chef knife product image.",
       "pullQuote": "The shortened bolster is doing useful work. Appreciate the little things.",
       "specs": {
         "Maker": "Mercer Culinary",
@@ -5516,13 +5455,7 @@
           "cta": "Check current price"
         }
       ],
-      "gallery": [
-        {
-          "src": "assets/img/amazon-shortlist.svg",
-          "alt": "Amazon shortlist",
-          "caption": "A clean buying grid for common chef knives available through major retailers."
-        }
-      ],
+      "gallery": [],
       "sourceTrail": [
         {
           "name": "Mercer Renaissance 8 inch chef knife official page",
@@ -5589,7 +5522,11 @@
             "- Classic forged feel at sensible money. - Shortened bolster is a real maintenance advantage. - Better for forgiving prep than laser performance."
           ]
         }
-      ]
+      ],
+      "imageCaption": "Mercer Renaissance 8 inch chef knife product image.",
+      "imageCredit": "Mercer Culinary",
+      "imageCreditUrl": "https://www.mercerculinary.com/product/renaissance-chefs-knife-8-20-3-cm/",
+      "imageFit": "contain"
     },
     {
       "id": "tojiro-dp-210mm-gyuto-shortlist-review",
@@ -5607,8 +5544,8 @@
       "verdict": "Best gateway gyuto",
       "summary": "The common first Japanese gyuto pick: stainless-clad VG10, accessible pricing and enough performance to teach better habits.",
       "deck": "Tojiro DP is popular for a reason. The reason is not magic; it is a useful mix of steel, price and availability.",
-      "heroImage": "assets/img/tojiro-dp.svg",
-      "heroAlt": "Tojiro DP gyuto",
+      "heroImage": "assets/uploads/post-images/tojiro-dp-210mm-gyuto-shortlist-review.jpg",
+      "heroAlt": "Tojiro DP gyuto product image from Tojiro’s official product listing.",
       "pullQuote": "A gateway knife is only good if it teaches better behaviour without instantly punishing dinner.",
       "specs": {
         "Maker": "Tojiro",
@@ -5665,13 +5602,7 @@
           "cta": "Check current price"
         }
       ],
-      "gallery": [
-        {
-          "src": "assets/img/amazon-shortlist.svg",
-          "alt": "Amazon shortlist",
-          "caption": "A clean buying grid for common chef knives available through major retailers."
-        }
-      ],
+      "gallery": [],
       "sourceTrail": [
         {
           "name": "Tojiro DP 210mm gyuto retailer detail",
@@ -5744,7 +5675,11 @@
             "- Excellent first Japanese-style gyuto candidate. - VG10 rewards stones and gentle deburring. - Check seller and model number carefully before linking."
           ]
         }
-      ]
+      ],
+      "imageCaption": "Tojiro DP gyuto product image from Tojiro’s official product listing.",
+      "imageCredit": "TOJIRO Co., Ltd.",
+      "imageCreditUrl": "https://www.tojiro-japan.com/products/",
+      "imageFit": "contain"
     },
     {
       "id": "global-g2-cooks-knife-shortlist-review",
@@ -5762,8 +5697,8 @@
       "verdict": "Try the handle first",
       "summary": "The Global G-2 is thin, light, all-stainless and famous. It is also a reminder that handles are not theoretical.",
       "deck": "A clean, light Japanese cooks knife that many people love, provided the handle agrees with their actual hand.",
-      "heroImage": "assets/img/global-g2.svg",
-      "heroAlt": "Global G-2",
+      "heroImage": "assets/uploads/post-images/global-g2-cooks-knife-shortlist-review.jpg",
+      "heroAlt": "Global G-2 cooks knife product image.",
       "pullQuote": "The blade can be sensible and the handle can still start a family argument.",
       "specs": {
         "Maker": "Global",
@@ -5820,13 +5755,7 @@
           "cta": "Check current price"
         }
       ],
-      "gallery": [
-        {
-          "src": "assets/img/amazon-shortlist.svg",
-          "alt": "Amazon shortlist",
-          "caption": "A clean buying grid for common chef knives available through major retailers."
-        }
-      ],
+      "gallery": [],
       "sourceTrail": [
         {
           "name": "Global G-2 official UK page",
@@ -5893,7 +5822,11 @@
             "- Light, thin and stainless. - Handle fit is the deciding issue. - Pair with stones and soft storage, not rough rod habits."
           ]
         }
-      ]
+      ],
+      "imageCaption": "Global G-2 cooks knife product image.",
+      "imageCredit": "Global Knives UK",
+      "imageCreditUrl": "https://www.globalknives.co.uk/products/global-g-2-cooks-knife-20cm-blade",
+      "imageFit": "contain"
     },
     {
       "id": "mac-mth80-shortlist-review",
@@ -5911,8 +5844,8 @@
       "verdict": "Best practical performer",
       "summary": "A thin 8 inch Western-handled chef knife with enough Japanese cutting feel to make heavier knives look a bit tired.",
       "deck": "The MAC MTH-80 is the kind of knife that does not need to shout because the onions already know.",
-      "heroImage": "assets/img/mac-mth80.svg",
-      "heroAlt": "MAC MTH-80",
+      "heroImage": "assets/uploads/post-images/mac-mth80-shortlist-review.jpg",
+      "heroAlt": "MAC MTH-80 chef knife product image.",
       "pullQuote": "A good MAC is the practical friend who accidentally becomes the main character.",
       "specs": {
         "Maker": "MAC Knife",
@@ -5969,13 +5902,7 @@
           "cta": "Check current price"
         }
       ],
-      "gallery": [
-        {
-          "src": "assets/img/amazon-shortlist.svg",
-          "alt": "Amazon shortlist",
-          "caption": "A clean buying grid for common chef knives available through major retailers."
-        }
-      ],
+      "gallery": [],
       "sourceTrail": [
         {
           "name": "MAC MTH-80 official page",
@@ -6048,7 +5975,11 @@
             "- Thin blade is the main attraction. - Western handle keeps the transition easy. - Excellent candidate for a future hands-on Adrichops review."
           ]
         }
-      ]
+      ],
+      "imageCaption": "MAC MTH-80 chef knife product image.",
+      "imageCredit": "MAC Knife",
+      "imageCreditUrl": "https://www.macknife.com/products/professional-series-8-chefs-knife-with-dimples-mth-80",
+      "imageFit": "contain"
     },
     {
       "id": "wusthof-classic-8-inch-shortlist-review",
@@ -6066,8 +5997,8 @@
       "verdict": "Best heritage workhorse",
       "summary": "The Wusthof Classic is the sturdy German benchmark: forged, 58 Rockwell, full bolster and familiar rocking feel.",
       "deck": "A serious workhorse for cooks who like weight, curve and durability more than thin-knife fireworks.",
-      "heroImage": "assets/img/wusthof-classic.svg",
-      "heroAlt": "Wusthof Classic",
+      "heroImage": "assets/uploads/post-images/wusthof-classic-8-inch-shortlist-review.jpg",
+      "heroAlt": "Wusthof Classic series product image.",
       "pullQuote": "The Wusthof Classic does not glide through carrots like a laser. It also does not panic when dinner gets rough.",
       "specs": {
         "Maker": "Wusthof",
@@ -6124,13 +6055,7 @@
           "cta": "Check current price"
         }
       ],
-      "gallery": [
-        {
-          "src": "assets/img/amazon-shortlist.svg",
-          "alt": "Amazon shortlist",
-          "caption": "A clean buying grid for common chef knives available through major retailers."
-        }
-      ],
+      "gallery": [],
       "sourceTrail": [
         {
           "name": "Wusthof Classic series official page",
@@ -6197,7 +6122,11 @@
             "- The German benchmark for a reason. - Full bolster is both comfort and maintenance caveat. - Best for cooks who like weight and rocking cuts."
           ]
         }
-      ]
+      ],
+      "imageCaption": "Wusthof Classic series product image.",
+      "imageCredit": "Wusthof UK",
+      "imageCreditUrl": "https://wusthof.co.uk/pages/classic",
+      "imageFit": "contain"
     },
     {
       "id": "henckels-classic-8-inch-shortlist-review",
@@ -6215,7 +6144,7 @@
       "verdict": "Best no-drama forged pick",
       "summary": "A fully forged German-stainless chef knife that aims for daily reliability rather than collector sparkle.",
       "deck": "Henckels Classic is a practical middle lane: more traditional than entry stamped knives, less expensive than many premium German icons.",
-      "heroImage": "assets/img/henckels-classic.svg",
+      "heroImage": "assets/uploads/post-images/henckels-classic-8-inch-shortlist-review.jpg",
       "heroAlt": "Henckels Classic",
       "pullQuote": "Some knives want applause. This one wants chopped potatoes.",
       "specs": {
@@ -6273,13 +6202,7 @@
           "cta": "Check current price"
         }
       ],
-      "gallery": [
-        {
-          "src": "assets/img/amazon-shortlist.svg",
-          "alt": "Amazon shortlist",
-          "caption": "A clean buying grid for common chef knives available through major retailers."
-        }
-      ],
+      "gallery": [],
       "sourceTrail": [
         {
           "name": "Henckels Classic 8 inch chef knife official page",
@@ -6340,7 +6263,11 @@
             "- A sensible forged German daily driver. - Competes on price, comfort and availability. - Best for generalist cooks, not thin-knife enthusiasts."
           ]
         }
-      ]
+      ],
+      "imageCaption": "A 6-inch hand-forged chef knife made by Steelport Knife Co. in Portland, Oregon. The blade is crafted from American 52100 high-carbon steel, heat-treated for edge retention and sha",
+      "imageCredit": "Frank Schulenburg, CC BY-SA 4.0",
+      "imageCreditUrl": "https://commons.wikimedia.org/wiki/File:Steelport_6-Inch_Chef_Knife_(2026)-104A7331.jpg",
+      "imageFit": "cover"
     },
     {
       "id": "zwilling-pro-20cm-shortlist-review",
@@ -6358,8 +6285,8 @@
       "verdict": "Best refined German option",
       "summary": "A premium German chef knife designed for multiple cutting techniques, with a bolster shape that makes grip and blade use more modern.",
       "deck": "ZWILLING Pro is the smoother, more polished German pick: still sturdy, but less old-school in the hand.",
-      "heroImage": "assets/img/zwilling-pro.svg",
-      "heroAlt": "ZWILLING Pro",
+      "heroImage": "assets/uploads/post-images/zwilling-pro-20cm-shortlist-review.jpg",
+      "heroAlt": "ZWILLING Pro chef knife product image.",
       "pullQuote": "German workhorse, but make the bolster less annoying.",
       "specs": {
         "Maker": "ZWILLING",
@@ -6416,13 +6343,7 @@
           "cta": "Check current price"
         }
       ],
-      "gallery": [
-        {
-          "src": "assets/img/amazon-shortlist.svg",
-          "alt": "Amazon shortlist",
-          "caption": "A clean buying grid for common chef knives available through major retailers."
-        }
-      ],
+      "gallery": [],
       "sourceTrail": [
         {
           "name": "ZWILLING Pro 20cm chef knife official page",
@@ -6489,7 +6410,11 @@
             "- Premium German all-rounder with modern bolster thinking. - Best if the handle and grip fit you. - Compare against full-kit cost before buying."
           ]
         }
-      ]
+      ],
+      "imageCaption": "ZWILLING Pro chef knife product image.",
+      "imageCredit": "ZWILLING",
+      "imageCreditUrl": "https://www.zwilling.com/uk/zwilling-pro-20-cm-chefs-knife-38401-201-0/38401-201-0.html",
+      "imageFit": "contain"
     },
     {
       "id": "sharpening-basics-burr-angle-pressure",
@@ -6507,7 +6432,7 @@
       "verdict": "Start here",
       "summary": "A friendly but precise guide to what sharpening actually does: make two flat-ish planes meet cleanly at the apex, then remove the burr.",
       "deck": "Sharpening is not mystical. It is controlled abrasion, consistency and then killing the burr before it lies to you.",
-      "heroImage": "assets/img/sharpening-basics-new.svg",
+      "heroImage": "assets/uploads/post-images/sharpening-basics-burr-angle-pressure.jpg",
       "heroAlt": "Sharpening basics",
       "pullQuote": "The burr is useful evidence. It is also a tiny wire gremlin. Do not leave it in charge.",
       "specs": {
@@ -6555,18 +6480,7 @@
           "cta": "Check current price"
         }
       ],
-      "gallery": [
-        {
-          "src": "assets/img/honing-sharpening.svg",
-          "alt": "Honing vs sharpening",
-          "caption": "Rod maintenance and stone sharpening compared visually."
-        },
-        {
-          "src": "assets/img/grit-progression.svg",
-          "alt": "Grit progression",
-          "caption": "Medium, fine and finishing stones in a restrained bench layout."
-        }
-      ],
+      "gallery": [],
       "sourceTrail": [
         {
           "name": "Wusthof sharpening guide",
@@ -6640,7 +6554,11 @@
             "- Sharpening forms a clean apex. - Consistency matters more than exact angle numbers. - Deburring is not optional. It is the difference between sharp and temporarily convincing."
           ]
         }
-      ]
+      ],
+      "imageCaption": "Iron knife and sharpening stone. Dyakovo culture. 8-7 century B.C. - 7-8 century A.D. Museum of Archaeology of Moscow.",
+      "imageCredit": "Лапоть, CC0",
+      "imageCreditUrl": "https://commons.wikimedia.org/wiki/File:Knife,_sharpening_stone_-_Dyakovo_culture_-_Museum_of_Archeology_of_Moscow.jpg",
+      "imageFit": "cover"
     },
     {
       "id": "honing-vs-sharpening-when-to-use-steel",
@@ -6658,7 +6576,7 @@
       "verdict": "Different jobs",
       "summary": "Honing rods and stones do different work. Use the rod lightly when it helps; use stones when steel must be removed.",
       "deck": "A honing rod is not a magic wand. A stone is not punishment. Use the right tool before the edge gets weird.",
-      "heroImage": "assets/img/honing-sharpening.svg",
+      "heroImage": "assets/uploads/post-images/honing-vs-sharpening-when-to-use-steel.jpg",
       "heroAlt": "Honing vs sharpening",
       "pullQuote": "If the rod stops helping, stop arguing with the rod and sharpen the knife.",
       "specs": {
@@ -6706,18 +6624,7 @@
           "cta": "Check current price"
         }
       ],
-      "gallery": [
-        {
-          "src": "assets/img/sharpening-basics-new.svg",
-          "alt": "Sharpening basics",
-          "caption": "Angle, burr and pressure on a simple water-stone setup."
-        },
-        {
-          "src": "assets/img/strop-deburr.svg",
-          "alt": "Deburring",
-          "caption": "Final edge cleanup shown as a minimal leather-strop detail."
-        }
-      ],
+      "gallery": [],
       "sourceTrail": [
         {
           "name": "Wusthof sharpening guide",
@@ -6784,7 +6691,11 @@
             "- Honing maintains; sharpening recreates. - Light pressure beats theatrical pressure. - Hard thin edges prefer stones and careful deburring."
           ]
         }
-      ]
+      ],
+      "imageCaption": "Iron knife and sharpening stone. Dyakovo culture. 8-7 century B.C. - 7-8 century A.D. Museum of Archaeology of Moscow.",
+      "imageCredit": "Лапоть, CC0",
+      "imageCreditUrl": "https://commons.wikimedia.org/wiki/File:Knife,_sharpening_stone_-_Dyakovo_culture_-_Museum_of_Archeology_of_Moscow.jpg",
+      "imageFit": "cover"
     },
     {
       "id": "whetstone-grits-1000-3000-6000",
@@ -6802,8 +6713,8 @@
       "verdict": "Buy fewer stones",
       "summary": "A practical grit progression for kitchen knives: what each stone does, when to stop and why more polish is not always better.",
       "deck": "Most cooks need fewer stones and better habits. Sorry to the stone drawer. Actually, no, the stone drawer knows what it did.",
-      "heroImage": "assets/img/grit-progression.svg",
-      "heroAlt": "Grit progression",
+      "heroImage": "assets/uploads/post-images/whetstone-grits-1000-3000-6000.png",
+      "heroAlt": "A 1000 grit Shapton stone as the baseline sharpening reference.",
       "pullQuote": "A 1000 grit edge that is fully deburred beats a 6000 grit edge that is lying.",
       "specs": {
         "First grit": "800-1200",
@@ -6850,18 +6761,7 @@
           "cta": "Check current price"
         }
       ],
-      "gallery": [
-        {
-          "src": "assets/img/sharpening-basics-new.svg",
-          "alt": "Sharpening basics",
-          "caption": "Angle, burr and pressure on a simple water-stone setup."
-        },
-        {
-          "src": "assets/img/strop-deburr.svg",
-          "alt": "Deburring",
-          "caption": "Final edge cleanup shown as a minimal leather-strop detail."
-        }
-      ],
+      "gallery": [],
       "sourceTrail": [
         {
           "name": "Wusthof sharpening guide",
@@ -6929,7 +6829,11 @@
             "- 1000 grit is the first real stone. - 3000 grit is a useful kitchen refinement. - 6000 plus is optional unless you know the job."
           ]
         }
-      ]
+      ],
+      "imageCaption": "A 1000 grit Shapton stone as the baseline sharpening reference.",
+      "imageCredit": "SHAPTON Co., Ltd.",
+      "imageCreditUrl": "https://shapton.co.jp/en/",
+      "imageFit": "contain"
     },
     {
       "id": "stropping-and-deburring-clean-apex",
@@ -6947,7 +6851,7 @@
       "verdict": "Clean apex",
       "summary": "How to remove the last burr, why stropping helps and why a polished failure is still a failure.",
       "deck": "The last ten percent of sharpening is where the edge becomes useful or starts telling little lies.",
-      "heroImage": "assets/img/strop-deburr.svg",
+      "heroImage": "assets/uploads/post-images/stropping-and-deburring-clean-apex.jpg",
       "heroAlt": "Deburring",
       "pullQuote": "A burr is proof you reached the edge. It is not proof you finished.",
       "specs": {
@@ -6995,18 +6899,7 @@
           "cta": "Check current price"
         }
       ],
-      "gallery": [
-        {
-          "src": "assets/img/honing-sharpening.svg",
-          "alt": "Honing vs sharpening",
-          "caption": "Rod maintenance and stone sharpening compared visually."
-        },
-        {
-          "src": "assets/img/sharpening-basics-new.svg",
-          "alt": "Sharpening basics",
-          "caption": "Angle, burr and pressure on a simple water-stone setup."
-        }
-      ],
+      "gallery": [],
       "sourceTrail": [
         {
           "name": "Wusthof sharpening guide",
@@ -7073,7 +6966,11 @@
             "- Raise the burr, then remove it. - Strop lightly and with purpose. - Stop when the edge works. The onion will not award extra polish points."
           ]
         }
-      ]
+      ],
+      "imageCaption": "Iron knife and sharpening stone. Dyakovo culture. 8-7 century B.C. - 7-8 century A.D. Museum of Archaeology of Moscow.",
+      "imageCredit": "Лапоть, CC0",
+      "imageCreditUrl": "https://commons.wikimedia.org/wiki/File:Knife,_sharpening_stone_-_Dyakovo_culture_-_Museum_of_Archeology_of_Moscow.jpg",
+      "imageFit": "cover"
     },
     {
       "id": "knife-maintenance-daily-routine",
@@ -7091,7 +6988,7 @@
       "verdict": "Care routine",
       "summary": "A simple care routine for stainless, carbon, wood handles and the board you probably underthink.",
       "deck": "Knife maintenance is mostly washing, drying, storing and not doing cursed things. Good news: very achievable.",
-      "heroImage": "assets/img/maintenance-routine.svg",
+      "heroImage": "assets/uploads/post-images/knife-maintenance-daily-routine.jpg",
       "heroAlt": "Maintenance routine",
       "pullQuote": "Most knife care is boring. Boring is how the knife stays good.",
       "specs": {
@@ -7139,18 +7036,7 @@
           "cta": "Check current price"
         }
       ],
-      "gallery": [
-        {
-          "src": "assets/img/boards-storage.svg",
-          "alt": "Boards and storage",
-          "caption": "Cutting board, blade guard and magnetic storage shapes."
-        },
-        {
-          "src": "assets/img/honing-sharpening.svg",
-          "alt": "Honing vs sharpening",
-          "caption": "Rod maintenance and stone sharpening compared visually."
-        }
-      ],
+      "gallery": [],
       "sourceTrail": [
         {
           "name": "Mercer use and care guide",
@@ -7217,7 +7103,11 @@
             "- Hand wash, dry immediately, store safely. - Dishwashers are bad edge policy. - Oil is optional and specific, not a universal ritual."
           ]
         }
-      ]
+      ],
+      "imageCaption": "Gerlach kitchen knives",
+      "imageCredit": "Jacek Halicki, CC BY-SA 4.0",
+      "imageCreditUrl": "https://commons.wikimedia.org/wiki/File:2020_Noże_kuchenne_Gerlach.jpg",
+      "imageFit": "cover"
     },
     {
       "id": "boards-storage-and-edge-life",
@@ -7235,7 +7125,7 @@
       "verdict": "Protect the edge",
       "summary": "The board and storage system can make a good edge last or quietly ruin it between meals.",
       "deck": "A good knife on a bad board is a very expensive way to learn physics.",
-      "heroImage": "assets/img/boards-storage.svg",
+      "heroImage": "assets/uploads/post-images/boards-storage-and-edge-life.jpg",
       "heroAlt": "Boards and storage",
       "pullQuote": "Your cutting board is part of the edge geometry whether you admit it or not.",
       "specs": {
@@ -7283,18 +7173,7 @@
           "cta": "Check current price"
         }
       ],
-      "gallery": [
-        {
-          "src": "assets/img/maintenance-routine.svg",
-          "alt": "Maintenance routine",
-          "caption": "Wash, dry, store and sharpen rhythm for everyday knives."
-        },
-        {
-          "src": "assets/img/knife-roll.svg",
-          "alt": "Knife detail",
-          "caption": "Editorial placeholder image"
-        }
-      ],
+      "gallery": [],
       "sourceTrail": [
         {
           "name": "Wusthof knife cleaning guide",
@@ -7355,7 +7234,11 @@
             "- Soft boards extend edge life. - Safe storage prevents invisible damage. - Shared kitchens need forgiving knives or very clear rules."
           ]
         }
-      ]
+      ],
+      "imageCaption": "Chopped nuts and herbs rest on a wooden cutting board in a kitchen. A knife is nearby. The scene shows a clean and organized kitchen space with various items.",
+      "imageCredit": "Shixart1985, CC BY 2.0",
+      "imageCreditUrl": "https://commons.wikimedia.org/wiki/File:Chopped_nuts_and_herbs_on_a_wooden_cutting_board_in_a_kitchen_setting.jpg",
+      "imageFit": "cover"
     },
     {
       "id": "stainless-carbon-steel-care-patina-rust",
@@ -7373,7 +7256,7 @@
       "verdict": "Care choice",
       "summary": "What stainless and carbon actually ask from you, why patina is normal and when orange rust needs action.",
       "deck": "Carbon is not scary. Stainless is not immortal. Patina is not rust. Everyone breathe.",
-      "heroImage": "assets/img/steel-care.svg",
+      "heroImage": "assets/uploads/post-images/stainless-carbon-steel-care-patina-rust.jpg",
       "heroAlt": "Steel care",
       "pullQuote": "A patina is history. Rust is neglect with better branding.",
       "specs": {
@@ -7421,18 +7304,7 @@
           "cta": "Check current price"
         }
       ],
-      "gallery": [
-        {
-          "src": "assets/img/maintenance-routine.svg",
-          "alt": "Maintenance routine",
-          "caption": "Wash, dry, store and sharpen rhythm for everyday knives."
-        },
-        {
-          "src": "assets/img/sharpening-basics-new.svg",
-          "alt": "Sharpening basics",
-          "caption": "Angle, burr and pressure on a simple water-stone setup."
-        }
-      ],
+      "gallery": [],
       "sourceTrail": [
         {
           "name": "Knife Steel Nerds: steels rated by a metallurgist",
@@ -7505,7 +7377,11 @@
             "- Patina is normal; active rust is not. - Stainless is easier, not invincible. - Oil clean, dry carbon steel for storage."
           ]
         }
-      ]
+      ],
+      "imageCaption": "Gerlach kitchen knives",
+      "imageCredit": "Jacek Halicki, CC BY-SA 4.0",
+      "imageCreditUrl": "https://commons.wikimedia.org/wiki/File:2020_Noże_kuchenne_Gerlach.jpg",
+      "imageFit": "cover"
     }
   ]
 }

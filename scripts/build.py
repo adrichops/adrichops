@@ -77,9 +77,19 @@ def route_for(post):
 
 def load_posts():
     posts = []
+    image_db_path = ROOT / 'data' / 'post-images.json'
+    image_db = {}
+    if image_db_path.exists():
+        image_db = (json.loads(image_db_path.read_text(encoding='utf-8')).get('posts') or {})
     for folder in ['content/reviews','content/makers','content/guides','content/recommendations']:
         for path in sorted((ROOT / folder).glob('*.md')):
-            posts.append(parse_md(path))
+            post = parse_md(path)
+            if post.get('id') in image_db:
+                image_meta = image_db[post['id']]
+                post.update({k: v for k, v in image_meta.items() if v is not None})
+                if 'gallery' not in image_meta and all(str((item or {}).get('src') or (item or {}).get('image') or '').startswith('assets/img/') for item in (post.get('gallery') or [])):
+                    post['gallery'] = []
+            posts.append(post)
     posts.sort(key=lambda p: (p.get('date',''), p.get('title','')), reverse=True)
     return posts
 
