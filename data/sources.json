@@ -331,16 +331,6 @@
       ]
     },
     {
-      "id": "musashi-nakagawa-craftsman-page",
-      "name": "Musashi Nakagawa craftsman page",
-      "type": "Retailer",
-      "url": "https://www.musashihamono.com/pages/craftsman/nakagawa",
-      "note": "Additional profile of Nakagawa’s Sakai blacksmithing and honyaki capability.",
-      "usedIn": [
-        "maker-spotlight-nakagawa-hamono"
-      ]
-    },
-    {
       "id": "nigara-official-site",
       "name": "Nigara official site",
       "type": "Manufacturer",

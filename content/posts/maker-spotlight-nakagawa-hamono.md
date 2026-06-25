@@ -47,10 +47,6 @@ sourceTrail:
   type: Other
   url: https://japan-knife-makers.com/items/satoshi-nakagawa.html
   note: Concise profile on Sakai work, Shiraki training and traditional single bevels.
-- name: Musashi Nakagawa craftsman page
-  type: Retailer
-  url: https://www.musashihamono.com/pages/craftsman/nakagawa
-  note: Additional profile of Nakagawa’s Sakai blacksmithing and honyaki capability.
 status: Research-led maker profile
 tags:
 - maker
