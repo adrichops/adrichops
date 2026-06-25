@@ -78,6 +78,9 @@
       "maintenanceLevel": "Low",
       "why": "A nakiri gives you a flat, confident vegetable profile. VG10 stainless-clad or simple stainless keeps rust anxiety low while still taking a crisp edge.",
       "avoid": "Do not use it for bones, twisting through squash, frozen food or pretending it is a cleaver. Rectangle does not mean crowbar.",
+      "productIds": [
+        "nakiri-knife-shortlist"
+      ],
       "maintenanceKit": [
         {
           "label": "Stone",
@@ -131,6 +134,11 @@
       "maintenanceLevel": "Low",
       "why": "This is the practical lane: enough length for onions, protein and herbs, without carbon-steel homework. Tojiro DP, MAC, Global, Victorinox and German classics all live somewhere here.",
       "avoid": "Skip very thick bolsters if you want easier sharpening, and skip very thin lasers if your board technique is still enthusiastic.",
+      "productIds": [
+        "tojiro-dp-210mm-gyuto-f-808",
+        "mac-mth-80-professional-8-inch-chef-knife",
+        "victorinox-fibrox-pro-8-inch-chef-knife"
+      ],
       "maintenanceKit": [
         {
           "label": "Stone",
@@ -176,6 +184,10 @@
       "maintenanceLevel": "Moderate-low",
       "why": "For mixed home cooking, a santoku gives more tip versatility while a nakiri makes vegetable prep cleaner and more fun.",
       "avoid": "Avoid buying purely by Damascus pattern. The board, grind and heat treatment will matter after the Instagram moment expires.",
+      "productIds": [
+        "santoku-knife-shortlist",
+        "nakiri-knife-shortlist"
+      ],
       "maintenanceKit": [
         {
           "label": "Stone",
@@ -220,6 +232,9 @@
       "maintenanceLevel": "Medium-high",
       "why": "A Yoshikane, Wakui or Toyama-style lane gives you food release, grind character and the joy of wiping your knife like a responsible adult.",
       "avoid": "Skip this if you will leave lemon juice on the edge or store it wet. Carbon steel is not haunted; it is just reactive.",
+      "productIds": [
+        "sanjo-carbon-gyuto-shortlist"
+      ],
       "maintenanceKit": [
         {
           "label": "Stone",
@@ -264,6 +279,10 @@
       "maintenanceLevel": "Low to medium",
       "why": "A petty is the quiet knife that does citrus, herbs, garlic, trimming and board-adjacent work without making you unsheathe a 240mm personality test.",
       "avoid": "Do not use it as a paring knife in the air unless the handle and control feel right.",
+      "productIds": [
+        "120-150mm-petty-knife-shortlist",
+        "victorinox-swiss-classic-paring-knife"
+      ],
       "maintenanceKit": [
         {
           "label": "Stone",
@@ -299,6 +318,10 @@
       "maintenanceLevel": "Low to medium",
       "why": "Long, clean pulls beat sawing. Buy the length your board and kitchen can actually support.",
       "avoid": "Skip if you mainly dice onions. A slicer is not a personality replacement for an all-purpose knife.",
+      "productIds": [
+        "sujihiki-or-slicer-shortlist",
+        "boning-and-fillet-knife-shortlist"
+      ],
       "maintenanceKit": [
         {
           "label": "Stone",
@@ -340,6 +363,11 @@
       "maintenanceLevel": "Practice-based",
       "why": "Start with a 1000 grit stone, learn burr formation and removal, then add refinement. Buying six stones before you can deburr is how drawers become geology museums.",
       "avoid": "Avoid mystery angle gadgets if they stop you learning pressure, contact and burr behavior.",
+      "productIds": [
+        "shapton-kuromaku-1000",
+        "king-combo-stone",
+        "leather-strop"
+      ],
       "maintenanceKit": [
         {
           "label": "Stone",

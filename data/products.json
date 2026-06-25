@@ -865,6 +865,33 @@
         "japanese-knife-regions-sakai-seki-sanjo",
         "vg10-ginsan-aogami-shirogami-guide"
       ]
+    },
+    {
+      "id": "sanjo-carbon-gyuto-shortlist",
+      "name": "Sanjo carbon or semi-stainless gyuto shortlist",
+      "category": "Knife",
+      "merchant": "Amazon UK",
+      "url": "https://www.amazon.co.uk/s?k=Sanjo+gyuto+carbon+steel+210mm+Japanese+knife&tag=adrichops-21",
+      "cta": "Search current options",
+      "note": "Use as a research starting point for Sanjo-style carbon or semi-stainless gyuto options. Confirm maker, steel, grind and seller before buying.",
+      "relatedPosts": [
+        "maker-spotlight-yoshikane-hamono",
+        "maker-spotlight-wakui",
+        "maker-spotlight-toyama-noborikoi",
+        "stainless-carbon-steel-care-patina-rust"
+      ]
+    },
+    {
+      "id": "sujihiki-or-slicer-shortlist",
+      "name": "Sujihiki or western slicer shortlist",
+      "category": "Knife",
+      "merchant": "Amazon UK",
+      "url": "https://www.amazon.co.uk/s?k=sujihiki+knife+240mm+western+slicer&tag=adrichops-21",
+      "cta": "Search current options",
+      "note": "Long slicer direction for roast, fish and protein work. Match blade length to board size before buying.",
+      "relatedPosts": [
+        "boning-fillet-slicer-cleaver-specialist-profiles"
+      ]
     }
   ]
 }
