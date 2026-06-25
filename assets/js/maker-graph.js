@@ -703,14 +703,13 @@
     if (node.id === 'japan') {
       detail.innerHTML = `
         <article class="graph-note">
-          <h2>Japan</h2>
+          <h2>Select a region.</h2>
           <section>
-            <h3>Regions</h3>
-            <div class="wiki-list">${state.graph.regions.map((region) => wikiButton(state.nodeById.get(`region:${region.id}`))).join('')}</div>
+            <h3>Map controls</h3>
+            <p>Use the region and filter panels above, then click a node or relationship edge to open its profile here.</p>
           </section>
         </article>
       `;
-      bindWikiLinks();
       renderSources([]);
       return;
     }

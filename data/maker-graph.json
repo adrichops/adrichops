@@ -135,14 +135,17 @@
           "id": "nishida",
           "name": "Nishida",
           "role": "Sharpener",
-          "specialty": "Sakai sharpener represented here as part of Morihiro student-lineage context.",
+          "specialty": "Sakai sharpener represented here as part of Morihiro student-lineage context and Baba Hamono / Kagekiyo sharpening context.",
           "famousLines": [
-            "Morihiro student-lineage sharpening"
+            "Morihiro student-lineage sharpening",
+            "Baba Hamono / Kagekiyo sharpening context"
           ],
           "sourceIds": [
+            "baba-official",
+            "baba-kagekiyo",
             "kkf-community"
           ],
-          "caveat": "Added from Adrian correction and community trail; attach exact retailer/forum source links before making product-specific claims."
+          "caveat": "Baba's own site supports in-workshop sharpening for Kagekiyo; Nishida's named role is added from Adrian correction and community trail, so product-specific attribution still needs exact listing checks."
         },
         {
           "id": "kazumi-kawakita",
@@ -282,12 +285,41 @@
           "id": "baba-hamono",
           "name": "Baba Hamono",
           "role": "Brand",
-          "specialty": "Sakai maker network and Kagekiyo house identity.",
+          "specialty": "Sakai maker network, Kagekiyo house identity and in-workshop sharpening context.",
           "famousLines": [
-            "Kagekiyo"
+            "Kagekiyo",
+            "Sakai Ichiji"
           ],
           "sourceIds": [
-            "baba-official"
+            "baba-official",
+            "baba-kagekiyo"
+          ]
+        },
+        {
+          "id": "kagekiyo",
+          "name": "Kagekiyo",
+          "role": "Line / Brand",
+          "specialty": "Baba Hamono's high-end house line, built around Sakai forged knife tradition, in-workshop hatsuke and Urushi handle work.",
+          "famousLines": [
+            "Kagekiyo White #1",
+            "Kagekiyo White #2",
+            "Kagekiyo Blue #1",
+            "Kagekiyo Chromax"
+          ],
+          "sourceIds": [
+            "baba-kagekiyo"
+          ]
+        },
+        {
+          "id": "momose-juntetsu",
+          "name": "Momose Juntetsu",
+          "role": "Handle maker",
+          "specialty": "Traditional Urushi lacquerware handle craft credited by Baba Hamono for Kagekiyo handles.",
+          "famousLines": [
+            "Kagekiyo Urushi handles"
+          ],
+          "sourceIds": [
+            "baba-kagekiyo"
           ]
         }
       ],
@@ -429,6 +461,56 @@
           "kind": "regional-peer",
           "label": "modern Sakai brand context",
           "detail": "Both show how modern Sakai brands make specialist craft legible to buyers."
+        },
+        {
+          "from": "baba-hamono",
+          "to": "kagekiyo",
+          "kind": "brand-to-line",
+          "label": "house line",
+          "detail": "Kagekiyo is represented as Baba Hamono's original high-end line rather than a separate maker.",
+          "sourceType": "official",
+          "confidence": "high",
+          "sourceIds": [
+            "baba-kagekiyo"
+          ]
+        },
+        {
+          "from": "nishida",
+          "to": "baba-hamono",
+          "kind": "works-at",
+          "label": "works at",
+          "detail": "Nishida is mapped as working at Baba Hamono in the Kagekiyo sharpening context; exact product attribution should still be checked listing by listing.",
+          "sourceType": "community",
+          "confidence": "medium",
+          "sourceIds": [
+            "baba-kagekiyo",
+            "kkf-community"
+          ]
+        },
+        {
+          "from": "nishida",
+          "to": "kagekiyo",
+          "kind": "workshop-background",
+          "label": "Kagekiyo hatsuke context",
+          "detail": "Baba describes Kagekiyo hatsuke as happening in its workshop; Nishida is mapped here as the named sharpener context to investigate on exact listings.",
+          "sourceType": "community",
+          "confidence": "medium",
+          "sourceIds": [
+            "baba-kagekiyo",
+            "kkf-community"
+          ]
+        },
+        {
+          "from": "kagekiyo",
+          "to": "momose-juntetsu",
+          "kind": "line-collaboration",
+          "label": "Urushi handle work",
+          "detail": "Baba credits Momose Juntetsu for the Urushi lacquered handles used in Kagekiyo context.",
+          "sourceType": "official",
+          "confidence": "high",
+          "sourceIds": [
+            "baba-kagekiyo"
+          ]
         },
         {
           "from": "yoshikazu-tanaka",
@@ -1989,6 +2071,11 @@
       "id": "baba-official",
       "label": "Baba Hamono",
       "url": "https://www.baba-hamono.com/en/"
+    },
+    {
+      "id": "baba-kagekiyo",
+      "label": "Baba Hamono Kagekiyo product and craftsmanship page",
+      "url": "https://www.baba-hamono.com/en/kagekiyo/"
     },
     {
       "id": "takefu-knife-village",

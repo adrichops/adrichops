@@ -230,12 +230,6 @@ p { margin: 0; }
   max-width: min(1800px, calc(100vw - 48px));
   margin-inline: auto;
 }
-.graph-sidebar {
-  display: grid;
-  grid-column: 1 / -1;
-  grid-template-columns: minmax(300px, 1.45fr) minmax(280px, 1fr) minmax(180px, .45fr);
-  gap: 12px;
-}
 .graph-detail-panel {
   position: sticky;
   top: 92px;
@@ -258,15 +252,15 @@ p { margin: 0; }
   font-size: .86rem;
 }
 .region-list {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 1fr;
   gap: 8px;
   margin: 12px 0;
 }
 .region-button {
   min-height: 62px;
-  min-width: 170px;
-  flex: 1 1 170px;
+  min-width: 0;
+  width: 100%;
   text-align: left;
   border: 1px solid var(--line);
   background: var(--paper-2);
@@ -435,15 +429,21 @@ p { margin: 0; }
 .graph-lines .edge-apprenticeship,
 .graph-lines .edge-student,
 .graph-lines .edge-family,
-.graph-lines .edge-worked-under,
-.graph-lines .edge-workshop-background {
-  stroke: var(--accent);
+.graph-lines .edge-worked-under {
+  stroke: #2fbf71;
   stroke-width: 3.1;
   opacity: .92;
+}
+.graph-lines .edge-works-at,
+.graph-lines .edge-workshop-background {
+  stroke: #36a3ff;
+  stroke-width: 3.1;
+  opacity: .94;
 }
 .graph-lines .edge-smith-to-sharpener,
 .graph-lines .edge-brand-to-sharpener,
 .graph-lines .edge-line-collaboration,
+.graph-lines .edge-brand-to-line,
 .graph-lines .edge-collaboration,
 .graph-lines .edge-alias {
   stroke: color-mix(in srgb, var(--accent) 82%, var(--graph-edge-contrast));
@@ -666,15 +666,17 @@ p { margin: 0; }
   gap: 10px;
   padding: 0 18px 18px;
 }
-.role-legend {
+.role-legend,
+.relationship-legend {
   display: flex;
   flex-wrap: wrap;
   gap: 7px;
   margin-top: 10px;
 }
-.role-legend span {
-  border: 1px solid var(--role-color, var(--line));
-  background: color-mix(in srgb, var(--role-color, var(--paper-2)) 15%, var(--paper));
+.role-legend span,
+.relationship-legend span {
+  border: 1px solid var(--role-color, var(--edge-color, var(--line)));
+  background: color-mix(in srgb, var(--role-color, var(--edge-color, var(--paper-2))) 15%, var(--paper));
   border-radius: 999px;
   color: var(--ink);
   padding: 7px 9px;
@@ -682,6 +684,27 @@ p { margin: 0; }
   font-weight: 900;
   text-transform: uppercase;
   letter-spacing: .06em;
+}
+.relationship-legend {
+  border-top: 1px solid var(--line);
+  margin-top: 12px;
+  padding-top: 12px;
+}
+.relationship-legend span {
+  --role-color: var(--edge-color);
+}
+.relationship-legend .edge-student {
+  --edge-color: #2fbf71;
+}
+.relationship-legend .edge-works-at {
+  --edge-color: #36a3ff;
+}
+.relationship-legend .edge-collaboration {
+  --edge-color: var(--accent);
+}
+.relationship-legend .edge-community {
+  --edge-color: var(--muted);
+  border-style: dashed;
 }
 .maker-card {
   min-height: 116px;
@@ -1012,8 +1035,7 @@ p { margin: 0; }
     flex: 0 0 auto;
   }
   .hero, .story-strip, .finder-grid, .roll-grid, .article-layout, .explore-layout, .maker-graph-shell { grid-template-columns: 1fr; }
-  .article-sidebar, .deck-nav, .deck-preview, .graph-sidebar, .graph-detail-panel { position: static; }
-  .graph-sidebar { grid-template-columns: 1fr; }
+  .article-sidebar, .deck-nav, .deck-preview, .graph-detail-panel { position: static; }
   .graph-stage { grid-column: auto; }
   .graph-detail-panel { max-height: none; overflow: visible; }
   .entry-grid, .article-card-grid, .photo-grid, .graph-card-grid, .finder-product-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
