@@ -137,9 +137,9 @@ p { margin: 0; }
 .story-strip { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: 18px; align-items: stretch; }
 .story-card { border: 1px solid var(--line); border-radius: var(--radius); background: var(--paper); padding: 24px; box-shadow: var(--soft-shadow); }
 .story-card p { color: var(--muted); margin-top: 12px; }
-.about-story-strip { grid-template-columns: minmax(0, 1fr); max-width: 1120px; }
+.about-story-strip { grid-template-columns: minmax(0, 1fr); width: 100%; }
 .about-story-strip .story-card { padding: clamp(24px, 3.2vw, 42px); }
-.about-story-strip .story-card p { max-width: 920px; }
+.about-story-strip .story-card p { max-width: 1080px; }
 .timeline { display: grid; gap: 10px; }
 .timeline-item { border: 1px solid var(--line); border-radius: 18px; background: var(--paper); padding: 16px; display:grid; grid-template-columns: 90px minmax(0,1fr); gap: 14px; }
 .timeline-item b { color: var(--accent); font-size: .77rem; text-transform: uppercase; letter-spacing: .08em; }
