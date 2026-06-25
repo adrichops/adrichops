@@ -272,22 +272,43 @@ p { margin: 0; }
   padding: 12px;
   cursor: pointer;
   display: grid;
-  gap: 2px;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 3px 10px;
+  align-items: center;
 }
 .region-button strong {
   font-size: 1.05rem;
   line-height: 1;
   letter-spacing: -.035em;
+  grid-column: 2;
 }
 .region-button span {
   font-size: .78rem;
   font-weight: 800;
 }
+.region-button > span:not(.region-swatch) {
+  grid-column: 2;
+  color: var(--muted);
+}
+.region-swatch {
+  grid-row: span 2;
+  width: 34px;
+  height: 34px;
+  border-radius: 999px;
+  display: inline-grid;
+  place-items: center;
+  background: color-mix(in srgb, var(--region-color) 28%, var(--paper));
+  border: 2px solid var(--region-color);
+  color: var(--ink);
+  font-size: .68rem;
+  font-weight: 950;
+  letter-spacing: .03em;
+}
 .region-button:hover,
 .region-button[aria-pressed="true"] {
   color: var(--ink);
-  border-color: var(--accent);
-  background: color-mix(in srgb, var(--accent) 11%, var(--paper));
+  border-color: var(--region-color, var(--accent));
+  background: color-mix(in srgb, var(--region-color, var(--accent)) 13%, var(--paper));
 }
 .graph-stats {
   grid-template-columns: auto minmax(0, 1fr);
@@ -378,9 +399,9 @@ p { margin: 0; }
 }
 .graph-lines .edge-region-member,
 .graph-lines .edge-regional-hub {
-  stroke: color-mix(in srgb, var(--line-strong) 45%, transparent);
-  stroke-width: 1;
-  opacity: .42;
+  stroke: color-mix(in srgb, var(--region-color, var(--line-strong)) 78%, transparent);
+  stroke-width: 1.7;
+  opacity: .68;
 }
 .graph-lines .edge-apprenticeship,
 .graph-lines .edge-student,
@@ -543,7 +564,23 @@ p { margin: 0; }
   fill: var(--bg);
 }
 .region-node circle {
-  fill: var(--paper);
+  fill: color-mix(in srgb, var(--region-color, var(--accent)) 18%, var(--paper));
+  stroke: color-mix(in srgb, var(--region-color, var(--accent)) 82%, var(--line-strong));
+  stroke-width: 4.2;
+  filter: drop-shadow(0 8px 14px color-mix(in srgb, var(--region-color, var(--accent)) 18%, transparent));
+}
+.region-node:hover circle,
+.region-node:focus-visible circle,
+.region-node.is-active circle {
+  fill: color-mix(in srgb, var(--region-color, var(--accent)) 30%, var(--paper));
+  stroke: var(--region-color, var(--accent));
+}
+.region-node .region-flag {
+  fill: var(--region-color, var(--accent));
+  font-size: 12px;
+  stroke: var(--paper);
+  stroke-width: 3px;
+  letter-spacing: .08em;
 }
 .role-blacksmith {
   --role-color: #ff5a4f;

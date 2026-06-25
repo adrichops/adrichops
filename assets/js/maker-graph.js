@@ -38,12 +38,49 @@
   }[char]));
 
   const roleClass = (value) => String(value || 'node').toLowerCase().replace(/[^a-z0-9]+/g, '-');
+  const regionColors = {
+    sakai: '#ff5a4f',
+    sanjo: '#f0a629',
+    echizen: '#54c56b',
+    'tosa-kochi': '#25b8a8',
+    miki: '#46a5ff',
+    'seki-gifu': '#9b8cff',
+    'tsubame-niigata': '#d879ff',
+    international: '#f25f9c',
+    aomori: '#6fd3ff',
+    okayama: '#d4b75f',
+    kumamoto: '#ff8a48',
+    tokyo: '#f5eee3'
+  };
 
   function roleTokens(role) {
     return String(role || 'node')
       .split(/\s*(?:\/|,|&|\band\b)\s*/i)
       .map(roleClass)
       .filter(Boolean);
+  }
+
+  function regionIdForNode(node) {
+    if (!node) return '';
+    if (node.isRegion) return node.regionId;
+    return node.regionId || '';
+  }
+
+  function regionColor(id) {
+    return regionColors[id] || '#ff5a4f';
+  }
+
+  function regionInitials(node) {
+    const name = node && node.name ? node.name : '';
+    if (!name) return '';
+    return name
+      .replace(/\s*\/\s*/g, ' ')
+      .split(/\s+/)
+      .filter(Boolean)
+      .slice(0, 2)
+      .map((part) => part[0])
+      .join('')
+      .toUpperCase();
   }
 
   function sourceMap() {
@@ -190,6 +227,7 @@
   function renderRegions() {
     regionList.innerHTML = state.graph.regions.map((region) => `
       <button class="region-button" type="button" data-region="${esc(region.id)}" aria-pressed="${state.activeRegion && state.activeRegion.id === region.id ? 'true' : 'false'}">
+        <span class="region-swatch" style="--region-color: ${esc(regionColor(region.id))}" aria-hidden="true">${esc(regionInitials(region))}</span>
         <strong>${esc(region.name)}</strong>
         <span>${esc(region.location)}</span>
       </button>
@@ -237,7 +275,7 @@
           ${edges.map((edge) => edgeShouldLabel(edge) ? `<line class="graph-edge-hit" data-edge-hit="${esc(edgeKey(edge))}"></line>` : '').join('')}
         </g>
         <g class="graph-lines">
-          ${edges.map((edge) => `<line class="${esc(edgeClass(edge))}" data-edge="${esc(edgeKey(edge))}"${edge.kind !== 'region-member' && edge.kind !== 'regional-hub' ? ' marker-end="url(#graph-arrow)"' : ''}></line>`).join('')}
+          ${edges.map((edge) => `<line class="${esc(edgeClass(edge))}" data-edge="${esc(edgeKey(edge))}" style="${esc(edgeStyle(edge))}"${edge.kind !== 'region-member' && edge.kind !== 'regional-hub' ? ' marker-end="url(#graph-arrow)"' : ''}></line>`).join('')}
         </g>
         <g class="graph-labels">
           ${edges.map((edge) => edgeLabelMarkup(edge)).join('')}
@@ -290,6 +328,12 @@
     `;
   }
 
+  function edgeStyle(edge) {
+    if (edge.kind !== 'regional-hub') return '';
+    const regionId = edge.to.replace(/^region:/, '');
+    return `--region-color: ${regionColor(regionId)}`;
+  }
+
   function edgeShouldLabel(edge) {
     if (edge.kind === 'region-member') return false;
     if (edge.kind === 'regional-hub') return !state.activeRegion;
@@ -313,9 +357,12 @@
     ].filter(Boolean).join(' ');
     const radius = node.isHub ? 70 : node.isRegion ? 68 : 58;
     const label = node.isHub ? 'Open regional map' : node.isRegion ? `Open ${node.name}` : `Open ${node.name}`;
+    const regionId = regionIdForNode(node);
+    const style = regionId ? ` style="--region-color: ${esc(regionColor(regionId))}"` : '';
     return `
-      <g class="${esc(className)}" tabindex="0" role="button" aria-label="${esc(label)}" data-node="${esc(node.id)}">
+      <g class="${esc(className)}" tabindex="0" role="button" aria-label="${esc(label)}" data-node="${esc(node.id)}"${style}>
         <circle r="${radius}"></circle>
+        ${node.isRegion ? `<text class="region-flag" y="-28">${esc(regionInitials(node))}</text>` : ''}
         <text y="-4">${esc(shortLabel(node.name))}</text>
         <text class="small" y="17">${esc(node.isRegion ? node.location : node.role)}</text>
       </g>
