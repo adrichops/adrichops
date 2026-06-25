@@ -403,6 +403,31 @@ p { margin: 0; }
   stroke: var(--paper);
   stroke-width: 5px;
 }
+.edge-label-wrap {
+  pointer-events: none;
+}
+.edge-label-wrap rect {
+  fill: color-mix(in srgb, var(--paper) 88%, transparent);
+  stroke: color-mix(in srgb, var(--line-strong) 64%, transparent);
+  stroke-width: 1;
+}
+.edge-label-wrap text {
+  fill: var(--ink);
+  font-size: 10px;
+  font-weight: 950;
+  letter-spacing: .03em;
+  text-anchor: middle;
+  text-transform: uppercase;
+  dominant-baseline: middle;
+}
+.edge-label-wrap.source-community rect,
+.edge-label-wrap.source-forum rect,
+.edge-label-wrap.source-reddit rect {
+  stroke-dasharray: 4 3;
+}
+.edge-label-wrap.confidence-low {
+  opacity: .76;
+}
 .graph-center circle {
   fill: var(--ink);
   stroke: var(--accent);

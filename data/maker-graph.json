@@ -616,6 +616,23 @@
           "specialty": "Takefu Knife Village member workshop in the Echizen production network.",
           "famousLines": ["Hatono Hamono"],
           "sourceIds": ["tkv-hatono"]
+        },
+        {
+          "id": "takamura",
+          "name": "Takamura Hamono",
+          "role": "Workshop",
+          "specialty": "Thin stainless and powdered-steel laser knives from Fukui/Sabae context, often compared with Tojiro as the next performance step.",
+          "famousLines": ["Takamura R2", "Takamura Chromax", "Takamura VG10"],
+          "sourceIds": ["kkf-community", "reddit-truechefknives"],
+          "caveat": "Official source URL still pending; relationship is included as buyer comparison context."
+        },
+        {
+          "id": "ryusen",
+          "name": "Ryusen Hamono",
+          "role": "Workshop",
+          "specialty": "High-finish Fukui stainless and Damascus production with polished fit-and-finish context.",
+          "famousLines": ["Bonten Unryu", "Blazen", "Tanganryu"],
+          "sourceIds": ["kkf-community"]
         }
       ],
       "edges": [
@@ -716,6 +733,26 @@
           "kind": "regional-hub",
           "label": "Takefu member",
           "detail": "Hatono Hamono is listed by Takefu Knife Village as a member company."
+        },
+        {
+          "from": "takefu-knife-village",
+          "to": "takamura",
+          "kind": "regional-peer",
+          "label": "Fukui stainless context",
+          "detail": "Takamura is included in broader Fukui/Echizen stainless context, not as a Takefu Knife Village member claim.",
+          "sourceType": "community",
+          "confidence": "medium",
+          "sourceIds": ["kkf-community", "reddit-truechefknives"]
+        },
+        {
+          "from": "takamura",
+          "to": "ryusen",
+          "kind": "regional-peer",
+          "label": "high-finish stainless context",
+          "detail": "Takamura and Ryusen help frame thin stainless performance versus polished production fit and finish.",
+          "sourceType": "community",
+          "confidence": "low",
+          "sourceIds": ["kkf-community"]
         }
       ]
     },
@@ -891,6 +928,162 @@
           "sourceType": "community",
           "confidence": "medium",
           "sourceIds": ["kkf-community"]
+        }
+      ]
+    },
+    {
+      "id": "seki-gifu",
+      "name": "Seki / Gifu",
+      "location": "Gifu",
+      "summary": "Industrial and semi-industrial knife city context: production houses, export brands and stainless workhorses.",
+      "notes": [
+        "Seki is useful for understanding reliable production knives, not only artisan smith/sharpener chains.",
+        "Read these nodes as brand and workshop context unless a listing names the exact maker or grinder."
+      ],
+      "sourceIds": ["misono-official", "mac-official", "kkf-community", "reddit-truechefknives"],
+      "nodes": [
+        {
+          "id": "misono",
+          "name": "Misono",
+          "role": "Brand",
+          "specialty": "Seki-made western-handled professional knives, especially UX10 and Swedish carbon lines.",
+          "famousLines": ["UX10", "Swedish Carbon", "440"],
+          "sourceIds": ["misono-official"]
+        },
+        {
+          "id": "mac",
+          "name": "MAC",
+          "role": "Brand",
+          "specialty": "Thin stamped/semi-stamped Japanese professional kitchen knives with high export visibility.",
+          "famousLines": ["MTH-80", "Professional series", "Superior series"],
+          "sourceIds": ["mac-official"]
+        },
+        {
+          "id": "masahiro",
+          "name": "Masahiro",
+          "role": "Brand",
+          "specialty": "Seki production knives for professional kitchens, stainless workhorse context and asymmetrical edge discussions.",
+          "famousLines": ["MV-H", "Carbon", "Bessaku"],
+          "sourceIds": ["kkf-community", "reddit-truechefknives"],
+          "caveat": "Source trail is community-led until an official English source is attached."
+        },
+        {
+          "id": "glestain",
+          "name": "Glestain",
+          "role": "Brand",
+          "specialty": "Seki production knives with distinctive scalloped/granton-style blade faces.",
+          "famousLines": ["Glestain gyuto", "Glestain santoku", "Glestain slicers"],
+          "sourceIds": ["kkf-community"]
+        },
+        {
+          "id": "hattori",
+          "name": "Hattori",
+          "role": "Workshop",
+          "specialty": "Seki custom and high-finish workshop context often discussed around FH and KD lines.",
+          "famousLines": ["FH", "KD", "Hattori Forum Knife"],
+          "sourceIds": ["kkf-community", "reddit-truechefknives"],
+          "caveat": "Community-heavy node; exact maker attribution should be tied to the specific line."
+        },
+        {
+          "id": "suisin",
+          "name": "Suisin",
+          "role": "Brand",
+          "specialty": "Professional Japanese knife brand crossing Sakai and Seki buying conversations.",
+          "famousLines": ["Inox Honyaki", "High Carbon", "Suisin Western"],
+          "sourceIds": ["korin-official", "kkf-community"]
+        }
+      ],
+      "edges": [
+        {
+          "from": "misono",
+          "to": "mac",
+          "kind": "regional-peer",
+          "label": "Seki pro stainless comparison",
+          "detail": "Misono and MAC are both useful reference points for production Japanese professional knives.",
+          "sourceType": "retailer",
+          "confidence": "medium",
+          "sourceIds": ["misono-official", "mac-official"]
+        },
+        {
+          "from": "misono",
+          "to": "masahiro",
+          "kind": "regional-peer",
+          "label": "Seki workhorse comparison",
+          "detail": "Misono and Masahiro sit in the same practical Seki buying lane for western-handled pro knives.",
+          "sourceType": "community",
+          "confidence": "medium",
+          "sourceIds": ["kkf-community", "reddit-truechefknives"]
+        },
+        {
+          "from": "glestain",
+          "to": "mac",
+          "kind": "regional-peer",
+          "label": "production geometry comparison",
+          "detail": "Glestain and MAC show two different Seki production approaches to food release and thinness.",
+          "sourceType": "community",
+          "confidence": "low",
+          "sourceIds": ["kkf-community"]
+        },
+        {
+          "from": "hattori",
+          "to": "suisin",
+          "kind": "regional-peer",
+          "label": "high-finish Seki context",
+          "detail": "Hattori and Suisin are included as higher-finish Seki-adjacent buyer context, not a direct workshop relationship.",
+          "sourceType": "community",
+          "confidence": "low",
+          "sourceIds": ["kkf-community"]
+        },
+        {
+          "from": "suisin",
+          "to": "misono",
+          "kind": "regional-peer",
+          "label": "western pro knife context",
+          "detail": "Suisin and Misono help frame the western-handled professional side of Japanese production knives.",
+          "sourceType": "community",
+          "confidence": "medium",
+          "sourceIds": ["korin-official", "kkf-community"]
+        }
+      ]
+    },
+    {
+      "id": "tsubame-niigata",
+      "name": "Tsubame / Niigata",
+      "location": "Niigata",
+      "summary": "Niigata production and small-workshop context outside the Sanjo blacksmith-forward cluster.",
+      "notes": [
+        "This branch separates Tojiro/Tsubame production context from Sanjo handmade workhorse context.",
+        "Use it for stainless, factory-workshop and value-performance comparisons."
+      ],
+      "sourceIds": ["tojiro-official", "kkf-community"],
+      "nodes": [
+        {
+          "id": "tojiro",
+          "name": "Tojiro",
+          "role": "Brand",
+          "specialty": "Tsubame/Niigata production knives and the common entry point for Japanese gyuto ownership.",
+          "famousLines": ["DP", "Basic", "Zen", "Oboro"],
+          "sourceIds": ["tojiro-official"]
+        },
+        {
+          "id": "fujitora",
+          "name": "Fujitora",
+          "role": "Brand",
+          "specialty": "Tojiro-linked domestic/export brand context for stainless production knives.",
+          "famousLines": ["Fujitora DP", "Fujitora VG10"],
+          "sourceIds": ["tojiro-official", "kkf-community"]
+        }
+      ],
+      "edges": [
+        {
+          "from": "tojiro",
+          "to": "fujitora",
+          "kind": "line-collaboration",
+          "label": "brand family",
+          "detail": "Fujitora is shown as Tojiro-linked brand context for domestic/export naming.",
+          "sourceType": "retailer",
+          "confidence": "medium",
+          "sourceIds": ["tojiro-official"]
         }
       ]
     }
@@ -1105,6 +1298,26 @@
       "id": "myojin-official",
       "label": "Myojin Riki Seisakusho official site",
       "url": "https://myojinknife.com/"
+    },
+    {
+      "id": "misono-official",
+      "label": "Misono official site",
+      "url": "https://www.misono-hamono.com/"
+    },
+    {
+      "id": "mac-official",
+      "label": "MAC Knife official site",
+      "url": "https://www.macknife.com/"
+    },
+    {
+      "id": "tojiro-official",
+      "label": "Tojiro official site",
+      "url": "https://www.tojiro-japan.com/"
+    },
+    {
+      "id": "korin-official",
+      "label": "Korin Japanese Trading",
+      "url": "https://www.korin.com/"
     },
     {
       "id": "kkf-community",

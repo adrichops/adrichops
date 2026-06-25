@@ -160,99 +160,6 @@
     };
   }
 
-  const lineageKinds = new Set(['apprenticeship', 'student', 'family', 'worked-under', 'workshop-background', 'regional-hub']);
-
-  function layoutSelection(nodes, edges, width, height) {
-    if (!state.activeRegion) {
-      return nodes.map((node, index) => seedPosition(node, index, nodes.length));
-    }
-
-    const regionId = `region:${state.activeRegion.id}`;
-    const nodeById = new Map(nodes.map((node) => [node.id, { ...node, vx: 0, vy: 0 }]));
-    const regionNode = nodeById.get(regionId);
-    if (regionNode) {
-      regionNode.x = width / 2;
-      regionNode.y = 92;
-    }
-
-    const makerNodes = nodes.filter((node) => node.id !== regionId && !node.isHub);
-    const outgoing = new Map();
-    const incoming = new Map();
-    edges.forEach((edge) => {
-      if (!lineageKinds.has(edge.kind) || edge.kind === 'region-member') return;
-      if (!nodeById.has(edge.from) || !nodeById.has(edge.to)) return;
-      if (!outgoing.has(edge.from)) outgoing.set(edge.from, []);
-      if (!incoming.has(edge.to)) incoming.set(edge.to, []);
-      outgoing.get(edge.from).push(edge.to);
-      incoming.get(edge.to).push(edge.from);
-    });
-
-    const rootIds = makerNodes
-      .filter((node) => !incoming.has(node.id))
-      .sort((a, b) => roleWeight(a) - roleWeight(b) || a.name.localeCompare(b.name))
-      .map((node) => node.id);
-    if (!rootIds.length) makerNodes.forEach((node) => rootIds.push(node.id));
-
-    const depth = new Map(rootIds.map((id) => [id, 1]));
-    const queue = [...rootIds];
-    while (queue.length) {
-      const id = queue.shift();
-      const nextDepth = (depth.get(id) || 1) + 1;
-      (outgoing.get(id) || []).forEach((childId) => {
-        if (!depth.has(childId) || nextDepth < depth.get(childId)) {
-          depth.set(childId, nextDepth);
-          queue.push(childId);
-        }
-      });
-    }
-    makerNodes.forEach((node) => {
-      if (!depth.has(node.id)) depth.set(node.id, 1);
-      if (node.regionId && node.regionId !== state.activeRegion.id) {
-        depth.set(node.id, Math.max(depth.get(node.id), 4));
-      }
-    });
-
-    const columns = new Map();
-    makerNodes.forEach((node) => {
-      const key = depth.get(node.id);
-      if (!columns.has(key)) columns.set(key, []);
-      columns.get(key).push(node);
-    });
-
-    const sortedDepths = [...columns.keys()].sort((a, b) => a - b);
-    const top = 230;
-    const maxPerRow = 8;
-    let yCursor = top;
-    sortedDepths.forEach((key) => {
-      const row = columns.get(key).sort((a, b) => roleWeight(a) - roleWeight(b) || a.name.localeCompare(b.name));
-      const chunkCount = Math.ceil(row.length / maxPerRow);
-      for (let chunkIndex = 0; chunkIndex < chunkCount; chunkIndex += 1) {
-        const chunk = row.slice(chunkIndex * maxPerRow, (chunkIndex + 1) * maxPerRow);
-        const y = yCursor + chunkIndex * 132;
-        chunk.forEach((node, index) => {
-          const span = width - 260;
-          const x = 130 + span * ((index + 1) / (chunk.length + 1));
-          const target = nodeById.get(node.id);
-          target.x = x;
-          target.y = y;
-        });
-      }
-      yCursor += chunkCount * 132 + 82;
-    });
-
-    return [...nodeById.values()];
-  }
-
-  function roleWeight(node) {
-    const role = roleClass(node.role);
-    if (role === 'cooperative' || role === 'workshop') return 1;
-    if (role === 'blacksmith') return 2;
-    if (role === 'sharpener' || role === 'polisher') return 3;
-    if (role === 'handle-maker') return 4;
-    if (role === 'brand') return 5;
-    return 6;
-  }
-
   function applyView() {
     const viewport = svg.querySelector('.graph-viewport');
     if (viewport) {
@@ -284,7 +191,11 @@
   }
 
   function edgeClass(edge) {
-    return `graph-edge edge-${roleClass(edge.kind)} source-${roleClass(edge.sourceType || 'direct')} confidence-${roleClass(edge.confidence || 'standard')}`;
+    return `graph-edge ${edgeMetaClass(edge)}`;
+  }
+
+  function edgeMetaClass(edge) {
+    return `edge-${roleClass(edge.kind)} source-${roleClass(edge.sourceType || 'direct')} confidence-${roleClass(edge.confidence || 'standard')}`;
   }
 
   function renderGraph() {
@@ -294,7 +205,7 @@
     const selection = graphSelection();
     const width = state.activeRegion ? 1700 : 1180;
     const height = state.activeRegion ? 1100 : 760;
-    const nodes = layoutSelection(selection.nodes, selection.edges, width, height);
+    const nodes = selection.nodes.map((node, index) => seedPosition(node, index, selection.nodes.length));
     const nodeById = new Map(nodes.map((node) => [node.id, node]));
     const edges = selection.edges
       .map((edge) => ({ ...edge, source: nodeById.get(edge.from), target: nodeById.get(edge.to) }))
@@ -310,6 +221,9 @@
       <g class="graph-viewport">
         <g class="graph-lines">
           ${edges.map((edge) => `<line class="${esc(edgeClass(edge))}" data-edge="${esc(edge.from)}:${esc(edge.to)}"${edge.kind !== 'region-member' && edge.kind !== 'regional-hub' ? ' marker-end="url(#graph-arrow)"' : ''}></line>`).join('')}
+        </g>
+        <g class="graph-labels">
+          ${edges.map((edge) => edgeLabelMarkup(edge)).join('')}
         </g>
         <g class="graph-nodes">
           ${nodes.map((node) => nodeMarkup(node)).join('')}
@@ -331,13 +245,32 @@
       enableDrag(group, node, nodes, edges);
     });
 
-    if (state.activeRegion) {
-      tick(nodes, edges);
-      state.simulation = createStaticSimulation(nodes, edges);
-    } else {
-      state.simulation = createSimulation(nodes, edges, width, height);
-      state.simulation.start();
-    }
+    state.simulation = createSimulation(nodes, edges, width, height);
+    state.simulation.start();
+  }
+
+  function edgeLabelMarkup(edge) {
+    if (!edgeShouldLabel(edge)) return '';
+    const text = shortEdgeLabel(edge.label || edge.kind);
+    const width = Math.max(58, Math.min(184, text.length * 7.5 + 24));
+    return `
+      <g class="edge-label-wrap ${esc(edgeMetaClass(edge))}" data-edge-label="${esc(edge.from)}:${esc(edge.to)}">
+        <rect x="${-width / 2}" y="-12" width="${width}" height="24" rx="12"></rect>
+        <text y="1">${esc(text)}</text>
+      </g>
+    `;
+  }
+
+  function edgeShouldLabel(edge) {
+    if (edge.kind === 'region-member') return false;
+    if (edge.kind === 'regional-hub') return !state.activeRegion;
+    return true;
+  }
+
+  function shortEdgeLabel(value) {
+    const text = String(value || '').trim();
+    if (text.length <= 28) return text;
+    return `${text.slice(0, 26)}...`;
   }
 
   function nodeMarkup(node) {
@@ -374,6 +307,18 @@
       line.setAttribute('y1', edge.source.y);
       line.setAttribute('x2', edge.target.x);
       line.setAttribute('y2', edge.target.y);
+      const label = svg.querySelector(`[data-edge-label="${CSS.escape(`${edge.from}:${edge.to}`)}"]`);
+      if (label) {
+        const midX = (edge.source.x + edge.target.x) / 2;
+        const midY = (edge.source.y + edge.target.y) / 2;
+        const dx = edge.target.x - edge.source.x || 0.01;
+        const dy = edge.target.y - edge.source.y || 0.01;
+        const distance = Math.sqrt(dx * dx + dy * dy);
+        const offset = edge.kind === 'regional-peer' ? 18 : 0;
+        const x = midX + (-dy / distance) * offset;
+        const y = midY + (dx / distance) * offset;
+        label.setAttribute('transform', `translate(${x} ${y})`);
+      }
     });
 
     nodes.forEach((node) => {
@@ -403,8 +348,8 @@
         const dx = target.x - source.x || 0.01;
         const dy = target.y - source.y || 0.01;
         const distance = Math.sqrt(dx * dx + dy * dy);
-        const desired = edge.kind === 'region-member' || edge.kind === 'regional-hub' ? 220 : 300;
-        const force = ((distance - desired) / distance) * 0.013 * alpha;
+        const desired = edge.kind === 'region-member' || edge.kind === 'regional-hub' ? (state.activeRegion ? 330 : 260) : 300;
+        const force = ((distance - desired) / distance) * (state.activeRegion ? 0.011 : 0.013) * alpha;
         const fx = dx * force;
         const fy = dy * force;
         if (!source.fixed) {
@@ -424,7 +369,7 @@
           const dx = b.x - a.x || 0.01;
           const dy = b.y - a.y || 0.01;
           const distanceSq = Math.max(dx * dx + dy * dy, 900);
-          const force = (a.isHub || b.isHub ? 7400 : 12800) / distanceSq * alpha;
+          const force = (a.isHub || b.isHub ? 7400 : state.activeRegion ? 18500 : 12800) / distanceSq * alpha;
           const distance = Math.sqrt(distanceSq);
           const fx = (dx / distance) * force;
           const fy = (dy / distance) * force;
@@ -444,8 +389,8 @@
           node.vx += (centerX - node.x) * 0.016 * alpha;
           node.vy += (centerY - node.y) * 0.016 * alpha;
         } else {
-          node.vx += (centerX - node.x) * 0.0028 * alpha;
-          node.vy += (centerY - node.y) * 0.0028 * alpha;
+          node.vx += (centerX - node.x) * (state.activeRegion ? 0.0014 : 0.0028) * alpha;
+          node.vy += (centerY - node.y) * (state.activeRegion ? 0.0014 : 0.0028) * alpha;
         }
         if (!node.fixed) {
           node.x += node.vx;
@@ -477,18 +422,6 @@
       heat(value) {
         alpha = Math.max(alpha, value);
         if (!state.raf) state.raf = requestAnimationFrame(step);
-      }
-    };
-  }
-
-  function createStaticSimulation(nodes, edges) {
-    return {
-      start() {
-        tick(nodes, edges);
-      },
-      stop() {},
-      heat() {
-        tick(nodes, edges);
       }
     };
   }
