@@ -251,6 +251,27 @@ p { margin: 0; }
   color: var(--muted);
   font-size: .86rem;
 }
+.graph-control-panel {
+  display: grid;
+  gap: 10px;
+}
+.graph-control-panel .search-input,
+.graph-control-panel select {
+  width: 100%;
+  min-width: 0;
+}
+.filter-label {
+  color: var(--muted);
+  display: block;
+  font-size: .72rem;
+  font-weight: 950;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+.graph-filter-reset {
+  justify-self: start;
+  margin-top: 2px;
+}
 .region-list {
   display: grid;
   grid-template-columns: 1fr;
@@ -545,6 +566,10 @@ p { margin: 0; }
   stroke: var(--paper);
   stroke-width: 3px;
 }
+.graph-node .node-name {
+  font-size: 13px;
+  line-height: 1;
+}
 .graph-center text {
   fill: var(--bg);
 }
@@ -608,10 +633,16 @@ p { margin: 0; }
 }
 .region-node .region-flag {
   fill: var(--region-color, var(--accent));
-  font-size: 12px;
+  font-size: 11px;
   stroke: var(--paper);
   stroke-width: 3px;
   letter-spacing: .08em;
+}
+.region-node .node-name {
+  font-size: 12.5px;
+}
+.region-node .small {
+  font-size: 9.5px;
 }
 .role-blacksmith {
   --role-color: #ff5a4f;
@@ -705,6 +736,75 @@ p { margin: 0; }
 .relationship-legend .edge-community {
   --edge-color: var(--muted);
   border-style: dashed;
+}
+.regional-geography {
+  max-width: min(1800px, calc(100vw - 48px));
+  margin: 18px auto 0;
+  overflow: hidden;
+}
+.regional-geography .section-head {
+  align-items: end;
+  margin-bottom: 12px;
+}
+.regional-map-svg {
+  width: 100%;
+  min-height: clamp(360px, 46vw, 560px);
+  display: block;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background:
+    linear-gradient(color-mix(in srgb, var(--line-strong) 20%, transparent) 1px, transparent 1px),
+    linear-gradient(90deg, color-mix(in srgb, var(--line-strong) 20%, transparent) 1px, transparent 1px),
+    var(--paper-2);
+  background-size: 92px 92px;
+}
+.japan-map-shape {
+  color: var(--ink);
+}
+.japan-map-shape path {
+  fill: url(#japan-map-fill);
+  stroke: color-mix(in srgb, var(--line-strong) 80%, transparent);
+  stroke-width: 2;
+}
+.regional-map-lines line {
+  stroke: color-mix(in srgb, var(--region-color) 52%, var(--line-strong));
+  stroke-width: 1.5;
+  opacity: .45;
+}
+.regional-map-node {
+  cursor: pointer;
+  outline: none;
+}
+.regional-map-node circle {
+  fill: color-mix(in srgb, var(--region-color) 19%, var(--paper));
+  stroke: var(--region-color);
+  stroke-width: 3.2;
+  filter: drop-shadow(0 8px 13px color-mix(in srgb, var(--region-color) 16%, transparent));
+}
+.regional-map-node:hover circle,
+.regional-map-node:focus-visible circle,
+.regional-map-node.is-active circle {
+  fill: color-mix(in srgb, var(--region-color) 33%, var(--paper));
+  stroke-width: 4.4;
+}
+.regional-map-node text {
+  text-anchor: middle;
+  dominant-baseline: middle;
+  fill: var(--ink);
+  font-weight: 950;
+  paint-order: stroke;
+  stroke: var(--paper);
+  stroke-width: 3px;
+  pointer-events: none;
+}
+.regional-map-node .region-flag {
+  fill: var(--region-color);
+  font-size: 12px;
+  letter-spacing: .08em;
+}
+.regional-map-node .small {
+  font-size: 9px;
+  text-transform: uppercase;
 }
 .maker-card {
   min-height: 116px;

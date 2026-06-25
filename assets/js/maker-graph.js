@@ -3,7 +3,8 @@
   if (!root) return;
 
   const svg = root.querySelector('[data-graph-svg]');
-  const regionList = root.querySelector('[data-region-list]');
+  const geoSvg = document.querySelector('[data-region-map]');
+  const regionFilter = root.querySelector('[data-region-filter]');
   const detail = root.querySelector('[data-graph-detail]');
   const sourceList = root.querySelector('[data-graph-sources]');
   const resetButtons = root.querySelectorAll('[data-graph-reset]');
@@ -51,6 +52,20 @@
     okayama: '#d4b75f',
     kumamoto: '#ff8a48',
     tokyo: '#f5eee3'
+  };
+  const regionMapPositions = {
+    aomori: [62, 18],
+    tokyo: [68, 48],
+    'tsubame-niigata': [57, 38],
+    sanjo: [59, 40],
+    'seki-gifu': [49, 56],
+    echizen: [45, 50],
+    miki: [38, 61],
+    sakai: [42, 64],
+    okayama: [31, 63],
+    'tosa-kochi': [35, 75],
+    kumamoto: [20, 78],
+    international: [15, 26]
   };
 
   function roleTokens(role) {
@@ -224,16 +239,57 @@
     };
   }
 
-  function renderRegions() {
-    regionList.innerHTML = state.graph.regions.map((region) => `
-      <button class="region-button" type="button" data-region="${esc(region.id)}" aria-pressed="${state.activeRegion && state.activeRegion.id === region.id ? 'true' : 'false'}">
-        <span class="region-swatch" style="--region-color: ${esc(regionColor(region.id))}" aria-hidden="true">${esc(regionInitials(region))}</span>
-        <strong>${esc(region.name)}</strong>
-        <span>${esc(region.location)}</span>
-      </button>
-    `).join('');
-    regionList.querySelectorAll('[data-region]').forEach((button) => {
-      button.addEventListener('click', () => selectRegion(button.dataset.region));
+  function renderRegionFilter() {
+    if (!regionFilter) return;
+    regionFilter.innerHTML = '<option value="all">All regions</option>' + state.graph.regions.map((region) => (
+      `<option value="${esc(region.id)}">${esc(region.name)} (${esc(region.location)})</option>`
+    )).join('');
+    regionFilter.value = state.activeRegion ? state.activeRegion.id : 'all';
+  }
+
+  function renderGeographyMap() {
+    if (!geoSvg) return;
+    const width = 1180;
+    const height = 540;
+    geoSvg.setAttribute('viewBox', `0 0 ${width} ${height}`);
+    const points = state.graph.regions.map((region) => {
+      const [xPct, yPct] = regionMapPositions[region.id] || [50, 50];
+      return { region, x: width * xPct / 100, y: height * yPct / 100 };
+    });
+    geoSvg.innerHTML = `
+      <defs>
+        <linearGradient id="japan-map-fill" x1="0" x2="1" y1="0" y2="1">
+          <stop offset="0%" stop-color="currentColor" stop-opacity=".18"></stop>
+          <stop offset="100%" stop-color="currentColor" stop-opacity=".04"></stop>
+        </linearGradient>
+      </defs>
+      <g class="japan-map-shape" aria-hidden="true">
+        <path d="M690 72 C755 94 814 134 842 189 C872 249 840 302 783 324 C728 346 675 341 624 373 C566 410 520 472 439 467 C372 463 326 417 329 358 C333 296 390 270 447 254 C520 235 562 200 596 145 C620 108 650 74 690 72 Z"></path>
+        <path d="M338 329 C295 346 245 375 222 418 C202 456 229 485 272 473 C316 461 348 423 368 382 C382 353 369 320 338 329 Z"></path>
+        <path d="M536 97 C556 79 588 63 611 73 C628 81 626 103 601 117 C571 133 531 129 521 114 C517 108 524 101 536 97 Z"></path>
+      </g>
+      <g class="regional-map-lines">
+        ${points.map((point) => `<line x1="${width / 2}" y1="${height / 2}" x2="${point.x}" y2="${point.y}" style="--region-color: ${esc(regionColor(point.region.id))}"></line>`).join('')}
+      </g>
+      <g class="regional-map-nodes">
+        ${points.map((point) => {
+          const active = state.activeRegion && state.activeRegion.id === point.region.id;
+          return `<g class="regional-map-node${active ? ' is-active' : ''}" data-map-region="${esc(point.region.id)}" tabindex="0" role="button" aria-label="Open ${esc(point.region.name)}" transform="translate(${point.x} ${point.y})" style="--region-color: ${esc(regionColor(point.region.id))}">
+            <circle r="36"></circle>
+            <text class="region-flag" y="-7">${esc(regionInitials(point.region))}</text>
+            <text class="small" y="13">${esc(point.region.location)}</text>
+          </g>`;
+        }).join('')}
+      </g>
+    `;
+    geoSvg.querySelectorAll('[data-map-region]').forEach((node) => {
+      node.addEventListener('click', () => selectRegion(node.dataset.mapRegion));
+      node.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter' || event.key === ' ') {
+          event.preventDefault();
+          selectRegion(node.dataset.mapRegion);
+        }
+      });
     });
   }
 
@@ -336,7 +392,7 @@
 
   function edgeShouldLabel(edge) {
     if (edge.kind === 'region-member') return false;
-    if (edge.kind === 'regional-hub') return !state.activeRegion;
+    if (edge.kind === 'regional-hub') return false;
     return true;
   }
 
@@ -362,11 +418,55 @@
     return `
       <g class="${esc(className)}" tabindex="0" role="button" aria-label="${esc(label)}" data-node="${esc(node.id)}"${style}>
         <circle r="${radius}"></circle>
-        ${node.isRegion ? `<text class="region-flag" y="-28">${esc(regionInitials(node))}</text>` : ''}
-        <text y="-4">${esc(shortLabel(node.name))}</text>
-        <text class="small" y="17">${esc(node.isRegion ? node.location : node.role)}</text>
+        ${node.isRegion ? `<text class="region-flag" y="-32">${esc(regionInitials(node))}</text>` : ''}
+        ${nodeTextMarkup(node)}
       </g>
     `;
+  }
+
+  function nodeTextMarkup(node) {
+    const lines = node.isRegion ? regionNameLines(node.name) : makerNameLines(node.name);
+    const hasSmall = !node.isRegion || String(node.location || '').toLowerCase() !== String(node.name || '').toLowerCase();
+    const firstY = lines.length === 1 ? -3 : -11;
+    const text = `<text class="node-name" y="${firstY}">${lines.map((line, index) => (
+      `<tspan x="0" dy="${index === 0 ? 0 : 15}">${esc(line)}</tspan>`
+    )).join('')}</text>`;
+    const small = hasSmall ? `<text class="small" y="${lines.length === 1 ? 19 : 25}">${esc(node.isRegion ? compactLabel(node.location, 13) : compactLabel(node.role, 13))}</text>` : '';
+    return text + small;
+  }
+
+  function regionNameLines(value) {
+    const parts = String(value || '').split(/\s*\/\s*/).filter(Boolean);
+    if (parts.length > 1) return parts.slice(0, 2).map((part) => compactLabel(part, 10));
+    return wrapLabel(value, 11, 2);
+  }
+
+  function makerNameLines(value) {
+    return wrapLabel(value, 12, 2);
+  }
+
+  function wrapLabel(value, maxLength, maxLines) {
+    const words = String(value || '').replace(/\s*\/\s*/g, ' / ').split(/\s+/).filter(Boolean);
+    const lines = [];
+    words.forEach((word) => {
+      const current = lines[lines.length - 1] || '';
+      const next = current ? `${current} ${word}` : word;
+      if (!current || next.length <= maxLength) {
+        lines[lines.length - 1] = next;
+      } else if (lines.length < maxLines) {
+        lines.push(word);
+      } else {
+        lines[lines.length - 1] = `${lines[lines.length - 1]} ${word}`;
+      }
+    });
+    if (!lines.length) return [''];
+    return lines.slice(0, maxLines).map((line) => compactLabel(line, maxLength + 2));
+  }
+
+  function compactLabel(value, maxLength) {
+    const text = String(value || '');
+    if (text.length <= maxLength) return text;
+    return `${text.slice(0, Math.max(1, maxLength - 1))}…`;
   }
 
   function shortLabel(value) {
@@ -809,6 +909,7 @@
     state.role = 'all';
     state.query = '';
     roleFilter.value = 'all';
+    if (regionFilter) regionFilter.value = state.activeRegion ? state.activeRegion.id : 'all';
     searchInput.value = '';
     state.view = { x: 0, y: 0, scale: 1 };
     syncView();
@@ -830,7 +931,8 @@
     }
     if (!options.keepGraph) syncView();
     else {
-      renderRegions();
+      renderRegionFilter();
+      renderGeographyMap();
       renderNodeDetail(node);
       applyFocusState();
     }
@@ -839,13 +941,15 @@
   function selectEdge(edge) {
     state.activeEdgeKey = edgeKey(edge);
     state.activeNode = null;
-    renderRegions();
+    renderRegionFilter();
+    renderGeographyMap();
     renderEdgeDetail(edge);
     applyFocusState();
   }
 
   function syncView() {
-    renderRegions();
+    renderRegionFilter();
+    renderGeographyMap();
     resetButtons.forEach((button) => {
       button.hidden = !state.activeRegion;
     });
@@ -863,6 +967,16 @@
     if (state.activeNode) renderNodeDetail(state.activeNode);
     else if (state.activeRegion) renderRegionDetail(state.nodeById.get(`region:${state.activeRegion.id}`));
     else renderNodeDetail(state.nodeById.get('japan'));
+  }
+
+  if (regionFilter) {
+    regionFilter.addEventListener('change', () => {
+      if (regionFilter.value === 'all') {
+        resetToRegionalMap();
+      } else {
+        selectRegion(regionFilter.value);
+      }
+    });
   }
 
   roleFilter.addEventListener('change', () => {
@@ -886,6 +1000,7 @@
     state.role = 'all';
     state.query = '';
     roleFilter.value = 'all';
+    if (regionFilter) regionFilter.value = 'all';
     searchInput.value = '';
     state.view = { x: 0, y: 0, scale: 1 };
     syncView();
