@@ -580,37 +580,53 @@ p { margin: 0; }
   stroke: var(--accent);
   stroke-width: 3;
 }
-.graph-center text,
-.graph-node text {
-  text-anchor: middle;
-  dominant-baseline: middle;
-  font-weight: 900;
-  fill: var(--ink);
-  font-size: 15px;
+.node-label-box {
   pointer-events: none;
-  paint-order: stroke;
-  stroke: var(--paper);
-  stroke-width: 2.5px;
+  overflow: visible;
 }
-.graph-node .node-label {
-  display: block;
-  fill: var(--ink);
-  opacity: 1;
-  visibility: visible;
-}
-.graph-node .primary-label {
-  font-size: 14px;
-  line-height: 1;
+.node-html-label {
+  width: 108px;
+  height: 62px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3px;
+  color: var(--ink);
   font-weight: 950;
+  line-height: 1.02;
+  text-align: center;
+  text-shadow:
+    0 1px 0 var(--paper),
+    1px 0 0 var(--paper),
+    0 -1px 0 var(--paper),
+    -1px 0 0 var(--paper);
 }
-.graph-center text {
-  fill: var(--bg);
+.node-primary,
+.node-secondary {
+  display: -webkit-box;
+  max-width: 96px;
+  overflow: hidden;
+  overflow-wrap: anywhere;
+  -webkit-box-orient: vertical;
 }
-.graph-center .small,
-.graph-node .secondary-label {
-  font-size: 11px;
-  letter-spacing: .08em;
+.node-primary {
+  -webkit-line-clamp: 2;
+  font-size: 12px;
+}
+.node-secondary {
+  -webkit-line-clamp: 1;
+  color: var(--muted);
+  font-size: 9px;
+  letter-spacing: .06em;
   text-transform: uppercase;
+}
+.hub-node .node-html-label {
+  color: var(--bg);
+  text-shadow: none;
+}
+.hub-node .node-secondary {
+  color: color-mix(in srgb, var(--bg) 72%, transparent);
 }
 .graph-node {
   cursor: pointer;
@@ -641,16 +657,13 @@ p { margin: 0; }
 .graph-node.is-dimmed {
   opacity: .3;
 }
-.graph-node.is-dimmed text {
+.graph-node.is-dimmed .node-label-box {
   opacity: .55;
 }
 .hub-node circle {
   fill: var(--ink);
   stroke: var(--accent);
   stroke-width: 2.5;
-}
-.hub-node text {
-  fill: var(--bg);
 }
 .region-node circle {
   fill: color-mix(in srgb, var(--region-color, var(--accent)) 18%, var(--paper));
@@ -664,18 +677,11 @@ p { margin: 0; }
   fill: color-mix(in srgb, var(--region-color, var(--accent)) 30%, var(--paper));
   stroke: var(--region-color, var(--accent));
 }
-.region-node .region-flag {
-  fill: var(--region-color, var(--accent));
-  font-size: 11px;
-  stroke: var(--paper);
-  stroke-width: 3px;
-  letter-spacing: .08em;
+.region-node .node-primary {
+  font-size: 12.5px;
 }
-.region-node .primary-label {
-  font-size: 14px;
-}
-.region-node .secondary-label {
-  font-size: 10px;
+.region-node .node-secondary {
+  font-size: 9px;
 }
 .role-blacksmith {
   --role-color: #ff5a4f;

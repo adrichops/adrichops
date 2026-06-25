@@ -445,14 +445,16 @@
   }
 
   function nodeTextMarkup(node) {
-    const lines = node.isRegion ? regionNameLines(node.name) : makerNameLines(node.name);
-    const hasSmall = !node.isRegion || String(node.location || '').toLowerCase() !== String(node.name || '').toLowerCase();
-    const firstY = lines.length === 1 ? -7 : -15;
-    const text = lines.map((line, index) => (
-      `<text class="node-label primary-label" y="${firstY + index * 15}">${esc(line)}</text>`
-    )).join('');
-    const small = hasSmall ? `<text class="node-label secondary-label" y="${lines.length === 1 ? 19 : 24}">${esc(node.isRegion ? compactLabel(node.location, 13) : compactLabel(node.role, 13))}</text>` : '';
-    return text + small;
+    const primary = node.isHub ? 'Japan' : node.isRegion ? node.name : node.name;
+    const secondary = node.isHub ? 'Hub' : node.isRegion ? node.location : node.role;
+    return `
+      <foreignObject class="node-label-box" x="-54" y="-31" width="108" height="62">
+        <div xmlns="http://www.w3.org/1999/xhtml" class="node-html-label">
+          <span class="node-primary">${esc(primary)}</span>
+          <span class="node-secondary">${esc(secondary)}</span>
+        </div>
+      </foreignObject>
+    `;
   }
 
   function regionNameLines(value) {
