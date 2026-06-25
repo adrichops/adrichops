@@ -206,6 +206,16 @@ p { margin: 0; }
 .related-list { display:grid; gap: 8px; margin-top: 12px; }
 .related-list a { border: 1px solid var(--line); border-radius: 14px; padding: 12px; background: var(--paper); font-weight: 800; font-size: .88rem; overflow-wrap:anywhere; }
 
+.photo-page .collection-hero p { max-width: 760px; }
+.photo-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; align-items: start; }
+.photo-card { margin: 0; border: 1px solid var(--line); border-radius: var(--radius-sm); overflow: hidden; background: var(--paper); box-shadow: var(--soft-shadow); }
+.photo-link { display: block; background: var(--paper-2); }
+.photo-card img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; background: var(--paper-2); }
+.photo-card figcaption { display: grid; gap: 7px; padding: 13px 14px 14px; color: var(--muted); font-size: .74rem; font-weight: 750; line-height: 1.35; }
+.photo-card figcaption strong { color: var(--ink); font-size: .92rem; line-height: 1.1; }
+.photo-card figcaption a { color: var(--muted); text-decoration: underline; text-underline-offset: 3px; }
+.photo-card figcaption a:hover { color: var(--accent); }
+
 .finder { border: 1px solid var(--line); background: var(--paper); border-radius: var(--radius); padding: clamp(18px, 3vw, 28px); box-shadow: var(--shadow); }
 .finder-grid { display:grid; grid-template-columns: 360px minmax(0,1fr); gap: 24px; }
 .finder-form { display:grid; gap: 18px; }
@@ -320,7 +330,7 @@ p { margin: 0; }
   }
   .hero, .story-strip, .finder-grid, .roll-grid, .article-layout, .explore-layout { grid-template-columns: 1fr; }
   .article-sidebar, .deck-nav, .deck-preview { position: static; }
-  .entry-grid, .article-card-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
+  .entry-grid, .article-card-grid, .photo-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
   .finder-specs { grid-template-columns: repeat(2, minmax(0,1fr)); }
   .card-stage { min-height:auto; }
   .card-stack { display:flex; gap:14px; overflow-x:auto; min-height:auto; padding: 10px 6px 18px; scroll-snap-type:x mandatory; }
@@ -334,7 +344,7 @@ p { margin: 0; }
   .brand-logo { width: clamp(138px, 42vw, 188px); max-height: 32px; }
   .hero { padding-top: 28px; }
   h1 { font-size: clamp(2.6rem, 16vw, 4.6rem); }
-  .entry-grid, .article-card-grid, .maintenance-kit, .decision-box, .product-grid, .deck-nav, .article-gallery { grid-template-columns: 1fr; }
+  .entry-grid, .article-card-grid, .maintenance-kit, .decision-box, .product-grid, .deck-nav, .article-gallery, .photo-grid { grid-template-columns: 1fr; }
   .note-row { grid-template-columns: 1fr; gap: 8px; }
   .timeline-item, .roll-item { grid-template-columns: 1fr; }
   .finder-specs { grid-template-columns: 1fr; }
