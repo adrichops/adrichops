@@ -19,6 +19,7 @@
     nodeById: new Map(),
     activeRegion: null,
     activeNode: null,
+    activeEdgeKey: '',
     role: 'all',
     query: '',
     positions: new Map(),
@@ -37,6 +38,13 @@
   }[char]));
 
   const roleClass = (value) => String(value || 'node').toLowerCase().replace(/[^a-z0-9]+/g, '-');
+
+  function roleTokens(role) {
+    return String(role || 'node')
+      .split(/\s*(?:\/|,|&|\band\b)\s*/i)
+      .map(roleClass)
+      .filter(Boolean);
+  }
 
   function sourceMap() {
     return new Map((state.graph.sources || []).map((source) => [source.id, source]));
@@ -80,10 +88,11 @@
 
   function nodeMatches(node) {
     if (!node || node.isRegion || node.isHub) return true;
-    if (state.role !== 'all' && roleClass(node.role) !== state.role) return false;
+    if (state.role !== 'all' && !roleTokens(node.role).includes(state.role)) return false;
     const haystack = [
       node.name,
       node.role,
+      ...(node.aliases || []),
       node.regionName,
       node.specialty,
       ...(node.famousLines || [])
@@ -144,12 +153,12 @@
     const saved = state.positions.get(node.id);
     if (saved) return { ...node, x: saved.x, y: saved.y, vx: saved.vx || 0, vy: saved.vy || 0 };
 
-    const width = state.activeRegion ? 1700 : 1180;
-    const height = state.activeRegion ? 1100 : 760;
+    const width = state.activeRegion ? 1400 : 1180;
+    const height = state.activeRegion ? 920 : 760;
     if (node.id === 'japan' || node.isRegion && state.activeRegion && node.regionId === state.activeRegion.id) {
       return { ...node, x: width / 2, y: height / 2, vx: 0, vy: 0 };
     }
-    const radius = state.activeRegion ? 330 : 260;
+    const radius = state.activeRegion ? 360 : 260;
     const angle = -Math.PI / 2 + (Math.PI * 2 * index) / Math.max(total, 1);
     return {
       ...node,
@@ -198,13 +207,17 @@
     return `edge-${roleClass(edge.kind)} source-${roleClass(edge.sourceType || 'direct')} confidence-${roleClass(edge.confidence || 'standard')}`;
   }
 
+  function edgeKey(edge) {
+    return `${edge.from}:${edge.to}`;
+  }
+
   function renderGraph() {
     if (state.simulation) state.simulation.stop();
     cancelAnimationFrame(state.raf);
 
     const selection = graphSelection();
-    const width = state.activeRegion ? 1700 : 1180;
-    const height = state.activeRegion ? 1100 : 760;
+    const width = state.activeRegion ? 1400 : 1180;
+    const height = state.activeRegion ? 920 : 760;
     const nodes = selection.nodes.map((node, index) => seedPosition(node, index, selection.nodes.length));
     const nodeById = new Map(nodes.map((node) => [node.id, node]));
     const edges = selection.edges
@@ -212,6 +225,7 @@
       .filter((edge) => edge.source && edge.target);
 
     svg.setAttribute('viewBox', `0 0 ${width} ${height}`);
+    svg.classList.toggle('is-active-region', Boolean(state.activeRegion));
     svg.innerHTML = `
       <defs>
         <marker id="graph-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
@@ -219,8 +233,11 @@
         </marker>
       </defs>
       <g class="graph-viewport">
+        <g class="graph-hit-lines">
+          ${edges.map((edge) => edgeShouldLabel(edge) ? `<line class="graph-edge-hit" data-edge-hit="${esc(edgeKey(edge))}"></line>` : '').join('')}
+        </g>
         <g class="graph-lines">
-          ${edges.map((edge) => `<line class="${esc(edgeClass(edge))}" data-edge="${esc(edge.from)}:${esc(edge.to)}"${edge.kind !== 'region-member' && edge.kind !== 'regional-hub' ? ' marker-end="url(#graph-arrow)"' : ''}></line>`).join('')}
+          ${edges.map((edge) => `<line class="${esc(edgeClass(edge))}" data-edge="${esc(edgeKey(edge))}"${edge.kind !== 'region-member' && edge.kind !== 'regional-hub' ? ' marker-end="url(#graph-arrow)"' : ''}></line>`).join('')}
         </g>
         <g class="graph-labels">
           ${edges.map((edge) => edgeLabelMarkup(edge)).join('')}
@@ -244,18 +261,30 @@
       });
       enableDrag(group, node, nodes, edges);
     });
+    edges.filter(edgeShouldLabel).forEach((edge) => {
+      const key = edgeKey(edge);
+      svg.querySelectorAll(`[data-edge="${CSS.escape(key)}"], [data-edge-hit="${CSS.escape(key)}"], [data-edge-label="${CSS.escape(key)}"]`).forEach((element) => {
+        element.addEventListener('click', (event) => {
+          event.preventDefault();
+          event.stopPropagation();
+          selectEdge(edge);
+        });
+      });
+    });
 
     state.simulation = createSimulation(nodes, edges, width, height);
+    state.currentNodes = nodes;
+    state.currentEdges = edges;
     state.simulation.start();
   }
 
   function edgeLabelMarkup(edge) {
     if (!edgeShouldLabel(edge)) return '';
     const text = shortEdgeLabel(edge.label || edge.kind);
-    const width = Math.max(58, Math.min(184, text.length * 7.5 + 24));
+    const width = Math.max(72, Math.min(220, text.length * 8.4 + 28));
     return `
-      <g class="edge-label-wrap ${esc(edgeMetaClass(edge))}" data-edge-label="${esc(edge.from)}:${esc(edge.to)}">
-        <rect x="${-width / 2}" y="-12" width="${width}" height="24" rx="12"></rect>
+      <g class="edge-label-wrap ${esc(edgeMetaClass(edge))}" data-edge-label="${esc(edgeKey(edge))}">
+        <rect x="${-width / 2}" y="-15" width="${width}" height="30" rx="15"></rect>
         <text y="1">${esc(text)}</text>
       </g>
     `;
@@ -269,8 +298,8 @@
 
   function shortEdgeLabel(value) {
     const text = String(value || '').trim();
-    if (text.length <= 28) return text;
-    return `${text.slice(0, 26)}...`;
+    if (text.length <= 32) return text;
+    return `${text.slice(0, 30)}...`;
   }
 
   function nodeMarkup(node) {
@@ -279,10 +308,10 @@
       'graph-node',
       node.isHub ? 'hub-node' : '',
       node.isRegion ? 'region-node' : 'maker-node',
-      `role-${roleClass(node.role)}`,
+      ...roleTokens(node.role).map((role) => `role-${role}`),
       active ? 'is-active' : ''
     ].filter(Boolean).join(' ');
-    const radius = node.isHub ? 64 : node.isRegion ? 58 : 48;
+    const radius = node.isHub ? 70 : node.isRegion ? 68 : 58;
     const label = node.isHub ? 'Open regional map' : node.isRegion ? `Open ${node.name}` : `Open ${node.name}`;
     return `
       <g class="${esc(className)}" tabindex="0" role="button" aria-label="${esc(label)}" data-node="${esc(node.id)}">
@@ -300,14 +329,19 @@
   }
 
   function tick(nodes, edges) {
+    updateFocusClasses(nodes, edges);
     edges.forEach((edge) => {
-      const line = svg.querySelector(`[data-edge="${CSS.escape(`${edge.from}:${edge.to}`)}"]`);
+      const key = edgeKey(edge);
+      const line = svg.querySelector(`[data-edge="${CSS.escape(key)}"]`);
+      const hitLine = svg.querySelector(`[data-edge-hit="${CSS.escape(key)}"]`);
       if (!line) return;
-      line.setAttribute('x1', edge.source.x);
-      line.setAttribute('y1', edge.source.y);
-      line.setAttribute('x2', edge.target.x);
-      line.setAttribute('y2', edge.target.y);
-      const label = svg.querySelector(`[data-edge-label="${CSS.escape(`${edge.from}:${edge.to}`)}"]`);
+      [line, hitLine].filter(Boolean).forEach((edgeLine) => {
+        edgeLine.setAttribute('x1', edge.source.x);
+        edgeLine.setAttribute('y1', edge.source.y);
+        edgeLine.setAttribute('x2', edge.target.x);
+        edgeLine.setAttribute('y2', edge.target.y);
+      });
+      const label = svg.querySelector(`[data-edge-label="${CSS.escape(key)}"]`);
       if (label) {
         const midX = (edge.source.x + edge.target.x) / 2;
         const midY = (edge.source.y + edge.target.y) / 2;
@@ -326,6 +360,56 @@
       const group = svg.querySelector(`[data-node="${CSS.escape(node.id)}"]`);
       if (group) group.setAttribute('transform', `translate(${node.x} ${node.y})`);
     });
+  }
+
+  function updateFocusClasses(nodes, edges) {
+    const activeId = state.activeNode && !state.activeNode.isHub && !state.activeNode.isRegion ? state.activeNode.id : null;
+    const activeEdgeKey = state.activeEdgeKey;
+    const activeEdge = activeEdgeKey ? edges.find((edge) => edgeKey(edge) === activeEdgeKey) : null;
+    const connected = new Set(activeId ? [activeId] : activeEdge ? [activeEdge.from, activeEdge.to] : []);
+    if (activeId || activeEdge) {
+      edges.forEach((edge) => {
+        if (edge.kind === 'region-member') return;
+        if (activeId && edge.from === activeId) connected.add(edge.to);
+        if (activeId && edge.to === activeId) connected.add(edge.from);
+      });
+    }
+
+    const hasFocus = Boolean(activeId || activeEdge);
+    svg.classList.toggle('has-focused-node', hasFocus);
+    svg.classList.toggle('has-focused-item', hasFocus);
+    nodes.forEach((node) => {
+      const group = svg.querySelector(`[data-node="${CSS.escape(node.id)}"]`);
+      if (!group) return;
+      group.classList.toggle('is-active', Boolean(activeId && node.id === activeId));
+      group.classList.toggle('is-connected', Boolean(hasFocus && connected.has(node.id)));
+      group.classList.toggle('is-dimmed', Boolean(hasFocus && !connected.has(node.id) && !node.isRegion));
+    });
+
+    edges.forEach((edge) => {
+      const focused = Boolean(
+        edge.kind !== 'region-member' &&
+        (activeEdgeKey && edgeKey(edge) === activeEdgeKey || activeId && (edge.from === activeId || edge.to === activeId))
+      );
+      const key = edgeKey(edge);
+      const line = svg.querySelector(`[data-edge="${CSS.escape(key)}"]`);
+      const hitLine = svg.querySelector(`[data-edge-hit="${CSS.escape(key)}"]`);
+      const label = svg.querySelector(`[data-edge-label="${CSS.escape(key)}"]`);
+      [line, hitLine].filter(Boolean).forEach((edgeLine) => {
+        edgeLine.classList.toggle('is-focused', focused);
+        edgeLine.classList.toggle('is-dimmed', Boolean(hasFocus && !focused));
+        edgeLine.style.opacity = hasFocus ? (focused ? '1' : '0.16') : '';
+      });
+      if (label) {
+        label.classList.toggle('is-focused', focused);
+        label.classList.toggle('is-dimmed', Boolean(hasFocus && !focused));
+        label.style.opacity = state.activeRegion && hasFocus ? (focused ? '1' : '0') : '';
+      }
+    });
+  }
+
+  function applyFocusState() {
+    if (state.currentNodes && state.currentEdges) updateFocusClasses(state.currentNodes, state.currentEdges);
   }
 
   function createSimulation(nodes, edges, width, height) {
@@ -348,7 +432,7 @@
         const dx = target.x - source.x || 0.01;
         const dy = target.y - source.y || 0.01;
         const distance = Math.sqrt(dx * dx + dy * dy);
-        const desired = edge.kind === 'region-member' || edge.kind === 'regional-hub' ? (state.activeRegion ? 330 : 260) : 300;
+        const desired = edge.kind === 'region-member' || edge.kind === 'regional-hub' ? (state.activeRegion ? 360 : 260) : 330;
         const force = ((distance - desired) / distance) * (state.activeRegion ? 0.011 : 0.013) * alpha;
         const fx = dx * force;
         const fy = dy * force;
@@ -369,7 +453,7 @@
           const dx = b.x - a.x || 0.01;
           const dy = b.y - a.y || 0.01;
           const distanceSq = Math.max(dx * dx + dy * dy, 900);
-          const force = (a.isHub || b.isHub ? 7400 : state.activeRegion ? 18500 : 12800) / distanceSq * alpha;
+          const force = (a.isHub || b.isHub ? 7400 : state.activeRegion ? 24500 : 12800) / distanceSq * alpha;
           const distance = Math.sqrt(distanceSq);
           const fx = (dx / distance) * force;
           const fy = (dy / distance) * force;
@@ -609,6 +693,7 @@
           <h3>Role</h3>
           <p>${esc(node.role)} (${esc(node.regionName)})</p>
         </section>
+        ${(node.aliases || []).length ? `<section><h3>Also appears as</h3><div class="line-list">${node.aliases.map((alias) => `<span>${esc(alias)}</span>`).join('')}</div></section>` : ''}
         ${studentIds.size ? `<section><h3>Students</h3><div class="wiki-list">${[...studentIds].map((id) => wikiButton(state.nodeById.get(id))).join('')}</div></section>` : ''}
         ${teacherIds.size ? `<section><h3>Teachers</h3><div class="wiki-list">${[...teacherIds].map((id) => wikiButton(state.nodeById.get(id))).join('')}</div></section>` : ''}
         <section>
@@ -632,6 +717,31 @@
     renderSources(sources);
   }
 
+  function renderEdgeDetail(edge) {
+    const from = state.nodeById.get(edge.from);
+    const to = state.nodeById.get(edge.to);
+    const sources = [...new Set([...(edge.sourceIds || []), ...(from && from.sourceIds || []), ...(to && to.sourceIds || [])])];
+    detail.innerHTML = `
+      <article class="graph-note">
+        <h2>${esc(edge.label || edge.kind)}</h2>
+        <section>
+          <h3>Relationship</h3>
+          <p>${from ? wikiButton(from) : esc(edge.from)} to ${to ? wikiButton(to) : esc(edge.to)}</p>
+        </section>
+        <section>
+          <h3>Type</h3>
+          <p>${esc(edge.kind)}${edge.sourceType ? ` · ${esc(edge.sourceType)}` : ''}${edge.confidence ? ` · ${esc(edge.confidence)} confidence` : ''}</p>
+        </section>
+        <section>
+          <h3>Context</h3>
+          <p>${esc(edge.detail || 'Relationship context pending.')}</p>
+        </section>
+      </article>
+    `;
+    bindWikiLinks();
+    renderSources(sources);
+  }
+
   function renderSources(ids) {
     const byId = sourceMap();
     const sources = [...new Set(ids)].map((id) => byId.get(id)).filter(Boolean);
@@ -649,6 +759,7 @@
   function selectRegion(id) {
     state.activeRegion = state.regionById.get(id) || null;
     state.activeNode = state.activeRegion ? state.nodeById.get(`region:${state.activeRegion.id}`) : null;
+    state.activeEdgeKey = '';
     state.role = 'all';
     state.query = '';
     roleFilter.value = 'all';
@@ -660,6 +771,7 @@
   function selectNode(id, options = {}) {
     const node = state.nodeById.get(id);
     if (!node) return;
+    state.activeEdgeKey = '';
     if (node.id === 'japan') {
       state.activeRegion = null;
       state.activeNode = node;
@@ -674,7 +786,16 @@
     else {
       renderRegions();
       renderNodeDetail(node);
+      applyFocusState();
     }
+  }
+
+  function selectEdge(edge) {
+    state.activeEdgeKey = edgeKey(edge);
+    state.activeNode = null;
+    renderRegions();
+    renderEdgeDetail(edge);
+    applyFocusState();
   }
 
   function syncView() {
@@ -682,7 +803,7 @@
     roleFilter.hidden = !state.activeRegion;
     if (state.activeRegion) {
       title.textContent = state.activeRegion.name;
-      dek.textContent = 'Drag nodes, pan the canvas, or click a linked note to follow the maker trail.';
+      dek.textContent = 'Click a maker to reveal its relationship labels. Drag nodes or pan the canvas.';
     } else {
       title.textContent = 'Regional map';
       dek.textContent = 'Start with a regional node, then expand into people, workshops, relationships and famous lines.';
@@ -698,18 +819,21 @@
   roleFilter.addEventListener('change', () => {
     state.role = roleFilter.value;
     state.activeNode = state.activeRegion ? state.nodeById.get(`region:${state.activeRegion.id}`) : null;
+    state.activeEdgeKey = '';
     syncView();
   });
 
   searchInput.addEventListener('input', () => {
     state.query = searchInput.value.trim().toLowerCase();
     state.activeNode = state.activeRegion ? state.nodeById.get(`region:${state.activeRegion.id}`) : null;
+    state.activeEdgeKey = '';
     if (state.activeRegion) syncView();
   });
 
   resetButton.addEventListener('click', () => {
     state.activeRegion = null;
     state.activeNode = state.nodeById.get('japan');
+    state.activeEdgeKey = '';
     state.role = 'all';
     state.query = '';
     roleFilter.value = 'all';

@@ -316,8 +316,8 @@ p { margin: 0; }
   z-index: 2;
   top: 16px;
   left: 16px;
-  max-width: min(560px, calc(100% - 32px));
-  padding: 14px 16px;
+  max-width: min(460px, calc(100% - 32px));
+  padding: 10px 12px;
   border: 1px solid var(--line);
   border-radius: var(--radius-sm);
   background: color-mix(in srgb, var(--paper) 88%, transparent);
@@ -325,9 +325,9 @@ p { margin: 0; }
   box-shadow: var(--soft-shadow);
 }
 .graph-stage-head h2 {
-  font-size: clamp(1.05rem, 1.6vw, 1.7rem);
-  margin-top: 6px;
-  line-height: 1;
+  font-size: clamp(.9rem, 1.15vw, 1.18rem);
+  margin-top: 4px;
+  line-height: 1.05;
 }
 .maker-graph-svg {
   width: 100%;
@@ -353,11 +353,22 @@ p { margin: 0; }
   stroke: var(--line-strong);
   stroke-width: 2;
 }
+.graph-edge-hit {
+  stroke: transparent;
+  stroke-width: 26;
+  stroke-linecap: round;
+  cursor: pointer;
+  pointer-events: stroke;
+}
+.graph-edge-hit.is-focused {
+  stroke-width: 34;
+}
 .graph-lines line.graph-edge {
   stroke: color-mix(in srgb, var(--line-strong) 82%, transparent);
-  stroke-width: 1.8;
+  stroke-width: 1.55;
   stroke-linecap: round;
-  opacity: .82;
+  opacity: .62;
+  transition: opacity .18s ease, stroke-width .18s ease, stroke .18s ease;
 }
 .maker-graph-svg marker path {
   fill: color-mix(in srgb, var(--line-strong) 82%, transparent);
@@ -374,15 +385,19 @@ p { margin: 0; }
 .graph-lines .edge-worked-under,
 .graph-lines .edge-workshop-background {
   stroke: var(--accent);
-  stroke-width: 3.2;
-  opacity: .94;
+  stroke-width: 2.6;
+  opacity: .72;
 }
 .graph-lines .edge-smith-to-sharpener,
 .graph-lines .edge-brand-to-sharpener,
 .graph-lines .edge-line-collaboration,
-.graph-lines .edge-collaboration {
+.graph-lines .edge-collaboration,
+.graph-lines .edge-alias {
   stroke: color-mix(in srgb, var(--accent) 72%, var(--line-strong));
-  stroke-width: 2.7;
+  stroke-width: 2.35;
+}
+.graph-lines .edge-alias {
+  stroke: color-mix(in srgb, #18b7a2 82%, var(--line-strong));
 }
 .graph-lines .source-community,
 .graph-lines .source-forum,
@@ -394,6 +409,22 @@ p { margin: 0; }
   stroke-width: 1.8;
   opacity: .58;
 }
+.graph-lines .graph-edge.is-focused {
+  stroke-width: 4.2;
+  opacity: 1;
+}
+.maker-graph-svg.has-focused-item .graph-lines .graph-edge.is-focused {
+  opacity: 1 !important;
+  stroke-width: 4.2;
+}
+.graph-lines .graph-edge.is-dimmed {
+  opacity: .16;
+  stroke-width: 1;
+}
+.maker-graph-svg.has-focused-item .graph-lines .graph-edge.is-dimmed {
+  opacity: .16 !important;
+  stroke-width: 1;
+}
 .edge-label {
   fill: var(--muted);
   font-size: 12px;
@@ -404,16 +435,19 @@ p { margin: 0; }
   stroke-width: 5px;
 }
 .edge-label-wrap {
-  pointer-events: none;
+  cursor: pointer;
+  pointer-events: bounding-box;
+  opacity: 1;
+  transition: opacity .18s ease;
 }
 .edge-label-wrap rect {
-  fill: color-mix(in srgb, var(--paper) 88%, transparent);
-  stroke: color-mix(in srgb, var(--line-strong) 64%, transparent);
-  stroke-width: 1;
+  fill: color-mix(in srgb, var(--paper) 96%, transparent);
+  stroke: color-mix(in srgb, var(--line-strong) 74%, transparent);
+  stroke-width: 1.25;
 }
 .edge-label-wrap text {
   fill: var(--ink);
-  font-size: 10px;
+  font-size: 11px;
   font-weight: 950;
   letter-spacing: .03em;
   text-anchor: middle;
@@ -428,6 +462,17 @@ p { margin: 0; }
 .edge-label-wrap.confidence-low {
   opacity: .76;
 }
+.maker-graph-svg.is-active-region .edge-label-wrap {
+  opacity: 0;
+}
+.maker-graph-svg.is-active-region.has-focused-node .edge-label-wrap.is-focused,
+.maker-graph-svg.is-active-region.has-focused-item .edge-label-wrap.is-focused {
+  opacity: 1 !important;
+}
+.maker-graph-svg.is-active-region.has-focused-node .edge-label-wrap.is-dimmed,
+.maker-graph-svg.is-active-region.has-focused-item .edge-label-wrap.is-dimmed {
+  opacity: 0 !important;
+}
 .graph-center circle {
   fill: var(--ink);
   stroke: var(--accent);
@@ -439,15 +484,18 @@ p { margin: 0; }
   dominant-baseline: middle;
   font-weight: 900;
   fill: var(--ink);
-  font-size: 13px;
+  font-size: 15px;
   pointer-events: none;
+  paint-order: stroke;
+  stroke: var(--paper);
+  stroke-width: 3px;
 }
 .graph-center text {
   fill: var(--bg);
 }
 .graph-center .small,
 .graph-node .small {
-  font-size: 10px;
+  font-size: 11px;
   letter-spacing: .08em;
   text-transform: uppercase;
 }
@@ -459,7 +507,7 @@ p { margin: 0; }
   fill: var(--paper-2);
   stroke: var(--line-strong);
   stroke-width: 3;
-  transition: fill .18s ease, stroke .18s ease, transform .18s ease;
+  transition: fill .18s ease, stroke .18s ease, transform .18s ease, opacity .18s ease;
 }
 .graph-node:hover circle,
 .graph-node:focus-visible circle,
@@ -473,6 +521,15 @@ p { margin: 0; }
 }
 .graph-node.is-dragging circle {
   stroke-width: 4;
+}
+.graph-node.is-connected circle {
+  stroke-width: 4.5;
+}
+.graph-node.is-dimmed {
+  opacity: .3;
+}
+.graph-node.is-dimmed text {
+  opacity: .55;
 }
 .hub-node circle {
   fill: var(--ink);
@@ -493,6 +550,17 @@ p { margin: 0; }
 }
 .role-polisher {
   --role-color: #00a6c8;
+}
+.role-maker {
+  --role-color: #b49cff;
+}
+.role-sharpener.role-polisher,
+.role-sharpener-polisher {
+  --role-color: #18b7a2;
+}
+.role-maker.role-sharpener,
+.role-maker-sharpener {
+  --role-color: #b8a149;
 }
 .role-handle-maker {
   --role-color: #9b6a38;

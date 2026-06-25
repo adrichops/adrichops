@@ -54,7 +54,8 @@
         {
           "id": "mitsuaki-takada",
           "name": "Mitsuaki Takada",
-          "role": "Polisher",
+          "role": "Sharpener / Polisher",
+          "aliases": ["Yohei", "Hitohira Yohei", "Takada no Hamono"],
           "specialty": "Thin convex hamaguri-style grinding, Suiboku finish and modern Sakai polish.",
           "famousLines": ["Takada Suiboku", "Takada Reika", "Takada Ginsan"],
           "sourceIds": ["takada-official", "mtc-takada"]
@@ -113,11 +114,12 @@
         {
           "id": "kyuzo",
           "name": "Kyuzo",
-          "role": "Sharpener",
-          "specialty": "Hitohira-associated sharpening identity used by buyers to compare Tanaka, Nakagawa and Togashi collaborations.",
+          "role": "Sharpener / Polisher",
+          "aliases": ["Naohito Myojin", "Myojin"],
+          "specialty": "Hitohira-associated sharpening identity tied here to Naohito Myojin for buyer comparisons across Tanaka, Nakagawa and Togashi collaborations.",
           "famousLines": ["Tanaka x Kyuzo", "Nakagawa x Kyuzo", "Togashi x Kyuzo"],
-          "sourceIds": ["hitohira-official", "kkf-community"],
-          "caveat": "Kyuzo is treated as a buyer-facing sharpening identity; verify the exact artisan disclosure per listing."
+          "sourceIds": ["hitohira-official", "myojin-official", "kkf-community"],
+          "caveat": "Kyuzo is treated as a buyer-facing identity for Myojin; verify the exact artisan disclosure per listing."
         },
         {
           "id": "hitohira",
@@ -181,6 +183,16 @@
           "kind": "workshop-background",
           "label": "Ashi background",
           "detail": "Takada's profile is tied to years at Ashi Hamono before founding Takada no Hamono."
+        },
+        {
+          "from": "hitohira",
+          "to": "mitsuaki-takada",
+          "kind": "alias",
+          "label": "Yohei = Takada",
+          "detail": "Yohei is represented as a buyer-facing name tied to Mitsuaki Takada / Takada no Hamono context.",
+          "sourceType": "community",
+          "confidence": "medium",
+          "sourceIds": ["hitohira-official", "kkf-community"]
         },
         {
           "from": "konosuke",
@@ -248,6 +260,16 @@
           "sourceType": "community",
           "confidence": "medium",
           "sourceIds": ["hitohira-official", "kkf-community"]
+        },
+        {
+          "from": "kyuzo",
+          "to": "naohito-myojin",
+          "kind": "alias",
+          "label": "Kyuzo = Myojin",
+          "detail": "Kyuzo is tied to Naohito Myojin in this graph so the pseudonym resolves to the maker profile instead of staying isolated.",
+          "sourceType": "community",
+          "confidence": "medium",
+          "sourceIds": ["hitohira-official", "myojin-official", "kkf-community"]
         },
         {
           "from": "hitohira",
@@ -779,6 +801,7 @@
           "id": "naohito-myojin",
           "name": "Naohito Myojin",
           "role": "Polisher",
+          "aliases": ["Kyuzo", "Myojin"],
           "specialty": "High-end convex polishing, clean wide bevels and modern performance finishing.",
           "famousLines": ["Myojin Riki", "Tetsujin", "Myojin Cobalt Special"],
           "sourceIds": ["myojin-official", "kkf-community"]
@@ -1086,6 +1109,153 @@
           "sourceIds": ["tojiro-official"]
         }
       ]
+    },
+    {
+      "id": "international",
+      "name": "International",
+      "location": "Global",
+      "summary": "Source-pending maker nodes that matter to the buying conversation but should not be forced into a Japanese regional lineage.",
+      "notes": [
+        "Use this branch for non-Japanese or source-pending makers until stronger region and relationship sources are attached.",
+        "Relationships here should stay conservative and visibly caveated."
+      ],
+      "sourceIds": ["kkf-community", "reddit-truechefknives"],
+      "nodes": [
+        {
+          "id": "ivan-fonseca",
+          "name": "Ivan Fonseca",
+          "role": "Maker / Sharpener",
+          "specialty": "Contemporary maker/sharpener node added to the map for follow-up sourcing and relationship mapping.",
+          "famousLines": ["Ivan Fonseca knives"],
+          "sourceIds": ["kkf-community", "reddit-truechefknives"],
+          "caveat": "Added from Adrian's correction; public source trail and relationship edges still need stronger verification."
+        }
+      ],
+      "edges": []
+    },
+    {
+      "id": "aomori",
+      "name": "Aomori / Hirosaki",
+      "location": "Aomori",
+      "summary": "Northern Japan workshop context for decorative forged lines and export-visible Damascus work.",
+      "notes": [
+        "This branch starts with Nigara and should grow with exact smith, line and workshop relationships as sources are attached."
+      ],
+      "sourceIds": ["nigara-official", "kkf-community"],
+      "nodes": [
+        {
+          "id": "nigara-hamono",
+          "name": "Nigara Hamono",
+          "role": "Workshop",
+          "specialty": "Hirosaki workshop known for Anmon, Damascus, SG2/R2 and visually expressive forged lines.",
+          "famousLines": ["Anmon", "Tsuchime Damascus", "SG2/R2"],
+          "sourceIds": ["nigara-official", "kkf-community"]
+        },
+        {
+          "id": "tsuyoshi-yoshizawa",
+          "name": "Tsuyoshi Yoshizawa",
+          "role": "Blacksmith",
+          "specialty": "Nigara Hamono maker node used to separate workshop identity from individual smith context.",
+          "famousLines": ["Nigara Anmon", "Nigara Damascus"],
+          "sourceIds": ["nigara-official", "kkf-community"],
+          "caveat": "Keep exact line attribution tied to product listings."
+        }
+      ],
+      "edges": [
+        {
+          "from": "nigara-hamono",
+          "to": "tsuyoshi-yoshizawa",
+          "kind": "regional-hub",
+          "label": "Nigara workshop",
+          "detail": "Tsuyoshi Yoshizawa is represented inside the Nigara Hamono workshop context.",
+          "sourceType": "retailer",
+          "confidence": "medium",
+          "sourceIds": ["nigara-official", "kkf-community"]
+        }
+      ]
+    },
+    {
+      "id": "okayama",
+      "name": "Okayama / Niimi",
+      "location": "Okayama",
+      "summary": "Takeda-focused regional branch for highly distinctive forged geometry and AS buying context.",
+      "notes": [
+        "Takeda should be read as its own geometry and grind conversation rather than a generic carbon knife node."
+      ],
+      "sourceIds": ["takeda-official", "kkf-community", "reddit-truechefknives"],
+      "nodes": [
+        {
+          "id": "takeda-hamono",
+          "name": "Takeda Hamono",
+          "role": "Workshop",
+          "specialty": "Distinctive tall, thin, forged knives with kurouchi character and Aogami Super buyer lore.",
+          "famousLines": ["NAS", "Classic", "Takeda AS"],
+          "sourceIds": ["takeda-official", "kkf-community"]
+        },
+        {
+          "id": "shosui-takeda",
+          "name": "Shosui Takeda",
+          "role": "Blacksmith",
+          "specialty": "Blacksmith identity behind Takeda's highly recognizable profiles and forged geometry.",
+          "famousLines": ["Takeda NAS", "Takeda Classic"],
+          "sourceIds": ["takeda-official", "kkf-community"]
+        }
+      ],
+      "edges": [
+        {
+          "from": "takeda-hamono",
+          "to": "shosui-takeda",
+          "kind": "regional-hub",
+          "label": "Takeda workshop",
+          "detail": "Shosui Takeda is represented inside the Takeda Hamono workshop context.",
+          "sourceType": "retailer",
+          "confidence": "medium",
+          "sourceIds": ["takeda-official", "kkf-community"]
+        }
+      ]
+    },
+    {
+      "id": "kumamoto",
+      "name": "Kumamoto",
+      "location": "Kumamoto",
+      "summary": "Moritaka-focused branch for long-running carbon forging, AS lines and rustic workhorse discussions.",
+      "notes": [
+        "Moritaka is included as a regional specialist branch; expand with exact generations and line relationships as stronger sources are added."
+      ],
+      "sourceIds": ["moritaka-official", "kkf-community", "reddit-truechefknives"],
+      "nodes": [
+        {
+          "id": "moritaka-hamono",
+          "name": "Moritaka Hamono",
+          "role": "Workshop",
+          "specialty": "Kumamoto forge known for Aogami Super, carbon workhorse profiles and long-running family workshop context.",
+          "famousLines": ["Aogami Super", "Ishime", "Moritaka carbon knives"],
+          "sourceIds": ["moritaka-official", "kkf-community"]
+        }
+      ],
+      "edges": []
+    },
+    {
+      "id": "tokyo",
+      "name": "Tokyo",
+      "location": "Tokyo",
+      "summary": "Tokyo maker and retailer-brand context for highly opinionated carbon and professional house-line knives.",
+      "notes": [
+        "This branch starts with Teruyasu Fujiwara and should grow into Masamoto/Misono/Suisin retail context as exact sources are attached."
+      ],
+      "sourceIds": ["teruyasu-fujiwara-official", "kkf-community", "reddit-truechefknives"],
+      "nodes": [
+        {
+          "id": "teruyasu-fujiwara",
+          "name": "Teruyasu Fujiwara",
+          "role": "Blacksmith",
+          "aliases": ["TF", "Fujiwara"],
+          "specialty": "Highly distinctive carbon and stainless-clad knives with strong community discussion around grind variance and performance.",
+          "famousLines": ["Denka", "Maboroshi", "Nashiji"],
+          "sourceIds": ["teruyasu-fujiwara-official", "kkf-community", "reddit-truechefknives"]
+        }
+      ],
+      "edges": []
     }
   ],
   "sources": [
@@ -1318,6 +1488,26 @@
       "id": "korin-official",
       "label": "Korin Japanese Trading",
       "url": "https://www.korin.com/"
+    },
+    {
+      "id": "nigara-official",
+      "label": "Nigara Hamono official site",
+      "url": "https://nigara.jp/"
+    },
+    {
+      "id": "takeda-official",
+      "label": "Takeda Hamono official site",
+      "url": "https://takedahamono.com/"
+    },
+    {
+      "id": "moritaka-official",
+      "label": "Moritaka Hamono official site",
+      "url": "http://moritakahamono.com/"
+    },
+    {
+      "id": "teruyasu-fujiwara-official",
+      "label": "Teruyasu Fujiwara official site",
+      "url": "https://www.teruyasu.net/"
     },
     {
       "id": "kkf-community",
