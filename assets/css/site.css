@@ -593,11 +593,12 @@ p { margin: 0; }
   pointer-events: none;
   paint-order: stroke;
   stroke: var(--paper);
-  stroke-width: 3px;
+  stroke-width: 2.5px;
 }
 .graph-node .node-name {
-  font-size: 15px;
+  font-size: 14px;
   line-height: 1;
+  font-weight: 950;
 }
 .graph-center text {
   fill: var(--bg);
@@ -668,7 +669,7 @@ p { margin: 0; }
   letter-spacing: .08em;
 }
 .region-node .node-name {
-  font-size: 15px;
+  font-size: 14px;
 }
 .region-node .small {
   font-size: 10px;

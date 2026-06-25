@@ -427,10 +427,10 @@
   function nodeTextMarkup(node) {
     const lines = node.isRegion ? regionNameLines(node.name) : makerNameLines(node.name);
     const hasSmall = !node.isRegion || String(node.location || '').toLowerCase() !== String(node.name || '').toLowerCase();
-    const firstY = lines.length === 1 ? -4 : -14;
-    const text = `<text class="node-name" y="${firstY}">${lines.map((line, index) => (
-      `<tspan x="0" dy="${index === 0 ? 0 : 15}">${esc(line)}</tspan>`
-    )).join('')}</text>`;
+    const firstY = lines.length === 1 ? -7 : -15;
+    const text = lines.map((line, index) => (
+      `<text class="node-name" y="${firstY + index * 15}">${esc(line)}</text>`
+    )).join('');
     const small = hasSmall ? `<text class="small" y="${lines.length === 1 ? 19 : 24}">${esc(node.isRegion ? compactLabel(node.location, 13) : compactLabel(node.role, 13))}</text>` : '';
     return text + small;
   }
