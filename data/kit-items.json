@@ -15,7 +15,9 @@
         "owned reference",
         "all-purpose"
       ],
-      "learnUrl": "/reviews/tojiro-dp-210mm-gyuto-shortlist-review/"
+      "learnUrl": "/reviews/tojiro-dp-210mm-gyuto-shortlist-review/",
+      "imageUrl": "/assets/uploads/post-images/tojiro-dp-210mm-gyuto-shortlist-review.jpg",
+      "imageAlt": "Tojiro DP gyuto product photo"
     },
     {
       "id": "victorinox-fibrox-chef",
@@ -32,7 +34,9 @@
         "low fuss",
         "western"
       ],
-      "learnUrl": "/reviews/victorinox-fibrox-pro-8-inch-shortlist-review/"
+      "learnUrl": "/reviews/victorinox-fibrox-pro-8-inch-shortlist-review/",
+      "imageUrl": "/assets/uploads/post-images/victorinox-fibrox-pro-8-inch-shortlist-review.png",
+      "imageAlt": "Victorinox Fibrox chef knife photo"
     },
     {
       "id": "mac-mth80",
@@ -49,7 +53,9 @@
         "stainless",
         "all-purpose"
       ],
-      "learnUrl": "/reviews/mac-mth80-shortlist-review/"
+      "learnUrl": "/reviews/mac-mth80-shortlist-review/",
+      "imageUrl": "/assets/uploads/post-images/mac-mth80-shortlist-review.jpg",
+      "imageAlt": "MAC MTH-80 chef knife photo"
     },
     {
       "id": "global-g2",
@@ -66,7 +72,9 @@
         "stainless",
         "metal handle"
       ],
-      "learnUrl": "/reviews/global-g2-cooks-knife-shortlist-review/"
+      "learnUrl": "/reviews/global-g2-cooks-knife-shortlist-review/",
+      "imageUrl": "/assets/uploads/post-images/global-g2-cooks-knife-shortlist-review.jpg",
+      "imageAlt": "Global G-2 cook knife photo"
     },
     {
       "id": "takada-gyuto-210",
@@ -83,7 +91,9 @@
         "sakai",
         "refined"
       ],
-      "learnUrl": "/maker-spotlight/maker-spotlight-takada-no-hamono/"
+      "learnUrl": "/maker-spotlight/maker-spotlight-takada-no-hamono/",
+      "imageUrl": "/assets/uploads/knife-photos/240mm-gyuto.jpg",
+      "imageAlt": "Japanese gyuto knife photo"
     },
     {
       "id": "ashi-ginga-210",
@@ -100,7 +110,9 @@
         "sakai",
         "thin"
       ],
-      "learnUrl": "/maker-spotlight/maker-spotlight-ashi-hamono/"
+      "learnUrl": "/maker-spotlight/maker-spotlight-ashi-hamono/",
+      "imageUrl": "/assets/uploads/knife-photos/ashi-ginga-carbon-steel-santoku.jpg",
+      "imageAlt": "Ashi Ginga kitchen knife photo"
     },
     {
       "id": "yoshikane-240-gyuto",
@@ -117,7 +129,9 @@
         "workhorse",
         "240mm"
       ],
-      "learnUrl": "/maker-spotlight/maker-spotlight-yoshikane-hamono/"
+      "learnUrl": "/maker-spotlight/maker-spotlight-yoshikane-hamono/",
+      "imageUrl": "/assets/uploads/post-images/maker-spotlight-yoshikane-hamono.jpg",
+      "imageAlt": "Yoshikane gyuto photo"
     },
     {
       "id": "wakui-240-gyuto",
@@ -134,7 +148,9 @@
         "sanjo",
         "value"
       ],
-      "learnUrl": "/maker-spotlight/maker-spotlight-wakui/"
+      "learnUrl": "/maker-spotlight/maker-spotlight-wakui/",
+      "imageUrl": "/assets/uploads/knife-photos/hand-forged-chef-knife.jpg",
+      "imageAlt": "Hand-forged gyuto photo"
     },
     {
       "id": "vg10-nakiri-165",
@@ -151,7 +167,9 @@
         "low fuss",
         "flat profile"
       ],
-      "learnUrl": "/guides/nakiri-profile-guide/"
+      "learnUrl": "/guides/nakiri-profile-guide/",
+      "imageUrl": "/assets/uploads/knife-photos/hammered-nakiri.jpg",
+      "imageAlt": "Hammered nakiri knife photo"
     },
     {
       "id": "santoku-180",
@@ -168,7 +186,9 @@
         "compact",
         "all-purpose"
       ],
-      "learnUrl": "/guides/santoku-profile-guide/"
+      "learnUrl": "/guides/santoku-profile-guide/",
+      "imageUrl": "/assets/uploads/knife-photos/kai-shun-nagare-santoku.jpg",
+      "imageAlt": "Santoku knife photo"
     },
     {
       "id": "petty-150",
@@ -185,7 +205,9 @@
         "utility",
         "support knife"
       ],
-      "learnUrl": "/guides/petty-paring-utility-profile-guide/"
+      "learnUrl": "/guides/petty-paring-utility-profile-guide/",
+      "imageUrl": "/assets/uploads/knife-photos/kiritsuke-style-petty-knife.jpg",
+      "imageAlt": "Petty knife photo"
     },
     {
       "id": "paring-90",
@@ -202,7 +224,9 @@
         "small prep",
         "low fuss"
       ],
-      "learnUrl": "/guides/petty-paring-utility-profile-guide/"
+      "learnUrl": "/guides/petty-paring-utility-profile-guide/",
+      "imageUrl": "/assets/uploads/knife-photos/four-japanese-kitchen-knife-profiles.jpg",
+      "imageAlt": "Small Japanese kitchen knife photo"
     },
     {
       "id": "sujihiki-270",
@@ -219,7 +243,9 @@
         "protein",
         "long blade"
       ],
-      "learnUrl": "/guides/boning-fillet-slicer-cleaver-specialist-profiles/"
+      "learnUrl": "/guides/boning-fillet-slicer-cleaver-specialist-profiles/",
+      "imageUrl": "/assets/uploads/knife-photos/japanese-knife-profiles-side-angle.jpg",
+      "imageAlt": "Long Japanese slicing knife photo"
     },
     {
       "id": "bread-240",
@@ -236,7 +262,9 @@
         "bread",
         "utility"
       ],
-      "learnUrl": "/guides/bread-serrated-knife-profile-guide/"
+      "learnUrl": "/guides/bread-serrated-knife-profile-guide/",
+      "imageUrl": "/assets/uploads/post-images/bread-serrated-knife-profile-guide.jpg",
+      "imageAlt": "Bread knife photo"
     },
     {
       "id": "boning-150",
@@ -253,7 +281,9 @@
         "butchery",
         "tough"
       ],
-      "learnUrl": "/guides/boning-fillet-slicer-cleaver-specialist-profiles/"
+      "learnUrl": "/guides/boning-fillet-slicer-cleaver-specialist-profiles/",
+      "imageUrl": "/assets/uploads/knife-photos/german-japanese-and-chinese-chef-knives.jpg",
+      "imageAlt": "Kitchen knife set photo"
     },
     {
       "id": "chinese-cleaver-210",
@@ -270,7 +300,9 @@
         "high volume",
         "scoop"
       ],
-      "learnUrl": "/guides/boning-fillet-slicer-cleaver-specialist-profiles/"
+      "learnUrl": "/guides/boning-fillet-slicer-cleaver-specialist-profiles/",
+      "imageUrl": "/assets/uploads/knife-photos/german-japanese-and-chinese-chef-knives.jpg",
+      "imageAlt": "Chinese cleaver and kitchen knives photo"
     },
     {
       "id": "shapton-kuromaku-1000",
@@ -287,7 +319,9 @@
         "splash and go",
         "starter"
       ],
-      "learnUrl": "/reviews/shapton-stones-review-brief/"
+      "learnUrl": "/reviews/shapton-stones-review-brief/",
+      "imageUrl": "/assets/uploads/post-images/shapton-stones-review-brief.png",
+      "imageAlt": "Shapton sharpening stones image"
     },
     {
       "id": "shapton-kuromaku-2000",
@@ -304,7 +338,9 @@
         "refinement",
         "splash and go"
       ],
-      "learnUrl": "/reviews/shapton-stones-review-brief/"
+      "learnUrl": "/reviews/shapton-stones-review-brief/",
+      "imageUrl": "/assets/uploads/post-images/shapton-stones-review-brief.png",
+      "imageAlt": "Shapton sharpening stones image"
     },
     {
       "id": "king-deluxe-1000",
@@ -321,7 +357,9 @@
         "budget",
         "soaker"
       ],
-      "learnUrl": "/reviews/king-whetstones-review-brief/"
+      "learnUrl": "/reviews/king-whetstones-review-brief/",
+      "imageUrl": "/assets/uploads/post-images/king-whetstones-review-brief.png",
+      "imageAlt": "King whetstone image"
     },
     {
       "id": "king-combo-1000-6000",
@@ -338,7 +376,9 @@
         "budget",
         "soaker"
       ],
-      "learnUrl": "/guides/king-vs-shapton-starter-stones-guide/"
+      "learnUrl": "/guides/king-vs-shapton-starter-stones-guide/",
+      "imageUrl": "/assets/uploads/post-images/king-vs-shapton-starter-stones-guide.png",
+      "imageAlt": "King and Shapton whetstone image"
     },
     {
       "id": "leather-strop",
@@ -355,7 +395,9 @@
         "finishing",
         "maintenance"
       ],
-      "learnUrl": "/guides/stropping-and-deburring-clean-apex/"
+      "learnUrl": "/guides/stropping-and-deburring-clean-apex/",
+      "imageUrl": "/assets/uploads/knife-photos/strops-and-sharpening-pastes.jpg",
+      "imageAlt": "Leather strops and sharpening pastes photo"
     },
     {
       "id": "cork-deburring-block",
@@ -372,7 +414,9 @@
         "cheap",
         "starter"
       ],
-      "learnUrl": "/guides/stropping-and-deburring-clean-apex/"
+      "learnUrl": "/guides/stropping-and-deburring-clean-apex/",
+      "imageUrl": "/assets/img/strop-deburr.svg",
+      "imageAlt": "Deburring block illustration"
     },
     {
       "id": "ceramic-honing-rod",
@@ -389,7 +433,9 @@
         "honing",
         "careful"
       ],
-      "learnUrl": "/guides/honing-vs-sharpening-when-to-use-steel/"
+      "learnUrl": "/guides/honing-vs-sharpening-when-to-use-steel/",
+      "imageUrl": "/assets/uploads/post-images/honing-vs-sharpening-when-to-use-steel.jpg",
+      "imageAlt": "Honing rod photo"
     },
     {
       "id": "hasegawa-board",
@@ -406,7 +452,9 @@
         "edge friendly",
         "synthetic"
       ],
-      "learnUrl": "/reviews/hasegawa-cutting-board-review-brief/"
+      "learnUrl": "/reviews/hasegawa-cutting-board-review-brief/",
+      "imageUrl": "/assets/uploads/post-images/hasegawa-cutting-board-review-brief.jpg",
+      "imageAlt": "Hasegawa cutting board photo"
     },
     {
       "id": "asahi-board",
@@ -423,7 +471,9 @@
         "rubber",
         "low fuss"
       ],
-      "learnUrl": "/reviews/asahi-rubber-cutting-board-review-brief/"
+      "learnUrl": "/reviews/asahi-rubber-cutting-board-review-brief/",
+      "imageUrl": "/assets/uploads/post-images/asahi-rubber-cutting-board-review-brief.jpg",
+      "imageAlt": "Asahi rubber cutting board photo"
     },
     {
       "id": "hinoki-board",
@@ -440,7 +490,9 @@
         "wood",
         "hinoki"
       ],
-      "learnUrl": "/reviews/hinoki-cutting-board-review-brief/"
+      "learnUrl": "/reviews/hinoki-cutting-board-review-brief/",
+      "imageUrl": "/assets/uploads/post-images/hinoki-cutting-board-review-brief.png",
+      "imageAlt": "Hinoki cutting board image"
     },
     {
       "id": "blade-guard-240",
@@ -457,7 +509,9 @@
         "safety",
         "roll"
       ],
-      "learnUrl": "/guides/boards-storage-and-edge-life/"
+      "learnUrl": "/guides/boards-storage-and-edge-life/",
+      "imageUrl": "/assets/img/boards-storage.svg",
+      "imageAlt": "Blade guard and storage illustration"
     },
     {
       "id": "knife-roll",
@@ -474,7 +528,9 @@
         "travel",
         "safety"
       ],
-      "learnUrl": "/whats-in-my-roll/"
+      "learnUrl": "/whats-in-my-roll/",
+      "imageUrl": "/assets/img/knife-roll.svg",
+      "imageAlt": "Knife roll illustration"
     },
     {
       "id": "bench-scraper",
@@ -491,7 +547,9 @@
         "edge saver",
         "utensil"
       ],
-      "learnUrl": "/guides/boards-storage-and-edge-life/"
+      "learnUrl": "/guides/boards-storage-and-edge-life/",
+      "imageUrl": "/assets/uploads/post-images/boards-storage-and-edge-life.jpg",
+      "imageAlt": "Board and edge care photo"
     },
     {
       "id": "kitchen-tweezers",
@@ -508,7 +566,9 @@
         "plating",
         "line cook"
       ],
-      "learnUrl": "/whats-in-my-roll/"
+      "learnUrl": "/whats-in-my-roll/",
+      "imageUrl": "/assets/uploads/post-images/knife-maintenance-daily-routine.jpg",
+      "imageAlt": "Kitchen maintenance tools photo"
     },
     {
       "id": "fish-spatula",
@@ -525,7 +585,9 @@
         "protein",
         "delicate"
       ],
-      "learnUrl": "/whats-in-my-roll/"
+      "learnUrl": "/whats-in-my-roll/",
+      "imageUrl": "/assets/uploads/post-images/boards-storage-and-edge-life.jpg",
+      "imageAlt": "Kitchen prep tools photo"
     }
   ]
 }

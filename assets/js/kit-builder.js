@@ -19,6 +19,7 @@
   const clearBtn = q('[data-kit-clear]');
   const starterBtn = q('[data-kit-starter]');
   const exportBtn = q('[data-kit-export]');
+  const storyBtn = q('[data-kit-story-export]');
   const copyBtn = q('[data-kit-copy]');
   const steelBuckets = [
     ['all', 'All steels/materials'],
@@ -65,6 +66,11 @@
       ['Steel/material', item.steelType || '—'],
       ['Handle', item.handleType || '—']
     ];
+  }
+
+  function itemImage(item, className = 'kit-item-image') {
+    if (!item.imageUrl) return '';
+    return `<figure class="${className}"><img src="${esc(item.imageUrl)}" alt="${esc(item.imageAlt || item.name)}" loading="lazy"></figure>`;
   }
 
   function loadSaved() {
@@ -158,6 +164,7 @@
     }
     return `<article class="kit-slot-card filled ${active ? 'active' : ''}" data-slot-drop="${index}" data-slot-card="${index}" data-slot-drag="${index}" draggable="true" aria-label="Slot ${index + 1}: ${esc(item.name)}">
       <div class="kit-slot-head"><span class="slot-number">Slot ${String(index + 1).padStart(2, '0')} · ${esc(typeLabel(item))}</span><span class="drag-badge">Drag to move</span></div>
+      ${itemImage(item, 'kit-item-image slot-image')}
       <div><strong>${esc(item.name)}</strong><p>${esc(item.bestFor || '')}</p></div>
       <span class="kit-attributes">${itemMeta(item).map(([label, value]) => `<em>${esc(label)}: ${esc(value)}</em>`).join('')}</span>
       <div class="slot-actions"><button class="button small" type="button" data-select-slot="${index}">${active ? 'Active slot' : 'Select'}</button><button class="button small ghost" type="button" data-remove-slot="${index}">Remove</button></div>
@@ -174,6 +181,7 @@
       const selected = slots.includes(item.id);
       return `<article class="kit-library-card ${selected ? 'selected' : ''}" data-library-card="${esc(item.id)}" data-library-drag="${esc(item.id)}" draggable="true" aria-label="${esc(item.name)}">
         <div class="kit-card-top"><span>${esc(typeLabel(item))}</span><span>${esc(lengthLabel(item))}</span></div>
+        ${itemImage(item)}
         <h3>${esc(item.name)}</h3>
         <p>${esc(item.bestFor || '')}</p>
         <dl>${itemMeta(item).map(([label, value]) => `<div><dt>${esc(label)}</dt><dd>${esc(value)}</dd></div>`).join('')}</dl>
@@ -194,16 +202,8 @@
     const stats = kitStats();
     const empty = SLOT_COUNT - stats.selected.length;
     summaryEl.innerHTML = `<div><span>Cards</span><strong>${stats.selected.length}/${SLOT_COUNT}</strong></div><div><span>Knives</span><strong>${stats.knives}</strong></div><div><span>Stones</span><strong>${stats.stones}</strong></div><div><span>Strops</span><strong>${stats.strops}</strong></div><div><span>Boards</span><strong>${stats.boards}</strong></div><div><span>Open slots</span><strong>${empty}</strong></div>`;
-    const notes = [];
-    if (stats.selected.length === 0) notes.push('Start with one main knife, one small prep knife, one 1000 grit stone, a strop or deburring tool, and a board that does not hate your edge.');
-    if (stats.knives > 5) notes.push('That is a lot of blades. Very cool, very suspicious. Make sure each knife has a job.');
-    if (stats.knives && !stats.stones) notes.push('Add at least one 1000 grit stone. Sharp knives without sharpening are temporary knives.');
-    if (stats.knives && !stats.strops) notes.push('Add a strop or deburring block for cleaner edges after stone work.');
-    if (stats.knives && !stats.boards) notes.push('Add a soft board. Edge life starts where the knife hits the surface.');
-    if (stats.knives && !stats.storage) notes.push('Add guards, sayas or a roll. Sharp loose steel in a drawer is slapstick until it is not.');
-    if (stats.steels.length > 3) notes.push('You are mixing a lot of steel types. That is fine, but maintenance expectations will vary.');
-    if (!notes.length) notes.push('Balanced kit. The knives have support gear, which is usually where good ownership actually starts.');
-    statusEl.innerHTML = notes.map((note) => `<p>${esc(note)}</p>`).join('');
+    statusEl.innerHTML = '';
+    statusEl.hidden = true;
   }
 
   function nextOpenSlot(fromIndex = activeSlot) {
@@ -269,6 +269,183 @@
     link.download = 'adrichops-kit.json';
     link.click();
     URL.revokeObjectURL(link.href);
+  }
+
+  function loadCanvasImage(src) {
+    return new Promise((resolve) => {
+      if (!src) {
+        resolve(null);
+        return;
+      }
+      let settled = false;
+      const finish = (image) => {
+        if (settled) return;
+        settled = true;
+        resolve(image);
+      };
+      const image = new Image();
+      image.onload = () => finish(image);
+      image.onerror = () => finish(null);
+      image.src = src;
+      setTimeout(() => finish(null), 3000);
+    });
+  }
+
+  function roundRect(ctx, x, y, width, height, radius) {
+    const r = Math.min(radius, width / 2, height / 2);
+    ctx.beginPath();
+    ctx.moveTo(x + r, y);
+    ctx.arcTo(x + width, y, x + width, y + height, r);
+    ctx.arcTo(x + width, y + height, x, y + height, r);
+    ctx.arcTo(x, y + height, x, y, r);
+    ctx.arcTo(x, y, x + width, y, r);
+    ctx.closePath();
+  }
+
+  function drawWrappedText(ctx, text, x, y, maxWidth, lineHeight, maxLines = 2) {
+    const words = String(text || '').split(/\s+/).filter(Boolean);
+    const lines = [];
+    let line = '';
+    words.forEach((word) => {
+      const test = line ? `${line} ${word}` : word;
+      if (ctx.measureText(test).width <= maxWidth || !line) {
+        line = test;
+      } else {
+        lines.push(line);
+        line = word;
+      }
+    });
+    if (line) lines.push(line);
+    const visible = lines.slice(0, maxLines);
+    if (lines.length > maxLines && visible.length) visible[visible.length - 1] = `${visible[visible.length - 1].replace(/[.,;:!?]+$/, '')}...`;
+    visible.forEach((row, index) => ctx.fillText(row, x, y + index * lineHeight));
+    return visible.length * lineHeight;
+  }
+
+  function drawCoverImage(ctx, image, x, y, width, height) {
+    if (!image) return;
+    const sourceRatio = image.width / image.height;
+    const targetRatio = width / height;
+    let sx = 0;
+    let sy = 0;
+    let sw = image.width;
+    let sh = image.height;
+    if (sourceRatio > targetRatio) {
+      sw = image.height * targetRatio;
+      sx = (image.width - sw) / 2;
+    } else {
+      sh = image.width / targetRatio;
+      sy = (image.height - sh) / 2;
+    }
+    ctx.drawImage(image, sx, sy, sw, sh, x, y, width, height);
+  }
+
+  async function downloadStoryExport() {
+    if (storyBtn) {
+      storyBtn.disabled = true;
+      storyBtn.textContent = 'Exporting...';
+    }
+    const selected = slots.map((id, index) => ({ index, item: itemById(id) })).filter((entry) => entry.item);
+    if (document.fonts && document.fonts.ready) await document.fonts.ready;
+    const canvas = document.createElement('canvas');
+    canvas.width = 1080;
+    canvas.height = 1920;
+    const ctx = canvas.getContext('2d');
+    const images = await Promise.all(selected.map(({ item }) => loadCanvasImage(item.imageUrl)));
+
+    ctx.fillStyle = '#0f0f0d';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    ctx.fillStyle = '#f5eee3';
+    ctx.font = '900 92px Montserrat, Arial, sans-serif';
+    ctx.fillText('ADRIC', 72, 122);
+    ctx.fillStyle = '#ff4a43';
+    ctx.fillText('HOPS', 380, 122);
+    ctx.fillStyle = '#f5eee3';
+    ctx.font = '900 112px Montserrat, Arial, sans-serif';
+    ctx.fillText('My knife kit', 72, 252);
+    ctx.fillStyle = '#bdb4a8';
+    ctx.font = '700 34px Montserrat, Arial, sans-serif';
+    ctx.fillText(`${selected.length}/${SLOT_COUNT} slots built in the Adrichops kit builder`, 76, 312);
+
+    if (!selected.length) {
+      ctx.strokeStyle = 'rgba(245,238,227,.22)';
+      ctx.lineWidth = 3;
+      roundRect(ctx, 72, 430, 936, 420, 34);
+      ctx.stroke();
+      ctx.fillStyle = '#f5eee3';
+      ctx.font = '900 64px Montserrat, Arial, sans-serif';
+      drawWrappedText(ctx, 'No kit selected yet.', 118, 575, 820, 72, 2);
+      ctx.fillStyle = '#bdb4a8';
+      ctx.font = '700 34px Montserrat, Arial, sans-serif';
+      drawWrappedText(ctx, 'Add knives and tools, then export again.', 118, 720, 760, 44, 2);
+    } else {
+      const cardW = 444;
+      const cardH = 246;
+      const gapX = 42;
+      const gapY = 32;
+      const startX = 72;
+      const startY = 400;
+      selected.slice(0, 10).forEach(({ index, item }, position) => {
+        const col = position % 2;
+        const row = Math.floor(position / 2);
+        const x = startX + col * (cardW + gapX);
+        const y = startY + row * (cardH + gapY);
+        roundRect(ctx, x, y, cardW, cardH, 28);
+        ctx.fillStyle = '#191715';
+        ctx.fill();
+        ctx.strokeStyle = 'rgba(245,238,227,.18)';
+        ctx.lineWidth = 2;
+        ctx.stroke();
+
+        ctx.save();
+        roundRect(ctx, x + 18, y + 18, 150, 102, 18);
+        ctx.clip();
+        ctx.fillStyle = '#26231f';
+        ctx.fillRect(x + 18, y + 18, 150, 102);
+        drawCoverImage(ctx, images[position], x + 18, y + 18, 150, 102);
+        ctx.restore();
+
+        ctx.fillStyle = '#ff4a43';
+        ctx.font = '900 26px Montserrat, Arial, sans-serif';
+        ctx.fillText(String(index + 1).padStart(2, '0'), x + 188, y + 46);
+        ctx.fillStyle = '#f5eee3';
+        ctx.font = '900 34px Montserrat, Arial, sans-serif';
+        drawWrappedText(ctx, item.name, x + 188, y + 86, 220, 36, 2);
+        ctx.fillStyle = '#bdb4a8';
+        ctx.font = '800 23px Montserrat, Arial, sans-serif';
+        drawWrappedText(ctx, `${item.profile || item.category} · ${item.edgeLengthMm ? `${item.edgeLengthMm}mm` : item.category}`, x + 22, y + 162, 390, 30, 2);
+        ctx.fillStyle = '#f5eee3';
+        ctx.font = '800 22px Montserrat, Arial, sans-serif';
+        drawWrappedText(ctx, item.steelType || item.handleType || '', x + 22, y + 218, 390, 28, 1);
+      });
+    }
+
+    ctx.fillStyle = '#bdb4a8';
+    ctx.font = '800 28px Montserrat, Arial, sans-serif';
+    ctx.fillText('adrichops.pages.dev/kit-builder', 72, 1848);
+    ctx.fillStyle = '#ff4a43';
+    ctx.fillRect(72, 1872, 936, 8);
+
+    canvas.toBlob((blob) => {
+      if (!blob) {
+        if (storyBtn) {
+          storyBtn.disabled = false;
+          storyBtn.textContent = 'Export failed';
+          setTimeout(() => { storyBtn.textContent = 'Export Story PNG'; }, 1400);
+        }
+        return;
+      }
+      const link = document.createElement('a');
+      link.href = URL.createObjectURL(blob);
+      link.download = 'adrichops-kit-story.png';
+      link.click();
+      setTimeout(() => URL.revokeObjectURL(link.href), 1200);
+      if (storyBtn) {
+        storyBtn.disabled = false;
+        storyBtn.textContent = 'Story downloaded';
+        setTimeout(() => { storyBtn.textContent = 'Export Story PNG'; }, 1400);
+      }
+    }, 'image/png');
   }
 
   async function copySummary() {
@@ -384,6 +561,7 @@
   clearBtn.addEventListener('click', clearKit);
   starterBtn.addEventListener('click', starterKit);
   exportBtn.addEventListener('click', downloadExport);
+  if (storyBtn) storyBtn.addEventListener('click', downloadStoryExport);
   copyBtn.addEventListener('click', copySummary);
 
   function renderAll() {
