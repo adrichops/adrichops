@@ -442,8 +442,12 @@
       "verdict": "Beautiful cutters, not beater knives",
       "summary": "An expanded guide to Mitsuaki Takada, the Sakai sharpener whose thin convex knives sit between performance tool and functional art.",
       "deck": "Takada no Hamono is where the knife internet gets quiet for a second: thin hamaguri-style geometry, immaculate polishing, scarce stock, and a very real question about whether you cook carefully enough to deserve it.",
-      "heroImage": "assets/img/maker-takada.svg",
-      "heroAlt": "Minimal maker spotlight illustration for Takada no Hamono",
+      "heroImage": "assets/uploads/takada-making.jpg",
+      "heroAlt": "Mitsuaki Takada working at Takada no Hamono",
+      "imageCaption": "Mitsuaki Takada in the workshop.",
+      "imageCredit": "© TAKADA no HAMONO",
+      "imageCreditUrl": "http://www.takadanohamono.com/profile.html",
+      "imageFit": "contain",
       "pullQuote": "A Takada is a thin, polished Sakai cutter. Treat it like a race bike, not a rental scooter.",
       "specs": {
         "Region": "Sakai, Osaka",
@@ -458,7 +462,15 @@
         "Treat maker appreciation as a reason to use and maintain the knife, not to make it untouchable."
       ],
       "products": [],
-      "gallery": [],
+      "gallery": [
+        {
+          "src": "assets/uploads/takada-mitsuaki-t-logo.gif",
+          "alt": "Mitsuaki-T logo from Takada no Hamono",
+          "caption": "Mitsuaki-T brand mark from Takada no Hamono.",
+          "credit": "© TAKADA no HAMONO",
+          "creditUrl": "http://www.takadanohamono.com/mitsuaki-t.html"
+        }
+      ],
       "sourceTrail": [
         {
           "name": "TAKADA no HAMONO profile",

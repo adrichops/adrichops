@@ -20,6 +20,19 @@
   const starterBtn = q('[data-kit-starter]');
   const exportBtn = q('[data-kit-export]');
   const copyBtn = q('[data-kit-copy]');
+  const steelBuckets = [
+    ['all', 'All steels/materials'],
+    ['vg10', 'VG10'],
+    ['ginsan', 'Ginsan'],
+    ['aeb-l', 'AEB-L'],
+    ['white', 'White steel'],
+    ['blue', 'Blue steel'],
+    ['skd', 'SKD'],
+    ['stainless', 'Stainless'],
+    ['ceramic', 'Ceramic / stone'],
+    ['synthetic', 'Synthetic board'],
+    ['leather', 'Leather / strop']
+  ];
 
   let items = [];
   let activeSlot = 0;
@@ -71,38 +84,66 @@
 
   function populateFilters() {
     const categories = [...new Set(items.map((item) => item.category).filter(Boolean))].sort();
-    const profiles = [...new Set(items.map((item) => item.profile).filter(Boolean))].sort();
-    const steelBuckets = [
-      ['all', 'All steels/materials'],
-      ['vg10', 'VG10'],
-      ['ginsan', 'Ginsan'],
-      ['aeb-l', 'AEB-L'],
-      ['white', 'White steel'],
-      ['blue', 'Blue steel'],
-      ['skd', 'SKD'],
-      ['stainless', 'Stainless'],
-      ['ceramic', 'Ceramic / stone'],
-      ['synthetic', 'Synthetic board'],
-      ['leather', 'Leather / strop']
-    ];
     categoryEl.innerHTML = '<option value="all">All categories</option>' + categories.map((cat) => `<option value="${esc(cat)}">${esc(cat)}</option>`).join('');
-    profileEl.innerHTML = '<option value="all">All profiles</option>' + profiles.map((profile) => `<option value="${esc(profile)}">${esc(profile)}</option>`).join('');
-    steelEl.innerHTML = steelBuckets.map(([value, label]) => `<option value="${esc(value)}">${esc(label)}</option>`).join('');
+    refreshFilterOptions();
+  }
+
+  function queryCategory(query) {
+    const normalized = query.trim().toLowerCase();
+    const aliases = {
+      knives: 'knife',
+      knife: 'knife',
+      stones: 'stone',
+      stone: 'stone',
+      strops: 'strop',
+      strop: 'strop',
+      boards: 'board',
+      board: 'board',
+      storage: 'storage',
+      utensils: 'utensil',
+      utensil: 'utensil'
+    };
+    return aliases[normalized] || '';
+  }
+
+  function effectiveCategory(query = (searchEl.value || '').trim().toLowerCase()) {
+    return categoryEl.value !== 'all' ? categoryEl.value : queryCategory(query);
+  }
+
+  function itemMatches(item, { query, category, profile, steel }, ignore = '') {
+    const exactCategoryQuery = queryCategory(query);
+    const categoryOk = ignore === 'category' || !category || category === 'all' || item.category === category;
+    const profileOk = ignore === 'profile' || profile === 'all' || item.profile === profile;
+    const steelOk = ignore === 'steel' || steel === 'all' || String(item.steelType || '').toLowerCase().includes(steel);
+    const hay = [item.name, item.category, item.profile, item.steelType, item.handleType, item.bestFor, item.maintenance, ...(item.tags || [])].join(' ').toLowerCase();
+    const queryOk = !query || (exactCategoryQuery && item.category === exactCategoryQuery) || hay.includes(query);
+    return categoryOk && profileOk && steelOk && queryOk;
+  }
+
+  function setSelectOptions(select, options, fallbackLabel, currentValue) {
+    const optionHtml = options.map(([value, label]) => `<option value="${esc(value)}">${esc(label)}</option>`).join('');
+    select.innerHTML = `<option value="all">${esc(fallbackLabel)}</option>${optionHtml}`;
+    select.value = options.some(([value]) => value === currentValue) ? currentValue : 'all';
+  }
+
+  function refreshFilterOptions() {
+    const query = (searchEl.value || '').trim().toLowerCase();
+    const category = effectiveCategory(query) || 'all';
+    const profile = profileEl.value || 'all';
+    const steel = steelEl.value || 'all';
+    const state = { query, category, profile, steel };
+    const profiles = [...new Set(items.filter((item) => itemMatches(item, state, 'profile')).map((item) => item.profile).filter(Boolean))].sort();
+    const availableSteels = steelBuckets.slice(1).filter(([value]) => items.some((item) => itemMatches(item, state, 'steel') && String(item.steelType || '').toLowerCase().includes(value)));
+    setSelectOptions(profileEl, profiles.map((value) => [value, value]), 'All profiles', profile);
+    setSelectOptions(steelEl, availableSteels, 'All steels/materials', steel);
   }
 
   function filteredItems() {
     const query = (searchEl.value || '').trim().toLowerCase();
-    const category = categoryEl.value || 'all';
+    const category = effectiveCategory(query) || 'all';
     const profile = profileEl.value || 'all';
     const steel = steelEl.value || 'all';
-    return items.filter((item) => {
-      const hay = [item.name, item.category, item.profile, item.steelType, item.handleType, item.bestFor, item.maintenance, ...(item.tags || [])].join(' ').toLowerCase();
-      const categoryOk = category === 'all' || item.category === category;
-      const profileOk = profile === 'all' || item.profile === profile;
-      const steelOk = steel === 'all' || String(item.steelType || '').toLowerCase().includes(steel);
-      const queryOk = !query || hay.includes(query);
-      return categoryOk && profileOk && steelOk && queryOk;
-    });
+    return items.filter((item) => itemMatches(item, { query, category, profile, steel }));
   }
 
   function renderSlotCard(index) {
@@ -262,21 +303,24 @@
       event.dataTransfer.setData('text/plain', `kit-item:${library.dataset.libraryDrag}`);
       event.dataTransfer.effectAllowed = 'copy';
       library.classList.add('dragging');
+      root.classList.add('is-dragging');
       return;
     }
     if (slot) {
       event.dataTransfer.setData('text/plain', `kit-slot:${slot.dataset.slotDrag}`);
       event.dataTransfer.effectAllowed = 'move';
       slot.classList.add('dragging');
+      root.classList.add('is-dragging');
     }
   });
 
   root.addEventListener('dragend', () => {
     root.querySelectorAll('.dragging, .drag-over').forEach((el) => el.classList.remove('dragging', 'drag-over'));
+    root.classList.remove('is-dragging');
   });
 
   root.addEventListener('dragover', (event) => {
-    const drop = event.target.closest('[data-slot-drop]');
+    const drop = event.target.closest('[data-slot-drop]') || event.target.closest('[data-kit-drop-zone]');
     if (!drop) return;
     event.preventDefault();
     event.dataTransfer.dropEffect = 'move';
@@ -284,17 +328,19 @@
   });
 
   root.addEventListener('dragleave', (event) => {
-    const drop = event.target.closest('[data-slot-drop]');
+    const drop = event.target.closest('[data-slot-drop]') || event.target.closest('[data-kit-drop-zone]');
     if (drop && !drop.contains(event.relatedTarget)) drop.classList.remove('drag-over');
   });
 
   root.addEventListener('drop', (event) => {
-    const drop = event.target.closest('[data-slot-drop]');
+    const slotDrop = event.target.closest('[data-slot-drop]');
+    const drop = slotDrop || event.target.closest('[data-kit-drop-zone]');
     if (!drop) return;
     event.preventDefault();
-    const targetIndex = Number(drop.dataset.slotDrop);
+    const targetIndex = slotDrop ? Number(slotDrop.dataset.slotDrop) : nextOpenSlot(activeSlot - 1);
     const payload = dragPayload(event);
     setDropState(null, false);
+    root.classList.remove('is-dragging');
     if (!payload || Number.isNaN(targetIndex)) return;
     if (payload.type === 'kit-item') {
       addItem(payload.value, targetIndex);
@@ -334,7 +380,7 @@
     }
   });
 
-  [searchEl, categoryEl, profileEl, steelEl].forEach((control) => control.addEventListener('input', renderLibrary));
+  [searchEl, categoryEl, profileEl, steelEl].forEach((control) => control.addEventListener('input', renderAll));
   clearBtn.addEventListener('click', clearKit);
   starterBtn.addEventListener('click', starterKit);
   exportBtn.addEventListener('click', downloadExport);
@@ -342,6 +388,7 @@
 
   function renderAll() {
     renderSlots();
+    refreshFilterOptions();
     renderLibrary();
     renderSummary();
   }
