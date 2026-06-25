@@ -190,6 +190,21 @@
           "caveat": "Community-heavy node: check exact retailer and line attribution before treating this as a buying claim."
         },
         {
+          "id": "kiyoshi-kato",
+          "name": "Kiyoshi Kato",
+          "role": "Blacksmith",
+          "specialty": "Sakai honyaki and traditional carbon forging reference point, separate from Echizen's Yoshimi Kato.",
+          "famousLines": [
+            "Kiyoshi Kato honyaki",
+            "Sakai honyaki"
+          ],
+          "sourceIds": [
+            "honyaki-reference",
+            "kkf-community"
+          ],
+          "caveat": "Added as a named Sakai honyaki reference; verify exact knife listings before making product-specific attribution."
+        },
+        {
           "id": "tadokoro-hamono",
           "name": "Tadokoro Hamono",
           "role": "Sharpener",
@@ -396,6 +411,19 @@
           ]
         },
         {
+          "from": "kiyoshi-kato",
+          "to": "kenji-togashi",
+          "kind": "regional-peer",
+          "label": "Sakai honyaki context",
+          "detail": "Kiyoshi Kato is mapped beside Togashi as a Sakai honyaki reference point, not as a claimed shop relationship.",
+          "sourceType": "reference",
+          "confidence": "medium",
+          "sourceIds": [
+            "honyaki-reference",
+            "kkf-community"
+          ]
+        },
+        {
           "from": "hado",
           "to": "baba-hamono",
           "kind": "regional-peer",
@@ -540,9 +568,31 @@
             "Toyama Blue steel",
             "Toyama White steel"
           ],
+          "students": [
+            "shinichi-watanabe"
+          ],
           "sourceIds": [
             "jns-toyama"
           ]
+        },
+        {
+          "id": "shigefusa",
+          "name": "Shigefusa",
+          "role": "Blacksmith",
+          "aliases": [
+            "Iizuka"
+          ],
+          "specialty": "Sanjo/Niigata benchmark maker for high-fit carbon work, wide-bevel kasumi and Kitaeji buyer discussions.",
+          "famousLines": [
+            "Shigefusa Kitaeji",
+            "Shigefusa Kasumi",
+            "Shigefusa Western"
+          ],
+          "sourceIds": [
+            "kkf-community",
+            "reddit-truechefknives"
+          ],
+          "caveat": "Community-heavy node pending stronger public source links; treat as regional context, not proof of direct shop relationships."
         },
         {
           "id": "masashi-yamamoto",
@@ -689,9 +739,28 @@
         {
           "from": "syuuji-toyama",
           "to": "shinichi-watanabe",
+          "kind": "teacher",
+          "label": "teacher",
+          "detail": "Toyama is represented as Watanabe's teacher/mentor in this graph; keep product-specific claims tied to exact listings.",
+          "sourceType": "community",
+          "confidence": "medium",
+          "sourceIds": [
+            "kkf-community",
+            "reddit-truechefknives"
+          ]
+        },
+        {
+          "from": "shigefusa",
+          "to": "syuuji-toyama",
           "kind": "regional-peer",
-          "label": "Sanjo hand-forged context",
-          "detail": "Toyama and Watanabe help frame the hand-forged Sanjo side of the map."
+          "label": "Sanjo benchmark context",
+          "detail": "Shigefusa and Toyama are mapped as distinct high-end Sanjo/Niigata reference points, not as the same shop or grind.",
+          "sourceType": "community",
+          "confidence": "medium",
+          "sourceIds": [
+            "kkf-community",
+            "reddit-truechefknives"
+          ]
         },
         {
           "from": "yoshikane",
@@ -2005,6 +2074,11 @@
       "id": "watanabe-official",
       "label": "Watanabe Blade official site",
       "url": "https://www.watanabeblade.com/english/"
+    },
+    {
+      "id": "honyaki-reference",
+      "label": "Honyaki maker reference",
+      "url": "https://en.wikipedia.org/wiki/Honyaki"
     },
     {
       "id": "knifewear-yoshikazu-tanaka",

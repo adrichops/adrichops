@@ -6,6 +6,7 @@
   --muted: #6b675e;
   --line: #ded9ce;
   --line-strong: #c9c2b4;
+  --graph-edge-contrast: #332d25;
   --accent: #b72424;
   --accent-dark: #7f1818;
   --shadow: 0 18px 45px rgba(31, 28, 24, .08);
@@ -25,6 +26,7 @@
   --muted: #b9afa2;
   --line: #363129;
   --line-strong: #51493d;
+  --graph-edge-contrast: #f7f0e6;
   --accent: #ff5a4f;
   --accent-dark: #f04a40;
   --shadow: 0 18px 45px rgba(0,0,0,.32);
@@ -347,11 +349,38 @@ p { margin: 0; }
   background: color-mix(in srgb, var(--paper) 88%, transparent);
   backdrop-filter: blur(12px);
   box-shadow: var(--soft-shadow);
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
 }
 .graph-stage-head h2 {
   font-size: clamp(.9rem, 1.15vw, 1.18rem);
   margin-top: 4px;
   line-height: 1.05;
+}
+.graph-back-button {
+  flex: 0 0 auto;
+  min-height: 42px;
+  border: 1px solid color-mix(in srgb, var(--accent) 68%, var(--graph-edge-contrast));
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--graph-edge-contrast) 92%, var(--accent));
+  color: var(--bg);
+  cursor: pointer;
+  font-size: .74rem;
+  font-weight: 950;
+  letter-spacing: .02em;
+  padding: 10px 14px;
+  box-shadow: 0 10px 22px color-mix(in srgb, #000 22%, transparent);
+}
+.graph-back-button:hover,
+.graph-back-button:focus-visible {
+  background: var(--accent);
+  color: var(--ink);
+  outline: none;
+}
+.graph-back-button[hidden],
+[data-graph-reset][hidden] {
+  display: none;
 }
 .maker-graph-svg {
   width: 100%;
@@ -368,14 +397,14 @@ p { margin: 0; }
   transform-origin: 0 0;
 }
 .graph-edge {
-  stroke: color-mix(in srgb, var(--line-strong) 72%, transparent);
-  stroke-width: 1.45;
+  stroke: var(--graph-edge-contrast);
+  stroke-width: 2.2;
   stroke-linecap: round;
-  opacity: .72;
+  opacity: .84;
 }
 .graph-lines line {
-  stroke: var(--line-strong);
-  stroke-width: 2;
+  stroke: var(--graph-edge-contrast);
+  stroke-width: 2.4;
 }
 .graph-edge-hit {
   stroke: transparent;
@@ -388,20 +417,20 @@ p { margin: 0; }
   stroke-width: 34;
 }
 .graph-lines line.graph-edge {
-  stroke: color-mix(in srgb, var(--line-strong) 82%, transparent);
-  stroke-width: 1.55;
+  stroke: var(--graph-edge-contrast);
+  stroke-width: 2.25;
   stroke-linecap: round;
-  opacity: .62;
+  opacity: .82;
   transition: opacity .18s ease, stroke-width .18s ease, stroke .18s ease;
 }
 .maker-graph-svg marker path {
-  fill: color-mix(in srgb, var(--line-strong) 82%, transparent);
+  fill: var(--graph-edge-contrast);
 }
 .graph-lines .edge-region-member,
 .graph-lines .edge-regional-hub {
-  stroke: color-mix(in srgb, var(--region-color, var(--line-strong)) 78%, transparent);
-  stroke-width: 1.7;
-  opacity: .68;
+  stroke: color-mix(in srgb, var(--region-color, var(--graph-edge-contrast)) 72%, var(--graph-edge-contrast));
+  stroke-width: 2.6;
+  opacity: .92;
 }
 .graph-lines .edge-apprenticeship,
 .graph-lines .edge-student,
@@ -409,37 +438,39 @@ p { margin: 0; }
 .graph-lines .edge-worked-under,
 .graph-lines .edge-workshop-background {
   stroke: var(--accent);
-  stroke-width: 2.6;
-  opacity: .72;
+  stroke-width: 3.1;
+  opacity: .92;
 }
 .graph-lines .edge-smith-to-sharpener,
 .graph-lines .edge-brand-to-sharpener,
 .graph-lines .edge-line-collaboration,
 .graph-lines .edge-collaboration,
 .graph-lines .edge-alias {
-  stroke: color-mix(in srgb, var(--accent) 72%, var(--line-strong));
-  stroke-width: 2.35;
+  stroke: color-mix(in srgb, var(--accent) 82%, var(--graph-edge-contrast));
+  stroke-width: 2.95;
+  opacity: .92;
 }
 .graph-lines .edge-alias {
-  stroke: color-mix(in srgb, #18b7a2 82%, var(--line-strong));
+  stroke: color-mix(in srgb, #18b7a2 88%, var(--graph-edge-contrast));
 }
 .graph-lines .source-community,
 .graph-lines .source-forum,
 .graph-lines .source-reddit {
   stroke-dasharray: 8 7;
-  opacity: .7;
+  opacity: .84;
 }
 .graph-lines .confidence-low {
-  stroke-width: 1.8;
-  opacity: .58;
+  stroke-width: 2.35;
+  opacity: .72;
 }
 .graph-lines .graph-edge.is-focused {
-  stroke-width: 4.2;
+  stroke: var(--ink);
+  stroke-width: 5.2;
   opacity: 1;
 }
 .maker-graph-svg.has-focused-item .graph-lines .graph-edge.is-focused {
   opacity: 1 !important;
-  stroke-width: 4.2;
+  stroke-width: 5.2;
 }
 .graph-lines .graph-edge.is-dimmed {
   opacity: .16;

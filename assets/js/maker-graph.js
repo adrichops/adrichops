@@ -6,7 +6,7 @@
   const regionList = root.querySelector('[data-region-list]');
   const detail = root.querySelector('[data-graph-detail]');
   const sourceList = root.querySelector('[data-graph-sources]');
-  const resetButton = root.querySelector('[data-graph-reset]');
+  const resetButtons = root.querySelectorAll('[data-graph-reset]');
   const title = root.querySelector('[data-graph-title]');
   const dek = root.querySelector('[data-graph-dek]');
   const cards = root.querySelector('[data-graph-cards]');
@@ -847,6 +847,9 @@
 
   function syncView() {
     renderRegions();
+    resetButtons.forEach((button) => {
+      button.hidden = !state.activeRegion;
+    });
     roleFilter.hidden = !state.activeRegion;
     if (state.activeRegion) {
       title.textContent = state.activeRegion.name;
@@ -877,7 +880,7 @@
     if (state.activeRegion) syncView();
   });
 
-  resetButton.addEventListener('click', () => {
+  function resetToRegionalMap() {
     state.activeRegion = null;
     state.activeNode = state.nodeById.get('japan');
     state.activeEdgeKey = '';
@@ -887,6 +890,10 @@
     searchInput.value = '';
     state.view = { x: 0, y: 0, scale: 1 };
     syncView();
+  }
+
+  resetButtons.forEach((button) => {
+    button.addEventListener('click', resetToRegionalMap);
   });
 
   bindViewportControls();
