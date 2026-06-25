@@ -307,10 +307,37 @@ p { margin: 0; }
   width: 100%;
   min-height: 480px;
   display: block;
+  cursor: grab;
+  touch-action: none;
+  user-select: none;
+}
+.maker-graph-svg.is-panning {
+  cursor: grabbing;
+}
+.graph-viewport {
+  transform-origin: 0 0;
+}
+.graph-edge {
+  stroke: color-mix(in srgb, var(--line-strong) 72%, transparent);
+  stroke-width: 1.45;
+  stroke-linecap: round;
+  opacity: .72;
 }
 .graph-lines line {
   stroke: var(--line-strong);
   stroke-width: 2;
+}
+.graph-lines line.graph-edge {
+  stroke: color-mix(in srgb, var(--line-strong) 72%, transparent);
+  stroke-width: 1.45;
+  stroke-linecap: round;
+  opacity: .72;
+}
+.graph-lines .edge-region-member,
+.graph-lines .edge-regional-hub {
+  stroke: color-mix(in srgb, var(--line-strong) 45%, transparent);
+  stroke-width: 1;
+  opacity: .42;
 }
 .graph-lines .edge-apprenticeship {
   stroke: var(--accent);
@@ -340,7 +367,7 @@ p { margin: 0; }
   dominant-baseline: middle;
   font-weight: 900;
   fill: var(--ink);
-  font-size: 16px;
+  font-size: 12px;
   pointer-events: none;
 }
 .graph-center text {
@@ -368,6 +395,20 @@ p { margin: 0; }
   fill: color-mix(in srgb, var(--accent) 14%, var(--paper));
   stroke: var(--accent);
   transform: scale(1.04);
+}
+.graph-node.is-dragging {
+  cursor: grabbing;
+}
+.graph-node.is-dragging circle {
+  stroke-width: 4;
+}
+.hub-node circle {
+  fill: var(--ink);
+  stroke: var(--accent);
+  stroke-width: 2.5;
+}
+.hub-node text {
+  fill: var(--bg);
 }
 .region-node circle {
   fill: var(--paper);
@@ -487,6 +528,52 @@ p { margin: 0; }
   padding-left: 10px;
   color: var(--muted);
   font-size: .82rem;
+}
+.graph-note {
+  display: grid;
+  gap: 14px;
+}
+.graph-note h2 {
+  font-size: clamp(1.7rem, 4vw, 2.9rem);
+  line-height: .94;
+  letter-spacing: -.055em;
+}
+.graph-note section {
+  display: grid;
+  gap: 7px;
+  border-top: 1px solid var(--line);
+  padding-top: 12px;
+}
+.graph-note h3 {
+  color: var(--muted);
+  font-size: .72rem;
+  text-transform: uppercase;
+  letter-spacing: .09em;
+}
+.graph-note p {
+  margin: 0;
+}
+.wiki-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+.wiki-link {
+  border: 1px solid var(--line);
+  background: var(--paper-2);
+  color: var(--ink);
+  border-radius: 999px;
+  padding: 7px 10px;
+  font-size: .76rem;
+  font-weight: 900;
+  cursor: pointer;
+  text-align: left;
+}
+.wiki-link:hover,
+.wiki-link:focus-visible {
+  border-color: var(--accent);
+  color: var(--accent);
+  outline: none;
 }
 .graph-source-list {
   display: grid;

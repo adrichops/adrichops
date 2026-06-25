@@ -76,6 +76,15 @@
           "sourceIds": ["konosuke-fujiyama"]
         },
         {
+          "id": "kazumi-kawakita",
+          "name": "Kazumi Kawakita",
+          "role": "Sharpener",
+          "specialty": "Sakai sharpening lineage node for the Kawakita to Morihiro relationship.",
+          "famousLines": ["Kawakita sharpening lineage"],
+          "students": ["morihiro"],
+          "caveat": "Added from Adrian's requested graph note; attach a public source trail before making stronger product claims."
+        },
+        {
           "id": "hado",
           "name": "HADO / Fukui",
           "role": "Brand",
@@ -120,6 +129,13 @@
           "kind": "brand-to-sharpener",
           "label": "Fujiyama sharpening identity",
           "detail": "Konosuke's Fujiyama/FM story makes sharpener attribution part of the buyer conversation."
+        },
+        {
+          "from": "kazumi-kawakita",
+          "to": "morihiro",
+          "kind": "student",
+          "label": "student",
+          "detail": "Morihiro is represented as a student of Kazumi Kawakita in this map."
         },
         {
           "from": "hado",
@@ -280,9 +296,9 @@
       "id": "miki",
       "name": "Miki / Hyogo",
       "location": "Hyogo",
-      "summary": "A non-Sakai example slot for Tanaka Uchihamono and the Kawakita relationship request.",
+      "summary": "A non-Sakai example slot for Tanaka Uchihamono and the Kazumi Kawakita relationship request.",
       "notes": [
-        "This region is included because Adrian specifically asked for the Tanaka Uchihamono and Kawakita relationship.",
+        "This region is included because Adrian specifically asked for the Tanaka Uchihamono and Kazumi Kawakita relationship.",
         "The graph marks the relationship without overstating exact line names until a stronger source is added."
       ],
       "nodes": [
@@ -293,23 +309,15 @@
           "specialty": "Forged kitchen knives; read by exact smith, line, grind and retailer details.",
           "famousLines": ["Tanaka Uchihamono listings", "Tanaka forged knives"],
           "caveat": "Relationship included from Adrian's requested example; add exact retailer/source link when available."
-        },
-        {
-          "id": "kawakita",
-          "name": "Kawakita",
-          "role": "Collaborator",
-          "specialty": "Listed as the relationship counterpart for Tanaka Uchihamono in this map.",
-          "famousLines": ["Kawakita-associated Tanaka work"],
-          "caveat": "Keep this node conservative until a source trail is attached."
         }
       ],
       "edges": [
         {
           "from": "tanaka-uchihamono",
-          "to": "kawakita",
+          "to": "kazumi-kawakita",
           "kind": "collaboration",
           "label": "working relationship",
-          "detail": "Added to make the Tanaka Uchihamono / Kawakita relationship visible as requested."
+          "detail": "Added to make the Tanaka Uchihamono / Kazumi Kawakita relationship visible as requested."
         }
       ]
     }
