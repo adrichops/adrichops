@@ -54,7 +54,7 @@
         {
           "id": "mitsuaki-takada",
           "name": "Mitsuaki Takada",
-          "role": "Sharpener",
+          "role": "Polisher",
           "specialty": "Thin convex hamaguri-style grinding, Suiboku finish and modern Sakai polish.",
           "famousLines": ["Takada Suiboku", "Takada Reika", "Takada Ginsan"],
           "sourceIds": ["takada-official", "mtc-takada"]
@@ -155,7 +155,7 @@
         "Sanjo is useful for understanding taller, more powerful double-bevel knives.",
         "Relationships here often look like workshop training or regional influence rather than a Sakai-style smith/sharpener split."
       ],
-      "sourceIds": ["yoshikane-official", "jns-wakui", "jns-toyama"],
+      "sourceIds": ["yoshikane-official", "jns-wakui", "jns-toyama", "tadafusa-official", "watanabe-official"],
       "nodes": [
         {
           "id": "yoshikane",
@@ -187,6 +187,22 @@
           "role": "Blacksmith",
           "specialty": "Sanjo profile language, distinctive grinds and visually expressive lines.",
           "famousLines": ["Kokuen", "SLD", "VS1"]
+        },
+        {
+          "id": "tadafusa",
+          "name": "Tadafusa",
+          "role": "Workshop",
+          "specialty": "Sanjo workshop making household and professional kitchen knives with a factory shop in Sanjo.",
+          "famousLines": ["Hocho Kobo Tadafusa", "Tadafusa bread knife", "Sanjo workshop knives"],
+          "sourceIds": ["tadafusa-official"]
+        },
+        {
+          "id": "shinichi-watanabe",
+          "name": "Shinichi Watanabe",
+          "role": "Blacksmith",
+          "specialty": "Sanjo blacksmith making hand-forged custom kitchen knives and professional blades.",
+          "famousLines": ["Watanabe Pro", "Watanabe custom kitchen knives"],
+          "sourceIds": ["watanabe-official"]
         }
       ],
       "edges": [
@@ -210,6 +226,20 @@
           "kind": "regional-peer",
           "label": "Sanjo maker context",
           "detail": "Both help show that Sanjo is not one grind; it is a region with different shop identities."
+        },
+        {
+          "from": "yoshikane",
+          "to": "tadafusa",
+          "kind": "regional-peer",
+          "label": "Sanjo workshop comparison",
+          "detail": "Yoshikane and Tadafusa are both useful Sanjo workshop references, but the buying context is different."
+        },
+        {
+          "from": "syuuji-toyama",
+          "to": "shinichi-watanabe",
+          "kind": "regional-peer",
+          "label": "Sanjo hand-forged context",
+          "detail": "Toyama and Watanabe help frame the hand-forged Sanjo side of the map."
         }
       ]
     },
@@ -222,7 +252,7 @@
         "Echizen/Takefu is useful as a cooperative-region map: several recognizable makers share regional infrastructure and training context.",
         "Use exact maker and line before assuming a single Echizen cutting feel."
       ],
-      "sourceIds": ["takefu-knife-village"],
+      "sourceIds": ["takefu-knife-village", "tkv-members"],
       "nodes": [
         {
           "id": "takefu-knife-village",
@@ -237,28 +267,112 @@
           "name": "Yu Kurosaki",
           "role": "Blacksmith",
           "specialty": "Highly recognizable hammered and patterned finishes with modern export visibility.",
-          "famousLines": ["Senko", "Fujin", "Shizuku", "Raijin"]
+          "famousLines": ["Senko", "Fujin", "Shizuku", "Raijin"],
+          "sourceIds": ["tkv-kurosaki"]
         },
         {
           "id": "takeshi-saji",
           "name": "Takeshi Saji",
           "role": "Blacksmith",
           "specialty": "Expressive Damascus, western handles, R2/SG2 and outdoor-leaning visual language.",
-          "famousLines": ["Saji Rainbow Damascus", "Saji R2", "Saji VG10 Damascus"]
+          "famousLines": ["Saji Rainbow Damascus", "Saji R2", "Saji VG10 Damascus"],
+          "sourceIds": ["tkv-saji"]
         },
         {
           "id": "shiro-kamo",
           "name": "Shiro Kamo",
           "role": "Blacksmith",
           "specialty": "Accessible handmade carbon and stainless-clad Echizen knives.",
-          "famousLines": ["Shiro Kamo Aogami Super", "Black Dragon", "Akuma"]
+          "famousLines": ["Shiro Kamo Aogami Super", "Black Dragon", "Akuma"],
+          "sourceIds": ["tkv-kamo"]
         },
         {
           "id": "yoshimi-kato",
           "name": "Yoshimi Kato",
           "role": "Blacksmith",
           "specialty": "Damascus, SG2/R2 and clean modern Echizen lines.",
-          "famousLines": ["Kato SG2", "Kato Damascus", "Kato Nashiji"]
+          "famousLines": ["Kato SG2", "Kato Damascus", "Kato Nashiji"],
+          "sourceIds": ["tkv-kato"]
+        },
+        {
+          "id": "katsuyasu-kamo",
+          "name": "Katsuyasu Kamo",
+          "role": "Blacksmith",
+          "specialty": "Traditional Echizen forging at Kamo Hamono, including forged knives and agricultural blades.",
+          "famousLines": ["Kamo Hamono", "Echizen forged knives"],
+          "sourceIds": ["tkv-kamo"]
+        },
+        {
+          "id": "anryu-hamono",
+          "name": "Anryu Knives",
+          "role": "Workshop",
+          "specialty": "Takefu Knife Village member workshop in the Echizen maker network.",
+          "famousLines": ["Anryu knives", "Echizen forged knives"],
+          "sourceIds": ["tkv-anryu"]
+        },
+        {
+          "id": "kitaoka-hamono",
+          "name": "Kitaoka Knives",
+          "role": "Workshop",
+          "specialty": "Takefu Knife Village member workshop tied to traditional Echizen forged knives.",
+          "famousLines": ["Kitaoka knives", "Echizen single-bevel context"],
+          "sourceIds": ["tkv-kitaoka"]
+        },
+        {
+          "id": "yuji-totani",
+          "name": "Yuji Totani",
+          "role": "Sharpener",
+          "specialty": "Sharpening Four representative, traditional craftsman and specialist in edge setting and repair.",
+          "famousLines": ["Sharpening Four", "HATSU"],
+          "sourceIds": ["tkv-sharpening-four"]
+        },
+        {
+          "id": "okada-hamono",
+          "name": "Okada Knives",
+          "role": "Workshop",
+          "specialty": "Takefu Knife Village member workshop in the Echizen production network.",
+          "famousLines": ["Okada knives"],
+          "sourceIds": ["tkv-okada"]
+        },
+        {
+          "id": "kamoto-hamono",
+          "name": "Kamoto Hamono",
+          "role": "Workshop",
+          "specialty": "Takefu Knife Village member workshop in the Echizen production network.",
+          "famousLines": ["Kamoto Hamono"],
+          "sourceIds": ["tkv-kamoto"]
+        },
+        {
+          "id": "honda-hamono",
+          "name": "Honda Knives",
+          "role": "Workshop",
+          "specialty": "Takefu Knife Village member workshop in the Echizen production network.",
+          "famousLines": ["Honda knives"],
+          "sourceIds": ["tkv-honda"]
+        },
+        {
+          "id": "yamamoto-hamono",
+          "name": "Yamamoto Knives",
+          "role": "Workshop",
+          "specialty": "Takefu Knife Village member workshop in the Echizen production network.",
+          "famousLines": ["Yamamoto knives"],
+          "sourceIds": ["tkv-yamamoto"]
+        },
+        {
+          "id": "masakuni-kurosaki",
+          "name": "Masakuni Kurosaki",
+          "role": "Blacksmith",
+          "specialty": "Kurosaki family Echizen craft node linked through Takefu Knife Village's STYLE-K listing.",
+          "famousLines": ["STYLE-K"],
+          "sourceIds": ["tkv-style-k"]
+        },
+        {
+          "id": "hatono-hamono",
+          "name": "Hatono Hamono",
+          "role": "Workshop",
+          "specialty": "Takefu Knife Village member workshop in the Echizen production network.",
+          "famousLines": ["Hatono Hamono"],
+          "sourceIds": ["tkv-hatono"]
         }
       ],
       "edges": [
@@ -289,6 +403,76 @@
           "kind": "regional-hub",
           "label": "Takefu network",
           "detail": "Kato belongs in the same regional network but should still be read by exact line and steel."
+        },
+        {
+          "from": "takefu-knife-village",
+          "to": "katsuyasu-kamo",
+          "kind": "regional-hub",
+          "label": "Takefu member",
+          "detail": "Kamo Hamono is listed by Takefu Knife Village as a member company."
+        },
+        {
+          "from": "takefu-knife-village",
+          "to": "anryu-hamono",
+          "kind": "regional-hub",
+          "label": "Takefu member",
+          "detail": "Anryu Knives is listed by Takefu Knife Village as a member company."
+        },
+        {
+          "from": "takefu-knife-village",
+          "to": "kitaoka-hamono",
+          "kind": "regional-hub",
+          "label": "Takefu member",
+          "detail": "Kitaoka Knives is listed by Takefu Knife Village as a member company."
+        },
+        {
+          "from": "takefu-knife-village",
+          "to": "yuji-totani",
+          "kind": "regional-hub",
+          "label": "Takefu sharpening",
+          "detail": "Sharpening Four is listed by Takefu Knife Village and gives the graph a confirmed sharpening specialist."
+        },
+        {
+          "from": "takefu-knife-village",
+          "to": "okada-hamono",
+          "kind": "regional-hub",
+          "label": "Takefu member",
+          "detail": "Okada Knives is listed by Takefu Knife Village as a member company."
+        },
+        {
+          "from": "takefu-knife-village",
+          "to": "kamoto-hamono",
+          "kind": "regional-hub",
+          "label": "Takefu member",
+          "detail": "Kamoto Hamono is listed by Takefu Knife Village as a member company."
+        },
+        {
+          "from": "takefu-knife-village",
+          "to": "honda-hamono",
+          "kind": "regional-hub",
+          "label": "Takefu member",
+          "detail": "Honda Knives is listed by Takefu Knife Village as a member company."
+        },
+        {
+          "from": "takefu-knife-village",
+          "to": "yamamoto-hamono",
+          "kind": "regional-hub",
+          "label": "Takefu member",
+          "detail": "Yamamoto Knives is listed by Takefu Knife Village as a member company."
+        },
+        {
+          "from": "takefu-knife-village",
+          "to": "masakuni-kurosaki",
+          "kind": "regional-hub",
+          "label": "Takefu member",
+          "detail": "STYLE-K appears in the Takefu Knife Village member list as a Kurosaki-linked node."
+        },
+        {
+          "from": "takefu-knife-village",
+          "to": "hatono-hamono",
+          "kind": "regional-hub",
+          "label": "Takefu member",
+          "detail": "Hatono Hamono is listed by Takefu Knife Village as a member company."
         }
       ]
     },
@@ -417,6 +601,86 @@
       "id": "takefu-knife-village",
       "label": "Takefu Knife Village",
       "url": "https://www.takefu-knifevillage.jp/"
+    },
+    {
+      "id": "tkv-members",
+      "label": "Takefu Knife Village members",
+      "url": "https://www.takefu-knifevillage.jp/members"
+    },
+    {
+      "id": "tkv-kamo",
+      "label": "Takefu Knife Village: Kamo Hamono",
+      "url": "https://www.takefu-knifevillage.jp/kamo"
+    },
+    {
+      "id": "tkv-anryu",
+      "label": "Takefu Knife Village: Anryu Knives",
+      "url": "https://www.takefu-knifevillage.jp/anryu"
+    },
+    {
+      "id": "tkv-kitaoka",
+      "label": "Takefu Knife Village: Kitaoka Knives",
+      "url": "https://www.takefu-knifevillage.jp/kitaoka"
+    },
+    {
+      "id": "tkv-kato",
+      "label": "Takefu Knife Village: Kato Knife Manufacturing",
+      "url": "https://www.takefu-knifevillage.jp/kato"
+    },
+    {
+      "id": "tkv-sharpening-four",
+      "label": "Takefu Knife Village: Sharpening Four",
+      "url": "https://www.takefu-knifevillage.jp/sharpeningfour"
+    },
+    {
+      "id": "tkv-okada",
+      "label": "Takefu Knife Village: Okada Knives",
+      "url": "https://www.takefu-knifevillage.jp/okada"
+    },
+    {
+      "id": "tkv-kamoto",
+      "label": "Takefu Knife Village: Kamoto Hamono",
+      "url": "https://www.takefu-knifevillage.jp/kamoto"
+    },
+    {
+      "id": "tkv-saji",
+      "label": "Takefu Knife Village: Saji Knives",
+      "url": "https://www.takefu-knifevillage.jp/saji"
+    },
+    {
+      "id": "tkv-honda",
+      "label": "Takefu Knife Village: Honda Knives",
+      "url": "https://www.takefu-knifevillage.jp/honda"
+    },
+    {
+      "id": "tkv-yamamoto",
+      "label": "Takefu Knife Village: Yamamoto Knives",
+      "url": "https://www.takefu-knifevillage.jp/yamamoto"
+    },
+    {
+      "id": "tkv-kurosaki",
+      "label": "Takefu Knife Village: Kurosaki Knives",
+      "url": "https://www.takefu-knifevillage.jp/kurosaki"
+    },
+    {
+      "id": "tkv-style-k",
+      "label": "Takefu Knife Village: STYLE-K",
+      "url": "https://www.takefu-knifevillage.jp/style-k"
+    },
+    {
+      "id": "tkv-hatono",
+      "label": "Takefu Knife Village: Hatono Hamono",
+      "url": "https://www.takefu-knifevillage.jp/hatono"
+    },
+    {
+      "id": "tadafusa-official",
+      "label": "Tadafusa official site",
+      "url": "https://www.tadafusa.com/"
+    },
+    {
+      "id": "watanabe-official",
+      "label": "Watanabe Blade official site",
+      "url": "https://www.watanabeblade.com/english/"
     }
   ]
 }

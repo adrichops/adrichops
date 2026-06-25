@@ -144,12 +144,12 @@
     const saved = state.positions.get(node.id);
     if (saved) return { ...node, x: saved.x, y: saved.y, vx: saved.vx || 0, vy: saved.vy || 0 };
 
-    const width = state.activeRegion ? 1060 : 900;
-    const height = state.activeRegion ? 680 : 560;
+    const width = state.activeRegion ? 1440 : 1180;
+    const height = state.activeRegion ? 900 : 760;
     if (node.id === 'japan' || node.isRegion && state.activeRegion && node.regionId === state.activeRegion.id) {
       return { ...node, x: width / 2, y: height / 2, vx: 0, vy: 0 };
     }
-    const radius = state.activeRegion ? 235 : 190;
+    const radius = state.activeRegion ? 330 : 260;
     const angle = -Math.PI / 2 + (Math.PI * 2 * index) / Math.max(total, 1);
     return {
       ...node,
@@ -199,8 +199,8 @@
     cancelAnimationFrame(state.raf);
 
     const selection = graphSelection();
-    const width = state.activeRegion ? 1060 : 900;
-    const height = state.activeRegion ? 680 : 560;
+    const width = state.activeRegion ? 1440 : 1180;
+    const height = state.activeRegion ? 900 : 760;
     const nodes = selection.nodes.map((node, index) => seedPosition(node, index, selection.nodes.length));
     const nodeById = new Map(nodes.map((node) => [node.id, node]));
     const edges = selection.edges
@@ -246,7 +246,7 @@
       `role-${roleClass(node.role)}`,
       active ? 'is-active' : ''
     ].filter(Boolean).join(' ');
-    const radius = node.isHub ? 54 : node.isRegion ? 50 : 42;
+    const radius = node.isHub ? 64 : node.isRegion ? 58 : 48;
     const label = node.isHub ? 'Open regional map' : node.isRegion ? `Open ${node.name}` : `Open ${node.name}`;
     return `
       <g class="${esc(className)}" tabindex="0" role="button" aria-label="${esc(label)}" data-node="${esc(node.id)}">
@@ -300,8 +300,8 @@
         const dx = target.x - source.x || 0.01;
         const dy = target.y - source.y || 0.01;
         const distance = Math.sqrt(dx * dx + dy * dy);
-        const desired = edge.kind === 'region-member' || edge.kind === 'regional-hub' ? 160 : 210;
-        const force = ((distance - desired) / distance) * 0.014 * alpha;
+        const desired = edge.kind === 'region-member' || edge.kind === 'regional-hub' ? 220 : 300;
+        const force = ((distance - desired) / distance) * 0.013 * alpha;
         const fx = dx * force;
         const fy = dy * force;
         if (!source.fixed) {
@@ -321,7 +321,7 @@
           const dx = b.x - a.x || 0.01;
           const dy = b.y - a.y || 0.01;
           const distanceSq = Math.max(dx * dx + dy * dy, 900);
-          const force = (a.isHub || b.isHub ? 4600 : 7600) / distanceSq * alpha;
+          const force = (a.isHub || b.isHub ? 7400 : 12800) / distanceSq * alpha;
           const distance = Math.sqrt(distanceSq);
           const fx = (dx / distance) * force;
           const fy = (dy / distance) * force;
@@ -338,11 +338,11 @@
 
       nodes.forEach((node) => {
         if (node.id === 'japan' || node.isRegion && state.activeRegion && node.regionId === state.activeRegion.id) {
-          node.vx += (centerX - node.x) * 0.018 * alpha;
-          node.vy += (centerY - node.y) * 0.018 * alpha;
+          node.vx += (centerX - node.x) * 0.016 * alpha;
+          node.vy += (centerY - node.y) * 0.016 * alpha;
         } else {
-          node.vx += (centerX - node.x) * 0.0035 * alpha;
-          node.vy += (centerY - node.y) * 0.0035 * alpha;
+          node.vx += (centerX - node.x) * 0.0028 * alpha;
+          node.vy += (centerY - node.y) * 0.0028 * alpha;
         }
         if (!node.fixed) {
           node.x += node.vx;

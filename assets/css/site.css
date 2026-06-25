@@ -219,16 +219,25 @@ p { margin: 0; }
 .maker-map-page .collection-hero { max-width: 1120px; }
 .maker-graph-shell {
   display: grid;
-  grid-template-columns: minmax(230px, 280px) minmax(0, 1fr) minmax(270px, 340px);
-  gap: 16px;
+  grid-template-columns: minmax(0, 1fr) minmax(320px, 420px);
+  gap: 18px;
   align-items: start;
+  max-width: min(1800px, calc(100vw - 48px));
+  margin-inline: auto;
 }
-.graph-sidebar,
+.graph-sidebar {
+  display: grid;
+  grid-column: 1 / -1;
+  grid-template-columns: minmax(300px, 1.45fr) minmax(280px, 1fr) minmax(180px, .45fr);
+  gap: 12px;
+}
 .graph-detail-panel {
   position: sticky;
   top: 92px;
   display: grid;
   gap: 12px;
+  max-height: calc(100vh - 110px);
+  overflow: auto;
 }
 .graph-panel {
   border: 1px solid var(--line);
@@ -244,12 +253,15 @@ p { margin: 0; }
   font-size: .86rem;
 }
 .region-list {
-  display: grid;
+  display: flex;
+  flex-wrap: wrap;
   gap: 8px;
   margin: 12px 0;
 }
 .region-button {
   min-height: 62px;
+  min-width: 170px;
+  flex: 1 1 170px;
   text-align: left;
   border: 1px solid var(--line);
   background: var(--paper-2);
@@ -286,26 +298,40 @@ p { margin: 0; }
   line-height: 1;
 }
 .graph-stage {
+  grid-column: 1;
+  position: relative;
   border: 1px solid var(--line);
   background:
-    linear-gradient(color-mix(in srgb, var(--line) 42%, transparent) 1px, transparent 1px),
-    linear-gradient(90deg, color-mix(in srgb, var(--line) 42%, transparent) 1px, transparent 1px),
+    linear-gradient(color-mix(in srgb, var(--line-strong) 28%, transparent) 1px, transparent 1px),
+    linear-gradient(90deg, color-mix(in srgb, var(--line-strong) 28%, transparent) 1px, transparent 1px),
     var(--paper);
-  background-size: 96px 96px;
+  background-size: 88px 88px;
   border-radius: var(--radius);
   box-shadow: var(--shadow);
   overflow: hidden;
+  min-height: clamp(620px, 72vh, 860px);
 }
 .graph-stage-head {
-  padding: 18px 18px 0;
+  position: absolute;
+  z-index: 2;
+  top: 16px;
+  left: 16px;
+  max-width: min(560px, calc(100% - 32px));
+  padding: 14px 16px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: color-mix(in srgb, var(--paper) 88%, transparent);
+  backdrop-filter: blur(12px);
+  box-shadow: var(--soft-shadow);
 }
 .graph-stage-head h2 {
-  font-size: clamp(1.3rem, 2.6vw, 2.6rem);
+  font-size: clamp(1.05rem, 1.6vw, 1.7rem);
   margin-top: 6px;
+  line-height: 1;
 }
 .maker-graph-svg {
   width: 100%;
-  min-height: 480px;
+  min-height: clamp(620px, 72vh, 860px);
   display: block;
   cursor: grab;
   touch-action: none;
@@ -328,10 +354,10 @@ p { margin: 0; }
   stroke-width: 2;
 }
 .graph-lines line.graph-edge {
-  stroke: color-mix(in srgb, var(--line-strong) 72%, transparent);
-  stroke-width: 1.45;
+  stroke: color-mix(in srgb, var(--line-strong) 82%, transparent);
+  stroke-width: 1.8;
   stroke-linecap: round;
-  opacity: .72;
+  opacity: .82;
 }
 .graph-lines .edge-region-member,
 .graph-lines .edge-regional-hub {
@@ -367,7 +393,7 @@ p { margin: 0; }
   dominant-baseline: middle;
   font-weight: 900;
   fill: var(--ink);
-  font-size: 12px;
+  font-size: 13px;
   pointer-events: none;
 }
 .graph-center text {
@@ -375,7 +401,7 @@ p { margin: 0; }
 }
 .graph-center .small,
 .graph-node .small {
-  font-size: 11px;
+  font-size: 10px;
   letter-spacing: .08em;
   text-transform: uppercase;
 }
@@ -386,14 +412,14 @@ p { margin: 0; }
 .graph-node circle {
   fill: var(--paper-2);
   stroke: var(--line-strong);
-  stroke-width: 2;
+  stroke-width: 3;
   transition: fill .18s ease, stroke .18s ease, transform .18s ease;
 }
 .graph-node:hover circle,
 .graph-node:focus-visible circle,
 .graph-node.is-active circle {
   fill: color-mix(in srgb, var(--accent) 14%, var(--paper));
-  stroke: var(--accent);
+  stroke: var(--role-color, var(--accent));
   transform: scale(1.04);
 }
 .graph-node.is-dragging {
@@ -413,38 +439,56 @@ p { margin: 0; }
 .region-node circle {
   fill: var(--paper);
 }
-.role-blacksmith circle,
-.role-badge.role-blacksmith {
+.role-blacksmith {
   --role-color: #ff5a4f;
 }
-.role-sharpener circle,
-.role-badge.role-sharpener {
-  --role-color: #f5b84b;
+.role-sharpener {
+  --role-color: #d99100;
 }
-.role-workshop circle,
-.role-badge.role-workshop {
-  --role-color: #60c2a8;
+.role-polisher {
+  --role-color: #00a6c8;
 }
-.role-brand circle,
-.role-badge.role-brand {
+.role-handle-maker {
+  --role-color: #9b6a38;
+}
+.role-workshop {
+  --role-color: #16a37b;
+}
+.role-brand {
   --role-color: #8aa8ff;
 }
-.role-cooperative circle,
-.role-badge.role-cooperative {
+.role-cooperative {
   --role-color: #d58cff;
 }
-.role-collaborator circle,
-.role-badge.role-collaborator {
+.role-collaborator {
   --role-color: #d7d1c5;
 }
 .maker-node circle {
   stroke: var(--role-color, var(--line-strong));
+  fill: color-mix(in srgb, var(--role-color, var(--paper-2)) 12%, var(--paper));
 }
 .graph-card-grid {
-  display: grid;
+  display: none;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 10px;
   padding: 0 18px 18px;
+}
+.role-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-top: 10px;
+}
+.role-legend span {
+  border: 1px solid var(--role-color, var(--line));
+  background: color-mix(in srgb, var(--role-color, var(--paper-2)) 15%, var(--paper));
+  border-radius: 999px;
+  color: var(--ink);
+  padding: 7px 9px;
+  font-size: .7rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: .06em;
 }
 .maker-card {
   min-height: 116px;
@@ -709,6 +753,9 @@ p { margin: 0; }
   }
   .hero, .story-strip, .finder-grid, .roll-grid, .article-layout, .explore-layout, .maker-graph-shell { grid-template-columns: 1fr; }
   .article-sidebar, .deck-nav, .deck-preview, .graph-sidebar, .graph-detail-panel { position: static; }
+  .graph-sidebar { grid-template-columns: 1fr; }
+  .graph-stage { grid-column: auto; }
+  .graph-detail-panel { max-height: none; overflow: visible; }
   .entry-grid, .article-card-grid, .photo-grid, .graph-card-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
   .finder-specs { grid-template-columns: repeat(2, minmax(0,1fr)); }
   .card-stage { min-height:auto; }
@@ -732,7 +779,8 @@ p { margin: 0; }
   .footer-inner { grid-template-columns: 1fr; }
   .stack-card { width: 86vw; min-width: 86vw; }
   .article-hero h1 { font-size: clamp(2.2rem, 13vw, 4rem); }
-  .maker-graph-svg { min-height: 420px; }
+  .graph-stage,
+  .maker-graph-svg { min-height: 520px; }
   .graph-panel { padding: 14px; }
 }
 @media (prefers-reduced-motion: reduce) {
