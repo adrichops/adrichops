@@ -12,7 +12,10 @@
       "sourceIds": [
         "sakai-ichimonji-making",
         "japan-house-sakai",
-        "sakai-traditional-crafts"
+        "sakai-traditional-crafts",
+        "honyaki-reference",
+        "hitohira-genkai",
+        "cleancut-yoshihiro-yauji"
       ],
       "nodes": [
         {
@@ -313,6 +316,148 @@
           "sourceIds": [
             "baba-kagekiyo"
           ]
+        },
+        {
+          "id": "futoshi-nagao",
+          "name": "Futoshi Nagao",
+          "role": "Blacksmith",
+          "specialty": "Sakai honyaki-maker node added from the honyaki maker trail; keep product claims tied to exact listings.",
+          "famousLines": [
+            "Nagao honyaki"
+          ],
+          "sourceIds": [
+            "honyaki-reference"
+          ],
+          "caveat": "Source supports inclusion in the Sakai honyaki maker trail, not a blanket attribution for unnamed listings."
+        },
+        {
+          "id": "genkai",
+          "name": "Genkai",
+          "role": "Blacksmith / Brand",
+          "specialty": "Sakai honyaki context and Hitohira-listed brand trail for higher-end traditional work.",
+          "famousLines": [
+            "Genkai honyaki",
+            "Hitohira Genkai"
+          ],
+          "sourceIds": [
+            "honyaki-reference",
+            "hitohira-genkai"
+          ],
+          "caveat": "Use this as a research node until exact smith, sharpener and retailer disclosure are attached."
+        },
+        {
+          "id": "hiroki-ashi",
+          "name": "Hiroki Ashi",
+          "role": "Blacksmith",
+          "specialty": "Sakai honyaki maker trail connected to the broader Ashi buyer context.",
+          "famousLines": [
+            "Ashi honyaki context"
+          ],
+          "sourceIds": [
+            "honyaki-reference"
+          ],
+          "caveat": "The honyaki trail names the maker; exact relationship to an individual Ashi Hamono listing should still be checked."
+        },
+        {
+          "id": "jyunichi-takagi",
+          "name": "Jyunichi Takagi",
+          "role": "Blacksmith",
+          "specialty": "Sakai honyaki-maker node for mapping high-end monosteel and hamon discussions.",
+          "famousLines": [
+            "Takagi honyaki"
+          ],
+          "sourceIds": [
+            "honyaki-reference"
+          ],
+          "caveat": "Source supports inclusion in the honyaki maker trail; line-level attribution needs exact retailer pages."
+        },
+        {
+          "id": "okishiba-masakuni",
+          "name": "Okishiba Masakuni",
+          "role": "Blacksmith",
+          "specialty": "Sakai honyaki-maker node for traditional high-skill forging context.",
+          "famousLines": [
+            "Okishiba Masakuni honyaki"
+          ],
+          "sourceIds": [
+            "honyaki-reference"
+          ],
+          "caveat": "Source supports inclusion in the honyaki maker trail; product attribution remains listing-specific."
+        },
+        {
+          "id": "jun-mizuno",
+          "name": "Jun Mizuno",
+          "role": "Blacksmith",
+          "aliases": [
+            "Mizuno Tanrenjo"
+          ],
+          "specialty": "Sakai honyaki-maker and Mizuno Tanrenjo trail for honyaki and traditional carbon work.",
+          "famousLines": [
+            "Mizuno Tanrenjo",
+            "Mizuno honyaki"
+          ],
+          "sourceIds": [
+            "honyaki-reference"
+          ],
+          "caveat": "Source supports the honyaki maker/brand trail; verify individual Mizuno listings before maker claims."
+        },
+        {
+          "id": "yasha-yukawa",
+          "name": "Yasha Yukawa",
+          "role": "Blacksmith",
+          "specialty": "Sakai honyaki-maker node for preserving named high-end forging references.",
+          "famousLines": [
+            "Yukawa honyaki"
+          ],
+          "sourceIds": [
+            "honyaki-reference"
+          ],
+          "caveat": "Source supports inclusion in the honyaki maker trail; exact retailer/product trail still needs follow-up."
+        },
+        {
+          "id": "yoshikazu-ikeda",
+          "name": "Yoshikazu Ikeda",
+          "role": "Blacksmith",
+          "specialty": "Named Sakai honyaki maker trail, separate from the generic Ikeda/Nomura relationship example.",
+          "famousLines": [
+            "Ikeda honyaki"
+          ],
+          "sourceIds": [
+            "honyaki-reference"
+          ],
+          "caveat": "Do not collapse this into every Ikeda-labeled knife; use exact listing disclosure."
+        },
+        {
+          "id": "tatsuo-ikeda",
+          "name": "Tatsuo Ikeda",
+          "role": "Blacksmith",
+          "specialty": "Named Sakai honyaki maker trail, kept distinct from other Ikeda references.",
+          "famousLines": [
+            "Tatsuo Ikeda honyaki"
+          ],
+          "sourceIds": [
+            "honyaki-reference"
+          ],
+          "caveat": "Do not collapse this into every Ikeda-labeled knife; use exact listing disclosure."
+        },
+        {
+          "id": "yoshihiro-yamawaki",
+          "name": "Yoshihiro / Yamawaki",
+          "role": "Brand",
+          "aliases": [
+            "Yoshihiro Yauji"
+          ],
+          "specialty": "Sakai honyaki brand trail and Cleancut-listed Yoshihiro Yauji product context across ATS34 and Aogami #2 knives.",
+          "famousLines": [
+            "Yoshihiro honyaki",
+            "Yoshihiro Yauji ATS34",
+            "Yoshihiro Yauji Aogami #2"
+          ],
+          "sourceIds": [
+            "honyaki-reference",
+            "cleancut-yoshihiro-yauji"
+          ],
+          "caveat": "Brand/retailer node only; do not infer a single smith or sharpener without exact disclosure."
         }
       ],
       "edges": [
@@ -570,6 +715,42 @@
             "kkf-community",
             "reddit-truechefknives"
           ]
+        },
+        {
+          "from": "hiroki-ashi",
+          "to": "ashi-hamono",
+          "kind": "workshop-background",
+          "label": "Ashi honyaki context",
+          "detail": "Hiroki Ashi is kept as a named honyaki-maker trail beside the Ashi Hamono workshop node.",
+          "sourceType": "reference",
+          "confidence": "low",
+          "sourceIds": [
+            "honyaki-reference"
+          ]
+        },
+        {
+          "from": "jun-mizuno",
+          "to": "genkai",
+          "kind": "regional-peer",
+          "label": "Sakai honyaki maker trail",
+          "detail": "Both nodes are included as Sakai honyaki research points; this is not a shared-workshop claim.",
+          "sourceType": "reference",
+          "confidence": "low",
+          "sourceIds": [
+            "honyaki-reference"
+          ]
+        },
+        {
+          "from": "yoshikazu-ikeda",
+          "to": "tatsuo-ikeda",
+          "kind": "regional-peer",
+          "label": "Ikeda honyaki name split",
+          "detail": "The graph keeps Yoshikazu Ikeda and Tatsuo Ikeda distinct so the generic Ikeda buyer label does not flatten separate named makers.",
+          "sourceType": "reference",
+          "confidence": "low",
+          "sourceIds": [
+            "honyaki-reference"
+          ]
         }
       ]
     },
@@ -589,8 +770,10 @@
         "jns-munetoshi",
         "jns-shigefusa",
         "jns-yoshiaki-fujiwara",
-        "jns-kaeru",
         "cleancut-makers",
+        "cleancut-mazaki",
+        "cleancut-wakui",
+        "cleancut-yoshikane",
         "tadafusa-official",
         "watanabe-official"
       ],
@@ -606,7 +789,8 @@
             "Nashiji gyuto"
           ],
           "sourceIds": [
-            "yoshikane-official"
+            "yoshikane-official",
+            "cleancut-yoshikane"
           ]
         },
         {
@@ -625,6 +809,7 @@
           "sourceIds": [
             "jns-wakui",
             "cleancut-makers",
+            "cleancut-wakui",
             "knivesworld-wakui"
           ]
         },
@@ -671,6 +856,57 @@
           "caveat": "The source trail supports Sanjo workshop and technique context; scarcity and product-specific attribution still need exact listing checks."
         },
         {
+          "id": "tokifusa-iizuka",
+          "name": "Tokifusa Iizuka",
+          "role": "Blacksmith",
+          "specialty": "Named Shigefusa family blacksmith in Sanjo; JNS describes him working with his two sons in a small workshop.",
+          "famousLines": [
+            "Shigefusa Kasumi",
+            "Shigefusa Kitaeji"
+          ],
+          "sourceIds": [
+            "jns-shigefusa"
+          ]
+        },
+        {
+          "id": "iizuka-family-workshop",
+          "name": "Iizuka family workshop",
+          "role": "Workshop",
+          "specialty": "Small Sanjo family workshop behind Shigefusa, represented separately so the graph can show the father-and-sons production context.",
+          "famousLines": [
+            "Shigefusa workshop"
+          ],
+          "sourceIds": [
+            "jns-shigefusa"
+          ]
+        },
+        {
+          "id": "kosuke-iwasaki",
+          "name": "Kosuke Iwasaki",
+          "role": "Blacksmith / Teacher",
+          "specialty": "Teacher-lineage node for Tokifusa Iizuka before the Shigefusa workshop context.",
+          "famousLines": [
+            "Iwasaki training lineage"
+          ],
+          "sourceIds": [
+            "jns-shigefusa"
+          ],
+          "caveat": "Included as a teacher-lineage node from the Shigefusa source trail, not as a kitchen-knife brand node."
+        },
+        {
+          "id": "nagashima",
+          "name": "Nagashima",
+          "role": "Blacksmith / Teacher",
+          "specialty": "Later teacher-lineage node for Tokifusa Iizuka in the Shigefusa source trail.",
+          "famousLines": [
+            "Nagashima training lineage"
+          ],
+          "sourceIds": [
+            "jns-shigefusa"
+          ],
+          "caveat": "Included as a teacher-lineage node from the Shigefusa source trail; first-name and product-line details still need stronger sourcing."
+        },
+        {
           "id": "kiyoshi-kato",
           "name": "Kiyoshi Kato",
           "role": "Blacksmith",
@@ -712,21 +948,6 @@
             "jns-munetoshi",
             "cleancut-makers"
           ]
-        },
-        {
-          "id": "jns-kaeru",
-          "name": "Kaeru",
-          "role": "Line / Brand",
-          "specialty": "Japanese Natural Stones house line built for practical professional use, usually framed around SLD high-carbon stainless and easy care.",
-          "famousLines": [
-            "Kaeru Kasumi Stainless",
-            "Kaeru SLD",
-            "Kaeru gyuto"
-          ],
-          "sourceIds": [
-            "jns-kaeru"
-          ],
-          "caveat": "House-line node only; do not infer a named blacksmith or sharpener unless a product page states it."
         },
         {
           "id": "masashi-yamamoto",
@@ -782,6 +1003,7 @@
           "sourceIds": [
             "knifewear-naoki-mazaki",
             "cleancut-makers",
+            "cleancut-mazaki",
             "kkf-community"
           ]
         },
@@ -927,6 +1149,54 @@
           ]
         },
         {
+          "from": "shigefusa",
+          "to": "tokifusa-iizuka",
+          "kind": "regional-hub",
+          "label": "Shigefusa maker identity",
+          "detail": "Tokifusa Iizuka is represented as the named blacksmith behind the Shigefusa workshop context.",
+          "sourceType": "retailer",
+          "confidence": "high",
+          "sourceIds": [
+            "jns-shigefusa"
+          ]
+        },
+        {
+          "from": "tokifusa-iizuka",
+          "to": "iizuka-family-workshop",
+          "kind": "family",
+          "label": "father and sons workshop",
+          "detail": "JNS describes Shigefusa as Tokifusa Iizuka working with his two sons in a small Sanjo workshop.",
+          "sourceType": "retailer",
+          "confidence": "high",
+          "sourceIds": [
+            "jns-shigefusa"
+          ]
+        },
+        {
+          "from": "kosuke-iwasaki",
+          "to": "tokifusa-iizuka",
+          "kind": "teacher",
+          "label": "Iizuka trained under Iwasaki",
+          "detail": "JNS states that Iizuka trained under Kosuke Iwasaki before later training with Nagashima-san.",
+          "sourceType": "retailer",
+          "confidence": "high",
+          "sourceIds": [
+            "jns-shigefusa"
+          ]
+        },
+        {
+          "from": "nagashima",
+          "to": "tokifusa-iizuka",
+          "kind": "teacher",
+          "label": "later training",
+          "detail": "JNS places Nagashima-san after Kosuke Iwasaki in the Iizuka training trail.",
+          "sourceType": "retailer",
+          "confidence": "medium",
+          "sourceIds": [
+            "jns-shigefusa"
+          ]
+        },
+        {
           "from": "yoshikane",
           "to": "masashi-yamamoto",
           "kind": "worked-under",
@@ -949,7 +1219,20 @@
           "confidence": "medium",
           "sourceIds": [
             "knifewear-naoki-mazaki",
+            "cleancut-mazaki",
             "kkf-community"
+          ]
+        },
+        {
+          "from": "kiyoshi-kato",
+          "to": "naoki-mazaki",
+          "kind": "teacher",
+          "label": "Kato training trail",
+          "detail": "Cleancut describes Mazaki as trained by Kiyoshi Kato and places his workshop in Sanjo.",
+          "sourceType": "retailer",
+          "confidence": "medium",
+          "sourceIds": [
+            "cleancut-mazaki"
           ]
         },
         {
@@ -3030,11 +3313,6 @@
       "url": "https://www.japanesenaturalstones.com/yoshikazu-tanaka/"
     },
     {
-      "id": "jns-kaeru",
-      "label": "Japanese Natural Stones: Kaeru",
-      "url": "https://www.japanesenaturalstones.com/kaeru/"
-    },
-    {
       "id": "jns-shigefusa",
       "label": "Japanese Natural Stones: Shigefusa",
       "url": "https://www.japanesenaturalstones.com/shigefusa/"
@@ -3180,6 +3458,11 @@
       "url": "https://sakai-takayuki.com/"
     },
     {
+      "id": "hitohira-genkai",
+      "label": "Hitohira: Genkai collection",
+      "url": "https://hitohira-japan.com/collections/genkai"
+    },
+    {
       "id": "hinoura-official",
       "label": "Hinoura Hamono official site",
       "url": "https://www.hinoura.com/"
@@ -3303,6 +3586,26 @@
       "id": "cleancut-shigeki-tanaka",
       "label": "Cleancut: Shigeki Tanaka",
       "url": "https://www.cleancut.eu/makers/manufacturers/mrtanaka"
+    },
+    {
+      "id": "cleancut-mazaki",
+      "label": "Cleancut: Mazaki",
+      "url": "https://www.cleancut.eu/butik/knifebrands/mazaki-migaki"
+    },
+    {
+      "id": "cleancut-wakui",
+      "label": "Cleancut: Wakui Toshihiro",
+      "url": "https://www.cleancut.eu/butik/knifebrands/wakui-sanjo"
+    },
+    {
+      "id": "cleancut-yoshikane",
+      "label": "Cleancut: Yoshikane",
+      "url": "https://www.cleancut.eu/butik/knifebrands/yoshikane-2-series"
+    },
+    {
+      "id": "cleancut-yoshihiro-yauji",
+      "label": "Cleancut: Yoshihiro Yauji",
+      "url": "https://www.cleancut.eu/butik/knifebrands/yoshihiro-yauji-%7C-aogami-2"
     },
     {
       "id": "kkf-community",
