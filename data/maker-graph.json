@@ -1046,6 +1046,19 @@
           ]
         },
         {
+          "id": "sharpening-four",
+          "name": "Sharpening Four",
+          "role": "Workshop",
+          "specialty": "Takefu Knife Village sharpening workshop context for edge setting, repair and finishing.",
+          "famousLines": [
+            "Sharpening Four",
+            "HATSU"
+          ],
+          "sourceIds": [
+            "tkv-sharpening-four"
+          ]
+        },
+        {
           "id": "okada-hamono",
           "name": "Okada Knives",
           "role": "Workshop",
@@ -1207,6 +1220,30 @@
         },
         {
           "from": "takefu-knife-village",
+          "to": "sharpening-four",
+          "kind": "regional-hub",
+          "label": "Takefu sharpening",
+          "detail": "Sharpening Four is listed by Takefu Knife Village as a sharpening workshop context.",
+          "sourceType": "official",
+          "confidence": "high",
+          "sourceIds": [
+            "tkv-sharpening-four"
+          ]
+        },
+        {
+          "from": "yuji-totani",
+          "to": "sharpening-four",
+          "kind": "works-at",
+          "label": "Sharpening Four",
+          "detail": "Yuji Totani is represented through the Sharpening Four workshop context.",
+          "sourceType": "official",
+          "confidence": "high",
+          "sourceIds": [
+            "tkv-sharpening-four"
+          ]
+        },
+        {
+          "from": "takefu-knife-village",
           "to": "okada-hamono",
           "kind": "regional-hub",
           "label": "Takefu member",
@@ -1286,7 +1323,11 @@
       "sourceIds": [
         "myojin-official",
         "kkf-community",
-        "reddit-truechefknives"
+        "reddit-truechefknives",
+        "knifejapan-zakuri",
+        "knifejapan-toyonaga",
+        "knifejapan-sasaoka",
+        "hitohira-tetsujin"
       ],
       "nodes": [
         {
@@ -1351,11 +1392,56 @@
           "famousLines": [
             "Tetsujin Metal Flow",
             "Tetsujin kasumi",
+            "Tetsujin Blue #2 Kasumi",
             "Tetsujin blue steel"
           ],
           "sourceIds": [
             "kkf-community",
-            "reddit-truechefknives"
+            "reddit-truechefknives",
+            "hitohira-tetsujin"
+          ]
+        },
+        {
+          "id": "zakuri",
+          "name": "Zakuri",
+          "role": "Brand / Workshop",
+          "specialty": "Kochi/Tosa Knife Japan line for rustic carbon profiles, especially small working knives and single-bevel utility shapes.",
+          "famousLines": [
+            "Zakuri Shime-bocho",
+            "Zakuri Yanagiba-bocho",
+            "Zakuri Funayuki-bocho",
+            "Zakuri Ko-bocho"
+          ],
+          "sourceIds": [
+            "knifejapan-zakuri"
+          ]
+        },
+        {
+          "id": "toyonaga-hamono",
+          "name": "Toyonaga Hamono",
+          "role": "Workshop",
+          "specialty": "Tosa/Kochi Knife Japan maker context for specialty single-bevel and regional working profiles in Gingami #3 and Aogami #2.",
+          "famousLines": [
+            "Toyonaga Kiritsuke Gingami #3",
+            "Toyonaga Hamokiri Gingami #3",
+            "Toyonaga Fuguhiki Aogami #2",
+            "Toyonaga Funayuki Honyaki Gingami #3"
+          ],
+          "sourceIds": [
+            "knifejapan-toyonaga"
+          ]
+        },
+        {
+          "id": "sasaoka-hasamiya",
+          "name": "Sasaoka Hasamiya",
+          "role": "Brand / Workshop",
+          "specialty": "Tosa Knife Japan branch with Sanuki-no-Megumi and Tosa-no-Daichi product lines.",
+          "famousLines": [
+            "Sanuki-no-Megumi",
+            "Tosa-no-Daichi"
+          ],
+          "sourceIds": [
+            "knifejapan-sasaoka"
           ]
         },
         {
@@ -1434,6 +1520,42 @@
           "confidence": "low",
           "sourceIds": [
             "kkf-community"
+          ]
+        },
+        {
+          "from": "tosa-kajiya",
+          "to": "zakuri",
+          "kind": "regional-peer",
+          "label": "Kochi / Tosa listing",
+          "detail": "Knife Japan places Zakuri in Kochi/Tosa context with traditional carbon working profiles.",
+          "sourceType": "retailer",
+          "confidence": "medium",
+          "sourceIds": [
+            "knifejapan-zakuri"
+          ]
+        },
+        {
+          "from": "tosa-kajiya",
+          "to": "toyonaga-hamono",
+          "kind": "regional-peer",
+          "label": "Kochi / Tosa listing",
+          "detail": "Knife Japan lists Toyonaga Hamono under Tosa/Kochi with specialty single-bevel and regional working knives.",
+          "sourceType": "retailer",
+          "confidence": "medium",
+          "sourceIds": [
+            "knifejapan-toyonaga"
+          ]
+        },
+        {
+          "from": "tosa-kajiya",
+          "to": "sasaoka-hasamiya",
+          "kind": "regional-peer",
+          "label": "Tosa listing",
+          "detail": "Knife Japan lists Sasaoka Hasamiya in the Tosa branch with Sanuki-no-Megumi and Tosa-no-Daichi lines.",
+          "sourceType": "retailer",
+          "confidence": "medium",
+          "sourceIds": [
+            "knifejapan-sasaoka"
           ]
         }
       ]
@@ -1862,7 +1984,8 @@
       "sourceIds": [
         "takeda-official",
         "kkf-community",
-        "reddit-truechefknives"
+        "reddit-truechefknives",
+        "knifejapan-otsuki"
       ],
       "nodes": [
         {
@@ -1893,6 +2016,21 @@
             "takeda-official",
             "kkf-community"
           ]
+        },
+        {
+          "id": "otsuki-hamono",
+          "name": "Otsuki Hamono",
+          "role": "Workshop",
+          "specialty": "Rural Okayama father-and-son workshop context from Knife Japan, with kitchen and agricultural tools, kurouchi work and final sharpness emphasized.",
+          "famousLines": [
+            "Otsuki Deba",
+            "Otsuki Nakiri",
+            "Otsuki Ajikiri",
+            "Otsuki Kaki-bocho"
+          ],
+          "sourceIds": [
+            "knifejapan-otsuki"
+          ]
         }
       ],
       "edges": [
@@ -1907,6 +2045,18 @@
           "sourceIds": [
             "takeda-official",
             "kkf-community"
+          ]
+        },
+        {
+          "from": "takeda-hamono",
+          "to": "otsuki-hamono",
+          "kind": "regional-peer",
+          "label": "Okayama makers",
+          "detail": "Otsuki Hamono is added as a separate Okayama workshop from Knife Japan, not as a Takeda lineage claim.",
+          "sourceType": "retailer",
+          "confidence": "medium",
+          "sourceIds": [
+            "knifejapan-otsuki"
           ]
         }
       ]
@@ -2241,6 +2391,31 @@
       "id": "teruyasu-fujiwara-official",
       "label": "Teruyasu Fujiwara official site",
       "url": "https://www.teruyasu.net/"
+    },
+    {
+      "id": "knifejapan-otsuki",
+      "label": "Knife Japan: Otsuki Hamono / Okayama",
+      "url": "https://knifejapan.com/shop-by-brand/otsuki-hamono-okayama/"
+    },
+    {
+      "id": "knifejapan-zakuri",
+      "label": "Knife Japan: Zakuri / Kochi",
+      "url": "https://knifejapan.com/shop-by-brand/zakuri-kochi/"
+    },
+    {
+      "id": "knifejapan-toyonaga",
+      "label": "Knife Japan: Toyonaga Hamono / Tosa",
+      "url": "https://knifejapan.com/shop-by-maker/toyonaga-hamono-tosa/"
+    },
+    {
+      "id": "knifejapan-sasaoka",
+      "label": "Knife Japan: Sasaoka Hasamiya / Tosa",
+      "url": "https://knifejapan.com/shop-by-brand/sasaoka-hasamiya-tosa/"
+    },
+    {
+      "id": "hitohira-tetsujin",
+      "label": "Hitohira: Tetsujin collection",
+      "url": "https://hitohira-japan.com/collections/tetsujin"
     },
     {
       "id": "kkf-community",

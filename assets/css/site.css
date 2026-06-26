@@ -1199,8 +1199,71 @@ p { margin: 0; }
   .footer-inner { grid-template-columns: 1fr; }
   .stack-card { width: 86vw; min-width: 86vw; }
   .article-hero h1 { font-size: clamp(2.2rem, 13vw, 4rem); }
-  .graph-stage,
-  .maker-graph-svg { min-height: 520px; }
+  .maker-map-page {
+    padding-inline: max(10px, env(safe-area-inset-left, 0px));
+  }
+  .maker-map-page .collection-hero {
+    margin-bottom: 18px;
+  }
+  .maker-graph-shell {
+    max-width: 100%;
+    gap: 12px;
+  }
+  .graph-detail-panel {
+    order: -1;
+    display: grid;
+    gap: 10px;
+  }
+  .graph-control-panel {
+    gap: 12px;
+  }
+  .role-legend,
+  .relationship-legend {
+    gap: 8px;
+  }
+  .role-legend span,
+  .relationship-legend span {
+    padding: 9px 10px;
+    font-size: .68rem;
+  }
+  .graph-stats,
+  .graph-detail-panel > .graph-panel:nth-child(n+3) {
+    display: none;
+  }
+  .graph-stage {
+    border-radius: 18px;
+    min-height: min(82vh, 760px);
+  }
+  .maker-graph-svg {
+    min-height: min(82vh, 760px);
+  }
+  .graph-stage-head {
+    left: 10px;
+    right: 10px;
+    top: 10px;
+    max-width: none;
+    padding: 9px 10px;
+  }
+  .graph-stage-head h2 {
+    font-size: .95rem;
+  }
+  .graph-back-button {
+    min-height: 38px;
+    padding: 9px 11px;
+  }
+  .node-html-label {
+    gap: 4px;
+  }
+  .regional-geography {
+    max-width: 100%;
+    margin-top: 14px;
+  }
+  .regional-geography .section-head p {
+    margin-top: 8px;
+  }
+  .regional-map-svg {
+    min-height: min(78vh, 680px);
+  }
   .graph-panel { padding: 14px; }
 }
 @media (prefers-reduced-motion: reduce) {

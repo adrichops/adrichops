@@ -13,6 +13,7 @@
   const cards = root.querySelector('[data-graph-cards]');
   const roleFilter = root.querySelector('[data-role-filter]');
   const searchInput = root.querySelector('[data-graph-search]');
+  const mobileQuery = window.matchMedia('(max-width: 720px)');
 
   const state = {
     graph: null,
@@ -218,21 +219,32 @@
     };
   }
 
+  function graphDimensions() {
+    const mobile = mobileQuery.matches;
+    return {
+      width: state.activeRegion ? (mobile ? 980 : 1480) : (mobile ? 860 : 1180),
+      height: state.activeRegion ? (mobile ? 980 : 980) : (mobile ? 820 : 760),
+      ringRadius: state.activeRegion ? (mobile ? 330 : 430) : (mobile ? 285 : 280),
+      memberDistance: state.activeRegion ? (mobile ? 330 : 430) : (mobile ? 285 : 285),
+      relationDistance: state.activeRegion ? (mobile ? 310 : 390) : (mobile ? 300 : 390),
+      repulsion: state.activeRegion ? (mobile ? 25500 : 36500) : (mobile ? 16800 : 16800),
+      hubRepulsion: mobile ? 9800 : 9400
+    };
+  }
+
   function seedPosition(node, index, total) {
     const saved = state.positions.get(node.id);
     if (saved) return { ...node, x: saved.x, y: saved.y, vx: saved.vx || 0, vy: saved.vy || 0 };
 
-    const width = state.activeRegion ? 1480 : 1180;
-    const height = state.activeRegion ? 980 : 760;
+    const { width, height, ringRadius } = graphDimensions();
     if (node.id === 'japan' || node.isRegion && state.activeRegion && node.regionId === state.activeRegion.id) {
       return { ...node, x: width / 2, y: height / 2, vx: 0, vy: 0 };
     }
-    const radius = state.activeRegion ? 430 : 280;
     const angle = -Math.PI / 2 + (Math.PI * 2 * index) / Math.max(total, 1);
     return {
       ...node,
-      x: width / 2 + Math.cos(angle) * radius + (Math.random() * 28 - 14),
-      y: height / 2 + Math.sin(angle) * radius + (Math.random() * 28 - 14),
+      x: width / 2 + Math.cos(angle) * ringRadius + (Math.random() * 28 - 14),
+      y: height / 2 + Math.sin(angle) * ringRadius + (Math.random() * 28 - 14),
       vx: 0,
       vy: 0
     };
@@ -329,8 +341,7 @@
     cancelAnimationFrame(state.raf);
 
     const selection = graphSelection();
-    const width = state.activeRegion ? 1480 : 1180;
-    const height = state.activeRegion ? 980 : 760;
+    const { width, height } = graphDimensions();
     const nodes = selection.nodes.map((node, index) => seedPosition(node, index, selection.nodes.length));
     const nodeById = new Map(nodes.map((node) => [node.id, node]));
     const edges = selection.edges
@@ -602,7 +613,8 @@
         const dx = target.x - source.x || 0.01;
         const dy = target.y - source.y || 0.01;
         const distance = Math.sqrt(dx * dx + dy * dy);
-        const desired = edge.kind === 'region-member' || edge.kind === 'regional-hub' ? (state.activeRegion ? 430 : 285) : 390;
+        const dimensions = graphDimensions();
+        const desired = edge.kind === 'region-member' || edge.kind === 'regional-hub' ? dimensions.memberDistance : dimensions.relationDistance;
         const force = ((distance - desired) / distance) * (state.activeRegion ? 0.011 : 0.013) * alpha;
         const fx = dx * force;
         const fy = dy * force;
@@ -623,7 +635,8 @@
           const dx = b.x - a.x || 0.01;
           const dy = b.y - a.y || 0.01;
           const distanceSq = Math.max(dx * dx + dy * dy, 900);
-          const force = (a.isHub || b.isHub ? 9400 : state.activeRegion ? 36500 : 16800) / distanceSq * alpha;
+          const dimensions = graphDimensions();
+          const force = (a.isHub || b.isHub ? dimensions.hubRepulsion : dimensions.repulsion) / distanceSq * alpha;
           const distance = Math.sqrt(distanceSq);
           const fx = (dx / distance) * force;
           const fy = (dy / distance) * force;
@@ -1031,6 +1044,11 @@
 
   resetButtons.forEach((button) => {
     button.addEventListener('click', resetToRegionalMap);
+  });
+  mobileQuery.addEventListener('change', () => {
+    state.positions.clear();
+    state.view = { x: 0, y: 0, scale: 1 };
+    if (state.graph) syncView();
   });
 
   bindViewportControls();
