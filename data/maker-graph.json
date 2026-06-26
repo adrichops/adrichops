@@ -165,15 +165,17 @@
           "id": "yoshikazu-tanaka",
           "name": "Yoshikazu Tanaka",
           "role": "Blacksmith",
-          "specialty": "Sakai forging reference for carbon, Blue #1, White steels, Damascus and honyaki-adjacent buyer discussions.",
+          "specialty": "Sakai City master blacksmith with 50-plus years at the forge; a carbon, Blue #1, White steel, Damascus and honyaki-adjacent reference point.",
           "famousLines": [
             "Tanaka Blue #1",
             "Tanaka White #1",
             "Tanaka x Kyuzo",
-            "Tanaka x Tadokoro"
+            "Tanaka x Tadokoro",
+            "JNS x Yoshikazu Tanaka Kokorozashi"
           ],
           "sourceIds": [
             "knifewear-yoshikazu-tanaka",
+            "jns-yoshikazu-tanaka",
             "kkf-community"
           ]
         },
@@ -584,6 +586,11 @@
         "yoshikane-official",
         "jns-wakui",
         "jns-toyama",
+        "jns-munetoshi",
+        "jns-shigefusa",
+        "jns-yoshiaki-fujiwara",
+        "jns-kaeru",
+        "cleancut-makers",
         "tadafusa-official",
         "watanabe-official"
       ],
@@ -606,14 +613,18 @@
           "id": "toshihiro-wakui",
           "name": "Toshihiro Wakui",
           "role": "Blacksmith",
-          "specialty": "Small-shop Sanjo carbon knives with Yoshikane influence.",
+          "specialty": "Small-shop Sanjo forging with Yoshikane influence; JNS documents White #2, Blue #2, Damascus and natural-stone-finished Kokorozashi/Seiryu contexts.",
           "famousLines": [
             "Wakui White #2",
             "Wakui nashiji",
-            "Wakui kasumi"
+            "Wakui kasumi",
+            "Kokorozashi Wakui",
+            "Wakui Seiryu",
+            "Wakui Damascus"
           ],
           "sourceIds": [
             "jns-wakui",
+            "cleancut-makers",
             "knivesworld-wakui"
           ]
         },
@@ -621,17 +632,19 @@
           "id": "syuuji-toyama",
           "name": "Syuuji Toyama",
           "role": "Blacksmith",
-          "specialty": "Handmade Sanjo carbon knives, strong food-moving geometry and JNS Noborikoi context.",
+          "specialty": "Handmade Sanjo carbon knives, strong food-moving geometry and JNS-exclusive Noborikoi context across Blue, White and honyaki work.",
           "famousLines": [
             "Noborikoi",
             "Toyama Blue steel",
-            "Toyama White steel"
+            "Toyama White steel",
+            "Toyama honyaki"
           ],
           "students": [
             "shinichi-watanabe"
           ],
           "sourceIds": [
-            "jns-toyama"
+            "jns-toyama",
+            "cleancut-makers"
           ]
         },
         {
@@ -639,20 +652,23 @@
           "name": "Shigefusa",
           "role": "Blacksmith",
           "aliases": [
-            "Iizuka"
+            "Tokifusa Iizuka",
+            "Iizuka family"
           ],
-          "specialty": "Sanjo/Niigata benchmark maker for high-fit carbon work, wide-bevel kasumi and Kitaeji buyer discussions.",
+          "specialty": "Tokifusa Iizuka and sons in Sanjo; benchmark hand work with Swedish carbon steel, sen finishing, kasumi and in-house Kitaeji cladding.",
           "famousLines": [
             "Shigefusa Kitaeji",
             "Shigefusa Kasumi",
             "Shigefusa Western"
           ],
           "sourceIds": [
+            "jns-shigefusa",
+            "cleancut-makers",
             "kkf-community",
             "reddit-truechefknives",
             "hitohira-brands"
           ],
-          "caveat": "Community-heavy node pending stronger public source links; treat as regional context, not proof of direct shop relationships."
+          "caveat": "The source trail supports Sanjo workshop and technique context; scarcity and product-specific attribution still need exact listing checks."
         },
         {
           "id": "kiyoshi-kato",
@@ -661,19 +677,56 @@
           "aliases": [
             "Kato",
             "Kato-san",
-            "Kato Workhorse"
+            "Kato Workhorse",
+            "Yoshiaki Fujiwara"
           ],
-          "specialty": "Sanjo/Niigata carbon forging reference point, distinct from Echizen's Yoshimi Kato and Sakai blacksmiths.",
+          "specialty": "Carbon forging reference point distinct from Echizen's Yoshimi Kato and Sakai blacksmiths; Yoshiaki Fujiwara is the knife-name trail to reconcile by listing.",
           "famousLines": [
             "Kato Workhorse",
             "Kato Kasumi",
-            "Kato honyaki"
+            "Kato honyaki",
+            "Yoshiaki Fujiwara"
           ],
           "sourceIds": [
+            "jns-yoshiaki-fujiwara",
             "honyaki-reference",
             "kkf-community"
           ],
-          "caveat": "Region corrected from Sakai to Sanjo from Adrian's correction; exact product and pseudonym usage should still be checked against the listing or retailer trail."
+          "caveat": "Region corrected from Sakai to Sanjo from Adrian's correction. Japanese Natural Stones identifies Yoshiaki Fujiwara as Kiyoshi Kato and places the workshop in Hokuto, Yamanashi, so region and pseudonym should be reconciled listing by listing."
+        },
+        {
+          "id": "munetoshi",
+          "name": "Munetoshi / Kouichi Tsurumaki",
+          "role": "Blacksmith",
+          "aliases": [
+            "Kouichi Tsurumaki",
+            "Munetoshi Sanjo"
+          ],
+          "specialty": "Third-generation Sanjo blacksmith with axe, nata and heavy-blade background; rustic water-quenched, hand-laminated White steel work built for toughness.",
+          "famousLines": [
+            "Munetoshi Kurouchi",
+            "Munetoshi Sanjo",
+            "Munetoshi Wa Butcher"
+          ],
+          "sourceIds": [
+            "jns-munetoshi",
+            "cleancut-makers"
+          ]
+        },
+        {
+          "id": "jns-kaeru",
+          "name": "Kaeru",
+          "role": "Line / Brand",
+          "specialty": "Japanese Natural Stones house line built for practical professional use, usually framed around SLD high-carbon stainless and easy care.",
+          "famousLines": [
+            "Kaeru Kasumi Stainless",
+            "Kaeru SLD",
+            "Kaeru gyuto"
+          ],
+          "sourceIds": [
+            "jns-kaeru"
+          ],
+          "caveat": "House-line node only; do not infer a named blacksmith or sharpener unless a product page states it."
         },
         {
           "id": "masashi-yamamoto",
@@ -684,6 +737,9 @@
             "Kokuen",
             "SLD",
             "VS1"
+          ],
+          "sourceIds": [
+            "cleancut-makers"
           ]
         },
         {
@@ -725,6 +781,7 @@
           ],
           "sourceIds": [
             "knifewear-naoki-mazaki",
+            "cleancut-makers",
             "kkf-community"
           ]
         },
@@ -857,6 +914,19 @@
           ]
         },
         {
+          "from": "shigefusa",
+          "to": "munetoshi",
+          "kind": "regional-peer",
+          "label": "Sanjo rustic carbon comparison",
+          "detail": "Munetoshi and Shigefusa are both Sanjo carbon reference points in the JNS trail, but this is a regional comparison, not a shared workshop claim.",
+          "sourceType": "retailer",
+          "confidence": "medium",
+          "sourceIds": [
+            "jns-munetoshi",
+            "jns-shigefusa"
+          ]
+        },
+        {
           "from": "yoshikane",
           "to": "masashi-yamamoto",
           "kind": "worked-under",
@@ -934,7 +1004,8 @@
       "sourceIds": [
         "takefu-knife-village",
         "tkv-members",
-        "knifejapan-brand-list"
+        "knifejapan-brand-list",
+        "cleancut-makers"
       ],
       "nodes": [
         {
@@ -961,7 +1032,8 @@
             "Raijin"
           ],
           "sourceIds": [
-            "tkv-kurosaki"
+            "tkv-kurosaki",
+            "cleancut-makers"
           ]
         },
         {
@@ -975,7 +1047,8 @@
             "Saji VG10 Damascus"
           ],
           "sourceIds": [
-            "tkv-saji"
+            "tkv-saji",
+            "cleancut-makers"
           ]
         },
         {
@@ -989,7 +1062,8 @@
             "Akuma"
           ],
           "sourceIds": [
-            "tkv-kamo"
+            "tkv-kamo",
+            "cleancut-makers"
           ]
         },
         {
@@ -1003,7 +1077,8 @@
             "Kato Nashiji"
           ],
           "sourceIds": [
-            "tkv-kato"
+            "tkv-kato",
+            "cleancut-makers"
           ]
         },
         {
@@ -1158,6 +1233,7 @@
             "Takamura VG10"
           ],
           "sourceIds": [
+            "cleancut-makers",
             "kkf-community",
             "reddit-truechefknives"
           ],
@@ -1611,6 +1687,10 @@
         "This region is included because Adrian specifically asked for the Tanaka Uchihamono and Kazumi Kawakita relationship.",
         "The graph marks the relationship without overstating exact line names until a stronger source is added."
       ],
+      "sourceIds": [
+        "cleancut-shigeki-tanaka",
+        "cleancut-makers"
+      ],
       "nodes": [
         {
           "id": "tanaka-uchihamono",
@@ -1627,13 +1707,18 @@
           "id": "shigeki-tanaka",
           "name": "Shigeki Tanaka",
           "role": "Blacksmith",
-          "specialty": "Miki blacksmith associated with Tanaka Uchihamono and export-visible carbon/stainless lines.",
+          "specialty": "Miki-area blacksmith associated with Tanaka Uchihamono; Cleancut describes limited hand-forged production just outside Kobe, led by Shigeki after Kazuyuki Tanaka.",
           "famousLines": [
             "Tanaka Blue #2",
             "Tanaka R2",
-            "Tanaka VG10 Damascus"
+            "Tanaka VG10 Damascus",
+            "Tanaka R2 Custom",
+            "Tanaka Kazu",
+            "Tanaka VIP"
           ],
           "sourceIds": [
+            "cleancut-shigeki-tanaka",
+            "cleancut-makers",
             "kkf-community",
             "reddit-truechefknives"
           ]
@@ -1648,9 +1733,10 @@
             "Miki forged knives"
           ],
           "sourceIds": [
+            "cleancut-shigeki-tanaka",
             "kkf-community"
           ],
-          "caveat": "Family/workshop node added for genealogy context; attach stronger public source before product claims."
+          "caveat": "Family/workshop node added for genealogy context; Cleancut names Kazuyuki Tanaka as the father whose work Shigeki continued, while exact product claims still need listing checks."
         }
       ],
       "edges": [
@@ -1663,6 +1749,7 @@
           "sourceType": "community",
           "confidence": "medium",
           "sourceIds": [
+            "cleancut-shigeki-tanaka",
             "kkf-community",
             "reddit-truechefknives"
           ]
@@ -1676,6 +1763,7 @@
           "sourceType": "community",
           "confidence": "low",
           "sourceIds": [
+            "cleancut-shigeki-tanaka",
             "kkf-community"
           ]
         },
@@ -2932,6 +3020,31 @@
       "url": "https://www.japanesenaturalstones.com/toyama-noborikoi/"
     },
     {
+      "id": "jns-munetoshi",
+      "label": "Japanese Natural Stones: Munetoshi Sanjo",
+      "url": "https://www.japanesenaturalstones.com/munetoshi-sanjo/"
+    },
+    {
+      "id": "jns-yoshikazu-tanaka",
+      "label": "Japanese Natural Stones: Yoshikazu Tanaka",
+      "url": "https://www.japanesenaturalstones.com/yoshikazu-tanaka/"
+    },
+    {
+      "id": "jns-kaeru",
+      "label": "Japanese Natural Stones: Kaeru",
+      "url": "https://www.japanesenaturalstones.com/kaeru/"
+    },
+    {
+      "id": "jns-shigefusa",
+      "label": "Japanese Natural Stones: Shigefusa",
+      "url": "https://www.japanesenaturalstones.com/shigefusa/"
+    },
+    {
+      "id": "jns-yoshiaki-fujiwara",
+      "label": "Japanese Natural Stones: Yoshiaki Fujiwara",
+      "url": "https://www.japanesenaturalstones.com/yoshiaki-fujiwara/"
+    },
+    {
       "id": "hado-official",
       "label": "HADO official site",
       "url": "https://hado-knife.jp/en"
@@ -3180,6 +3293,16 @@
       "id": "hitohira-daitoku",
       "label": "Hitohira: Daitoku collection",
       "url": "https://hitohira-japan.com/collections/daitoku"
+    },
+    {
+      "id": "cleancut-makers",
+      "label": "Cleancut makers directory",
+      "url": "https://www.cleancut.eu/makers"
+    },
+    {
+      "id": "cleancut-shigeki-tanaka",
+      "label": "Cleancut: Shigeki Tanaka",
+      "url": "https://www.cleancut.eu/makers/manufacturers/mrtanaka"
     },
     {
       "id": "kkf-community",
