@@ -195,21 +195,6 @@
           "caveat": "Community-heavy node: check exact retailer and line attribution before treating this as a buying claim."
         },
         {
-          "id": "kiyoshi-kato",
-          "name": "Kiyoshi Kato",
-          "role": "Blacksmith",
-          "specialty": "Sakai honyaki and traditional carbon forging reference point, separate from Echizen's Yoshimi Kato.",
-          "famousLines": [
-            "Kiyoshi Kato honyaki",
-            "Sakai honyaki"
-          ],
-          "sourceIds": [
-            "honyaki-reference",
-            "kkf-community"
-          ],
-          "caveat": "Added as a named Sakai honyaki reference; verify exact knife listings before making product-specific attribution."
-        },
-        {
           "id": "tadokoro-hamono",
           "name": "Tadokoro Hamono",
           "role": "Sharpener",
@@ -448,19 +433,6 @@
           ]
         },
         {
-          "from": "kiyoshi-kato",
-          "to": "kenji-togashi",
-          "kind": "regional-peer",
-          "label": "Sakai honyaki context",
-          "detail": "Kiyoshi Kato is mapped beside Togashi as a Sakai honyaki reference point, not as a claimed shop relationship.",
-          "sourceType": "reference",
-          "confidence": "medium",
-          "sourceIds": [
-            "honyaki-reference",
-            "kkf-community"
-          ]
-        },
-        {
           "from": "hado",
           "to": "baba-hamono",
           "kind": "regional-peer",
@@ -683,6 +655,27 @@
           "caveat": "Community-heavy node pending stronger public source links; treat as regional context, not proof of direct shop relationships."
         },
         {
+          "id": "kiyoshi-kato",
+          "name": "Kiyoshi Kato",
+          "role": "Blacksmith",
+          "aliases": [
+            "Kato",
+            "Kato-san",
+            "Kato Workhorse"
+          ],
+          "specialty": "Sanjo/Niigata carbon forging reference point, distinct from Echizen's Yoshimi Kato and Sakai blacksmiths.",
+          "famousLines": [
+            "Kato Workhorse",
+            "Kato Kasumi",
+            "Kato honyaki"
+          ],
+          "sourceIds": [
+            "honyaki-reference",
+            "kkf-community"
+          ],
+          "caveat": "Region corrected from Sakai to Sanjo from Adrian's correction; exact product and pseudonym usage should still be checked against the listing or retailer trail."
+        },
+        {
           "id": "masashi-yamamoto",
           "name": "Masashi Yamamoto",
           "role": "Blacksmith",
@@ -848,6 +841,19 @@
           "sourceIds": [
             "kkf-community",
             "reddit-truechefknives"
+          ]
+        },
+        {
+          "from": "shigefusa",
+          "to": "kiyoshi-kato",
+          "kind": "regional-peer",
+          "label": "Sanjo high-end carbon context",
+          "detail": "Kiyoshi Kato is mapped in the Sanjo/Niigata context, not Sakai; the aliases capture buyer-facing Kato naming around the workhorse/kasumi trail.",
+          "sourceType": "community",
+          "confidence": "medium",
+          "sourceIds": [
+            "honyaki-reference",
+            "kkf-community"
           ]
         },
         {
