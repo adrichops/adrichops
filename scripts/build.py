@@ -178,6 +178,34 @@ def footer():
     year = datetime.date.today().year
     links = ''.join(f'<a href="{href}">{esc(label)}</a>' for href,label in NAV)
     return f'''<div class="search-dialog" data-search-dialog aria-hidden="true"><div class="search-panel" role="dialog" aria-label="Search Adrichops"><header><input data-search-input type="search" placeholder="Search maker, nakiri, VG10, Shapton, board…"><button class="icon-button" type="button" data-search-close aria-label="Close search">×</button></header><div class="search-results" data-search-results></div></div></div>
+<section class="site-engagement" aria-label="Feedback and newsletter">
+  <div class="engagement-inner">
+    <form class="engagement-card feedback-form" data-feedback-form action="/api/feedback" method="post">
+      <div><span class="kicker">Feedback</span><h2>Was this useful?</h2></div>
+      <fieldset class="csat-scale" aria-label="How satisfied were you with this content?">
+        <legend>How satisfied were you with this content?</legend>
+        <label><input type="radio" name="score" value="1" required><span>1</span></label>
+        <label><input type="radio" name="score" value="2"><span>2</span></label>
+        <label><input type="radio" name="score" value="3"><span>3</span></label>
+        <label><input type="radio" name="score" value="4"><span>4</span></label>
+        <label><input type="radio" name="score" value="5"><span>5</span></label>
+      </fieldset>
+      <label class="field-label">Your note<textarea name="comment" rows="4" maxlength="1200" placeholder="What should I keep, fix or explain better?"></textarea></label>
+      <input type="hidden" name="page_url" data-current-url>
+      <input type="hidden" name="pathname" data-current-path>
+      <label class="bot-field" aria-hidden="true">Website<input type="text" name="website" tabindex="-1" autocomplete="off"></label>
+      <div class="form-row"><button class="button primary" type="submit">Send feedback</button><p class="form-status" data-form-status aria-live="polite"></p></div>
+    </form>
+    <form class="engagement-card newsletter-form" data-newsletter-form action="/api/newsletter" method="post">
+      <div><span class="kicker">Newsletter</span><h2>Get new notes.</h2><p>Occasional reviews, maker updates and practical knife notes.</p></div>
+      <label class="field-label">Email address<input type="email" name="email" autocomplete="email" required placeholder="you@example.com"></label>
+      <input type="hidden" name="page_url" data-current-url>
+      <input type="hidden" name="pathname" data-current-path>
+      <label class="bot-field" aria-hidden="true">Website<input type="text" name="website" tabindex="-1" autocomplete="off"></label>
+      <div class="form-row"><button class="button primary" type="submit">Sign up</button><p class="form-status" data-form-status aria-live="polite"></p></div>
+    </form>
+  </div>
+</section>
 <footer class="footer"><div class="footer-inner"><p>© {year} Adrichops. Personal knife notes, source trails and disclosed affiliate links.</p><nav class="footer-links">{links}<a href="/privacy/">Privacy</a><a href="/explore/">Explore deck</a></nav></div></footer>
 <script src="/assets/js/main.js" defer></script>
 </body></html>'''
@@ -298,7 +326,7 @@ def disclosure_page():
     return head('Disclosure — Adrichops', 'Affiliate disclosure, review integrity, source policy and correction policy for Adrichops.', '/disclosure/') + header('Disclosure') + '''<main class="page"><section class="collection-hero"><span class="kicker">Disclosure</span><h1>Affiliate links, source trails and review integrity.</h1><p>Adrichops may use affiliate links. My goal is to make recommendations useful without pretending every product has been personally tested.</p></section><article class="article-body"><h2>Amazon Associates statement</h2><p>As an Amazon Associate I earn from qualifying purchases.</p><h2>How links work</h2><p>Some product links may be affiliate links to Amazon or other retailers. If you buy through them, Adrichops may earn a commission at no extra cost to you.</p><h2>Status labels</h2><p><strong>Owned</strong> means I have personal long-term experience with the item. <strong>Research brief</strong> means the article is based on official specifications, retailer information and community consensus rather than a claimed hands-on test. <strong>Maker profile</strong> means the piece is about context, style and buying considerations, not a guarantee about every individual knife.</p><h2>Source policy</h2><p>Article pages include a source trail where useful. Official maker pages, specialist retailers, technical references, KKF-style discussion and Reddit-style community consensus can all inform a piece, but the writing remains original and claims are framed carefully.</p><h2>Corrections</h2><p>If a specification, maker attribution, steel, heat-treatment note or retailer detail changes, the article should be corrected. Knife information moves; the site should not pretend otherwise.</p></article></main>''' + footer()
 
 def privacy_page():
-    return head('Privacy — Adrichops', 'Privacy notes for Adrichops local storage, saved notes, theme settings and affiliate links.', '/privacy/') + header('') + '''<main class="page"><section class="collection-hero"><span class="kicker">Privacy</span><h1>Small site, small data footprint.</h1><p>Adrichops is a static site. It uses local browser storage for theme choice, saved notes, Knife Finder state and Kit Builder selections.</p></section><article class="article-body"><h2>Local storage</h2><p>The theme toggle, saved articles, Knife Finder choices and Kit Builder deck may be stored in your browser. That data stays on your device unless the hosting platform or future analytics setup changes.</p><h2>Affiliate links</h2><p>External retailers may collect their own analytics or referral data after you leave Adrichops.</p><h2>Future analytics</h2><p>If analytics are added later, this page should be updated before launch.</p></article></main>''' + footer()
+    return head('Privacy — Adrichops', 'Privacy notes for Adrichops local storage, feedback, newsletter signup, saved notes, theme settings and affiliate links.', '/privacy/') + header('') + '''<main class="page"><section class="collection-hero"><span class="kicker">Privacy</span><h1>Small site, small data footprint.</h1><p>Adrichops uses local browser storage for theme choice, saved notes, Knife Finder state and Kit Builder selections. Feedback and newsletter forms are stored server-side so they can be read later.</p></section><article class="article-body"><h2>Local storage</h2><p>The theme toggle, saved articles, Knife Finder choices and Kit Builder deck may be stored in your browser. That data stays on your device.</p><h2>Feedback</h2><p>If you submit the feedback form, the site stores the satisfaction score, optional comment, page URL and browser user-agent. This is used to understand what content is useful and what needs correction.</p><h2>Newsletter</h2><p>If you sign up for the newsletter, the site stores your email address, signup page and signup time. You can ask to be removed when newsletter sending is added.</p><h2>Affiliate links</h2><p>External retailers may collect their own analytics or referral data after you leave Adrichops.</p><h2>Future analytics</h2><p>If analytics are added later, this page should be updated before launch.</p></article></main>''' + footer()
 
 def roll_page(products, posts):
     tojiro = next((p for p in posts if p['id']=='tojiro-dp-210mm-gyuto-shortlist-review'), None)

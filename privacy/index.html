@@ -4,10 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Privacy — Adrichops</title>
-<meta name="description" content="Privacy notes for Adrichops local storage, saved notes, theme settings and affiliate links.">
+<meta name="description" content="Privacy notes for Adrichops local storage, feedback, newsletter signup, saved notes, theme settings and affiliate links.">
 <link rel="canonical" href="https://adrichops.pages.dev/privacy/">
 <meta property="og:title" content="Privacy — Adrichops">
-<meta property="og:description" content="Privacy notes for Adrichops local storage, saved notes, theme settings and affiliate links.">
+<meta property="og:description" content="Privacy notes for Adrichops local storage, feedback, newsletter signup, saved notes, theme settings and affiliate links.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://adrichops.pages.dev/privacy/">
 <meta property="og:image" content="https://adrichops.pages.dev/assets/img/hero-gyuto.svg">
@@ -30,7 +30,35 @@
       <button class="icon-button" type="button" data-theme-toggle aria-label="Toggle light or dark theme"></button>
     </div>
   </div>
-</header><main class="page"><section class="collection-hero"><span class="kicker">Privacy</span><h1>Small site, small data footprint.</h1><p>Adrichops is a static site. It uses local browser storage for theme choice, saved notes, Knife Finder state and Kit Builder selections.</p></section><article class="article-body"><h2>Local storage</h2><p>The theme toggle, saved articles, Knife Finder choices and Kit Builder deck may be stored in your browser. That data stays on your device unless the hosting platform or future analytics setup changes.</p><h2>Affiliate links</h2><p>External retailers may collect their own analytics or referral data after you leave Adrichops.</p><h2>Future analytics</h2><p>If analytics are added later, this page should be updated before launch.</p></article></main><div class="search-dialog" data-search-dialog aria-hidden="true"><div class="search-panel" role="dialog" aria-label="Search Adrichops"><header><input data-search-input type="search" placeholder="Search maker, nakiri, VG10, Shapton, board…"><button class="icon-button" type="button" data-search-close aria-label="Close search">×</button></header><div class="search-results" data-search-results></div></div></div>
+</header><main class="page"><section class="collection-hero"><span class="kicker">Privacy</span><h1>Small site, small data footprint.</h1><p>Adrichops uses local browser storage for theme choice, saved notes, Knife Finder state and Kit Builder selections. Feedback and newsletter forms are stored server-side so they can be read later.</p></section><article class="article-body"><h2>Local storage</h2><p>The theme toggle, saved articles, Knife Finder choices and Kit Builder deck may be stored in your browser. That data stays on your device.</p><h2>Feedback</h2><p>If you submit the feedback form, the site stores the satisfaction score, optional comment, page URL and browser user-agent. This is used to understand what content is useful and what needs correction.</p><h2>Newsletter</h2><p>If you sign up for the newsletter, the site stores your email address, signup page and signup time. You can ask to be removed when newsletter sending is added.</p><h2>Affiliate links</h2><p>External retailers may collect their own analytics or referral data after you leave Adrichops.</p><h2>Future analytics</h2><p>If analytics are added later, this page should be updated before launch.</p></article></main><div class="search-dialog" data-search-dialog aria-hidden="true"><div class="search-panel" role="dialog" aria-label="Search Adrichops"><header><input data-search-input type="search" placeholder="Search maker, nakiri, VG10, Shapton, board…"><button class="icon-button" type="button" data-search-close aria-label="Close search">×</button></header><div class="search-results" data-search-results></div></div></div>
+<section class="site-engagement" aria-label="Feedback and newsletter">
+  <div class="engagement-inner">
+    <form class="engagement-card feedback-form" data-feedback-form action="/api/feedback" method="post">
+      <div><span class="kicker">Feedback</span><h2>Was this useful?</h2></div>
+      <fieldset class="csat-scale" aria-label="How satisfied were you with this content?">
+        <legend>How satisfied were you with this content?</legend>
+        <label><input type="radio" name="score" value="1" required><span>1</span></label>
+        <label><input type="radio" name="score" value="2"><span>2</span></label>
+        <label><input type="radio" name="score" value="3"><span>3</span></label>
+        <label><input type="radio" name="score" value="4"><span>4</span></label>
+        <label><input type="radio" name="score" value="5"><span>5</span></label>
+      </fieldset>
+      <label class="field-label">Your note<textarea name="comment" rows="4" maxlength="1200" placeholder="What should I keep, fix or explain better?"></textarea></label>
+      <input type="hidden" name="page_url" data-current-url>
+      <input type="hidden" name="pathname" data-current-path>
+      <label class="bot-field" aria-hidden="true">Website<input type="text" name="website" tabindex="-1" autocomplete="off"></label>
+      <div class="form-row"><button class="button primary" type="submit">Send feedback</button><p class="form-status" data-form-status aria-live="polite"></p></div>
+    </form>
+    <form class="engagement-card newsletter-form" data-newsletter-form action="/api/newsletter" method="post">
+      <div><span class="kicker">Newsletter</span><h2>Get new notes.</h2><p>Occasional reviews, maker updates and practical knife notes.</p></div>
+      <label class="field-label">Email address<input type="email" name="email" autocomplete="email" required placeholder="you@example.com"></label>
+      <input type="hidden" name="page_url" data-current-url>
+      <input type="hidden" name="pathname" data-current-path>
+      <label class="bot-field" aria-hidden="true">Website<input type="text" name="website" tabindex="-1" autocomplete="off"></label>
+      <div class="form-row"><button class="button primary" type="submit">Sign up</button><p class="form-status" data-form-status aria-live="polite"></p></div>
+    </form>
+  </div>
+</section>
 <footer class="footer"><div class="footer-inner"><p>© 2026 Adrichops. Personal knife notes, source trails and disclosed affiliate links.</p><nav class="footer-links"><a href="/about/">About</a><a href="/reviews/">Reviews</a><a href="/maker-spotlight/">Maker spotlight</a><a href="/maker-map/">Maker map</a><a href="/whats-in-my-roll/">What’s in my roll</a><a href="/kit-builder/">Kit Builder</a><a href="/recommendations/">Recommendations</a><a href="/disclosure/">Disclosure</a><a href="/privacy/">Privacy</a><a href="/explore/">Explore deck</a></nav></div></footer>
 <script src="/assets/js/main.js" defer></script>
 </body></html>

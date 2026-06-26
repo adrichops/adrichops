@@ -1,2 +1,7 @@
 name = "adrichops"
 pages_build_output_dir = "."
+
+[[d1_databases]]
+binding = "ADRICHOPS_DB"
+database_name = "adrichops_submissions"
+database_id = "7693acef-89f2-499c-b207-f29a5debacc2"

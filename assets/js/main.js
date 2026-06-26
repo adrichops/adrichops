@@ -118,4 +118,48 @@
       rows.forEach(row => { row.hidden = q && !row.getAttribute('data-filter-text').toLowerCase().includes(q); });
     });
   });
+
+  document.querySelectorAll('[data-current-url]').forEach(input => {
+    input.value = location.href;
+  });
+  document.querySelectorAll('[data-current-path]').forEach(input => {
+    input.value = location.pathname;
+  });
+
+  function bindAsyncForm(selector, successMessage) {
+    document.querySelectorAll(selector).forEach(form => {
+      const status = form.querySelector('[data-form-status]');
+      form.addEventListener('submit', async event => {
+        event.preventDefault();
+        const button = form.querySelector('button[type="submit"]');
+        if (status) {
+          status.textContent = 'Sending...';
+          status.classList.remove('is-error');
+        }
+        if (button) button.disabled = true;
+        try {
+          const response = await fetch(form.action, {
+            method: 'POST',
+            body: new FormData(form),
+            headers: { 'accept': 'application/json' }
+          });
+          const data = await response.json().catch(() => ({}));
+          if (!response.ok) throw new Error(data.error || 'Something went wrong.');
+          form.reset();
+          form.querySelectorAll('[data-current-url]').forEach(input => { input.value = location.href; });
+          form.querySelectorAll('[data-current-path]').forEach(input => { input.value = location.pathname; });
+          if (status) status.textContent = data.message || successMessage;
+        } catch (error) {
+          if (status) {
+            status.textContent = error.message || 'Could not send. Try again later.';
+            status.classList.add('is-error');
+          }
+        } finally {
+          if (button) button.disabled = false;
+        }
+      });
+    });
+  }
+  bindAsyncForm('[data-feedback-form]', 'Feedback sent.');
+  bindAsyncForm('[data-newsletter-form]', 'Signed up.');
 })();

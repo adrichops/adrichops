@@ -31,6 +31,34 @@
     </div>
   </div>
 </header><main class="page"><section class="collection-hero"><span class="kicker">404</span><h1>Lost edge.</h1><p>This page is not in the kit. Try the notebook, recommendations or search.</p><p><a class="button primary" href="/">Back home</a></p></section></main><div class="search-dialog" data-search-dialog aria-hidden="true"><div class="search-panel" role="dialog" aria-label="Search Adrichops"><header><input data-search-input type="search" placeholder="Search maker, nakiri, VG10, Shapton, board…"><button class="icon-button" type="button" data-search-close aria-label="Close search">×</button></header><div class="search-results" data-search-results></div></div></div>
+<section class="site-engagement" aria-label="Feedback and newsletter">
+  <div class="engagement-inner">
+    <form class="engagement-card feedback-form" data-feedback-form action="/api/feedback" method="post">
+      <div><span class="kicker">Feedback</span><h2>Was this useful?</h2></div>
+      <fieldset class="csat-scale" aria-label="How satisfied were you with this content?">
+        <legend>How satisfied were you with this content?</legend>
+        <label><input type="radio" name="score" value="1" required><span>1</span></label>
+        <label><input type="radio" name="score" value="2"><span>2</span></label>
+        <label><input type="radio" name="score" value="3"><span>3</span></label>
+        <label><input type="radio" name="score" value="4"><span>4</span></label>
+        <label><input type="radio" name="score" value="5"><span>5</span></label>
+      </fieldset>
+      <label class="field-label">Your note<textarea name="comment" rows="4" maxlength="1200" placeholder="What should I keep, fix or explain better?"></textarea></label>
+      <input type="hidden" name="page_url" data-current-url>
+      <input type="hidden" name="pathname" data-current-path>
+      <label class="bot-field" aria-hidden="true">Website<input type="text" name="website" tabindex="-1" autocomplete="off"></label>
+      <div class="form-row"><button class="button primary" type="submit">Send feedback</button><p class="form-status" data-form-status aria-live="polite"></p></div>
+    </form>
+    <form class="engagement-card newsletter-form" data-newsletter-form action="/api/newsletter" method="post">
+      <div><span class="kicker">Newsletter</span><h2>Get new notes.</h2><p>Occasional reviews, maker updates and practical knife notes.</p></div>
+      <label class="field-label">Email address<input type="email" name="email" autocomplete="email" required placeholder="you@example.com"></label>
+      <input type="hidden" name="page_url" data-current-url>
+      <input type="hidden" name="pathname" data-current-path>
+      <label class="bot-field" aria-hidden="true">Website<input type="text" name="website" tabindex="-1" autocomplete="off"></label>
+      <div class="form-row"><button class="button primary" type="submit">Sign up</button><p class="form-status" data-form-status aria-live="polite"></p></div>
+    </form>
+  </div>
+</section>
 <footer class="footer"><div class="footer-inner"><p>© 2026 Adrichops. Personal knife notes, source trails and disclosed affiliate links.</p><nav class="footer-links"><a href="/about/">About</a><a href="/reviews/">Reviews</a><a href="/maker-spotlight/">Maker spotlight</a><a href="/maker-map/">Maker map</a><a href="/whats-in-my-roll/">What’s in my roll</a><a href="/kit-builder/">Kit Builder</a><a href="/recommendations/">Recommendations</a><a href="/disclosure/">Disclosure</a><a href="/privacy/">Privacy</a><a href="/explore/">Explore deck</a></nav></div></footer>
 <script src="/assets/js/main.js" defer></script>
 </body></html>
