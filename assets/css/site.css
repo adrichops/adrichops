@@ -782,7 +782,8 @@ p { margin: 0; }
 .regional-geography {
   max-width: min(1800px, calc(100vw - 48px));
   margin: 18px auto 0;
-  overflow: hidden;
+  overflow-x: auto;
+  overflow-y: hidden;
 }
 .regional-geography .section-head {
   align-items: end;
@@ -790,7 +791,7 @@ p { margin: 0; }
 }
 .regional-map-svg {
   width: 100%;
-  min-height: clamp(520px, 56vw, 760px);
+  min-height: clamp(660px, 62vw, 920px);
   display: block;
   border: 1px solid var(--line);
   border-radius: var(--radius-sm);
@@ -813,17 +814,38 @@ p { margin: 0; }
   cursor: pointer;
   outline: none;
 }
-.regional-map-node circle {
-  fill: color-mix(in srgb, var(--region-color) 19%, var(--paper));
-  stroke: var(--region-color);
-  stroke-width: 3.6;
-  filter: drop-shadow(0 10px 16px color-mix(in srgb, var(--region-color) 18%, transparent));
+.regional-map-node .map-callout-line {
+  stroke: color-mix(in srgb, var(--region-color) 62%, var(--line-strong));
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  opacity: .86;
 }
-.regional-map-node:hover circle,
-.regional-map-node:focus-visible circle,
-.regional-map-node.is-active circle {
-  fill: color-mix(in srgb, var(--region-color) 33%, var(--paper));
-  stroke-width: 4.4;
+.regional-map-node .map-pin-halo {
+  fill: color-mix(in srgb, var(--region-color) 24%, transparent);
+  stroke: color-mix(in srgb, var(--region-color) 70%, transparent);
+  stroke-width: 2;
+}
+.regional-map-node .map-pin {
+  fill: var(--region-color);
+  stroke: var(--paper);
+  stroke-width: 2;
+}
+.regional-map-node .map-label-bg {
+  fill: color-mix(in srgb, var(--region-color) 16%, var(--paper));
+  stroke: var(--region-color);
+  stroke-width: 2.4;
+  filter: drop-shadow(0 8px 12px color-mix(in srgb, var(--region-color) 12%, transparent));
+}
+.regional-map-node:hover .map-label-bg,
+.regional-map-node:focus-visible .map-label-bg,
+.regional-map-node.is-active .map-label-bg {
+  fill: color-mix(in srgb, var(--region-color) 30%, var(--paper));
+  stroke-width: 3.4;
+}
+.regional-map-node:hover .map-pin,
+.regional-map-node:focus-visible .map-pin,
+.regional-map-node.is-active .map-pin {
+  r: 7;
 }
 .regional-map-node text {
   text-anchor: middle;
@@ -837,11 +859,10 @@ p { margin: 0; }
 }
 .regional-map-node .region-flag {
   fill: var(--region-color);
-  font-size: 14px;
-  letter-spacing: .08em;
+  font-size: 15px;
 }
 .regional-map-node .small {
-  font-size: 10.5px;
+  font-size: 11px;
   text-transform: uppercase;
 }
 .maker-card {
@@ -1262,7 +1283,9 @@ p { margin: 0; }
     margin-top: 8px;
   }
   .regional-map-svg {
-    min-height: min(78vh, 680px);
+    width: 980px;
+    max-width: none;
+    min-height: min(78vh, 720px);
   }
   .graph-panel { padding: 14px; }
 }

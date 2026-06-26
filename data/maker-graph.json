@@ -95,7 +95,8 @@
           ],
           "sourceIds": [
             "takada-official",
-            "mtc-takada"
+            "mtc-takada",
+            "hitohira-brands"
           ]
         },
         {
@@ -188,7 +189,8 @@
           ],
           "sourceIds": [
             "kkf-community",
-            "reddit-truechefknives"
+            "reddit-truechefknives",
+            "hitohira-brands"
           ],
           "caveat": "Community-heavy node: check exact retailer and line attribution before treating this as a buying claim."
         },
@@ -219,7 +221,8 @@
           ],
           "sourceIds": [
             "kkf-community",
-            "reddit-truechefknives"
+            "reddit-truechefknives",
+            "hitohira-brands"
           ],
           "caveat": "Relationship edges are community/retailer leads until exact product pages are attached."
         },
@@ -235,6 +238,8 @@
           ],
           "sourceIds": [
             "hitohira-official",
+            "hitohira-brands",
+            "hitohira-about",
             "kkf-community"
           ]
         },
@@ -672,7 +677,8 @@
           ],
           "sourceIds": [
             "kkf-community",
-            "reddit-truechefknives"
+            "reddit-truechefknives",
+            "hitohira-brands"
           ],
           "caveat": "Community-heavy node pending stronger public source links; treat as regional context, not proof of direct shop relationships."
         },
@@ -1693,6 +1699,8 @@
       "sourceIds": [
         "misono-official",
         "mac-official",
+        "hitohira-moki",
+        "hitohira-brands",
         "kkf-community",
         "reddit-truechefknives"
       ],
@@ -1785,6 +1793,21 @@
             "korin-official",
             "kkf-community"
           ]
+        },
+        {
+          "id": "moki",
+          "name": "Moki",
+          "role": "Workshop / Brand",
+          "specialty": "Seki/Gifu production brand listed by Hitohira, with outdoor, pocket and other edge tools alongside stainless steel product lines.",
+          "famousLines": [
+            "Moki pocket knives",
+            "Moki fixed blades",
+            "Moki steak knife"
+          ],
+          "sourceIds": [
+            "hitohira-moki",
+            "hitohira-brands"
+          ]
         }
       ],
       "edges": [
@@ -1824,6 +1847,19 @@
           "confidence": "low",
           "sourceIds": [
             "kkf-community"
+          ]
+        },
+        {
+          "from": "misono",
+          "to": "moki",
+          "kind": "regional-peer",
+          "label": "Seki production context",
+          "detail": "Moki is added as a Seki/Gifu production-brand context from Hitohira, not as a kitchen-knife-only comparison.",
+          "sourceType": "retailer",
+          "confidence": "medium",
+          "sourceIds": [
+            "hitohira-moki",
+            "hitohira-brands"
           ]
         },
         {
@@ -2599,15 +2635,85 @@
       "edges": []
     },
     {
+      "id": "nagano",
+      "name": "Nagano",
+      "location": "Nagano",
+      "summary": "Hitohira/Jiro context for mountain-forged, low-volume knives and product stories around outdoor cooking.",
+      "notes": [
+        "Hitohira does not sell Jiro knives directly on its own site; it points buyers to Jiro retailers.",
+        "The Jiro BBQ knife story is included as product-story context, not proof of every Jiro knife's use case."
+      ],
+      "sourceIds": [
+        "hitohira-jiro",
+        "hitohira-jiro-bbq",
+        "hitohira-brands"
+      ],
+      "nodes": [
+        {
+          "id": "jiro",
+          "name": "Jiro",
+          "role": "Blacksmith / Brand",
+          "specialty": "Low-volume Jiro Tsuchime knives with Hitohira retailer-routing context and a BBQ knife story tied to mountain cooking in Nagano.",
+          "famousLines": [
+            "Jiro Tsuchime Gyuto",
+            "Jiro Tsuchime Sujihiki",
+            "Jiro BBQ Knife"
+          ],
+          "sourceIds": [
+            "hitohira-jiro",
+            "hitohira-jiro-bbq",
+            "hitohira-brands"
+          ],
+          "caveat": "Hitohira confirms the collection and retailer route; exact workshop biography and individual knife specs should be checked listing by listing."
+        }
+      ],
+      "edges": []
+    },
+    {
+      "id": "mie",
+      "name": "Mie",
+      "location": "Mie",
+      "summary": "Hitohira branch for Daitoku and small old-style blacksmith context outside the usual knife-tourist regions.",
+      "notes": [
+        "Daitoku is included from Hitohira's brand-story text as a small blacksmith story, not as a broad regional school."
+      ],
+      "sourceIds": [
+        "hitohira-daitoku",
+        "hitohira-brands"
+      ],
+      "nodes": [
+        {
+          "id": "daitoku",
+          "name": "Daitoku",
+          "role": "Blacksmith",
+          "specialty": "Hitohira-listed blacksmith story: a fifth-generation family context, old-style local-order work and hand-finished edges, with bread knife work highlighted.",
+          "famousLines": [
+            "Daitoku bread knife",
+            "Daitoku forged knives"
+          ],
+          "sourceIds": [
+            "hitohira-daitoku",
+            "hitohira-brands"
+          ],
+          "caveat": "Source text is Hitohira's brand story; add independent sources before mapping teacher/student relationships."
+        }
+      ],
+      "edges": []
+    },
+    {
       "id": "tokyo",
       "name": "Tokyo",
       "location": "Tokyo",
       "summary": "Tokyo maker and retailer-brand context for highly opinionated carbon and professional house-line knives.",
       "notes": [
-        "This branch starts with Teruyasu Fujiwara and should grow into Masamoto/Misono/Suisin retail context as exact sources are attached."
+        "Tokyo includes both maker identities and retailer/supplier identities; those are different buying clues.",
+        "Hitohira, Morihei, Hi-Condition and Tsubaya are included as source/curation nodes rather than claimed blacksmith nodes."
       ],
       "sourceIds": [
         "teruyasu-fujiwara-official",
+        "hitohira-about",
+        "hitohira-brands",
+        "hitohira-morihei",
         "kkf-community",
         "reddit-truechefknives"
       ],
@@ -2631,9 +2737,116 @@
             "kkf-community",
             "reddit-truechefknives"
           ]
+        },
+        {
+          "id": "hitohira-tokyo",
+          "name": "Hitohira Tokyo",
+          "role": "Brand / Retailer",
+          "specialty": "Tokyo retail and wholesale operation for Japanese knives, tools and stones; Hitohira describes in-store sharpening and repair workshops.",
+          "famousLines": [
+            "Hitohira house lines",
+            "Hitohira Tokyo store",
+            "World Sharpeners Union"
+          ],
+          "sourceIds": [
+            "hitohira-about",
+            "hitohira-brands"
+          ]
+        },
+        {
+          "id": "morihei",
+          "name": "Morihei",
+          "role": "Supplier / Brand",
+          "specialty": "Asakusabashi, Tokyo knife and whetstone supplier with a long history of relationships with blacksmiths, sharpeners and natural stone makers.",
+          "famousLines": [
+            "Morihei Hisamoto",
+            "Morihei stones",
+            "Morihei natural stones"
+          ],
+          "sourceIds": [
+            "hitohira-morihei",
+            "hitohira-brands"
+          ]
+        },
+        {
+          "id": "hi-condition",
+          "name": "HI-CONDITION",
+          "role": "Brand / Retailer",
+          "specialty": "Asakusabashi, Tokyo brand context listed by Hitohira; useful as a retail/source node rather than a single-maker claim.",
+          "famousLines": [
+            "HI-CONDITION"
+          ],
+          "sourceIds": [
+            "hitohira-brands"
+          ]
+        },
+        {
+          "id": "tsubaya",
+          "name": "Cutlery Tsubaya",
+          "role": "Retailer / Brand",
+          "specialty": "Tokyo cutlery-store context listed by Hitohira; source-led node for retailer curation and house-line discovery.",
+          "famousLines": [
+            "Tsubaya house lines",
+            "Cutlery Tsubaya"
+          ],
+          "sourceIds": [
+            "hitohira-brands"
+          ]
+        },
+        {
+          "id": "kanatoko",
+          "name": "Kanatoko",
+          "role": "Brand",
+          "specialty": "Hitohira-listed brand node added for follow-up sourcing and line mapping.",
+          "famousLines": [
+            "Kanatoko"
+          ],
+          "sourceIds": [
+            "hitohira-brands"
+          ],
+          "caveat": "Hitohira confirms the brand listing; region and maker-story details need stronger source attachment."
         }
       ],
-      "edges": []
+      "edges": [
+        {
+          "from": "hitohira-tokyo",
+          "to": "morihei",
+          "kind": "regional-peer",
+          "label": "Tokyo source context",
+          "detail": "Hitohira and Morihei both sit in Tokyo as curation/supplier nodes rather than simple smith nodes.",
+          "sourceType": "retailer",
+          "confidence": "medium",
+          "sourceIds": [
+            "hitohira-about",
+            "hitohira-morihei"
+          ]
+        },
+        {
+          "from": "morihei",
+          "to": "hi-condition",
+          "kind": "regional-peer",
+          "label": "Asakusabashi context",
+          "detail": "Hitohira lists Morihei and HI-CONDITION with Asakusabashi, Tokyo context.",
+          "sourceType": "retailer",
+          "confidence": "medium",
+          "sourceIds": [
+            "hitohira-morihei",
+            "hitohira-brands"
+          ]
+        },
+        {
+          "from": "hitohira-tokyo",
+          "to": "tsubaya",
+          "kind": "regional-peer",
+          "label": "Tokyo retail context",
+          "detail": "Tsubaya is included as a Tokyo cutlery-store and curation node from Hitohira's brand index.",
+          "sourceType": "retailer",
+          "confidence": "medium",
+          "sourceIds": [
+            "hitohira-brands"
+          ]
+        }
+      ]
     }
   ],
   "sources": [
@@ -2926,6 +3139,41 @@
       "id": "hitohira-tetsujin",
       "label": "Hitohira: Tetsujin collection",
       "url": "https://hitohira-japan.com/collections/tetsujin"
+    },
+    {
+      "id": "hitohira-brands",
+      "label": "Hitohira brands index",
+      "url": "https://hitohira-japan.com/collections/brands"
+    },
+    {
+      "id": "hitohira-about",
+      "label": "Hitohira About",
+      "url": "https://hitohira-japan.com/pages/about-us"
+    },
+    {
+      "id": "hitohira-jiro",
+      "label": "Hitohira: Jiro collection",
+      "url": "https://hitohira-japan.com/collections/jiro"
+    },
+    {
+      "id": "hitohira-jiro-bbq",
+      "label": "Hitohira: Introducing Jiro's BBQ knife",
+      "url": "https://hitohira-japan.com/blogs/news/introducing-jiros-bbq-knife"
+    },
+    {
+      "id": "hitohira-morihei",
+      "label": "Hitohira: Morihei collection",
+      "url": "https://hitohira-japan.com/collections/morihei"
+    },
+    {
+      "id": "hitohira-moki",
+      "label": "Hitohira: Moki collection",
+      "url": "https://hitohira-japan.com/collections/moki"
+    },
+    {
+      "id": "hitohira-daitoku",
+      "label": "Hitohira: Daitoku collection",
+      "url": "https://hitohira-japan.com/collections/daitoku"
     },
     {
       "id": "kkf-community",

@@ -64,33 +64,93 @@
     tokushima: '#aed581',
     tottori: '#ce93d8',
     fukuoka: '#90caf9',
+    nagano: '#ffcc80',
+    mie: '#c5e1a5',
     tokyo: '#f5eee3'
   };
-  const regionMapPositions = {
-    aomori: [68, 19],
-    'tsubame-niigata': [59, 39],
-    sanjo: [61, 41],
-    tokyo: [68, 53],
-    echizen: [50, 54],
-    'seki-gifu': [56, 60],
-    kyoto: [46, 65],
-    miki: [40, 69],
-    sakai: [48, 72],
-    okayama: [33, 71],
-    'tosa-kochi': [39, 83],
-    hiroshima: [35, 76],
-    yamaguchi: [27, 78],
-    shimane: [31, 70],
-    tottori: [38, 69],
-    tokushima: [43, 78],
-    fukuoka: [21, 82],
-    saga: [18, 84],
-    nagasaki: [16, 88],
-    oita: [24, 87],
-    kumamoto: [22, 91],
-    miyazaki: [27, 94],
-    kagoshima: [21, 96],
-    tanegashima: [28, 98]
+  const regionGeoPositions = {
+    aomori: [140.74, 40.82],
+    'tsubame-niigata': [138.93, 37.67],
+    sanjo: [138.96, 37.63],
+    nagano: [138.18, 36.65],
+    tokyo: [139.69, 35.69],
+    echizen: [136.17, 35.90],
+    'seki-gifu': [136.92, 35.49],
+    kyoto: [135.77, 35.01],
+    mie: [136.51, 34.73],
+    miki: [134.99, 34.80],
+    sakai: [135.48, 34.57],
+    okayama: [133.92, 34.66],
+    hiroshima: [132.46, 34.39],
+    shimane: [132.76, 35.47],
+    tottori: [134.24, 35.50],
+    yamaguchi: [131.47, 34.19],
+    tokushima: [134.56, 34.07],
+    'tosa-kochi': [133.53, 33.56],
+    fukuoka: [130.40, 33.59],
+    saga: [130.30, 33.25],
+    nagasaki: [129.87, 32.75],
+    oita: [131.61, 33.24],
+    kumamoto: [130.71, 32.80],
+    miyazaki: [131.42, 31.91],
+    kagoshima: [130.56, 31.60],
+    tanegashima: [130.97, 30.73]
+  };
+  const regionLabelOffsets = {
+    aomori: [100, -28],
+    'tsubame-niigata': [-180, -58],
+    sanjo: [86, -86],
+    nagano: [128, -18],
+    tokyo: [132, 26],
+    echizen: [-190, -24],
+    'seki-gifu': [134, -20],
+    kyoto: [-196, -18],
+    mie: [144, 58],
+    miki: [-196, 58],
+    sakai: [144, 54],
+    okayama: [-190, -34],
+    hiroshima: [-214, 28],
+    shimane: [-198, -110],
+    tottori: [66, -110],
+    yamaguchi: [-218, 90],
+    tokushima: [140, -8],
+    'tosa-kochi': [134, 78],
+    fukuoka: [-214, -116],
+    saga: [-230, -52],
+    nagasaki: [-226, 18],
+    oita: [150, -88],
+    kumamoto: [-224, 92],
+    miyazaki: [152, 28],
+    kagoshima: [-204, 156],
+    tanegashima: [150, 152]
+  };
+  const regionMapLabelPositions = {
+    aomori: [928, 258],
+    sanjo: [820, 370],
+    'tsubame-niigata': [548, 386],
+    nagano: [842, 486],
+    tokyo: [952, 568],
+    echizen: [422, 538],
+    'seki-gifu': [748, 568],
+    kyoto: [452, 610],
+    mie: [848, 660],
+    miki: [352, 748],
+    sakai: [620, 662],
+    okayama: [234, 586],
+    hiroshima: [298, 652],
+    shimane: [178, 472],
+    tottori: [386, 456],
+    yamaguchi: [150, 808],
+    tokushima: [660, 774],
+    'tosa-kochi': [768, 892],
+    fukuoka: [96, 650],
+    saga: [82, 734],
+    nagasaki: [92, 876],
+    oita: [414, 812],
+    kumamoto: [264, 890],
+    miyazaki: [484, 940],
+    kagoshima: [264, 1000],
+    tanegashima: [540, 1000]
   };
   const edgeColors = {
     apprenticeship: '#2fbf71',
@@ -303,37 +363,90 @@
 
   function renderGeographyMap() {
     if (!geoSvg) return;
-    const width = 1180;
-    const height = 700;
+    const width = 1280;
+    const height = 1040;
+    const bounds = { minLon: 128.0, maxLon: 146.2, minLat: 29.45, maxLat: 45.85 };
+    const padding = { left: 124, right: 112, top: 64, bottom: 92 };
+    const plotW = width - padding.left - padding.right;
+    const plotH = height - padding.top - padding.bottom;
+    const project = ([lon, lat]) => ({
+      x: padding.left + ((lon - bounds.minLon) / (bounds.maxLon - bounds.minLon)) * plotW,
+      y: padding.top + ((bounds.maxLat - lat) / (bounds.maxLat - bounds.minLat)) * plotH
+    });
+    const islandPath = (coords) => coords.map((coord, index) => {
+      const point = project(coord);
+      return `${index ? 'L' : 'M'} ${point.x.toFixed(1)} ${point.y.toFixed(1)}`;
+    }).join(' ') + ' Z';
+    const islands = [
+      {
+        className: 'hokkaido',
+        coords: [[140.1, 41.8], [141.1, 41.35], [142.2, 41.45], [143.3, 41.85], [144.7, 42.55], [145.55, 43.45], [145.25, 44.35], [143.95, 45.10], [142.35, 45.55], [140.75, 45.08], [139.72, 44.12], [139.88, 42.92]]
+      },
+      {
+        className: 'honshu',
+        coords: [[130.95, 34.18], [131.65, 34.45], [132.42, 34.24], [133.08, 34.05], [133.72, 34.36], [134.38, 34.65], [135.05, 34.48], [135.64, 34.72], [136.08, 35.35], [136.76, 35.55], [137.34, 35.18], [138.08, 35.92], [138.42, 36.82], [139.05, 37.42], [139.98, 37.58], [140.78, 38.25], [141.34, 39.18], [141.44, 40.30], [140.88, 40.82], [139.95, 40.52], [139.22, 39.72], [138.54, 38.72], [137.44, 37.62], [136.36, 36.58], [135.20, 35.76], [134.12, 35.52], [132.96, 35.42], [131.86, 35.02], [130.98, 34.62]]
+      },
+      {
+        className: 'shikoku',
+        coords: [[132.02, 33.48], [132.76, 33.18], [133.72, 33.38], [134.56, 33.64], [134.74, 34.12], [133.92, 34.36], [132.88, 34.20], [132.08, 33.86]]
+      },
+      {
+        className: 'kyushu',
+        coords: [[129.34, 31.55], [129.82, 31.08], [130.62, 30.92], [131.38, 31.42], [131.88, 32.20], [131.62, 33.05], [130.82, 33.72], [130.03, 33.62], [129.48, 32.92], [129.12, 32.12]]
+      },
+      {
+        className: 'tanegashima-island',
+        coords: [[130.78, 30.35], [131.02, 30.40], [131.08, 30.86], [130.94, 31.05], [130.80, 30.70]]
+      }
+    ];
     geoSvg.setAttribute('viewBox', `0 0 ${width} ${height}`);
     const points = state.graph.regions.map((region) => {
-      const [xPct, yPct] = regionMapPositions[region.id] || [50, 50];
-      return { region, x: width * xPct / 100, y: height * yPct / 100 };
+      const coord = regionGeoPositions[region.id] || [137.5, 36.0];
+      const projected = project(coord);
+      const [dx, dy] = regionLabelOffsets[region.id] || [76, -18];
+      const positioned = regionMapLabelPositions[region.id];
+      return {
+        region,
+        x: projected.x,
+        y: projected.y,
+        labelX: positioned ? positioned[0] : Math.max(86, Math.min(width - 86, projected.x + dx)),
+        labelY: positioned ? positioned[1] : Math.max(46, Math.min(height - 46, projected.y + dy))
+      };
     });
     geoSvg.innerHTML = `
       <defs>
         <linearGradient id="japan-map-fill" x1="0" x2="1" y1="0" y2="1">
-          <stop offset="0%" stop-color="currentColor" stop-opacity=".18"></stop>
-          <stop offset="100%" stop-color="currentColor" stop-opacity=".04"></stop>
+          <stop offset="0%" stop-color="currentColor" stop-opacity=".26"></stop>
+          <stop offset="100%" stop-color="currentColor" stop-opacity=".08"></stop>
         </linearGradient>
       </defs>
       <g class="japan-map-shape" aria-hidden="true">
-        <path class="hokkaido" d="M746 40 C797 31 858 55 889 99 C921 145 900 194 843 216 C797 234 730 219 702 182 C674 146 682 80 717 55 C725 49 735 43 746 40 Z"></path>
-        <path class="honshu" d="M712 205 C681 205 650 224 626 252 C596 287 574 323 530 337 C491 350 456 331 418 343 C376 356 354 391 313 399 C276 406 236 390 214 416 C193 441 208 474 247 486 C291 500 335 472 382 477 C433 483 469 516 523 506 C572 498 600 463 635 438 C673 411 734 401 766 360 C801 315 780 232 735 211 C728 208 721 206 712 205 Z"></path>
-        <path class="shikoku" d="M390 513 C428 494 493 498 525 522 C552 542 529 570 479 578 C425 586 373 566 362 540 C358 530 369 521 390 513 Z"></path>
-        <path class="kyushu" d="M234 481 C285 493 323 536 316 588 C309 642 252 665 205 636 C160 608 150 549 184 507 C199 489 213 480 234 481 Z"></path>
-        <path class="okinawa" d="M109 636 C128 625 153 628 166 643 C148 659 122 657 109 636 Z"></path>
-        <circle cx="164" cy="603" r="8"></circle>
-        <circle cx="137" cy="582" r="6"></circle>
-        <circle cx="196" cy="562" r="5"></circle>
+        ${islands.map((island) => `<path class="${esc(island.className)}" d="${islandPath(island.coords)}"></path>`).join('')}
       </g>
-      <g class="regional-map-nodes">
+      <g class="regional-map-callouts" aria-hidden="true">
         ${points.map((point) => {
           const active = state.activeRegion && state.activeRegion.id === point.region.id;
-          return `<g class="regional-map-node${active ? ' is-active' : ''}" data-map-region="${esc(point.region.id)}" tabindex="0" role="button" aria-label="Open ${esc(point.region.name)}" transform="translate(${point.x} ${point.y})" style="--region-color: ${esc(regionColor(point.region.id))}">
-            <circle r="46"></circle>
-            <text class="region-flag" y="-9">${esc(regionInitials(point.region))}</text>
-            <text class="small" y="15">${esc(point.region.location)}</text>
+          return `<g class="regional-map-node${active ? ' is-active' : ''}" transform="translate(${point.x} ${point.y})" style="--region-color: ${esc(regionColor(point.region.id))}">
+            <line class="map-callout-line" x1="0" y1="0" x2="${(point.labelX - point.x).toFixed(1)}" y2="${(point.labelY - point.y).toFixed(1)}"></line>
+          </g>`;
+        }).join('')}
+      </g>
+      <g class="regional-map-pins">
+        ${points.map((point) => {
+          const active = state.activeRegion && state.activeRegion.id === point.region.id;
+          return `<g class="regional-map-node${active ? ' is-active' : ''}" data-map-region="${esc(point.region.id)}" aria-label="Open ${esc(point.region.name)}" transform="translate(${point.x} ${point.y})" style="--region-color: ${esc(regionColor(point.region.id))}">
+            <circle class="map-pin-halo" r="14"></circle>
+            <circle class="map-pin" r="5"></circle>
+          </g>`;
+        }).join('')}
+      </g>
+      <g class="regional-map-labels">
+        ${points.map((point) => {
+          const active = state.activeRegion && state.activeRegion.id === point.region.id;
+          return `<g class="regional-map-node${active ? ' is-active' : ''}" data-map-region="${esc(point.region.id)}" tabindex="0" role="button" aria-label="Open ${esc(point.region.name)}" transform="translate(${point.labelX} ${point.labelY})" style="--region-color: ${esc(regionColor(point.region.id))}">
+            <rect class="map-label-bg" x="-77" y="-26" width="154" height="52" rx="16"></rect>
+            <text class="region-flag" y="-7">${esc(compactLabel(point.region.name, 16))}</text>
+            <text class="small" y="13">${esc(compactLabel(point.region.location, 15))}</text>
           </g>`;
         }).join('')}
       </g>
