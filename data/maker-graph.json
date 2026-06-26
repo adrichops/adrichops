@@ -15,7 +15,8 @@
         "sakai-traditional-crafts",
         "honyaki-reference",
         "hitohira-genkai",
-        "cleancut-yoshihiro-yauji"
+        "cleancut-yoshihiro-yauji",
+        "reddit-sakai-wide-bevel-morihiro"
       ],
       "nodes": [
         {
@@ -121,32 +122,37 @@
           "id": "morihiro",
           "name": "Morihiro",
           "role": "Sharpener",
-          "specialty": "Reference-point Sakai sharpening identity behind original Fujiyama context, with later student-lineage relevance for sharpeners such as Nishida and Tadokoro.",
+          "specialty": "Reference-point Sakai sharpening identity behind original Fujiyama context, with later student-lineage relevance for sharpeners such as Nishida, Tadokoro and the Kyuzo/Yauchi trail.",
           "famousLines": [
             "Konosuke Fujiyama context",
-            "Morihiro sharpening lineage"
+            "Morihiro sharpening lineage",
+            "Tanaka x Morihiro Kagekiyo"
           ],
           "sourceIds": [
             "konosuke-fujiyama",
+            "reddit-sakai-wide-bevel-morihiro",
             "kkf-community"
           ],
           "students": [
             "nishida",
-            "tadokoro-hamono"
+            "tadokoro-hamono",
+            "kyuzo-yauchi"
           ]
         },
         {
           "id": "nishida",
           "name": "Nishida",
           "role": "Sharpener",
-          "specialty": "Sakai sharpener represented here as part of Morihiro student-lineage context and Baba Hamono / Kagekiyo sharpening context.",
+          "specialty": "Sakai sharpener represented here as part of Morihiro student-lineage context and Baba Hamono / Kagekiyo sharpening context; the Reddit deep dive frames Nishida as a balance of thin cutting feel, taper and confidence.",
           "famousLines": [
             "Morihiro student-lineage sharpening",
-            "Baba Hamono / Kagekiyo sharpening context"
+            "Baba Hamono / Kagekiyo sharpening context",
+            "Tanaka x Nishida Kagekiyo"
           ],
           "sourceIds": [
             "baba-official",
             "baba-kagekiyo",
+            "reddit-sakai-wide-bevel-morihiro",
             "kkf-community"
           ],
           "caveat": "Baba's own site supports in-workshop sharpening for Kagekiyo; Nishida's named role is added from Adrian correction and community trail, so product-specific attribution still needs exact listing checks."
@@ -203,18 +209,42 @@
           "id": "tadokoro-hamono",
           "name": "Tadokoro Hamono",
           "role": "Sharpener",
-          "specialty": "Sakai sharpening and finishing house, represented here with Morihiro student-lineage context and collaborations with named smiths.",
+          "specialty": "Sakai sharpening and finishing house, represented here with Morihiro student-lineage context and collaborations with named smiths; the wide-bevel deep dive describes Tadokoro as the sturdier, food-release-leaning branch of the comparison.",
           "famousLines": [
             "Tanaka x Tadokoro",
             "Tadokoro Ginsan",
-            "Tadokoro Blue #1"
+            "Tadokoro Blue #1",
+            "Nakagawa x Tadokoro"
           ],
           "sourceIds": [
+            "reddit-sakai-wide-bevel-morihiro",
             "kkf-community",
             "reddit-truechefknives",
             "hitohira-brands"
           ],
           "caveat": "Relationship edges are community/retailer leads until exact product pages are attached."
+        },
+        {
+          "id": "kyuzo-yauchi",
+          "name": "Kyuzo / Yauchi",
+          "role": "Sharpener",
+          "aliases": [
+            "Kyuzo",
+            "Takeshi Yauchi",
+            "Yauchi"
+          ],
+          "specialty": "Sakai wide-bevel sharpening trail kept separate from Myojin/Izo; the Reddit deep dive frames Kyuzo as the more aggressive, high-performance hollow-grind side of the Morihiro-student comparison.",
+          "famousLines": [
+            "Tanaka x Kyuzo",
+            "Nakagawa x Kyuzo",
+            "Togashi x Kyuzo"
+          ],
+          "sourceIds": [
+            "reddit-sakai-wide-bevel-morihiro",
+            "kkf-community",
+            "hitohira-brands"
+          ],
+          "caveat": "Kyuzo is represented separately from Naohito Myojin / Izo after Adrian's correction. Verify exact naming and disclosure per listing."
         },
         {
           "id": "hitohira",
@@ -638,56 +668,53 @@
         },
         {
           "from": "yoshikazu-tanaka",
-          "to": "naohito-myojin",
+          "to": "kyuzo-yauchi",
           "kind": "smith-to-sharpener",
-          "label": "Tanaka / Kyuzo (Myojin)",
-          "detail": "Tanaka x Kyuzo is represented as a buyer-facing trail to Naohito Myojin, not as a separate Kyuzo person.",
+          "label": "Tanaka / Kyuzo",
+          "detail": "Tanaka x Kyuzo is represented as a buyer-facing smith-to-sharpener trail. Kyuzo is kept separate from Myojin/Izo in this graph.",
           "sourceType": "community",
           "confidence": "medium",
           "sourceIds": [
             "hitohira-official",
-            "myojin-official",
+            "reddit-sakai-wide-bevel-morihiro",
             "kkf-community"
           ]
         },
         {
           "from": "satoshi-nakagawa",
-          "to": "naohito-myojin",
+          "to": "kyuzo-yauchi",
           "kind": "smith-to-sharpener",
-          "label": "Nakagawa / Kyuzo (Myojin)",
-          "detail": "Nakagawa x Kyuzo is represented as a buyer-facing trail to Naohito Myojin, useful for comparing Nakagawa x Morihiro and other finishes.",
+          "label": "Nakagawa / Kyuzo",
+          "detail": "Nakagawa x Kyuzo is represented as a buyer-facing trail for comparing Nakagawa x Morihiro, Nakagawa x Tadokoro and other finishes.",
           "sourceType": "community",
           "confidence": "medium",
           "sourceIds": [
             "hitohira-official",
-            "myojin-official",
             "kkf-community"
           ]
         },
         {
           "from": "kenji-togashi",
-          "to": "naohito-myojin",
+          "to": "kyuzo-yauchi",
           "kind": "smith-to-sharpener",
-          "label": "Togashi / Kyuzo (Myojin)",
-          "detail": "Togashi x Kyuzo is represented as a community-visible trail to Naohito Myojin; verify exact listing disclosure.",
+          "label": "Togashi / Kyuzo",
+          "detail": "Togashi x Kyuzo is represented as a community-visible sharpener trail; verify exact listing disclosure.",
           "sourceType": "community",
           "confidence": "low",
           "sourceIds": [
-            "myojin-official",
             "kkf-community"
           ]
         },
         {
           "from": "hitohira",
-          "to": "naohito-myojin",
+          "to": "kyuzo-yauchi",
           "kind": "brand-to-sharpener",
-          "label": "Hitohira / Kyuzo (Myojin)",
-          "detail": "Hitohira is represented as the buyer-facing brand context where Kyuzo/Myojin pairings are often encountered.",
+          "label": "Hitohira / Kyuzo",
+          "detail": "Hitohira is represented as a buyer-facing brand context where Kyuzo pairings are often encountered.",
           "sourceType": "community",
           "confidence": "medium",
           "sourceIds": [
             "hitohira-official",
-            "myojin-official",
             "kkf-community"
           ]
         },
@@ -696,10 +723,11 @@
           "to": "nishida",
           "kind": "student",
           "label": "Morihiro student",
-          "detail": "Nishida is represented as part of Morihiro student-lineage context in this graph.",
+          "detail": "Nishida is represented as part of Morihiro student-lineage context in this graph; the wide-bevel deep dive compares Tanaka x Nishida Kagekiyo against Morihiro, Kyuzo and Tadokoro examples.",
           "sourceType": "community",
           "confidence": "medium",
           "sourceIds": [
+            "reddit-sakai-wide-bevel-morihiro",
             "kkf-community"
           ]
         },
@@ -708,12 +736,26 @@
           "to": "tadokoro-hamono",
           "kind": "student",
           "label": "Morihiro student-lineage",
-          "detail": "Tadokoro is represented with Morihiro student-lineage context while retaining its own sharpener/collaboration node.",
+          "detail": "Tadokoro is represented with Morihiro student-lineage context while retaining its own sharpener/collaboration node; the Reddit comparison uses a Nakagawa x Tadokoro Ginsan gyuto as the Tadokoro example.",
           "sourceType": "community",
           "confidence": "medium",
           "sourceIds": [
+            "reddit-sakai-wide-bevel-morihiro",
             "kkf-community",
             "reddit-truechefknives"
+          ]
+        },
+        {
+          "from": "morihiro",
+          "to": "kyuzo-yauchi",
+          "kind": "student",
+          "label": "Morihiro student-lineage / Kyuzo trail",
+          "detail": "The Reddit deep dive compares a Tanaka x Kyuzo wide bevel inside the Morihiro-student frame. This graph keeps Kyuzo/Yauchi separate from Myojin/Izo.",
+          "sourceType": "community",
+          "confidence": "medium",
+          "sourceIds": [
+            "reddit-sakai-wide-bevel-morihiro",
+            "kkf-community"
           ]
         },
         {
@@ -1726,24 +1768,23 @@
           "name": "Naohito Myojin",
           "role": "Sharpener / Polisher",
           "aliases": [
-            "Kyuzo",
-            "Myojin"
+            "Myojin",
+            "Izo"
           ],
-          "specialty": "High-end convex sharpening and polishing; Kyuzo and Myojin are treated here as buyer-facing names for the same Naohito Myojin profile.",
+          "specialty": "High-end convex sharpening and polishing; Myojin and Izo are treated here as buyer-facing names for the Naohito Myojin profile.",
           "famousLines": [
             "Myojin Riki",
             "Tetsujin",
             "Myojin Cobalt Special",
-            "Tanaka x Kyuzo",
-            "Nakagawa x Kyuzo",
-            "Togashi x Kyuzo"
+            "Izo",
+            "Myojin-polished collaborations"
           ],
           "sourceIds": [
             "myojin-official",
             "kkf-community",
             "hitohira-official"
           ],
-          "caveat": "Kyuzo, Myojin and Naohito Myojin are represented as the same person in this graph; verify exact disclosure per listing."
+          "caveat": "Myojin is represented with Izo here, not Kyuzo, after Adrian's correction. Verify exact Izo/Myojin wording against retailer listings."
         },
         {
           "id": "toru-tamura",
@@ -3616,6 +3657,11 @@
       "id": "reddit-truechefknives",
       "label": "r/TrueChefKnives community trail",
       "url": "https://www.reddit.com/r/TrueChefKnives/"
+    },
+    {
+      "id": "reddit-sakai-wide-bevel-morihiro",
+      "label": "r/TrueChefKnives: Sakai wide bevel Morihiro deep dive",
+      "url": "https://www.reddit.com/r/TrueChefKnives/comments/1q6hsga/sakai_wide_bevel_deep_dive_compring_morihiro/"
     }
   ]
 }

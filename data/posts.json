@@ -1,6 +1,154 @@
 {
   "posts": [
     {
+      "id": "sakai-wide-bevel-morihiro-students",
+      "title": "Morihiro and his students: reading Sakai wide bevels without flattening them",
+      "type": "Guide",
+      "category": "culture",
+      "date": "2026-06-26",
+      "readTime": "8 min read",
+      "featured": false,
+      "maker": "Morihiro, Nishida, Kyuzo / Yauchi, Tadokoro",
+      "steel": "Aogami",
+      "length": "240mm gyuto comparison context",
+      "bestFor": "Understanding Sakai wide bevel sharpening lineages",
+      "rating": "N/A",
+      "verdict": "Lineage explains tendencies, not guarantees",
+      "summary": "A source-led guide to the Morihiro sharpening lineage through one Reddit wide-bevel comparison: Morihiro, Nishida, Kyuzo/Yauchi and Tadokoro.",
+      "deck": "Morihiro is the reference point; the students and related trails are not clones. Kyuzo is separate from Myojin/Izo, and every exact listing still matters.",
+      "heroImage": "assets/img/maker-chain.svg",
+      "heroAlt": "Japanese knife maker and sharpener chain diagram",
+      "pullQuote": "A sharpener lineage is a map of tendencies, not a receipt for how every individual knife will cut.",
+      "specs": {
+        "Region": "Sakai, Osaka",
+        "Focus": "Wide bevel sharpening and finishing lineage",
+        "Makers compared": "Morihiro, Nishida, Kyuzo / Yauchi, Tadokoro",
+        "Source type": "Community owner comparison",
+        "Adrichops rule": "Use lineage as a clue, then verify the exact knife"
+      },
+      "takeaways": [
+        "Morihiro is useful as the reference point because the thread compares him directly against sharpeners framed as students or lineage branches.",
+        "Nishida, Kyuzo/Yauchi and Tadokoro should not be treated as interchangeable; the owner comparison describes different trade-offs in taper, shoulders, food release and delicacy.",
+        "The Reddit post is valuable owner context, but it is not official biography or a universal spec sheet for every knife from those sharpeners."
+      ],
+      "products": [],
+      "gallery": [],
+      "sourceTrail": [
+        {
+          "name": "r/TrueChefKnives: Sakai Wide Bevel Deep Dive",
+          "type": "Community",
+          "url": "https://www.reddit.com/r/TrueChefKnives/comments/1q6hsga/sakai_wide_bevel_deep_dive_compring_morihiro/",
+          "note": "Owner comparison of four Sakai wide bevel gyuto examples attributed to Morihiro, Nishida, Kyuzo/Yauchi and Tadokoro."
+        },
+        {
+          "name": "Baba Hamono Kagekiyo",
+          "type": "Official / Brand",
+          "url": "https://www.baba-hamono.com/en/kagekiyo/",
+          "note": "Brand context for Kagekiyo and Baba Hamono workshop finishing."
+        },
+        {
+          "name": "Konosuke Fujiyama",
+          "type": "Brand",
+          "url": "https://konosuke-sakai.com/index.php/2020/04/23/fujiyama/",
+          "note": "Context for Morihiro visibility in modern Sakai sharpener discussion."
+        },
+        {
+          "name": "Myojin Riki Seisakusho",
+          "type": "Maker",
+          "url": "https://myojinknife.com/",
+          "note": "Reference trail for the separate Myojin / Izo node used elsewhere in the maker graph."
+        },
+        {
+          "name": "Kitchen Knife Forums",
+          "type": "Forum",
+          "url": "https://www.kitchenknifeforums.com/",
+          "note": "Wider community context for Sakai sharpener lineage and retailer disclosure checks."
+        }
+      ],
+      "status": "Community-sourced guide",
+      "tags": [
+        "makers",
+        "sharpening",
+        "sakai"
+      ],
+      "bodyMarkdown": "## Why this thread matters\n\nThe useful part of the Reddit deep dive is not that it crowns one sharpener forever. The useful part is that it puts four related Sakai wide bevel examples next to each other and treats the sharpener as a major part of the knife, not a footnote.\n\nThe comparison uses four owned gyuto examples: a Tanaka x Morihiro Kagekiyo, a Tanaka x Nishida Kagekiyo, a Tanaka x Kyuzo example, and a Nakagawa x Tadokoro example. The author also gives the important warning up front: these are handmade knives, variance exists, and the post should be read as a guide, not as a fact sheet. That is exactly the right way to use community material.\n\nFor Adrichops, this thread is useful because it sharpens the maker map. Morihiro is not just a famous name. Morihiro becomes a reference point for a small set of sharpeners and finishes that buyers keep running into when they read Sakai listings.\n\n## Morihiro as the reference point\n\nMorihiro sits in the graph as a Sakai sharpener with two different kinds of importance. First, there is direct work: older Konosuke Fujiyama context, Kagekiyo examples and collector discussion where the name itself matters. Second, there is lineage: Nishida, Tadokoro and the Kyuzo/Yauchi trail are often discussed in relation to Morihiro-style wide bevel work.\n\nThe Reddit post describes all four knives as Sakai wide bevels sharpened by Morihiro or one of his students. That does not mean they all cut the same. It means the comparison is close enough that small differences become meaningful: shoulder shape, concavity, taper, tip thinness, food release, profile and finish.\n\nThat is the real lesson. Once knives are all good, the buying question shifts from good versus bad to which compromise you want. A little more food release may come with a different shoulder. A more aggressive hollow can feel thrilling through dense food and less forgiving elsewhere. A stronger tip may feel less needle-like. None of that fits into a simple ranking.\n\n## Nishida: the balanced Kagekiyo branch\n\nThe thread is especially useful for Nishida because it describes a Tanaka x Nishida Kagekiyo as sitting between confidence and performance. The post frames Nishida as having the thin, high-performance feeling expected from this class of Sakai wide bevel, while still retaining enough balance and taper to feel natural across different prep tasks.\n\nThat matches why Nishida belongs in the graph as more than a loose Baba Hamono note. Nishida is a named sharpening context for Kagekiyo, and the relationship matters when comparing one Kagekiyo to another. Same brand, similar smith trail, same broad Sakai world, but the sharpener can still change the experience.\n\nThe practical buying rule is simple: if a listing says Nishida, do not stop reading. Look for steel, measurements, profile, choil, spine, bevel photos and handle. Nishida is a strong clue, not the whole knife.\n\n## Kyuzo, Yauchi and the Myojin/Izo correction\n\nThe Reddit thread uses Yauchi/Kyuzo language. The Adrichops graph now keeps Kyuzo/Yauchi separate from Naohito Myojin because Myojin is Izo, not Kyuzo. That distinction matters: otherwise the graph would collapse two different naming trails and make the map less useful.\n\nThe thread's useful observation is still worth capturing. The Kyuzo example is described as the more extreme performance side of the comparison: wider bevel, more pronounced hollow, stronger shoulders, very high cutting performance, and less food release or toughness than the sturdier examples.\n\nThat does not mean every Kyuzo-labeled knife will be identical. It means that when you see Tanaka x Kyuzo, Nakagawa x Kyuzo or Togashi x Kyuzo, the right question is not just who forged it. The right question is what the sharpener did to the bevels and how that exact line is built.\n\nMyojin/Izo belongs in a different branch of the map. Myojin still matters enormously for polishing and finishing, especially around Myojin Riki Seisakusho and Tetsujin-style buying conversations, but it should not be used as a synonym for Kyuzo in this site.\n\n## Tadokoro: the sturdier wide bevel lesson\n\nTadokoro is useful because the thread does not describe it as simply another Morihiro-style copy. The Tadokoro example is framed as more convex and sturdier, with better food release and a different tip shape. That makes it less of a pure thinness contest and more of a practical kitchen choice.\n\nThis matters because people often talk about wide bevels as if thinness is the only virtue. It is not. Food release, tip confidence, board feel, profile and how forgiving the knife feels during repeated prep all matter. A knife can be a slightly less dramatic cutter and still be the one someone should choose for actual cooking.\n\nIn the graph, Tadokoro should stay connected to Morihiro student-lineage context, but it also deserves its own sharpener/collaboration identity. A Nakagawa x Tadokoro Ginsan is not the same buying question as a Tanaka x Morihiro Kagekiyo.\n\n## What Morihiro seems to combine\n\nThe owner comparison describes the Morihiro example as if it pulls useful traits from the others: Nishida-like taper and tip feeling, Tadokoro-like shoulder softness and release, and Kyuzo-like wide bevel cutting intensity. That is exactly the kind of community observation that is useful, as long as it remains tied to the actual knife being discussed.\n\nThe broader lesson is that master status should not be treated as magic. If Morihiro is a reference point, it is because the work gives people specific things to notice: shinogi execution, spine and choil finishing, tip behaviour, bevel transition, cutting feel and food release.\n\nThose are observable features. They are better than just saying \"legendary\" and stopping there.\n\n## How to use this when buying\n\nWhen reading a Sakai wide bevel listing, start with the chain. Who forged it? Who sharpened it? Who finished it? Which brand or retailer specified the line? Is the steel reactive or stainless? Are the photos and dimensions good enough to understand the grind?\n\nThen use lineage as a hypothesis. Morihiro may suggest a reference style. Nishida may suggest a Kagekiyo sharpening path with strong balance and taper. Kyuzo/Yauchi may suggest a more aggressive high-performance wide bevel. Tadokoro may suggest a sturdier or more food-release-aware interpretation. But none of those guesses should override the exact listing.\n\nCommunity posts are best used as pattern recognition. They help you ask better questions. They should not make you stop asking questions.\n\n## What changed in the maker map\n\nThe maker graph now treats the Reddit thread as a specific source trail for Morihiro, Nishida, Tadokoro and the Kyuzo/Yauchi node. It also adds a Morihiro-to-Kyuzo/Yauchi lineage edge and keeps Myojin/Izo separate.\n\nThat is deliberate. The map should show the relationship because buyers discuss these knives this way. It should also show the caveat because exact attribution matters.\n\nThe clean version is this: Morihiro is the reference point; Nishida, Kyuzo/Yauchi and Tadokoro are useful related trails; Myojin/Izo is a separate polishing trail; the exact knife still decides the truth.\n\n## Takeaways\n\n- Morihiro is useful as the reference point because the thread compares him directly against sharpeners framed as students or lineage branches.\n- Nishida, Kyuzo/Yauchi and Tadokoro should not be treated as interchangeable; the owner comparison describes different trade-offs in taper, shoulders, food release and delicacy.\n- The Reddit post is valuable owner context, but it is not official biography or a universal spec sheet for every knife from those sharpeners.",
+      "slug": "sakai-wide-bevel-morihiro-students",
+      "route": "/guides/sakai-wide-bevel-morihiro-students/",
+      "body": [
+        {
+          "heading": "Why this thread matters",
+          "paragraphs": [
+            "The useful part of the Reddit deep dive is not that it crowns one sharpener forever. The useful part is that it puts four related Sakai wide bevel examples next to each other and treats the sharpener as a major part of the knife, not a footnote.",
+            "The comparison uses four owned gyuto examples: a Tanaka x Morihiro Kagekiyo, a Tanaka x Nishida Kagekiyo, a Tanaka x Kyuzo example, and a Nakagawa x Tadokoro example. The author also gives the important warning up front: these are handmade knives, variance exists, and the post should be read as a guide, not as a fact sheet. That is exactly the right way to use community material.",
+            "For Adrichops, this thread is useful because it sharpens the maker map. Morihiro is not just a famous name. Morihiro becomes a reference point for a small set of sharpeners and finishes that buyers keep running into when they read Sakai listings."
+          ]
+        },
+        {
+          "heading": "Morihiro as the reference point",
+          "paragraphs": [
+            "Morihiro sits in the graph as a Sakai sharpener with two different kinds of importance. First, there is direct work: older Konosuke Fujiyama context, Kagekiyo examples and collector discussion where the name itself matters. Second, there is lineage: Nishida, Tadokoro and the Kyuzo/Yauchi trail are often discussed in relation to Morihiro-style wide bevel work.",
+            "The Reddit post describes all four knives as Sakai wide bevels sharpened by Morihiro or one of his students. That does not mean they all cut the same. It means the comparison is close enough that small differences become meaningful: shoulder shape, concavity, taper, tip thinness, food release, profile and finish.",
+            "That is the real lesson. Once knives are all good, the buying question shifts from good versus bad to which compromise you want. A little more food release may come with a different shoulder. A more aggressive hollow can feel thrilling through dense food and less forgiving elsewhere. A stronger tip may feel less needle-like. None of that fits into a simple ranking."
+          ]
+        },
+        {
+          "heading": "Nishida: the balanced Kagekiyo branch",
+          "paragraphs": [
+            "The thread is especially useful for Nishida because it describes a Tanaka x Nishida Kagekiyo as sitting between confidence and performance. The post frames Nishida as having the thin, high-performance feeling expected from this class of Sakai wide bevel, while still retaining enough balance and taper to feel natural across different prep tasks.",
+            "That matches why Nishida belongs in the graph as more than a loose Baba Hamono note. Nishida is a named sharpening context for Kagekiyo, and the relationship matters when comparing one Kagekiyo to another. Same brand, similar smith trail, same broad Sakai world, but the sharpener can still change the experience.",
+            "The practical buying rule is simple: if a listing says Nishida, do not stop reading. Look for steel, measurements, profile, choil, spine, bevel photos and handle. Nishida is a strong clue, not the whole knife."
+          ]
+        },
+        {
+          "heading": "Kyuzo, Yauchi and the Myojin/Izo correction",
+          "paragraphs": [
+            "The Reddit thread uses Yauchi/Kyuzo language. The Adrichops graph now keeps Kyuzo/Yauchi separate from Naohito Myojin because Myojin is Izo, not Kyuzo. That distinction matters: otherwise the graph would collapse two different naming trails and make the map less useful.",
+            "The thread's useful observation is still worth capturing. The Kyuzo example is described as the more extreme performance side of the comparison: wider bevel, more pronounced hollow, stronger shoulders, very high cutting performance, and less food release or toughness than the sturdier examples.",
+            "That does not mean every Kyuzo-labeled knife will be identical. It means that when you see Tanaka x Kyuzo, Nakagawa x Kyuzo or Togashi x Kyuzo, the right question is not just who forged it. The right question is what the sharpener did to the bevels and how that exact line is built.",
+            "Myojin/Izo belongs in a different branch of the map. Myojin still matters enormously for polishing and finishing, especially around Myojin Riki Seisakusho and Tetsujin-style buying conversations, but it should not be used as a synonym for Kyuzo in this site."
+          ]
+        },
+        {
+          "heading": "Tadokoro: the sturdier wide bevel lesson",
+          "paragraphs": [
+            "Tadokoro is useful because the thread does not describe it as simply another Morihiro-style copy. The Tadokoro example is framed as more convex and sturdier, with better food release and a different tip shape. That makes it less of a pure thinness contest and more of a practical kitchen choice.",
+            "This matters because people often talk about wide bevels as if thinness is the only virtue. It is not. Food release, tip confidence, board feel, profile and how forgiving the knife feels during repeated prep all matter. A knife can be a slightly less dramatic cutter and still be the one someone should choose for actual cooking.",
+            "In the graph, Tadokoro should stay connected to Morihiro student-lineage context, but it also deserves its own sharpener/collaboration identity. A Nakagawa x Tadokoro Ginsan is not the same buying question as a Tanaka x Morihiro Kagekiyo."
+          ]
+        },
+        {
+          "heading": "What Morihiro seems to combine",
+          "paragraphs": [
+            "The owner comparison describes the Morihiro example as if it pulls useful traits from the others: Nishida-like taper and tip feeling, Tadokoro-like shoulder softness and release, and Kyuzo-like wide bevel cutting intensity. That is exactly the kind of community observation that is useful, as long as it remains tied to the actual knife being discussed.",
+            "The broader lesson is that master status should not be treated as magic. If Morihiro is a reference point, it is because the work gives people specific things to notice: shinogi execution, spine and choil finishing, tip behaviour, bevel transition, cutting feel and food release.",
+            "Those are observable features. They are better than just saying \"legendary\" and stopping there."
+          ]
+        },
+        {
+          "heading": "How to use this when buying",
+          "paragraphs": [
+            "When reading a Sakai wide bevel listing, start with the chain. Who forged it? Who sharpened it? Who finished it? Which brand or retailer specified the line? Is the steel reactive or stainless? Are the photos and dimensions good enough to understand the grind?",
+            "Then use lineage as a hypothesis. Morihiro may suggest a reference style. Nishida may suggest a Kagekiyo sharpening path with strong balance and taper. Kyuzo/Yauchi may suggest a more aggressive high-performance wide bevel. Tadokoro may suggest a sturdier or more food-release-aware interpretation. But none of those guesses should override the exact listing.",
+            "Community posts are best used as pattern recognition. They help you ask better questions. They should not make you stop asking questions."
+          ]
+        },
+        {
+          "heading": "What changed in the maker map",
+          "paragraphs": [
+            "The maker graph now treats the Reddit thread as a specific source trail for Morihiro, Nishida, Tadokoro and the Kyuzo/Yauchi node. It also adds a Morihiro-to-Kyuzo/Yauchi lineage edge and keeps Myojin/Izo separate.",
+            "That is deliberate. The map should show the relationship because buyers discuss these knives this way. It should also show the caveat because exact attribution matters.",
+            "The clean version is this: Morihiro is the reference point; Nishida, Kyuzo/Yauchi and Tadokoro are useful related trails; Myojin/Izo is a separate polishing trail; the exact knife still decides the truth."
+          ]
+        },
+        {
+          "heading": "Takeaways",
+          "paragraphs": [
+            "- Morihiro is useful as the reference point because the thread compares him directly against sharpeners framed as students or lineage branches. - Nishida, Kyuzo/Yauchi and Tadokoro should not be treated as interchangeable; the owner comparison describes different trade-offs in taper, shoulders, food release and delicacy. - The Reddit post is valuable owner context, but it is not official biography or a universal spec sheet for every knife from those sharpeners."
+          ]
+        }
+      ]
+    },
+    {
       "id": "maker-spotlight-yoshikane-hamono",
       "title": "Maker spotlight: Yoshikane Hamono, Sanjo workhorse manners with clean shoes",
       "type": "Maker spotlight",
@@ -886,26 +1034,26 @@
       "date": "2026-06-24",
       "readTime": "8 min read",
       "featured": false,
-      "maker": "Myojin Riki Seisakusho / Naohito Myojin",
+      "maker": "Myojin Riki Seisakusho / Naohito Myojin / Izo",
       "steel": "SG2/R2, Ginsan, Blue steels and collaboration-specific releases",
       "length": "Gyuto, kiritsuke gyuto, nakiri, sujihiki and traditional shapes",
       "bestFor": "Refined grinds, polish and modern high-performance Japanese knives",
       "rating": "N/A",
       "verdict": "Refined finish with functional purpose",
-      "summary": "Myojin puts the sharpener and finisher in the foreground: high polish, precise geometry and collaborations that serious buyers track carefully.",
+      "summary": "Myojin / Izo puts the sharpener and finisher in the foreground: high polish, precise geometry and collaborations that serious buyers track carefully.",
       "deck": "Myojin is what happens when beautiful finishing still has to answer the onion. The polish is not make-up; on the good examples, it is geometry.",
       "heroImage": "assets/uploads/post-images/japanese-knife-culture-practical-guide.jpg",
       "heroAlt": "maker spotlight myojin riki seisakusho",
       "pullQuote": "Good finish is not make-up. On a Myojin, it is part of the cutting geometry.",
       "specs": {
         "Region": "Kochi / Tosa with wider Sakai and collaboration links",
-        "Known for": "Naohito Myojin finishing, refined bevels, Tetsujin and collaboration work",
+        "Known for": "Naohito Myojin / Izo finishing, refined bevels, Tetsujin and collaboration work",
         "Best first question": "What exact profile and grind suits my cooking?",
         "Care level": "Depends on steel and geometry",
         "Adrichops rule": "Source trail first, hype second"
       },
       "takeaways": [
-        "Do not buy Myojin Riki Seisakusho / Naohito Myojin by name alone; match the exact knife to food, board and care habits.",
+        "Do not buy Myojin Riki Seisakusho / Naohito Myojin / Izo by name alone; match the exact knife to food, board and care habits.",
         "Use source trails, retailer measurements and forum owner notes to understand the line before buying.",
         "Treat maker appreciation as a reason to use and maintain the knife, not to make it untouchable."
       ],
@@ -941,19 +1089,19 @@
       "sourceMode": "Official maker or retailer context plus community consensus.",
       "slug": "maker-spotlight-myojin-riki-seisakusho",
       "route": "/maker-spotlight/maker-spotlight-myojin-riki-seisakusho/",
-      "bodyMarkdown": "## Why this maker matters\n\nMyojin matters because it makes the sharpening and finishing side of knife making impossible to ignore. Retailer profiles describe Myojin Riki Seisakusho as a Kochi-based family workshop involving Tateo and Naohito Myojin, and Naohito is widely discussed for refined finishing and modern collaborations.\n\nIn Adrichops terms, the useful question is not whether Myojin Riki Seisakusho / Naohito Myojin is hyped. The useful question is what the maker teaches about how Japanese knives work: profile, grind, steel, sharpening, board contact and maintenance. The story is only valuable if it changes how you choose and use the tool.\n\n## Region and workshop reality\n\nRegion: Kochi / Tosa with wider Sakai and collaboration links. Known for: Naohito Myojin finishing, refined bevels, Tetsujin and collaboration work. That short line matters because Japanese knife regions carry different habits. Sakai, Sanjo, Kochi, Aomori and Kumamoto do not all make the same kind of object with different stamps.\n\nThe workshop story is father-and-son, but the buyer story is broader: Myojin appears through multiple brands and collaborations. Tetsujin, Hatsukokoro and other labels can put Myojin finishing into different contexts, which is why the exact line matters.\n\nWhen reading maker pages, treat the workshop story as context rather than proof. A great story can explain why a knife exists; it cannot replace choil photos, measurements, sharpening behaviour or whether the thing suits your prep board. Beautiful provenance still has to pass through a carrot.\n\n## Cutting character\n\nThe appeal is controlled refinement. Smooth bevel transitions, precise tips and clean faces can make prep feel deliberate rather than flashy. The best examples feel thin and exact without becoming stupidly fragile. That balance is difficult, which is why the name carries weight.\n\nRefinement does not mean one behaviour. Some Myojin-associated knives are laser-like, some are more convex, some are powdered stainless, and some are carbon. If you buy only because the bevel photograph looks expensive, you may miss the more important question: what kind of cutter is this?\n\nThe practical test is always boring in the best way: onions, carrots, potatoes, herbs, protein trimming and repeat prep. Knife people can make any blade sound poetic, but food tells the truth quickly. If a knife wedges, sticks, feels unstable or scares you away from using it, the spec sheet has lost the argument.\n\n## Steel and construction without the fog machine\n\nCommon steel conversation: SG2/R2, Ginsan, Blue steels and collaboration-specific releases. Steel is important, but it is not the whole knife. Heat treatment, grind, edge geometry and sharpening quality decide whether the steel becomes useful or just a word in a product title.\n\nSG2/R2 lines bring edge retention and stainless convenience, but can ask for stones that cut modern stainless efficiently. Ginsan is often a lovely practical middle path. Carbon collaborations bring crisp sharpening and more care. Again: the line decides the routine.\n\nFor normal cooks, the decision is usually stainless convenience versus carbon feedback. Stainless and semi-stainless steels reduce care anxiety. Carbon steels often sharpen beautifully and develop patina. Neither path is morally superior. The best steel is the one that matches your sink habits, stone habits and tolerance for wiping blades during prep.\n\n## How I would shop it\n\nStart by separating Myojin-forged, Myojin-finished, Tetsujin, and collaboration knives. Ask who forged it, who sharpened it, what steel it is, and what the retailer measurements show. The heel, spine, choil and tip should look as considered as the beauty shot.\n\nBefore buying, ask five plain questions: what food will this cut most often, what board will it hit, what maintenance can I actually sustain, who made and sharpened it, and does the exact listing show enough detail? If the answer is mostly vibes, wait.\n\nThe best retailers make the decision easier by showing choil, spine, heel, handle and blade-face photos. They also give measurements and steel details without making you hunt through decorative adjectives. A knife page should help you cook better, not simply make the buy button glow.\n\n## Red flags\n\nThe red flag is buying polish instead of a knife. Another red flag is pretending every Myojin-associated blade is the same. The name is a strong signal, not a universal spec sheet. You still need profile, height, grind and ownership fit.\n\nAlso beware of the phrase “for life” when it is used to avoid specifics. A knife can last for decades if it is used correctly, sharpened properly and not abused. It can also chip in five minutes if you twist a hard edge through something stupid. Longevity is a relationship, not a warranty spell.\n\n## Board, stone and maintenance pairing\n\nPair the knife with a stable soft board and stones suited to the steel. For SG2/R2, Shapton-style stones are practical. For carbon, softer stones can feel excellent. In every case, deburring beats vanity polishing. The burr does not care how nice the bevel looks.\n\nThe safe baseline is simple: edge-friendly board, hand wash, dry immediately, store safely, touch up before the knife becomes truly dull. Add a strop if you know how to use it lightly. Add a flattening plate if you use waterstones. Remove rust early rather than waiting for the blade to develop a small weather system.\n\nFor most home cooks, a 1000 grit stone is the centre of the universe. A 2000-3000 grit finisher is nice once your deburring is clean. Higher polish can be fun, especially for certain Japanese steels, but it is not a substitute for angle control. The burr is where ego goes to get exposed.\n\n## Where it sits in Japanese knife culture\n\nMyojin belongs in the cultural map because it makes the sharpener visible. That is a valuable correction to the “blacksmith only” story. A great kitchen knife is usually a chain of skilled decisions, not one heroic hammer swing.\n\nThis is also why Adrichops treats maker spotlights as buying education, not celebrity worship. Japanese knives are made by people and systems: smiths, sharpeners, polishers, handle makers, retailers and users. Appreciating the craft should make your use more careful, not make the knife untouchable.\n\n## Adrichops take\n\nMyojin Riki Seisakusho / Naohito Myojin is worth studying because it adds a specific lesson to the knife map. Some makers teach thinness, some teach workhorse geometry, some teach steel care, some teach branding and collaboration. The point is not to collect names. The point is to learn what each name tells you to look for.\n\nThe simple rule: buy the knife that fits your food, your board, your sharpening and your level of care. Then use it. Functional art is allowed to get wet, develop patina, earn scratches and come back from the stone sharper than before. That is the whole deal.\n\nFor a maker spotlight, the end goal is not a verdict that sounds final. It is a better set of questions for the next purchase, the next sharpening session, and the next meal. If the article makes you look twice at geometry before clicking buy, it has done its job.\n\n## Takeaways\n\n- Do not buy Myojin Riki Seisakusho / Naohito Myojin by name alone; match the exact knife to food, board and care habits.\n- Use source trails, retailer measurements and forum owner notes to understand the line before buying.\n- Treat maker appreciation as a reason to use and maintain the knife, not to make it untouchable.",
+      "bodyMarkdown": "## Why this maker matters\n\nMyojin matters because it makes the sharpening and finishing side of knife making impossible to ignore. Retailer profiles describe Myojin Riki Seisakusho as a Kochi-based family workshop involving Tateo and Naohito Myojin, and Naohito is widely discussed for refined finishing and modern collaborations. In this site's maker map, Myojin is tied to Izo, not Kyuzo.\n\nIn Adrichops terms, the useful question is not whether Myojin Riki Seisakusho / Naohito Myojin / Izo is hyped. The useful question is what the maker teaches about how Japanese knives work: profile, grind, steel, sharpening, board contact and maintenance. The story is only valuable if it changes how you choose and use the tool.\n\n## Region and workshop reality\n\nRegion: Kochi / Tosa with wider Sakai and collaboration links. Known for: Naohito Myojin / Izo finishing, refined bevels, Tetsujin and collaboration work. That short line matters because Japanese knife regions carry different habits. Sakai, Sanjo, Kochi, Aomori and Kumamoto do not all make the same kind of object with different stamps.\n\nThe workshop story is father-and-son, but the buyer story is broader: Myojin appears through multiple brands and collaborations. Tetsujin, Hatsukokoro and other labels can put Myojin finishing into different contexts, which is why the exact line matters.\n\nWhen reading maker pages, treat the workshop story as context rather than proof. A great story can explain why a knife exists; it cannot replace choil photos, measurements, sharpening behaviour or whether the thing suits your prep board. Beautiful provenance still has to pass through a carrot.\n\n## Cutting character\n\nThe appeal is controlled refinement. Smooth bevel transitions, precise tips and clean faces can make prep feel deliberate rather than flashy. The best examples feel thin and exact without becoming stupidly fragile. That balance is difficult, which is why the name carries weight.\n\nRefinement does not mean one behaviour. Some Myojin-associated knives are laser-like, some are more convex, some are powdered stainless, and some are carbon. If you buy only because the bevel photograph looks expensive, you may miss the more important question: what kind of cutter is this?\n\nThe practical test is always boring in the best way: onions, carrots, potatoes, herbs, protein trimming and repeat prep. Knife people can make any blade sound poetic, but food tells the truth quickly. If a knife wedges, sticks, feels unstable or scares you away from using it, the spec sheet has lost the argument.\n\n## Steel and construction without the fog machine\n\nCommon steel conversation: SG2/R2, Ginsan, Blue steels and collaboration-specific releases. Steel is important, but it is not the whole knife. Heat treatment, grind, edge geometry and sharpening quality decide whether the steel becomes useful or just a word in a product title.\n\nSG2/R2 lines bring edge retention and stainless convenience, but can ask for stones that cut modern stainless efficiently. Ginsan is often a lovely practical middle path. Carbon collaborations bring crisp sharpening and more care. Again: the line decides the routine.\n\nFor normal cooks, the decision is usually stainless convenience versus carbon feedback. Stainless and semi-stainless steels reduce care anxiety. Carbon steels often sharpen beautifully and develop patina. Neither path is morally superior. The best steel is the one that matches your sink habits, stone habits and tolerance for wiping blades during prep.\n\n## How I would shop it\n\nStart by separating Myojin-forged, Myojin-finished, Tetsujin, and collaboration knives. Ask who forged it, who sharpened it, what steel it is, and what the retailer measurements show. The heel, spine, choil and tip should look as considered as the beauty shot.\n\nBefore buying, ask five plain questions: what food will this cut most often, what board will it hit, what maintenance can I actually sustain, who made and sharpened it, and does the exact listing show enough detail? If the answer is mostly vibes, wait.\n\nThe best retailers make the decision easier by showing choil, spine, heel, handle and blade-face photos. They also give measurements and steel details without making you hunt through decorative adjectives. A knife page should help you cook better, not simply make the buy button glow.\n\n## Red flags\n\nThe red flag is buying polish instead of a knife. Another red flag is pretending every Myojin-associated blade is the same. The name is a strong signal, not a universal spec sheet. You still need profile, height, grind and ownership fit.\n\nAlso beware of the phrase “for life” when it is used to avoid specifics. A knife can last for decades if it is used correctly, sharpened properly and not abused. It can also chip in five minutes if you twist a hard edge through something stupid. Longevity is a relationship, not a warranty spell.\n\n## Board, stone and maintenance pairing\n\nPair the knife with a stable soft board and stones suited to the steel. For SG2/R2, Shapton-style stones are practical. For carbon, softer stones can feel excellent. In every case, deburring beats vanity polishing. The burr does not care how nice the bevel looks.\n\nThe safe baseline is simple: edge-friendly board, hand wash, dry immediately, store safely, touch up before the knife becomes truly dull. Add a strop if you know how to use it lightly. Add a flattening plate if you use waterstones. Remove rust early rather than waiting for the blade to develop a small weather system.\n\nFor most home cooks, a 1000 grit stone is the centre of the universe. A 2000-3000 grit finisher is nice once your deburring is clean. Higher polish can be fun, especially for certain Japanese steels, but it is not a substitute for angle control. The burr is where ego goes to get exposed.\n\n## Where it sits in Japanese knife culture\n\nMyojin belongs in the cultural map because it makes the sharpener visible. That is a valuable correction to the “blacksmith only” story. A great kitchen knife is usually a chain of skilled decisions, not one heroic hammer swing.\n\nThis is also why Adrichops treats maker spotlights as buying education, not celebrity worship. Japanese knives are made by people and systems: smiths, sharpeners, polishers, handle makers, retailers and users. Appreciating the craft should make your use more careful, not make the knife untouchable.\n\n## Adrichops take\n\nMyojin Riki Seisakusho / Naohito Myojin / Izo is worth studying because it adds a specific lesson to the knife map. Some makers teach thinness, some teach workhorse geometry, some teach steel care, some teach branding and collaboration. The point is not to collect names. The point is to learn what each name tells you to look for.\n\nThe simple rule: buy the knife that fits your food, your board, your sharpening and your level of care. Then use it. Functional art is allowed to get wet, develop patina, earn scratches and come back from the stone sharper than before. That is the whole deal.\n\nFor a maker spotlight, the end goal is not a verdict that sounds final. It is a better set of questions for the next purchase, the next sharpening session, and the next meal. If the article makes you look twice at geometry before clicking buy, it has done its job.\n\n## Takeaways\n\n- Do not buy Myojin Riki Seisakusho / Naohito Myojin / Izo by name alone; match the exact knife to food, board and care habits.\n- Use source trails, retailer measurements and forum owner notes to understand the line before buying.\n- Treat maker appreciation as a reason to use and maintain the knife, not to make it untouchable.",
       "body": [
         {
           "heading": "Why this maker matters",
           "paragraphs": [
-            "Myojin matters because it makes the sharpening and finishing side of knife making impossible to ignore. Retailer profiles describe Myojin Riki Seisakusho as a Kochi-based family workshop involving Tateo and Naohito Myojin, and Naohito is widely discussed for refined finishing and modern collaborations.",
-            "In Adrichops terms, the useful question is not whether Myojin Riki Seisakusho / Naohito Myojin is hyped. The useful question is what the maker teaches about how Japanese knives work: profile, grind, steel, sharpening, board contact and maintenance. The story is only valuable if it changes how you choose and use the tool."
+            "Myojin matters because it makes the sharpening and finishing side of knife making impossible to ignore. Retailer profiles describe Myojin Riki Seisakusho as a Kochi-based family workshop involving Tateo and Naohito Myojin, and Naohito is widely discussed for refined finishing and modern collaborations. In this site's maker map, Myojin is tied to Izo, not Kyuzo.",
+            "In Adrichops terms, the useful question is not whether Myojin Riki Seisakusho / Naohito Myojin / Izo is hyped. The useful question is what the maker teaches about how Japanese knives work: profile, grind, steel, sharpening, board contact and maintenance. The story is only valuable if it changes how you choose and use the tool."
           ]
         },
         {
           "heading": "Region and workshop reality",
           "paragraphs": [
-            "Region: Kochi / Tosa with wider Sakai and collaboration links. Known for: Naohito Myojin finishing, refined bevels, Tetsujin and collaboration work. That short line matters because Japanese knife regions carry different habits. Sakai, Sanjo, Kochi, Aomori and Kumamoto do not all make the same kind of object with different stamps.",
+            "Region: Kochi / Tosa with wider Sakai and collaboration links. Known for: Naohito Myojin / Izo finishing, refined bevels, Tetsujin and collaboration work. That short line matters because Japanese knife regions carry different habits. Sakai, Sanjo, Kochi, Aomori and Kumamoto do not all make the same kind of object with different stamps.",
             "The workshop story is father-and-son, but the buyer story is broader: Myojin appears through multiple brands and collaborations. Tetsujin, Hatsukokoro and other labels can put Myojin finishing into different contexts, which is why the exact line matters.",
             "When reading maker pages, treat the workshop story as context rather than proof. A great story can explain why a knife exists; it cannot replace choil photos, measurements, sharpening behaviour or whether the thing suits your prep board. Beautiful provenance still has to pass through a carrot."
           ]
@@ -1007,7 +1155,7 @@
         {
           "heading": "Adrichops take",
           "paragraphs": [
-            "Myojin Riki Seisakusho / Naohito Myojin is worth studying because it adds a specific lesson to the knife map. Some makers teach thinness, some teach workhorse geometry, some teach steel care, some teach branding and collaboration. The point is not to collect names. The point is to learn what each name tells you to look for.",
+            "Myojin Riki Seisakusho / Naohito Myojin / Izo is worth studying because it adds a specific lesson to the knife map. Some makers teach thinness, some teach workhorse geometry, some teach steel care, some teach branding and collaboration. The point is not to collect names. The point is to learn what each name tells you to look for.",
             "The simple rule: buy the knife that fits your food, your board, your sharpening and your level of care. Then use it. Functional art is allowed to get wet, develop patina, earn scratches and come back from the stone sharper than before. That is the whole deal.",
             "For a maker spotlight, the end goal is not a verdict that sounds final. It is a better set of questions for the next purchase, the next sharpening session, and the next meal. If the article makes you look twice at geometry before clicking buy, it has done its job."
           ]
@@ -1015,7 +1163,7 @@
         {
           "heading": "Takeaways",
           "paragraphs": [
-            "- Do not buy Myojin Riki Seisakusho / Naohito Myojin by name alone; match the exact knife to food, board and care habits. - Use source trails, retailer measurements and forum owner notes to understand the line before buying. - Treat maker appreciation as a reason to use and maintain the knife, not to make it untouchable."
+            "- Do not buy Myojin Riki Seisakusho / Naohito Myojin / Izo by name alone; match the exact knife to food, board and care habits. - Use source trails, retailer measurements and forum owner notes to understand the line before buying. - Treat maker appreciation as a reason to use and maintain the knife, not to make it untouchable."
           ]
         }
       ],

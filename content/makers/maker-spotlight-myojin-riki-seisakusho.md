@@ -6,25 +6,25 @@ category: culture
 date: '2026-06-24'
 readTime: 8 min read
 featured: false
-maker: Myojin Riki Seisakusho / Naohito Myojin
+maker: Myojin Riki Seisakusho / Naohito Myojin / Izo
 steel: SG2/R2, Ginsan, Blue steels and collaboration-specific releases
 length: Gyuto, kiritsuke gyuto, nakiri, sujihiki and traditional shapes
 bestFor: Refined grinds, polish and modern high-performance Japanese knives
 rating: N/A
 verdict: Refined finish with functional purpose
-summary: 'Myojin puts the sharpener and finisher in the foreground: high polish, precise geometry and collaborations that serious buyers track carefully.'
+summary: 'Myojin / Izo puts the sharpener and finisher in the foreground: high polish, precise geometry and collaborations that serious buyers track carefully.'
 deck: Myojin is what happens when beautiful finishing still has to answer the onion. The polish is not make-up; on the good examples, it is geometry.
 heroImage: assets/img/maker-myojin.svg
 heroAlt: Minimal maker spotlight illustration for Myojin Riki Seisakusho / Naohito Myojin
 pullQuote: Good finish is not make-up. On a Myojin, it is part of the cutting geometry.
 specs:
   Region: Kochi / Tosa with wider Sakai and collaboration links
-  Known for: Naohito Myojin finishing, refined bevels, Tetsujin and collaboration work
+  Known for: Naohito Myojin / Izo finishing, refined bevels, Tetsujin and collaboration work
   Best first question: What exact profile and grind suits my cooking?
   Care level: Depends on steel and geometry
   Adrichops rule: Source trail first, hype second
 takeaways:
-- Do not buy Myojin Riki Seisakusho / Naohito Myojin by name alone; match the exact knife to food, board and care habits.
+- Do not buy Myojin Riki Seisakusho / Naohito Myojin / Izo by name alone; match the exact knife to food, board and care habits.
 - Use source trails, retailer measurements and forum owner notes to understand the line before buying.
 - Treat maker appreciation as a reason to use and maintain the knife, not to make it untouchable.
 products: []
@@ -54,13 +54,13 @@ route: /maker-spotlight/maker-spotlight-myojin-riki-seisakusho/
 
 ## Why this maker matters
 
-Myojin matters because it makes the sharpening and finishing side of knife making impossible to ignore. Retailer profiles describe Myojin Riki Seisakusho as a Kochi-based family workshop involving Tateo and Naohito Myojin, and Naohito is widely discussed for refined finishing and modern collaborations.
+Myojin matters because it makes the sharpening and finishing side of knife making impossible to ignore. Retailer profiles describe Myojin Riki Seisakusho as a Kochi-based family workshop involving Tateo and Naohito Myojin, and Naohito is widely discussed for refined finishing and modern collaborations. In this site's maker map, Myojin is tied to Izo, not Kyuzo.
 
-In Adrichops terms, the useful question is not whether Myojin Riki Seisakusho / Naohito Myojin is hyped. The useful question is what the maker teaches about how Japanese knives work: profile, grind, steel, sharpening, board contact and maintenance. The story is only valuable if it changes how you choose and use the tool.
+In Adrichops terms, the useful question is not whether Myojin Riki Seisakusho / Naohito Myojin / Izo is hyped. The useful question is what the maker teaches about how Japanese knives work: profile, grind, steel, sharpening, board contact and maintenance. The story is only valuable if it changes how you choose and use the tool.
 
 ## Region and workshop reality
 
-Region: Kochi / Tosa with wider Sakai and collaboration links. Known for: Naohito Myojin finishing, refined bevels, Tetsujin and collaboration work. That short line matters because Japanese knife regions carry different habits. Sakai, Sanjo, Kochi, Aomori and Kumamoto do not all make the same kind of object with different stamps.
+Region: Kochi / Tosa with wider Sakai and collaboration links. Known for: Naohito Myojin / Izo finishing, refined bevels, Tetsujin and collaboration work. That short line matters because Japanese knife regions carry different habits. Sakai, Sanjo, Kochi, Aomori and Kumamoto do not all make the same kind of object with different stamps.
 
 The workshop story is father-and-son, but the buyer story is broader: Myojin appears through multiple brands and collaborations. Tetsujin, Hatsukokoro and other labels can put Myojin finishing into different contexts, which is why the exact line matters.
 
@@ -112,7 +112,7 @@ This is also why Adrichops treats maker spotlights as buying education, not cele
 
 ## Adrichops take
 
-Myojin Riki Seisakusho / Naohito Myojin is worth studying because it adds a specific lesson to the knife map. Some makers teach thinness, some teach workhorse geometry, some teach steel care, some teach branding and collaboration. The point is not to collect names. The point is to learn what each name tells you to look for.
+Myojin Riki Seisakusho / Naohito Myojin / Izo is worth studying because it adds a specific lesson to the knife map. Some makers teach thinness, some teach workhorse geometry, some teach steel care, some teach branding and collaboration. The point is not to collect names. The point is to learn what each name tells you to look for.
 
 The simple rule: buy the knife that fits your food, your board, your sharpening and your level of care. Then use it. Functional art is allowed to get wet, develop patina, earn scratches and come back from the stone sharper than before. That is the whole deal.
 
@@ -120,6 +120,6 @@ For a maker spotlight, the end goal is not a verdict that sounds final. It is a 
 
 ## Takeaways
 
-- Do not buy Myojin Riki Seisakusho / Naohito Myojin by name alone; match the exact knife to food, board and care habits.
+- Do not buy Myojin Riki Seisakusho / Naohito Myojin / Izo by name alone; match the exact knife to food, board and care habits.
 - Use source trails, retailer measurements and forum owner notes to understand the line before buying.
 - Treat maker appreciation as a reason to use and maintain the knife, not to make it untouchable.
