@@ -921,7 +921,8 @@
       ],
       "sourceIds": [
         "takefu-knife-village",
-        "tkv-members"
+        "tkv-members",
+        "knifejapan-brand-list"
       ],
       "nodes": [
         {
@@ -1074,12 +1075,16 @@
           "id": "kamoto-hamono",
           "name": "Kamoto Hamono",
           "role": "Workshop",
+          "aliases": [
+            "Kamotou"
+          ],
           "specialty": "Takefu Knife Village member workshop in the Echizen production network.",
           "famousLines": [
             "Kamoto Hamono"
           ],
           "sourceIds": [
-            "tkv-kamoto"
+            "tkv-kamoto",
+            "knifejapan-brand-list"
           ]
         },
         {
@@ -1325,6 +1330,7 @@
         "kkf-community",
         "reddit-truechefknives",
         "knifejapan-zakuri",
+        "knifejapan-brand-list",
         "knifejapan-toyonaga",
         "knifejapan-sasaoka",
         "hitohira-tetsujin"
@@ -1445,6 +1451,18 @@
           ]
         },
         {
+          "id": "katsuhide-kajiya",
+          "name": "Katsuhide Kajiya",
+          "role": "Workshop",
+          "specialty": "Kochi/Tosa workshop listed by Knife Japan; exact steel and profile claims should stay attached to individual listings.",
+          "famousLines": [
+            "Katsuhide Kajiya knives"
+          ],
+          "sourceIds": [
+            "knifejapan-brand-list"
+          ]
+        },
+        {
           "id": "tosa-kajiya",
           "name": "Tosa blacksmith context",
           "role": "Workshop",
@@ -1556,6 +1574,18 @@
           "confidence": "medium",
           "sourceIds": [
             "knifejapan-sasaoka"
+          ]
+        },
+        {
+          "from": "tosa-kajiya",
+          "to": "katsuhide-kajiya",
+          "kind": "regional-peer",
+          "label": "Kochi / Tosa listing",
+          "detail": "Knife Japan lists Katsuhide Kajiya in the Kochi/Tosa branch.",
+          "sourceType": "retailer",
+          "confidence": "medium",
+          "sourceIds": [
+            "knifejapan-brand-list"
           ]
         }
       ]
@@ -1985,7 +2015,8 @@
         "takeda-official",
         "kkf-community",
         "reddit-truechefknives",
-        "knifejapan-otsuki"
+        "knifejapan-otsuki",
+        "knifejapan-brand-list"
       ],
       "nodes": [
         {
@@ -2031,6 +2062,18 @@
           "sourceIds": [
             "knifejapan-otsuki"
           ]
+        },
+        {
+          "id": "bizen-osafune-nihonto",
+          "name": "Bizen Osafune Nihon-to",
+          "role": "Workshop",
+          "specialty": "Okayama listing from Knife Japan, included as Bizen/Osafune regional context rather than a Takeda relationship.",
+          "famousLines": [
+            "Bizen Osafune Nihon-to knives"
+          ],
+          "sourceIds": [
+            "knifejapan-brand-list"
+          ]
         }
       ],
       "edges": [
@@ -2058,6 +2101,18 @@
           "sourceIds": [
             "knifejapan-otsuki"
           ]
+        },
+        {
+          "from": "takeda-hamono",
+          "to": "bizen-osafune-nihonto",
+          "kind": "regional-peer",
+          "label": "Okayama listing",
+          "detail": "Knife Japan lists Bizen Osafune Nihon-to in Okayama; this edge marks regional proximity, not lineage.",
+          "sourceType": "retailer",
+          "confidence": "medium",
+          "sourceIds": [
+            "knifejapan-brand-list"
+          ]
         }
       ]
     },
@@ -2072,7 +2127,8 @@
       "sourceIds": [
         "moritaka-official",
         "kkf-community",
-        "reddit-truechefknives"
+        "reddit-truechefknives",
+        "knifejapan-brand-list"
       ],
       "nodes": [
         {
@@ -2088,6 +2144,455 @@
           "sourceIds": [
             "moritaka-official",
             "kkf-community"
+          ]
+        },
+        {
+          "id": "minomo-hamono",
+          "name": "Minomo Hamono",
+          "role": "Workshop",
+          "specialty": "Kumamoto workshop listed by Knife Japan; exact smith, steel and line details should be checked on individual product pages.",
+          "famousLines": [
+            "Minomo Hamono knives"
+          ],
+          "sourceIds": [
+            "knifejapan-brand-list"
+          ]
+        },
+        {
+          "id": "okahide-hamono",
+          "name": "Okahide Hamono",
+          "role": "Workshop",
+          "specialty": "Kumamoto workshop listed by Knife Japan; useful as a regional reference for smaller everyday knives.",
+          "famousLines": [
+            "Okahide Kitchen Mini",
+            "Okahide Hamono knives"
+          ],
+          "sourceIds": [
+            "knifejapan-brand-list"
+          ]
+        }
+      ],
+      "edges": []
+    },
+    {
+      "id": "kagoshima",
+      "name": "Kagoshima",
+      "location": "Kagoshima",
+      "summary": "Knife Japan regional branch for southern Kyushu makers that need individual product-page follow-up.",
+      "notes": [
+        "This branch currently uses Knife Japan's maker/region listing as the source trail; add individual profiles as stronger sources are found."
+      ],
+      "sourceIds": [
+        "knifejapan-brand-list"
+      ],
+      "nodes": [
+        {
+          "id": "fukamizu-hamono",
+          "name": "Fukamizu Hamono",
+          "role": "Workshop",
+          "specialty": "Kagoshima workshop listed by Knife Japan; exact line, steel and smith details should be verified per listing.",
+          "famousLines": [
+            "Fukamizu Hamono knives"
+          ],
+          "sourceIds": [
+            "knifejapan-brand-list"
+          ]
+        }
+      ],
+      "edges": []
+    },
+    {
+      "id": "nagasaki",
+      "name": "Nagasaki",
+      "location": "Nagasaki",
+      "summary": "Knife Japan branch for Nagasaki workshops and smith identities outside the larger Sakai/Sanjo/Echizen clusters.",
+      "notes": [
+        "Use this as a source-led regional bucket until stronger maker biographies are attached."
+      ],
+      "sourceIds": [
+        "knifejapan-brand-list"
+      ],
+      "nodes": [
+        {
+          "id": "hayashida-hamono",
+          "name": "Hayashida Hamono",
+          "role": "Workshop",
+          "specialty": "Nagasaki workshop listed by Knife Japan; exact product attribution should stay with individual listings.",
+          "famousLines": [
+            "Hayashida Hamono knives"
+          ],
+          "sourceIds": [
+            "knifejapan-brand-list"
+          ]
+        },
+        {
+          "id": "mori-kajiya",
+          "name": "Mori Kajiya",
+          "role": "Workshop",
+          "specialty": "Nagasaki workshop listed by Knife Japan.",
+          "famousLines": [
+            "Mori Kajiya knives"
+          ],
+          "sourceIds": [
+            "knifejapan-brand-list"
+          ]
+        },
+        {
+          "id": "shigemitsu-hamono",
+          "name": "Shigemitsu Hamono",
+          "role": "Workshop",
+          "specialty": "Nagasaki workshop listed by Knife Japan.",
+          "famousLines": [
+            "Shigemitsu Hamono knives"
+          ],
+          "sourceIds": [
+            "knifejapan-brand-list"
+          ]
+        },
+        {
+          "id": "yoshimitsu-kajiya",
+          "name": "Yoshimitsu Kajiya",
+          "role": "Workshop",
+          "specialty": "Nagasaki smith/workshop listed by Knife Japan; homepage examples include tall nakiri context.",
+          "famousLines": [
+            "Yoshimitsu Kajiya Nakiri",
+            "Yoshimitsu Kajiya knives"
+          ],
+          "sourceIds": [
+            "knifejapan-brand-list"
+          ]
+        },
+        {
+          "id": "yoshimitsu-hamono",
+          "name": "Yoshimitsu Hamono",
+          "role": "Workshop",
+          "specialty": "Nagasaki workshop listed by Knife Japan; keep separate from Yoshimitsu Kajiya unless a stronger source ties them together.",
+          "famousLines": [
+            "Yoshimitsu Hamono knives"
+          ],
+          "sourceIds": [
+            "knifejapan-brand-list"
+          ]
+        }
+      ],
+      "edges": []
+    },
+    {
+      "id": "yamaguchi",
+      "name": "Yamaguchi",
+      "location": "Yamaguchi",
+      "summary": "Knife Japan regional branch for Yamaguchi-listed workshops.",
+      "notes": [
+        "Use individual Knife Japan product pages before making line or steel claims."
+      ],
+      "sourceIds": [
+        "knifejapan-brand-list"
+      ],
+      "nodes": [
+        {
+          "id": "homi-kajiya",
+          "name": "Homi Kajiya",
+          "role": "Workshop",
+          "specialty": "Yamaguchi workshop listed by Knife Japan.",
+          "famousLines": [
+            "Homi Kajiya knives"
+          ],
+          "sourceIds": [
+            "knifejapan-brand-list"
+          ]
+        }
+      ],
+      "edges": []
+    },
+    {
+      "id": "tanegashima",
+      "name": "Tanegashima",
+      "location": "Tanegashima Island",
+      "summary": "Knife Japan branch for Tanegashima Island tool and knife context.",
+      "notes": [
+        "Knife Japan lists Ikenami Hamono under Tanegashima Island, including scissors/shears context."
+      ],
+      "sourceIds": [
+        "knifejapan-brand-list"
+      ],
+      "nodes": [
+        {
+          "id": "ikenami-hamono",
+          "name": "Ikenami Hamono",
+          "role": "Workshop",
+          "specialty": "Tanegashima Island workshop listed by Knife Japan, with scissors/shears and kitchen knife context.",
+          "famousLines": [
+            "Ikenami Hamono Bannou",
+            "Ikenami Hamono Tanebasami"
+          ],
+          "sourceIds": [
+            "knifejapan-brand-list"
+          ]
+        }
+      ],
+      "edges": []
+    },
+    {
+      "id": "saga",
+      "name": "Saga",
+      "location": "Saga",
+      "summary": "Knife Japan regional branch for Saga-listed workshops.",
+      "notes": [
+        "Knife Japan homepage examples include Kawasaki Kajiya oyster knife context."
+      ],
+      "sourceIds": [
+        "knifejapan-brand-list"
+      ],
+      "nodes": [
+        {
+          "id": "kawasaki-kajiya",
+          "name": "Kawasaki Kajiya",
+          "role": "Workshop",
+          "specialty": "Saga workshop listed by Knife Japan; homepage examples include recycled-steel oyster knife context.",
+          "famousLines": [
+            "Kawasaki Kajiya Kakiake-bocho",
+            "Kawasaki Kajiya knives"
+          ],
+          "sourceIds": [
+            "knifejapan-brand-list"
+          ]
+        }
+      ],
+      "edges": []
+    },
+    {
+      "id": "hiroshima",
+      "name": "Hiroshima",
+      "location": "Hiroshima",
+      "summary": "Knife Japan regional branch for Hiroshima-listed workshops.",
+      "notes": [
+        "Current node is source-led from Knife Japan's brand list; expand with product-page details later."
+      ],
+      "sourceIds": [
+        "knifejapan-brand-list"
+      ],
+      "nodes": [
+        {
+          "id": "mikami-hamono",
+          "name": "Mikami Hamono",
+          "role": "Workshop",
+          "specialty": "Hiroshima workshop listed by Knife Japan.",
+          "famousLines": [
+            "Mikami Hamono knives"
+          ],
+          "sourceIds": [
+            "knifejapan-brand-list"
+          ]
+        }
+      ],
+      "edges": []
+    },
+    {
+      "id": "shimane",
+      "name": "Shimane",
+      "location": "Shimane",
+      "summary": "Knife Japan branch for Shimane makers and Yasugi steel context.",
+      "notes": [
+        "Knife Japan highlights Yasugi specialty steel context around Moriya Munemitsu YHC and lists Unshu makers in the same prefecture."
+      ],
+      "sourceIds": [
+        "knifejapan-brand-list"
+      ],
+      "nodes": [
+        {
+          "id": "moriya-munemitsu-yhc",
+          "name": "Moriya Munemitsu YHC",
+          "role": "Workshop",
+          "specialty": "Shimane workshop listed by Knife Japan, with homepage context around Yasugi specialty steels.",
+          "famousLines": [
+            "Moriya Munemitsu YHC knives"
+          ],
+          "sourceIds": [
+            "knifejapan-brand-list"
+          ]
+        },
+        {
+          "id": "unshu-chuzen-hamono",
+          "name": "Unshu Chuzen Hamono",
+          "role": "Workshop",
+          "specialty": "Shimane workshop listed by Knife Japan.",
+          "famousLines": [
+            "Unshu Chuzen Hamono knives"
+          ],
+          "sourceIds": [
+            "knifejapan-brand-list"
+          ]
+        },
+        {
+          "id": "unshu-yukimitsu-hamono",
+          "name": "Unshu Yukimitsu Hamono",
+          "role": "Workshop",
+          "specialty": "Shimane workshop listed by Knife Japan; homepage copy frames the branch around traditional sharpness from the home of Japanese steel.",
+          "famousLines": [
+            "Unshu Yukimitsu Hamono knives"
+          ],
+          "sourceIds": [
+            "knifejapan-brand-list"
+          ]
+        }
+      ],
+      "edges": []
+    },
+    {
+      "id": "miyazaki",
+      "name": "Miyazaki",
+      "location": "Miyazaki",
+      "summary": "Knife Japan regional branch for Miyazaki-listed workshops.",
+      "notes": [
+        "Nakamura Hamono appears in both Miyazaki and Oita Knife Japan listings; keep regional nodes separate until product pages clarify the relationship."
+      ],
+      "sourceIds": [
+        "knifejapan-brand-list"
+      ],
+      "nodes": [
+        {
+          "id": "nakamura-hamono-miyazaki",
+          "name": "Nakamura Hamono",
+          "role": "Workshop",
+          "specialty": "Miyazaki listing from Knife Japan; represented separately from the Oita listing until a stronger source connects them.",
+          "famousLines": [
+            "Nakamura Hamono Miyazaki knives"
+          ],
+          "sourceIds": [
+            "knifejapan-brand-list"
+          ]
+        },
+        {
+          "id": "yamamoto-hamono-miyazaki",
+          "name": "Yamamoto Hamono",
+          "role": "Workshop",
+          "specialty": "Miyazaki workshop listed by Knife Japan.",
+          "famousLines": [
+            "Yamamoto Hamono knives"
+          ],
+          "sourceIds": [
+            "knifejapan-brand-list"
+          ]
+        }
+      ],
+      "edges": []
+    },
+    {
+      "id": "oita",
+      "name": "Oita",
+      "location": "Oita",
+      "summary": "Knife Japan regional branch for Oita-listed workshops.",
+      "notes": [
+        "Nakamura Hamono also appears in Miyazaki; this node remains source-specific until a better relationship trail is added."
+      ],
+      "sourceIds": [
+        "knifejapan-brand-list"
+      ],
+      "nodes": [
+        {
+          "id": "nakamura-hamono-oita",
+          "name": "Nakamura Hamono",
+          "role": "Workshop",
+          "specialty": "Oita listing from Knife Japan; represented separately from the Miyazaki listing until product-page evidence connects them.",
+          "famousLines": [
+            "Nakamura Hamono Oita knives"
+          ],
+          "sourceIds": [
+            "knifejapan-brand-list"
+          ]
+        }
+      ],
+      "edges": []
+    },
+    {
+      "id": "tokushima",
+      "name": "Tokushima",
+      "location": "Tokushima",
+      "summary": "Knife Japan regional branch for Tokushima-listed workshops.",
+      "notes": [
+        "Knife Japan popular listings include Okubo Kajiya nakiri and santoku examples."
+      ],
+      "sourceIds": [
+        "knifejapan-brand-list"
+      ],
+      "nodes": [
+        {
+          "id": "okubo-kajiya",
+          "name": "Okubo Kajiya",
+          "role": "Workshop",
+          "specialty": "Tokushima workshop listed by Knife Japan; homepage examples include Aogami #2 nakiri and santoku.",
+          "famousLines": [
+            "Okubo Kajiya Nakiri",
+            "Okubo Kajiya Santoku"
+          ],
+          "sourceIds": [
+            "knifejapan-brand-list"
+          ]
+        }
+      ],
+      "edges": []
+    },
+    {
+      "id": "tottori",
+      "name": "Tottori",
+      "location": "Tottori",
+      "summary": "Knife Japan branch for Tottori workshops and handle context.",
+      "notes": [
+        "Knife Japan homepage highlights Otsuka Hamono with custom mountain cherry handles."
+      ],
+      "sourceIds": [
+        "knifejapan-brand-list"
+      ],
+      "nodes": [
+        {
+          "id": "otsuka-hamono",
+          "name": "Otsuka Hamono",
+          "role": "Workshop",
+          "specialty": "Tottori workshop listed by Knife Japan; homepage copy highlights custom mountain cherry handles.",
+          "famousLines": [
+            "Otsuka Hamono knives"
+          ],
+          "sourceIds": [
+            "knifejapan-brand-list"
+          ]
+        },
+        {
+          "id": "yashima-nogu-kogyo",
+          "name": "Yashima Nogu Kogyo",
+          "role": "Workshop",
+          "specialty": "Tottori workshop listed by Knife Japan.",
+          "famousLines": [
+            "Yashima Nogu Kogyo knives"
+          ],
+          "sourceIds": [
+            "knifejapan-brand-list"
+          ]
+        }
+      ],
+      "edges": []
+    },
+    {
+      "id": "fukuoka",
+      "name": "Fukuoka",
+      "location": "Fukuoka",
+      "summary": "Knife Japan regional branch for Fukuoka-listed makers.",
+      "notes": [
+        "Knife Japan homepage popular listings include Shiro Kunimitsu yanagiba context."
+      ],
+      "sourceIds": [
+        "knifejapan-brand-list"
+      ],
+      "nodes": [
+        {
+          "id": "shiro-kunimitsu",
+          "name": "Shiro Kunimitsu",
+          "role": "Workshop",
+          "specialty": "Fukuoka maker listed by Knife Japan; homepage examples include Kurouchi Special Yanagiba.",
+          "famousLines": [
+            "Shiro Kunimitsu Kurouchi Special Yanagiba"
+          ],
+          "sourceIds": [
+            "knifejapan-brand-list"
           ]
         }
       ],
@@ -2391,6 +2896,11 @@
       "id": "teruyasu-fujiwara-official",
       "label": "Teruyasu Fujiwara official site",
       "url": "https://www.teruyasu.net/"
+    },
+    {
+      "id": "knifejapan-brand-list",
+      "label": "Knife Japan shop-by-brand maker list",
+      "url": "https://knifejapan.com/"
     },
     {
       "id": "knifejapan-otsuki",

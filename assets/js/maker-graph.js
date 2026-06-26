@@ -52,6 +52,18 @@
     aomori: '#6fd3ff',
     okayama: '#d4b75f',
     kumamoto: '#ff8a48',
+    kagoshima: '#ff6f91',
+    nagasaki: '#40c9a2',
+    yamaguchi: '#d4e157',
+    tanegashima: '#ffb74d',
+    saga: '#80cbc4',
+    hiroshima: '#4fc3f7',
+    shimane: '#a1887f',
+    miyazaki: '#ffab91',
+    oita: '#b2dfdb',
+    tokushima: '#aed581',
+    tottori: '#ce93d8',
+    fukuoka: '#90caf9',
     tokyo: '#f5eee3'
   };
   const regionMapPositions = {
@@ -66,7 +78,19 @@
     sakai: [48, 72],
     okayama: [33, 71],
     'tosa-kochi': [39, 83],
-    kumamoto: [23, 88]
+    hiroshima: [35, 76],
+    yamaguchi: [27, 78],
+    shimane: [31, 70],
+    tottori: [38, 69],
+    tokushima: [43, 78],
+    fukuoka: [21, 82],
+    saga: [18, 84],
+    nagasaki: [16, 88],
+    oita: [24, 87],
+    kumamoto: [22, 91],
+    miyazaki: [27, 94],
+    kagoshima: [21, 96],
+    tanegashima: [28, 98]
   };
   const edgeColors = {
     apprenticeship: '#2fbf71',
@@ -221,12 +245,13 @@
 
   function graphDimensions() {
     const mobile = mobileQuery.matches;
+    const denseRegionalMap = !state.activeRegion && (state.graph?.regions?.length || 0) > 16;
     return {
-      width: state.activeRegion ? (mobile ? 980 : 1480) : (mobile ? 860 : 1180),
-      height: state.activeRegion ? (mobile ? 980 : 980) : (mobile ? 820 : 760),
-      ringRadius: state.activeRegion ? (mobile ? 330 : 430) : (mobile ? 285 : 280),
-      memberDistance: state.activeRegion ? (mobile ? 330 : 430) : (mobile ? 285 : 285),
-      relationDistance: state.activeRegion ? (mobile ? 310 : 390) : (mobile ? 300 : 390),
+      width: state.activeRegion ? (mobile ? 980 : 1480) : denseRegionalMap ? (mobile ? 1180 : 1600) : (mobile ? 860 : 1180),
+      height: state.activeRegion ? (mobile ? 980 : 980) : denseRegionalMap ? (mobile ? 1180 : 1100) : (mobile ? 820 : 760),
+      ringRadius: state.activeRegion ? (mobile ? 330 : 430) : denseRegionalMap ? (mobile ? 430 : 470) : (mobile ? 285 : 280),
+      memberDistance: state.activeRegion ? (mobile ? 330 : 430) : denseRegionalMap ? (mobile ? 420 : 470) : (mobile ? 285 : 285),
+      relationDistance: state.activeRegion ? (mobile ? 310 : 390) : denseRegionalMap ? (mobile ? 390 : 430) : (mobile ? 300 : 390),
       repulsion: state.activeRegion ? (mobile ? 25500 : 36500) : (mobile ? 16800 : 16800),
       hubRepulsion: mobile ? 9800 : 9400
     };
