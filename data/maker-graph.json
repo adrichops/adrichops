@@ -817,7 +817,8 @@
         "cleancut-wakui",
         "cleancut-yoshikane",
         "tadafusa-official",
-        "watanabe-official"
+        "watanabe-official",
+        "hitohira-isamitsu"
       ],
       "nodes": [
         {
@@ -1097,16 +1098,23 @@
           "id": "isamitsu-hamono",
           "name": "Isamitsu Hamono",
           "role": "Workshop",
-          "specialty": "Small Sanjo workshop node often discussed alongside modern handmade carbon lines.",
+          "specialty": "Small Sanjo workshop node with Hitohira-listed Abe Isamitsu smith context; buyer-facing filters show carbon steel kitchen knives in White #1 and Aogami Super, including gyuto, kiritsuke gyuto, santoku and petty profiles.",
           "famousLines": [
+            "Isamitsu Aogami Super",
+            "Isamitsu White #1",
             "Isamitsu White #2",
             "Isamitsu kasumi"
           ],
           "sourceIds": [
             "kkf-community",
-            "reddit-truechefknives"
+            "reddit-truechefknives",
+            "hitohira-isamitsu"
           ],
-          "caveat": "Community-heavy node pending a stronger public workshop/source link."
+          "caveat": "Hitohira confirms the Isamitsu collection and Abe Isamitsu smith filter; keep product-specific claims tied to exact listings.",
+          "aliases": [
+            "Abe Isamitsu Blacksmith",
+            "Isamitsu"
+          ]
         }
       ],
       "edges": [
@@ -1330,7 +1338,8 @@
         "takefu-knife-village",
         "tkv-members",
         "knifejapan-brand-list",
-        "cleancut-makers"
+        "cleancut-makers",
+        "cleancut-shibata-koutetsu"
       ],
       "nodes": [
         {
@@ -1577,6 +1586,26 @@
           "sourceIds": [
             "kkf-community"
           ]
+        },
+        {
+          "id": "shibata-koutetsu",
+          "name": "Shibata Koutetsu",
+          "role": "Sharpener / Brand",
+          "aliases": [
+            "Takayuki Shibata",
+            "Shibata Kotetsu"
+          ],
+          "specialty": "Thin, hard SG2 performance knives designed around cutting feel; Cleancut describes Takayuki Shibata as a well-known sharpener and emphasizes the fragile, high-performance geometry.",
+          "famousLines": [
+            "Shibata Koutetsu SG2",
+            "Shibata Kotetsu Bunka",
+            "Shibata Kotetsu Gyuto"
+          ],
+          "sourceIds": [
+            "cleancut-shibata-koutetsu",
+            "cleancut-makers"
+          ],
+          "caveat": "Placed in the Echizen/Takefu research cluster for map usability; the attached Cleancut source confirms the Shibata Koutetsu line and sharpener/designer context, not every workshop detail."
         }
       ],
       "edges": [
@@ -1725,6 +1754,18 @@
           "confidence": "low",
           "sourceIds": [
             "kkf-community"
+          ]
+        },
+        {
+          "from": "shibata-koutetsu",
+          "to": "takefu-knife-village",
+          "kind": "regional-peer",
+          "label": "Takefu / Echizen research cluster",
+          "detail": "Shibata is kept near the Echizen/Takefu cluster as a buyer-facing thin-performance line while stronger workshop sourcing is collected.",
+          "sourceType": "retailer",
+          "confidence": "low",
+          "sourceIds": [
+            "cleancut-shibata-koutetsu"
           ]
         }
       ]
@@ -2120,7 +2161,8 @@
         "hitohira-moki",
         "hitohira-brands",
         "kkf-community",
-        "reddit-truechefknives"
+        "reddit-truechefknives",
+        "hitohira-kanehide"
       ],
       "nodes": [
         {
@@ -2226,6 +2268,22 @@
             "hitohira-moki",
             "hitohira-brands"
           ]
+        },
+        {
+          "id": "kanehide",
+          "name": "Kanehide",
+          "role": "Brand",
+          "specialty": "Hitohira-listed western-handled, monosteel working-knife line covering carbon and stainless options, with honesuki, sujihiki, gyuto, chopper and butchery-oriented profiles.",
+          "famousLines": [
+            "Kanehide Bessaku",
+            "Kanehide Honesuki",
+            "Kanehide Hirakiri Gyuto"
+          ],
+          "sourceIds": [
+            "hitohira-kanehide",
+            "hitohira-brands"
+          ],
+          "caveat": "Placed in Seki/Gifu as a working brand node; verify factory and line details per listing before treating it as a maker attribution."
         }
       ],
       "edges": [
@@ -2303,6 +2361,18 @@
           "sourceIds": [
             "korin-official",
             "kkf-community"
+          ]
+        },
+        {
+          "from": "kanehide",
+          "to": "misono",
+          "kind": "regional-peer",
+          "label": "Seki working-knife brand context",
+          "detail": "Kanehide is grouped with Seki/Gifu western-handled production-brand context for buyer comparison, not as a shared workshop claim.",
+          "sourceType": "retailer",
+          "confidence": "low",
+          "sourceIds": [
+            "hitohira-kanehide"
           ]
         }
       ]
@@ -2664,7 +2734,8 @@
         "Use this as a source-led regional bucket until stronger maker biographies are attached."
       ],
       "sourceIds": [
-        "knifejapan-brand-list"
+        "knifejapan-brand-list",
+        "cleancut-matsubara"
       ],
       "nodes": [
         {
@@ -2727,6 +2798,22 @@
           "sourceIds": [
             "knifejapan-brand-list"
           ]
+        },
+        {
+          "id": "matsubara-hamono",
+          "name": "Matsubara",
+          "role": "Workshop / Brand",
+          "specialty": "Tall, sturdy knives with thin edges and visible distal taper; Cleancut frames the line around rougher looks, blade height and cutting performance.",
+          "famousLines": [
+            "Matsubara Aogami #2",
+            "Matsubara Shirogami #1",
+            "Matsubara Kiri cleaver"
+          ],
+          "sourceIds": [
+            "cleancut-matsubara",
+            "cleancut-makers"
+          ],
+          "caveat": "Nagasaki placement follows the Adrichops regional research trail; the attached Cleancut source confirms line behavior and product context."
         }
       ],
       "edges": []
@@ -3662,6 +3749,40 @@
       "id": "reddit-sakai-wide-bevel-morihiro",
       "label": "r/TrueChefKnives: Sakai wide bevel Morihiro deep dive",
       "url": "https://www.reddit.com/r/TrueChefKnives/comments/1q6hsga/sakai_wide_bevel_deep_dive_compring_morihiro/"
+    },
+    {
+      "id": "hitohira-isamitsu",
+      "label": "Hitohira: Isamitsu collection",
+      "url": "https://hitohira-japan.com/collections/isamitsu"
+    },
+    {
+      "id": "hitohira-kanehide",
+      "label": "Hitohira: Kanehide collection",
+      "url": "https://hitohira-japan.com/collections/kanehide"
+    },
+    {
+      "id": "cleancut-shibata-koutetsu",
+      "label": "Cleancut: Shibata Koutetsu",
+      "url": "https://www.cleancut.eu/butik/knifebrands/shibata-kotetsu"
+    },
+    {
+      "id": "cleancut-matsubara",
+      "label": "Cleancut: Matsubara",
+      "url": "https://www.cleancut.eu/butik/knifebrands/matsubara"
+    },
+    {
+      "id": "cleancut-hatsukokoro",
+      "label": "Cleancut: Hatsukokoro",
+      "url": "https://www.cleancut.eu/butik/knifebrands/hatsukokoro-5-series"
+    },
+    {
+      "id": "cleancut-tsunehisa",
+      "label": "Cleancut: Tsunehisa",
+      "url": "https://www.cleancut.eu/butik/knifebrands/tsunehisa-6-series"
     }
+  ],
+  "pendingSourceIds": [
+    "cleancut-hatsukokoro",
+    "cleancut-tsunehisa"
   ]
 }
