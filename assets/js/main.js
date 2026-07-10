@@ -84,10 +84,12 @@
     if (!results) return;
     const query = q.trim().toLowerCase();
     const matches = posts.filter(p => {
-      const hay = [p.title, p.summary, p.type, p.category, p.maker, p.steel, p.bestFor].join(' ').toLowerCase();
+      const productText = (p.products || []).map(product => [product.name, product.category, product.note].join(' ')).join(' ');
+      const takeaways = (p.takeaways || []).join(' ');
+      const hay = [p.title, p.summary, p.deck, p.type, p.category, p.maker, p.steel, p.bestFor, p.bodyMarkdown, takeaways, productText].join(' ').toLowerCase();
       return !query || hay.includes(query);
     }).slice(0, 9);
-    results.innerHTML = matches.map(p => `<a class="search-result" href="${p.route}"><strong>${escapeHTML(p.title)}</strong><span>${escapeHTML(p.type || 'Note')} · ${escapeHTML(p.readTime || '')}</span></a>`).join('') || '<div class="search-result"><strong>No matching notes yet.</strong><span>Try maker, nakiri, VG10, Shapton or board.</span></div>';
+    results.innerHTML = matches.map(p => `<a class="search-result" href="${p.route}"><strong>${escapeHTML(p.title)}</strong><span>${escapeHTML(p.type || 'Note')} · ${escapeHTML(p.readTime || '')}</span></a>`).join('') || '<div class="search-result"><strong>No matching notes yet.</strong><span>Try maker, nakiri, cleaver, cai dao, VG10, Shapton or board.</span></div>';
   }
   function escapeHTML(str){ return String(str || '').replace(/[&<>"']/g, s => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[s])); }
   if (searchButton) searchButton.addEventListener('click', openSearch);

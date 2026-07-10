@@ -1,6 +1,6 @@
 ---
 id: boning-fillet-slicer-cleaver-specialist-profiles
-title: 'Boning, fillet, slicer and cleaver profiles: specialist blades explained'
+title: 'Boning, fillet, slicer and Asian cleaver profiles: specialist blades explained'
 type: Guide
 category: guide
 date: '2026-06-17'
@@ -12,13 +12,13 @@ length: Varies
 bestFor: Specific jobs
 rating: N/A
 verdict: Specialist map
-summary: Specialist knives make sense only when the job is repeated enough to justify the shape.
-deck: 'A concise map of the specialist profiles that appear after the core kit: boning knives, fillet knives, slicers, carving knives and cleavers.'
+summary: Specialist knives make sense only when the job is repeated enough to justify the shape, including light Asian cleavers and cai dao for board prep.
+deck: 'A concise map of the specialist profiles that appear after the core kit: boning knives, fillet knives, slicers, carving knives, Asian cleavers and bone cleavers.'
 heroImage: assets/img/specialists-profile.svg
 heroAlt: Specialists
 pullQuote: Specialist blades should answer a repeated problem, not a shopping mood.
 specs:
-  Specialists covered: Boning, fillet, slicer, carving, cleaver
+  Specialists covered: Boning, fillet, slicer, carving, Asian cleaver, bone cleaver
   First question: How often do you repeat the task?
   Common risk: Buying the wrong cleaver type
 takeaways:
@@ -32,11 +32,11 @@ products:
   note: Specialist blade placeholder for trimming meat and fish. Keep it separate from chef knife recommendations.
   url: https://www.amazon.co.uk/s?k=boning+knife+fillet+knife+Victorinox+Mercer&tag=adrichops-21
   cta: Check current price
-- name: Chinese cleaver and slicer shortlist
+- name: Asian cleaver / cai dao shortlist
   merchant: Amazon UK
   category: Knife
-  note: Use only for vegetable slicers and Chinese chef knives unless the listing is clearly a heavy meat cleaver.
-  url: https://www.amazon.co.uk/s?k=Chinese+chef+knife+cai+dao+CCK+Mercer&tag=adrichops-21
+  note: Use for light Asian cleavers, Chinese chef knives and cai dao vegetable slicers. Avoid heavy bone cleavers unless that is the explicit job.
+  url: https://www.amazon.co.uk/s?k=Asian+cleaver+Chinese+chef+knife+cai+dao+CCK+Mercer&tag=adrichops-21
   cta: Check current price
 - name: Universal blade guards
   merchant: Amazon UK
@@ -82,9 +82,11 @@ A slicer is long and narrow so it can pass through cooked meat, fish or roasts i
 
 A sujihiki is the Japanese-style slicer profile. A Western carving knife tends to be more familiar and sometimes slightly sturdier.
 
-## Cleavers and Chinese chef knives
+## Asian cleavers, cai dao and Chinese chef knives
 
-Do not confuse a thin Chinese vegetable cleaver with a heavy meat cleaver. A cai dao can be a precise vegetable and protein prep tool. A heavy cleaver is for bones. The listings often blur the language, so inspect weight, thickness and intended use before buying.
+Do not confuse a thin Asian cleaver with a heavy meat cleaver. A cai dao, chuka bocho or Chinese chef knife can be a precise vegetable and boneless-protein prep tool: tall blade, flat-ish edge, easy food transfer and a rhythm that feels closer to push cutting than Western rocking.
+
+That is the version worth recommending for cooks who prep vegetables, herbs, tofu and boneless meat on the board. A heavy bone cleaver is a different tool. The listings often blur the language, so inspect weight, spine thickness and intended use before buying. If the listing emphasizes bones, frozen meat or chopping through joints, it is not the thin prep cleaver being recommended here.
 
 ## Takeaways
 
