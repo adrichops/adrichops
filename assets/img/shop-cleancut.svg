@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+  <title id="title">Cleancut shop card</title>
+  <desc id="desc">Abstract knife retailer image with a clean counter, blade silhouette and EU source trail marks.</desc>
+  <rect width="1200" height="720" fill="#161410"/>
+  <path d="M0 124h1200" stroke="#363129" stroke-width="3"/>
+  <path d="M0 496h1200" stroke="#363129" stroke-width="3"/>
+  <path d="M120 180h960" stroke="#f7f0e6" stroke-width="18" stroke-linecap="round" opacity=".92"/>
+  <path d="M166 294h564c110 0 202 30 276 90H166z" fill="#f7f0e6"/>
+  <path d="M166 384h848" stroke="#ff5a4f" stroke-width="18" stroke-linecap="round"/>
+  <rect x="166" y="286" width="190" height="92" rx="16" fill="#11100e"/>
+  <circle cx="948" cy="246" r="22" fill="#ff5a4f"/>
+  <circle cx="1016" cy="246" r="22" fill="#54c56b"/>
+  <circle cx="1084" cy="246" r="22" fill="#46a5ff"/>
+  <text x="120" y="594" fill="#f7f0e6" font-family="Montserrat, Arial, sans-serif" font-size="48" font-weight="900">CLEANCUT</text>
+  <text x="120" y="642" fill="#b9afa2" font-family="Montserrat, Arial, sans-serif" font-size="28" font-weight="800">EU shop / Japanese knives / sharpening gear</text>
+</svg>

@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+  <title id="title">Knivesworld shop card</title>
+  <desc id="desc">Abstract knife research image with product cards and a blade silhouette.</desc>
+  <rect width="1200" height="720" fill="#171614"/>
+  <rect x="92" y="84" width="1016" height="420" rx="28" fill="#211f1b" stroke="#51493d" stroke-width="4"/>
+  <path d="M154 242h610c104 0 204 42 300 126H154z" fill="#f7f0e6"/>
+  <path d="M154 368h908" stroke="#46a5ff" stroke-width="14" stroke-linecap="round"/>
+  <rect x="154" y="238" width="178" height="108" rx="18" fill="#11100e"/>
+  <g fill="#11100e" stroke="#f7f0e6" stroke-width="5">
+    <rect x="168" y="108" width="210" height="74" rx="16"/>
+    <rect x="428" y="108" width="210" height="74" rx="16"/>
+    <rect x="688" y="108" width="210" height="74" rx="16"/>
+  </g>
+  <path d="M196 145h142M456 145h142M716 145h142" stroke="#ff5a4f" stroke-width="8" stroke-linecap="round"/>
+  <text x="120" y="594" fill="#f7f0e6" font-family="Montserrat, Arial, sans-serif" font-size="48" font-weight="900">KNIVESWORLD</text>
+  <text x="120" y="642" fill="#b9afa2" font-family="Montserrat, Arial, sans-serif" font-size="28" font-weight="800">Retail context / product research / source checks</text>
+</svg>

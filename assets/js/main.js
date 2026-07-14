@@ -98,7 +98,7 @@
   if (input) input.addEventListener('input', e => renderSearch(e.target.value));
   window.addEventListener('keydown', e => {
     if (e.key === '/' && !/input|textarea|select/i.test(document.activeElement.tagName)) { e.preventDefault(); openSearch(); }
-    if (e.key === 'Escape') { closeSearch(); closeNav(true); }
+    if (e.key === 'Escape') { closeSearch(); closeNav(true); closeSuggestionDialog(); }
   });
 
   document.querySelectorAll('[data-save-post]').forEach(btn => {
@@ -127,6 +127,32 @@
   document.querySelectorAll('[data-current-path]').forEach(input => {
     input.value = location.pathname;
   });
+
+  const suggestionDialog = document.querySelector('[data-maker-suggestion-dialog]');
+  const suggestionOpenButtons = document.querySelectorAll('[data-maker-suggestion-open]');
+  const suggestionCloseButtons = document.querySelectorAll('[data-maker-suggestion-close]');
+  function openSuggestionDialog(){
+    if (!suggestionDialog) return;
+    closeNav(false);
+    suggestionDialog.classList.add('is-open');
+    suggestionDialog.setAttribute('aria-hidden', 'false');
+    setTimeout(() => {
+      const first = suggestionDialog.querySelector('input, select, textarea, button');
+      if (first) first.focus();
+    }, 0);
+  }
+  function closeSuggestionDialog(){
+    if (!suggestionDialog) return;
+    suggestionDialog.classList.remove('is-open');
+    suggestionDialog.setAttribute('aria-hidden', 'true');
+  }
+  suggestionOpenButtons.forEach(button => button.addEventListener('click', openSuggestionDialog));
+  suggestionCloseButtons.forEach(button => button.addEventListener('click', closeSuggestionDialog));
+  if (suggestionDialog) {
+    suggestionDialog.addEventListener('click', event => {
+      if (event.target === suggestionDialog) closeSuggestionDialog();
+    });
+  }
 
   function bindAsyncForm(selector, successMessage) {
     document.querySelectorAll(selector).forEach(form => {
@@ -164,4 +190,5 @@
   }
   bindAsyncForm('[data-feedback-form]', 'Feedback sent.');
   bindAsyncForm('[data-newsletter-form]', 'Signed up.');
+  bindAsyncForm('[data-maker-suggestion-form]', 'Suggestion sent for review.');
 })();

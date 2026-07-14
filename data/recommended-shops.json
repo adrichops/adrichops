@@ -1,0 +1,34 @@
+{
+  "shops": [
+    {
+      "id": "cleancut",
+      "name": "Cleancut",
+      "url": "https://www.cleancut.eu/",
+      "location": "Sweden / EU",
+      "image": "assets/img/shop-cleancut.svg",
+      "imageAlt": "Abstract Japanese knife shop card for Cleancut",
+      "blurb": "A useful EU source for Japanese kitchen knives, sharpening gear and maker/line browsing. Strong when you want practical stock filters and European shipping.",
+      "tags": ["EU retailer", "Japanese knives", "Sharpening gear"]
+    },
+    {
+      "id": "hitohira",
+      "name": "Hitohira",
+      "url": "https://hitohira-japan.com/",
+      "location": "Japan / global retailers",
+      "image": "assets/img/shop-hitohira.svg",
+      "imageAlt": "Abstract Japanese knife shop card for Hitohira",
+      "blurb": "A strong source trail for brands, lines and maker stories. Best used for attribution context before checking an actual retailer listing.",
+      "tags": ["Maker context", "Brands", "Source trail"]
+    },
+    {
+      "id": "knivesworld",
+      "name": "Knivesworld",
+      "url": "https://knivesworld.com/",
+      "location": "Retail / education",
+      "image": "assets/img/shop-knivesworld.svg",
+      "imageAlt": "Abstract Japanese knife shop card for Knivesworld",
+      "blurb": "A shop/source starting point for knife research and product context. Use it alongside dimensions, maker notes and current availability.",
+      "tags": ["Retailer", "Product context", "Knife research"]
+    }
+  ]
+}

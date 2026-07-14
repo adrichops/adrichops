@@ -14,6 +14,7 @@ NAV = [
     ('/whats-in-my-roll/', "What’s in my roll"),
     ('/kit-builder/', 'Kit Builder'),
     ('/recommendations/', 'Recommendations'),
+    ('/shops/', 'Shops'),
     ('/disclosure/', 'Disclosure'),
 ]
 
@@ -99,6 +100,12 @@ def load_maker_graph():
     if not path.exists():
         return {'regions': [], 'sources': []}
     return json.loads(path.read_text(encoding='utf-8'))
+
+def load_shops():
+    path = ROOT / 'data' / 'recommended-shops.json'
+    if not path.exists():
+        return []
+    return json.loads(path.read_text(encoding='utf-8')).get('shops', [])
 
 def esc(s):
     return html.escape(str(s or ''), quote=True)
@@ -249,6 +256,16 @@ def cards(posts):
 </a>''')
     return '<div class="article-card-grid">' + ''.join(out) + '</div>'
 
+def shop_cards(shops):
+    rows = []
+    for shop in shops:
+        tags = ''.join(f'<span>{esc(tag)}</span>' for tag in shop.get('tags') or [])
+        rows.append(f'''<a class="shop-card" href="{esc(shop.get('url','#'))}" target="_blank" rel="noopener">
+  <img src="{esc(site_path(shop.get('image','assets/img/shop-default.svg')))}" alt="{esc(shop.get('imageAlt') or shop.get('name') or 'Recommended shop')}">
+  <div class="shop-card-body"><span class="eyebrow">{esc(shop.get('location','Shop'))}</span><h3>{esc(shop.get('name'))}</h3><p>{esc(shop.get('blurb'))}</p><div class="tag-row">{tags}</div></div>
+</a>''')
+    return '<div class="shop-grid">' + ''.join(rows) + '</div>'
+
 def finder_markup():
     data = json.loads((ROOT / 'data/finder.json').read_text(encoding='utf-8'))
     groups = []
@@ -263,10 +280,10 @@ def finder_markup():
   <div class="finder-grid"><form class="finder-form">{''.join(groups)}</form><div class="finder-result" data-finder-result></div></div>
 </section><script src="/assets/js/finder.js" defer></script>'''
 
-def home(posts):
+def home(posts, shops):
     start_posts = [p for p in posts if p['id'] in ['start-here-main-kitchen-knife-profiles','chef-knife-vs-gyuto-which-all-purpose-profile','sharpening-basics-burr-angle-pressure','king-vs-shapton-starter-stones-guide','hasegawa-asahi-hinoki-cutting-board-guide','japanese-knife-culture-practical-guide']]
     latest = posts[:10]
-    entry = [('/about/','About','Line cook, chipped Shun, Tojiro DP, Japan, then Adrichops.'),('/reviews/','Reviews','Knives, stones and boards with owned/researched labels.'),('/maker-spotlight/','Maker spotlight','Workshops, sharpeners and brands worth understanding.'),('/maker-map/','Maker map','Interactive regional graph of smiths, sharpeners, workshops, brands and line relationships.'),('/whats-in-my-roll/',"What’s in my roll",'The personal kit, the sensible kit, and what to edit over time.'),('/kit-builder/','Kit Builder','Drag up to 10 knives, stones, strops, boards, storage and utensils into a saved kit.'),('/recommendations/','Recommendations','Knife Finder, starter paths and maintenance pairings.'),('/explore/','Explore deck','A tactile card browser for the notebook.')]
+    entry = [('/about/','About','Line cook, chipped Shun, Tojiro DP, Japan, then Adrichops.'),('/reviews/','Reviews','Knives, stones and boards with owned/researched labels.'),('/maker-spotlight/','Maker spotlight','Workshops, sharpeners and brands worth understanding.'),('/maker-map/','Maker map','Interactive regional graph of smiths, sharpeners, workshops, brands and line relationships.'),('/whats-in-my-roll/',"What’s in my roll",'The personal kit, the sensible kit, and what to edit over time.'),('/kit-builder/','Kit Builder','Drag up to 10 knives, stones, strops, boards, storage and utensils into a saved kit.'),('/recommendations/','Recommendations','Knife Finder, starter paths and maintenance pairings.'),('/shops/','Shops','Retailers and source trails worth checking before buying.'),('/explore/','Explore deck','A tactile card browser for the notebook.')]
     entry_html = ''.join(f'<a class="entry-card" href="{href}"><span class="eyebrow">Start</span><strong>{esc(label)}</strong><p>{esc(text)}</p></a>' for href,label,text in entry)
     return head('Adrichops — Japanese knives, sharpening and practical buying notes', 'My personal knife notebook: reviews, maker spotlights, sharpening, boards, stones and recommendations.', '/') + header('') + f'''<main class="page">
   <section class="hero">
@@ -276,6 +293,7 @@ def home(posts):
   <section class="section"><div class="section-head"><div><span class="kicker">Navigation</span><h2>Start with the useful path.</h2></div><p>Minimal site first, card deck second. The main experience is built for reading; the deck is there when you want to browse.</p></div><div class="entry-grid">{entry_html}</div></section>
   <section class="section story-strip"><div class="story-card"><span class="kicker">Origin</span><h2>From the line to the makers.</h2><p>Adrichops starts with my college line-cook years, a manager’s chipped Damascus Kai Shun, YouTube sharpening rabbit holes, and the Tojiro DP VG10 gyuto that became my working reference. A trip to Japan and conversations around makers like Takada-san and Baba Hamono turned the private obsession into a public notebook.</p><p><a class="button" href="/about/">Read the story</a></p></div><div class="timeline"><div class="timeline-item"><b>Line cook</b><span>Knife skills became practical, not decorative.</span></div><div class="timeline-item"><b>Sharpening</b><span>Chipped Shun edges taught burrs, patience and humility.</span></div><div class="timeline-item"><b>Tojiro DP</b><span>The first Japanese knife and still the reference point.</span></div><div class="timeline-item"><b>Japan</b><span>Meeting makers reframed knives as tools and functional art.</span></div></div></section>
   <section class="section"><div class="section-head"><div><span class="kicker">Start here</span><h2>First notes to read.</h2></div><a class="text-link" href="/guides/">All guides</a></div>{cards(start_posts)}</section>
+  <section class="section"><div class="section-head"><div><span class="kicker">Recommended shops</span><h2>Retailers with useful source trails.</h2></div><a class="text-link" href="/shops/">All shops</a></div>{shop_cards(shops[:3])}</section>
   <section class="section"><div class="section-head"><div><span class="kicker">Finder</span><h2>One recommendation, plus the upkeep.</h2></div><a class="text-link" href="/recommendations/">Full recommendations</a></div>{finder_markup()}</section>
   <section class="section"><div class="section-head"><div><span class="kicker">Notebook database</span><h2>Latest notes.</h2></div><div class="section-actions"><button class="button" type="button" data-search-open>Search</button><a class="button" href="/explore/">Open deck</a></div></div>{article_summary_list(latest)}</section>
 </main>''' + footer()
@@ -346,6 +364,91 @@ def recommendations_page(posts):
     rec_posts = [p for p in posts if p['id'] in ['amazon-chef-knife-shortlist-what-to-buy-first','nakiri-profile-guide','king-vs-shapton-starter-stones-guide','hasegawa-asahi-hinoki-cutting-board-guide','vg10-ginsan-aogami-shirogami-guide','sharpening-basics-burr-angle-pressure']]
     return head('Recommendations — Adrichops', 'Knife Finder, starter kits, maintenance pairings and affiliate-ready buying notes.', '/recommendations/') + header('Recommendations') + f'''<main class="page"><section class="collection-hero"><span class="kicker">Recommendations</span><h1>Choose the knife and the upkeep together.</h1><p>The Finder returns a knife direction, steel direction, blade length, caveats and maintenance kit. Low-fuss vegetable prep, for example, can point to a VG10 nakiri, simple stainless nakiri or light Asian cleaver / cai dao with stone, board and storage pairings.</p></section>{finder_markup()}<section class="section"><div class="section-head"><div><span class="kicker">Starter paths</span><h2>Useful next reads.</h2></div></div>{cards(rec_posts)}</section></main>''' + footer()
 
+def shops_page(shops):
+    return head('Recommended shops — Adrichops', 'Recommended knife shops and retailer source trails for Japanese kitchen knives, maintenance gear and maker research.', '/shops/', '/assets/img/shop-cleancut.svg') + header('Shops') + f'''<main class="page"><section class="collection-hero"><span class="kicker">Recommended shops</span><h1>Shops worth checking.</h1><p>This is a practical shortlist of retailers and source trails I want to keep close to the recommendations. Each card has space for a link, a short note, an image and tags so the page can grow without becoming another unstructured link dump.</p></section><section class="section"><div class="section-head"><div><span class="kicker">Retailers</span><h2>Start here.</h2></div><p>Exact stock changes quickly. Treat these as shop/source starting points, then check dimensions, steel, maker notes, return terms and shipping before buying.</p></div>{shop_cards(shops)}</section></main>''' + footer()
+
+def maker_suggestion_dialog():
+    return '''<div class="suggestion-dialog" data-maker-suggestion-dialog aria-hidden="true">
+  <div class="suggestion-panel" role="dialog" aria-modal="true" aria-labelledby="maker-suggestion-title">
+    <header>
+      <div><span class="kicker">Maker map</span><h2 id="maker-suggestion-title">Suggest a change.</h2></div>
+      <button class="icon-button" type="button" data-maker-suggestion-close aria-label="Close suggestion form">×</button>
+    </header>
+    <form class="maker-suggestion-form" data-maker-suggestion-form action="/api/maker-suggestions" method="post">
+      <div class="form-grid two">
+        <label class="field-label">Your email<input type="email" name="submitter_email" autocomplete="email" required placeholder="you@example.com"></label>
+        <label class="field-label">Your name<input type="text" name="submitter_name" autocomplete="name" maxlength="120" placeholder="Optional"></label>
+      </div>
+      <div class="form-grid two">
+        <label class="field-label">Change type<select name="request_type" required>
+          <option value="add_node">Add maker / shop / line</option>
+          <option value="edit_node">Edit existing node</option>
+          <option value="add_relationship">Add relationship edge</option>
+          <option value="edit_relationship">Edit relationship edge</option>
+          <option value="source_correction">Source or attribution correction</option>
+        </select></label>
+        <label class="field-label">Region id<input type="text" name="region_id" maxlength="120" placeholder="sakai, sanjo, echizen..."></label>
+      </div>
+      <fieldset class="form-fieldset"><legend>Node fields</legend>
+        <div class="form-grid two">
+          <label class="field-label">Node id<input type="text" name="node_id" maxlength="160" placeholder="sakai-nakagawa-satoshi"></label>
+          <label class="field-label">Display name<input type="text" name="node_name" maxlength="180" placeholder="Satoshi Nakagawa"></label>
+          <label class="field-label">Role<select name="role">
+            <option value="">Choose if relevant</option>
+            <option>Blacksmith</option>
+            <option>Sharpener</option>
+            <option>Polisher</option>
+            <option>Sharpener / polisher</option>
+            <option>Handle maker</option>
+            <option>Workshop</option>
+            <option>Brand</option>
+            <option>Line / brand</option>
+            <option>Retailer</option>
+          </select></label>
+          <label class="field-label">Aliases<input type="text" name="aliases" maxlength="300" placeholder="Comma-separated pseudonyms or spellings"></label>
+        </div>
+        <label class="field-label">Specialty<textarea name="specialty" rows="3" maxlength="800" placeholder="What should the profile say?"></textarea></label>
+        <label class="field-label">Known lines<textarea name="famous_lines" rows="2" maxlength="600" placeholder="Comma-separated lines, brands or collaborations"></textarea></label>
+      </fieldset>
+      <fieldset class="form-fieldset"><legend>Relationship edge fields</legend>
+        <div class="form-grid two">
+          <label class="field-label">From node id<input type="text" name="relationship_from" maxlength="160" placeholder="teacher, smith, workshop..."></label>
+          <label class="field-label">To node id<input type="text" name="relationship_to" maxlength="160" placeholder="student, sharpener, line..."></label>
+          <label class="field-label">Relationship type<select name="relationship_kind">
+            <option value="">Choose if relevant</option>
+            <option value="student">Student / lineage</option>
+            <option value="apprenticeship">Apprenticeship</option>
+            <option value="works-at">Works at / workshop</option>
+            <option value="smith-to-sharpener">Smith to sharpener</option>
+            <option value="line-collaboration">Line collaboration</option>
+            <option value="brand-to-line">Brand to line</option>
+            <option value="alias">Alias / pseudonym</option>
+            <option value="regional-peer">Regional peer</option>
+          </select></label>
+          <label class="field-label">Edge label<input type="text" name="relationship_label" maxlength="180" placeholder="student, works at, forged for..."></label>
+        </div>
+        <label class="field-label">Relationship detail<textarea name="relationship_detail" rows="3" maxlength="900" placeholder="Short context for the edge."></textarea></label>
+      </fieldset>
+      <fieldset class="form-fieldset"><legend>Source trail</legend>
+        <div class="form-grid two">
+          <label class="field-label">Source label<input type="text" name="source_label" maxlength="180" placeholder="Hitohira profile, KKF post, retailer page..."></label>
+          <label class="field-label">Source URL<input type="url" name="source_url" maxlength="600" placeholder="https://..."></label>
+          <label class="field-label">Confidence<select name="confidence">
+            <option value="medium">Medium</option>
+            <option value="high">High</option>
+            <option value="low">Low / community sourced</option>
+          </select></label>
+        </div>
+      </fieldset>
+      <label class="field-label">Notes<textarea name="notes" rows="4" maxlength="1400" placeholder="Anything I should know before approving this?"></textarea></label>
+      <input type="hidden" name="page_url" data-current-url>
+      <input type="hidden" name="pathname" data-current-path>
+      <label class="bot-field" aria-hidden="true">Website<input type="text" name="website" tabindex="-1" autocomplete="off"></label>
+      <div class="form-row"><button class="button primary" type="submit">Send suggestion</button><p class="form-status" data-form-status aria-live="polite"></p></div>
+    </form>
+  </div>
+</div>'''
+
 def explore_page():
     return head('Explore deck — Adrichops', 'A tactile flickable card-navigation view for Adrichops articles, maker spotlights, reviews and recommendations.', '/explore/') + header('') + '''<main class="page"><section class="collection-hero"><span class="kicker">Card navigation</span><h1>Explore the deck.</h1><p>Browse Adrichops like a stack of knife cards. Choose a section, then flick the active card left or right to move through reviews, maker spotlights and recommendations.</p></section><section class="explore-layout" data-explore-deck><nav class="deck-nav" data-deck-nav aria-label="Deck sections"></nav><div class="card-stage"><div class="card-stage-head"><div><span class="kicker">Active stack</span><h2 data-stage-title>Reviews</h2><p data-stage-dek>Choose a section to load the stack.</p></div><div class="deck-controls" aria-label="Card controls"><button class="deck-control-button" type="button" data-deck-prev aria-label="Previous card">‹</button><span class="deck-counter" data-deck-counter>1 / 1</span><button class="deck-control-button" type="button" data-deck-next aria-label="Next card">›</button></div></div><p class="deck-hint">Flick the top card left or right. Arrow keys and the buttons work too.</p><div class="card-stack" data-card-stack tabindex="0" aria-live="polite"></div></div><aside class="deck-preview" data-deck-preview></aside></section></main><script src="/assets/js/explore-deck.js" defer></script>''' + footer()
 
@@ -359,7 +462,7 @@ def maker_map_page(graph):
         'description': 'Interactive graph of Japanese knife regions, makers, smiths, sharpeners, brands and notable lines.',
         'creator': {'@type': 'Person', 'name': 'Adrian'}
     }
-    return head('Maker map — Adrichops', 'Interactive graph of Japanese knife regions, makers, smiths, sharpeners, brands, collaborations and famous lines.', '/maker-map/', '/assets/img/maker-chain.svg', schema) + header('Maker map') + f'''<main class="page maker-map-page"><section class="collection-hero"><span class="kicker">Maker graph</span><h1>Knife maker relationships.</h1><p>Start with a region node: Sakai, Sanjo, Echizen, then open the people and workshops inside it. Click a maker to focus its relationship labels, drag nodes, pan the canvas, and follow linked notes for blacksmiths, sharpeners, polishers, workshops, brands and famous lines.</p></section><section class="maker-graph-shell" data-maker-graph><div class="graph-stage"><div class="graph-stage-head"><div><span class="kicker" data-graph-title>Regional map</span><h2 data-graph-dek>Drag the graph or click a region node.</h2></div><button class="graph-back-button" type="button" data-graph-reset hidden>All regions</button></div><svg class="maker-graph-svg" data-graph-svg role="img" aria-label="Interactive Japanese knife maker relationship graph"></svg><div class="graph-card-grid" data-graph-cards></div></div><aside class="graph-detail-panel"><div class="graph-panel graph-control-panel"><span class="kicker">Filter</span><label class="filter-label" for="maker-region-filter">Region</label><select id="maker-region-filter" data-region-filter aria-label="Filter graph by region"><option value="all">All regions</option></select><input class="search-input" type="search" placeholder="Search maker, line, role…" data-graph-search><select data-role-filter aria-label="Filter graph by role" hidden><option value="all">All roles</option><option value="blacksmith">Blacksmiths</option><option value="sharpener">Sharpeners</option><option value="polisher">Polishers</option><option value="handle-maker">Handle makers</option><option value="workshop">Workshops</option><option value="brand">Brands</option><option value="cooperative">Cooperatives</option><option value="collaborator">Collaborators</option></select><div class="role-legend" aria-label="Role colour key"><span class="role-blacksmith">Blacksmith</span><span class="role-sharpener">Sharpener</span><span class="role-polisher">Polisher</span><span class="role-handle-maker">Handle maker</span></div><div class="relationship-legend" aria-label="Relationship colour key"><span class="edge-student">Student / lineage</span><span class="edge-works-at">Works at / workshop</span><span class="edge-smith-sharpener">Smith to sharpener</span><span class="edge-collaboration">Collaboration</span><span class="edge-community">Community-sourced</span></div><button class="button graph-filter-reset" type="button" data-graph-reset>Back to regional map</button></div><div class="graph-panel graph-stats"><strong>{region_count}</strong><span>regions</span><strong>{source_count}</strong><span>source links</span></div><div class="graph-panel graph-detail" data-graph-detail><strong>Loading maker map.</strong><span>The graph data is loading from the local site database.</span></div><div class="graph-panel"><span class="kicker">Source trail</span><div class="graph-source-list" data-graph-sources></div></div><div class="graph-panel"><span class="kicker">Map rule</span><p>Relationship edges are practical buying clues, not proof that every listing under a name has the same smith, sharpener, steel or grind.</p></div></aside></section><section class="regional-geography graph-panel"><div class="section-head"><div><span class="kicker">Regional geography</span><h2>Where the main regions sit.</h2></div><p>A generated Japan outline with named region pins placed near their real locations. Click a pin label to open that region in the relationship graph.</p></div><svg class="regional-map-svg" data-region-map role="img" aria-label="Map of Japanese knife regions"></svg></section></main><script src="/assets/js/maker-graph.js" defer></script>''' + footer()
+    return head('Maker map — Adrichops', 'Interactive graph of Japanese knife regions, makers, smiths, sharpeners, brands, collaborations and famous lines.', '/maker-map/', '/assets/img/maker-chain.svg', schema) + header('Maker map') + f'''<main class="page maker-map-page"><section class="collection-hero"><span class="kicker">Maker graph</span><h1>Knife maker relationships.</h1><p>Start with a region node: Sakai, Sanjo, Echizen, then open the people and workshops inside it. Click a maker to focus its relationship labels, drag nodes, pan the canvas, and follow linked notes for blacksmiths, sharpeners, polishers, workshops, brands and famous lines.</p><p><button class="button primary" type="button" data-maker-suggestion-open>Suggest changes</button></p></section><section class="maker-graph-shell" data-maker-graph><div class="graph-stage"><div class="graph-stage-head"><div><span class="kicker" data-graph-title>Regional map</span><h2 data-graph-dek>Drag the graph or click a region node.</h2></div><button class="graph-back-button" type="button" data-graph-reset hidden>All regions</button></div><svg class="maker-graph-svg" data-graph-svg role="img" aria-label="Interactive Japanese knife maker relationship graph"></svg><div class="graph-card-grid" data-graph-cards></div></div><aside class="graph-detail-panel"><div class="graph-panel graph-control-panel"><span class="kicker">Filter</span><label class="filter-label" for="maker-region-filter">Region</label><select id="maker-region-filter" data-region-filter aria-label="Filter graph by region"><option value="all">All regions</option></select><input class="search-input" type="search" placeholder="Search maker, line, role…" data-graph-search><select data-role-filter aria-label="Filter graph by role" hidden><option value="all">All roles</option><option value="blacksmith">Blacksmiths</option><option value="sharpener">Sharpeners</option><option value="polisher">Polishers</option><option value="handle-maker">Handle makers</option><option value="workshop">Workshops</option><option value="brand">Brands</option><option value="cooperative">Cooperatives</option><option value="collaborator">Collaborators</option></select><div class="role-legend" aria-label="Role colour key"><span class="role-blacksmith">Blacksmith</span><span class="role-sharpener">Sharpener</span><span class="role-polisher">Polisher</span><span class="role-handle-maker">Handle maker</span></div><div class="relationship-legend" aria-label="Relationship colour key"><span class="edge-student">Student / lineage</span><span class="edge-works-at">Works at / workshop</span><span class="edge-smith-sharpener">Smith to sharpener</span><span class="edge-collaboration">Collaboration</span><span class="edge-community">Community-sourced</span></div><button class="button graph-filter-reset" type="button" data-graph-reset>Back to regional map</button><button class="button graph-filter-reset" type="button" data-maker-suggestion-open>Suggest changes</button></div><div class="graph-panel graph-stats"><strong>{region_count}</strong><span>regions</span><strong>{source_count}</strong><span>source links</span></div><div class="graph-panel graph-detail" data-graph-detail><strong>Loading maker map.</strong><span>The graph data is loading from the local site database.</span></div><div class="graph-panel"><span class="kicker">Source trail</span><div class="graph-source-list" data-graph-sources></div></div><div class="graph-panel"><span class="kicker">Map rule</span><p>Relationship edges are practical buying clues, not proof that every listing under a name has the same smith, sharpener, steel or grind.</p></div></aside></section><section class="regional-geography graph-panel"><div class="section-head"><div><span class="kicker">Regional geography</span><h2>Where the main regions sit.</h2></div><p>A generated Japan outline with named region pins placed near their real locations. Click a pin label to open that region in the relationship graph.</p></div><svg class="regional-map-svg" data-region-map role="img" aria-label="Map of Japanese knife regions"></svg></section></main>{maker_suggestion_dialog()}<script src="/assets/js/maker-graph.js" defer></script>''' + footer()
 
 def guide_index(posts):
     guides = [p for p in posts if p.get('type') != 'Review brief' and p.get('type') != 'Maker spotlight']
@@ -450,6 +553,7 @@ def redirect_page(target, title='Redirecting'):
 def main():
     posts = load_posts()
     maker_graph = load_maker_graph()
+    shops = load_shops()
     # Save regenerated manifest
     for p in posts:
         p['route'] = p.get('route') or route_for(p)
@@ -459,13 +563,14 @@ def main():
     remove_public_path('/editing-guide.html')
     remove_public_path('/knife-photos/')
     # Core pages
-    write('/index.html', home(posts))
+    write('/index.html', home(posts, shops))
     write('/about/', about_page())
     write('/disclosure/', disclosure_page())
     write('/privacy/', privacy_page())
     write('/whats-in-my-roll/', roll_page(products, posts))
     write('/kit-builder/', kit_builder_page())
     write('/recommendations/', recommendations_page(posts))
+    write('/shops/', shops_page(shops))
     write('/explore/', explore_page())
     write('/maker-map/', maker_map_page(maker_graph))
     reviews = [p for p in posts if p.get('type') == 'Review brief']
@@ -482,6 +587,7 @@ def main():
     write('/reviews.html', redirect_page('/reviews/', 'Reviews'))
     write('/makers.html', redirect_page('/maker-spotlight/', 'Maker spotlight'))
     write('/recommendations.html', redirect_page('/recommendations/', 'Recommendations'))
+    write('/shops.html', redirect_page('/shops/', 'Shops'))
     write('/knife-photos/', redirect_page('/maker-map/', 'Maker map'))
     write('/knife-photos.html', redirect_page('/maker-map/', 'Maker map'))
     write('/roll.html', redirect_page('/whats-in-my-roll/', "What’s in my roll"))
@@ -497,7 +603,7 @@ def main():
     # 404
     write('/404.html', head('Page not found — Adrichops', 'The requested Adrichops page could not be found.', '/404.html') + header('') + '<main class="page"><section class="collection-hero"><span class="kicker">404</span><h1>Lost edge.</h1><p>This page is not in the kit. Try the notebook, recommendations or search.</p><p><a class="button primary" href="/">Back home</a></p></section></main>' + footer())
     # sitemap
-    urls = ['/', '/about/', '/reviews/', '/maker-spotlight/', '/maker-map/', '/whats-in-my-roll/', '/kit-builder/', '/recommendations/', '/disclosure/', '/privacy/', '/guides/', '/explore/'] + [p['route'] for p in posts]
+    urls = ['/', '/about/', '/reviews/', '/maker-spotlight/', '/maker-map/', '/whats-in-my-roll/', '/kit-builder/', '/recommendations/', '/shops/', '/disclosure/', '/privacy/', '/guides/', '/explore/'] + [p['route'] for p in posts]
     sitemap = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + ''.join(f'  <url><loc>{BASE_URL.rstrip()}{u}</loc></url>\n' for u in urls) + '</urlset>\n'
     (ROOT / 'sitemap.xml').write_text(sitemap, encoding='utf-8')
     (ROOT / 'robots.txt').write_text(f'User-agent: *\nAllow: /\nSitemap: {BASE_URL}/sitemap.xml\n', encoding='utf-8')

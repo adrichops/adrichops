@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+  <title id="title">Hitohira shop card</title>
+  <desc id="desc">Abstract source-trail image with linked maker nodes and a Japanese knife blade.</desc>
+  <rect width="1200" height="720" fill="#11100e"/>
+  <g stroke="#363129" stroke-width="2">
+    <path d="M120 120h960M120 240h960M120 360h960M120 480h960"/>
+    <path d="M240 80v560M480 80v560M720 80v560M960 80v560"/>
+  </g>
+  <path d="M150 345h620c120 0 224-38 312-114H150z" fill="#f7f0e6"/>
+  <path d="M150 345h930" stroke="#18b7a2" stroke-width="10" stroke-linecap="round"/>
+  <g fill="#11100e" stroke="#ff5a4f" stroke-width="8">
+    <circle cx="248" cy="236" r="44"/>
+    <circle cx="456" cy="182" r="44"/>
+    <circle cx="676" cy="238" r="44"/>
+    <circle cx="884" cy="170" r="44"/>
+  </g>
+  <g stroke="#d99100" stroke-width="6" stroke-linecap="round">
+    <path d="M290 226l124-32"/>
+    <path d="M498 192l136 34"/>
+    <path d="M718 224l124-40"/>
+  </g>
+  <text x="120" y="594" fill="#f7f0e6" font-family="Montserrat, Arial, sans-serif" font-size="48" font-weight="900">HITOHIRA</text>
+  <text x="120" y="642" fill="#b9afa2" font-family="Montserrat, Arial, sans-serif" font-size="28" font-weight="800">Maker stories / lines / source context</text>
+</svg>

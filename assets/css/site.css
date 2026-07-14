@@ -70,8 +70,9 @@ textarea { font: inherit; color: inherit; }
 }
 .brand { display: inline-flex; align-items: center; min-width: 0; }
 .brand-logo { display: block; width: clamp(176px, 18vw, 246px); height: auto; max-height: 40px; object-fit: contain; object-position: left center; }
-.nav-tabs { display: flex; justify-content: center; gap: 4px; flex-wrap: wrap; min-width: 0; }
-.nav-tabs a { min-height: 40px; display: inline-flex; align-items: center; padding: 8px 11px; border-radius: 999px; font-size: .76rem; font-weight: 800; color: var(--muted); white-space: nowrap; }
+.nav-tabs { display: flex; justify-content: center; gap: 3px; flex-wrap: nowrap; min-width: 0; overflow-x: auto; scrollbar-width: none; }
+.nav-tabs::-webkit-scrollbar { display: none; }
+.nav-tabs a { min-height: 40px; display: inline-flex; align-items: center; padding: 8px 9px; border-radius: 999px; font-size: .72rem; font-weight: 800; color: var(--muted); white-space: nowrap; }
 .nav-tabs a[aria-current="page"], .nav-tabs a:hover { background: var(--paper-2); color: var(--ink); }
 .header-actions { display: flex; justify-content: flex-end; gap: 8px; }
 .icon-button { width: 40px; height: 40px; border-radius: 50%; border: 1px solid var(--line); background: var(--paper); display: grid; place-items: center; cursor: pointer; box-shadow: var(--soft-shadow); }
@@ -163,6 +164,50 @@ p { margin: 0; }
 .article-card h3 { font-size: 1.2rem; overflow-wrap: anywhere; }
 .article-card p { color: var(--muted); font-size: .9rem; }
 .article-card:hover { transform: translateY(-2px); box-shadow: var(--shadow); color: var(--ink); }
+
+.shop-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+.shop-card {
+  border: 1px solid var(--line);
+  background: var(--paper);
+  border-radius: var(--radius);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  box-shadow: var(--soft-shadow);
+}
+.shop-card img {
+  width: 100%;
+  aspect-ratio: 5 / 3;
+  object-fit: cover;
+  border-bottom: 1px solid var(--line);
+  background: var(--paper-2);
+}
+.shop-card-body {
+  padding: 18px;
+  display: grid;
+  gap: 12px;
+  align-content: start;
+  flex: 1;
+}
+.shop-card h3 {
+  font-size: clamp(1.35rem, 2.8vw, 2.2rem);
+  overflow-wrap: anywhere;
+}
+.shop-card p {
+  color: var(--muted);
+  font-size: .9rem;
+}
+.shop-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+  color: var(--ink);
+  border-color: var(--line-strong);
+}
 
 .article-page { max-width: var(--max); margin: 0 auto; padding: clamp(20px, 5vw, 58px) clamp(16px, 4vw, 40px); }
 .breadcrumbs { display:flex; gap: 8px; flex-wrap: wrap; color: var(--muted); font-size: .78rem; font-weight: 800; margin-bottom: 18px; }
@@ -1139,6 +1184,78 @@ p { margin: 0; }
 .search-result strong { display:block; overflow-wrap:anywhere; }
 .search-result span { color:var(--muted); font-size:.85rem; }
 
+.suggestion-dialog {
+  position: fixed;
+  inset: 0;
+  z-index: 110;
+  display: none;
+  place-items: start center;
+  padding: clamp(16px, 4vw, 54px);
+  background: rgba(0,0,0,.46);
+  backdrop-filter: blur(10px);
+  overflow: auto;
+}
+.suggestion-dialog.is-open {
+  display: grid;
+}
+.suggestion-panel {
+  width: min(980px, 100%);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--paper);
+  box-shadow: 0 28px 100px rgba(0,0,0,.36);
+  overflow: hidden;
+}
+.suggestion-panel > header {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: flex-start;
+  padding: clamp(18px, 3vw, 28px);
+  border-bottom: 1px solid var(--line);
+  background: color-mix(in srgb, var(--paper) 88%, var(--paper-2));
+}
+.suggestion-panel h2 {
+  font-size: clamp(1.8rem, 4vw, 3.8rem);
+}
+.maker-suggestion-form {
+  display: grid;
+  gap: 16px;
+  padding: clamp(18px, 3vw, 28px);
+}
+.form-grid {
+  display: grid;
+  gap: 12px;
+}
+.form-grid.two {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+.form-fieldset {
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  padding: 16px;
+  margin: 0;
+  display: grid;
+  gap: 12px;
+}
+.form-fieldset legend {
+  padding: 0 7px;
+  color: var(--accent);
+  font-size: .72rem;
+  font-weight: 950;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+.field-label select {
+  width: 100%;
+  border-radius: 18px;
+  background: var(--paper-2);
+  font-size: .95rem;
+  font-weight: 750;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
 .site-engagement {
   max-width: var(--max);
   margin: clamp(56px, 8vw, 104px) auto 0;
@@ -1332,7 +1449,7 @@ p { margin: 0; }
   .article-sidebar, .deck-nav, .deck-preview, .graph-detail-panel { position: static; }
   .graph-stage { grid-column: auto; }
   .graph-detail-panel { max-height: none; overflow: visible; }
-  .entry-grid, .article-card-grid, .photo-grid, .graph-card-grid, .finder-product-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
+  .entry-grid, .article-card-grid, .photo-grid, .shop-grid, .graph-card-grid, .finder-product-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
   .finder-specs { grid-template-columns: repeat(2, minmax(0,1fr)); }
   .card-stage { min-height:auto; }
   .card-stack { display:flex; gap:14px; overflow-x:auto; min-height:auto; padding: 10px 6px 18px; scroll-snap-type:x mandatory; }
@@ -1346,7 +1463,7 @@ p { margin: 0; }
   .brand-logo { width: clamp(138px, 42vw, 188px); max-height: 32px; }
   .hero { padding-top: 28px; }
   h1 { font-size: clamp(2.6rem, 16vw, 4.6rem); }
-  .entry-grid, .article-card-grid, .maintenance-kit, .decision-box, .product-grid, .deck-nav, .article-gallery, .photo-grid, .graph-card-grid, .finder-product-grid, .finder-product-grid.is-compact { grid-template-columns: 1fr; }
+  .entry-grid, .article-card-grid, .maintenance-kit, .decision-box, .product-grid, .deck-nav, .article-gallery, .photo-grid, .shop-grid, .graph-card-grid, .finder-product-grid, .finder-product-grid.is-compact, .form-grid.two { grid-template-columns: 1fr; }
   .note-row { grid-template-columns: 1fr; gap: 8px; }
   .timeline-item, .roll-item { grid-template-columns: 1fr; }
   .finder-specs { grid-template-columns: 1fr; }
