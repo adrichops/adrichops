@@ -474,7 +474,7 @@
         "travel",
         "safety"
       ],
-      "learnUrl": "/whats-in-my-roll/"
+      "learnUrl": "/guides/boards-storage-and-edge-life/"
     },
     {
       "id": "bench-scraper",
@@ -508,7 +508,7 @@
         "plating",
         "line cook"
       ],
-      "learnUrl": "/whats-in-my-roll/"
+      "learnUrl": "/kit-builder/"
     },
     {
       "id": "fish-spatula",
@@ -525,7 +525,7 @@
         "protein",
         "delicate"
       ],
-      "learnUrl": "/whats-in-my-roll/"
+      "learnUrl": "/kit-builder/"
     }
   ]
 }

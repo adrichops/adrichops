@@ -528,7 +528,7 @@
         "travel",
         "safety"
       ],
-      "learnUrl": "/whats-in-my-roll/",
+      "learnUrl": "/guides/boards-storage-and-edge-life/",
       "imageUrl": "/assets/img/knife-roll.svg",
       "imageAlt": "Knife roll illustration"
     },
@@ -566,7 +566,7 @@
         "plating",
         "line cook"
       ],
-      "learnUrl": "/whats-in-my-roll/",
+      "learnUrl": "/kit-builder/",
       "imageUrl": "/assets/uploads/post-images/knife-maintenance-daily-routine.jpg",
       "imageAlt": "Kitchen maintenance tools photo"
     },
@@ -585,7 +585,7 @@
         "protein",
         "delicate"
       ],
-      "learnUrl": "/whats-in-my-roll/",
+      "learnUrl": "/kit-builder/",
       "imageUrl": "/assets/uploads/post-images/boards-storage-and-edge-life.jpg",
       "imageAlt": "Kitchen prep tools photo"
     }

@@ -11,7 +11,6 @@ NAV = [
     ('/reviews/', 'Reviews'),
     ('/maker-spotlight/', 'Maker spotlight'),
     ('/maker-map/', 'Maker map'),
-    ('/whats-in-my-roll/', "What’s in my roll"),
     ('/kit-builder/', 'Kit Builder'),
     ('/recommendations/', 'Recommendations'),
     ('/shops/', 'Shops'),
@@ -283,7 +282,7 @@ def finder_markup():
 def home(posts, shops):
     start_posts = [p for p in posts if p['id'] in ['start-here-main-kitchen-knife-profiles','chef-knife-vs-gyuto-which-all-purpose-profile','sharpening-basics-burr-angle-pressure','king-vs-shapton-starter-stones-guide','hasegawa-asahi-hinoki-cutting-board-guide','japanese-knife-culture-practical-guide']]
     latest = posts[:10]
-    entry = [('/about/','About','Line cook, chipped Shun, Tojiro DP, Japan, then Adrichops.'),('/reviews/','Reviews','Knives, stones and boards with owned/researched labels.'),('/maker-spotlight/','Maker spotlight','Workshops, sharpeners and brands worth understanding.'),('/maker-map/','Maker map','Interactive regional graph of smiths, sharpeners, workshops, brands and line relationships.'),('/whats-in-my-roll/',"What’s in my roll",'The personal kit, the sensible kit, and what to edit over time.'),('/kit-builder/','Kit Builder','Drag up to 10 knives, stones, strops, boards, storage and utensils into a saved kit.'),('/recommendations/','Recommendations','Knife Finder, starter paths and maintenance pairings.'),('/shops/','Shops','Retailers and source trails worth checking before buying.'),('/explore/','Explore deck','A tactile card browser for the notebook.')]
+    entry = [('/about/','About','Line cook, chipped Shun, Tojiro DP, Japan, then Adrichops.'),('/reviews/','Reviews','Knives, stones and boards with owned/researched labels.'),('/maker-spotlight/','Maker spotlight','Workshops, sharpeners and brands worth understanding.'),('/maker-map/','Maker map','Interactive regional graph of smiths, sharpeners, workshops, brands and line relationships.'),('/kit-builder/','Kit Builder','Drag up to 10 knives, stones, strops, boards, storage and utensils into a saved kit.'),('/recommendations/','Recommendations','Knife Finder, starter paths and maintenance pairings.'),('/shops/','Shops','Retailers and source trails worth checking before buying.'),('/explore/','Explore deck','A tactile card browser for the notebook.')]
     entry_html = ''.join(f'<a class="entry-card" href="{href}"><span class="eyebrow">Start</span><strong>{esc(label)}</strong><p>{esc(text)}</p></a>' for href,label,text in entry)
     return head('Adrichops — Japanese knives, sharpening and practical buying notes', 'My personal knife notebook: reviews, maker spotlights, sharpening, boards, stones and recommendations.', '/') + header('') + f'''<main class="page">
   <section class="hero">
@@ -346,23 +345,12 @@ def disclosure_page():
 def privacy_page():
     return head('Privacy — Adrichops', 'Privacy notes for Adrichops local storage, feedback, newsletter signup, saved notes, theme settings and affiliate links.', '/privacy/') + header('') + '''<main class="page"><section class="collection-hero"><span class="kicker">Privacy</span><h1>Small site, small data footprint.</h1><p>Adrichops uses local browser storage for theme choice, saved notes, Knife Finder state and Kit Builder selections. Feedback and newsletter forms are stored server-side so they can be read later.</p></section><article class="article-body"><h2>Local storage</h2><p>The theme toggle, saved articles, Knife Finder choices and Kit Builder deck may be stored in your browser. That data stays on your device.</p><h2>Feedback</h2><p>If you submit the feedback form, the site stores the satisfaction score, optional comment, page URL and browser user-agent. This is used to understand what content is useful and what needs correction.</p><h2>Newsletter</h2><p>If you sign up for the newsletter, the site stores your email address, signup page and signup time. You can ask to be removed when newsletter sending is added.</p><h2>Affiliate links</h2><p>External retailers may collect their own analytics or referral data after you leave Adrichops.</p><h2>Future analytics</h2><p>If analytics are added later, this page should be updated before launch.</p></article></main>''' + footer()
 
-def roll_page(products, posts):
-    tojiro = next((p for p in posts if p['id']=='tojiro-dp-210mm-gyuto-shortlist-review'), None)
-    roll_items = [
-        ('01','Tojiro DP VG10 gyuto','The first Japanese knife in the story and the long-term reference point. Still the baseline for value, stainless convenience and gateway-knife realism.', tojiro['route'] if tojiro else '/reviews/'),
-        ('02','1000 grit stone','The useful starting point. Shapton if low-fuss splash-and-go matters; King if budget and feedback matter more.' , '/guides/king-vs-shapton-starter-stones-guide/'),
-        ('03','Strop or deburring block','A finishing tool, not a belief system. Use it after proper burr removal.', '/guides/stropping-and-deburring-clean-apex/'),
-        ('04','Edge-friendly board','Hasegawa, Asahi or hinoki depending on care tolerance. The board can save more edge life than another steel debate.', '/guides/hasegawa-asahi-hinoki-cutting-board-guide/'),
-        ('05','Blade guard / roll','A sharp knife rolling loose in a drawer is slapstick until it is not.', '/guides/boards-storage-and-edge-life/')]
-    items = ''.join(f'<a class="roll-item" href="{href}"><div class="number">{num}</div><div><h3>{esc(title)}</h3><p>{esc(text)}</p></div></a>' for num,title,text,href in roll_items)
-    return head("What’s in my roll — Adrichops", 'The personal Adrichops knife roll: Tojiro DP reference, stones, strop, boards and storage notes.', '/whats-in-my-roll/', '/assets/img/knife-roll.svg') + header("What’s in my roll") + f'''<main class="page"><section class="collection-hero"><span class="kicker">Personal kit</span><h1>What’s in my roll.</h1><p>This page should stay personal. It starts with the Tojiro DP that carried the line-cook years and adds the boring maintenance gear that keeps sharp knives happy.</p></section><section class="roll-grid"><div class="roll-list">{items}</div><aside class="hero-note"><strong>Edit this page as the kit becomes real.</strong><p>When you add new owned knives, boards, stones or travel gear, update this page first. It is more trustworthy than a generic “best knives” list.</p><p><a class="button primary" href="/kit-builder/">Build your kit</a></p></aside></section></main>''' + footer()
-
 def kit_builder_page():
     return head('Kit Builder — Adrichops', 'Create a custom ten-slot knife kit deck with drag-and-drop cards for knives, stones, strops, boards, storage and utensils.', '/kit-builder/', '/assets/img/knife-roll.svg') + header('Kit Builder') + """<main class="page"><section class="collection-hero"><span class="kicker">Interactive kit builder</span><h1>Build your kit.</h1><p>Drag cards from the database into the ten-slot deck, then drag slotted cards around to rearrange the order. Cards carry practical attributes like edge length, steel or material, handle type and knife profile. The kit saves locally in your browser.</p></section><section class="kit-builder" data-kit-builder><aside class="kit-summary-panel"><div class="section-head"><div><span class="kicker">Your kit</span><h2>10-slot deck.</h2></div><p>Start with fewer knives than the internet wants, then add the support gear that keeps them sharp: stone, strop, board and storage. Drag cards directly between the database and the slots.</p></div><div class="kit-summary" data-kit-summary></div><div class="kit-status" data-kit-status></div><div class="kit-control-row"><button class="button primary" type="button" data-kit-starter>Load starter kit</button><button class="button" type="button" data-kit-clear>Clear kit</button><button class="button" type="button" data-kit-copy>Copy summary</button><button class="button" type="button" data-kit-export>Export JSON</button><button class="button" type="button" data-kit-story-export>Export Story PNG</button></div></aside><div class="kit-builder-board"><section class="kit-library-panel"><div class="section-head"><div><span class="kicker">Available cards</span><h2>Knife and kit database.</h2></div><p>Drag a card into any open slot, or click Add to use the active slot.</p></div><div class="kit-control-row"><input class="search-input" type="search" placeholder="Search knife, gyuto, VG10, Shapton…" data-kit-search><select data-kit-category aria-label="Filter by category"></select><select data-kit-profile aria-label="Filter by profile"></select><select data-kit-steel aria-label="Filter by steel"></select></div><div class="kit-library-grid" data-kit-library></div></section><section class="kit-slots-panel" data-kit-drop-zone><div class="section-head"><div><span class="kicker">Available slots</span><h2>Your deck.</h2></div><p>Drop cards anywhere on this deck. Filled slots can still be dragged onto another slot to reorder the kit.</p></div><p class="kit-drop-note">Desktop: drag and drop. Mobile fallback: select a slot, then tap Add on a card.</p><div class="kit-slots" data-kit-slots></div></section></div></section></main><script src="/assets/js/kit-builder.js" defer></script>""" + footer()
 
 def recommendations_page(posts):
     rec_posts = [p for p in posts if p['id'] in ['amazon-chef-knife-shortlist-what-to-buy-first','nakiri-profile-guide','king-vs-shapton-starter-stones-guide','hasegawa-asahi-hinoki-cutting-board-guide','vg10-ginsan-aogami-shirogami-guide','sharpening-basics-burr-angle-pressure']]
-    return head('Recommendations — Adrichops', 'Knife Finder, starter kits, maintenance pairings and affiliate-ready buying notes.', '/recommendations/') + header('Recommendations') + f'''<main class="page"><section class="collection-hero"><span class="kicker">Recommendations</span><h1>Choose the knife and the upkeep together.</h1><p>The Finder returns a knife direction, steel direction, blade length, caveats and maintenance kit. Low-fuss vegetable prep, for example, can point to a VG10 nakiri, simple stainless nakiri or light Asian cleaver / cai dao with stone, board and storage pairings.</p></section>{finder_markup()}<section class="section"><div class="section-head"><div><span class="kicker">Starter paths</span><h2>Useful next reads.</h2></div></div>{cards(rec_posts)}</section></main>''' + footer()
+    return head('Recommendations — Adrichops', 'Knife Finder, starter kits, maintenance pairings and affiliate-ready buying notes.', '/recommendations/') + header('Recommendations') + f'''<main class="page"><section class="collection-hero"><span class="kicker">Recommendations</span><h1>Choose the knife and the upkeep together.</h1><p>The Finder returns a knife direction, steel direction, blade length, caveats and maintenance kit. Low-fuss vegetable prep can point to a VG10 nakiri, simple stainless nakiri or light Asian cleaver / cai dao. Bread, tomato and serrated jobs can point to a Victorinox-style bread knife with storage and board caveats.</p></section>{finder_markup()}<section class="section"><div class="section-head"><div><span class="kicker">Starter paths</span><h2>Useful next reads.</h2></div></div>{cards(rec_posts)}</section></main>''' + footer()
 
 def shops_page(shops):
     return head('Recommended shops — Adrichops', 'Recommended knife shops and retailer source trails for Japanese kitchen knives, maintenance gear and maker research.', '/shops/', '/assets/img/shop-cleancut.svg') + header('Shops') + f'''<main class="page"><section class="collection-hero"><span class="kicker">Recommended shops</span><h1>Shops worth checking.</h1><p>This is a practical shortlist of retailers and source trails I want to keep close to the recommendations. Each card has space for a link, a short note, an image and tags so the page can grow without becoming another unstructured link dump.</p></section><section class="section"><div class="section-head"><div><span class="kicker">Retailers</span><h2>Start here.</h2></div><p>Exact stock changes quickly. Treat these as shop/source starting points, then check dimensions, steel, maker notes, return terms and shipping before buying.</p></div>{shop_cards(shops)}</section></main>''' + footer()
@@ -558,16 +546,15 @@ def main():
     for p in posts:
         p['route'] = p.get('route') or route_for(p)
     (ROOT / 'data' / 'posts.json').write_text(json.dumps({'posts': posts}, ensure_ascii=False, indent=2), encoding='utf-8')
-    products = json.loads((ROOT / 'data/products.json').read_text(encoding='utf-8')).get('products', [])
     remove_public_path('/editing-guide/')
     remove_public_path('/editing-guide.html')
     remove_public_path('/knife-photos/')
+    remove_public_path('/whats-in-my-roll/')
     # Core pages
     write('/index.html', home(posts, shops))
     write('/about/', about_page())
     write('/disclosure/', disclosure_page())
     write('/privacy/', privacy_page())
-    write('/whats-in-my-roll/', roll_page(products, posts))
     write('/kit-builder/', kit_builder_page())
     write('/recommendations/', recommendations_page(posts))
     write('/shops/', shops_page(shops))
@@ -590,10 +577,10 @@ def main():
     write('/shops.html', redirect_page('/shops/', 'Shops'))
     write('/knife-photos/', redirect_page('/maker-map/', 'Maker map'))
     write('/knife-photos.html', redirect_page('/maker-map/', 'Maker map'))
-    write('/roll.html', redirect_page('/whats-in-my-roll/', "What’s in my roll"))
+    write('/roll.html', redirect_page('/kit-builder/', 'Kit Builder'))
     write('/disclosure.html', redirect_page('/disclosure/', 'Disclosure'))
     write('/privacy.html', redirect_page('/privacy/', 'Privacy'))
-    write('/kit.html', redirect_page('/whats-in-my-roll/', "What’s in my roll"))
+    write('/kit.html', redirect_page('/kit-builder/', 'Kit Builder'))
     write('/kit-builder.html', redirect_page('/kit-builder/', 'Kit Builder'))
     write('/build-roll/', redirect_page('/kit-builder/', 'Kit Builder'))
     write('/build-roll.html', redirect_page('/kit-builder/', 'Kit Builder'))
@@ -603,7 +590,7 @@ def main():
     # 404
     write('/404.html', head('Page not found — Adrichops', 'The requested Adrichops page could not be found.', '/404.html') + header('') + '<main class="page"><section class="collection-hero"><span class="kicker">404</span><h1>Lost edge.</h1><p>This page is not in the kit. Try the notebook, recommendations or search.</p><p><a class="button primary" href="/">Back home</a></p></section></main>' + footer())
     # sitemap
-    urls = ['/', '/about/', '/reviews/', '/maker-spotlight/', '/maker-map/', '/whats-in-my-roll/', '/kit-builder/', '/recommendations/', '/shops/', '/disclosure/', '/privacy/', '/guides/', '/explore/'] + [p['route'] for p in posts]
+    urls = ['/', '/about/', '/reviews/', '/maker-spotlight/', '/maker-map/', '/kit-builder/', '/recommendations/', '/shops/', '/disclosure/', '/privacy/', '/guides/', '/explore/'] + [p['route'] for p in posts]
     sitemap = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + ''.join(f'  <url><loc>{BASE_URL.rstrip()}{u}</loc></url>\n' for u in urls) + '</urlset>\n'
     (ROOT / 'sitemap.xml').write_text(sitemap, encoding='utf-8')
     (ROOT / 'robots.txt').write_text(f'User-agent: *\nAllow: /\nSitemap: {BASE_URL}/sitemap.xml\n', encoding='utf-8')

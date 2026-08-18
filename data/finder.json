@@ -26,6 +26,10 @@
           "label": "Asian cleaver / cai dao prep"
         },
         {
+          "value": "bread",
+          "label": "Bread, tomatoes and serrated jobs"
+        },
+        {
           "value": "sharpening",
           "label": "Building a sharpening setup"
         }
@@ -173,6 +177,49 @@
         "nakiri-profile-guide",
         "boards-storage-and-edge-life",
         "king-vs-shapton-starter-stones-guide"
+      ]
+    },
+    {
+      "id": "bread-serrated-value",
+      "match": {
+        "task": "bread",
+        "care": "*",
+        "budget": "*"
+      },
+      "title": "Victorinox-style serrated bread knife, 8-10 inch",
+      "profile": "Bread knife / serrated utility",
+      "steel": "Stainless wavy-edge serration",
+      "length": "8-10 inch / 21-26cm",
+      "maintenanceLevel": "Low",
+      "why": "Bread knives earn their slot when crust, soft crumb, tomatoes or tough skins would punish a straight edge. This is a value-first category: a clean, replaceable Victorinox-style serrated knife usually makes more sense than treating a bread knife like a collector piece.",
+      "avoid": "Avoid very short blades for large loaves, very flexible blades that wander through crust and aggressive teeth on soft Japanese boards. Serrated knives are not chef-knife replacements.",
+      "productIds": [
+        "victorinox-fibrox-bread-knife",
+        "victorinox-swiss-classic-bread-knife",
+        "bread-knife-shortlist"
+      ],
+      "maintenanceKit": [
+        {
+          "label": "Board",
+          "text": "Use a board you do not mind marking. Serrations are useful precisely because they bite.",
+          "productIds": [
+            "hasegawa-soft-board",
+            "asahi-rubber-board"
+          ]
+        },
+        {
+          "label": "Storage",
+          "text": "Use a long guard or strip so the teeth are not scraping around in a drawer.",
+          "productIds": [
+            "universal-blade-guards",
+            "blade-guard"
+          ]
+        }
+      ],
+      "articleIds": [
+        "bread-serrated-knife-profile-guide",
+        "start-here-main-kitchen-knife-profiles",
+        "boards-storage-and-edge-life"
       ]
     },
     {

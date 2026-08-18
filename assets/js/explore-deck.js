@@ -23,7 +23,6 @@
     { id: 'about', label: 'About', text: 'The line-cook origin story.', url: '/about/' },
     { id: 'reviews', label: 'Reviews', text: 'Knives, boards and stones with status labels.' },
     { id: 'makers', label: 'Maker spotlight', text: 'Sakai, Sanjo and the shops people whisper about.' },
-    { id: 'roll', label: 'What’s in my roll', text: 'The personal setup and sensible maintenance kit.', url: '/whats-in-my-roll/' },
     { id: 'kit', label: 'Kit Builder', text: 'Drag knives, stones, strops and boards into a 10-slot deck.', url: '/kit-builder/' },
     { id: 'recommendations', label: 'Recommendations', text: 'Knife Finder, starter paths and buying notes.', url: '/recommendations/' },
     { id: 'disclosure', label: 'Disclosure', text: 'Affiliate policy and source discipline.', url: '/disclosure/' }
@@ -61,14 +60,6 @@
       readTime: '3 min read',
       summary: 'Line cook, chipped Shun, Tojiro DP, Japan, Takada-san, Baba Hamono and the beginning of Adrichops.',
       route: '/about/',
-      status: 'Personal'
-    }];
-    if (id === 'roll') return [{
-      title: 'What’s in my roll',
-      type: 'Personal kit',
-      readTime: '4 min read',
-      summary: 'The Tojiro that stayed, the stones that make sense, the boards that protect edges, and the gear worth editing as Adrian’s kit evolves.',
-      route: '/whats-in-my-roll/',
       status: 'Personal'
     }];
     if (id === 'kit') return [{

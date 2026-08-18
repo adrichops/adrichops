@@ -273,6 +273,32 @@
       ]
     },
     {
+      "id": "victorinox-fibrox-bread-knife",
+      "name": "Victorinox Fibrox bread knife",
+      "category": "Bread knife",
+      "merchant": "Amazon UK",
+      "url": "https://www.amazon.co.uk/s?k=Victorinox+Fibrox+bread+knife+21cm&tag=adrichops-21",
+      "cta": "Check current price",
+      "note": "Grippy, practical wavy-edge bread knife direction. Victorinox lists the Fibrox bread knife at 21cm with a non-slip handle.",
+      "relatedPosts": [
+        "start-here-main-kitchen-knife-profiles",
+        "bread-serrated-knife-profile-guide"
+      ]
+    },
+    {
+      "id": "victorinox-swiss-classic-bread-knife",
+      "name": "Victorinox Swiss Classic bread knife",
+      "category": "Bread knife",
+      "merchant": "Amazon UK",
+      "url": "https://www.amazon.co.uk/s?k=Victorinox+Swiss+Classic+bread+knife+8+inch&tag=adrichops-21",
+      "cta": "Check current price",
+      "note": "Light, low-fuss wavy-edge bread knife direction. Victorinox lists the Swiss Classic bread knife around 8.3 inches.",
+      "relatedPosts": [
+        "start-here-main-kitchen-knife-profiles",
+        "bread-serrated-knife-profile-guide"
+      ]
+    },
+    {
       "id": "chinese-cleaver-and-slicer-shortlist",
       "name": "Asian cleaver / cai dao shortlist",
       "category": "Knife",
