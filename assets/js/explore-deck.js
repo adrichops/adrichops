@@ -21,10 +21,8 @@
 
   const sections = [
     { id: 'about', label: 'About', text: 'The line-cook origin story.', url: '/about/' },
-    { id: 'reviews', label: 'Reviews', text: 'Knives, boards and stones with status labels.' },
-    { id: 'makers', label: 'Maker spotlight', text: 'Sakai, Sanjo and the shops people whisper about.' },
-    { id: 'kit', label: 'Kit Builder', text: 'Drag knives, stones, strops and boards into a 10-slot deck.', url: '/kit-builder/' },
-    { id: 'recommendations', label: 'Recommendations', text: 'Knife Finder, starter paths and buying notes.', url: '/recommendations/' },
+    { id: 'blog', label: 'Blog', text: 'All articles, reviews, guides and maker essays.' },
+    { id: 'finder', label: 'Knife Finder', text: 'Recommendations, starter paths and buying notes.', url: '/knife-finder/' },
     { id: 'disclosure', label: 'Disclosure', text: 'Affiliate policy and source discipline.', url: '/disclosure/' }
   ];
 
@@ -51,9 +49,8 @@
   }
 
   function cardsFor(id) {
-    if (id === 'reviews') return posts.filter((p) => p.type === 'Review brief').slice(0, 18);
-    if (id === 'makers') return posts.filter((p) => p.type === 'Maker spotlight').slice(0, 18);
-    if (id === 'recommendations') return posts.filter((p) => ['sharpening', 'maintenance', 'guide', 'culture', 'recommendations'].includes(p.category)).slice(0, 18);
+    if (id === 'blog') return posts.slice(0, 24);
+    if (id === 'finder') return posts.filter((p) => ['sharpening', 'maintenance', 'guide', 'culture', 'recommendations'].includes(p.category)).slice(0, 18);
     if (id === 'about') return [{
       title: 'About Adrian',
       type: 'Personal note',
@@ -61,14 +58,6 @@
       summary: 'Line cook, chipped Shun, Tojiro DP, Japan, Takada-san, Baba Hamono and the beginning of Adrichops.',
       route: '/about/',
       status: 'Personal'
-    }];
-    if (id === 'kit') return [{
-      title: 'Kit Builder',
-      type: 'Interactive tool',
-      readTime: 'Tool',
-      summary: 'A draggable ten-slot deck for building a knife kit from knives, stones, strops, boards, storage and utensils.',
-      route: '/kit-builder/',
-      status: 'Interactive'
     }];
     if (id === 'disclosure') return [{
       title: 'Disclosure and review integrity',
@@ -78,7 +67,7 @@
       route: '/disclosure/',
       status: 'Policy'
     }];
-    return posts.slice(0, 18);
+    return posts.slice(0, 24);
   }
 
   function shortestOffset(position, active, length) {

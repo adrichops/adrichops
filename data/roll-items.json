@@ -15,7 +15,7 @@
         "owned reference",
         "all-purpose"
       ],
-      "learnUrl": "/reviews/tojiro-dp-210mm-gyuto-shortlist-review/"
+      "learnUrl": "/blog/tojiro-dp-210mm-gyuto-shortlist-review/"
     },
     {
       "id": "victorinox-fibrox-chef",
@@ -32,7 +32,7 @@
         "low fuss",
         "western"
       ],
-      "learnUrl": "/reviews/victorinox-fibrox-pro-8-inch-shortlist-review/"
+      "learnUrl": "/blog/victorinox-fibrox-pro-8-inch-shortlist-review/"
     },
     {
       "id": "mac-mth80",
@@ -49,7 +49,7 @@
         "stainless",
         "all-purpose"
       ],
-      "learnUrl": "/reviews/mac-mth80-shortlist-review/"
+      "learnUrl": "/blog/mac-mth80-shortlist-review/"
     },
     {
       "id": "global-g2",
@@ -66,7 +66,7 @@
         "stainless",
         "metal handle"
       ],
-      "learnUrl": "/reviews/global-g2-cooks-knife-shortlist-review/"
+      "learnUrl": "/blog/global-g2-cooks-knife-shortlist-review/"
     },
     {
       "id": "takada-gyuto-210",
@@ -83,7 +83,7 @@
         "sakai",
         "refined"
       ],
-      "learnUrl": "/maker-spotlight/maker-spotlight-takada-no-hamono/"
+      "learnUrl": "/blog/maker-spotlight-takada-no-hamono/"
     },
     {
       "id": "ashi-ginga-210",
@@ -100,7 +100,7 @@
         "sakai",
         "thin"
       ],
-      "learnUrl": "/maker-spotlight/maker-spotlight-ashi-hamono/"
+      "learnUrl": "/blog/maker-spotlight-ashi-hamono/"
     },
     {
       "id": "yoshikane-240-gyuto",
@@ -117,7 +117,7 @@
         "workhorse",
         "240mm"
       ],
-      "learnUrl": "/maker-spotlight/maker-spotlight-yoshikane-hamono/"
+      "learnUrl": "/blog/maker-spotlight-yoshikane-hamono/"
     },
     {
       "id": "wakui-240-gyuto",
@@ -134,7 +134,7 @@
         "sanjo",
         "value"
       ],
-      "learnUrl": "/maker-spotlight/maker-spotlight-wakui/"
+      "learnUrl": "/blog/maker-spotlight-wakui/"
     },
     {
       "id": "vg10-nakiri-165",
@@ -151,7 +151,7 @@
         "low fuss",
         "flat profile"
       ],
-      "learnUrl": "/guides/nakiri-profile-guide/"
+      "learnUrl": "/blog/nakiri-profile-guide/"
     },
     {
       "id": "santoku-180",
@@ -168,7 +168,7 @@
         "compact",
         "all-purpose"
       ],
-      "learnUrl": "/guides/santoku-profile-guide/"
+      "learnUrl": "/blog/santoku-profile-guide/"
     },
     {
       "id": "petty-150",
@@ -185,7 +185,7 @@
         "utility",
         "support knife"
       ],
-      "learnUrl": "/guides/petty-paring-utility-profile-guide/"
+      "learnUrl": "/blog/petty-paring-utility-profile-guide/"
     },
     {
       "id": "paring-90",
@@ -202,7 +202,7 @@
         "small prep",
         "low fuss"
       ],
-      "learnUrl": "/guides/petty-paring-utility-profile-guide/"
+      "learnUrl": "/blog/petty-paring-utility-profile-guide/"
     },
     {
       "id": "sujihiki-270",
@@ -219,7 +219,7 @@
         "protein",
         "long blade"
       ],
-      "learnUrl": "/guides/boning-fillet-slicer-cleaver-specialist-profiles/"
+      "learnUrl": "/blog/boning-fillet-slicer-cleaver-specialist-profiles/"
     },
     {
       "id": "bread-240",
@@ -236,7 +236,7 @@
         "bread",
         "utility"
       ],
-      "learnUrl": "/guides/bread-serrated-knife-profile-guide/"
+      "learnUrl": "/blog/bread-serrated-knife-profile-guide/"
     },
     {
       "id": "boning-150",
@@ -253,7 +253,7 @@
         "butchery",
         "tough"
       ],
-      "learnUrl": "/guides/boning-fillet-slicer-cleaver-specialist-profiles/"
+      "learnUrl": "/blog/boning-fillet-slicer-cleaver-specialist-profiles/"
     },
     {
       "id": "chinese-cleaver-210",
@@ -270,7 +270,7 @@
         "high volume",
         "scoop"
       ],
-      "learnUrl": "/guides/boning-fillet-slicer-cleaver-specialist-profiles/"
+      "learnUrl": "/blog/boning-fillet-slicer-cleaver-specialist-profiles/"
     },
     {
       "id": "shapton-kuromaku-1000",
@@ -287,7 +287,7 @@
         "splash and go",
         "starter"
       ],
-      "learnUrl": "/reviews/shapton-stones-review-brief/"
+      "learnUrl": "/blog/shapton-stones-review-brief/"
     },
     {
       "id": "shapton-kuromaku-2000",
@@ -304,7 +304,7 @@
         "refinement",
         "splash and go"
       ],
-      "learnUrl": "/reviews/shapton-stones-review-brief/"
+      "learnUrl": "/blog/shapton-stones-review-brief/"
     },
     {
       "id": "king-deluxe-1000",
@@ -321,7 +321,7 @@
         "budget",
         "soaker"
       ],
-      "learnUrl": "/reviews/king-whetstones-review-brief/"
+      "learnUrl": "/blog/king-whetstones-review-brief/"
     },
     {
       "id": "king-combo-1000-6000",
@@ -338,7 +338,7 @@
         "budget",
         "soaker"
       ],
-      "learnUrl": "/guides/king-vs-shapton-starter-stones-guide/"
+      "learnUrl": "/blog/king-vs-shapton-starter-stones-guide/"
     },
     {
       "id": "leather-strop",
@@ -355,7 +355,7 @@
         "finishing",
         "maintenance"
       ],
-      "learnUrl": "/guides/stropping-and-deburring-clean-apex/"
+      "learnUrl": "/blog/stropping-and-deburring-clean-apex/"
     },
     {
       "id": "cork-deburring-block",
@@ -372,7 +372,7 @@
         "cheap",
         "starter"
       ],
-      "learnUrl": "/guides/stropping-and-deburring-clean-apex/"
+      "learnUrl": "/blog/stropping-and-deburring-clean-apex/"
     },
     {
       "id": "ceramic-honing-rod",
@@ -389,7 +389,7 @@
         "honing",
         "careful"
       ],
-      "learnUrl": "/guides/honing-vs-sharpening-when-to-use-steel/"
+      "learnUrl": "/blog/honing-vs-sharpening-when-to-use-steel/"
     },
     {
       "id": "hasegawa-board",
@@ -406,7 +406,7 @@
         "edge friendly",
         "synthetic"
       ],
-      "learnUrl": "/reviews/hasegawa-cutting-board-review-brief/"
+      "learnUrl": "/blog/hasegawa-cutting-board-review-brief/"
     },
     {
       "id": "asahi-board",
@@ -423,7 +423,7 @@
         "rubber",
         "low fuss"
       ],
-      "learnUrl": "/reviews/asahi-rubber-cutting-board-review-brief/"
+      "learnUrl": "/blog/asahi-rubber-cutting-board-review-brief/"
     },
     {
       "id": "hinoki-board",
@@ -440,7 +440,7 @@
         "wood",
         "hinoki"
       ],
-      "learnUrl": "/reviews/hinoki-cutting-board-review-brief/"
+      "learnUrl": "/blog/hinoki-cutting-board-review-brief/"
     },
     {
       "id": "blade-guard-240",
@@ -457,7 +457,7 @@
         "safety",
         "roll"
       ],
-      "learnUrl": "/guides/boards-storage-and-edge-life/"
+      "learnUrl": "/blog/boards-storage-and-edge-life/"
     },
     {
       "id": "knife-roll",
@@ -474,7 +474,7 @@
         "travel",
         "safety"
       ],
-      "learnUrl": "/guides/boards-storage-and-edge-life/"
+      "learnUrl": "/blog/boards-storage-and-edge-life/"
     },
     {
       "id": "bench-scraper",
@@ -491,7 +491,7 @@
         "edge saver",
         "utensil"
       ],
-      "learnUrl": "/guides/boards-storage-and-edge-life/"
+      "learnUrl": "/blog/boards-storage-and-edge-life/"
     },
     {
       "id": "kitchen-tweezers",

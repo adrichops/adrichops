@@ -307,12 +307,12 @@
     const mobile = mobileQuery.matches;
     const denseRegionalMap = !state.activeRegion && (state.graph?.regions?.length || 0) > 16;
     return {
-      width: state.activeRegion ? (mobile ? 980 : 1480) : denseRegionalMap ? (mobile ? 1180 : 1600) : (mobile ? 860 : 1180),
-      height: state.activeRegion ? (mobile ? 980 : 980) : denseRegionalMap ? (mobile ? 1180 : 1100) : (mobile ? 820 : 760),
-      ringRadius: state.activeRegion ? (mobile ? 330 : 430) : denseRegionalMap ? (mobile ? 430 : 470) : (mobile ? 285 : 280),
-      memberDistance: state.activeRegion ? (mobile ? 330 : 430) : denseRegionalMap ? (mobile ? 420 : 470) : (mobile ? 285 : 285),
-      relationDistance: state.activeRegion ? (mobile ? 310 : 390) : denseRegionalMap ? (mobile ? 390 : 430) : (mobile ? 300 : 390),
-      repulsion: state.activeRegion ? (mobile ? 25500 : 36500) : (mobile ? 16800 : 16800),
+      width: state.activeRegion ? (mobile ? 1120 : 1480) : denseRegionalMap ? (mobile ? 1180 : 1600) : (mobile ? 860 : 1180),
+      height: state.activeRegion ? (mobile ? 1060 : 980) : denseRegionalMap ? (mobile ? 1180 : 1100) : (mobile ? 820 : 760),
+      ringRadius: state.activeRegion ? (mobile ? 390 : 430) : denseRegionalMap ? (mobile ? 430 : 470) : (mobile ? 285 : 280),
+      memberDistance: state.activeRegion ? (mobile ? 385 : 430) : denseRegionalMap ? (mobile ? 420 : 470) : (mobile ? 285 : 285),
+      relationDistance: state.activeRegion ? (mobile ? 360 : 390) : denseRegionalMap ? (mobile ? 390 : 430) : (mobile ? 300 : 390),
+      repulsion: state.activeRegion ? (mobile ? 22000 : 36500) : (mobile ? 16800 : 16800),
       hubRepulsion: mobile ? 9800 : 9400
     };
   }
@@ -582,7 +582,8 @@
       ...roleTokens(node.role).map((role) => `role-${role}`),
       active ? 'is-active' : ''
     ].filter(Boolean).join(' ');
-    const radius = node.isHub ? 86 : node.isRegion ? 92 : 76;
+    const mobile = mobileQuery.matches;
+    const radius = node.isHub ? (mobile ? 70 : 86) : node.isRegion ? (mobile ? 78 : 92) : (mobile ? 64 : 76);
     const label = node.isHub ? 'Open regional map' : node.isRegion ? `Open ${node.name}` : `Open ${node.name}`;
     const regionId = regionIdForNode(node);
     const style = regionId ? ` style="--region-color: ${esc(regionColor(regionId))}"` : '';
@@ -1076,6 +1077,17 @@
     });
   }
 
+  function revealDetailOnMobile() {
+    if (!mobileQuery.matches || !detail) return;
+    detail.scrollIntoView({ block: 'start', behavior: 'smooth' });
+  }
+
+  function revealGraphOnMobile() {
+    if (!mobileQuery.matches) return;
+    const stage = root.querySelector('.graph-stage');
+    if (stage) stage.scrollIntoView({ block: 'start', behavior: 'smooth' });
+  }
+
   function selectRegion(id) {
     state.activeRegion = state.regionById.get(id) || null;
     state.activeNode = state.activeRegion ? state.nodeById.get(`region:${state.activeRegion.id}`) : null;
@@ -1087,6 +1099,7 @@
     searchInput.value = '';
     state.view = { x: 0, y: 0, scale: 1 };
     syncView();
+    revealGraphOnMobile();
   }
 
   function selectNode(id, options = {}) {
@@ -1110,6 +1123,7 @@
       renderNodeDetail(node);
       applyFocusState();
     }
+    if (!options.keepGraph && !node.isHub && !node.isRegion) revealDetailOnMobile();
   }
 
   function selectEdge(edge) {
@@ -1119,6 +1133,7 @@
     renderGeographyMap();
     renderEdgeDetail(edge);
     applyFocusState();
+    revealDetailOnMobile();
   }
 
   function syncView() {

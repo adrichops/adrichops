@@ -398,6 +398,11 @@ p { margin: 0; }
   overflow: hidden;
   min-height: clamp(760px, 78vh, 980px);
 }
+.graph-scroll {
+  width: 100%;
+  min-height: clamp(760px, 78vh, 980px);
+  overflow: hidden;
+}
 .graph-stage-head {
   position: absolute;
   z-index: 2;
@@ -1459,13 +1464,61 @@ p { margin: 0; }
 }
 @media (max-width: 720px) {
   body { font-size: 15px; }
+  .page { padding: 18px 12px 34px; }
   .header-inner { padding: 12px 14px; gap: 10px; }
   .brand-logo { width: clamp(138px, 42vw, 188px); max-height: 32px; }
+  .icon-button { width: 44px; height: 44px; }
+  .nav-tabs {
+    top: calc(env(safe-area-inset-top, 0px) + 64px);
+    border-radius: 18px;
+  }
+  .nav-tabs a {
+    min-height: 52px;
+    font-size: .95rem;
+  }
   .hero { padding-top: 28px; }
-  h1 { font-size: clamp(2.6rem, 16vw, 4.6rem); }
+  h1 { font-size: clamp(2.35rem, 14vw, 4.35rem); }
+  h2 { font-size: clamp(1.95rem, 10vw, 3.45rem); }
+  .collection-hero p,
+  .lead {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+  .section { margin-top: 42px; }
   .entry-grid, .article-card-grid, .maintenance-kit, .decision-box, .product-grid, .deck-nav, .article-gallery, .photo-grid, .shop-grid, .graph-card-grid, .finder-product-grid, .finder-product-grid.is-compact, .form-grid.two { grid-template-columns: 1fr; }
+  .entry-card,
+  .article-card,
+  .story-card,
+  .hero-note,
+  .finder,
+  .notebook,
+  .engagement-card {
+    border-radius: 18px;
+  }
+  .article-card img {
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+  }
+  .button,
+  .text-link {
+    min-height: 44px;
+    padding: 11px 14px;
+  }
   .note-row { grid-template-columns: 1fr; gap: 8px; }
   .timeline-item, .roll-item { grid-template-columns: 1fr; }
+  .finder {
+    padding: 14px;
+  }
+  .finder-grid {
+    gap: 14px;
+  }
+  .finder-option {
+    min-height: 48px;
+    padding: 12px;
+  }
+  .finder-result {
+    padding: 16px;
+  }
   .finder-specs { grid-template-columns: 1fr; }
   .section-head { display:block; }
   .section-actions { margin-top: 14px; }
@@ -1475,17 +1528,29 @@ p { margin: 0; }
   .maker-map-page {
     padding-inline: max(10px, env(safe-area-inset-left, 0px));
   }
+  .maker-map-page .collection-hero h1 {
+    font-size: clamp(2.55rem, 13vw, 4.75rem);
+  }
+  .maker-map-page .collection-hero p {
+    font-size: .98rem;
+    line-height: 1.42;
+  }
   .maker-map-page .collection-hero {
-    margin-bottom: 18px;
+    margin-bottom: 14px;
   }
   .maker-graph-shell {
     max-width: 100%;
     gap: 12px;
   }
+  .maker-graph-shell .graph-stage {
+    order: -2;
+  }
   .graph-detail-panel {
-    order: -1;
+    order: 1;
     display: grid;
     gap: 10px;
+    max-height: none;
+    overflow: visible;
   }
   .graph-control-panel {
     gap: 12px;
@@ -1500,25 +1565,52 @@ p { margin: 0; }
     font-size: .68rem;
   }
   .graph-stats,
-  .graph-detail-panel > .graph-panel:nth-child(n+3) {
+  .graph-source-panel,
+  .graph-rule-panel {
     display: none;
+  }
+  .graph-detail {
+    display: grid;
+    gap: 8px;
+  }
+  .graph-note h2 {
+    font-size: clamp(1.55rem, 9vw, 2.4rem);
+  }
+  .wiki-list,
+  .line-list {
+    gap: 8px;
+  }
+  .wiki-link,
+  .line-list span {
+    min-height: 40px;
+    display: inline-flex;
+    align-items: center;
   }
   .graph-stage {
     border-radius: 18px;
-    min-height: min(82vh, 760px);
+    min-height: min(76vh, 680px);
+    overflow: hidden;
+    scroll-margin-top: 96px;
+  }
+  .graph-scroll {
+    min-height: min(70vh, 620px);
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
   }
   .maker-graph-svg {
-    min-height: min(82vh, 760px);
+    width: max(100%, 920px);
+    min-height: min(70vh, 620px);
+    touch-action: pan-x pan-y;
   }
   .graph-stage-head {
-    left: 10px;
-    right: 10px;
-    top: 10px;
+    position: static;
+    margin: 10px;
     max-width: none;
     padding: 9px 10px;
   }
   .graph-stage-head h2 {
-    font-size: .95rem;
+    font-size: .88rem;
   }
   .graph-back-button {
     min-height: 38px;
@@ -1527,9 +1619,25 @@ p { margin: 0; }
   .node-html-label {
     gap: 4px;
   }
+  .node-primary {
+    font-size: 15px;
+  }
+  .node-secondary {
+    font-size: 11px;
+  }
+  .edge-label-wrap text {
+    font-size: 12px;
+  }
+  .edge-label-wrap rect {
+    stroke-width: 1.7;
+  }
+  .graph-lines line.graph-edge {
+    stroke-width: 3;
+  }
   .regional-geography {
     max-width: 100%;
     margin-top: 14px;
+    padding: 12px;
   }
   .regional-geography .section-head p {
     margin-top: 8px;
