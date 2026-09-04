@@ -32,7 +32,7 @@
   }
   function edgeColor(e) {
     if (['student','teacher','apprenticeship','worked-under','family'].includes(e.kind)) return '#56ce8b';
-    if (['works-at','workshop-background'].includes(e.kind) || (e.kind==='regional-hub' && /workshop|maker identity/i.test(e.label))) return '#6bb7ff';
+    if (['works-at','workshop-background','succession'].includes(e.kind) || (e.kind==='regional-hub' && /workshop|maker identity/i.test(e.label))) return '#6bb7ff';
     if (['smith-to-sharpener','brand-to-sharpener'].includes(e.kind)) return '#efbd49';
     if (e.kind==='alias') return '#61d6cb';
     if (['regional-hub','regional-peer','region-member'].includes(e.kind)) return '#aeb8c3';
@@ -42,6 +42,7 @@
   function edgeLabel(e) {
     if (['student','teacher','apprenticeship','worked-under'].includes(e.kind)) return 'Training';
     if (e.kind==='family') return 'Family';
+    if (e.kind==='succession') return 'Workshop\n succession';
     if (e.kind==='workshop-background') return /former|background|historical/i.test(e.label)?'Former workshop':'Workshop';
     if (e.kind==='works-at') return /previous|former/i.test(e.label)?'Previously worked with':'Works with';
     if (e.kind==='smith-to-sharpener') return 'Forging /\nsharpening';
@@ -121,7 +122,7 @@
       const local=new Set(filtered().map(n=>n.id));
       const connected=edges.filter(e=>local.has(e.from)||local.has(e.to));
       const ids=new Set([...local,...connected.flatMap(e=>[e.from,e.to])]);
-      [...ids].forEach((id,i)=>{const n=nodes.get(id),angle=i*2*Math.PI/ids.size;elements.push({data:{id,label:n.name+'\n'+n.role+(n.regionId!==region.id?'\n'+n.regionName:''),color:roleColor(n.role)},classes:local.has(id)?'maker':'maker external',position:{x:Math.cos(angle)*600,y:Math.sin(angle)*600}});});
+      [...ids].forEach((id,i)=>{const n=nodes.get(id),angle=i*2*Math.PI/ids.size;elements.push({data:{id,label:n.name,role:n.role,color:roleColor(n.role)},classes:local.has(id)?'maker':'maker external',position:{x:Math.cos(angle)*600,y:Math.sin(angle)*600}});});
       local.forEach(id=>elements.push({data:{id:'member:'+id,source:hub,target:id,color:'#aeb8c3',label:'Regional association'},classes:'membership'}));
       connected.forEach(e=>elements.push({data:{id:e.id,source:e.from,target:e.to,label:edgeLabel(e),color:edgeColor(e)},classes:community(e)?'provisional':''}));
       el('map-caption').textContent=region.name+' · '+local.size+' makers · '+connected.length+' relationships';

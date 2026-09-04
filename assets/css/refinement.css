@@ -140,6 +140,11 @@ summary { cursor:pointer; min-height:32px; font-weight:650; }
 .map-key p { color:var(--muted); margin:16px 0; }
 .map-legend { display:flex; flex-wrap:wrap; gap:12px 20px; margin-top:14px; }
 .map-legend span::before { content:""; display:inline-block; width:18px; height:4px; background:var(--key-color); vertical-align:middle; margin-right:7px; }
+.map-role-key { display:flex; flex-wrap:wrap; align-items:center; gap:12px 22px; padding:14px 0; border-top:1px solid var(--line); font-size:14px; }
+.map-role-key .map-legend { margin:0; gap:10px 18px; }
+.map-key-heading { font-weight:700; }
+.map-role-key .map-legend span { display:flex; align-items:center; }
+.map-role-key .map-legend span::before { width:14px; height:14px; border:2px solid var(--key-color); border-radius:3px; background:transparent; flex-shrink:0; }
 .map-empty { padding:32px 16px; }
 .map-load-status:empty { display:none; }
 .mobile-relations { display:flex; align-items:center; justify-content:space-between; gap:8px; margin:12px 0; }

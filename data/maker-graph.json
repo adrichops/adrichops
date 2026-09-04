@@ -25,8 +25,13 @@
           "role": "Sharpener / Polisher",
           "location": "Historical Sakai workshop connection",
           "specialty": "Grinding, polishing and sharpening HADO knives, documented in Knifewear's July 2024 interview.",
-          "famousLines": ["HADO Sumi (historical work)", "HADO Kirisame (historical work)"],
-          "sourceIds": ["knifewear-maruyama-2024"],
+          "famousLines": [
+            "HADO Sumi (historical work)",
+            "HADO Kirisame (historical work)"
+          ],
+          "sourceIds": [
+            "knifewear-maruyama-2024"
+          ],
           "caveat": "The source records his HADO role in 2024. This historical network entry does not assert his current employer or workshop address."
         },
         {
@@ -34,8 +39,12 @@
           "name": "Kenya Togashi",
           "role": "Sharpener",
           "specialty": "Named sharpener on Hitohira's Togashi Blue #1 single-bevel gyuto.",
-          "famousLines": ["Togashi Blue #1 single-bevel gyuto"],
-          "sourceIds": ["hitohira-kenya-togashi"]
+          "famousLines": [
+            "Togashi Blue #1 single-bevel gyuto"
+          ],
+          "sourceIds": [
+            "hitohira-kenya-togashi"
+          ]
         },
         {
           "id": "heihachi",
@@ -43,15 +52,22 @@
           "role": "Sharpener",
           "specialty": "Kyuzo's father and early teacher in rough sharpening, as described by Hitohira.",
           "famousLines": [],
-          "sourceIds": ["hitohira-kyuzo-training"]
+          "sourceIds": [
+            "hitohira-kyuzo-training"
+          ]
         },
         {
           "id": "kambei",
           "name": "Kambei",
           "role": "Sharpener",
           "specialty": "Wide double-bevel sharpening; Hitohira names him as a teacher of Kyuzo.",
-          "famousLines": ["Oboro"],
-          "sourceIds": ["hitohira-kyuzo-training", "hitohira-oboro-craftsmen"],
+          "famousLines": [
+            "Oboro"
+          ],
+          "sourceIds": [
+            "hitohira-kyuzo-training",
+            "hitohira-oboro-craftsmen"
+          ],
           "caveat": "This profile uses Hitohira's published name; no unverified legal-name mapping is assumed."
         },
         {
@@ -60,8 +76,14 @@
           "role": "Handle maker",
           "location": "Workshop location not confirmed here",
           "specialty": "Third-generation handle maker. Began carrying on the family craft in 1992, shaping wood and horn individually.",
-          "famousLines": ["Taihei wa handles", "Oboro custom handles"],
-          "sourceIds": ["hitohira-taihei-story", "hitohira-oboro-craftsmen"],
+          "famousLines": [
+            "Taihei wa handles",
+            "Oboro custom handles"
+          ],
+          "sourceIds": [
+            "hitohira-taihei-story",
+            "hitohira-oboro-craftsmen"
+          ],
           "caveat": "Included in the Sakai network for documented collaborations, not as confirmation of the workshop's address."
         },
         {
@@ -533,6 +555,54 @@
             "cleancut-yoshihiro-yauji"
           ],
           "caveat": "Brand/retailer node only; do not infer a single smith or sharpener without exact disclosure."
+        },
+        {
+          "id": "kazuo-doi",
+          "name": "Kazuo Doi",
+          "role": "Blacksmith",
+          "specialty": "Earlier generation of the Sakai Doi forge; taught his son Keijiro.",
+          "famousLines": [],
+          "sourceIds": [
+            "korin-doi-craftsmen"
+          ]
+        },
+        {
+          "id": "keijiro-doi",
+          "name": "Keijiro Doi",
+          "role": "Blacksmith",
+          "specialty": "Historical Sakai smith known for low-temperature forging and Blue #2 steel. Died in 2017.",
+          "famousLines": [
+            "Doi Blue #2"
+          ],
+          "sourceIds": [
+            "korin-doi-craftsmen"
+          ]
+        },
+        {
+          "id": "itsuo-doi",
+          "name": "Itsuo Doi",
+          "role": "Blacksmith",
+          "specialty": "Continues the family forging techniques learned from Keijiro, including low-temperature work with Blue #2.",
+          "famousLines": [
+            "Suisin Doi"
+          ],
+          "sourceIds": [
+            "korin-doi-craftsmen"
+          ]
+        },
+        {
+          "id": "kohei-ebuchi",
+          "name": "Kohei Ebuchi",
+          "role": "Blacksmith",
+          "specialty": "Second-generation smith in the Sakai/Osaka knife industry. Knifewear's 2025 visit documents carbon-steel forging of single- and double-bevel blades.",
+          "famousLines": [
+            "Touroku Sakai",
+            "Touroku Sakai Tohwa"
+          ],
+          "sourceIds": [
+            "knifewear-ebuchi-2026",
+            "knifewear-ebuchi-lines"
+          ]
         }
       ],
       "edges": [
@@ -543,7 +613,9 @@
           "label": "Historical HADO workshop (2024)",
           "detail": "Knifewear's July 2024 interview identifies Maruyama as HADO's head sharpener at that time. This is a dated workshop connection, not a current employment claim.",
           "sourceType": "Retailer interview",
-          "sourceIds": ["knifewear-maruyama-2024"]
+          "sourceIds": [
+            "knifewear-maruyama-2024"
+          ]
         },
         {
           "from": "yoshikazu-tanaka",
@@ -552,37 +624,64 @@
           "label": "HADO Sumi forging and sharpening (2024)",
           "detail": "The 2024 interview describes HADO Sumi blades forged by Yoshikazu Tanaka and ground, polished and sharpened by Maruyama.",
           "sourceType": "Retailer interview",
-          "sourceIds": ["knifewear-maruyama-2024"]
+          "sourceIds": [
+            "knifewear-maruyama-2024"
+          ]
         },
         {
-          "from": "heihachi", "to": "kyuzo-yauchi", "kind": "apprenticeship",
+          "from": "heihachi",
+          "to": "kyuzo-yauchi",
+          "kind": "apprenticeship",
           "label": "Taught rough sharpening",
           "detail": "Hitohira says Kyuzo first learned rough sharpening under his father, Heihachi.",
-          "sourceIds": ["hitohira-kyuzo-training"], "sourceType": "Retailer"
+          "sourceIds": [
+            "hitohira-kyuzo-training"
+          ],
+          "sourceType": "Retailer"
         },
         {
-          "from": "kambei", "to": "kyuzo-yauchi", "kind": "apprenticeship",
+          "from": "kambei",
+          "to": "kyuzo-yauchi",
+          "kind": "apprenticeship",
           "label": "Taught wide-bevel sharpening",
           "detail": "Hitohira describes Kyuzo studying under Kambei after learning from his father.",
-          "sourceIds": ["hitohira-kyuzo-training"], "sourceType": "Retailer"
+          "sourceIds": [
+            "hitohira-kyuzo-training"
+          ],
+          "sourceType": "Retailer"
         },
         {
-          "from": "kenji-togashi", "to": "kenya-togashi", "kind": "smith-to-sharpener",
+          "from": "kenji-togashi",
+          "to": "kenya-togashi",
+          "kind": "smith-to-sharpener",
           "label": "Forging to sharpening",
           "detail": "The cited gyuto names Togashi Blacksmith and sharpener Kenya Togashi. This connection describes that product.",
-          "sourceIds": ["hitohira-kenya-togashi"], "sourceType": "Retailer"
+          "sourceIds": [
+            "hitohira-kenya-togashi"
+          ],
+          "sourceType": "Retailer"
         },
         {
-          "from": "satoshi-nakagawa", "to": "kambei", "kind": "smith-to-sharpener",
+          "from": "satoshi-nakagawa",
+          "to": "kambei",
+          "kind": "smith-to-sharpener",
           "label": "Oboro: forging to sharpening",
           "detail": "The Oboro listing names Nakagawa Blacksmith and Kambei.",
-          "sourceIds": ["hitohira-oboro-craftsmen"], "sourceType": "Retailer"
+          "sourceIds": [
+            "hitohira-oboro-craftsmen"
+          ],
+          "sourceType": "Retailer"
         },
         {
-          "from": "kambei", "to": "taihei", "kind": "collaboration",
+          "from": "kambei",
+          "to": "taihei",
+          "kind": "collaboration",
           "label": "Oboro collaboration",
           "detail": "Kambei's sharpening and Taihei's custom handles appear together on this Oboro knife.",
-          "sourceIds": ["hitohira-oboro-craftsmen"], "sourceType": "Retailer"
+          "sourceIds": [
+            "hitohira-oboro-craftsmen"
+          ],
+          "sourceType": "Retailer"
         },
         {
           "from": "ikeda",
@@ -886,6 +985,42 @@
           "sourceIds": [
             "honyaki-reference"
           ]
+        },
+        {
+          "from": "kazuo-doi",
+          "to": "keijiro-doi",
+          "kind": "teacher",
+          "label": "Father and teacher",
+          "detail": "Keijiro apprenticed with his father Kazuo.",
+          "sourceIds": [
+            "korin-doi-craftsmen"
+          ],
+          "sourceType": "retailer",
+          "confidence": "high"
+        },
+        {
+          "from": "keijiro-doi",
+          "to": "itsuo-doi",
+          "kind": "teacher",
+          "label": "Father and teacher",
+          "detail": "Keijiro passed his forging techniques to his son Itsuo.",
+          "sourceIds": [
+            "korin-doi-craftsmen"
+          ],
+          "sourceType": "retailer",
+          "confidence": "high"
+        },
+        {
+          "from": "itsuo-doi",
+          "to": "suisin",
+          "kind": "line-collaboration",
+          "label": "Forges Suisin Doi blades",
+          "detail": "Korin names Itsuo as the smith continuing the family's work for Suisin; this is a product relationship, not an employment claim.",
+          "sourceIds": [
+            "korin-doi-craftsmen"
+          ],
+          "sourceType": "retailer",
+          "confidence": "high"
         }
       ]
     },
@@ -1208,6 +1343,79 @@
             "Abe Isamitsu Blacksmith",
             "Isamitsu"
           ]
+        },
+        {
+          "id": "tsuneo-yoshida",
+          "name": "Tsuneo Yoshida",
+          "role": "Blacksmith",
+          "specialty": "Former head of Yoshikane manufacturing; uncle of Masashi Yamamoto.",
+          "famousLines": [
+            "Yoshikane"
+          ],
+          "sourceIds": [
+            "cleancut-masashi-biography",
+            "cleancut-yoshikane-leadership"
+          ]
+        },
+        {
+          "id": "kazuomi-yamamoto",
+          "name": "Kazuomi Yamamoto",
+          "role": "Blacksmith",
+          "specialty": "Named by Cleancut as Yoshikane's leader and successor to Tsuneo Yoshida.",
+          "famousLines": [
+            "Yoshikane Shirogami #2"
+          ],
+          "sourceIds": [
+            "cleancut-yoshikane-leadership"
+          ]
+        },
+        {
+          "id": "gihei-hamono",
+          "name": "Gihei Hamono",
+          "role": "Workshop",
+          "specialty": "Sanjo workshop whose named blacksmiths are Atsushi Hosokawa and Takashi Hosokawa.",
+          "famousLines": [
+            "Gihei Aogami #2"
+          ],
+          "sourceIds": [
+            "knifewear-gihei"
+          ]
+        },
+        {
+          "id": "atsushi-hosokawa",
+          "name": "Atsushi Hosokawa",
+          "role": "Blacksmith",
+          "specialty": "Named by Knifewear as a maker at Gihei Hamono in Sanjo.",
+          "famousLines": [
+            "Gihei Aogami #2"
+          ],
+          "sourceIds": [
+            "knifewear-gihei"
+          ]
+        },
+        {
+          "id": "takashi-hosokawa",
+          "name": "Takashi Hosokawa",
+          "role": "Blacksmith",
+          "specialty": "Named by Knifewear as a maker at Gihei Hamono in Sanjo.",
+          "famousLines": [
+            "Gihei Aogami #2"
+          ],
+          "sourceIds": [
+            "knifewear-gihei"
+          ]
+        },
+        {
+          "id": "yujiro-hinoura",
+          "name": "Yujiro Hinoura",
+          "role": "Blacksmith",
+          "specialty": "Second-generation Hinoura workshop owner. Mutsumi describes learning knife making by observing him early in his career.",
+          "famousLines": [
+            "Hinoura workshop"
+          ],
+          "sourceIds": [
+            "mutsumi-hinoura-interview"
+          ]
         }
       ],
       "edges": [
@@ -1342,14 +1550,13 @@
         {
           "from": "yoshikane",
           "to": "masashi-yamamoto",
-          "kind": "worked-under",
-          "label": "Yoshikane background",
-          "detail": "Masashi is placed under Yoshikane as a community/retailer-trail relationship; verify exact biography wording per source.",
-          "sourceType": "community",
-          "confidence": "medium",
+          "kind": "workshop-background",
+          "label": "Former Yoshikane workshop",
+          "detail": "Cleancut's workshop visit states that Masashi began his career at Yoshikane before establishing independent production.",
+          "sourceType": "retailer",
+          "confidence": "high",
           "sourceIds": [
-            "kkf-community",
-            "reddit-truechefknives"
+            "cleancut-masashi-biography"
           ]
         },
         {
@@ -1391,16 +1598,15 @@
           ]
         },
         {
-          "from": "mutsumi-hinoura",
-          "to": "tsukasa-hinoura",
+          "from": "tsukasa-hinoura",
+          "to": "mutsumi-hinoura",
           "kind": "family",
-          "label": "father to son lineage",
-          "detail": "The Hinoura family line is represented as a direct genealogy relationship in the Sanjo chart.",
-          "sourceType": "retailer",
-          "confidence": "medium",
+          "label": "Father to son",
+          "detail": "Mutsumi identifies Tsukasa as his father in his interview. The arrow runs from father to son.",
+          "sourceType": "interview",
+          "confidence": "high",
           "sourceIds": [
-            "hinoura-official",
-            "kkf-community"
+            "mutsumi-hinoura-interview"
           ]
         },
         {
@@ -1415,6 +1621,102 @@
             "kkf-community",
             "reddit-truechefknives"
           ]
+        },
+        {
+          "from": "atsushi-hosokawa",
+          "to": "gihei-hamono",
+          "kind": "works-at",
+          "label": "Makes knives at Gihei",
+          "detail": "Knifewear identifies the Hosokawa makers with Gihei. No family relationship is inferred from their surname.",
+          "sourceIds": [
+            "knifewear-gihei"
+          ],
+          "sourceType": "retailer",
+          "confidence": "high"
+        },
+        {
+          "from": "takashi-hosokawa",
+          "to": "gihei-hamono",
+          "kind": "works-at",
+          "label": "Makes knives at Gihei",
+          "detail": "Knifewear identifies the Hosokawa makers with Gihei. No family relationship is inferred from their surname.",
+          "sourceIds": [
+            "knifewear-gihei"
+          ],
+          "sourceType": "retailer",
+          "confidence": "high"
+        },
+        {
+          "from": "tsuneo-yoshida",
+          "to": "yoshikane",
+          "kind": "workshop-background",
+          "label": "Former head of manufacturing",
+          "detail": "Cleancut identifies Yoshida as the former head of Yoshikane manufacturing.",
+          "sourceIds": [
+            "cleancut-masashi-biography"
+          ],
+          "sourceType": "retailer",
+          "confidence": "high"
+        },
+        {
+          "from": "kazuomi-yamamoto",
+          "to": "yoshikane",
+          "kind": "works-at",
+          "label": "Leads Yoshikane",
+          "detail": "Cleancut names Yamamoto as leader of the Sanjo workshop.",
+          "sourceIds": [
+            "cleancut-yoshikane-leadership"
+          ],
+          "sourceType": "retailer",
+          "confidence": "high"
+        },
+        {
+          "from": "tsuneo-yoshida",
+          "to": "kazuomi-yamamoto",
+          "kind": "succession",
+          "label": "Yoshikane leadership succession",
+          "detail": "Cleancut calls Yamamoto Yoshida's successor. This does not establish family or apprenticeship.",
+          "sourceIds": [
+            "cleancut-yoshikane-leadership"
+          ],
+          "sourceType": "retailer",
+          "confidence": "high"
+        },
+        {
+          "from": "tsuneo-yoshida",
+          "to": "masashi-yamamoto",
+          "kind": "family",
+          "label": "Uncle to nephew",
+          "detail": "Cleancut identifies Masashi as Yoshida's nephew.",
+          "sourceIds": [
+            "cleancut-masashi-biography"
+          ],
+          "sourceType": "retailer",
+          "confidence": "high"
+        },
+        {
+          "from": "yujiro-hinoura",
+          "to": "mutsumi-hinoura",
+          "kind": "teacher",
+          "label": "Early workshop learning",
+          "detail": "Mutsumi says he learned by observing second-generation owner Yujiro at the Hinoura workshop.",
+          "sourceIds": [
+            "mutsumi-hinoura-interview"
+          ],
+          "sourceType": "interview",
+          "confidence": "high"
+        },
+        {
+          "from": "yujiro-hinoura",
+          "to": "hinoura-hamono",
+          "kind": "workshop-background",
+          "label": "Former second-generation owner",
+          "detail": "Mutsumi identifies Yujiro as the second-generation owner, later retired.",
+          "sourceIds": [
+            "mutsumi-hinoura-interview"
+          ],
+          "sourceType": "interview",
+          "confidence": "high"
         }
       ]
     },
@@ -1440,8 +1742,12 @@
           "name": "Ogata",
           "role": "Sharpener / Maker",
           "specialty": "Independent Takefu maker of thin SG2 knives. Previously worked with Shiro Kamo as a sharpener, according to Cleancut.",
-          "famousLines": ["Ogata SG2"],
-          "sourceIds": ["cleancut-ogata"],
+          "famousLines": [
+            "Ogata SG2"
+          ],
+          "sourceIds": [
+            "cleancut-ogata"
+          ],
           "caveat": "Cleancut credits laser cutting and heat treatment to Takefu Tokushu Steel; the remaining processes are handled by Ogata with assistance from his wife."
         },
         {
@@ -1708,6 +2014,20 @@
             "cleancut-makers"
           ],
           "caveat": "Placed in the Echizen/Takefu research cluster for map usability; the attached Cleancut source confirms the Shibata Koutetsu line and sharpener/designer context, not every workshop detail."
+        },
+        {
+          "id": "hiroshi-kato",
+          "name": "Hiroshi Kato",
+          "role": "Blacksmith / Teacher",
+          "specialty": "Takefu Knife Village founding member and teacher. Knifewear documents Toru Tamura and Yu Kurosaki among his apprentices.",
+          "famousLines": [
+            "Masakage Kiri (historical)",
+            "Masakage Yuki (historical)",
+            "Masakage Koishi (historical)"
+          ],
+          "sourceIds": [
+            "knifewear-kato-training"
+          ]
         }
       ],
       "edges": [
@@ -1717,7 +2037,9 @@
           "kind": "works-at",
           "label": "Previously sharpened for",
           "detail": "Cleancut describes Ogata working with Shiro Kamo as a sharpener before becoming independent. This is a past working relationship.",
-          "sourceIds": ["cleancut-ogata"],
+          "sourceIds": [
+            "cleancut-ogata"
+          ],
           "sourceType": "Retailer"
         },
         {
@@ -1878,6 +2200,42 @@
           "sourceIds": [
             "cleancut-shibata-koutetsu"
           ]
+        },
+        {
+          "from": "hiroshi-kato",
+          "to": "toru-tamura",
+          "kind": "teacher",
+          "label": "Teacher to apprentice",
+          "detail": "Knifewear lists Toru Tamura among Hiroshi Kato's apprentices.",
+          "sourceIds": [
+            "knifewear-kato-training"
+          ],
+          "sourceType": "retailer",
+          "confidence": "high"
+        },
+        {
+          "from": "hiroshi-kato",
+          "to": "yu-kurosaki",
+          "kind": "teacher",
+          "label": "Teacher to apprentice",
+          "detail": "Knifewear lists Yu Kurosaki among Hiroshi Kato's apprentices.",
+          "sourceIds": [
+            "knifewear-kato-training"
+          ],
+          "sourceType": "retailer",
+          "confidence": "high"
+        },
+        {
+          "from": "hiroshi-kato",
+          "to": "takefu-knife-village",
+          "kind": "workshop-background",
+          "label": "Founding member",
+          "detail": "Knifewear identifies Hiroshi as a founding member of Takefu Knife Village.",
+          "sourceIds": [
+            "knifewear-kato-training"
+          ],
+          "sourceType": "retailer",
+          "confidence": "high"
         }
       ]
     },
@@ -1942,17 +2300,18 @@
           "id": "toru-tamura",
           "name": "Toru Tamura",
           "role": "Blacksmith",
-          "specialty": "Blacksmith side of Tetsujin buyer discussions, commonly paired with Myojin polishing.",
+          "specialty": "Named Tetsujin blacksmith; also credited with forging Shirasagi White #2. Knifewear records training under Hiroshi Kato.",
           "famousLines": [
             "Tetsujin kasumi",
             "Tetsujin metal flow",
             "Tamura forged lines"
           ],
           "sourceIds": [
-            "kkf-community",
-            "reddit-truechefknives"
+            "hitohira-tetsujin",
+            "knivesstones-shirasagi",
+            "knifewear-kato-training"
           ],
-          "caveat": "Community-heavy node: keep exact product attribution tied to retailer listings."
+          "caveat": "Credits are line-specific; Tetsujin and Shirasagi use different named sharpeners."
         },
         {
           "id": "tetsujin",
@@ -2038,6 +2397,42 @@
           "sourceIds": [
             "kkf-community"
           ]
+        },
+        {
+          "id": "tateo-myojin",
+          "name": "Tateo Myojin",
+          "role": "Sharpener",
+          "specialty": "Single-bevel specialist in the Myojin family workshop; father of Naohito.",
+          "famousLines": [
+            "Hatsukokoro Shirasagi White #2"
+          ],
+          "sourceIds": [
+            "knivesstones-shirasagi"
+          ]
+        },
+        {
+          "id": "eiji-sasaoka",
+          "name": "Eiji Sasaoka",
+          "role": "Blacksmith",
+          "specialty": "Founded Sasaoka Hasami after twelve years working and training in Sakai. Made scissors, garden tools and kitchen knives.",
+          "famousLines": [
+            "Sasaoka edge tools"
+          ],
+          "sourceIds": [
+            "knifejapan-sasaoka"
+          ]
+        },
+        {
+          "id": "satoru-sasaoka",
+          "name": "Satoru Sasaoka",
+          "role": "Blacksmith",
+          "specialty": "Second-generation Sasaoka maker who joined his father Eiji in the Tosa family business.",
+          "famousLines": [
+            "Sasaoka kitchen knives"
+          ],
+          "sourceIds": [
+            "knifejapan-sasaoka"
+          ]
         }
       ],
       "edges": [
@@ -2058,12 +2453,11 @@
           "to": "naohito-myojin",
           "kind": "smith-to-sharpener",
           "label": "Tamura / Myojin pairing",
-          "detail": "Tetsujin-style buying discussions commonly separate Tamura forging from Myojin polishing/finishing.",
-          "sourceType": "community",
-          "confidence": "medium",
+          "detail": "Hitohira's Tetsujin collection credits Toru Tamura as smith and Naohito Myojin as sharpener. Attribution applies to the documented collection.",
+          "sourceType": "brand",
+          "confidence": "high",
           "sourceIds": [
-            "kkf-community",
-            "reddit-truechefknives"
+            "hitohira-tetsujin"
           ]
         },
         {
@@ -2071,12 +2465,11 @@
           "to": "toru-tamura",
           "kind": "line-collaboration",
           "label": "Tetsujin smith trail",
-          "detail": "Tetsujin is linked to Tamura as the blacksmith side of the line trail.",
-          "sourceType": "community",
-          "confidence": "medium",
+          "detail": "Hitohira's Tetsujin collection credits Toru Tamura as smith and Naohito Myojin as sharpener. Attribution applies to the documented collection.",
+          "sourceType": "brand",
+          "confidence": "high",
           "sourceIds": [
-            "kkf-community",
-            "reddit-truechefknives"
+            "hitohira-tetsujin"
           ]
         },
         {
@@ -2084,12 +2477,11 @@
           "to": "naohito-myojin",
           "kind": "brand-to-sharpener",
           "label": "Tetsujin polish trail",
-          "detail": "Tetsujin is linked to Myojin because polishing identity is central to how buyers discuss the line.",
-          "sourceType": "community",
-          "confidence": "medium",
+          "detail": "Hitohira's Tetsujin collection credits Toru Tamura as smith and Naohito Myojin as sharpener. Attribution applies to the documented collection.",
+          "sourceType": "brand",
+          "confidence": "high",
           "sourceIds": [
-            "kkf-community",
-            "reddit-truechefknives"
+            "hitohira-tetsujin"
           ]
         },
         {
@@ -2151,6 +2543,78 @@
           "sourceIds": [
             "knifejapan-brand-list"
           ]
+        },
+        {
+          "from": "tateo-myojin",
+          "to": "naohito-myojin",
+          "kind": "family",
+          "label": "Father to son",
+          "detail": "The Shirasagi source identifies Tateo as Naohito's father and distinguishes their single- and double-bevel specialties.",
+          "sourceIds": [
+            "knivesstones-shirasagi"
+          ],
+          "sourceType": "retailer",
+          "confidence": "high"
+        },
+        {
+          "from": "tateo-myojin",
+          "to": "myojin-riki-seisakusho",
+          "kind": "works-at",
+          "label": "Single-bevel sharpening",
+          "detail": "Tateo is the named single-bevel sharpener in the Myojin Riki workshop.",
+          "sourceIds": [
+            "knivesstones-shirasagi"
+          ],
+          "sourceType": "retailer",
+          "confidence": "high"
+        },
+        {
+          "from": "toru-tamura",
+          "to": "tateo-myojin",
+          "kind": "smith-to-sharpener",
+          "label": "Shirasagi forging and sharpening",
+          "detail": "The White #2 Shirasagi listing credits Toru with forging and Tateo with sharpening.",
+          "sourceIds": [
+            "knivesstones-shirasagi"
+          ],
+          "sourceType": "retailer",
+          "confidence": "high"
+        },
+        {
+          "from": "eiji-sasaoka",
+          "to": "satoru-sasaoka",
+          "kind": "family",
+          "label": "Father to son",
+          "detail": "Knife Japan identifies Eiji as Satoru's father. Eiji's unnamed Sakai teacher is not invented as a node.",
+          "sourceIds": [
+            "knifejapan-sasaoka"
+          ],
+          "sourceType": "retailer",
+          "confidence": "high"
+        },
+        {
+          "from": "eiji-sasaoka",
+          "to": "sasaoka-hasamiya",
+          "kind": "workshop-background",
+          "label": "Founded the workshop",
+          "detail": "Eiji returned from Sakai to Tosa and founded Sasaoka Hasami.",
+          "sourceIds": [
+            "knifejapan-sasaoka"
+          ],
+          "sourceType": "retailer",
+          "confidence": "high"
+        },
+        {
+          "from": "satoru-sasaoka",
+          "to": "sasaoka-hasamiya",
+          "kind": "works-at",
+          "label": "Second-generation maker",
+          "detail": "Knife Japan describes Satoru taking on much of the workshop's creative production.",
+          "sourceIds": [
+            "knifejapan-sasaoka"
+          ],
+          "sourceType": "retailer",
+          "confidence": "high"
         }
       ]
     },
@@ -2362,7 +2826,8 @@
           ],
           "sourceIds": [
             "korin-official",
-            "kkf-community"
+            "kkf-community",
+            "korin-doi-craftsmen"
           ]
         },
         {
@@ -2551,32 +3016,86 @@
       "id": "kyoto",
       "name": "Kyoto",
       "location": "Kyoto",
-      "summary": "Kyoto-based contemporary maker context for individual craftspeople outside the large Sakai, Sanjo, Echizen and Seki clusters.",
+      "summary": "Kyoto sharpening and polishing, connected to the Sakai workshop network through Ivan Fonseca.",
       "notes": [
-        "Use this branch for Kyoto-based makers and sharpeners whose relationships still need stronger public source trails.",
-        "Relationships here should stay conservative and visibly caveated."
+        "Komon's publications establish the Kyoto workshop.",
+        "Separate firsthand biography from provisional community training reports."
       ],
       "sourceIds": [
-        "kkf-community",
-        "reddit-truechefknives"
+        "komon-ivan-profile",
+        "komon-gallery-2025",
+        "reddit-morihiro-ivan"
       ],
       "nodes": [
         {
           "id": "ivan-fonseca",
           "name": "Ivan Fonseca",
-          "role": "Maker / Sharpener",
-          "specialty": "Kyoto-based contemporary maker/sharpener node added to the map for follow-up sourcing and relationship mapping.",
+          "role": "Sharpener / Polisher",
+          "specialty": "Canadian-born former chef and Tosho Knife Arts co-founder. Worked at Konosuke after moving to Japan in 2014; now works in Kyoto with Komon.",
           "famousLines": [
-            "Ivan Fonseca knives"
+            "Traditional Japanese knife polishing",
+            "Komon sharpening and polishing"
           ],
           "sourceIds": [
-            "kkf-community",
-            "reddit-truechefknives"
+            "komon-ivan-profile",
+            "komon-gallery-2025",
+            "reddit-morihiro-ivan"
           ],
-          "caveat": "Kyoto location added from Adrian's correction; public source trail and relationship edges still need stronger verification."
+          "caveat": "Komon confirms his biography and Kyoto workshop. The Morihiro training connection is a community report, not a directly verified formal apprenticeship.",
+          "location": "Kyoto"
+        },
+        {
+          "id": "komon",
+          "name": "Komon",
+          "role": "Workshop / Brand",
+          "specialty": "Kyoto gallery and workshop run by Yuka Nakanishi and Ivan Fonseca, combining sharpening and polishing with Japanese craft.",
+          "famousLines": [
+            "Komon gallery and workshop"
+          ],
+          "sourceIds": [
+            "komon-gallery-2025",
+            "komon-ivan-profile"
+          ]
         }
       ],
-      "edges": []
+      "edges": [
+        {
+          "from": "ivan-fonseca",
+          "to": "komon",
+          "kind": "works-at",
+          "label": "Kyoto workshop",
+          "detail": "Komon's profile and gallery announcement identify Ivan's work in Kyoto.",
+          "sourceIds": [
+            "komon-gallery-2025"
+          ],
+          "sourceType": "official",
+          "confidence": "high"
+        },
+        {
+          "from": "ivan-fonseca",
+          "to": "konosuke",
+          "kind": "workshop-background",
+          "label": "Former Konosuke sharpener and polisher",
+          "detail": "Komon's biography says Ivan moved to Japan in 2014 and worked at Konosuke in Sakai as a sharpener, polisher and brand adviser. It gives no end date.",
+          "sourceIds": [
+            "komon-ivan-profile"
+          ],
+          "sourceType": "official",
+          "confidence": "high"
+        },
+        {
+          "from": "morihiro",
+          "to": "ivan-fonseca",
+          "kind": "student",
+          "label": "Reported study with Morihiro",
+          "detail": "A community account lists Ivan Gomez Fonseca among people taught by Morihiro in a smaller capacity. Scope, dates and duration are unconfirmed; this is not presented as a completed formal apprenticeship.",
+          "sourceIds": [
+            "reddit-morihiro-ivan"
+          ],
+          "sourceType": "community",
+          "confidence": "low"
+        }
+      ]
     },
     {
       "id": "aomori",
@@ -3920,6 +4439,78 @@
       "id": "cleancut-tsunehisa",
       "label": "Cleancut: Tsunehisa",
       "url": "https://www.cleancut.eu/butik/knifebrands/tsunehisa-6-series"
+    },
+    {
+      "id": "komon-ivan-profile",
+      "label": "Komon: Ivan Fonseca biography",
+      "url": "https://komonjapan.com/pages/polisher-ivan-fonseca",
+      "accessed": "2026-09-04"
+    },
+    {
+      "id": "komon-gallery-2025",
+      "label": "Komon: Kyoto gallery and workshop, 2025",
+      "url": "https://komonjapan.com/blogs/news/komon-gallery-kyoto-2025",
+      "accessed": "2026-09-04"
+    },
+    {
+      "id": "reddit-morihiro-ivan",
+      "label": "Community account: Morihiro's training contacts",
+      "url": "https://www.reddit.com/r/TrueChefKnives/comments/1om26fj",
+      "accessed": "2026-09-04"
+    },
+    {
+      "id": "korin-doi-craftsmen",
+      "label": "Korin: Doi family and knife craftsmen",
+      "url": "https://www.korin.com/introducing-knife-craftsmen",
+      "accessed": "2026-09-04"
+    },
+    {
+      "id": "knifewear-ebuchi-2026",
+      "label": "Knifewear: workshop visit with Kohei Ebuchi",
+      "url": "https://knifewear.com/blogs/articles/the-best-blacksmith-youve-never-heard-of-kohei-ebuchi",
+      "accessed": "2026-09-04"
+    },
+    {
+      "id": "knifewear-ebuchi-lines",
+      "label": "Knifewear: Kohei Ebuchi and Touroku Sakai",
+      "url": "https://knifewear.com/collections/kohei-ebuchi",
+      "accessed": "2026-09-04"
+    },
+    {
+      "id": "cleancut-masashi-biography",
+      "label": "Cleancut: Masashi Yamamoto workshop visit",
+      "url": "https://www.cleancut.eu/meet-our-blacksmiths/masashi-yamamoto",
+      "accessed": "2026-09-04"
+    },
+    {
+      "id": "cleancut-yoshikane-leadership",
+      "label": "Cleancut: Yoshikane leadership",
+      "url": "https://www.cleancut.eu/butik/manufacturer/cleancutse/knifebrands/yoshikane-2-series/yoshikane",
+      "accessed": "2026-09-04"
+    },
+    {
+      "id": "knifewear-gihei",
+      "label": "Knifewear: Gihei and the Hosokawa makers",
+      "url": "https://knifewear.com/collections/gihei-hamono",
+      "accessed": "2026-09-04"
+    },
+    {
+      "id": "mutsumi-hinoura-interview",
+      "label": "SteelForFood: interview with Mutsumi Hinoura",
+      "url": "https://steelforfood.com/mutsumi-hinoura",
+      "accessed": "2026-09-04"
+    },
+    {
+      "id": "knivesstones-shirasagi",
+      "label": "Knives and Stones: Shirasagi smith and sharpener",
+      "url": "https://www.knivesandstones.co.kr/en/pages/line/hatsukokoro-shirasagi-white-2-single-bevel",
+      "accessed": "2026-09-04"
+    },
+    {
+      "id": "knifewear-kato-training",
+      "label": "Knifewear: Hiroshi Kato's workshop and apprentices",
+      "url": "https://knifewear.com/en-us/blogs/articles/blacksmith-profile-yoshimi-kato",
+      "accessed": "2026-09-04"
     }
   ],
   "pendingSourceIds": [
