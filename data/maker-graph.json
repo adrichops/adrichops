@@ -20,6 +20,16 @@
       ],
       "nodes": [
         {
+          "id": "tadataka-maruyama",
+          "name": "Tadataka Maruyama",
+          "role": "Sharpener / Polisher",
+          "location": "Historical Sakai workshop connection",
+          "specialty": "Grinding, polishing and sharpening HADO knives, documented in Knifewear's July 2024 interview.",
+          "famousLines": ["HADO Sumi (historical work)", "HADO Kirisame (historical work)"],
+          "sourceIds": ["knifewear-maruyama-2024"],
+          "caveat": "The source records his HADO role in 2024. This historical network entry does not assert his current employer or workshop address."
+        },
+        {
           "id": "kenya-togashi",
           "name": "Kenya Togashi",
           "role": "Sharpener",
@@ -526,6 +536,24 @@
         }
       ],
       "edges": [
+        {
+          "from": "tadataka-maruyama",
+          "to": "hado",
+          "kind": "workshop-background",
+          "label": "Historical HADO workshop (2024)",
+          "detail": "Knifewear's July 2024 interview identifies Maruyama as HADO's head sharpener at that time. This is a dated workshop connection, not a current employment claim.",
+          "sourceType": "Retailer interview",
+          "sourceIds": ["knifewear-maruyama-2024"]
+        },
+        {
+          "from": "yoshikazu-tanaka",
+          "to": "tadataka-maruyama",
+          "kind": "smith-to-sharpener",
+          "label": "HADO Sumi forging and sharpening (2024)",
+          "detail": "The 2024 interview describes HADO Sumi blades forged by Yoshikazu Tanaka and ground, polished and sharpened by Maruyama.",
+          "sourceType": "Retailer interview",
+          "sourceIds": ["knifewear-maruyama-2024"]
+        },
         {
           "from": "heihachi", "to": "kyuzo-yauchi", "kind": "apprenticeship",
           "label": "Taught rough sharpening",
@@ -3438,6 +3466,11 @@
     }
   ],
   "sources": [
+    {
+      "id": "knifewear-maruyama-2024",
+      "label": "Knifewear: Tadataka Maruyama interview, July 2024",
+      "url": "https://knifewear.com/en-us/blogs/articles/tadataka-maruyama-of-hado-knives-a-talented-new-knife-sharpener"
+    },
     {
       "id": "cleancut-ogata",
       "label": "Cleancut: Ogata, Takefu and his work with Shiro Kamo",

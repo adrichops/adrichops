@@ -101,11 +101,13 @@ summary { cursor:pointer; min-height:32px; font-weight:650; }
 .map-view-switch button[aria-pressed="true"] { background:var(--ink); color:var(--bg); }
 .map-workspace { display:grid; grid-template-columns:minmax(0,1fr) 340px; align-items:start; gap:28px; border-top:1px solid var(--line); }
 .map-main { min-width:0; }
+.maker-explorer:not(.has-selection) .map-workspace { grid-template-columns:1fr; }
+.maker-explorer:not(.has-selection) .maker-profile { display:none; }
 .map-toolbar { display:flex; align-items:center; gap:16px; min-height:70px; padding:12px 0; }
 .map-toolbar>span { flex:1; font-size:13px; color:var(--muted); }
 .map-zoom { display:flex; gap:4px; }
 .map-zoom button { width:40px; height:40px; border:1px solid var(--line); border-radius:4px; background:var(--paper); font-size:22px; }
-.maker-canvas { height:650px; width:100%; background:var(--paper); border:1px solid var(--line); border-radius:6px; }
+.maker-canvas { height:800px; width:100%; background:var(--paper); border:1px solid var(--line); border-radius:6px; }
 .region-picker { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:10px; max-height:650px; overflow:auto; padding:2px 8px 8px 2px; }
 .region-picker button { background:var(--paper); text-align:left; border:1px solid var(--line); border-left:4px solid var(--region-color); border-radius:6px; padding:16px; display:grid; gap:4px; min-width:0; }
 .region-picker button:hover { background:var(--paper-2); }

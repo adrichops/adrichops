@@ -4,7 +4,8 @@
   const el = name => root.querySelector('[data-' + name + ']');
   const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;'}[c]));
   const mobile = matchMedia('(max-width: 760px)');
-  const state = {region:'', query:'', role:'', node:'', edge:'', relationIndex:0, view:mobile.matches ? 'directory' : 'map'};
+  const state = {region:'', query:'', role:'', node:'', edge:'', view:'map'};
+  let graphKey='';
   let cy, graph;
   try {
     const response = await fetch('/data/maker-graph.json');
@@ -20,6 +21,7 @@
   const edges = graph.regions.flatMap(r => r.edges || []).filter(e => nodes.has(e.from) && nodes.has(e.to)).map((e,i) => ({...e,id:'relation-'+i}));
   const colors = ['#ff776b','#efbd49','#72d695','#61d6cb','#6bb7ff','#cfa3ff'];
   const regionColor = id => colors[[...regions.keys()].indexOf(id)%colors.length];
+  const regionLabel = r => r.name.replaceAll(' / ',' /\n')+(r.name.toLowerCase().includes(r.location.toLowerCase())?'':'\n'+r.location.replaceAll(' / ',' /\n'));
   function roleColor(role) {
     role = role.toLowerCase();
     if (role.includes('polisher')) return '#61d6cb';
@@ -40,7 +42,7 @@
   function edgeLabel(e) {
     if (['student','teacher','apprenticeship','worked-under'].includes(e.kind)) return 'Training';
     if (e.kind==='family') return 'Family';
-    if (e.kind==='workshop-background') return 'Former workshop';
+    if (e.kind==='workshop-background') return /former|background|historical/i.test(e.label)?'Former workshop':'Workshop';
     if (e.kind==='works-at') return /previous|former/i.test(e.label)?'Previously worked with':'Works with';
     if (e.kind==='smith-to-sharpener') return 'Forging /\nsharpening';
     if (e.kind==='brand-to-sharpener') return 'Brand /\nsharpener';
@@ -64,6 +66,7 @@
     return '<button class="relationship-row'+(state.edge===e.id?' selected':'')+'" type="button" data-relation="'+e.id+'" style="--relation-color:'+edgeColor(e)+'"><strong>'+esc(e.label || e.kind)+'</strong><span>'+esc(nodes.get(e.from).name)+' → '+esc(nodes.get(e.to).name)+'</span><small>'+(community(e)?'Community report / source needed':'Source linked')+'</small></button>';
   }
   function showProfile() {
+    root.classList.toggle('has-selection',Boolean(state.node || state.edge));
     const n=nodes.get(state.node), e=edges.find(e=>e.id===state.edge);
     if (e) {
       el('maker-profile').innerHTML='<button class="button small" data-profile-back type="button">Back to maker</button><span class="kicker">Relationship</span><h2>'+esc(e.label || e.kind)+'</h2><p class="relationship-direction">'+esc(nodes.get(e.from).name)+' → '+esc(nodes.get(e.to).name)+'</p><p>'+esc(e.detail)+'</p><p class="evidence-note">'+(community(e)?'Community report or missing direct source. Treat this relationship as provisional.':'Read the linked source for the scope of this relationship.')+'</p><div class="profile-sources">'+sourceLinks(e.sourceIds)+'</div><div class="profile-actions">'+[e.from,e.to].map(id=>'<button class="button" type="button" data-person="'+esc(id)+'">'+esc(nodes.get(id).name)+'</button>').join('')+'</div>';
@@ -85,46 +88,55 @@
     el('maker-directory').innerHTML=list.map(n=>'<button type="button" class="directory-row'+(state.node===n.id?' selected':'')+'" data-person="'+esc(n.id)+'" style="--role-color:'+roleColor(n.role)+'"><strong>'+esc(n.name)+'</strong><span>'+esc(n.role)+'</span><small>'+esc(n.regionName)+'</small></button>').join('') || '<div class="map-empty"><h2>No makers found</h2><p>Try another name or clear the filters.</p><button type="button" class="button" data-clear-filters>Clear filters</button></div>';
     el('maker-directory').querySelectorAll('[data-person]').forEach(b=>b.onclick=()=>selectNode(b.dataset.person));
     el('maker-directory').querySelector('[data-clear-filters]')?.addEventListener('click',reset);
-    el('map-caption').textContent=list.length+' makers and workshops'+(state.region?' · '+regions.get(state.region).name:'');
-  }
-  function showRegions() {
-    el('region-grid').innerHTML=[...regions.values()].map(r=>'<button type="button" data-region="'+esc(r.id)+'" style="--region-color:'+regionColor(r.id)+'"><strong>'+esc(r.name)+'</strong><span>'+esc(r.location)+'</span><small>'+r.nodes.length+' makers & workshops</small></button>').join('');
-    el('region-grid').querySelectorAll('[data-region]').forEach(b=>b.onclick=()=>selectRegion(b.dataset.region));
+    if(state.view==='directory')el('map-caption').textContent=list.length+' makers and workshops'+(state.region?' · '+regions.get(state.region).name:'');
   }
   function graphStyles() {
     const dark=document.documentElement.dataset.theme==='dark', ink=dark?'#f3f5f7':'#16191d', paper=dark?'#191d22':'#ffffff';
     return [
-      {selector:'node',style:{'label':'data(label)','shape':'roundrectangle','width':170,'height':86,'background-color':paper,'border-width':2,'border-color':'data(color)','color':ink,'font-family':'system-ui, sans-serif','font-size':16,'font-weight':600,'text-wrap':'wrap','text-max-width':153,'text-valign':'center','text-halign':'center'}},
+      {selector:'node',style:{'label':'data(label)','shape':'roundrectangle','width':180,'height':94,'background-color':paper,'border-width':2.5,'border-color':'data(color)','color':ink,'font-family':'system-ui, sans-serif','font-size':19,'font-weight':600,'text-wrap':'wrap','text-max-width':165,'text-valign':'center','text-halign':'center'}},
+      {selector:'node.region',style:{'shape':'ellipse','width':170,'height':124,'background-color':dark?'#29333e':'#eaf1f7','font-size':20,'text-max-width':140}},
+      {selector:'node.external',style:{'border-style':'dashed'}},
       {selector:'node.focus',style:{'border-width':4,'background-color':dark?'#29333e':'#eaf1f7'}},
       {selector:'edge',style:{'curve-style':'bezier','width':2.5,'line-color':'data(color)','target-arrow-color':'data(color)','target-arrow-shape':'triangle','arrow-scale':0.8,'label':'data(label)','font-size':12,'font-family':'system-ui, sans-serif','color':ink,'text-wrap':'wrap','text-max-width':78,'text-background-color':paper,'text-background-opacity':1,'text-background-padding':4,'text-rotation':'none','text-margin-y':-8}},
       {selector:'edge.provisional',style:{'line-style':'dashed'}},
-      {selector:'.muted',style:{'opacity':0.22}},
-      {selector:'edge.selected',style:{'width':5,'z-index':10,'font-weight':700}},
+      {selector:'edge',style:{'label':''}},
+      {selector:'edge.membership',style:{'width':1.2,'opacity':0.4,'target-arrow-shape':'none','line-style':'solid'}},
+      {selector:'edge.highlighted',style:{'label':'data(label)','width':4,'z-index':9}},
+      {selector:'.muted',style:{'opacity':0.2}},
+      {selector:'edge.selected',style:{'label':'data(label)','width':5,'z-index':10,'font-weight':700}},
       {selector:':selected',style:{'overlay-opacity':0}}
     ];
   }
   function showGraph() {
-    if(cy){cy.destroy();cy=null;}
-    if(!state.region || !state.node || state.view!=='map') return;
+    if(state.view!=='map') return;
     if(!window.cytoscape){state.view='directory';el('map-status').textContent='The graph could not load. The directory is still available.';render();return;}
-    const all=adjacent(state.node);
-    const pageSize=mobile.matches?1:8;
-    state.relationIndex=Math.min(state.relationIndex,Math.max(0,all.length-1));
-    state.relationIndex=Math.floor(state.relationIndex/pageSize)*pageSize;
-    const connected=all.slice(state.relationIndex,state.relationIndex+pageSize);
-    const ids=new Set([state.node,...connected.flatMap(e=>[e.from,e.to])]);
-    const elements=[...ids].map((id,i)=>{const n=nodes.get(id);return {data:{id,label:n.name+'\n'+n.role,color:roleColor(n.role)},position:{x:180,y:i?340:110},classes:id===state.node?'focus':''};});
-    connected.forEach(e=>elements.push({data:{id:e.id,source:e.from,target:e.to,label:edgeLabel(e),color:edgeColor(e)},classes:community(e)?'provisional':''}));
-    cy=cytoscape({container:el('maker-canvas'),elements,style:graphStyles(),minZoom:0.2,maxZoom:2.2,wheelSensitivity:0.15,boxSelectionEnabled:false,autounselectify:true,layout:mobile.matches?{name:'preset',padding:30}:{name:'concentric',concentric:n=>n.id()===state.node?2:1,levelWidth:()=>1,minNodeSpacing:35,avoidOverlap:true,padding:30,animate:false}});
+    const key=state.region+'|'+state.query+'|'+state.role;
+    if(cy && graphKey===key){cy.resize();highlight();if(state.edge)cy.center(cy.getElementById(state.edge).connectedNodes());else if(state.node)cy.center(cy.getElementById(state.node));return;}
+    if(cy)cy.destroy();
+    graphKey=key;
+    const region=regions.get(state.region), elements=[];
+    const hub=region?'region:'+region.id:'japan';
+    elements.push({data:{id:hub,label:region?regionLabel(region):'Japan',color:region?regionColor(region.id):'#aeb8c3',regionId:region?.id},classes:'region',position:{x:0,y:0}});
+    if(region){
+      const local=new Set(filtered().map(n=>n.id));
+      const connected=edges.filter(e=>local.has(e.from)||local.has(e.to));
+      const ids=new Set([...local,...connected.flatMap(e=>[e.from,e.to])]);
+      [...ids].forEach((id,i)=>{const n=nodes.get(id),angle=i*2*Math.PI/ids.size;elements.push({data:{id,label:n.name+'\n'+n.role+(n.regionId!==region.id?'\n'+n.regionName:''),color:roleColor(n.role)},classes:local.has(id)?'maker':'maker external',position:{x:Math.cos(angle)*600,y:Math.sin(angle)*600}});});
+      local.forEach(id=>elements.push({data:{id:'member:'+id,source:hub,target:id,color:'#aeb8c3',label:'Regional association'},classes:'membership'}));
+      connected.forEach(e=>elements.push({data:{id:e.id,source:e.from,target:e.to,label:edgeLabel(e),color:edgeColor(e)},classes:community(e)?'provisional':''}));
+      el('map-caption').textContent=region.name+' · '+local.size+' makers · '+connected.length+' relationships';
+    }else{
+      [...regions.values()].forEach((r,i)=>{const angle=i*2*Math.PI/regions.size;elements.push({data:{id:'region:'+r.id,label:regionLabel(r),color:regionColor(r.id),regionId:r.id},classes:'region',position:{x:Math.cos(angle)*600,y:Math.sin(angle)*600}},{data:{id:'country:'+r.id,source:hub,target:'region:'+r.id,color:regionColor(r.id),label:'Region'},classes:'membership'});});
+      el('map-caption').textContent=regions.size+' regions · '+nodes.size+' makers and workshops';
+    }
+    const layout=region?{name:'cose',randomize:false,animate:false,nodeRepulsion:()=>18000,idealEdgeLength:e=>e.hasClass('membership')?150:110,edgeElasticity:()=>80,nodeOverlap:30,numIter:800,padding:35,componentSpacing:100}:{name:'grid',rows:mobile.matches?14:5,cols:mobile.matches?2:6,condense:true,spacingFactor:1.2,padding:35,position:n=>{const i=[...regions.keys()].indexOf(n.data('regionId'));if(mobile.matches){const slot=n.id()==='japan'?0:i+1;return {row:Math.floor(slot/2),col:slot%2};}if(n.id()==='japan')return {row:2,col:2};const slot=i>=14?i+1:i;return {row:Math.floor(slot/6),col:slot%6};}};
+    cy=cytoscape({container:el('maker-canvas'),elements,style:graphStyles(),minZoom:0.15,maxZoom:2.5,wheelSensitivity:0.15,boxSelectionEnabled:false,autounselectify:true,layout});
     fitGraph();
-    cy.on('tap','node',e=>selectNode(e.target.id()));
-    cy.on('tap','edge',e=>selectEdge(e.target.id()));
-    el('map-caption').textContent=nodes.get(state.node).name+' · '+all.length+' relationships';
-    el('mobile-relations').hidden=!all.length || (!mobile.matches && all.length<=pageSize);
-    const range=pageSize===1?'Connection '+(state.relationIndex+1):'Connections '+(state.relationIndex+1)+'-'+Math.min(all.length,state.relationIndex+pageSize);
-    el('mobile-relations').innerHTML='<button type="button" class="button" data-relation-prev '+(state.relationIndex===0?'disabled':'')+'>Previous</button><span>'+range+' of '+all.length+'</span><button type="button" class="button" data-relation-next '+(state.relationIndex+pageSize>=all.length?'disabled':'')+'>Next</button>';
-    el('mobile-relations').querySelector('[data-relation-prev]').onclick=()=>{state.relationIndex-=pageSize;state.edge='';showGraph();showProfile();};
-    el('mobile-relations').querySelector('[data-relation-next]').onclick=()=>{state.relationIndex+=pageSize;state.edge='';showGraph();showProfile();};
+    if(region){cy.zoom(Math.max(cy.zoom(),mobile.matches?0.8:0.72));cy.center(cy.getElementById(hub));}
+    else if(mobile.matches){cy.zoom(0.8);cy.center(cy.nodes().slice(0,5));}
+    cy.on('tap','node',e=>{const n=e.target;if(n.id()==='japan')reset();else if(n.hasClass('region'))selectRegion(n.data('regionId'));else selectNode(n.id());});
+    cy.on('tap','edge',e=>{if(e.target.hasClass('membership')){const id=e.target.target().id();if(id.startsWith('region:'))selectRegion(id.slice(7));else selectNode(id);}else selectEdge(e.target.id());});
+    cy.on('tap',e=>{if(e.target===cy){state.node='';state.edge='';showProfile();highlight();}});
     highlight();
   }
   function fitGraph() {
@@ -134,38 +146,35 @@
   }
   function highlight() {
     if(!cy) return;
-    cy.elements().removeClass('muted selected');
+    cy.elements().removeClass('muted selected highlighted focus');
     if(state.edge){const edge=cy.getElementById(state.edge);cy.elements().addClass('muted');edge.removeClass('muted').addClass('selected');edge.connectedNodes().removeClass('muted');}
+    else if(state.node){const node=cy.getElementById(state.node);cy.elements().addClass('muted');node.removeClass('muted').addClass('focus');const relations=node.connectedEdges().not('.membership');relations.removeClass('muted').addClass('highlighted');relations.connectedNodes().removeClass('muted');}
   }
   function revealProfile() {
     if(mobile.matches){el('maker-profile').focus({preventScroll:true});el('maker-profile').scrollIntoView({behavior:'smooth',block:'start'});}
   }
   function selectNode(id,reveal=true) {
     const n=nodes.get(id);if(!n) return;
-    state.node=id;state.region=n.regionId;state.edge='';state.relationIndex=0;render();if(reveal) revealProfile();
+    state.node=id;if(!state.region || !cy?.getElementById(id).length)state.region=n.regionId;state.edge='';state.query='';state.role='';render();if(reveal) revealProfile();
   }
   function selectEdge(id,reveal=true){
     state.edge=id;
-    if(state.view==='map'){state.relationIndex=Math.max(0,adjacent(state.node).findIndex(e=>e.id===id));showGraph();}
+    if(state.view==='map' && !cy?.getElementById(id).length){const edge=edges.find(e=>e.id===id);if(edge){state.region=nodes.get(edge.from).regionId;state.query='';state.role='';render();}}
     showProfile();highlight();if(reveal)revealProfile();
   }
   function selectRegion(id) {
-    state.region=id;state.query='';state.role='';state.edge='';state.relationIndex=0;
-    const list=regions.get(id)?.nodes || [];
-    state.node=state.view==='map' ? [...list].sort((a,b)=>adjacent(b.id).length-adjacent(a.id).length)[0]?.id || '' : '';
+    state.region=id;state.query='';state.role='';state.edge='';state.node='';state.view='map';
     render();
   }
-  function reset(){Object.assign(state,{region:'',node:'',query:'',role:'',edge:''});render();}
+  function reset(){Object.assign(state,{region:'',node:'',query:'',role:'',edge:'',view:'map'});render();}
   function render() {
-    if(state.view==='map' && state.region && !state.node) state.view='directory';
     el('maker-region').value=state.region;el('maker-role').value=state.role;el('maker-search').value=state.query;
     root.querySelectorAll('[data-map-view]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.mapView===state.view)));
-    el('maker-directory').hidden=state.view!=='directory';el('region-grid').hidden=state.view!=='map' || Boolean(state.region);
-    el('maker-canvas').hidden=state.view!=='map' || !state.region;
-    el('mobile-relations').hidden=true;
-    root.querySelector('.map-zoom').hidden=state.view!=='map' || !state.region;
+    el('maker-directory').hidden=state.view!=='directory';el('region-grid').hidden=true;
+    el('maker-canvas').hidden=state.view!=='map';
+    root.querySelector('.map-zoom').hidden=state.view!=='map';
     el('map-back').disabled=!state.region && !state.query && !state.role;
-    showDirectory();showRegions();showProfile();showGraph();
+    showDirectory();showProfile();showGraph();
     root.querySelectorAll('[data-geo-region]').forEach(b=>b.classList.toggle('selected',b.dataset.geoRegion===state.region));
   }
   el('maker-region').innerHTML='<option value="">All regions</option>'+[...regions.values()].map(r=>'<option value="'+esc(r.id)+'">'+esc(r.name)+' · '+esc(r.location)+'</option>').join('');
@@ -173,12 +182,11 @@
   el('maker-role').onchange=e=>{state.role=e.target.value;state.view='directory';state.node='';state.edge='';render();};
   el('maker-search').oninput=e=>{state.query=e.target.value.toLowerCase();state.view='directory';state.node='';state.edge='';render();};
   el('map-back').onclick=reset;
-  root.querySelectorAll('[data-map-view]').forEach(b=>b.onclick=()=>{state.view=b.dataset.mapView;if(state.view==='map' && state.region && !state.node) state.node=filtered()[0]?.id || '';render();});
+  root.querySelectorAll('[data-map-view]').forEach(b=>b.onclick=()=>{state.view=b.dataset.mapView;render();});
   root.querySelectorAll('[data-map-zoom]').forEach(b=>b.onclick=()=>{if(!cy)return;if(b.dataset.mapZoom==='fit')return fitGraph();cy.zoom({level:cy.zoom()*(b.dataset.mapZoom==='in'?1.2:1/1.2),renderedPosition:{x:cy.width()/2,y:cy.height()/2}});});
-  new ResizeObserver(()=>fitGraph()).observe(el('maker-canvas'));
+  new ResizeObserver(()=>{if(cy && state.view==='map')cy.resize();}).observe(el('maker-canvas'));
   new MutationObserver(()=>{if(cy)cy.style(graphStyles());}).observe(document.documentElement,{attributes:true,attributeFilter:['data-theme']});
-  el('maker-canvas').insertAdjacentHTML('afterend','<div class="mobile-relations" data-mobile-relations hidden></div>');
-  mobile.addEventListener('change',()=>{state.relationIndex=0;render();});
+  mobile.addEventListener('change',()=>{graphKey='';render();});
   el('map-status').textContent='';render();
   // Geographic coordinates are separate from the relationship layout.
   const coords={sakai:[135.48,34.57],sanjo:[138.96,37.63],echizen:[136.17,35.90],'tosa-kochi':[133.53,33.56],miki:[134.99,34.80],'seki-gifu':[136.92,35.49],'tsubame-niigata':[138.93,37.67],kyoto:[135.77,35.01],aomori:[140.47,40.60],okayama:[133.47,34.98],kumamoto:[130.71,32.80],kagoshima:[130.56,31.60],nagasaki:[129.87,32.75],yamaguchi:[131.47,34.19],tanegashima:[130.97,30.73],saga:[130.30,33.25],hiroshima:[132.46,34.39],shimane:[132.76,35.47],miyazaki:[131.42,31.91],oita:[131.61,33.24],tokushima:[134.56,34.07],tottori:[134.24,35.50],fukuoka:[130.40,33.59],nagano:[138.18,36.65],mie:[136.51,34.73],tokyo:[139.69,35.69]};
