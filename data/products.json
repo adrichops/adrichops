@@ -36,7 +36,8 @@
       "relatedPosts": [
         "hasegawa-asahi-hinoki-cutting-board-guide",
         "asahi-rubber-cutting-board-review-brief"
-      ]
+      ],
+      "finderNote": "An optional step up for cooks who want a rubber cutting surface. Compare board size, weight and cleaning instructions."
     },
     {
       "id": "hasegawa-pe-cutting-board",
@@ -283,7 +284,8 @@
       "relatedPosts": [
         "start-here-main-kitchen-knife-profiles",
         "bread-serrated-knife-profile-guide"
-      ]
+      ],
+      "finderNote": "A grippy handle and serrated blade for everyday bread. Check the blade length against the loaves you bake or buy."
     },
     {
       "id": "victorinox-swiss-classic-bread-knife",
@@ -296,11 +298,12 @@
       "relatedPosts": [
         "start-here-main-kitchen-knife-profiles",
         "bread-serrated-knife-profile-guide"
-      ]
+      ],
+      "finderNote": "My value option for bread and crust. Compare blade length and exact model before buying."
     },
     {
       "id": "chinese-cleaver-and-slicer-shortlist",
-      "name": "Asian cleaver / cai dao shortlist",
+      "name": "Light Chinese vegetable slicer / cai dao",
       "category": "Knife",
       "merchant": "Amazon UK",
       "url": "https://www.amazon.co.uk/s?k=Asian+cleaver+Chinese+chef+knife+cai+dao+CCK+Mercer&tag=adrichops-21",
@@ -308,7 +311,8 @@
       "note": "Use for light Asian cleavers, Chinese chef knives and cai dao vegetable slicers. Avoid heavy bone cleavers unless that is the explicit job.",
       "relatedPosts": [
         "boning-fillet-slicer-cleaver-specialist-profiles"
-      ]
+      ],
+      "finderNote": "Category search only. Look for a thin vegetable slicer, not a heavy bone chopper. I have not verified a specific beginner model in this category."
     },
     {
       "id": "global-g-2-20cm-cooks-knife",
@@ -414,7 +418,9 @@
         "chef-knife-vs-gyuto-which-all-purpose-profile",
         "amazon-chef-knife-shortlist-what-to-buy-first",
         "tojiro-dp-210mm-gyuto-shortlist-review"
-      ]
+      ],
+      "finderNote": "My first Japanese-knife pick: the F-808, also sold as Tojiro Classic. A 210 mm VG10-core blade for controlled board work. Avoid bones, frozen food and twisting.",
+      "sourceUrl": "https://www.tojiro-japan.com/products/tojiro-vg10-clad-steel-with-bolster-chef-knife-210mm/"
     },
     {
       "id": "tojiro-dp-vg10-gyuto",
@@ -442,7 +448,9 @@
         "santoku-profile-guide",
         "amazon-chef-knife-shortlist-what-to-buy-first",
         "victorinox-fibrox-pro-8-inch-shortlist-review"
-      ]
+      ],
+      "finderNote": "My practical value pick: the 20 cm / 8-inch extra-wide Fibrox chef's knife. Comfortable grip, stainless blade and enough room for everyday prep.",
+      "sourceUrl": "https://victorinox.com.au/products/fibrox-carving-knife-extra-wide-20cm"
     },
     {
       "id": "victorinox-swiss-classic-paring-knife",
@@ -455,7 +463,8 @@
       "relatedPosts": [
         "start-here-main-kitchen-knife-profiles",
         "petty-paring-utility-profile-guide"
-      ]
+      ],
+      "finderNote": "An inexpensive small knife for peeling and trimming. Choose the straight-edge version for ordinary stone sharpening."
     },
     {
       "id": "wusthof-classic-8-inch-chef-knife",
@@ -676,7 +685,9 @@
       "relatedPosts": [
         "king-vs-shapton-starter-stones-guide",
         "king-whetstones-review-brief"
-      ]
+      ],
+      "finderNote": "My lower-cost starting point. Choose the standard King Deluxe 1000; wet it according to its instructions and keep the surface flat as it wears.",
+      "sourceUrl": "https://matsunaga-corp.co.jp/en/products-cat/king/"
     },
     {
       "id": "plain-leather-strop",
@@ -836,7 +847,9 @@
       "relatedPosts": [
         "shapton-stones-review-brief",
         "king-vs-shapton-starter-stones-guide"
-      ]
+      ],
+      "finderNote": "My convenience pick. A 1000-grit stone for routine sharpening with little preparation. Follow Shapton's first-use wetting instructions.",
+      "sourceUrl": "https://shapton.co.jp/en/faq/"
     },
     {
       "id": "knife-roll-for-transport",
@@ -890,7 +903,8 @@
         "who-made-your-japanese-knife",
         "japanese-knife-regions-sakai-seki-sanjo",
         "vg10-ginsan-aogami-shirogami-guide"
-      ]
+      ],
+      "finderNote": "A simple guard for drawer storage. Match both length and blade height, especially for a tall cleaver."
     },
     {
       "id": "sanjo-carbon-gyuto-shortlist",
@@ -918,6 +932,26 @@
       "relatedPosts": [
         "boning-fillet-slicer-cleaver-specialist-profiles"
       ]
+    },
+    {
+      "id": "victorinox-fibrox-boning-15",
+      "name": "Victorinox Fibrox boning knife, 15 cm",
+      "category": "Tool",
+      "merchant": "Amazon UK",
+      "url": "https://www.amazon.co.uk/s?k=Victorinox%20Fibrox%205.6003.15B%20boning%20knife&tag=adrichops-21",
+      "cta": "Find on Amazon",
+      "note": "A narrow blade for trimming meat and working around bones.",
+      "sourceUrl": "https://www.victorinox.com/en-GB/Products/Cutlery/Chef%E2%80%99s-Knives/Fibrox-Boning-Knife/p/5.6003.15B"
+    },
+    {
+      "id": "starter-polyethylene-board",
+      "name": "Food-grade polyethylene cutting board",
+      "category": "Tool",
+      "merchant": "Amazon UK",
+      "url": "https://www.amazon.co.uk/s?k=food%20grade%20polyethylene%20cutting%20board%2040%2030%20cm&tag=adrichops-21",
+      "cta": "Find on Amazon",
+      "note": "Choose a stable board that fits your counter and sink. This is a category search; compare thickness, dimensions and care instructions.",
+      "sourceUrl": ""
     }
   ]
 }

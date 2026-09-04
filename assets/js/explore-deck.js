@@ -22,7 +22,7 @@
   const sections = [
     { id: 'about', label: 'About', text: 'The line-cook origin story.', url: '/about/' },
     { id: 'blog', label: 'Blog', text: 'All articles, reviews, guides and maker essays.' },
-    { id: 'finder', label: 'Knife Finder', text: 'Recommendations, starter paths and buying notes.', url: '/knife-finder/' },
+    { id: 'finder', label: 'Tool Finder', text: 'Recommendations, starter paths and buying notes.', url: '/tool-finder/' },
     { id: 'disclosure', label: 'Disclosure', text: 'Affiliate policy and source discipline.', url: '/disclosure/' }
   ];
 

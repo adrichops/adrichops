@@ -1,18 +1,6 @@
-# Adrichops production redesign
+# Adrichops
 
-This is the consolidated redesign: the minimal Notion-style site is now the production experience, and the card-stack concept has been moved into `/explore/` as a dedicated interactive deck.
-
-## What changed
-
-- Real top-level routes: `/about/`, `/reviews/`, `/maker-spotlight/`, `/whats-in-my-roll/`, `/kit-builder/`, `/recommendations/`, `/disclosure/`, `/guides/`, `/explore/`.
-- Real generated article pages such as `/reviews/tojiro-dp-210mm-gyuto-shortlist-review/` and `/maker-spotlight/maker-spotlight-takada-no-hamono/`.
-- Markdown source files in `content/` instead of relying only on one large JSON file.
-- Generated `data/posts.json` manifest for search, deck navigation and the Knife Finder.
-- Data-driven Knife Finder in `data/finder.json`.
-- Reusable affiliate/product data in `data/products.json`.
-- Source-trail discipline and status labels on article pages.
-- Cleaner article template: verdict, status, source trail, maintenance pairing, who it is for, who should skip.
-- Card navigation is now a dedicated Explore Deck, not a second duplicate website.
+A static site about kitchen tools and the people who make them. Primary navigation: About, Maker map, Blog, Disclosure and Tool Finder.
 
 ## Local preview
 
@@ -22,34 +10,37 @@ python3 scripts/build.py
 python3 -m http.server 8080
 ```
 
-Open `http://localhost:8080`.
+Open `http://localhost:8080`. Run the build after editing content or templates.
 
-## Editing flow
+## Content and recommendations
 
-Edit Markdown files in `content/`. Edit the Knife Finder in `data/finder.json`. Edit reusable product links in `data/products.json`. Then run `python3 scripts/build.py` before publishing.
+- `content/`: Markdown articles. All articles are collected under `/blog/`; older article URLs remain available.
+- `scripts/build.py`: shared templates, pages and generated search manifest.
+- `data/products.json`: product descriptions, source links and Amazon affiliate search URLs.
+- `data/finder.json`: Tool Finder needs, priorities and product selections.
+- `assets/js/finder.js`: recommendation rendering. The `/knife-finder/` and `/recommendations/` routes redirect to `/tool-finder/`.
 
-For Netlify, connect the GitHub repo and keep the included build command. For browser editing, configure Netlify Identity + Git Gateway and visit `/admin/`.
+The finder starts with Victorinox and Tojiro for everyday knives, and King or Shapton for a first sharpening stone. Amazon search links are labelled as searches, not verified product listings. Do not invent ownership, testing experience, prices or availability.
 
-## Cloudflare Pages
+## Maker map
 
-Use the `adrichops` Pages project. Build command:
+- `data/maker-graph.json`: regions, maker profiles, relationships and source records. Preserve stable IDs when editing.
+- `assets/js/maker-graph.js`: searchable directory and a focused graph of the selected maker's direct relationships. Mobile starts in the directory; its graph shows one connection at a time.
+- `assets/vendor/`: locally hosted Cytoscape 3.33.1 and its MIT licence.
+- `data/japan-boundary.json`: Japan boundaries from Natural Earth 1:50m, public domain. Geographic coordinates are independent of graph positions.
+
+Every new relationship needs source IDs, a relationship type, a precise description and appropriate confidence. Community reports and records without attached sources are displayed as provisional. A retailer's pseudonym should not be linked to a legal identity without evidence.
+
+Existing feedback, newsletter and maker-change suggestion forms use the Cloudflare Pages Functions in `functions/`. Maker suggestions retain the approval workflow; they do not directly modify the published database.
+
+## Publishing
+
+Cloudflare Pages project: `adrichops`. Build command:
 
 ```bash
 python3 -m pip install -r requirements.txt && python3 scripts/build.py
 ```
 
-Build output directory:
+Output directory: `.`. The repository includes generated pages. Publish from a clean checkout so local research files and private working documents are not uploaded. D1 bindings are defined in `wrangler.toml`; secrets remain in Cloudflare configuration.
 
-```text
-.
-```
-
-
-## Flickable card deck
-
-The production site keeps the minimal reading experience, while `/explore/` provides the tactile card UX. Readers can flick the active card left or right, use the arrow buttons, or use keyboard arrow keys to move through each section. The deck pulls from the same `data/posts.json` content, so it does not duplicate articles.
-
-
-## Kit Builder
-
-The `/kit-builder/` section lets readers create a ten-slot kit from `data/kit-items.json`. Items can be knives, stones, strops, boards, storage or utensils. Cards can be dragged from the database into the available slots and filled slots can be dragged to rearrange the order. The selected kit is saved in the reader's browser with localStorage and can be copied or exported as JSON.
+The kit builder remains available at `/kit-builder/` as a secondary tool; it is not part of the main menu.

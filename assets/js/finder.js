@@ -1,69 +1,37 @@
 (async function(){
-  const root = document.querySelector('[data-finder]');
-  if (!root) return;
-  const result = root.querySelector('[data-finder-result]');
-  let data, products, posts;
+  const root=document.querySelector('[data-finder]');
+  if(!root)return;
+  const result=root.querySelector('[data-finder-result]'), form=root.querySelector('form');
+  const esc=s=>String(s ?? '').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  let data,products,posts;
   try {
-    data = await (await fetch('/data/finder.json')).json();
-    products = (await (await fetch('/data/products.json')).json()).products || [];
-    posts = (await (await fetch('/data/posts.json')).json()).posts || [];
-  } catch (e) {
-    if (result) result.innerHTML = '<p>Finder data could not load. Check data/finder.json.</p>';
-    return;
-  }
-  const productMap = Object.fromEntries(products.map(p => [p.id, p]));
-  const postMap = Object.fromEntries(posts.map(p => [p.id, p]));
-  function selected(){
-    const values = {};
-    root.querySelectorAll('input[type="radio"]:checked').forEach(i => values[i.name] = i.value);
-    return values;
-  }
-  function score(rule, values){
-    let s = 0;
-    for (const [k,v] of Object.entries(rule.match || {})) {
-      if (values[k] === v) s += 4;
-      else if (v === '*') s += 1;
-      else s -= 4;
-    }
-    return s;
-  }
-  function choose(values){
-    const ranked = [...data.rules].sort((a,b) => score(b, values) - score(a, values));
-    return ranked[0] || data.rules.find(r => r.id === data.fallback) || data.rules[0];
-  }
-  function productCard(product, compact = false) {
-    if (!product) return '';
-    return `<article class="finder-product-card${compact ? ' is-compact' : ''}">
-      <span>${escapeHTML(product.category || product.merchant || 'Product')}</span>
-      <strong>${escapeHTML(product.name)}</strong>
-      ${product.note ? `<p>${escapeHTML(product.note)}</p>` : ''}
-      <a class="button${compact ? '' : ' primary'}" href="${escapeHTML(product.url || '#')}" rel="sponsored nofollow noopener" target="_blank">${escapeHTML(product.cta || 'Check current price')}</a>
-    </article>`;
+    const responses=await Promise.all(['/data/finder.json','/data/products.json','/data/posts.json'].map(url=>fetch(url).then(r=>{if(!r.ok)throw new Error();return r.json();})));
+    data=responses[0];products=new Map(responses[1].products.map(p=>[p.id,p]));posts=new Map(responses[2].posts.map(p=>[p.id,p]));
+  } catch(_){result.innerHTML='<p>Recommendations could not load. Please refresh to try again.</p>';return;}
+  try{
+    const saved=JSON.parse(localStorage.getItem('adrichops-tool-finder') || '{}');
+    for(const q of data.questions){if(q.options.some(o=>o.value===saved[q.id]))form.elements[q.id].value=saved[q.id];}
+  }catch(_){}
+  function product(id,label){
+    const p=products.get(id);if(!p)return '';
+    const photos={
+      'victorinox-fibrox-pro-8-inch-chef-knife':['/assets/uploads/post-images/victorinox-fibrox-pro-8-inch-shortlist-review.png','Victorinox'],
+      'tojiro-dp-210mm-gyuto-f-808':['/assets/uploads/post-images/tojiro-dp-210mm-gyuto-shortlist-review.jpg','TOJIRO Co., Ltd.']
+    };
+    const photo=photos[id];
+    const media=photo?'<figure class="tool-photo"><img src="'+photo[0]+'" alt="'+esc(p.name)+'"><figcaption>Image: <a href="'+esc(p.sourceUrl)+'" target="_blank" rel="noopener">'+photo[1]+'</a></figcaption></figure>':'';
+    return '<article class="tool-pick"><span class="kicker">'+esc(label)+'</span><h3>'+esc(p.name)+'</h3>'+media+'<p>'+esc(p.finderNote || p.note)+'</p><a class="button primary" href="'+esc(p.url)+'" target="_blank" rel="sponsored nofollow noopener">Find on Amazon ↗</a>'+(p.sourceUrl?'<a class="tool-source" href="'+esc(p.sourceUrl)+'" target="_blank" rel="noopener">Product details from the maker ↗</a>':'')+'</article>';
   }
   function render(){
-    const values = selected();
-    const r = choose(values);
-    const specs = [['Profile', r.profile], ['Steel', r.steel], ['Length', r.length], ['Care', r.maintenanceLevel]];
-    const buyOptions = (r.productIds || []).map(id => productMap[id]).filter(Boolean);
-    const buyMarkup = buyOptions.length ? `<section class="finder-buy-options">
-      <div class="finder-subhead"><h3>Buy options</h3><p>Affiliate search links use the Adrichops Amazon tag. Check the exact seller, size and model before buying.</p></div>
-      <div class="finder-product-grid">${buyOptions.map(p => productCard(p)).join('')}</div>
-    </section>` : '';
-    const kit = (r.maintenanceKit || []).map(item => {
-      const products = (item.productIds || []).map(id => productMap[id]).filter(Boolean);
-      const links = products.length ? `<div class="finder-product-grid is-compact">${products.map(p => productCard(p, true)).join('')}</div>` : '';
-      return `<div><b>${escapeHTML(item.label)}</b><span>${escapeHTML(item.text)}</span>${links}</div>`;
-    }).join('');
-    const articles = (r.articleIds || []).map(id => postMap[id]).filter(Boolean).map(p => `<a class="text-link" href="${p.route}">${escapeHTML(p.title)}</a>`).join(' ');
-    result.innerHTML = `<span class="kicker">Recommendation</span><h3>${escapeHTML(r.title)}</h3><p>${escapeHTML(r.why)}</p><div class="finder-specs">${specs.map(([k,v]) => `<div><b>${k}</b><span>${escapeHTML(v)}</span></div>`).join('')}</div><p><strong>Watch out:</strong> ${escapeHTML(r.avoid || '')}</p>${buyMarkup}<h3 class="finder-section-title">Maintenance setup</h3><div class="maintenance-kit">${kit}</div><h3 class="finder-section-title">Read next</h3><p>${articles}</p>`;
-    localStorage.setItem('adrichops-finder', JSON.stringify(values));
+    const values=Object.fromEntries(new FormData(form));
+    const task=data.tasks[values.task] || data.tasks['all-purpose'];
+    const priority=['value','convenience','upgrade'].includes(values.priority)?values.priority:'value';
+    const id=task.picks[priority],alternative=task.alternatives?.[priority];
+    const stone=priority==='value'?'king-deluxe-1000-whetstone':'shapton-kuromaku-1000';
+    result.innerHTML='<span class="kicker">Your starting point</span><h2>'+esc(task.title)+'</h2><p>'+esc(task.why)+'</p>'+product(id,'My first pick')+(alternative?'<details class="tool-alternative"><summary>One alternative</summary>'+product(alternative,'Also worth considering')+'</details>':'')+'<div class="tool-care"><h3>Looking after it</h3><p>'+esc(task.care)+'</p><h3>What can wait</h3><p>'+esc(task.skip)+'</p></div>'+(task.stone?'<details class="tool-alternative"><summary>Need a sharpening stone too?</summary><p>Only add one if you need it.</p>'+product(stone,'A first stone')+'</details>':'')+'<div class="tool-reading"><h3>Read next</h3>'+task.articleIds.map(id=>posts.get(id)).filter(Boolean).map(p=>'<a href="'+esc(p.route)+'">'+esc(p.title)+' →</a>').join('')+'</div>';
+    try{localStorage.setItem('adrichops-tool-finder',JSON.stringify(values));}catch(_){}
   }
-  function escapeHTML(str){ return String(str || '').replace(/[&<>"']/g, s => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[s])); }
-  const stored = JSON.parse(localStorage.getItem('adrichops-finder') || '{}');
-  Object.entries(stored).forEach(([name,value]) => {
-    const input = root.querySelector(`input[name="${CSS.escape(name)}"][value="${CSS.escape(value)}"]`);
-    if (input) input.checked = true;
-  });
-  root.addEventListener('change', render);
+  form.addEventListener('change',render);
+  form.addEventListener('submit',e=>{e.preventDefault();render();result.focus({preventScroll:true});result.scrollIntoView({behavior:'smooth',block:'start'});});
   render();
 })();

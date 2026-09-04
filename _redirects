@@ -1,7 +1,9 @@
 /whats-in-my-roll/ /kit-builder/ 301
 /whats-in-my-roll/* /kit-builder/ 301
-/recommendations/ /knife-finder/ 301
-/recommendations.html /knife-finder/ 301
+/recommendations/ /tool-finder/ 301
+/recommendations.html /tool-finder/ 301
+/knife-finder/ /tool-finder/ 301
+/knife-finder.html /tool-finder/ 301
 /reviews/ /blog/ 301
 /reviews.html /blog/ 301
 /guides/ /blog/ 301
@@ -20,7 +22,7 @@
 /explore/ /explore/index.html 200
 /guides/:slug/ /guides/:slug/index.html 200
 /kit-builder/ /kit-builder/index.html 200
-/knife-finder/ /knife-finder/index.html 200
+/tool-finder/ /tool-finder/index.html 200
 /maker-map/ /maker-map/index.html 200
 /maker-spotlight/:slug/ /maker-spotlight/:slug/index.html 200
 /posts/:slug/ /posts/:slug/index.html 200

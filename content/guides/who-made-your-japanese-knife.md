@@ -1,113 +1,73 @@
 ---
 id: who-made-your-japanese-knife
-title: Who actually made your Japanese knife? Smiths, sharpeners, brands and retailers
+title: "Who made your knife? A beginner's guide to the people behind it"
 type: Guide
-category: guide
-date: '2026-06-23'
-readTime: 7 min read
-featured: false
-maker: Adrichops
-steel: Craft guide
-length: Beginner friendly
-bestFor: Understanding maker labels
-rating: N/A
-verdict: Names need context
-summary: 'A clear guide to the people and businesses behind a Japanese knife: blacksmiths, grinders, sharpeners, handle makers, brands and retailers.'
-deck: The name on the blade is often not the whole story. This guide explains the chain without turning it into homework soup.
-heroImage: assets/img/maker-chain.svg
-heroAlt: Japanese knife maker chain diagram
-pullQuote: 'The most honest answer to who made this knife is often: several skilled people, plus a brand that organized the chaos.'
+category: makers
+date: '2026-09-04'
+readTime: 4 min read
+status: Research-led guide
+sourceMode: Published maker and retailer accounts, with uncertainty kept explicit.
+summary: The name on the blade is only a starting point. Meet the smith, sharpener and handle maker, and learn how to read a knife listing.
+bestFor: Newcomers exploring the maker map
+verdict: Follow the roles, then the names
+heroImage: assets/uploads/knife-photos/japanese-knife-profiles-side-angle.jpg
+heroAlt: Japanese kitchen knives shown from the side
+imageCredit: Benlisquare, CC BY-SA 4.0
+imageCreditUrl: https://commons.wikimedia.org/wiki/File:Gyuto,_yanagiba,_santoku,_and_nakiri_(version_2,_alt_angle).jpg
 specs:
-  Format: Craft guide
-  Focus: Maker roles
-  Best for: Reading listings
-  Watch for: Vague attribution
+  Start with: Who forged it and who sharpened it?
+  Then ask: Does its shape suit your cooking?
 takeaways:
-- Japanese knives often involve multiple specialists.
-- Grind and sharpening can matter as much as the smith name.
-- Good retailer information is part of the value.
-products:
-- name: 1000/3000 combination whetstone
-  merchant: Amazon UK
-  category: Sharpening
-  note: 'A compact setup for stainless gyuto, nakiri and Western chef knives: 1000 for the edge, 3000 for tidy refinement.'
-  url: https://www.amazon.co.uk/s?k=1000+3000+combination+whetstone+kitchen+knife&tag=adrichops-21
-  cta: Check current price
-- name: Plain leather strop or deburring block
-  merchant: Amazon UK
-  category: Sharpening
-  note: For removing the last clingy burr. Helpful, cheap, and less dramatic than buying another knife at midnight.
-  url: https://www.amazon.co.uk/s?k=leather+strop+kitchen+knife+deburring&tag=adrichops-21
-  cta: Check current price
-- name: Camellia oil for carbon steel
-  merchant: Amazon UK
-  category: Maintenance
-  note: Optional storage oil for reactive carbon blades. Wash and dry first; oil is not a permission slip for damp drawers.
-  url: https://www.amazon.co.uk/s?k=camellia+oil+knife+care+carbon+steel&tag=adrichops-21
-  cta: Check current price
-- name: Universal blade guards
-  merchant: Amazon UK
-  category: Storage
-  note: Simple protection for drawers, travel rolls and rental-kitchen horror cupboards.
-  url: https://www.amazon.co.uk/s?k=knife+blade+guards+kitchen+knives&tag=adrichops-21
-  cta: Check current price
-gallery:
-- src: assets/img/craft-map.svg
-  alt: Craft map
-  caption: Smith, sharpener, handle maker, brand and retailer all influence the final knife.
+- A brand name and a blacksmith's name can describe different parts of the same knife.
+- Sharpening includes blade geometry, not just the final edge.
+- A documented collaboration does not identify every knife sold by that brand.
 sourceTrail:
-- name: Kitchen Knife Forums
-  type: Forum
-  url: https://www.kitchenknifeforums.com/
-  note: Forum context for sharpening, maintenance, makers, retailers and long-running enthusiast discussion.
-- name: Hitohira
+- name: Hitohira Oboro project
   type: Retailer
-  url: https://hitohira-japan.com/pages/about-us
-  note: Retailer and wholesaler context for Japanese knives, sharpening tools and education.
-- name: Karasu Japanese Knives
+  url: https://hitohira-japan.com/products/dta-010-fa240
+  note: A specific knife with separate smith, sharpener, handle maker and finisher credits.
+- name: Hitohira Taihei profile
   type: Retailer
-  url: https://karasu-knives.com/
-  note: Retailer context for small-batch Japanese knives, stones, accessories, sharpening and maintenance services.
-- name: 'Sakai Ichimonji: How Japanese knives are made'
-  type: Culture
-  url: https://global.ichimonji.co.jp/blogs/a-craftsmans-eyes-view/how-japanese-knives-are-made
-  note: 'Used for broad process context: shapes, steels, styles and forging techniques.'
-- name: 'Japan House London: Sakai forged knives'
-  type: Culture
-  url: https://www.japanhouselondon.uk/whats-on/sakai-forged-knives-workshop-visit-conversation/
-  note: Used for Sakai blacksmith and sharpener role context.
-status: Guide
-sourceMode: Research-led guide with practical interpretation.
-slug: who-made-your-japanese-knife
-route: /guides/who-made-your-japanese-knife/
+  url: https://hitohira-japan.com/collections/taihei
+  note: Handle-making craft and the choice of individual wood and horn components.
+- name: Cleancut Ogata profile
+  type: Retailer
+  url: https://www.cleancut.eu/butik/knifebrands/ogata
+  note: An example of an independent maker whose production still involves a specialist supplier.
 ---
 
-## The blade is a collaboration
+## One name can hide several people
 
-In many Japanese knife contexts, one person does not do everything. A blacksmith may forge and heat treat. A sharpener or grinder may shape the bevels and finish. A handle maker may fit the handle. A brand or retailer may specify the line, inspect it, package it and explain it to buyers.
+Imagine seeing two names on a knife listing. One belongs to the person who forged the blade. The other belongs to the person who ground and sharpened it. Neither name is an optional detail: they describe different contributions to the tool you will hold.
 
-That is why the simple question who made this can become slippery. It might mean who forged it, who sharpened it, whose brand it is, which workshop handled it or which retailer commissioned it.
+This is what made me interested in following maker relationships. Once I stopped expecting every knife to be the work of one person, the listings started to make more sense.
 
-## Smith, sharpener, brand, retailer
+## The main roles
 
-The smith matters for steel, forging, heat treatment and core blade character. The sharpener or grinder can matter enormously for how the knife actually cuts, because grind geometry and finish determine food release, thinness and board feel.
+A blacksmith works on the blade and its heat treatment. A sharpener shapes how that blade meets food: its thickness, bevels and edge. A polisher refines the surface. A handle maker works on the part you hold.
 
-The brand matters for consistency, specification and access. The retailer matters for information and aftercare. Good retailers reduce confusion instead of inflating it. That is not glamorous, but neither is buying the wrong knife with excellent vibes.
+Those jobs can overlap, and the arrangement varies by workshop. In a specialised production network such as Sakai, a knife may move between several craftspeople. A brand can organise that work and sell the finished knife under its own name.
 
-## Why listings can be confusing
+## Read one real example
 
-A listing might emphasize a famous smith, a house brand, a region, a steel or a finish. None of those are automatically wrong, but each answers a different question. A region label tells you less than a specific maker, grind, steel and retailer description.
+Hitohira's Oboro listing names Nakagawa Blacksmith, sharpener Kambei, a custom Taihei handle and finisher Kakuyoshi. That is a useful example because it names the contributions separately.
 
-If the listing is vague, ask for shape, size, steel, maker or workshop, cladding, grind, handle and care. This is where forum culture is useful: specificity beats hype every time.
+It does not mean every knife from those people follows the same process. A relationship belongs to the project described in its source. Other steels, grinds or batches need their own evidence.
 
-## How to buy with less confusion
+## The handle is part of the story
 
-For your first serious Japanese knife, buy from a retailer that explains what the knife is and how to maintain it. A slightly less glamorous knife from a clear listing is often better than a mysterious bargain with a hero photo and no useful detail.
+Hitohira describes Taihei selecting and shaping wood and horn individually. Different materials affect how the handle feels and balances the blade.
 
-Once you understand the chain, maker names become more meaningful. Until then, do not let a famous name distract from whether the knife suits your cooking and maintenance tolerance.
+For a beginner, I would translate that into a simple question: does this handle suit my hand and cooking? The story is interesting, but comfort remains the reason to care.
 
-## Takeaways
+## Independent does not mean working alone
 
-- Japanese knives often involve multiple specialists.
-- Grind and sharpening can matter as much as the smith name.
-- Good retailer information is part of the value.
+Cleancut describes Ogata as a former sharpener working with Shiro Kamo who later became independent. Its account credits laser cutting and heat treatment to Takefu Tokushu Steel, with the remaining work done by Ogata and his wife.
+
+That kind of detail is more useful than a broad claim that a knife is handmade. It tells you what the maker does and where other expertise enters the process.
+
+## Use names to ask better questions
+
+Start with the knife's purpose, size, steel and care needs. Then look for the people credited with making it. If an alias or teacher relationship comes from a forum, keep that distinction visible until a direct source confirms it.
+
+I use the maker map to follow those connections and collect the evidence. It is a learning resource, not a ranking of who makes the best knife.

@@ -20,6 +20,41 @@
       ],
       "nodes": [
         {
+          "id": "kenya-togashi",
+          "name": "Kenya Togashi",
+          "role": "Sharpener",
+          "specialty": "Named sharpener on Hitohira's Togashi Blue #1 single-bevel gyuto.",
+          "famousLines": ["Togashi Blue #1 single-bevel gyuto"],
+          "sourceIds": ["hitohira-kenya-togashi"]
+        },
+        {
+          "id": "heihachi",
+          "name": "Heihachi",
+          "role": "Sharpener",
+          "specialty": "Kyuzo's father and early teacher in rough sharpening, as described by Hitohira.",
+          "famousLines": [],
+          "sourceIds": ["hitohira-kyuzo-training"]
+        },
+        {
+          "id": "kambei",
+          "name": "Kambei",
+          "role": "Sharpener",
+          "specialty": "Wide double-bevel sharpening; Hitohira names him as a teacher of Kyuzo.",
+          "famousLines": ["Oboro"],
+          "sourceIds": ["hitohira-kyuzo-training", "hitohira-oboro-craftsmen"],
+          "caveat": "This profile uses Hitohira's published name; no unverified legal-name mapping is assumed."
+        },
+        {
+          "id": "taihei",
+          "name": "Taihei",
+          "role": "Handle maker",
+          "location": "Workshop location not confirmed here",
+          "specialty": "Third-generation handle maker. Began carrying on the family craft in 1992, shaping wood and horn individually.",
+          "famousLines": ["Taihei wa handles", "Oboro custom handles"],
+          "sourceIds": ["hitohira-taihei-story", "hitohira-oboro-craftsmen"],
+          "caveat": "Included in the Sakai network for documented collaborations, not as confirmation of the workshop's address."
+        },
+        {
           "id": "ikeda",
           "name": "Ikeda",
           "role": "Blacksmith",
@@ -491,6 +526,36 @@
         }
       ],
       "edges": [
+        {
+          "from": "heihachi", "to": "kyuzo-yauchi", "kind": "apprenticeship",
+          "label": "Taught rough sharpening",
+          "detail": "Hitohira says Kyuzo first learned rough sharpening under his father, Heihachi.",
+          "sourceIds": ["hitohira-kyuzo-training"], "sourceType": "Retailer"
+        },
+        {
+          "from": "kambei", "to": "kyuzo-yauchi", "kind": "apprenticeship",
+          "label": "Taught wide-bevel sharpening",
+          "detail": "Hitohira describes Kyuzo studying under Kambei after learning from his father.",
+          "sourceIds": ["hitohira-kyuzo-training"], "sourceType": "Retailer"
+        },
+        {
+          "from": "kenji-togashi", "to": "kenya-togashi", "kind": "smith-to-sharpener",
+          "label": "Forging to sharpening",
+          "detail": "The cited gyuto names Togashi Blacksmith and sharpener Kenya Togashi. This connection describes that product.",
+          "sourceIds": ["hitohira-kenya-togashi"], "sourceType": "Retailer"
+        },
+        {
+          "from": "satoshi-nakagawa", "to": "kambei", "kind": "smith-to-sharpener",
+          "label": "Oboro: forging to sharpening",
+          "detail": "The Oboro listing names Nakagawa Blacksmith and Kambei.",
+          "sourceIds": ["hitohira-oboro-craftsmen"], "sourceType": "Retailer"
+        },
+        {
+          "from": "kambei", "to": "taihei", "kind": "collaboration",
+          "label": "Oboro collaboration",
+          "detail": "Kambei's sharpening and Taihei's custom handles appear together on this Oboro knife.",
+          "sourceIds": ["hitohira-oboro-craftsmen"], "sourceType": "Retailer"
+        },
         {
           "from": "ikeda",
           "to": "nomura",
@@ -1343,6 +1408,15 @@
       ],
       "nodes": [
         {
+          "id": "ogata",
+          "name": "Ogata",
+          "role": "Sharpener / Maker",
+          "specialty": "Independent Takefu maker of thin SG2 knives. Previously worked with Shiro Kamo as a sharpener, according to Cleancut.",
+          "famousLines": ["Ogata SG2"],
+          "sourceIds": ["cleancut-ogata"],
+          "caveat": "Cleancut credits laser cutting and heat treatment to Takefu Tokushu Steel; the remaining processes are handled by Ogata with assistance from his wife."
+        },
+        {
           "id": "takefu-knife-village",
           "name": "Takefu Knife Village",
           "role": "Cooperative",
@@ -1609,6 +1683,15 @@
         }
       ],
       "edges": [
+        {
+          "from": "ogata",
+          "to": "shiro-kamo",
+          "kind": "works-at",
+          "label": "Previously sharpened for",
+          "detail": "Cleancut describes Ogata working with Shiro Kamo as a sharpener before becoming independent. This is a past working relationship.",
+          "sourceIds": ["cleancut-ogata"],
+          "sourceType": "Retailer"
+        },
         {
           "from": "takefu-knife-village",
           "to": "yu-kurosaki",
@@ -3355,6 +3438,31 @@
     }
   ],
   "sources": [
+    {
+      "id": "cleancut-ogata",
+      "label": "Cleancut: Ogata, Takefu and his work with Shiro Kamo",
+      "url": "https://www.cleancut.eu/butik/knifebrands/ogata"
+    },
+    {
+      "id": "hitohira-kyuzo-training",
+      "label": "Hitohira: Kyuzo, Heihachi and Kambei",
+      "url": "https://hitohira-japan.com/products/aaa-090b1z-49-fa210"
+    },
+    {
+      "id": "hitohira-kenya-togashi",
+      "label": "Hitohira: Togashi Blue #1, sharpened by Kenya Togashi",
+      "url": "https://hitohira-japan.com/products/aaa-025b1m-70-ft240"
+    },
+    {
+      "id": "hitohira-taihei-story",
+      "label": "Hitohira: Taihei handle-making story",
+      "url": "https://hitohira-japan.com/collections/taihei"
+    },
+    {
+      "id": "hitohira-oboro-craftsmen",
+      "label": "Hitohira: Oboro and its craftspeople",
+      "url": "https://hitohira-japan.com/products/dta-010-fa240"
+    },
     {
       "id": "sakai-ichimonji-making",
       "label": "Sakai Ichimonji: How Japanese knives are made",

@@ -1,13 +1,13 @@
 {
-  "version": "1.0",
+  "version": "2.0",
   "questions": [
     {
       "id": "task",
-      "label": "What are you mostly doing?",
+      "label": "1. What do you need?",
       "options": [
         {
           "value": "all-purpose",
-          "label": "All-purpose cooking"
+          "label": "My first everyday knife"
         },
         {
           "value": "vegetable",
@@ -15,494 +15,201 @@
         },
         {
           "value": "small-prep",
-          "label": "Small prep and fruit"
-        },
-        {
-          "value": "protein",
-          "label": "Protein trimming and slicing"
-        },
-        {
-          "value": "cleaver",
-          "label": "Asian cleaver / cai dao prep"
+          "label": "Peeling and small jobs"
         },
         {
           "value": "bread",
-          "label": "Bread, tomatoes and serrated jobs"
+          "label": "Slicing bread"
+        },
+        {
+          "value": "protein",
+          "label": "Trimming meat and fish"
+        },
+        {
+          "value": "cleaver",
+          "label": "An Asian vegetable cleaver"
         },
         {
           "value": "sharpening",
-          "label": "Building a sharpening setup"
+          "label": "My first sharpening stone"
+        },
+        {
+          "value": "board",
+          "label": "A cutting board"
+        },
+        {
+          "value": "storage",
+          "label": "Safe knife storage"
         }
       ]
     },
     {
-      "id": "care",
-      "label": "How much maintenance do you want?",
-      "options": [
-        {
-          "value": "low",
-          "label": "Low fuss"
-        },
-        {
-          "value": "balanced",
-          "label": "Balanced"
-        },
-        {
-          "value": "curious",
-          "label": "I am curious about carbon steel"
-        }
-      ]
-    },
-    {
-      "id": "budget",
-      "label": "Budget posture",
+      "id": "priority",
+      "label": "2. What matters most?",
       "options": [
         {
           "value": "value",
-          "label": "Value"
+          "label": "Keep the cost down"
         },
         {
-          "value": "mid",
-          "label": "Mid-range"
+          "value": "convenience",
+          "label": "Easy everyday care"
         },
         {
-          "value": "premium",
-          "label": "Premium"
+          "value": "upgrade",
+          "label": "A step up in cutting feel"
         }
       ]
     }
   ],
-  "rules": [
-    {
-      "id": "low-fuss-vegetable-nakiri",
-      "match": {
-        "task": "vegetable",
-        "care": "low"
+  "tasks": {
+    "all-purpose": {
+      "title": "One everyday knife is enough to start.",
+      "picks": {
+        "value": "victorinox-fibrox-pro-8-inch-chef-knife",
+        "convenience": "victorinox-fibrox-pro-8-inch-chef-knife",
+        "upgrade": "tojiro-dp-210mm-gyuto-f-808"
       },
-      "title": "VG10 stainless-clad nakiri or light Asian vegetable cleaver",
-      "profile": "Nakiri / Asian cleaver",
-      "steel": "VG10 stainless-clad, simple stainless or stainless Chinese chef knife steel",
-      "length": "Nakiri 165mm; light cleaver/cai dao about 180-210mm",
-      "maintenanceLevel": "Low",
-      "why": "A nakiri gives you a flat, confident vegetable profile. A light Asian cleaver or cai dao gives a taller blade, easy food transfer and a broader all-board rhythm while staying vegetable-first.",
-      "avoid": "Do not use a thin nakiri, cai dao or Chinese slicer for bones, twisting through squash or frozen food. Rectangle does not mean bone cleaver.",
-      "productIds": [
-        "nakiri-knife-shortlist",
-        "chinese-cleaver-and-slicer-shortlist"
-      ],
-      "maintenanceKit": [
-        {
-          "label": "Stone",
-          "text": "Shapton Kuromaku/Pro 1000 for fast splash-and-go sharpening, or King 1000/6000 if budget and feedback matter more than speed.",
-          "productIds": [
-            "shapton-kuromaku-1000",
-            "king-combo-stone"
-          ]
-        },
-        {
-          "label": "Strop / deburring",
-          "text": "Leather strop or deburring block after stone work. Use it to clean the apex, not to avoid making one.",
-          "productIds": [
-            "leather-strop"
-          ]
-        },
-        {
-          "label": "Board",
-          "text": "Hasegawa or Asahi if you want a synthetic edge-friendly board; hinoki if you accept more care.",
-          "productIds": [
-            "hasegawa-soft-board",
-            "asahi-rubber-board",
-            "hinoki-board"
-          ]
-        },
-        {
-          "label": "Storage",
-          "text": "Blade guard or saya. Nakiri edges are thin and drawer chaos is undefeated.",
-          "productIds": [
-            "blade-guard"
-          ]
-        }
-      ],
+      "alternatives": {
+        "value": "tojiro-dp-210mm-gyuto-f-808",
+        "convenience": "tojiro-dp-210mm-gyuto-f-808",
+        "upgrade": "victorinox-fibrox-pro-8-inch-chef-knife"
+      },
+      "why": "For general cooking, I start with Victorinox for practical value or Tojiro for a first Japanese gyuto. A 20-21 cm blade handles most board work.",
+      "care": "Hand-wash and dry after cooking. Use a wood or plastic board and protect the edge in storage.",
+      "skip": "You can wait on a knife set, a dedicated slicer and high-grit stones.",
       "articleIds": [
-        "nakiri-profile-guide",
-        "vg10-ginsan-aogami-shirogami-guide",
-        "hasegawa-asahi-hinoki-cutting-board-guide",
-        "king-vs-shapton-starter-stones-guide"
-      ]
+        "first-kitchen-kit",
+        "tojiro-dp-210mm-gyuto-shortlist-review"
+      ],
+      "stone": true
     },
-    {
-      "id": "low-fuss-asian-cleaver",
-      "match": {
-        "task": "cleaver"
+    "vegetable": {
+      "title": "Choose a comfortable knife for daily prep.",
+      "picks": {
+        "value": "victorinox-fibrox-pro-8-inch-chef-knife",
+        "convenience": "victorinox-fibrox-pro-8-inch-chef-knife",
+        "upgrade": "tojiro-dp-210mm-gyuto-f-808"
       },
-      "title": "Light Chinese chef knife / cai dao, 180-210mm",
-      "profile": "Asian cleaver / cai dao",
-      "steel": "Stainless or stainless-clad for low-fuss home use",
-      "length": "180-210mm",
-      "maintenanceLevel": "Low to medium",
-      "why": "A light Asian cleaver is a tall, thin board-prep knife: excellent for vegetables, herbs, tofu and boneless protein, with enough blade face to scoop food cleanly from board to pan.",
-      "avoid": "Avoid heavy bone cleavers unless you explicitly need one. For home vegetable prep, choose a slicer-style cai dao or Chinese chef knife, not a thick chopper.",
-      "productIds": [
-        "chinese-cleaver-and-slicer-shortlist",
-        "hasegawa-soft-board",
-        "blade-guard"
-      ],
-      "maintenanceKit": [
-        {
-          "label": "Stone",
-          "text": "Use the same 1000 grit starter stone as a gyuto or nakiri. Keep the edge toothy and practical unless your cutting style asks for more refinement.",
-          "productIds": [
-            "shapton-kuromaku-1000",
-            "king-combo-stone"
-          ]
-        },
-        {
-          "label": "Board",
-          "text": "Use a large soft board. A tall cleaver needs space for full board contact and safe food transfer.",
-          "productIds": [
-            "hasegawa-soft-board",
-            "asahi-rubber-board"
-          ]
-        },
-        {
-          "label": "Storage",
-          "text": "Measure blade height before buying a guard. Many standard gyuto guards are too short for cleavers.",
-          "productIds": [
-            "blade-guard"
-          ]
-        }
-      ],
-      "articleIds": [
-        "boning-fillet-slicer-cleaver-specialist-profiles",
-        "nakiri-profile-guide",
-        "boards-storage-and-edge-life",
-        "king-vs-shapton-starter-stones-guide"
-      ]
-    },
-    {
-      "id": "bread-serrated-value",
-      "match": {
-        "task": "bread",
-        "care": "*",
-        "budget": "*"
+      "alternatives": {
+        "value": "tojiro-dp-210mm-gyuto-f-808",
+        "convenience": "tojiro-dp-210mm-gyuto-f-808",
+        "upgrade": "victorinox-fibrox-pro-8-inch-chef-knife"
       },
-      "title": "Victorinox-style serrated bread knife, 8-10 inch",
-      "profile": "Bread knife / serrated utility",
-      "steel": "Stainless wavy-edge serration",
-      "length": "8-10 inch / 21-26cm",
-      "maintenanceLevel": "Low",
-      "why": "Bread knives earn their slot when crust, soft crumb, tomatoes or tough skins would punish a straight edge. This is a value-first category: a clean, replaceable Victorinox-style serrated knife usually makes more sense than treating a bread knife like a collector piece.",
-      "avoid": "Avoid very short blades for large loaves, very flexible blades that wander through crust and aggressive teeth on soft Japanese boards. Serrated knives are not chef-knife replacements.",
-      "productIds": [
-        "victorinox-fibrox-bread-knife",
-        "victorinox-swiss-classic-bread-knife",
-        "bread-knife-shortlist"
-      ],
-      "maintenanceKit": [
-        {
-          "label": "Board",
-          "text": "Use a board you do not mind marking. Serrations are useful precisely because they bite.",
-          "productIds": [
-            "hasegawa-soft-board",
-            "asahi-rubber-board"
-          ]
-        },
-        {
-          "label": "Storage",
-          "text": "Use a long guard or strip so the teeth are not scraping around in a drawer.",
-          "productIds": [
-            "universal-blade-guards",
-            "blade-guard"
-          ]
-        }
-      ],
-      "articleIds": [
-        "bread-serrated-knife-profile-guide",
-        "start-here-main-kitchen-knife-profiles",
-        "boards-storage-and-edge-life"
-      ]
-    },
-    {
-      "id": "low-fuss-all-purpose-gyuto",
-      "match": {
-        "task": "all-purpose",
-        "care": "low"
-      },
-      "title": "Stainless gyuto, western chef knife or light Asian cleaver",
-      "profile": "Gyuto / chef knife / Asian cleaver",
-      "steel": "VG10, AUS-8, X50CrMoV15 or other stainless",
-      "length": "180-210mm",
-      "maintenanceLevel": "Low",
-      "why": "This is the practical lane: enough length for onions, protein and herbs, without carbon-steel homework. A light Asian cleaver belongs here if you like tall blades, scooping food and mostly board-based prep.",
-      "avoid": "Skip very thick bolsters if you want easier sharpening, skip very thin lasers if your board technique is still enthusiastic, and do not buy a bone cleaver for chef-knife work.",
-      "productIds": [
-        "tojiro-dp-210mm-gyuto-f-808",
-        "mac-mth-80-professional-8-inch-chef-knife",
-        "victorinox-fibrox-pro-8-inch-chef-knife",
-        "chinese-cleaver-and-slicer-shortlist"
-      ],
-      "maintenanceKit": [
-        {
-          "label": "Stone",
-          "text": "Shapton 1000 for a fast one-stone routine; King if you want lower cost and more soaking-stone feel.",
-          "productIds": [
-            "shapton-kuromaku-1000",
-            "king-combo-stone"
-          ]
-        },
-        {
-          "label": "Board",
-          "text": "A large soft board matters more than another handle material debate.",
-          "productIds": [
-            "hasegawa-soft-board",
-            "asahi-rubber-board"
-          ]
-        },
-        {
-          "label": "Storage",
-          "text": "Use a guard, strip or roll. Edges and roommates both behave better with boundaries.",
-          "productIds": [
-            "blade-guard"
-          ]
-        }
-      ],
+      "why": "A chef's knife already handles onions, herbs and most vegetables well. My starter choices are Victorinox and Tojiro; you do not need to buy a separate nakiri to cook vegetables.",
+      "care": "Keep the board stable. Avoid twisting a thin edge inside hard squash; use a sturdier tool for forceful jobs.",
+      "skip": "A specialised vegetable knife can wait until you know you prefer its flat edge.",
       "articleIds": [
         "chef-knife-vs-gyuto-which-all-purpose-profile",
-        "amazon-chef-knife-shortlist-what-to-buy-first",
-        "tojiro-dp-210mm-gyuto-shortlist-review",
-        "mac-mth80-shortlist-review"
+        "nakiri-profile-guide"
+      ],
+      "stone": true
+    },
+    "small-prep": {
+      "title": "A small, inexpensive paring knife.",
+      "picks": {
+        "value": "victorinox-swiss-classic-paring-knife",
+        "convenience": "victorinox-swiss-classic-paring-knife",
+        "upgrade": "victorinox-swiss-classic-paring-knife"
+      },
+      "why": "I would keep this simple: a Victorinox Swiss Classic paring knife for peeling, trimming and small fruit. Spending more is optional for this job.",
+      "care": "Choose a straight edge if you want to sharpen it on your normal stone.",
+      "skip": "A premium petty is worth considering later for small tasks on a board.",
+      "articleIds": [
+        "petty-paring-utility-profile-guide"
       ]
     },
-    {
-      "id": "balanced-vegetable-santoku-nakiri",
-      "match": {
-        "task": "vegetable",
-        "care": "balanced"
+    "bread": {
+      "title": "A Victorinox bread knife.",
+      "picks": {
+        "value": "victorinox-swiss-classic-bread-knife",
+        "convenience": "victorinox-fibrox-bread-knife",
+        "upgrade": "victorinox-fibrox-bread-knife"
       },
-      "title": "Stainless santoku or nakiri, 165-180mm",
-      "profile": "Santoku / nakiri / light Asian cleaver",
-      "steel": "Ginsan, VG10 or Swedish stainless",
-      "length": "165-180mm",
-      "maintenanceLevel": "Moderate-low",
-      "why": "For mixed home cooking, a santoku gives more tip versatility, a nakiri makes vegetable prep cleaner, and a light Asian cleaver adds height, board contact and easy food transfer.",
-      "avoid": "Avoid buying purely by Damascus pattern, and avoid thick bone cleavers if you really want a thin cai dao or Chinese chef knife. The board, grind and heat treatment matter after the Instagram moment expires.",
-      "productIds": [
-        "santoku-knife-shortlist",
-        "nakiri-knife-shortlist",
-        "chinese-cleaver-and-slicer-shortlist"
-      ],
-      "maintenanceKit": [
-        {
-          "label": "Stone",
-          "text": "A clean 1000 grit edge is enough for most vegetables; add 3000 only when you can deburr reliably.",
-          "productIds": [
-            "shapton-kuromaku-1000"
-          ]
-        },
-        {
-          "label": "Strop",
-          "text": "Strop lightly. Heavy stropping rounds edges and creates confidence without cutting performance.",
-          "productIds": [
-            "leather-strop"
-          ]
-        },
-        {
-          "label": "Board",
-          "text": "Hasegawa, Asahi or hinoki depending on care tolerance.",
-          "productIds": [
-            "hasegawa-soft-board",
-            "asahi-rubber-board",
-            "hinoki-board"
-          ]
-        }
-      ],
+      "why": "A long serrated blade cuts through crust without crushing the loaf. Victorinox is my starting point here, even if you have more to spend.",
+      "care": "Store the teeth safely. Standard flat-stone sharpening is not the right routine for a serrated edge; consider a specialist service when needed.",
+      "skip": "No sharpening stone or premium board needs to come with this purchase.",
       "articleIds": [
-        "santoku-profile-guide",
-        "nakiri-profile-guide",
-        "vg10-ginsan-aogami-shirogami-guide"
+        "bread-serrated-knife-profile-guide"
       ]
     },
-    {
-      "id": "carbon-curious-all-purpose-sanjo",
-      "match": {
-        "task": "all-purpose",
-        "care": "curious"
+    "protein": {
+      "title": "A small specialist for trimming.",
+      "picks": {
+        "value": "victorinox-fibrox-boning-15",
+        "convenience": "victorinox-fibrox-boning-15",
+        "upgrade": "victorinox-fibrox-boning-15"
       },
-      "title": "Carbon or semi-stainless Sanjo gyuto, 210mm",
-      "profile": "Gyuto",
-      "steel": "White #2, Blue #2, SKD or similar",
-      "length": "210mm",
-      "maintenanceLevel": "Medium-high",
-      "why": "A Yoshikane, Wakui or Toyama-style lane gives you food release, grind character and the joy of wiping your knife like a responsible adult.",
-      "avoid": "Skip this if you will leave lemon juice on the edge or store it wet. Carbon steel is not haunted; it is just reactive.",
-      "productIds": [
-        "sanjo-carbon-gyuto-shortlist"
-      ],
-      "maintenanceKit": [
-        {
-          "label": "Stone",
-          "text": "1000 grit for edge reset, 3000-6000 only after you control pressure and deburring.",
-          "productIds": [
-            "shapton-kuromaku-1000",
-            "king-combo-stone"
-          ]
-        },
-        {
-          "label": "Board",
-          "text": "Use an edge-friendly board. Hard glass, bamboo and marble are knife sadness with a countertop.",
-          "productIds": [
-            "hasegawa-soft-board",
-            "hinoki-board"
-          ]
-        },
-        {
-          "label": "Storage",
-          "text": "Dry fully before the guard. Carbon plus damp saya equals orange regret.",
-          "productIds": [
-            "blade-guard"
-          ]
-        }
-      ],
+      "why": "For trimming meat close to bones, I would start with a 15 cm Victorinox boning knife. If you mainly slice boneless portions, the everyday chef's knife you already have may be enough.",
+      "care": "Cut around bones, not through them. Fish filleting may suit a more flexible blade; match flexibility to the task.",
+      "skip": "A long Japanese slicer is not necessary for occasional home trimming.",
       "articleIds": [
-        "maker-spotlight-yoshikane-hamono",
-        "maker-spotlight-wakui",
-        "maker-spotlight-toyama-noborikoi",
-        "stainless-carbon-steel-care-patina-rust"
-      ]
+        "boning-fillet-slicer-cleaver-specialist-profiles"
+      ],
+      "stone": true
     },
-    {
-      "id": "small-prep-petty",
-      "match": {
-        "task": "small-prep"
+    "cleaver": {
+      "title": "A thin vegetable slicer, not a bone cleaver.",
+      "picks": {
+        "value": "chinese-cleaver-and-slicer-shortlist",
+        "convenience": "chinese-cleaver-and-slicer-shortlist",
+        "upgrade": "chinese-cleaver-and-slicer-shortlist"
       },
-      "title": "Stainless petty, 120-150mm",
-      "profile": "Petty",
-      "steel": "Stainless or stainless-clad",
-      "length": "120-150mm",
-      "maintenanceLevel": "Low to medium",
-      "why": "A petty is the quiet knife that does citrus, herbs, garlic, trimming and board-adjacent work without making you unsheathe a 240mm personality test.",
-      "avoid": "Do not use it as a paring knife in the air unless the handle and control feel right.",
-      "productIds": [
-        "120-150mm-petty-knife-shortlist",
-        "victorinox-swiss-classic-paring-knife"
-      ],
-      "maintenanceKit": [
-        {
-          "label": "Stone",
-          "text": "Same 1000 stone as your main knife. Do not buy a tiny stone for a tiny knife.",
-          "productIds": [
-            "shapton-kuromaku-1000",
-            "king-combo-stone"
-          ]
-        },
-        {
-          "label": "Board",
-          "text": "Small knives still deserve a sane board.",
-          "productIds": [
-            "hasegawa-soft-board",
-            "asahi-rubber-board"
-          ]
-        }
-      ],
+      "why": "For the broad blade and food-scooping shape, look for a light Chinese slicer or cai dao. This is a category search, not a verified model recommendation: check blade thickness, weight and intended use before buying.",
+      "care": "Use for vegetables and boneless food. A tall rectangular blade does not mean it is made to chop bone.",
+      "skip": "If you are unsure about the tall profile, start with a Victorinox chef's knife.",
       "articleIds": [
-        "petty-paring-utility-profile-guide",
-        "boards-storage-and-edge-life"
-      ]
+        "boning-fillet-slicer-cleaver-specialist-profiles"
+      ],
+      "stone": true
     },
-    {
-      "id": "protein-slicer-specialist",
-      "match": {
-        "task": "protein"
+    "sharpening": {
+      "title": "Start with one 1000-grit stone.",
+      "picks": {
+        "value": "king-deluxe-1000-whetstone",
+        "convenience": "shapton-kuromaku-1000",
+        "upgrade": "shapton-kuromaku-1000"
       },
-      "title": "Sujihiki or western slicer, length only if your board allows it",
-      "profile": "Slicer / sujihiki",
-      "steel": "Stainless or stainless-clad for low fuss",
-      "length": "240-270mm if space allows",
-      "maintenanceLevel": "Low to medium",
-      "why": "Long, clean pulls beat sawing. Buy the length your board and kitchen can actually support.",
-      "avoid": "Skip if you mainly dice onions. A slicer is not a personality replacement for an all-purpose knife.",
-      "productIds": [
-        "sujihiki-or-slicer-shortlist",
-        "boning-and-fillet-knife-shortlist"
-      ],
-      "maintenanceKit": [
-        {
-          "label": "Stone",
-          "text": "A clean 1000 edge matters; polishing higher is optional and food-dependent.",
-          "productIds": [
-            "shapton-kuromaku-1000"
-          ]
-        },
-        {
-          "label": "Board",
-          "text": "Use a board long enough for full strokes.",
-          "productIds": [
-            "hasegawa-soft-board",
-            "asahi-rubber-board"
-          ]
-        },
-        {
-          "label": "Storage",
-          "text": "Long blades need sleeves or a proper roll.",
-          "productIds": [
-            "blade-guard"
-          ]
-        }
-      ],
-      "articleIds": [
-        "boning-fillet-slicer-cleaver-specialist-profiles",
-        "boards-storage-and-edge-life"
-      ]
-    },
-    {
-      "id": "sharpening-starter-setup",
-      "match": {
-        "task": "sharpening"
+      "alternatives": {
+        "value": "shapton-kuromaku-1000",
+        "convenience": "king-deluxe-1000-whetstone",
+        "upgrade": "king-deluxe-1000-whetstone"
       },
-      "title": "One real stone, one strop, one boring routine",
-      "profile": "Sharpening setup",
-      "steel": "Works for most kitchen steels",
-      "length": "N/A",
-      "maintenanceLevel": "Practice-based",
-      "why": "Start with a 1000 grit stone, learn burr formation and removal, then add refinement. Buying six stones before you can deburr is how drawers become geology museums.",
-      "avoid": "Avoid mystery angle gadgets if they stop you learning pressure, contact and burr behavior.",
-      "productIds": [
-        "shapton-kuromaku-1000",
-        "king-combo-stone",
-        "leather-strop"
-      ],
-      "maintenanceKit": [
-        {
-          "label": "Stone",
-          "text": "Shapton 1000 for splash-and-go speed; King 1000/6000 for budget and feedback.",
-          "productIds": [
-            "shapton-kuromaku-1000",
-            "king-combo-stone"
-          ]
-        },
-        {
-          "label": "Strop",
-          "text": "Use lightly after burr removal. Strop as punctuation, not as the sentence.",
-          "productIds": [
-            "leather-strop"
-          ]
-        },
-        {
-          "label": "Board",
-          "text": "A good board extends the time between sharpening sessions.",
-          "productIds": [
-            "hasegawa-soft-board",
-            "asahi-rubber-board"
-          ]
-        }
-      ],
+      "why": "My first choices are King Deluxe 1000 for a lower-cost start and Shapton Kuromaku / Pro 1000 for less preparation. Learn to make a consistent edge before adding finer stones.",
+      "care": "Follow the exact stone's wetting and drying instructions. Keep it stable in use and flatten it as it wears.",
+      "skip": "You do not need a 6000-grit stone or a strop to begin. A flattening method will become useful.",
       "articleIds": [
-        "sharpening-basics-burr-angle-pressure",
         "king-vs-shapton-starter-stones-guide",
-        "stropping-and-deburring-clean-apex",
+        "sharpening-basics-burr-angle-pressure"
+      ]
+    },
+    "board": {
+      "title": "A stable board with room to work.",
+      "picks": {
+        "value": "starter-polyethylene-board",
+        "convenience": "starter-polyethylene-board",
+        "upgrade": "asahi-rubber-board"
+      },
+      "why": "I would start with a generously sized food-grade polyethylene board that fits your sink. If you want to spend more on cutting feel, an Asahi rubber board is an optional step up.",
+      "care": "Prevent slipping and clean according to the maker's directions. Check dimensions and whether the particular board is dishwasher-safe.",
+      "skip": "Glass, stone and ceramic cutting surfaces are poor companions for a fine knife edge.",
+      "articleIds": [
+        "boards-storage-and-edge-life"
+      ]
+    },
+    "storage": {
+      "title": "Protect the edge you already have.",
+      "picks": {
+        "value": "universal-blade-guards",
+        "convenience": "universal-blade-guards",
+        "upgrade": "universal-blade-guards"
+      },
+      "why": "A correctly sized blade guard is a simple starting point for drawer storage. There is no need to buy a full knife block.",
+      "care": "Measure blade height and length before ordering. Put the knife away clean and completely dry.",
+      "skip": "A knife roll is only useful if you regularly transport your knives.",
+      "articleIds": [
         "boards-storage-and-edge-life"
       ]
     }
-  ],
-  "fallback": "low-fuss-all-purpose-gyuto"
+  }
 }
