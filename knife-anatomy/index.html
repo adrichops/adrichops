@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Knife anatomy - Adrichops</title>
+<meta name="description" content="An interactive 3D gyuto glossary in English and Japanese: blade geometry, steel layers and handle parts.">
+<link rel="canonical" href="https://adrichops.pages.dev/knife-anatomy/">
+<meta property="og:title" content="Knife anatomy - Adrichops">
+<meta property="og:description" content="An interactive 3D gyuto glossary in English and Japanese: blade geometry, steel layers and handle parts.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://adrichops.pages.dev/knife-anatomy/">
+<meta property="og:image" content="https://adrichops.pages.dev/assets/img/hero-gyuto.svg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="icon" href="/assets/brand/favicon-dark.png" type="image/png" data-theme-favicon>
+<link rel="apple-touch-icon" href="/assets/brand/favicon-dark.png">
+<link rel="stylesheet" href="/assets/css/site.css">
+<link rel="stylesheet" href="/assets/css/refinement.css?v=60fbb82e3ebc">
+
+</head>
+<body><header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="/" aria-label="Adrichops home"><img class="brand-logo" src="/assets/brand/logo-dark.png" alt="Adrichops" width="960" height="97" data-brand-logo data-logo-dark="/assets/brand/logo-dark.png" data-logo-light="/assets/brand/logo-light.png"></a>
+    <nav class="nav-tabs" id="primary-navigation" data-nav-menu aria-label="Primary navigation"><a href="/about/" >About</a><a href="/maker-map/" >Maker map</a><a href="/knife-anatomy/" aria-current="page">Knife anatomy</a><a href="/blog/" >Blog</a><a href="/disclosure/" >Disclosure</a><a href="/tool-finder/" >Tool Finder</a></nav>
+    <div class="header-actions">
+      <button class="icon-button menu-button" type="button" data-nav-toggle aria-label="Open navigation menu" aria-expanded="false" aria-controls="primary-navigation"><span aria-hidden="true"></span></button>
+      <button class="icon-button" type="button" data-search-open aria-label="Search"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2"/><path d="m20 20-3.5-3.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+      <button class="icon-button" type="button" data-theme-toggle aria-label="Toggle light or dark theme"></button>
+    </div>
+  </div>
+</header><link rel="stylesheet" href="/assets/css/knife-anatomy.css?v=35ca57fca3d2">
+<main class="anatomy-page" data-knife-study>
+<header class="anatomy-heading"><div><span class="kicker">The study bench</span><h1>Knife anatomy</h1></div><p><span lang="ja">牛刀</span> / Gyuto<br><small>Satin blade / pale wood / black ferrule</small></p></header>
+<div class="anatomy-toolbar"><div class="anatomy-segments" role="group" aria-label="Construction view"><button type="button" data-knife-view="whole" aria-pressed="true">Knife</button><button type="button" data-knife-view="bevel" aria-pressed="false">Bevel study</button><button type="button" data-knife-view="layers" aria-pressed="false">Steel layers</button></div><label><input type="checkbox" data-knife-tang> Reveal tang</label><div class="anatomy-tools"><button type="button" data-knife-reset aria-label="Reset view" title="Reset view"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11a9 9 0 1 1 2.7 6.4M3 4v7h7"/></svg></button><button type="button" data-knife-spin aria-label="Rotate knife automatically" title="Rotate knife automatically" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m16 3 4 4-4 4M20 7H9a6 6 0 0 0-6 6m5 8-4-4 4-4M4 17h11a6 6 0 0 0 6-6"/></svg></button></div></div>
+<section class="anatomy-workspace" aria-label="Interactive knife study"><div class="knife-scene" data-knife-scene role="group" aria-label="3D gyuto. All parts are also selectable in the terminology list."><p class="knife-loading" data-knife-loading role="status">Loading gyuto...</p><div class="knife-hotspots" data-knife-hotspots></div></div><aside class="knife-inspector" data-knife-inspector aria-live="polite"></aside></section>
+<p class="anatomy-scope">An illustrative gyuto based on a photographic reference, not a verified replica. The wide-bevel and three-layer study views are schematic alternatives, not claims about the photographed knife's construction. The cladding boundary and the shinogi are different features.</p>
+<section class="anatomy-glossary" aria-label="Knife terminology"><div class="anatomy-glossary-head"><h2>Japanese knife vocabulary</h2><label>Find a term<input type="search" data-knife-search placeholder="English, Japanese or romaji"></label></div><div class="anatomy-term-groups" data-knife-terms></div><p data-knife-empty hidden>No matching terms.</p></section>
+<details class="anatomy-sources"><summary>References and model notes</summary><p>Original procedural 3D illustration by Adrichops. Geometry is simplified for study, with thicker layers for visibility. Terminology can vary between workshops and knife styles.</p><ul><li><a href="https://knifewear.com/en-us/blogs/articles/kitchen-knife-anatomy-explained-spine-belly-choil-and-more" target="_blank" rel="noopener">Knifewear: knife anatomy</a></li><li><a href="https://sharpedgeshop.com/blogs/knives-101/parts-of-japanese-kitchen-knife" target="_blank" rel="noopener">SharpEdge: blade and handle parts</a></li><li><a href="https://www.tophamknifeco.com/advanced-chef-knife-grinds/" target="_blank" rel="noopener">Topham Knife Co: wide-bevel geometry</a></li></ul></details>
+</main><script type="importmap">{"imports":{"three":"/assets/vendor/three-0.180.0/three.module.min.js"}}</script><script type="module" src="/assets/js/knife-anatomy.js?v=5ec7eb4766d5"></script><div class="search-dialog" data-search-dialog aria-hidden="true"><div class="search-panel" role="dialog" aria-label="Search Adrichops"><header><input data-search-input type="search" placeholder="Search maker, nakiri, cleaver, cai dao, VG10…"><button class="icon-button" type="button" data-search-close aria-label="Close search">×</button></header><div class="search-results" data-search-results></div></div></div>
+<section class="site-engagement" aria-label="Feedback and newsletter">
+  <div class="engagement-inner">
+    <form class="engagement-card feedback-form" data-feedback-form action="/api/feedback" method="post">
+      <div><span class="kicker">Feedback</span><h2>Was this useful?</h2></div>
+      <fieldset class="csat-scale" aria-label="How satisfied were you with this content?">
+        <legend>How satisfied were you with this content?</legend>
+        <label><input type="radio" name="score" value="1" required><span>1</span></label>
+        <label><input type="radio" name="score" value="2"><span>2</span></label>
+        <label><input type="radio" name="score" value="3"><span>3</span></label>
+        <label><input type="radio" name="score" value="4"><span>4</span></label>
+        <label><input type="radio" name="score" value="5"><span>5</span></label>
+      </fieldset>
+      <label class="field-label">Your note<textarea name="comment" rows="4" maxlength="1200" placeholder="What should I keep, fix or explain better?"></textarea></label>
+      <input type="hidden" name="page_url" data-current-url>
+      <input type="hidden" name="pathname" data-current-path>
+      <label class="bot-field" aria-hidden="true">Website<input type="text" name="website" tabindex="-1" autocomplete="off"></label>
+      <div class="form-row"><button class="button primary" type="submit">Send feedback</button><p class="form-status" data-form-status aria-live="polite"></p></div>
+    </form>
+    <form class="engagement-card newsletter-form" data-newsletter-form action="/api/newsletter" method="post">
+      <div><span class="kicker">Newsletter</span><h2>Get new notes.</h2><p>Occasional reviews, maker updates and practical knife notes.</p></div>
+      <label class="field-label">Email address<input type="email" name="email" autocomplete="email" required placeholder="you@example.com"></label>
+      <input type="hidden" name="page_url" data-current-url>
+      <input type="hidden" name="pathname" data-current-path>
+      <label class="bot-field" aria-hidden="true">Website<input type="text" name="website" tabindex="-1" autocomplete="off"></label>
+      <div class="form-row"><button class="button primary" type="submit">Sign up</button><p class="form-status" data-form-status aria-live="polite"></p></div>
+    </form>
+  </div>
+</section>
+<footer class="footer"><div class="footer-inner"><p>© 2026 Adrichops. Personal knife notes, source trails and disclosed affiliate links.</p><nav class="footer-links"><a href="/about/">About</a><a href="/maker-map/">Maker map</a><a href="/knife-anatomy/">Knife anatomy</a><a href="/blog/">Blog</a><a href="/disclosure/">Disclosure</a><a href="/tool-finder/">Tool Finder</a></nav></div></footer>
+<script src="/assets/js/main.js" defer></script>
+</body></html>

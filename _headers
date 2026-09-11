@@ -2,3 +2,18 @@
   X-Frame-Options: DENY
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin
+
+/assets/vendor/cytoscape-3.33.1.min.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/assets/vendor/three-0.180.0/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/maker-map/*
+  Cache-Control: no-cache
+
+/data/maker-graph.json
+  Cache-Control: no-cache
+
+/knife-anatomy/*
+  Cache-Control: no-cache

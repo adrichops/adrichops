@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 from pathlib import Path
-import json, re, html, shutil, datetime
+import json, re, html, shutil, datetime, hashlib
 from urllib.parse import quote
 import yaml
 
@@ -9,6 +9,7 @@ BASE_URL = 'https://adrichops.pages.dev'
 NAV = [
     ('/about/', 'About'),
     ('/maker-map/', 'Maker map'),
+    ('/knife-anatomy/', 'Knife anatomy'),
     ('/blog/', 'Blog'),
     ('/disclosure/', 'Disclosure'),
     ('/tool-finder/', 'Tool Finder'),
@@ -125,6 +126,10 @@ def absolute_image(path):
         return path
     return BASE_URL.rstrip('/') + '/' + path.lstrip('/')
 
+def asset_url(path):
+    digest = hashlib.sha256((ROOT / path).read_bytes()).hexdigest()[:12]
+    return site_path(path) + '?v=' + digest
+
 def image_credit_html(item):
     caption = item.get('caption') or item.get('imageCaption') or ''
     credit = item.get('credit') or item.get('imageCredit') or ''
@@ -142,6 +147,7 @@ def image_credit_html(item):
 
 def head(title, desc, route='/', image='/assets/img/hero-gyuto.svg', schema=None):
     canonical = BASE_URL.rstrip('/') + route
+    refinement = asset_url('assets/css/refinement.css') if route in ['/maker-map/', '/knife-anatomy/'] else '/assets/css/refinement.css'
     schema_tag = f'<script type="application/ld+json">{json.dumps(schema, ensure_ascii=False)}</script>' if schema else ''
     return f'''<!doctype html>
 <html lang="en" data-theme="dark">
@@ -163,7 +169,7 @@ def head(title, desc, route='/', image='/assets/img/hero-gyuto.svg', schema=None
 <link rel="icon" href="/assets/brand/favicon-dark.png" type="image/png" data-theme-favicon>
 <link rel="apple-touch-icon" href="/assets/brand/favicon-dark.png">
 <link rel="stylesheet" href="/assets/css/site.css">
-<link rel="stylesheet" href="/assets/css/refinement.css">
+<link rel="stylesheet" href="{refinement}">
 {schema_tag}
 </head>
 <body>'''
@@ -442,8 +448,19 @@ def maker_map_page(graph):
 <div class="map-controls"><label>Search makers<input class="search-input" type="search" data-maker-search placeholder="Name, alias or knife line"></label><label>Region<select data-maker-region><option value="">All regions</option></select></label><label>Role<select data-maker-role><option value="">All roles</option><option value="blacksmith">Blacksmith</option><option value="sharpener">Sharpener</option><option value="polisher">Polisher</option><option value="handle maker">Handle maker</option><option value="workshop">Workshop</option><option value="brand">Brand</option></select></label><div class="map-view-switch" role="group" aria-label="View"><button type="button" data-map-view="map" aria-pressed="true">Map</button><button type="button" data-map-view="directory" aria-pressed="false">Directory</button></div></div>
 <div class="map-role-key" aria-label="Maker role colour legend"><span class="map-key-heading">Makers</span><div class="map-legend"><span style="--key-color:#ff776b">Blacksmith</span><span style="--key-color:#efbd49">Sharpener</span><span style="--key-color:#61d6cb">Sharpener / polisher</span><span style="--key-color:#cfa3ff">Handle maker</span><span style="--key-color:#6bb7ff">Workshop / brand</span></div></div>\n<div class="map-workspace"><div class="map-main"><div class="map-toolbar"><button class="button small" type="button" data-map-back disabled>All regions</button><span data-map-caption role="status">{count} makers and workshops</span><div class="map-zoom"><button type="button" data-map-zoom="out" aria-label="Zoom out" title="Zoom out"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" x2="16.65" y1="21" y2="16.65"/><line x1="8" x2="14" y1="11" y2="11"/></svg></button><button type="button" data-map-zoom="fit" aria-label="Fit graph" title="Fit graph"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 3H5a2 2 0 0 0-2 2v3"/><path d="M21 8V5a2 2 0 0 0-2-2h-3"/><path d="M3 16v3a2 2 0 0 0 2 2h3"/><path d="M16 21h3a2 2 0 0 0 2-2v-3"/></svg></button><button type="button" data-map-zoom="in" aria-label="Zoom in" title="Zoom in"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" x2="16.65" y1="21" y2="16.65"/><line x1="11" x2="11" y1="8" y2="14"/><line x1="8" x2="14" y1="11" y2="11"/></svg></button></div></div><div data-region-grid class="region-picker"></div><div data-maker-canvas class="maker-canvas" role="group" aria-label="Maker relationships. The Directory view lists every maker and their connections."></div><div data-maker-directory class="maker-directory" hidden></div><p class="map-load-status" data-map-status role="status">Loading makers...</p><details class="map-key" open><summary>Relationship colours</summary><div class="map-legend"><span style="--key-color:#56ce8b">Training / family</span><span style="--key-color:#6bb7ff">Workshop</span><span style="--key-color:#efbd49">Smith / sharpener</span><span style="--key-color:#ff968a">Collaboration</span><span style="--key-color:#61d6cb">Alias</span><span style="--key-color:#aeb8c3">Regional connection</span></div><p>Arrows follow the named relationship. Dashed edges are community reports or relationships still needing a direct source. Dashed node borders identify makers connected from another region.</p></details></div>
 <aside class="maker-profile" data-maker-profile tabindex="-1"><h2>Meet the makers</h2><p>Explore a region or search for someone you know.</p><p><a href="/blog/who-made-your-japanese-knife/">New here? How a Japanese knife is made →</a></p></aside></div>
-<details class="geography-section"><summary>Where in Japan?</summary><div class="geography-layout"><svg data-japan-map viewBox="0 0 800 720" role="img" aria-label="Japanese knife-making regions"></svg><div data-geography-list class="geography-list"></div></div><p class="image-credit">Map boundaries: <a href="https://www.naturalearthdata.com/about/terms-of-use/" target="_blank" rel="noopener">Natural Earth, public domain</a>. Pins show regional reference locations.</p></details>
-</section></main>{maker_suggestion_dialog()}<script src="/assets/vendor/cytoscape-3.33.1.min.js" defer></script><script src="/assets/js/maker-graph.js" defer></script>''' + footer()
+<p class="map-location-note">Region markers show approximate regional locations, not individual workshop addresses.</p>
+</section></main>{maker_suggestion_dialog()}<script src="{asset_url('assets/js/maker-geography.js')}" defer></script><script src="/assets/vendor/cytoscape-3.33.1.min.js" defer></script><script src="{asset_url('assets/js/maker-graph.js')}" defer></script>''' + footer()
+
+def knife_anatomy_page():
+    return head('Knife anatomy - Adrichops', 'An interactive 3D gyuto glossary in English and Japanese: blade geometry, steel layers and handle parts.', '/knife-anatomy/') + header('Knife anatomy') + f'''<link rel="stylesheet" href="{asset_url('assets/css/knife-anatomy.css')}">
+<main class="anatomy-page" data-knife-study>
+<header class="anatomy-heading"><div><span class="kicker">The study bench</span><h1>Knife anatomy</h1></div><p><span lang="ja">牛刀</span> / Gyuto<br><small>Satin blade / pale wood / black ferrule</small></p></header>
+<div class="anatomy-toolbar"><div class="anatomy-segments" role="group" aria-label="Construction view"><button type="button" data-knife-view="whole" aria-pressed="true">Knife</button><button type="button" data-knife-view="bevel" aria-pressed="false">Bevel study</button><button type="button" data-knife-view="layers" aria-pressed="false">Steel layers</button></div><label><input type="checkbox" data-knife-tang> Reveal tang</label><div class="anatomy-tools"><button type="button" data-knife-reset aria-label="Reset view" title="Reset view"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11a9 9 0 1 1 2.7 6.4M3 4v7h7"/></svg></button><button type="button" data-knife-spin aria-label="Rotate knife automatically" title="Rotate knife automatically" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m16 3 4 4-4 4M20 7H9a6 6 0 0 0-6 6m5 8-4-4 4-4M4 17h11a6 6 0 0 0 6-6"/></svg></button></div></div>
+<section class="anatomy-workspace" aria-label="Interactive knife study"><div class="knife-scene" data-knife-scene role="group" aria-label="3D gyuto. All parts are also selectable in the terminology list."><p class="knife-loading" data-knife-loading role="status">Loading gyuto...</p><div class="knife-hotspots" data-knife-hotspots></div></div><aside class="knife-inspector" data-knife-inspector aria-live="polite"></aside></section>
+<p class="anatomy-scope">An illustrative gyuto based on a photographic reference, not a verified replica. The wide-bevel and three-layer study views are schematic alternatives, not claims about the photographed knife's construction. The cladding boundary and the shinogi are different features.</p>
+<section class="anatomy-glossary" aria-label="Knife terminology"><div class="anatomy-glossary-head"><h2>Japanese knife vocabulary</h2><label>Find a term<input type="search" data-knife-search placeholder="English, Japanese or romaji"></label></div><div class="anatomy-term-groups" data-knife-terms></div><p data-knife-empty hidden>No matching terms.</p></section>
+<details class="anatomy-sources"><summary>References and model notes</summary><p>Original procedural 3D illustration by Adrichops. Geometry is simplified for study, with thicker layers for visibility. Terminology can vary between workshops and knife styles.</p><ul><li><a href="https://knifewear.com/en-us/blogs/articles/kitchen-knife-anatomy-explained-spine-belly-choil-and-more" target="_blank" rel="noopener">Knifewear: knife anatomy</a></li><li><a href="https://sharpedgeshop.com/blogs/knives-101/parts-of-japanese-kitchen-knife" target="_blank" rel="noopener">SharpEdge: blade and handle parts</a></li><li><a href="https://www.tophamknifeco.com/advanced-chef-knife-grinds/" target="_blank" rel="noopener">Topham Knife Co: wide-bevel geometry</a></li></ul></details>
+</main><script type="importmap">{{"imports":{{"three":"/assets/vendor/three-0.180.0/three.module.min.js"}}}}</script><script type="module" src="{asset_url('assets/js/knife-anatomy.js')}"></script>''' + footer()
 def guide_index(posts):
     guides = [p for p in posts if p.get('type') != 'Review brief' and p.get('type') != 'Maker spotlight']
     return collection_page('Guides', 'Sharpening, maintenance, steel, profiles, boards, stones and Japanese knife culture.', '', guides, '/guides/', 'Research-led guides under eight minutes, with practical caveats and source trails.')
@@ -555,6 +572,7 @@ def main():
     write('/shops/', shops_page(shops))
     write('/explore/', explore_page())
     write('/maker-map/', maker_map_page(maker_graph))
+    write('/knife-anatomy/', knife_anatomy_page())
     write('/blog/', blog_page(posts))
     # Articles + old /posts redirects
     for p in posts:
@@ -590,7 +608,7 @@ def main():
     # 404
     write('/404.html', head('Page not found — Adrichops', 'The requested Adrichops page could not be found.', '/404.html') + header('') + '<main class="page"><section class="collection-hero"><span class="kicker">404</span><h1>Lost edge.</h1><p>This page is not in the kit. Try the blog, Tool Finder or search.</p><p><a class="button primary" href="/">Back home</a></p></section></main>' + footer())
     # sitemap
-    urls = ['/', '/about/', '/maker-map/', '/blog/', '/disclosure/', '/tool-finder/', '/privacy/'] + [p['route'] for p in posts]
+    urls = ['/', '/about/', '/maker-map/', '/knife-anatomy/', '/blog/', '/disclosure/', '/tool-finder/', '/privacy/'] + [p['route'] for p in posts]
     sitemap = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + ''.join(f'  <url><loc>{BASE_URL.rstrip()}{u}</loc></url>\n' for u in urls) + '</urlset>\n'
     (ROOT / 'sitemap.xml').write_text(sitemap, encoding='utf-8')
     (ROOT / 'robots.txt').write_text(f'User-agent: *\nAllow: /\nSitemap: {BASE_URL}/sitemap.xml\n', encoding='utf-8')

@@ -8,7 +8,7 @@
   let graphKey='';
   let cy, graph;
   try {
-    const response = await fetch('/data/maker-graph.json');
+    const response = await fetch('/data/maker-graph.json', {cache:'no-cache'});
     if (!response.ok) throw new Error();
     graph = await response.json();
   } catch (_) {
@@ -22,6 +22,8 @@
   const colors = ['#ff776b','#efbd49','#72d695','#61d6cb','#6bb7ff','#cfa3ff'];
   const regionColor = id => colors[[...regions.keys()].indexOf(id)%colors.length];
   const regionLabel = r => r.name.replaceAll(' / ',' /\n')+(r.name.toLowerCase().includes(r.location.toLowerCase())?'':'\n'+r.location.replaceAll(' / ',' /\n'));
+  const geography = new MakerGeography(el('maker-canvas'), [...regions.values()], regionColor, selectRegion);
+  const layouts = new Map();
   function roleColor(role) {
     role = role.toLowerCase();
     if (role.includes('polisher')) return '#61d6cb';
@@ -94,7 +96,7 @@
   function graphStyles() {
     const dark=document.documentElement.dataset.theme==='dark', ink=dark?'#f3f5f7':'#16191d', paper=dark?'#191d22':'#ffffff';
     return [
-      {selector:'node',style:{'label':'data(label)','shape':'roundrectangle','width':180,'height':94,'background-color':paper,'border-width':2.5,'border-color':'data(color)','color':ink,'font-family':'system-ui, sans-serif','font-size':19,'font-weight':600,'text-wrap':'wrap','text-max-width':165,'text-valign':'center','text-halign':'center'}},
+      {selector:'node',style:{'label':'data(label)','shape':'roundrectangle','width':180,'height':86,'background-color':paper,'border-width':3,'border-color':'data(color)','color':ink,'font-family':'system-ui, sans-serif','font-size':22,'font-weight':600,'text-wrap':'wrap','text-max-width':165,'text-valign':'center','text-halign':'center'}},
       {selector:'node.region',style:{'shape':'ellipse','width':170,'height':124,'background-color':dark?'#29333e':'#eaf1f7','font-size':20,'text-max-width':140}},
       {selector:'node.external',style:{'border-style':'dashed'}},
       {selector:'node.focus',style:{'border-width':4,'background-color':dark?'#29333e':'#eaf1f7'}},
@@ -112,13 +114,15 @@
     if(state.view!=='map') return;
     if(!window.cytoscape){state.view='directory';el('map-status').textContent='The graph could not load. The directory is still available.';render();return;}
     const key=state.region+'|'+state.query+'|'+state.role;
-    if(cy && graphKey===key){cy.resize();highlight();if(state.edge)cy.center(cy.getElementById(state.edge).connectedNodes());else if(state.node)cy.center(cy.getElementById(state.node));return;}
+    if(cy && graphKey===key){cy.resize();highlight();if(state.edge)cy.center(cy.getElementById(state.edge).connectedNodes());else if(state.node)cy.center(cy.getElementById(state.node));geography.sync();return;}
+    const previous=cy?{zoom:cy.zoom(),pan:{...cy.pan()}}:null;
+    const wasRegional=Boolean(cy?.nodes('.region').length);
     if(cy)cy.destroy();
     graphKey=key;
     const region=regions.get(state.region), elements=[];
     const hub=region?'region:'+region.id:'japan';
-    elements.push({data:{id:hub,label:region?regionLabel(region):'Japan',color:region?regionColor(region.id):'#aeb8c3',regionId:region?.id},classes:'region',position:{x:0,y:0}});
     if(region){
+      elements.push({data:{id:hub,label:regionLabel(region),color:regionColor(region.id),regionId:region.id},classes:'region',position:{x:0,y:0}});
       const local=new Set(filtered().map(n=>n.id));
       const connected=edges.filter(e=>local.has(e.from)||local.has(e.to));
       const ids=new Set([...local,...connected.flatMap(e=>[e.from,e.to])]);
@@ -127,14 +131,26 @@
       connected.forEach(e=>elements.push({data:{id:e.id,source:e.from,target:e.to,label:edgeLabel(e),color:edgeColor(e)},classes:community(e)?'provisional':''}));
       el('map-caption').textContent=region.name+' · '+local.size+' makers · '+connected.length+' relationships';
     }else{
-      [...regions.values()].forEach((r,i)=>{const angle=i*2*Math.PI/regions.size;elements.push({data:{id:'region:'+r.id,label:regionLabel(r),color:regionColor(r.id),regionId:r.id},classes:'region',position:{x:Math.cos(angle)*600,y:Math.sin(angle)*600}},{data:{id:'country:'+r.id,source:hub,target:'region:'+r.id,color:regionColor(r.id),label:'Region'},classes:'membership'});});
       el('map-caption').textContent=regions.size+' regions · '+nodes.size+' makers and workshops';
     }
-    const layout=region?{name:'cose',randomize:false,animate:false,nodeRepulsion:()=>18000,idealEdgeLength:e=>e.hasClass('membership')?150:110,edgeElasticity:()=>80,nodeOverlap:30,numIter:800,padding:35,componentSpacing:100}:{name:'grid',rows:mobile.matches?14:5,cols:mobile.matches?2:6,condense:true,spacingFactor:1.2,padding:35,position:n=>{const i=[...regions.keys()].indexOf(n.data('regionId'));if(mobile.matches){const slot=n.id()==='japan'?0:i+1;return {row:Math.floor(slot/2),col:slot%2};}if(n.id()==='japan')return {row:2,col:2};const slot=i>=14?i+1:i;return {row:Math.floor(slot/6),col:slot%6};}};
-    cy=cytoscape({container:el('maker-canvas'),elements,style:graphStyles(),minZoom:0.15,maxZoom:2.5,wheelSensitivity:0.15,boxSelectionEnabled:false,autounselectify:true,layout});
+    const cached=layouts.get(key);
+    if(cached) elements.filter(e=>!e.data.source).forEach(e=>{e.position=cached[e.data.id];});
+    const layout=region && !cached?{name:'cose',randomize:false,animate:false,fit:false,nodeRepulsion:()=>18000,idealEdgeLength:e=>e.hasClass('membership')?150:110,edgeElasticity:()=>80,nodeOverlap:30,numIter:500,componentSpacing:100}:{name:'preset',fit:false};
+    cy=cytoscape({container:el('maker-canvas'),elements,style:graphStyles(),minZoom:0.08,maxZoom:20,wheelSensitivity:0.2,pixelRatio:Math.min(devicePixelRatio,2),boxSelectionEnabled:false,autounselectify:true,layout});
+    if(region && !cached){
+      const origin={...cy.getElementById(hub).position()};
+      cy.nodes().positions(n=>({x:n.position('x')-origin.x,y:n.position('y')-origin.y}));
+      layouts.set(key,Object.fromEntries(cy.nodes().map(n=>[n.id(),{...n.position()}])));
+    }
+    cy.nodes('.region').lock();
+    geography.bind(cy,state.region);
     fitGraph();
-    if(region){cy.zoom(Math.max(cy.zoom(),mobile.matches?0.8:0.72));cy.center(cy.getElementById(hub));}
-    else if(mobile.matches){cy.zoom(0.8);cy.center(cy.nodes().slice(0,5));}
+    if(region && cy.zoom()<0.72){cy.zoom(0.72);cy.center(cy.getElementById(hub));}
+    if(previous && wasRegional===Boolean(region) && !matchMedia('(prefers-reduced-motion: reduce)').matches){
+      const destination={zoom:cy.zoom(),pan:{...cy.pan()}};
+      cy.viewport(previous);cy.animate(destination,{duration:320});
+    }
+    geography.sync();
     cy.on('tap','node',e=>{const n=e.target;if(n.id()==='japan')reset();else if(n.hasClass('region'))selectRegion(n.data('regionId'));else selectNode(n.id());});
     cy.on('tap','edge',e=>{if(e.target.hasClass('membership')){const id=e.target.target().id();if(id.startsWith('region:'))selectRegion(id.slice(7));else selectNode(id);}else selectEdge(e.target.id());});
     cy.on('tap',e=>{if(e.target===cy){state.node='';state.edge='';showProfile();highlight();}});
@@ -142,8 +158,7 @@
   }
   function fitGraph() {
     if(!cy) return;
-    cy.resize();cy.fit(undefined,35);
-    if(cy.zoom()>1.15) cy.zoom({level:1.15,renderedPosition:{x:cy.width()/2,y:cy.height()/2}});
+    cy.resize();geography.fit();
   }
   function highlight() {
     if(!cy) return;
@@ -167,16 +182,18 @@
     state.region=id;state.query='';state.role='';state.edge='';state.node='';state.view='map';
     render();
   }
-  function reset(){Object.assign(state,{region:'',node:'',query:'',role:'',edge:'',view:'map'});render();}
+  function reset(){Object.assign(state,{region:'',node:'',query:'',role:'',edge:'',view:'map'});render();geography.overview();}
   function render() {
     el('maker-region').value=state.region;el('maker-role').value=state.role;el('maker-search').value=state.query;
     root.querySelectorAll('[data-map-view]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.mapView===state.view)));
     el('maker-directory').hidden=state.view!=='directory';el('region-grid').hidden=true;
     el('maker-canvas').hidden=state.view!=='map';
+    geography.stage.hidden=state.view!=='map';
+    root.querySelector('.map-location-note').hidden=Boolean(state.region) || state.view!=='map';
+    root.querySelector('[data-map-view="map"]').textContent=state.region?'Graph':'Map';
     root.querySelector('.map-zoom').hidden=state.view!=='map';
-    el('map-back').disabled=!state.region && !state.query && !state.role;
+    el('map-back').disabled=false;
     showDirectory();showProfile();showGraph();
-    root.querySelectorAll('[data-geo-region]').forEach(b=>b.classList.toggle('selected',b.dataset.geoRegion===state.region));
   }
   el('maker-region').innerHTML='<option value="">All regions</option>'+[...regions.values()].map(r=>'<option value="'+esc(r.id)+'">'+esc(r.name)+' · '+esc(r.location)+'</option>').join('');
   el('maker-region').onchange=e=>e.target.value?selectRegion(e.target.value):reset();
@@ -189,29 +206,4 @@
   new MutationObserver(()=>{if(cy)cy.style(graphStyles());}).observe(document.documentElement,{attributes:true,attributeFilter:['data-theme']});
   mobile.addEventListener('change',()=>{graphKey='';render();});
   el('map-status').textContent='';render();
-  // Geographic coordinates are separate from the relationship layout.
-  const coords={sakai:[135.48,34.57],sanjo:[138.96,37.63],echizen:[136.17,35.90],'tosa-kochi':[133.53,33.56],miki:[134.99,34.80],'seki-gifu':[136.92,35.49],'tsubame-niigata':[138.93,37.67],kyoto:[135.77,35.01],aomori:[140.47,40.60],okayama:[133.47,34.98],kumamoto:[130.71,32.80],kagoshima:[130.56,31.60],nagasaki:[129.87,32.75],yamaguchi:[131.47,34.19],tanegashima:[130.97,30.73],saga:[130.30,33.25],hiroshima:[132.46,34.39],shimane:[132.76,35.47],miyazaki:[131.42,31.91],oita:[131.61,33.24],tokushima:[134.56,34.07],tottori:[134.24,35.50],fukuoka:[130.40,33.59],nagano:[138.18,36.65],mie:[136.51,34.73],tokyo:[139.69,35.69]};
-  try {
-    const response=await fetch('/data/japan-boundary.json');if(!response.ok)throw new Error();
-    const geo=await response.json();
-    const polygons=geo.geometry.type==='MultiPolygon'?geo.geometry.coordinates:[geo.geometry.coordinates];
-    const cosine=Math.cos(37*Math.PI/180), points=polygons.flat(2);
-    const xs=points.map(p=>p[0]*cosine), ys=points.map(p=>p[1]);
-    const minX=Math.min(...xs),maxX=Math.max(...xs),minY=Math.min(...ys),maxY=Math.max(...ys);
-    const scale=Math.min(720/(maxX-minX),640/(maxY-minY));
-    const project=([lon,lat])=>[400+(lon*cosine-(minX+maxX)/2)*scale,360- (lat-(minY+maxY)/2)*scale];
-    const paths=polygons.map(p=>p.map(r=>r.map((point,i)=>(i?'L':'M')+project(point).map(v=>v.toFixed(2)).join(',')).join(' ')+'Z').join(' '));
-    el('japan-map').innerHTML=paths.map(d=>'<path class="japan-land" d="'+d+'"></path>').join('')+[...regions.values()].filter(r=>coords[r.id]).map(r=>{const [x,y]=project(coords[r.id]);return '<g class="geo-pin" role="button" tabindex="0" aria-label="'+esc(r.name)+'" data-pin-region="'+esc(r.id)+'"><circle cx="'+x+'" cy="'+y+'" r="11" fill="transparent"></circle><circle cx="'+x+'" cy="'+y+'" r="5" fill="'+regionColor(r.id)+'"><title>'+esc(r.name)+'</title></circle></g>';}).join('');
-    el('geography-list').innerHTML=[...regions.values()].map(r=>'<button type="button" data-geo-region="'+esc(r.id)+'" style="--region-color:'+regionColor(r.id)+'">'+esc(r.name)+'<small>'+esc(r.location)+'</small></button>').join('');
-    function selectGeographicRegion(id) {
-      selectRegion(id);const [x,y]=project(coords[id]);
-      el('japan-map').querySelector('.geo-selected')?.remove();
-      el('japan-map').insertAdjacentHTML('beforeend','<g class="geo-selected" pointer-events="none"><circle cx="'+x+'" cy="'+y+'" r="13" fill="none" stroke="currentColor" stroke-width="3"></circle><text x="'+(x+18)+'" y="'+(y-18)+'">'+esc(regions.get(id).name)+'</text></g>');
-    }
-    el('geography-list').querySelectorAll('button').forEach(b=>b.onclick=()=>selectGeographicRegion(b.dataset.geoRegion));
-    el('japan-map').querySelectorAll('[data-pin-region]').forEach(pin=>{
-      pin.onclick=()=>selectGeographicRegion(pin.dataset.pinRegion);
-      pin.onkeydown=e=>{if(e.key==='Enter' || e.key===' '){e.preventDefault();selectGeographicRegion(pin.dataset.pinRegion);}};
-    });
-  } catch(_){el('geography-list').textContent='The geographic map could not load. All regions remain available above.';}
 })();

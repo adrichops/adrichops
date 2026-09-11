@@ -107,7 +107,32 @@ summary { cursor:pointer; min-height:32px; font-weight:650; }
 .map-toolbar>span { flex:1; font-size:13px; color:var(--muted); }
 .map-zoom { display:flex; gap:4px; }
 .map-zoom button { width:40px; height:40px; border:1px solid var(--line); border-radius:4px; background:var(--paper); font-size:22px; }
-.maker-canvas { height:800px; width:100%; background:var(--paper); border:1px solid var(--line); border-radius:6px; }
+.map-stage { position:relative; isolation:isolate; overflow:hidden; height:780px; width:100%; background:#e2edf0; border:1px solid var(--line-strong); border-radius:6px; }
+[data-theme="dark"] .map-stage { background:#111c21; }
+.map-stage[data-view="network"] { background:var(--paper); }
+.map-stage[data-view="network"] :is(.map-landscape,.map-north,.map-attribution,.map-pins) { display:none; }
+.map-stage .maker-canvas { position:absolute; inset:0; width:100%; height:100%; background:transparent; border:0; border-radius:0; z-index:2; }
+.maker-canvas { height:780px; width:100%; }
+.maker-canvas:focus-visible { outline:3px solid var(--ink); outline-offset:-4px; }
+.map-landscape { position:absolute; inset:0; width:100%; height:100%; pointer-events:none; z-index:1; }
+.map-coastline { fill:#c2d3c4; stroke:#6f8e7f; stroke-width:1.3; vector-effect:non-scaling-stroke; }
+[data-theme="dark"] .map-coastline { fill:#30473e; stroke:#739689; }
+.map-pins { position:absolute; inset:0; pointer-events:none; z-index:3; }
+.map-region-pin { position:absolute; transform:translate(-50%,calc(-100% - 6px)); width:112px; min-height:48px; padding:6px 8px; border:2px solid var(--pin-color); border-radius:6px; background:var(--paper); color:var(--ink); pointer-events:auto; box-shadow:0 3px 12px #0003; text-align:left; }
+.map-region-pin::before { content:""; position:absolute; bottom:-10px; left:calc(50% - 4px); width:8px; height:8px; border-radius:50%; background:var(--pin-color); }
+.map-region-pin strong { display:block; font-size:14px; line-height:1.2; overflow-wrap:anywhere; }
+.map-region-pin span { display:block; font-size:11px; line-height:1.3; margin-top:3px; color:var(--muted); }
+.map-region-pin:hover,.map-region-pin:focus-visible { outline:2px solid var(--ink); outline-offset:2px; }
+.map-region-picker { position:absolute; z-index:5; top:16px; left:16px; width:260px; max-width:calc(100% - 32px); padding:16px; border:1px solid var(--line-strong); border-radius:6px; background:var(--paper); box-shadow:0 6px 24px #0004; }
+.map-region-picker>strong { display:block; padding-right:36px; font-size:14px; }
+.map-picker-close { position:absolute; right:4px; top:4px; width:44px; height:44px; border:0; background:transparent; font-size:24px; }
+.map-picker-list { display:grid; gap:4px; max-height:260px; overflow:auto; margin-top:12px; }
+.map-picker-list button { min-height:46px; background:var(--paper-2); border:0; border-left:3px solid var(--pin-color); padding:10px; text-align:left; font-size:14px; }
+.map-picker-list button:hover { background:var(--bg); }
+.map-north { position:absolute; top:14px; right:16px; z-index:4; font:700 14px system-ui; color:var(--ink); background:var(--paper); padding:8px; border-radius:4px; pointer-events:none; }
+.map-attribution { position:absolute; bottom:0; right:0; z-index:4; margin:0; padding:5px 10px; font-size:11px; color:var(--ink); background:var(--paper); }
+.map-attribution a { text-decoration:underline; }
+.map-location-note { font-size:12px; color:var(--muted); margin:14px 0; }
 .region-picker { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:10px; max-height:650px; overflow:auto; padding:2px 8px 8px 2px; }
 .region-picker button { background:var(--paper); text-align:left; border:1px solid var(--line); border-left:4px solid var(--region-color); border-radius:6px; padding:16px; display:grid; gap:4px; min-width:0; }
 .region-picker button:hover { background:var(--paper-2); }
@@ -215,7 +240,7 @@ summary { cursor:pointer; min-height:32px; font-weight:650; }
   .directory-row { grid-template-columns:1fr auto; padding:14px 12px; gap:4px 8px; }
   .directory-row strong { grid-column:1/-1; }
   .directory-row span,.directory-row small { font-size:13px; }
-  .maker-canvas { height:460px; }
+  .map-stage,.maker-canvas { height:580px; }
   .maker-profile { padding:24px 0; border-left:0; border-top:1px solid var(--line); max-height:none; overflow:visible; }
   .maker-profile h2 { font-size:27px; }
   .geography-layout { grid-template-columns:1fr; }

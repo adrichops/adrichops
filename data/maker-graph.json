@@ -20,6 +20,17 @@
       ],
       "nodes": [
         {
+          "id": "ajioka-cutlery-factory",
+          "name": "Ajioka Cutlery Factory",
+          "aliases": ["Ajioka Hamono Seisakusho", "味岡刃物製作所"],
+          "role": "Workshop",
+          "location": "Sakai, Osaka (training connection)",
+          "specialty": "Workshop where Yasuaki Taira began learning Japanese-knife sharpening in 1983.",
+          "famousLines": [],
+          "sourceIds": ["morihiro-yame-official"],
+          "caveat": "Historical training entry; the source does not identify his individual instructor."
+        },
+        {
           "id": "tadataka-maruyama",
           "name": "Tadataka Maruyama",
           "role": "Sharpener / Polisher",
@@ -3746,14 +3757,53 @@
       "id": "fukuoka",
       "name": "Fukuoka",
       "location": "Fukuoka",
-      "summary": "Knife Japan regional branch for Fukuoka-listed makers.",
+      "summary": "Fukuoka workshops, including Yasuaki Taira's integrated forging and sharpening practice in Yame.",
       "notes": [
         "Knife Japan homepage popular listings include Shiro Kunimitsu yanagiba context."
       ],
       "sourceIds": [
-        "knifejapan-brand-list"
+        "knifejapan-brand-list",
+        "morihiro-yame-official",
+        "kabuki-yasuaki-taira"
       ],
       "nodes": [
+        {
+          "id": "yasuaki-taira",
+          "name": "Yasuaki Taira",
+          "aliases": ["Taira Yasuaki", "平 泰明", "平泰明"],
+          "role": "Blacksmith / Sharpener",
+          "location": "Yame, Fukuoka",
+          "specialty": "Second-generation head of Morihiro Kaji Kojo, handling forging through sharpening and finishing. Trained in Sakai before learning forging from his father.",
+          "famousLines": [
+            "Morihiro kitchen knives (Yame)",
+            "White #1 mizu-honyaki gyuto",
+            "Mt Fuji and moon mirror-finished honyaki",
+            "Tamahagane honyaki sakimaru yanagiba"
+          ],
+          "sourceIds": ["morihiro-yame-official", "kabuki-yasuaki-taira"],
+          "caveat": "Kabuki's named examples establish these honyaki offerings, not the construction of every Taira knife. His father's Morihiro identity belongs to the Yame family forge, not the separate Sakai sharpener node."
+        },
+        {
+          "id": "morihiro-kaji-kojo-yame",
+          "name": "Morihiro Kaji Kojo (Yame)",
+          "aliases": ["Morihiro Blacksmith Factory", "盛弘鍛治工場", "盛弘鍛冶工場", "盛弘の包丁"],
+          "role": "Workshop",
+          "location": "Yame, Fukuoka",
+          "specialty": "Family forge founded in 1961, now led by Yasuaki Taira. Produces knives through an integrated manufacturing process.",
+          "famousLines": ["Morihiro kitchen knives"],
+          "sourceIds": ["morihiro-yame-official"],
+          "caveat": "Separate from the Morihiro sharpening identity in Sakai."
+        },
+        {
+          "id": "morihiro-yame-founder",
+          "name": "First-generation Morihiro (Yame)",
+          "role": "Blacksmith",
+          "location": "Yame, Fukuoka (historical)",
+          "specialty": "Founder of the family forge and Yasuaki Taira's father and forging teacher.",
+          "famousLines": [],
+          "sourceIds": ["morihiro-yame-official", "kabuki-yasuaki-taira"],
+          "caveat": "Personal name not established by these sources; kept separate from Sakai's Morihiro."
+        },
         {
           "id": "shiro-kunimitsu",
           "name": "Shiro Kunimitsu",
@@ -3767,7 +3817,40 @@
           ]
         }
       ],
-      "edges": []
+      "edges": [
+        {
+          "from": "ajioka-cutlery-factory",
+          "to": "yasuaki-taira",
+          "kind": "apprenticeship",
+          "label": "Sharpening training in Sakai",
+          "detail": "Taira began sharpening training at Ajioka in 1983.",
+          "sourceIds": ["morihiro-yame-official", "kabuki-yasuaki-taira"]
+        },
+        {
+          "from": "morihiro-yame-founder",
+          "to": "yasuaki-taira",
+          "kind": "family",
+          "label": "Father and forging teacher",
+          "detail": "After Sakai, Taira learned traditional forging from his father.",
+          "sourceIds": ["morihiro-yame-official", "kabuki-yasuaki-taira"]
+        },
+        {
+          "from": "yasuaki-taira",
+          "to": "morihiro-kaji-kojo-yame",
+          "kind": "works-at",
+          "label": "Second-generation workshop head",
+          "detail": "Taira leads the Yame forge as its second generation.",
+          "sourceIds": ["morihiro-yame-official"]
+        },
+        {
+          "from": "morihiro-yame-founder",
+          "to": "morihiro-kaji-kojo-yame",
+          "kind": "workshop-background",
+          "label": "Founded workshop in 1961",
+          "detail": "The first generation established the family forge in Yame.",
+          "sourceIds": ["morihiro-yame-official"]
+        }
+      ]
     },
     {
       "id": "nagano",
@@ -4511,6 +4594,18 @@
       "label": "Knifewear: Hiroshi Kato's workshop and apprentices",
       "url": "https://knifewear.com/en-us/blogs/articles/blacksmith-profile-yoshimi-kato",
       "accessed": "2026-09-04"
+    },
+    {
+      "id": "morihiro-yame-official",
+      "label": "Morihiro Kaji Kojo: Yasuaki Taira and the Yame family forge",
+      "url": "https://www.hocho-morihiro.com/",
+      "accessed": "2026-09-11"
+    },
+    {
+      "id": "kabuki-yasuaki-taira",
+      "label": "Kabuki Knives: Yasuaki Taira biography and attributed knives",
+      "url": "https://www.kabukiknives.com/the-choice-of-us/craftsmen/yasuaki-taira/",
+      "accessed": "2026-09-11"
     }
   ],
   "pendingSourceIds": [

@@ -1,0 +1,76 @@
+.anatomy-page { max-width:1560px; margin:0 auto; padding:32px 28px 64px; }
+.anatomy-heading { display:flex; justify-content:space-between; align-items:center; gap:24px; padding-bottom:22px; }
+.anatomy-heading h1 { font-size:44px; margin:6px 0 0; }
+.anatomy-heading>p { text-align:right; color:var(--muted); margin:0; }
+.anatomy-heading [lang="ja"] { color:var(--ink); font-size:24px; }
+.anatomy-heading small { font-size:12px; }
+.anatomy-toolbar { display:flex; align-items:center; gap:24px; padding:12px 0; border-block:1px solid var(--line); }
+.anatomy-toolbar label { display:flex; align-items:center; gap:8px; font-size:14px; }
+.anatomy-toolbar input { width:18px; height:18px; accent-color:var(--accent); }
+.anatomy-segments { display:flex; border:1px solid var(--line-strong); padding:3px; border-radius:5px; }
+.anatomy-segments button { min-height:40px; padding:8px 14px; border:0; background:transparent; border-radius:3px; font-size:14px; }
+.anatomy-segments [aria-pressed="true"] { background:var(--ink); color:var(--bg); }
+.anatomy-tools { margin-left:auto; display:flex; gap:6px; }
+.anatomy-tools button { width:44px; height:44px; border:1px solid var(--line); border-radius:4px; background:transparent; }
+.anatomy-tools button[aria-pressed="true"] { color:var(--accent); border-color:currentColor; }
+.anatomy-tools svg { width:20px; height:20px; fill:none; stroke:currentColor; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; }
+.anatomy-workspace { display:grid; grid-template-columns:minmax(0,1fr) 320px; min-width:0; }
+.knife-scene { position:relative; min-width:0; height:570px; overflow:hidden; background:#edf0f1; }
+[data-theme="dark"] .knife-scene { background:#171c20; }
+.knife-scene canvas { width:100%; height:100%; display:block; touch-action:none; cursor:grab; }
+.knife-scene canvas:active { cursor:grabbing; }
+.knife-scene canvas:focus-visible { outline:2px solid var(--accent); outline-offset:-4px; }
+.knife-loading { position:absolute; top:50%; left:0; width:100%; text-align:center; font-size:14px; color:var(--muted); }
+.knife-hotspots { position:absolute; inset:0; z-index:2; pointer-events:none; }
+.knife-hotspot { position:absolute; transform:translate(-50%,-50%); width:44px; height:44px; border:0; background:transparent; pointer-events:auto; padding:0; }
+.knife-hotspot::before { content:""; display:block; margin:14px; width:16px; height:16px; border:2px solid #fff; background:#262c33; border-radius:50%; box-shadow:0 0 0 2px #15191f99; }
+.knife-hotspot[aria-pressed="true"]::before { background:#f96557; }
+.knife-hotspot span { position:absolute; bottom:44px; left:50%; transform:translateX(-50%); width:max-content; max-width:170px; padding:7px 10px; border-radius:4px; background:var(--ink); color:var(--bg); font-size:12px; line-height:1.4; display:none; }
+.knife-hotspot:hover span,.knife-hotspot:focus-visible span,.knife-hotspot[aria-pressed="true"] span { display:block; }
+.knife-inspector { min-width:0; border-left:1px solid var(--line); padding:30px 26px; background:var(--paper); }
+.knife-inspector .term-japanese { font-size:44px; font-weight:600; margin:18px 0 8px; line-height:1.25; }
+.knife-inspector h2 { font-size:28px; margin:4px 0; line-height:1.25; overflow-wrap:anywhere; }
+.knife-inspector .term-reading { color:var(--muted); font-size:17px; margin:8px 0 22px; }
+.knife-inspector p { font-size:15px; }
+.knife-inspector .term-note { padding-top:16px; border-top:1px solid var(--line); font-size:13px; color:var(--muted); }
+.knife-inspector a { display:inline-block; font-size:12px; margin-top:16px; text-decoration:underline; color:var(--muted); }
+.term-neighbours { display:flex; justify-content:space-between; gap:8px; margin-top:24px; }
+.term-neighbours button { width:44px; height:44px; border:1px solid var(--line); border-radius:4px; background:transparent; font-size:22px; }
+.anatomy-scope { font-size:13px; color:var(--muted); max-width:110ch; margin:16px 0 28px; }
+.anatomy-glossary { padding:28px 0; border-block:1px solid var(--line); }
+.anatomy-glossary-head { display:flex; align-items:center; justify-content:space-between; gap:24px; margin-bottom:24px; }
+.anatomy-glossary h2 { font-size:26px; margin:0; }
+.anatomy-glossary label { font-size:12px; display:grid; gap:4px; }
+.anatomy-glossary input { width:260px; max-width:100%; min-height:44px; padding:10px 12px; border:1px solid var(--line); border-radius:4px; color:var(--ink); background:var(--paper); }
+.anatomy-term-groups { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:28px; }
+.anatomy-term-groups h3 { font-size:14px; color:var(--muted); margin:0 0 10px; }
+.anatomy-term { display:grid; grid-template-columns:1fr auto; gap:8px; width:100%; text-align:left; padding:12px 10px; min-height:62px; border:0; border-bottom:1px solid var(--line); border-left:3px solid transparent; background:transparent; }
+.anatomy-term[aria-pressed="true"] { border-left-color:var(--accent); background:var(--paper-2); }
+.anatomy-term:hover { background:var(--paper); }
+.anatomy-term strong { display:block; font-size:15px; }
+.anatomy-term small { display:block; font-size:12px; color:var(--muted); }
+.anatomy-term [lang="ja"] { font-size:20px; align-self:center; }
+.anatomy-sources { padding:22px 0; font-size:14px; color:var(--muted); }
+.anatomy-sources p { max-width:90ch; }
+.anatomy-sources a { text-decoration:underline; }
+@media(max-width:1000px) {
+  .anatomy-workspace { grid-template-columns:minmax(0,1fr) 270px; }
+  .knife-inspector { padding:22px 18px; }
+}
+@media(max-width:760px) {
+  .anatomy-page { padding:24px 16px 40px; }
+  .anatomy-heading { display:block; }
+  .anatomy-heading h1 { font-size:34px; }
+  .anatomy-heading>p { text-align:left; margin-top:12px; }
+  .anatomy-toolbar { flex-wrap:wrap; gap:10px 16px; }
+  .anatomy-toolbar label { font-size:12px; }
+  .anatomy-workspace { grid-template-columns:1fr; }
+  .knife-scene { height:440px; margin-inline:-16px; }
+  .knife-inspector { border-left:0; border-top:1px solid var(--line); padding:22px 0; background:transparent; }
+  .knife-inspector .term-japanese { font-size:32px; margin:10px 0; }
+  .knife-inspector .term-reading { margin:8px 0 14px; }
+  .anatomy-glossary-head { display:block; }
+  .anatomy-glossary label { margin-top:18px; }
+  .anatomy-glossary input { width:100%; }
+  .anatomy-term-groups { grid-template-columns:1fr; gap:22px; }
+}

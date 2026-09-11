@@ -5,6 +5,12 @@ const base = process.env.ADRICHOPS_PREVIEW || 'http://127.0.0.1:8063';
 const makers = graph.regions.flatMap(r => r.nodes);
 const makerIds = new Set(makers.map(n => n.id));
 const sourceIds = new Set(graph.sources.map(s => s.id));
+const taira = makers.find(n => n.id === 'yasuaki-taira');
+assert.ok(graph.regions.find(r => r.id === 'fukuoka').nodes.includes(taira));
+assert.equal(taira.role, 'Blacksmith / Sharpener');
+const tairaEdges = graph.regions.flatMap(r => r.edges).filter(e => e.from === taira.id || e.to === taira.id);
+assert.ok(tairaEdges.some(e => e.from === 'ajioka-cutlery-factory' && e.kind === 'apprenticeship'));
+assert.ok(!tairaEdges.some(e => e.from === 'morihiro' || e.to === 'morihiro'), 'Do not conflate Yame and Sakai Morihiro identities');
 assert.equal(makerIds.size, makers.length, 'Maker IDs must be unique');
 assert.equal(sourceIds.size, graph.sources.length, 'Source IDs must be unique');
 for (const region of graph.regions) {
@@ -20,7 +26,7 @@ for (const region of graph.regions) {
   const browser = await chromium.launch({ channel: 'chrome', headless: true });
   try {
     for (const width of [1440, 390]) {
-      const page = await browser.newPage({ viewport: { width, height: 900 }, isMobile: width < 760, hasTouch: width < 760 });
+      const page = await browser.newPage({ viewport: { width, height: 900 }, isMobile: width < 760, hasTouch: width < 760, reducedMotion:'reduce' });
       const errors = [];
       page.on('pageerror', error => errors.push(error.message));
       await page.goto(base + '/maker-map/');
@@ -31,7 +37,10 @@ for (const region of graph.regions) {
         const cy = document.querySelector('[data-maker-canvas]')._cyreg.cy;
         return { nodes: cy.nodes().map(n => n.id()), edges: cy.edges().map(e => e.id()) };
       });
-      assert.equal((await snapshot()).nodes.length, graph.regions.length + 1);
+      await page.waitForSelector('[data-boundary-ready="true"]');
+      const representedRegions = () => page.locator('.map-region-pin').evaluateAll(pins => pins.flatMap(p => p.dataset.regions.split(',')));
+      assert.equal((await snapshot()).nodes.length, 0, 'Country overview uses geographic region markers');
+      assert.deepEqual(new Set(await representedRegions()), new Set(graph.regions.map(r=>r.id)));
       for (const region of graph.regions) {
         await page.locator('[data-maker-region]').selectOption(region.id);
         const actual = await snapshot();
@@ -46,6 +55,7 @@ for (const region of graph.regions) {
       await page.locator('[data-maker-region]').selectOption('sakai');
       const before = await snapshot();
       assert.ok(before.nodes.includes('ivan-fonseca'), 'Ivan must appear through his Sakai connections');
+      assert.ok(before.nodes.includes('yasuaki-taira'), 'Taira must appear through his Sakai training connection');
       await page.evaluate(() => { document.querySelector('[data-maker-canvas]')._cyreg.cy.getElementById('ivan-fonseca').emit('tap'); });
       await page.locator('[data-relation]').filter({ hasText: 'Reported study with Morihiro' }).click();
       assert.match(await page.locator('.evidence-note').innerText(), /provisional/);
@@ -63,8 +73,16 @@ for (const region of graph.regions) {
       assert.equal(await page.locator('[data-maker-region]').inputValue(), 'sakai', 'A cross-region collaborator must not silently switch regions');
       assert.deepEqual(await snapshot(), before);
       await page.locator('[data-map-back]').click();
-      assert.equal((await snapshot()).nodes.length, graph.regions.length + 1);
+      await page.waitForSelector('.map-region-pin');
+      assert.deepEqual(new Set(await representedRegions()), new Set(graph.regions.map(r=>r.id)));
       assert.equal(await page.evaluate(() => document.documentElement.scrollWidth > innerWidth), false);
+      await page.locator('[data-maker-search]').fill('Taira');
+      await page.locator('[data-maker-directory] [data-person="yasuaki-taira"]').click();
+      assert.equal(await page.locator('[data-maker-profile] h2').innerText(), 'Yasuaki Taira');
+      assert.match(await page.locator('[data-maker-profile]').innerText(), /Yame, Fukuoka/i);
+      await page.locator('[data-relation]').filter({hasText:'Sharpening training in Sakai'}).click();
+      assert.equal(await page.locator('[data-maker-profile] h2').innerText(), 'Sharpening training in Sakai');
+      assert.ok(await page.locator('[data-maker-profile] a[href="https://www.hocho-morihiro.com/"]').isVisible());
       assert.deepEqual(errors, []);
       await page.close();
     }
