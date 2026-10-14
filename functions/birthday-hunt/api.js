@@ -1,134 +1,256 @@
-// Isolated Cloudflare Pages Function for /birthday-hunt/api.
-// Uses only tables prefixed birthday_* in the existing ADRICHOPS_DB database.
-const ADMIN_HASH = "438520315366af2ca8310550d5cf4ea402f6dfa5cca3448cf9ffd9f415ba3d76";
-const PUZZLES = [{"id":1,"tag":"OPENING MOVE","title":"The First Ten","location":"Randolph Avenue Gate","intro":"Ten answers. Ten initials. One destination.","body":"1. Capital of Norway?\n2. World's largest country by land area?\n3. Capital of Kenya?\n4. Country whose capital is Buenos Aires?\n5. Planet closest to the Sun?\n6. Capital of Scotland?\n7. Country whose capital is Oslo?\n8. Capital of Japan?\n9. First person to walk on the Moon — surname?\n10. Capital of Portugal?","instruction":"Take the FIRST LETTER of every answer, in order.","answers":["ORNAMENTAL","ORNAMENTAL BEDDING GARDEN","THE ORNAMENTAL BEDDING GARDEN"],"hints":["Write each answer out in full.","Only the first letters count.","The answer starts O R N A M."],"destination":"Ornamental Bedding Garden","arrival":"Find the ornamental flowerbeds marked on the park map.","fact":"Your next clue unlocks only when the whole team arrives.","cipher":""},{"id":2,"tag":"CLASSICAL CRYPTOGRAPHY","title":"Caesar in London","location":"Ornamental Bedding Garden","intro":"A London landmark holds the key.","body":"Nelson's Column in Trafalgar Square is guarded by bronze lions.\n\nHow many are there?\n\nMove every letter BACKWARDS by that number:\n\nVSWI KEVHIR","instruction":"Enter the decoded destination.","answers":["ROSE GARDEN","THE ROSE GARDEN"],"hints":["There are four lions.","A Caesar cipher shifts each letter by the same amount.","VSWI becomes ROSE."],"destination":"Rose Garden","arrival":"Find the formal rose beds.","fact":"The famous lions were designed by Edwin Landseer.","cipher":"VSWI KEVHIR"},{"id":3,"tag":"THE ACROSTIC","title":"Nine Little Answers","location":"Rose Garden","intro":"Nine first letters point the way.","body":"1. Capital of Germany?\n2. Greek goddess of wisdom?\n3. Djokovic's first name?\n4. Capital of Ireland?\n5. Chemical element with symbol S?\n6. Capital of Estonia?\n7. Continent containing the Sahara?\n8. Great river flowing through Egypt?\n9. Walt ______?","instruction":"Take the FIRST LETTER of each answer.","answers":["BANDSTAND","THE BANDSTAND"],"hints":["Berlin, Athena, Novak...","The first four letters are BAND.","It is somewhere music was performed."],"destination":"Bandstand","arrival":"Find the historic music pavilion.","fact":"Nobody needs to perform a song. Thankfully.","cipher":""},{"id":4,"tag":"MUSIC CODE","title":"The Music Code","location":"Bandstand","intro":"Every musician knows the alphabet.","body":"Warm-up trivia: who sang Mr Brightside? Who released Back to Black? Which duo made Get Lucky with Pharrell Williams?\n\nNow decode using A=1, B=2, ..., Z=26:\n\n22-9-12-12-1-7-5 / 7-18-5-5-14","instruction":"Convert the numbers to letters and enter the destination.","answers":["VILLAGE GREEN","THE VILLAGE GREEN"],"hints":["The artists are The Killers, Amy Winehouse and Daft Punk.","22=V, 9=I, 12=L.","The answer begins VILLAGE."],"destination":"Village Green","arrival":"Look for the large open grass area.","fact":"You can hear music in your head. Please don't sing.","cipher":""},{"id":5,"tag":"CHEMISTRY","title":"Periodic Problems","location":"Village Green","intro":"Two elements make one destination.","body":"What are the chemical symbols for:\n\nELEMENT 20\n+\nELEMENT 26\n\nWrite their symbols side by side.","instruction":"Enter the resulting location.","answers":["CAFE","CAFÉ","PARK CAFE","PARK CAFÉ","THE CAFE"],"hints":["20 is calcium.","26 is iron.","Ca + Fe spells the destination."],"destination":"Park Café","arrival":"Find the park café near the playground.","fact":"Good chemistry earns you a coffee stop.","cipher":""},{"id":6,"tag":"WILD ROUND","title":"The Wild Round","location":"Park Café","intro":"Eight answers reveal a secret word.","body":"1. Largest animal on Earth? (First word)\n2. Country with Reykjavík as capital?\n3. Big cat whose males have manes?\n4. Capital of Ireland?\n5. English city with the Liver Building?\n6. Element with symbol I?\n7. Country with Paris as capital?\n8. Largest living land animal?","instruction":"Take the first letters. Add the word GARDEN.","answers":["WILDLIFE GARDEN","THE WILDLIFE GARDEN","WILDLIFE"],"hints":["Whale, Iceland, Lion...","The eight letters spell WILDLIFE.","Finish with the word GARDEN."],"destination":"Wildlife Garden","arrival":"Find the wildlife-focused garden area.","fact":"No animals need to be disturbed during this mission.","cipher":""},{"id":7,"tag":"SPORT WITHOUT EXERCISE","title":"Five Sporting Answers","location":"Wildlife Garden","intro":"No sporting effort required.","body":"1. City that hosted the 2020 Summer Olympics?\n2. Sport played in the Six Nations?\n3. North London club at Emirates Stadium?\n4. Sport featuring wickets and overs?\n5. Martial art whose name means empty hand?","instruction":"Take the first letters to discover your next checkpoint.","answers":["TRACK","ATHLETICS TRACK","THE TRACK"],"hints":["Tokyo is the first answer.","Try Rugby, Arsenal and Cricket.","The initials spell TRACK."],"destination":"Athletics Track","arrival":"Head for the 400m athletics track. Walking is encouraged.","fact":"Roger Bannister trained at Paddington Recreation Ground.","cipher":""},{"id":8,"tag":"FOUR-MINUTE CIPHER","title":"Bannister's Secret","location":"Athletics Track","intro":"A famous sporting milestone is your key.","body":"Roger Bannister became the first man to run a mile in under how many minutes?\n\nUse that number to shift this Caesar cipher BACKWARDS:\n\nGEVPXSR ZEPI KEXI","instruction":"Enter the decoded destination.","answers":["CARLTON VALE GATE","CARLTON GATE","CARLTON VALE"],"hints":["Bannister broke the four-minute mile.","Move each letter BACK four places.","GEVPXSR = CARLTON."],"destination":"Carlton Vale Gate","arrival":"Go to the Carlton Vale entrance of the park.","fact":"You are getting close. The final venue is still a secret.","cipher":"GEVPXSR ZEPI KEXI"},{"id":9,"tag":"NUMBER LOCK","title":"The Address","location":"Carlton Vale Gate","intro":"Your next clue is a street number.","body":"How many players per team start a football match on the pitch?\n+\nWhat number Downing Street is the Prime Minister's official home?\n+\nHow many months are in a year?\n\nAdd them together. You're already standing beside the right street.","instruction":"Enter the full street address (number and street).","answers":["33 CARLTON VALE","33 CARLTON VALE LONDON"],"hints":["The first number is 11.","The second and third numbers are 10 and 12.","11 + 10 + 12 = 33; use Carlton Vale."],"destination":"33 Carlton Vale","arrival":"Leave the park safely and find number 33 Carlton Vale.","fact":"Stop outside the building before opening your last cipher.","cipher":""},{"id":10,"tag":"FINAL ROUND","title":"The Pub That Came Back","location":"33 Carlton Vale","intro":"One last Caesar cipher before the first pint.","body":"This building survived wartime London, was illegally demolished in 2015 and reopened in 2021.\n\nIts number is 33. Add the digits (3 + 3) to get your Caesar key.\n\nShift BACKWARDS:\n\nIGXRZUT ZGBKXT","instruction":"Enter the name of your final destination.","answers":["CARLTON TAVERN","THE CARLTON TAVERN"],"hints":["The cipher key is six.","IGXRZUT becomes CARLTON.","It is the pub at number 33."],"destination":"The Carlton Tavern","arrival":"33 Carlton Vale, London NW6 5EU. Show your final result and claim your drink.","fact":"Congratulations. You found the last round.","cipher":"IGXRZUT ZGBKXT"}];
-const norm = value => String(value || "").normalize("NFD").replace(/[\u0300-\u036f]/g,"").toUpperCase().replace(/[^A-Z0-9]/g,"");
-const now = () => new Date().toISOString();
-const answerSafe = p => { const {answers,...safe}=p; return safe; };
-const j = (body,status=200) => new Response(JSON.stringify(body),{status,headers:{"content-type":"application/json; charset=utf-8","cache-control":"no-store","x-content-type-options":"nosniff"}});
-async function digest(input) {
-  const bytes = new TextEncoder().encode(String(input));
-  const hash = await crypto.subtle.digest("SHA-256",bytes);
-  return [...new Uint8Array(hash)].map(b=>b.toString(16).padStart(2,"0")).join("");
+// Puzzle content lives in D1, never in a public asset or this source file.
+const norm = value => String(value || '').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toUpperCase().replace(/[^A-Z0-9]/g,'');
+const enc = new TextEncoder();
+const iso = () => new Date().toISOString();
+const hex = bytes => [...new Uint8Array(bytes)].map(b=>b.toString(16).padStart(2,'0')).join('');
+const digest = async text => hex(await crypto.subtle.digest('SHA-256', enc.encode(String(text))));
+const random = () => hex(crypto.getRandomValues(new Uint8Array(32)));
+const fail = (message, status=400) => {throw Object.assign(new Error(message),{status});};
+const json = (data,status=200,extra={}) => new Response(JSON.stringify(data),{status,headers:{
+  'content-type':'application/json; charset=utf-8','cache-control':'no-store',
+  'x-content-type-options':'nosniff','x-frame-options':'DENY','referrer-policy':'no-referrer',...extra
+}});
+function clock(s) {return s.elapsed_ms + (s.status==='live' && s.resumed_at ? Math.max(0,Date.now()-s.resumed_at) : 0);}
+async function settings(db) {return db.prepare('SELECT * FROM birthday_settings WHERE id=1').first();}
+async function puzzle(db,stage) {
+  const row=await db.prepare('SELECT payload FROM birthday_puzzles WHERE stage=?').bind(stage).first();
+  if(!row) fail('This challenge is not configured. Ask the organiser.',503);
+  return JSON.parse(row.payload);
 }
-async function init(db) {
-  await db.prepare("CREATE TABLE IF NOT EXISTS birthday_settings (id INTEGER PRIMARY KEY CHECK (id=1), status TEXT NOT NULL DEFAULT 'lobby', started_at TEXT)").run();
-  await db.prepare("CREATE TABLE IF NOT EXISTS birthday_teams (id TEXT PRIMARY KEY, name TEXT NOT NULL, code_hash TEXT UNIQUE NOT NULL, stage INTEGER NOT NULL DEFAULT 1, phase TEXT NOT NULL DEFAULT 'puzzle', score INTEGER NOT NULL DEFAULT 0, hints INTEGER NOT NULL DEFAULT 0, wrong INTEGER NOT NULL DEFAULT 0, started_at TEXT, finished_at TEXT)").run();
-  await db.prepare("CREATE TABLE IF NOT EXISTS birthday_puzzles (stage INTEGER PRIMARY KEY, payload TEXT NOT NULL)").run();
-  await db.prepare("CREATE TABLE IF NOT EXISTS birthday_events (id INTEGER PRIMARY KEY AUTOINCREMENT, team_id TEXT, action TEXT, detail TEXT, occurred_at TEXT)").run();
-  await db.prepare("INSERT OR IGNORE INTO birthday_settings(id,status) VALUES(1,'lobby')").run();
-  for (const p of PUZZLES) await db.prepare("INSERT OR IGNORE INTO birthday_puzzles(stage,payload) VALUES(?,?)").bind(p.id,JSON.stringify(p)).run();
+function publicTeam(t,s) {
+  return {id:t.id,name:t.name,stage:t.stage,phase:t.phase,score:t.score,hintsUsed:t.hints,wrongUsed:t.wrong,
+    version:t.version,startedAt:t.started_at,finishedAt:t.finished_at,
+    elapsedMs:t.started_at ? Math.max(0,(t.finished_elapsed_ms ?? clock(s))-t.started_elapsed_ms) : 0,
+    timerRunning:!!t.started_at && s.status==='live' && t.phase!=='finished',
+    progress:t.phase==='finished'?10:t.phase==='travel'?t.stage:t.stage-1};
 }
-async function setting(db) {return db.prepare("SELECT status,started_at FROM birthday_settings WHERE id=1").first();}
-async function puzzle(db,n) {const row=await db.prepare("SELECT payload FROM birthday_puzzles WHERE stage=?").bind(n).first();return row?JSON.parse(row.payload):null;}
-async function log(db,id,action,detail="") {await db.prepare("INSERT INTO birthday_events(team_id,action,detail,occurred_at) VALUES(?,?,?,?)").bind(id||null,action,String(detail).slice(0,200),now()).run();}
-function publicTeam(t) {return {id:t.id,name:t.name,stage:t.stage,phase:t.phase,score:t.score,hintsUsed:t.hints,wrongUsed:t.wrong,startedAt:t.started_at,finishedAt:t.finished_at,progress:t.phase==="finished"?10:t.phase==="travel"?t.stage:t.stage-1};}
-async function rankings(db) {const {results}=await db.prepare("SELECT name,score,stage,phase,finished_at FROM birthday_teams").all();return results.map(t=>({name:t.name,score:t.score,progress:t.phase==="finished"?10:t.phase==="travel"?t.stage:t.stage-1,finished:t.phase==="finished",finish_time:t.finished_at})).sort((a,b)=>b.score-a.score||b.progress-a.progress||(a.finish_time||"z").localeCompare(b.finish_time||"z"));}
-async function teamState(db,code,correct=null) {
-  const t=await db.prepare("SELECT * FROM birthday_teams WHERE code_hash=?").bind(await digest(norm(code))).first();
-  if(!t)return {error:"Team code not recognised. Ask the organiser for your access code."};
-  const s=await setting(db);const p=await puzzle(db,t.stage);
-  const out={team:publicTeam(t),status:s.status,gameStartedAt:s.started_at,leaderboard:await rankings(db),correct};
-  if(t.phase==="puzzle"&&s.status==="live") {
-    out.puzzle=answerSafe(p);delete out.puzzle.hints;delete out.puzzle.destination;delete out.puzzle.arrival;delete out.puzzle.fact;
-    out.unlockedHints=p.hints.slice(0,t.hints);
+async function leaderboard(db,s) {
+  const {results}=await db.prepare('SELECT * FROM birthday_teams WHERE archived=0').all();
+  return results.map(t=>{const v=publicTeam(t,s);return {name:v.name,score:v.score,progress:v.progress,finished:t.phase==='finished',elapsedMs:v.elapsedMs};})
+    .sort((a,b)=>b.score-a.score||b.progress-a.progress||a.elapsedMs-b.elapsedMs||a.name.localeCompare(b.name));
+}
+async function teamState(db,id,correct=null) {
+  const t=await db.prepare('SELECT * FROM birthday_teams WHERE id=? AND archived=0').bind(id).first();
+  if(!t) fail('Your team is no longer active. Ask the organiser.',401);
+  const s=await settings(db), out={team:publicTeam(t,s),status:s.status,gameVersion:s.version,gameStartedAt:s.started_at,leaderboard:await leaderboard(db,s),correct};
+  if(t.phase==='puzzle' && s.status==='live') {
+    const p=await puzzle(db,t.stage);
+    out.puzzle=Object.fromEntries(['id','tag','title','location','intro','body','instruction','placeholder','cipher'].map(k=>[k,p[k]||'']));
+    out.unlockedHints=p.hints.slice(0,t.hints);out.hintCount=p.hints.length;
+  } else if(t.phase==='travel'||t.phase==='finished') {
+    const p=await puzzle(db,t.stage);
+    out[t.phase==='travel'?'travel':'finish']={destination:p.destination,arrival:p.arrival,fact:p.fact};
   }
-  if(t.phase==="travel")out.travel={destination:p.destination,arrival:p.arrival,fact:p.fact};
-  if(t.phase==="finished")out.finish={destination:p.destination,arrival:p.arrival,fact:p.fact};
   return out;
 }
-async function adminState(db){
-  const s=await setting(db);const {results:teams}=await db.prepare("SELECT * FROM birthday_teams ORDER BY name ASC").all();
-  const {results:all}=await db.prepare("SELECT payload FROM birthday_puzzles ORDER BY stage ASC").all();
-  const {results:events}=await db.prepare("SELECT e.id,t.name,e.action,e.detail,e.occurred_at as at,t.stage FROM birthday_events e LEFT JOIN birthday_teams t ON e.team_id=t.id ORDER BY e.id DESC LIMIT 75").all();
-  return {status:s.status,gameStartedAt:s.started_at,teams:teams.map(publicTeam),stages:all.map(r=>JSON.parse(r.payload)),events};
+async function adminState(db) {
+  const s=await settings(db);
+  const {results:teams}=await db.prepare('SELECT * FROM birthday_teams WHERE archived=0 ORDER BY name').all();
+  const {results:stages}=await db.prepare('SELECT payload FROM birthday_puzzles ORDER BY stage').all();
+  const {results:events}=await db.prepare('SELECT e.id,t.name,e.action,e.detail,e.occurred_at AS at FROM birthday_events e LEFT JOIN birthday_teams t ON t.id=e.team_id ORDER BY e.id DESC LIMIT 75').all();
+  return {status:s.status,version:s.version,gameStartedAt:s.started_at,teams:teams.map(t=>publicTeam(t,s)),stages:stages.map(p=>JSON.parse(p.payload)),events,leaderboard:await leaderboard(db,s)};
 }
-function randomCode(){const abc="ABCDEFGHJKLMNPQRSTUVWXYZ23456789";const bits=new Uint8Array(12);crypto.getRandomValues(bits);const raw=Array.from(bits,b=>abc[b%abc.length]).join("");return raw.match(/.{1,4}/g).join("-");}
-export async function onRequestPost({request,env}) {
-  if(!env.ADRICHOPS_DB)return j({error:"Cloudflare D1 database binding ADRICHOPS_DB is unavailable."},503);
-  if(Number(request.headers.get("content-length")||0)>16000)return j({error:"Request is too large."},413);
+const logStmt=(db,id,action,detail='')=>db.prepare('INSERT INTO birthday_events(team_id,action,detail,occurred_at) VALUES(?,?,?,?)').bind(id,action,detail,iso());
+async function rate(db,key,max,seconds) {
+  const bucket=Math.floor(Date.now()/1000/seconds), until=(bucket+1)*seconds;
+  const k=await digest(key+':'+bucket);
+  const row=await db.prepare('INSERT INTO birthday_limits(key,hits,expires_at) VALUES(?,1,?) ON CONFLICT(key) DO UPDATE SET hits=hits+1 RETURNING hits').bind(k,until).first();
+  if(row.hits>max) fail('Too many attempts. Please wait before trying again.',429);
+}
+function cookie(request,role,value,age) {
+  const url=new URL(request.url), local=['127.0.0.1','localhost'].includes(url.hostname);
+  return `birthday_${role}=${value}; Path=/birthday-hunt/; HttpOnly; SameSite=Strict; Max-Age=${age}${local?'':'; Secure'}`;
+}
+function tokenFrom(request,role) {
+  return (request.headers.get('cookie')||'').split(';').map(s=>s.trim()).find(s=>s.startsWith('birthday_'+role+'='))?.split('=')[1]||'';
+}
+async function session(db,request,role,authVersion) {
+  const token=tokenFrom(request,role);
+  if(!/^[a-f0-9]{64}$/.test(token)) fail('Please sign in again.',401);
+  const row=await db.prepare('SELECT * FROM birthday_sessions WHERE token_hash=? AND role=? AND expires_at>?').bind(await digest(token),role,Date.now()).first();
+  if(!row || (role==='host' && row.auth_version!==authVersion)) fail('Please sign in again.',401);
+  return row;
+}
+async function issueSession(db,request,role,teamId,authVersion) {
+  const token=random(),seconds=role==='host'?43200:604800;
+  await db.batch([
+    db.prepare('DELETE FROM birthday_sessions WHERE expires_at<? OR token_hash=?').bind(Date.now(),await digest(tokenFrom(request,role))),
+    db.prepare('DELETE FROM birthday_limits WHERE expires_at<?').bind(Math.floor(Date.now()/1000)),
+    db.prepare('INSERT INTO birthday_sessions(token_hash,role,team_id,expires_at,auth_version) VALUES(?,?,?,?,?)').bind(await digest(token),role,teamId,Date.now()+seconds*1000,authVersion)
+  ]);
+  return cookie(request,role,token,seconds);
+}
+async function verifyPassword(password,verifier) {
+  const [kind,rounds,salt,expected]=String(verifier||'').split(':');
+  if(kind!=='pbkdf2' || rounds!=='100000' || !/^[a-f0-9]{32}$/.test(salt||'') || !/^[a-f0-9]{64}$/.test(expected||'')) fail('Organiser sign-in has not been configured.',503);
+  if(typeof password!=='string'||password.length<16||password.length>200)return false;
+  const key=await crypto.subtle.importKey('raw',enc.encode(password),'PBKDF2',false,['deriveBits']);
+  const actual=hex(await crypto.subtle.deriveBits({name:'PBKDF2',hash:'SHA-256',salt:enc.encode(salt),iterations:100000},key,256));
+  let difference=0;for(let i=0;i<expected.length;i++)difference|=expected.charCodeAt(i)^actual.charCodeAt(i);
+  return difference===0;
+}
+function validatePuzzle(existing,changes) {
+  if(!changes||typeof changes!=='object'||Array.isArray(changes))fail('Invalid challenge changes.');
+  const result={...existing};
+  for(const key of ['tag','title','location','intro','body','instruction','placeholder','cipher','destination','arrival','fact']) {
+    if(key in changes){if(typeof changes[key]!=='string'||changes[key].length>(key==='body'?5000:500))fail('Challenge field is invalid or too long.');result[key]=changes[key].trim();}
+  }
+  for(const key of ['answers','hints']) if(key in changes){
+    if(!Array.isArray(changes[key])||changes[key].length>(key==='answers'?12:3)||changes[key].some(v=>typeof v!=='string'||!v.trim()||v.length>(key==='answers'?100:300)))fail('Invalid answers or hints.');
+    result[key]=changes[key].map(v=>v.trim());
+  }
+  if(!result.title||!result.body||!result.destination||!result.answers.length||result.answers.some(a=>!norm(a)))fail('Title, question, destination and an answer are required.');
+  return result;
+}
+async function hostAction(db,act,data) {
+  if(act==='admin_state')return adminState(db);
+  if(act==='admin_create_team') {
+    const name=typeof data.name==='string'?data.name.trim():'';
+    if(name.length<2||name.length>50)fail('Team name must contain 2–50 characters.');
+    const count=await db.prepare('SELECT COUNT(*) AS n FROM birthday_teams WHERE archived=0').first();
+    if(count.n>=100)fail('This hunt supports up to 100 active teams.');
+    const id=crypto.randomUUID(),code=hex(crypto.getRandomValues(new Uint8Array(8))).toUpperCase().match(/.{1,4}/g).join('-'),s=await settings(db);
+    const creation=await db.batch([
+      db.prepare('INSERT INTO birthday_teams(id,name,code_hash,started_at,started_elapsed_ms) SELECT ?,?,?,?,? WHERE (SELECT version FROM birthday_settings WHERE id=1)=? AND (SELECT COUNT(*) FROM birthday_teams WHERE archived=0)<100').bind(id,name,await digest(norm(code)),s.started_at?iso():null,clock(s),s.version),
+      db.prepare("INSERT INTO birthday_events(team_id,action,detail,occurred_at) SELECT ?,'new_team',?,? WHERE changes()>0").bind(id,name,iso())
+    ]);
+    if(!creation[0].meta.changes)fail('The game changed or the team limit was reached. Refresh and try again.',409);
+    return {created:true,name,code};
+  }
+  if(act==='admin_status') {
+    if(!['lobby','live','paused'].includes(data.status))fail('Unknown game status.');
+    const s=await settings(db);
+    if(data.version!==s.version)fail('The game changed. Refresh the dashboard.',409);
+    if(data.status==='live') {
+      const n=await db.prepare('SELECT COUNT(*) AS n FROM birthday_puzzles').first();if(n.n!==10)fail('Configure all ten challenges before starting.',409);
+    }
+    const time=Date.now(),stamp=iso(),duration=clock(s);
+    const results=await db.batch([
+      db.prepare('UPDATE birthday_settings SET status=?,elapsed_ms=?,resumed_at=?,started_at=COALESCE(started_at,?),version=version+1 WHERE id=1 AND version=?').bind(data.status,duration,data.status==='live'?time:null,data.status==='live'?stamp:null,s.version),
+      db.prepare('UPDATE birthday_teams SET started_at=? WHERE started_at IS NULL AND archived=0 AND ?=\'live\' AND changes()>0').bind(stamp,data.status)
+    ]);
+    if(!results[0].meta.changes)fail('The game changed. Refresh the dashboard.',409);
+    await logStmt(db,null,'game_status',data.status).run();
+  } else if(act==='admin_reset') {
+    if(data.confirm!=='RESET')fail('Confirm RESET to clear hunt progress.');
+    // QA supplies an exact team allowlist. The check and reset share one transaction,
+    // so a newly created real team prevents the reset instead of losing progress.
+    const scoped=Object.hasOwn(data,'expectedTeamIds');
+    const ids=scoped?data.expectedTeamIds:[];
+    if(scoped&&(!Array.isArray(ids)||ids.length>100||ids.some(id=>typeof id!=='string'||!/[a-f0-9-]{36}/.test(id))))fail('Invalid reset team list.');
+    const placeholders=ids.map(()=>'?').join(',')||"''";
+    const guard=scoped?` AND (SELECT COUNT(*) FROM birthday_teams WHERE archived=0)=? AND NOT EXISTS(SELECT 1 FROM birthday_teams WHERE archived=0 AND id NOT IN (${placeholders}))`:'';
+    const reset=await db.batch([
+      db.prepare("UPDATE birthday_settings SET status='lobby',started_at=NULL,elapsed_ms=0,resumed_at=NULL,version=version+1 WHERE id=1"+guard).bind(...(scoped?[ids.length,...ids]:[])),
+      db.prepare("UPDATE birthday_teams SET stage=1,phase='puzzle',score=0,hints=0,wrong=0,started_at=NULL,finished_at=NULL,started_elapsed_ms=0,finished_elapsed_ms=NULL,version=version+1 WHERE changes()>0"+(scoped?` AND id IN (${placeholders})`:'')).bind(...ids),
+      db.prepare("INSERT INTO birthday_events(team_id,action,detail,occurred_at) SELECT NULL,'reset',?,? WHERE changes()>0").bind(scoped?'QA team progress reset; protected by exact team allowlist':'All hunt progress reset; teams and puzzle edits retained',iso())
+    ]);
+    if(!reset[0].meta.changes)fail('Reset blocked: the active teams changed. No progress was reset.',409);
+  } else if(act==='admin_remove_team') {
+    await db.batch([
+      db.prepare('UPDATE birthday_teams SET archived=1,version=version+1 WHERE id=?').bind(String(data.teamId||'')),
+      db.prepare('DELETE FROM birthday_sessions WHERE team_id=?').bind(String(data.teamId||'')),
+      logStmt(db,String(data.teamId||''),'archive_team','Team removed from the active hunt')
+    ]);
+  } else if(act==='admin_edit_puzzle') {
+    const s=await settings(db);if(s.status==='live')fail('Pause the hunt before editing a challenge.',409);
+    const stage=Number(data.stage),p=validatePuzzle(await puzzle(db,stage),data.changes);
+    if(data.version!==s.version)fail('The game changed. Refresh before saving.',409);
+    const result=await db.batch([
+      db.prepare('UPDATE birthday_settings SET version=version+1 WHERE id=1 AND version=? AND status!=\'live\'').bind(s.version),
+      db.prepare('UPDATE birthday_puzzles SET payload=? WHERE stage=? AND changes()>0').bind(JSON.stringify(p),stage)
+    ]);
+    if(!result[0].meta.changes)fail('The game changed. Refresh before saving.',409);
+    await logStmt(db,null,'edit_puzzle','Stage '+stage).run();
+  } else if(act==='admin_override') {
+    const t=await db.prepare('SELECT * FROM birthday_teams WHERE id=? AND archived=0').bind(String(data.teamId||'')).first();
+    if(!t)fail('Team not found.',404);if(t.phase==='finished')fail('Team already finished.');
+    if(data.teamVersion!==t.version)fail('This team changed. Refresh before advancing.',409);
+    const s=await settings(db);if(!s.started_at)fail('Start the hunt before advancing teams.',409);
+    const finish=t.phase==='travel'&&t.stage===10;
+    const result=await db.prepare('UPDATE birthday_teams SET stage=?,phase=?,hints=?,wrong=?,finished_at=?,finished_elapsed_ms=?,version=version+1 WHERE id=? AND version=? AND (SELECT version FROM birthday_settings WHERE id=1)=?').bind(
+      t.phase==='travel'&&!finish?t.stage+1:t.stage,finish?'finished':t.phase==='puzzle'?'travel':'puzzle',t.phase==='puzzle'?t.hints:0,t.phase==='puzzle'?t.wrong:0,finish?iso():null,finish?clock(s):null,t.id,t.version,s.version).run();
+    if(!result.meta.changes)fail('This team changed. Refresh before advancing.',409);
+    await logStmt(db,t.id,'override','Organiser advanced one step; no answer points awarded').run();
+  } else fail('Unknown organiser action.');
+  return adminState(db);
+}
+async function teamAction(db,act,data,id) {
+  if(act==='team_state')return teamState(db,id);
+  if(!['team_answer','team_hint','team_arrive'].includes(act))fail('Unknown team action.');
+  await rate(db,'team:'+id,60,60);
+  const t=await db.prepare('SELECT * FROM birthday_teams WHERE id=? AND archived=0').bind(id).first();
+  if(!t)fail('Your team is no longer active.',401);
+  const s=await settings(db);
+  if(s.status!=='live')fail(s.status==='paused'?'The organiser has paused the hunt.':'The hunt has not started yet.',409);
+  if(data.version!==t.version||data.stage!==t.stage||data.gameVersion!==s.version)fail('Your progress changed. Refresh before trying again.',409);
+  const p=await puzzle(db,t.stage);
+  let statement,correct=null,detail='',event;
+  const guard=" WHERE id=? AND version=? AND stage=? AND archived=0 AND (SELECT version FROM birthday_settings WHERE id=1)=? AND (SELECT status FROM birthday_settings WHERE id=1)='live'";
+  const bind=[id,t.version,t.stage,s.version];
+  if(act==='team_answer') {
+    if(t.phase!=='puzzle')fail('Confirm arrival before the next challenge.',409);
+    if(typeof data.answer!=='string'||data.answer.length>100||!norm(data.answer))fail('Enter an answer of up to 100 characters.');
+    correct=p.answers.some(a=>norm(a)===norm(data.answer));event=correct?'solved':'wrong_answer';
+    statement=db.prepare((correct?"UPDATE birthday_teams SET score=score+MAX(0,10-2*hints-MIN(5,wrong)),phase='travel',version=version+1":"UPDATE birthday_teams SET wrong=wrong+1,version=version+1")+guard+" AND phase='puzzle'").bind(...bind);
+    detail=correct?'Stage '+t.stage+' solved':'Stage '+t.stage+'; penalty capped at five points';
+  } else if(act==='team_hint') {
+    if(t.phase!=='puzzle'||t.hints>=p.hints.length)fail('No more hints are available for this challenge.');
+    statement=db.prepare('UPDATE birthday_teams SET hints=hints+1,version=version+1'+guard+" AND phase='puzzle' AND hints<?").bind(...bind,p.hints.length);
+    event='hint';detail='Stage '+t.stage+'; hint '+(t.hints+1)+'; two-point penalty';
+  } else {
+    if(t.phase!=='travel')fail('Solve your current challenge before confirming arrival.',409);
+    const finish=t.stage===10;
+    statement=db.prepare('UPDATE birthday_teams SET stage=?,phase=?,hints=0,wrong=0,finished_at=?,finished_elapsed_ms=?,version=version+1'+guard+" AND phase='travel'").bind(finish?10:t.stage+1,finish?'finished':'puzzle',finish?iso():null,finish?clock(s):null,...bind);
+    event=finish?'finished':'arrived';detail='Team confirmed checkpoint '+t.stage;
+  }
+  const result=await db.batch([statement,db.prepare('INSERT INTO birthday_events(team_id,action,detail,occurred_at) SELECT ?,?,?,? WHERE changes()>0').bind(id,event,detail,iso())]);
+  if(!result[0].meta.changes)fail('Your progress changed. Refresh before trying again.',409);
+  return teamState(db,id,correct);
+}
+export async function onRequest({request,env}) {
   const db=env.ADRICHOPS_DB;
+  if(!db)return json({error:'Game database is unavailable.'},503);
   try {
-    const input=await request.json(),act=String(input.action||""),data=input.payload||{};
-    await init(db);
-    if(act.startsWith("admin_")){
-      if(await digest(String(data.password||""))!==ADMIN_HASH)return j({error:"Incorrect organiser passphrase."},403);
-      if(act==="admin_state")return j(await adminState(db));
-      if(act==="admin_create_team"){
-        const name=String(data.name||"").trim();
-        if(name.length<2||name.length>50)return j({error:"Team name must contain 2–50 characters."},400);
-        const id=crypto.randomUUID(), code=randomCode();
-        const s=await setting(db);
-        await db.prepare("INSERT INTO birthday_teams(id,name,code_hash,started_at) VALUES(?,?,?,?)").bind(id,name,await digest(norm(code)),s.status==="live"?now():null).run();
-        await log(db,id,"new_team",name);return j({created:true,name,code});
+    if(request.method==='GET') {
+      const s=await settings(db),p=await db.prepare('SELECT COUNT(*) AS n FROM birthday_puzzles').first();
+      const ready=!!s&&p.n===10&&!!env.BIRTHDAY_ADMIN_PASSWORD_HASH;
+      return json({ready},ready?200:503);
+    }
+    if(request.method!=='POST')return json({error:'Method not allowed.'},405,{'allow':'GET, POST'});
+    if(request.headers.get('origin')!==new URL(request.url).origin)fail('Request origin is not allowed.',403);
+    if(!request.headers.get('content-type')?.startsWith('application/json'))fail('JSON is required.',415);
+    if(Number(request.headers.get('content-length')||0)>16000)fail('Request is too large.',413);
+    const text=await request.text();if(enc.encode(text).length>16000)fail('Request is too large.',413);
+    let input;try{input=JSON.parse(text);}catch{fail('Invalid JSON.');}
+    if(!input||typeof input!=='object'||typeof input.action!=='string')fail('Invalid request.');
+    const act=input.action,data=input.payload||{};
+    if(!data||typeof data!=='object'||Array.isArray(data))fail('Invalid payload.');
+    const authVersion=await digest(env.BIRTHDAY_ADMIN_PASSWORD_HASH||'unconfigured');
+    if(act==='admin_login'||act==='team_login') {
+      const ip=request.headers.get('cf-connecting-ip')||'local';
+      await rate(db,authVersion+':'+act+':'+ip,act==='admin_login'?10:40,900);
+      if(act==='admin_login') {
+        if(!await verifyPassword(data.password,env.BIRTHDAY_ADMIN_PASSWORD_HASH))fail('Incorrect organiser passphrase.',403);
+        const setCookie=await issueSession(db,request,'host',null,authVersion);
+        return json(await adminState(db),200,{'set-cookie':setCookie});
       }
-      if(act==="admin_status"){
-        const status=String(data.status||"");
-        if(!["lobby","live","paused"].includes(status))return j({error:"Unknown game status."},400);
-        const s=await setting(db);await db.prepare("UPDATE birthday_settings SET status=?,started_at=COALESCE(started_at,?) WHERE id=1").bind(status,status==="live"?now():s.started_at).run();
-        if(status==="live")await db.prepare("UPDATE birthday_teams SET started_at=COALESCE(started_at,?)").bind(now()).run();
-        await log(db,null,"game_status",status);
-      } else if(act==="admin_reset"){
-        await db.prepare("UPDATE birthday_settings SET status='lobby',started_at=NULL WHERE id=1").run();
-        await db.prepare("UPDATE birthday_teams SET stage=1,phase='puzzle',score=0,hints=0,wrong=0,started_at=NULL,finished_at=NULL").run();
-        await db.prepare("DELETE FROM birthday_events").run();
-      } else if(act==="admin_remove_team"){
-        await db.prepare("DELETE FROM birthday_teams WHERE id=?").bind(String(data.teamId||"")).run();
-      } else if(act==="admin_override"){
-        const t=await db.prepare("SELECT * FROM birthday_teams WHERE id=?").bind(String(data.teamId||"")).first();
-        if(!t)return j({error:"Team not found."},404);
-        if(t.phase==="finished")return j({error:"Team already finished."},400);
-        if(t.phase==="puzzle")await db.prepare("UPDATE birthday_teams SET phase=? WHERE id=?").bind(t.stage===10?"finished":"travel",t.id).run();
-        else await db.prepare("UPDATE birthday_teams SET stage=MIN(10,stage+1),phase='puzzle',hints=0,wrong=0 WHERE id=?").bind(t.id).run();
-        await log(db,t.id,"override","Host manually advanced");
-      } else if(act==="admin_edit_puzzle"){
-        const n=Number(data.stage),existing=await puzzle(db,n);
-        if(!existing)return j({error:"Invalid stage."},400);
-        const changes=data.changes||{};
-        for(const k of ["tag","title","intro","body","instruction","placeholder","cipher","destination","arrival","fact"]){
-          if(typeof changes[k]==="string")existing[k]=changes[k].slice(0,k==="body"?2400:280);
-        }
-        if(Array.isArray(changes.answers)&&changes.answers.length>0)existing.answers=changes.answers.map(x=>String(x).slice(0,100)).slice(0,12);
-        if(Array.isArray(changes.hints))existing.hints=changes.hints.map(x=>String(x).slice(0,240)).slice(0,3);
-        await db.prepare("UPDATE birthday_puzzles SET payload=? WHERE stage=?").bind(JSON.stringify(existing),n).run();
-        await log(db,null,"edit_puzzle","Stage "+n);
-      } else return j({error:"Unknown organiser action."},400);
-      return j(await adminState(db));
+      if(typeof data.code!=='string'||data.code.length>32)fail('Team code not recognised.',403);
+      const t=await db.prepare('SELECT id FROM birthday_teams WHERE code_hash=? AND archived=0').bind(await digest(norm(data.code))).first();
+      if(!t)fail('Team code not recognised.',403);
+      const setCookie=await issueSession(db,request,'team',t.id,null);
+      return json(await teamState(db,t.id),200,{'set-cookie':setCookie});
     }
-    if(!act.startsWith("team_"))return j({error:"Unknown action."},400);
-    const code=norm(data.code);
-    const t=await db.prepare("SELECT * FROM birthday_teams WHERE code_hash=?").bind(await digest(code)).first();
-    if(!t)return j({error:"Team code not recognised."},403);
-    if(act==="team_state")return j(await teamState(db,code));
-    const s=await setting(db);
-    if(s.status!=="live")return j({error:s.status==="paused"?"The organiser has paused the hunt.":"The hunt has not started yet."},409);
-    const p=await puzzle(db,t.stage);
-    if(act==="team_answer"){
-      if(t.phase!=="puzzle")return j({error:"This stage has already been solved."},409);
-      const value=norm(data.answer);
-      if(!value||value.length>100)return j({error:"Enter an answer (100 characters maximum)."},400);
-      const correct=p.answers.some(a=>norm(a)===value);
-      if(correct){
-        const points=Math.max(0,10-2*t.hints-Math.min(5,t.wrong));
-        const result=await db.prepare("UPDATE birthday_teams SET score=score+?,phase=?,finished_at=? WHERE id=? AND phase='puzzle'").bind(points,t.stage===10?"finished":"travel",t.stage===10?now():null,t.id).run();
-        if(result.meta.changes>0)await log(db,t.id,"solved","+"+points+" points");
-      } else {
-        await db.prepare("UPDATE birthday_teams SET wrong=wrong+1 WHERE id=? AND phase='puzzle'").bind(t.id).run();
-      }
-      return j(await teamState(db,code,correct));
+    const role=act.startsWith('admin_')?'host':act.startsWith('team_')?'team':null;
+    if(!role)fail('Unknown action.');
+    const auth=await session(db,request,role,authVersion);
+    if(act==='admin_logout'||act==='team_logout') {
+      await db.prepare('DELETE FROM birthday_sessions WHERE token_hash=?').bind(auth.token_hash).run();
+      return json({signedOut:true},200,{'set-cookie':cookie(request,role,'',0)});
     }
-    if(act==="team_hint"){
-      if(t.phase!=="puzzle")return j({error:"Hints are only available when solving."},409);
-      if(t.hints>=p.hints.length)return j({error:"No more hints available."},400);
-      await db.prepare("UPDATE birthday_teams SET hints=MIN(hints+1,?) WHERE id=? AND phase='puzzle'").bind(p.hints.length,t.id).run();
-      return j(await teamState(db,code));
-    }
-    if(act==="team_arrive"){
-      if(t.phase!=="travel")return j({error:"Solve your current cipher first."},409);
-      await db.prepare("UPDATE birthday_teams SET stage=stage+1,phase='puzzle',hints=0,wrong=0 WHERE id=? AND phase='travel' AND stage<10").bind(t.id).run();
-      await log(db,t.id,"arrived","Checkpoint "+t.stage);
-      return j(await teamState(db,code));
-    }
-    return j({error:"Unknown team action."},400);
-  }catch(err){return j({error:"Game server error. Please ask the organiser to check deployment.",detail:String(err).slice(0,200)},500);}
+    if(role==='host')return json(await hostAction(db,act,data));
+    return json(await teamAction(db,act,data,auth.team_id));
+  } catch(error) {
+    return json({error:error.status?error.message:'Game server unavailable. Please retry or contact the organiser.'},error.status||500);
+  }
 }
