@@ -14,6 +14,9 @@ CREATE TABLE IF NOT EXISTS birthday_teams (
   hints INTEGER NOT NULL DEFAULT 0, wrong INTEGER NOT NULL DEFAULT 0,
   started_at TEXT, finished_at TEXT, started_elapsed_ms INTEGER NOT NULL DEFAULT 0,
   finished_elapsed_ms INTEGER, version INTEGER NOT NULL DEFAULT 0,
+  verified_stage INTEGER NOT NULL DEFAULT 0,
+  selfie_status TEXT NOT NULL DEFAULT 'none' CHECK(selfie_status IN ('none','pending','retry')),
+  selfie_requested_at TEXT,
   archived INTEGER NOT NULL DEFAULT 0
 );
 CREATE TABLE IF NOT EXISTS birthday_puzzles (stage INTEGER PRIMARY KEY CHECK(stage BETWEEN 1 AND 10), payload TEXT NOT NULL);

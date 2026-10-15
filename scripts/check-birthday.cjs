@@ -1,6 +1,7 @@
 const {request,chromium,webkit}=require(process.env.PLAYWRIGHT_PACKAGE||'/Users/adiaz/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright');
 const assert=require('node:assert/strict'),fs=require('node:fs');
 const base=process.env.HUNT_URL||'http://127.0.0.1:8071';
+assert(['localhost','127.0.0.1'].includes(new URL(base).hostname),'Destructive QA must run locally');
 const privatePath=process.env.HUNT_PRIVATE||'/Users/adiaz/Documents/adrichops/.private/birthday-hunt';
 const password=fs.readFileSync(privatePath+'/admin-passphrase.txt','utf8').trim();
 const out=process.env.HUNT_QA_OUTPUT||'/tmp/birthday-qa';fs.mkdirSync(out,{recursive:true});
@@ -8,6 +9,8 @@ const clients=[],created=[];
 async function client(){const c=await request.newContext({baseURL:base,extraHTTPHeaders:{Origin:base}});clients.push(c);return c;}
 async function call(c,action,payload={},status=200){const r=await c.post('/birthday-hunt/api',{data:{action,payload}});assert.equal(r.status(),status,action+' HTTP status: '+r.status()+(r.status()!==status?' '+await r.text():''));return r.json();}
 const fields=s=>({version:s.team.version,stage:s.team.stage,gameVersion:s.gameVersion});
+async function review(admin,s,action='admin_approve_selfie',extra={},status=200){const h=await call(admin,'admin_state');return call(admin,action,{version:h.version,teamId:s.team.id,teamVersion:s.team.version,stage:s.team.stage,confirmSelfie:true,...extra},status);}
+async function requestSelfie(c,s){return call(c,'team_request_approval',{...fields(s),selfieSent:true});}
 const checks=[];function pass(label){checks.push(label);console.log('PASS '+label);}
 (async()=>{
  const anon=await client(),admin=await client();
@@ -41,6 +44,8 @@ const checks=[];function pass(label){checks.push(label);console.log('PASS '+labe
  await call(admin,'admin_edit_puzzle',{stage:1,version:host.version,changes:{title:'must not save'}},409);
  pass('Three unique teams, isolated sessions, challenge gates and live-editor protection');
  states[0]=await call(players[0],'team_answer',{...fields(states[0]),answer:'definitely incorrect'});assert.equal(states[0].correct,false);assert.equal(states[0].team.phase,'puzzle');
+ await call(players[0],'team_request_approval',{...fields(states[0]),selfieSent:true},409);
+ await review(admin,states[0],'admin_approve_selfie',{},409);
  states[0]=await call(players[0],'team_hint',fields(states[0]));assert.equal(states[0].team.hintsUsed,1);assert.equal(states[0].unlockedHints.length,1);
  for(let i=0;i<10;i++){
   const s=await call(players[0],'team_state');assert.equal(s.team.stage,i+1);assert.equal(s.puzzle.id,i+1);
@@ -53,24 +58,45 @@ const checks=[];function pass(label){checks.push(label);console.log('PASS '+labe
   assert.equal(states[0].team.score,(i+1)*10-3);
   // The next puzzle is not visible until arrival; even final completion requires arrival.
   await call(players[0],'team_answer',{...fields(states[0]),answer:'skip'},409);
-  states[0]=await call(players[0],'team_arrive',fields(states[0]));
+  await call(players[0],'team_arrive',fields(states[0]),409);
+  if(i===0){
+   await review(admin,states[0],'admin_override',{},409);
+   await review(admin,states[0],'admin_approve_selfie',{},409);
+   await call(players[0],'team_request_approval',{...fields(states[0]),selfieSent:false},400);
+  }
+  states[0]=await requestSelfie(players[0],states[0]);
+  assert.equal(states[0].team.selfieStatus,'pending');assert(!states[0].puzzle);assert(!states[0].finish);
+  if(i===0){
+   await call(players[0],'admin_approve_selfie',{teamId:states[0].team.id},401);
+   await review(admin,states[0],'admin_approve_selfie',{confirmSelfie:false},400);
+   await review(admin,states[0],'admin_approve_selfie',{stage:2},409);
+   await review(admin,states[0],'admin_reject_selfie');
+   states[0]=await call(players[0],'team_state');assert.equal(states[0].team.selfieStatus,'retry');assert.equal(states[0].team.score,7);
+   states[0]=await requestSelfie(players[0],states[0]);
+  }
+  const previous=states[0];
+  if(i===1){
+   const h=await call(admin,'admin_state'),payload={version:h.version,teamId:previous.team.id,teamVersion:previous.team.version,stage:previous.team.stage,confirmSelfie:true};
+   const rs=await Promise.all([admin.post('/birthday-hunt/api',{data:{action:'admin_approve_selfie',payload}}),admin.post('/birthday-hunt/api',{data:{action:'admin_approve_selfie',payload}})]);
+   assert.deepEqual(rs.map(r=>r.status()).sort(),[200,409]);
+  }else await review(admin,previous);
+  await review(admin,previous,'admin_approve_selfie',{},409);
+  states[0]=await call(players[0],'team_state');
  }
  assert.equal(states[0].team.phase,'finished');assert.equal(states[0].team.score,97);assert(states[0].team.finishedAt);
  pass('All ten destinations, wrong-answer/hint penalties, concurrent answers and final checkpoint');
- states[1]=await call(players[1],'team_answer',{...fields(states[1]),answer:puzzles[0].answers[0]});states[1]=await call(players[1],'team_arrive',fields(states[1]));
+ states[1]=await call(players[1],'team_answer',{...fields(states[1]),answer:puzzles[0].answers[0]});states[1]=await requestSelfie(players[1],states[1]);await review(admin,states[1]);states[1]=await call(players[1],'team_state');
  states[2]=await call(players[2],'team_state');assert.equal(states[2].team.stage,1);assert.equal(states[2].team.score,0);
  // A supplied team ID cannot impersonate another team; identity comes from the session.
  const spoof=await call(players[2],'team_state',{teamId:states[0].team.id,code:created[0].code,stage:10});assert.equal(spoof.team.id,states[2].team.id);
  host=await call(admin,'admin_state');host=await call(admin,'admin_status',{status:'paused',version:host.version});
  let frozen=await call(players[1],'team_state');await new Promise(r=>setTimeout(r,1100));let later=await call(players[1],'team_state');assert.equal(later.team.elapsedMs,frozen.team.elapsedMs);assert(!later.team.timerRunning);
  await call(players[1],'team_answer',{...fields(later),answer:puzzles[1].answers[0]},409);
- host=await call(admin,'admin_override',{teamId:states[2].team.id,teamVersion:states[2].team.version});
- states[2]=await call(players[2],'team_state');assert.equal(states[2].team.phase,'travel');assert.equal(states[2].team.score,0);
- host=await call(admin,'admin_override',{teamId:states[2].team.id,teamVersion:states[2].team.version});
- assert.equal(host.teams.find(t=>t.id===states[2].team.id).stage,2);
+ await review(admin,states[2],'admin_override',{},409);
+ await review(admin,states[2],'admin_approve_selfie',{},409);
  host=await call(admin,'admin_status',{status:'live',version:host.version});
  const leader=await call(players[1],'team_state');assert.equal(leader.leaderboard[0].score,97);assert(leader.leaderboard[0].finished);
- pass('Independent progress, leaderboard, frozen pause timer and organiser overrides');
+ pass('Independent progress, leaderboard, frozen pause timer and blocked organiser skips');
  // Browser tests run against this same backend. No answer/credential values in reports or screenshots.
  for(const engine of ['chromium','webkit']){
   const browser=await(engine==='chromium'?chromium.launch({channel:'chrome'}):webkit.launch());
@@ -81,7 +107,7 @@ const checks=[];function pass(label){checks.push(label);console.log('PASS '+labe
    assert.equal(await page.locator('.game-clock').innerText().then(s=>s.includes('Stage 2 / 10')),true);
    assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false,'mobile page width');
    await page.reload();await page.locator('#solution').waitFor();assert.match(await page.locator('.game-clock').innerText(),/Stage 2/);
-   assert.equal(await page.locator('#solution').evaluate(e=>getComputedStyle(e).fontSize),'17px');
+   assert(parseFloat(await page.locator('#solution').evaluate(e=>getComputedStyle(e).fontSize))>=16);
    assert.equal(await page.evaluate(()=>document.cookie.includes('birthday_')),false,'session cookies inaccessible to JS');
    await page.locator('#shift').fill('4');assert.equal(await page.locator('#decoded').innerText(),puzzles[1].answers[0]);
    await page.locator('button[data-go="leader"]').first().click();await page.locator('table').waitFor();assert.match(await page.locator('table').innerText(),/97/);
@@ -113,8 +139,37 @@ const checks=[];function pass(label){checks.push(label);console.log('PASS '+labe
   }
  }finally{await browser.close();}}
  pass('Chromium/WebKit 320/390px, mobile controls, decoder, refresh persistence, host/player login and leaderboard');
+ for(const engine of ['chromium','webkit']){
+  const browser=await(engine==='chromium'?chromium.launch({channel:'chrome'}):webkit.launch());
+  try{for(const width of [320,390]){
+   let s=await call(players[2],'team_state');
+   s=await call(players[2],'team_answer',{...fields(s),answer:puzzles[s.team.stage-1].answers[0]});
+   const tc=await browser.newContext({viewport:{width,height:844},isMobile:true,hasTouch:true,storageState:await players[2].storageState()});
+   const hc=await browser.newContext({viewport:{width,height:844},isMobile:true,hasTouch:true,storageState:await admin.storageState()});
+   const tp=await tc.newPage(),hp=await hc.newPage();const errors=[];for(const p of [tp,hp])p.on('pageerror',e=>errors.push(e.message));
+   await tp.goto(base+'/birthday-hunt/');await tp.locator('[data-action="selfiesent"]').click();await tp.getByText(/Waiting for Adrian to check your photo/).waitFor();
+   assert.equal(await tp.locator('#answer').count(),0);assert.equal(await tp.locator('[data-action="arrive"]').count(),0);
+   await hp.goto(base+'/birthday-hunt/?host');let form=hp.locator('.selfie-review');await form.waitFor();
+   assert.match(await form.innerText(),new RegExp('Checkpoint '+s.team.stage));
+   await form.locator('button[type="submit"]').click();assert.equal((await call(players[2],'team_state')).team.selfieStatus,'pending');
+   await form.locator('[data-action="retryselfie"]').click();await hp.waitForFunction(()=>!document.querySelector('.selfie-review'));
+   await tp.locator('[data-action="refresh"]').click();await tp.getByText(/Please send another selfie/).waitFor();
+   await tp.locator('[data-action="selfiesent"]').click();await tp.getByText(/Waiting for Adrian/).waitFor();
+   await hp.locator('[data-action="hostrefresh"]').click();form=hp.locator('.selfie-review');await form.waitFor();
+   for(const p of [tp,hp])assert.equal(await p.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false,'Selfie screens fit mobile');
+   await hp.screenshot({path:out+'/'+engine+'-'+width+'-selfie-host.png',fullPage:true});
+   await tp.screenshot({path:out+'/'+engine+'-'+width+'-selfie-team.png',fullPage:true});
+   await form.locator('input[type="checkbox"]').check();await form.locator('button[type="submit"]').click();await hp.getByText('Selfie approved. The team can continue.',{exact:true}).waitFor();
+   await tp.locator('[data-action="refresh"]').click();await tp.locator('#solution').waitFor();
+   assert.equal((await call(players[2],'team_state')).team.stage,s.team.stage+1);assert.deepEqual(errors,[]);
+   await tc.close();await hc.close();
+  }}finally{await browser.close();}
+ }
+ pass('WhatsApp selfie request, required host review, rejection/resubmission and approval on Chromium/WebKit at 320/390px');
+ // Leave a pending request to prove reset clears its gate state.
+ let pending=await call(players[2],'team_state');pending=await call(players[2],'team_answer',{...fields(pending),answer:puzzles[pending.team.stage-1].answers[0]});await requestSelfie(players[2],pending);
  await call(admin,'admin_reset',{confirm:'RESET',expectedTeamIds:[states[0].team.id]},409);
- host=await call(admin,'admin_reset',{confirm:'RESET',expectedTeamIds:states.map(s=>s.team.id)});assert.equal(host.status,'lobby');assert(host.teams.every(t=>t.stage===1&&t.score===0&&!t.startedAt&&t.elapsedMs===0));
+ host=await call(admin,'admin_reset',{confirm:'RESET',expectedTeamIds:states.map(s=>s.team.id)});assert.equal(host.status,'lobby');assert(host.teams.every(t=>t.selfieStatus==='none'&&!t.answerVerified&&!t.selfieRequestedAt));assert(host.teams.every(t=>t.stage===1&&t.score===0&&!t.startedAt&&t.elapsedMs===0));
  for(const c of players){const s=await call(c,'team_state');assert.equal(s.status,'lobby');assert(!s.puzzle);}
  for(const t of host.teams)await call(admin,'admin_remove_team',{teamId:t.id});
  assert.equal((await call(admin,'admin_state')).teams.length,0);

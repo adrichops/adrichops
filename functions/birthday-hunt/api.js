@@ -19,6 +19,7 @@ async function puzzle(db,stage) {
 }
 function publicTeam(t,s) {
   return {id:t.id,name:t.name,stage:t.stage,phase:t.phase,score:t.score,hintsUsed:t.hints,wrongUsed:t.wrong,
+    selfieStatus:t.selfie_status,selfieRequestedAt:t.selfie_requested_at,answerVerified:t.verified_stage===t.stage,
     version:t.version,startedAt:t.started_at,finishedAt:t.finished_at,
     elapsedMs:t.started_at ? Math.max(0,(t.finished_elapsed_ms ?? clock(s))-t.started_elapsed_ms) : 0,
     timerRunning:!!t.started_at && s.status==='live' && t.phase!=='finished',
@@ -48,7 +49,7 @@ async function adminState(db) {
   const {results:teams}=await db.prepare('SELECT * FROM birthday_teams WHERE archived=0 ORDER BY name').all();
   const {results:stages}=await db.prepare('SELECT payload FROM birthday_puzzles ORDER BY stage').all();
   const {results:events}=await db.prepare('SELECT e.id,t.name,e.action,e.detail,e.occurred_at AS at FROM birthday_events e LEFT JOIN birthday_teams t ON t.id=e.team_id ORDER BY e.id DESC LIMIT 75').all();
-  return {status:s.status,version:s.version,gameStartedAt:s.started_at,teams:teams.map(t=>publicTeam(t,s)),stages:stages.map(p=>JSON.parse(p.payload)),events,leaderboard:await leaderboard(db,s)};
+  return {status:s.status,version:s.version,gameStartedAt:s.started_at,teams:teams.map(t=>({...publicTeam(t,s),checkpointDestination:t.phase==='travel'?JSON.parse(stages[t.stage-1].payload).destination:null})),stages:stages.map(p=>JSON.parse(p.payload)),events,leaderboard:await leaderboard(db,s)};
 }
 const logStmt=(db,id,action,detail='')=>db.prepare('INSERT INTO birthday_events(team_id,action,detail,occurred_at) VALUES(?,?,?,?)').bind(id,action,detail,iso());
 async function rate(db,key,max,seconds) {
@@ -142,7 +143,7 @@ async function hostAction(db,act,data) {
     const guard=scoped?` AND (SELECT COUNT(*) FROM birthday_teams WHERE archived=0)=? AND NOT EXISTS(SELECT 1 FROM birthday_teams WHERE archived=0 AND id NOT IN (${placeholders}))`:'';
     const reset=await db.batch([
       db.prepare("UPDATE birthday_settings SET status='lobby',started_at=NULL,elapsed_ms=0,resumed_at=NULL,version=version+1 WHERE id=1"+guard).bind(...(scoped?[ids.length,...ids]:[])),
-      db.prepare("UPDATE birthday_teams SET stage=1,phase='puzzle',score=0,hints=0,wrong=0,started_at=NULL,finished_at=NULL,started_elapsed_ms=0,finished_elapsed_ms=NULL,version=version+1 WHERE changes()>0"+(scoped?` AND id IN (${placeholders})`:'')).bind(...ids),
+      db.prepare("UPDATE birthday_teams SET stage=1,phase='puzzle',score=0,hints=0,wrong=0,verified_stage=0,selfie_status='none',selfie_requested_at=NULL,started_at=NULL,finished_at=NULL,started_elapsed_ms=0,finished_elapsed_ms=NULL,version=version+1 WHERE changes()>0"+(scoped?` AND id IN (${placeholders})`:'')).bind(...ids),
       db.prepare("INSERT INTO birthday_events(team_id,action,detail,occurred_at) SELECT NULL,'reset',?,? WHERE changes()>0").bind(scoped?'QA team progress reset; protected by exact team allowlist':'All hunt progress reset; teams and puzzle edits retained',iso())
     ]);
     if(!reset[0].meta.changes)fail('Reset blocked: the active teams changed. No progress was reset.',409);
@@ -163,21 +164,29 @@ async function hostAction(db,act,data) {
     if(!result[0].meta.changes)fail('The game changed. Refresh before saving.',409);
     await logStmt(db,null,'edit_puzzle','Stage '+stage).run();
   } else if(act==='admin_override') {
+    fail('Teams must solve the clue and have their checkpoint selfie approved.',409);
+  } else if(['admin_approve_selfie','admin_reject_selfie'].includes(act)) {
     const t=await db.prepare('SELECT * FROM birthday_teams WHERE id=? AND archived=0').bind(String(data.teamId||'')).first();
-    if(!t)fail('Team not found.',404);if(t.phase==='finished')fail('Team already finished.');
-    if(data.teamVersion!==t.version)fail('This team changed. Refresh before advancing.',409);
-    const s=await settings(db);if(!s.started_at)fail('Start the hunt before advancing teams.',409);
-    const finish=t.phase==='travel'&&t.stage===10;
-    const result=await db.prepare('UPDATE birthday_teams SET stage=?,phase=?,hints=?,wrong=?,finished_at=?,finished_elapsed_ms=?,version=version+1 WHERE id=? AND version=? AND (SELECT version FROM birthday_settings WHERE id=1)=?').bind(
-      t.phase==='travel'&&!finish?t.stage+1:t.stage,finish?'finished':t.phase==='puzzle'?'travel':'puzzle',t.phase==='puzzle'?t.hints:0,t.phase==='puzzle'?t.wrong:0,finish?iso():null,finish?clock(s):null,t.id,t.version,s.version).run();
-    if(!result.meta.changes)fail('This team changed. Refresh before advancing.',409);
-    await logStmt(db,t.id,'override','Organiser advanced one step; no answer points awarded').run();
+    if(!t)fail('Team not found.',404);
+    const s=await settings(db);
+    if(data.version!==s.version||data.teamVersion!==t.version||data.stage!==t.stage)fail('This request changed. Refresh before reviewing it.',409);
+    if(!s.started_at||!['live','paused'].includes(s.status)||t.phase!=='travel'||t.verified_stage!==t.stage||t.selfie_status!=='pending')fail('This team has no solved checkpoint selfie awaiting review.',409);
+    const approve=act==='admin_approve_selfie',finish=approve&&t.stage===10;
+    if(approve&&data.confirmSelfie!==true)fail('Check the WhatsApp selfie shows this team at the listed destination first.');
+    const guard=" WHERE id=? AND version=? AND stage=? AND archived=0 AND phase='travel' AND verified_stage=stage AND selfie_status='pending' AND (SELECT version FROM birthday_settings WHERE id=1)=? AND (SELECT status FROM birthday_settings WHERE id=1) IN ('live','paused')";
+    const args=[t.id,t.version,t.stage,s.version];
+    const statement=approve
+      ?db.prepare("UPDATE birthday_teams SET stage=?,phase=?,hints=0,wrong=0,verified_stage=0,selfie_status='none',selfie_requested_at=NULL,finished_at=?,finished_elapsed_ms=?,version=version+1"+guard).bind(finish?10:t.stage+1,finish?'finished':'puzzle',finish?iso():null,finish?clock(s):null,...args)
+      :db.prepare("UPDATE birthday_teams SET selfie_status='retry',selfie_requested_at=NULL,version=version+1"+guard).bind(...args);
+    const result=await db.batch([statement,db.prepare('INSERT INTO birthday_events(team_id,action,detail,occurred_at) SELECT ?,?,?,? WHERE changes()>0').bind(t.id,approve?(finish?'finished':'selfie_approved'):'selfie_retry','Checkpoint '+t.stage+(approve?'; WhatsApp selfie approved by organiser':'; another selfie requested'),iso())]);
+    if(!result[0].meta.changes)fail('This request changed. Refresh before reviewing it.',409);
   } else fail('Unknown organiser action.');
   return adminState(db);
 }
 async function teamAction(db,act,data,id) {
   if(act==='team_state')return teamState(db,id);
-  if(!['team_answer','team_hint','team_arrive'].includes(act))fail('Unknown team action.');
+  if(act==='team_arrive')fail('Your organiser must approve your checkpoint selfie before you can continue.',409);
+  if(!['team_answer','team_hint','team_request_approval'].includes(act))fail('Unknown team action.');
   await rate(db,'team:'+id,60,60);
   const t=await db.prepare('SELECT * FROM birthday_teams WHERE id=? AND archived=0').bind(id).first();
   if(!t)fail('Your team is no longer active.',401);
@@ -189,20 +198,21 @@ async function teamAction(db,act,data,id) {
   const guard=" WHERE id=? AND version=? AND stage=? AND archived=0 AND (SELECT version FROM birthday_settings WHERE id=1)=? AND (SELECT status FROM birthday_settings WHERE id=1)='live'";
   const bind=[id,t.version,t.stage,s.version];
   if(act==='team_answer') {
-    if(t.phase!=='puzzle')fail('Confirm arrival before the next challenge.',409);
+    if(t.phase!=='puzzle')fail('Your checkpoint selfie needs organiser approval before the next challenge.',409);
     if(typeof data.answer!=='string'||data.answer.length>100||!norm(data.answer))fail('Enter an answer of up to 100 characters.');
     correct=p.answers.some(a=>norm(a)===norm(data.answer));event=correct?'solved':'wrong_answer';
-    statement=db.prepare((correct?"UPDATE birthday_teams SET score=score+MAX(0,10-2*hints-MIN(5,wrong)),phase='travel',version=version+1":"UPDATE birthday_teams SET wrong=wrong+1,version=version+1")+guard+" AND phase='puzzle'").bind(...bind);
+    statement=db.prepare((correct?"UPDATE birthday_teams SET score=score+MAX(0,10-2*hints-MIN(5,wrong)),phase='travel',verified_stage=stage,selfie_status='none',selfie_requested_at=NULL,version=version+1":"UPDATE birthday_teams SET wrong=wrong+1,version=version+1")+guard+" AND phase='puzzle'").bind(...bind);
     detail=correct?'Stage '+t.stage+' solved':'Stage '+t.stage+'; penalty capped at five points';
   } else if(act==='team_hint') {
     if(t.phase!=='puzzle'||t.hints>=p.hints.length)fail('No more hints are available for this challenge.');
     statement=db.prepare('UPDATE birthday_teams SET hints=hints+1,version=version+1'+guard+" AND phase='puzzle' AND hints<?").bind(...bind,p.hints.length);
     event='hint';detail='Stage '+t.stage+'; hint '+(t.hints+1)+'; two-point penalty';
   } else {
-    if(t.phase!=='travel')fail('Solve your current challenge before confirming arrival.',409);
-    const finish=t.stage===10;
-    statement=db.prepare('UPDATE birthday_teams SET stage=?,phase=?,hints=0,wrong=0,finished_at=?,finished_elapsed_ms=?,version=version+1'+guard+" AND phase='travel'").bind(finish?10:t.stage+1,finish?'finished':'puzzle',finish?iso():null,finish?clock(s):null,...bind);
-    event=finish?'finished':'arrived';detail='Team confirmed checkpoint '+t.stage;
+    if(t.phase!=='travel'||t.verified_stage!==t.stage)fail('Solve your current challenge before requesting a selfie check.',409);
+    if(t.selfie_status==='pending')fail('Your selfie is already waiting for the organiser.',409);
+    if(data.selfieSent!==true)fail('Send your checkpoint selfie on WhatsApp first.');
+    statement=db.prepare("UPDATE birthday_teams SET selfie_status='pending',selfie_requested_at=?,version=version+1"+guard+" AND phase='travel' AND verified_stage=stage AND selfie_status IN ('none','retry')").bind(iso(),...bind);
+    event='selfie_requested';detail='Team reports WhatsApp selfie sent for checkpoint '+t.stage;
   }
   const result=await db.batch([statement,db.prepare('INSERT INTO birthday_events(team_id,action,detail,occurred_at) SELECT ?,?,?,? WHERE changes()>0').bind(id,event,detail,iso())]);
   if(!result[0].meta.changes)fail('Your progress changed. Refresh before trying again.',409);
