@@ -1,6 +1,9 @@
 export async function onRequest(context) {
   const url = new URL(context.request.url);
   const blocked =
+    url.pathname === "/scripts/birthday-selfie-migration.sql" ||
+    url.pathname === "/scripts/check-birthday.cjs" ||
+    url.pathname === "/scripts/birthday-schema.sql" ||
     url.pathname === "/editing-guide" ||
     url.pathname === "/editing-guide/" ||
     url.pathname === "/editing-guide.html" ||

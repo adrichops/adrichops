@@ -1,0 +1,3 @@
+scripts/check-birthday.cjs export-ignore
+scripts/birthday-schema.sql export-ignore
+scripts/birthday-selfie-migration.sql export-ignore
