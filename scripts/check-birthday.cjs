@@ -3,9 +3,10 @@ const assert=require('node:assert/strict'),fs=require('node:fs');
 const base=process.env.HUNT_URL||'http://127.0.0.1:8071';
 assert(['localhost','127.0.0.1'].includes(new URL(base).hostname),'Destructive QA must run locally');
 const privatePath=process.env.HUNT_PRIVATE||'/Users/adiaz/Documents/adrichops/.private/birthday-hunt';
-const password=fs.readFileSync(privatePath+'/admin-passphrase.txt','utf8').trim();
+const password=fs.readFileSync(process.env.HUNT_PASSWORD_FILE||privatePath+'/admin-passphrase.txt','utf8').trim();
 const out=process.env.HUNT_QA_OUTPUT||'/tmp/birthday-qa';fs.mkdirSync(out,{recursive:true});
 const clients=[],created=[];
+const newKey=()=>require('node:crypto').randomBytes(32).toString('hex');
 async function client(){const c=await request.newContext({baseURL:base,extraHTTPHeaders:{Origin:base}});clients.push(c);return c;}
 async function call(c,action,payload={},status=200){const r=await c.post('/birthday-hunt/api',{data:{action,payload}});assert.equal(r.status(),status,action+' HTTP status: '+r.status()+(r.status()!==status?' '+await r.text():''));return r.json();}
 const fields=s=>({version:s.team.version,stage:s.team.stage,gameVersion:s.gameVersion});
@@ -27,6 +28,27 @@ const checks=[];function pass(label){checks.push(label);console.log('PASS '+labe
  assert.equal(host.stages.length,10);const puzzles=host.stages;
  const authCookies=(await admin.storageState()).cookies;assert(authCookies.every(c=>c.httpOnly&&c.sameSite==='Strict'));if(base.startsWith('https:'))assert(authCookies.every(c=>c.secure));
  pass('Authentication, cookie protection, cross-origin rejection and request validation');
+ // Public registration must be isolated, retry-safe and never disclose host data.
+ const reg=await client(),key=newKey();
+ await call(reg,'team_register',{name:' ',registrationKey:key},400);
+ await call(reg,'team_register',{name:'QA self signup',registrationKey:'invalid'},400);
+ const signed=await call(reg,'team_register',{name:'QA self signup',registrationKey:key,stage:10,score:100});
+ assert.equal(signed.team.stage,1);assert.equal(signed.team.score,0);assert(!signed.puzzle);assert(!signed.stages);assert.match(signed.registrationCode,/^[A-F0-9]{4}(-[A-F0-9]{4}){3}$/);
+ await call(reg,'admin_state',{},401);
+ const retry=await call(reg,'team_register',{name:'QA self signup',registrationKey:key});assert.equal(retry.team.id,signed.team.id);assert.equal(retry.registrationCode,signed.registrationCode);
+ await call(reg,'team_register',{name:'qa   SELF signup',registrationKey:newKey()},409);
+ await call(admin,'admin_create_team',{name:'QA SELF SIGNUP'},409);
+ const rejoin=await client();assert.equal((await call(rejoin,'team_login',{code:signed.registrationCode})).team.id,signed.team.id);
+ const raceKey=newKey(),payload={name:'QA retry race',registrationKey:raceKey};
+ const races=await Promise.all([reg.post('/birthday-hunt/api',{data:{action:'team_register',payload}}),reg.post('/birthday-hunt/api',{data:{action:'team_register',payload}})]);
+ assert(races.every(r=>r.status()===200));const raceValues=await Promise.all(races.map(r=>r.json()));assert.equal(raceValues[0].team.id,raceValues[1].team.id);
+ const sameName=await Promise.all([reg.post('/birthday-hunt/api',{data:{action:'team_register',payload:{name:'QA name race',registrationKey:newKey()}}}),reg.post('/birthday-hunt/api',{data:{action:'team_register',payload:{name:'QA name race',registrationKey:newKey()}}})]);assert.deepEqual(sameName.map(r=>r.status()).sort(),[200,409]);
+ host=await call(admin,'admin_state');assert.equal(host.teams.length,3);
+ for(const t of host.teams)await call(admin,'admin_remove_team',{teamId:t.id});
+ await call(reg,'team_register',{name:'QA self signup',registrationKey:key},409);
+ const limiter=await client();for(let n=0;n<31;n++){const r=await limiter.post('/birthday-hunt/api',{headers:{'cf-connecting-ip':'198.51.100.77'},data:{action:'team_register',payload:{}}});assert.equal(r.status(),n<30?400:429);}
+ host=await call(admin,'admin_state');
+ pass('Self-registration, private rejoin code, duplicate names, concurrent retries, archived protection and signup rate limit');
  const original=puzzles[0];
  host=await call(admin,'admin_edit_puzzle',{stage:1,version:host.version,changes:{title:original.title+' QA',hints:['QA hint'],destination:original.destination+' QA',answers:['QAEDIT']}});
  assert.equal(host.stages[0].answers[0],'QAEDIT');assert.equal(host.stages[0].hints.length,1);
@@ -114,6 +136,16 @@ const checks=[];function pass(label){checks.push(label);console.log('PASS '+labe
    assert.equal(await page.locator('td').evaluateAll(es=>es.some(e=>e.getBoundingClientRect().right>innerWidth)),false,'All leaderboard columns fit');
    await page.screenshot({path:out+'/'+engine+'-'+width+'-leader.png',fullPage:true});
    await context.close();
+   const signupContext=await browser.newContext({viewport:{width,height:844},isMobile:true,hasTouch:true});const sp=await signupContext.newPage();sp.on('pageerror',e=>errors.push(e.message));
+   await sp.goto(base+'/birthday-hunt/');await sp.locator('#register-name').fill('QA mobile '+engine+' '+width);
+   await sp.locator('#register button').click();await sp.locator('.saved-team-code').waitFor();
+   const code=await sp.locator('.saved-team-code').innerText();assert.match(code,/^[A-F0-9-]{19}$/);await sp.locator('#solution').waitFor();
+   assert.equal(await sp.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false);
+   await sp.screenshot({path:out+'/'+engine+'-'+width+'-signup.png',fullPage:true});
+   await sp.reload();await sp.locator('#solution').waitFor();
+   await sp.locator('[data-action="logout"]').click();await sp.locator('.existing-team summary').click();await sp.locator('#team').fill(code);await sp.locator('#login button').click();await sp.locator('#solution').waitFor();
+   let hs=await call(admin,'admin_state');const mobileTeam=hs.teams.find(t=>t.name==='QA mobile '+engine+' '+width);await call(admin,'admin_remove_team',{teamId:mobileTeam.id});
+   await signupContext.close();
    const hc=await browser.newContext({viewport:{width,height:844},storageState:await admin.storageState()});const hp=await hc.newPage();hp.on('pageerror',e=>errors.push(e.message));
    await hp.goto(base+'/birthday-hunt/?host');await hp.locator('#create').waitFor();assert.equal(await hp.locator('.team-row').count(),3);
    assert.equal(await hp.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false,'host mobile width');
@@ -134,7 +166,7 @@ const checks=[];function pass(label){checks.push(label);console.log('PASS '+labe
    await page.locator('#edit-title').fill(original.title);await page.locator('#edit button').click();await page.getByText('Challenge saved.',{exact:true}).waitFor();
    await page.locator('[data-action="start"]').click();await page.waitForFunction(()=>document.querySelector('.pagehead .pill')?.textContent==='live');
    await page.locator('[data-action="hostlogout"]').click();await page.locator('#pass').waitFor();
-   await page.locator('[data-go="home"]').click();await page.locator('#team').fill(created[2].code);await page.locator('#login button').click();await page.locator('#solution').waitFor();
+   await page.locator('[data-go="home"]').click();await page.locator('.existing-team summary').click();await page.locator('#team').fill(created[2].code);await page.locator('#login button').click();await page.locator('#solution').waitFor();
    await context.close();
   }
  }finally{await browser.close();}}

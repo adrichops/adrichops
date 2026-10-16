@@ -84,7 +84,7 @@ async function issueSession(db,request,role,teamId,authVersion) {
 async function verifyPassword(password,verifier) {
   const [kind,rounds,salt,expected]=String(verifier||'').split(':');
   if(kind!=='pbkdf2' || rounds!=='100000' || !/^[a-f0-9]{32}$/.test(salt||'') || !/^[a-f0-9]{64}$/.test(expected||'')) fail('Organiser sign-in has not been configured.',503);
-  if(typeof password!=='string'||password.length<16||password.length>200)return false;
+  if(typeof password!=='string'||password.length<12||password.length>200)return false;
   const key=await crypto.subtle.importKey('raw',enc.encode(password),'PBKDF2',false,['deriveBits']);
   const actual=hex(await crypto.subtle.deriveBits({name:'PBKDF2',hash:'SHA-256',salt:enc.encode(salt),iterations:100000},key,256));
   let difference=0;for(let i=0;i<expected.length;i++)difference|=expected.charCodeAt(i)^actual.charCodeAt(i);
@@ -103,21 +103,28 @@ function validatePuzzle(existing,changes) {
   if(!result.title||!result.body||!result.destination||!result.answers.length||result.answers.some(a=>!norm(a)))fail('Title, question, destination and an answer are required.');
   return result;
 }
+// A browser-generated random request key makes registration retries return the same
+// team/code. Only the hash of the derived code is stored, as for host-created teams.
+async function createTeam(db,data,registrationKey=null) {
+  const name=typeof data.name==='string'?data.name.trim().replace(/\s+/g,' '):'';
+  if(name.length<2||name.length>50)fail('Team name must contain 2–50 characters.');
+  const raw=registrationKey?(await digest('birthday-registration:'+registrationKey)).slice(0,16):hex(crypto.getRandomValues(new Uint8Array(8)));
+  const code=raw.toUpperCase().match(/.{1,4}/g).join('-'),codeHash=await digest(norm(code));
+  const id=crypto.randomUUID(),s=await settings(db);
+  await db.batch([
+    db.prepare('INSERT INTO birthday_teams(id,name,code_hash,started_at,started_elapsed_ms) SELECT ?,?,?,?,? WHERE (SELECT version FROM birthday_settings WHERE id=1)=? AND (SELECT COUNT(*) FROM birthday_teams WHERE archived=0)<100 AND NOT EXISTS(SELECT 1 FROM birthday_teams WHERE archived=0 AND LOWER(name)=LOWER(?)) ON CONFLICT(code_hash) DO NOTHING').bind(id,name,codeHash,s.started_at?iso():null,clock(s),s.version,name),
+    db.prepare("INSERT INTO birthday_events(team_id,action,detail,occurred_at) SELECT ?,?,?,? WHERE changes()>0").bind(id,'new_team',registrationKey?'Team registered themselves':name,iso())
+  ]);
+  const team=await db.prepare('SELECT id,name,archived FROM birthday_teams WHERE code_hash=?').bind(codeHash).first();
+  if(team&&!team.archived&&team.name===name)return {id:team.id,name,code,created:true};
+  if(team)fail('This registration belongs to another or removed team. Reload to register again.',409);
+  const duplicate=await db.prepare('SELECT id FROM birthday_teams WHERE archived=0 AND LOWER(name)=LOWER(?)').bind(name).first();
+  if(duplicate)fail('That team name is already taken. Use your existing team code or choose another name.',409);
+  fail('The game changed or the team limit was reached. Refresh and try again.',409);
+}
 async function hostAction(db,act,data) {
   if(act==='admin_state')return adminState(db);
-  if(act==='admin_create_team') {
-    const name=typeof data.name==='string'?data.name.trim():'';
-    if(name.length<2||name.length>50)fail('Team name must contain 2–50 characters.');
-    const count=await db.prepare('SELECT COUNT(*) AS n FROM birthday_teams WHERE archived=0').first();
-    if(count.n>=100)fail('This hunt supports up to 100 active teams.');
-    const id=crypto.randomUUID(),code=hex(crypto.getRandomValues(new Uint8Array(8))).toUpperCase().match(/.{1,4}/g).join('-'),s=await settings(db);
-    const creation=await db.batch([
-      db.prepare('INSERT INTO birthday_teams(id,name,code_hash,started_at,started_elapsed_ms) SELECT ?,?,?,?,? WHERE (SELECT version FROM birthday_settings WHERE id=1)=? AND (SELECT COUNT(*) FROM birthday_teams WHERE archived=0)<100').bind(id,name,await digest(norm(code)),s.started_at?iso():null,clock(s),s.version),
-      db.prepare("INSERT INTO birthday_events(team_id,action,detail,occurred_at) SELECT ?,'new_team',?,? WHERE changes()>0").bind(id,name,iso())
-    ]);
-    if(!creation[0].meta.changes)fail('The game changed or the team limit was reached. Refresh and try again.',409);
-    return {created:true,name,code};
-  }
+  if(act==='admin_create_team')return createTeam(db,data);
   if(act==='admin_status') {
     if(!['lobby','live','paused'].includes(data.status))fail('Unknown game status.');
     const s=await settings(db);
@@ -237,6 +244,13 @@ export async function onRequest({request,env}) {
     const act=input.action,data=input.payload||{};
     if(!data||typeof data!=='object'||Array.isArray(data))fail('Invalid payload.');
     const authVersion=await digest(env.BIRTHDAY_ADMIN_PASSWORD_HASH||'unconfigured');
+    if(act==='team_register') {
+      await rate(db,'registration:'+ (request.headers.get('cf-connecting-ip')||'local'),30,900);
+      if(typeof data.registrationKey!=='string'||!/^[a-f0-9]{64}$/.test(data.registrationKey))fail('Please reload the page before registering your team.');
+      const team=await createTeam(db,data,data.registrationKey);
+      const setCookie=await issueSession(db,request,'team',team.id,null);
+      return json({...await teamState(db,team.id),registrationCode:team.code},200,{'set-cookie':setCookie});
+    }
     if(act==='admin_login'||act==='team_login') {
       const ip=request.headers.get('cf-connecting-ip')||'local';
       await rate(db,authVersion+':'+act+':'+ip,act==='admin_login'?10:40,900);

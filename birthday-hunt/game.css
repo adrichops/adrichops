@@ -21,3 +21,5 @@ body{font-family:Nunito,ui-rounded,"Arial Rounded MT Bold",system-ui,sans-serif;
 @media(max-width:780px){.hero{padding-top:32px;gap:24px}.hero p{font-size:17px}.hero h1{font-size:clamp(38px,8vw,58px)}}
 
 .selfie-queue{margin:20px 0}.selfie-check{display:flex;align-items:center;gap:12px;min-height:44px;text-transform:none;letter-spacing:normal;line-height:1.5;cursor:pointer}.selfie-check input{flex:0 0 24px;width:24px;height:24px;margin:10px 0;accent-color:var(--lime,#baff66)}.selfie-review .btn{white-space:normal;overflow-wrap:anywhere}
+
+.existing-team{margin-top:24px}.existing-team summary{min-height:44px;cursor:pointer;display:list-item;padding:12px 0}.team-code-note{margin-bottom:24px}.saved-team-code{display:block;font-size:clamp(16px,4.5vw,24px);letter-spacing:.04em;overflow-wrap:anywhere}
